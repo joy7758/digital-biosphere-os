@@ -1,0 +1,66 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereExecutorIdentityRegistry",
+  "metadata": {
+    "title": "Executor Identities v0.1",
+    "status": "one_verified_automated_executor_identity",
+    "constitution": "../constitution/executor-identity-constitution.yaml",
+    "identity_constitution": "../constitution/identity-constitution.yaml",
+    "boundary_source_of_truth": "executor-boundaries.yaml",
+    "verification_source_of_truth": "executor-verifications.yaml",
+    "generated_at": "2026-07-20T08:33:25+08:00",
+    "executor_identity_count": 1,
+    "identity_type_distribution": {"human": 0, "automated": 1},
+    "verification_status_distribution": {"pending": 0, "verified": 1, "failed": 0, "inconclusive": 0, "revoked": 0},
+    "lifecycle_state_distribution": {"proposed": 0, "enrolled": 0, "verified": 1, "suspended": 0, "revoked": 0, "retired": 0},
+    "enrollment_status": "one_verified_automated_identity",
+    "verified_identity_count": 1,
+    "appointed_executor_count": 0,
+    "agent_created_count": 0,
+    "runtime_created_count": 0,
+    "organism_created_count": 0,
+    "capability_effect_count": 0,
+    "permission_grant_count": 0,
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "The registry is empty because no attributable human or automated identity evidence has been submitted for Executor enrollment.",
+      "An entity, verifier, collector, service, process, tool, repository, or user cannot be enrolled automatically.",
+      "Enrollment and verification cannot create an Executor, Agent, Runtime, Organism, capability, permission, authorization, Event, Snapshot, or execution."
+    ]
+  },
+  "executor_identity_schema": {
+    "required_fields": ["executor_identity_id", "identity_type", "identity_evidence", "verification_status", "lifecycle_state"],
+    "additional_governance_fields": ["boundary_ref", "created_at", "updated_at", "successor", "revocation_ref", "limitations", "authority_effect"],
+    "executor_identity_id_format": "dbio:executor-identity:<identity-type>:<name>:<version>",
+    "valid_identity_types": ["human", "automated"],
+    "valid_verification_statuses": ["pending", "verified", "failed", "inconclusive", "revoked"],
+    "valid_lifecycle_states": ["proposed", "enrolled", "verified", "suspended", "revoked", "retired"],
+    "default_verification_status": "pending",
+    "default_lifecycle_state": "proposed",
+    "identity_evidence_required_fields": ["source", "evidence_refs", "integrity_status", "limitations"],
+    "identity_source_required_fields": ["kind", "reference", "issuer"],
+    "verification_boundary": "verification_status=verified requires a separate terminal executor-verification record with attributable verifier, evidence, method, and timestamp.",
+    "appointment_boundary": "A verified executor identity remains only enrollment evidence and cannot create registry/executors.yaml records automatically."
+  },
+  "executor_identities": [
+    {
+      "executor_identity_id": "dbio:executor-identity:automated:dbos-self-validation:v0.1",
+      "identity_type": "automated",
+      "identity_evidence": {
+        "source": {"kind":"governance_system_implementation","reference":"execution/dbos_exp_0001.py#sha256:3ece45ca3bba89e2628d0351cb8bd2032e2f709e88db3566a57897e9a68da6ed","issuer":"DBOS-SUBJECT-0001"},
+        "evidence_refs": ["evidence/experiments/DBOS-EXP-0001/identity/subject-identity-evidence.json", "evidence/experiments/DBOS-EXP-0001/freeze/snapshot-manifest.json#execution/dbos_exp_0001.py", "evidence/experiments/DBOS-EXP-0001/authorization/user-goal-authorization-evidence.json"],
+        "integrity_status": "verified_sha256",
+        "limitations": ["automated deterministic implementation identity only", "local non-independent verification", "not a human, Agent, Runtime, or organism"]
+      },
+      "verification_status": "verified",
+      "lifecycle_state": "verified",
+      "boundary_ref": "dbio:executor-boundary:automated:v0.1",
+      "created_at": "2026-07-20T10:24:56+08:00",
+      "updated_at": "2026-07-20T10:24:56+08:00",
+      "successor": null,
+      "revocation_ref": null,
+      "limitations": ["DBOS-EXP-0001 role eligibility only", "no execution authorization at enrollment", "no capability or permission"],
+      "authority_effect": "none"
+    }
+  ]
+}

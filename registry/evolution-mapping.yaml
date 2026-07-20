@@ -1,0 +1,162 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereSAEEEvolutionMapping",
+  "metadata": {
+    "title": "SAEE to Digital Biosphere OS Layer Mapping v0.1",
+    "status": "theoretical_mapping_only",
+    "constitution": "../constitution/saee-constitution.yaml",
+    "organism_genesis_constitution": "../constitution/organism-genesis-constitution.yaml",
+    "environment_constitution": "../constitution/environment-constitution.yaml",
+    "event_constitution": "../constitution/event-constitution.yaml",
+    "event_integrity_constitution": "../constitution/event-integrity-constitution.yaml",
+    "event_attestation_constitution": "../constitution/event-attestation-constitution.yaml",
+    "execution_context_constitution": "../constitution/execution-context-constitution.yaml",
+    "experimental_protocol_constitution": "../constitution/experimental-protocol-constitution.yaml",
+    "genesis_experiment_registry": "../registry/experiments.yaml",
+    "generated_at": "2026-07-20T00:54:29+08:00",
+    "mapping_count": 12,
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "SAEE is the highest ecological interpretation layer but does not replace operational constitutions.",
+      "Mappings are explanatory and create no event, observation, runtime, organism, capability, permission, evidence, or verification result."
+    ]
+  },
+  "saee_role": {
+    "layer": "SAEE",
+    "correspondence": "ecosystem-scale interpretation of identity, adaptive potential, evolutionary memory, selection pressure, runtime interaction, resource flow, and stability",
+    "authority": "ecological_interpretation_only"
+  },
+  "mappings": [
+    {
+      "layer": "Identity",
+      "current_authority": "constitution/identity-constitution.yaml",
+      "current_registry": "registry/entities.yaml",
+      "saee_correspondence": "digital organism identity",
+      "ecological_function": "preserves subject boundaries, lineage, ownership state, lifecycle, and non-organism defaults",
+      "status": "mapped_existing_layer",
+      "authority_effect": "unchanged"
+    },
+    {
+      "layer": "Capability",
+      "current_authority": "constitution/capability-constitution.yaml",
+      "current_registry": "registry/capabilities.yaml",
+      "saee_correspondence": "adaptive potential",
+      "ecological_function": "describes proposed or governed abilities without equating them with fitness, permission, adaptation, or organism status",
+      "status": "mapped_existing_layer",
+      "authority_effect": "unchanged"
+    },
+    {
+      "layer": "Evidence",
+      "current_authority": "constitution/evidence-constitution.yaml",
+      "current_registry": "registry/capability-evidence.yaml",
+      "saee_correspondence": "evolution memory",
+      "ecological_function": "preserves attributable observations, mutations, outcomes, invalidations, succession, and selection history",
+      "status": "mapped_existing_layer",
+      "authority_effect": "unchanged"
+    },
+    {
+      "layer": "Verification",
+      "current_authority": "constitution/verification-constitution.yaml",
+      "current_registry": "registry/verification-records.yaml",
+      "saee_correspondence": "selection pressure",
+      "ecological_function": "tests bounded claims under declared evidence, method, scope, independence, and trust constraints without automatic promotion",
+      "status": "mapped_existing_layer",
+      "authority_effect": "unchanged"
+    },
+    {
+      "layer": "Runtime",
+      "current_authority": "constitution/organism-genesis-constitution.yaml",
+      "current_registry": "registry/runtime-instances.yaml",
+      "saee_correspondence": "ecological activity and environment interaction",
+      "ecological_function": "would represent attributable active processes, resource flows, interactions, adaptation attempts, and environmental effects",
+      "status": "registration_model_established_no_instances",
+      "authority_effect": "none"
+    },
+    {
+      "layer": "Environment",
+      "current_authority": "constitution/environment-constitution.yaml",
+      "current_registry": "registry/environments.yaml",
+      "saee_correspondence": "evolution pressure",
+      "ecological_function": "defines bounded resource and task conditions plus non-applied selection-pressure vocabulary without calculating fitness or producing selection outcomes",
+      "status": "defined_model_not_applied",
+      "authority_effect": "none"
+    },
+    {
+      "layer": "Event",
+      "current_authority": "constitution/event-constitution.yaml",
+      "current_registry": "registry/events.yaml",
+      "saee_correspondence": "observation substrate for evolution",
+      "ecological_function": "defines attributable immutable fact records and event-to-observation linkage without fabricating events, calculating fitness, or triggering evolution",
+      "status": "defined_event_model_no_events",
+      "authority_effect": "none"
+    },
+    {
+      "layer": "Event Integrity",
+      "current_authority": "constitution/event-integrity-constitution.yaml",
+      "current_registry": "registry/event-integrity.yaml",
+      "saee_correspondence": "evidence reliability",
+      "ecological_function": "constrains future reliance on event-derived evidence through identity, ordering, hash linkage, provenance, checks, and witnesses without creating evidence maturity or selection outcomes",
+      "status": "defined_integrity_model_no_records",
+      "authority_effect": "none"
+    },
+    {
+      "layer": "Attestation",
+      "current_authority": "constitution/event-attestation-constitution.yaml",
+      "current_registry": "registry/event-attestations.yaml",
+      "saee_correspondence": "evidence reliability",
+      "ecological_function": "constrains future reliance on event-derived evidence through attributable producer identity, bounded claims, signature references, methods, and scoped trust anchors without creating event truth, trust, evidence maturity, fitness, or selection outcomes",
+      "status": "defined_attestation_model_no_records",
+      "authority_effect": "none"
+    },
+    {
+      "layer": "Execution Context",
+      "current_authority": "constitution/execution-context-constitution.yaml",
+      "current_registry": "registry/execution-contexts.yaml",
+      "saee_correspondence": "event reliability",
+      "ecological_function": "constrains future reliance on event-derived evidence through attributable entity and environment binding, software and configuration identity, input and output snapshots, and dependency context without creating execution truth, runtime, evidence maturity, fitness, or selection outcomes",
+      "status": "defined_execution_context_model_no_records",
+      "authority_effect": "none"
+    },
+    {
+      "layer": "Experiment",
+      "current_authority": "constitution/experimental-protocol-constitution.yaml",
+      "current_registry": "registry/experiments.yaml",
+      "saee_correspondence": "observation-mediated evolution",
+      "ecological_function": "defines a future controlled route from preregistered identity, procedure, reproducibility requirements, authorization, execution context, and attributable observations toward evolutionary interpretation without creating experiments, runs, events, fitness, evidence maturity, or selection outcomes",
+      "status": "registered_experimental_protocol_one_experiment_unexecuted",
+      "authority_effect": "none"
+    },
+    {
+      "layer": "Genesis Experiment",
+      "current_authority": "constitution/experimental-protocol-constitution.yaml",
+      "current_registry": "registry/experiments.yaml",
+      "saee_correspondence": "fact formation",
+      "ecological_function": "registers DBOS-EXP-0001 as a bounded future route through controlled procedure, pending inputs, expected outputs, stop rules, authorization, execution context, event integrity, attestation, evidence, and verification without executing the experiment or forming a fact",
+      "status": "registered_genesis_experiment_not_authorized",
+      "authority_effect": "none"
+    }
+  ],
+  "genesis_transitions": [
+    {
+      "transition_id": "runtime_to_candidate_organism",
+      "from": "Runtime",
+      "to": "Candidate Organism",
+      "relation": "qualification_eligible_transition",
+      "qualification_constitution": "constitution/organism-genesis-constitution.yaml",
+      "automatic": false,
+      "required_conditions": [
+        "identity_verified",
+        "runtime_exists",
+        "capability_verified",
+        "evidence_level_at_least_E3",
+        "verification_level_at_least_V3",
+        "resource_flow_recorded",
+        "behavior_trace_available",
+        "evolution_record_available"
+      ],
+      "current_runtime_count": 0,
+      "current_candidate_count": 0,
+      "status": "model_only_no_transition"
+    }
+  ]
+}

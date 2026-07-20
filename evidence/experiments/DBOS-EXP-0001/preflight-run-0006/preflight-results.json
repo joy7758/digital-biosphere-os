@@ -1,0 +1,419 @@
+{
+  "experiment_id": "DBOS-EXP-0001",
+  "fail_count": 0,
+  "kind": "DBOSExperimentRunnerPreflight",
+  "pass_count": 29,
+  "results": [
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "validation/attestation_validator.py",
+        "--format",
+        "json"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "stderr": "",
+      "stdout": "{\n  \"agent_created_count\": 0,\n  \"attestation_count\": 0,\n  \"attestation_method_count\": 3,\n  \"attestation_status_distribution\": {\n    \"invalid\": 0,\n    \"pending\": 0,\n    \"revoked\": 0,\n    \"signed\": 0,\n    \"superseded\": 0,\n    \"verified\": 0\n  },\n  \"c_e_v_level_change_count\": 0,\n  \"capability_count\": 0,\n  \"digital_organism_count\": 0,\n  \"errors\": [],\n  \"event_count\": 0,\n  \"organism_candidate_count\": 0,\n  \"permission_grant_count\": 0,\n  \"producer_count\": 0,\n  \"producer_type_distribution\": {\n    \"automated\": 0,\n    \"human\": 0,\n    \"runtime\": 0,\n    \"service\": 0\n  },\n  \"runtime_instance_count\": 0,\n  \"signature_count\": 0,\n  \"status\": \"PASS\",\n  \"trust_anchor_count\": 0,\n  \"trust_grant_count\": 0,\n  \"trust_level_distribution\": {\n    \"identity_supported\": 0,\n    \"independently_verified\": 0,\n    \"revoked\": 0,\n    \"scope_supported\": 0,\n    \"unknown\": 0\n  }\n}\n",
+      "validator": "validation/attestation_validator.py",
+      "validator_digest": "sha256:c1edbf122093b0ee22c830614c01223b6ca654a87968a3fe5614a545410ff7bd"
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "validation/capability_claim_validator.py",
+        "--format",
+        "json"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "stderr": "",
+      "stdout": "{\n  \"approved_review_count\": 0,\n  \"assigned_capability_count\": 0,\n  \"capability_claim_count\": 78,\n  \"claim_classification_counts\": {\n    \"computation\": 0,\n    \"external_action\": 0,\n    \"information\": 0,\n    \"modification\": 0,\n    \"self_evolution\": 0,\n    \"unknown\": 78\n  },\n  \"claim_status_counts\": {\n    \"autonomous\": 0,\n    \"evidenced\": 0,\n    \"governed\": 0,\n    \"pending\": 78,\n    \"rejected\": 0,\n    \"revoked\": 0,\n    \"verified\": 0,\n    \"withdrawn\": 0\n  },\n  \"entity_count\": 23,\n  \"errors\": [],\n  \"maturity_distribution\": {\n    \"C0\": 0,\n    \"C1\": 78,\n    \"C2\": 0,\n    \"C3\": 0,\n    \"C4\": 0,\n    \"C5\": 0\n  },\n  \"permission_grant_count\": 0,\n  \"review_count\": 0,\n  \"source_potential_evidence_count\": 78,\n  \"status\": \"PASS\",\n  \"unique_evidence_source_path_count\": 44,\n  \"unresolved_field_counts\": {\n    \"capability_type\": 78,\n    \"environment\": 78,\n    \"scope\": 78,\n    \"side_effect\": 78\n  }\n}\n",
+      "validator": "validation/capability_claim_validator.py",
+      "validator_digest": "sha256:6f211f2dd285dcf23a818f653b2d63dc436a1b63a9451901bc73ca952dfdaeda"
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "validation/capability_validator.py",
+        "--format",
+        "json"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "stderr": "",
+      "stdout": "{\n  \"assigned_capability_count\": 0,\n  \"capability_classification_counts\": {\n    \"computation\": 0,\n    \"external_action\": 0,\n    \"information\": 0,\n    \"modification\": 0,\n    \"self_evolution\": 0\n  },\n  \"entity_count\": 23,\n  \"errors\": [],\n  \"potential_capability_evidence_count\": 78,\n  \"registered_capability_count\": 0,\n  \"relationship_status_counts\": {\n    \"proposed\": 0,\n    \"unknown\": 23,\n    \"verified\": 0\n  },\n  \"status\": \"PASS\"\n}\n",
+      "validator": "validation/capability_validator.py",
+      "validator_digest": "sha256:ec97a0ca5dbc040c6b28bf10d3e5985bff0248a8fe0205ae21ee60f2c2219825"
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "validation/capture_readiness_validator.py",
+        "--format",
+        "json"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "stderr": "",
+      "stdout": "{\n  \"agent_count\": 0,\n  \"c_e_v_level_change_count\": 0,\n  \"capability_assignment_count\": 0,\n  \"digital_organism_count\": 0,\n  \"errors\": [],\n  \"experiment_id\": \"DBOS-EXP-0001\",\n  \"permission_grant_count\": 0,\n  \"phase\": \"environment\",\n  \"runtime_count\": 0,\n  \"status\": \"PASS\",\n  \"validator\": \"execution_chain_validator\"\n}\n",
+      "validator": "validation/capture_readiness_validator.py",
+      "validator_digest": "sha256:6e8cf110403ce35fc235254922ddbf49619c26e94d6f2d7905318a73450dd19d"
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "validation/environment_collector_validator.py",
+        "--format",
+        "json"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "stderr": "",
+      "stdout": "{\n  \"agent_count\": 0,\n  \"c_e_v_level_change_count\": 0,\n  \"capability_assignment_count\": 0,\n  \"digital_organism_count\": 0,\n  \"errors\": [],\n  \"experiment_id\": \"DBOS-EXP-0001\",\n  \"permission_grant_count\": 0,\n  \"phase\": \"environment\",\n  \"runtime_count\": 0,\n  \"status\": \"PASS\",\n  \"validator\": \"execution_chain_validator\"\n}\n",
+      "validator": "validation/environment_collector_validator.py",
+      "validator_digest": "sha256:2e8128404298625a263fe41a1391769b65473f28486cf34f3d91bc851599a96e"
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "validation/environment_evidence_capture_validator.py",
+        "--format",
+        "json"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "stderr": "",
+      "stdout": "{\n  \"agent_count\": 0,\n  \"c_e_v_level_change_count\": 0,\n  \"capability_assignment_count\": 0,\n  \"digital_organism_count\": 0,\n  \"errors\": [],\n  \"experiment_id\": \"DBOS-EXP-0001\",\n  \"permission_grant_count\": 0,\n  \"phase\": \"environment\",\n  \"runtime_count\": 0,\n  \"status\": \"PASS\",\n  \"validator\": \"execution_chain_validator\"\n}\n",
+      "validator": "validation/environment_evidence_capture_validator.py",
+      "validator_digest": "sha256:6ad0807fa62274b96fd2726ea901239899e420c02e09f0614aa37fec99db682f"
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "validation/environment_qualification_validator.py",
+        "--format",
+        "json"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "stderr": "",
+      "stdout": "{\n  \"agent_count\": 0,\n  \"c_e_v_level_change_count\": 0,\n  \"capability_assignment_count\": 0,\n  \"digital_organism_count\": 0,\n  \"errors\": [],\n  \"experiment_id\": \"DBOS-EXP-0001\",\n  \"permission_grant_count\": 0,\n  \"phase\": \"environment\",\n  \"runtime_count\": 0,\n  \"status\": \"PASS\",\n  \"validator\": \"execution_chain_validator\"\n}\n",
+      "validator": "validation/environment_qualification_validator.py",
+      "validator_digest": "sha256:d6a58ee4df6ffc8bed2064458f64980e0953d79c57f2f5d338df0892f89170cf"
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "validation/environment_validator.py",
+        "--format",
+        "json"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "stderr": "",
+      "stdout": "{\n  \"agent_count\": 0,\n  \"c_e_v_level_change_count\": 0,\n  \"capability_assignment_count\": 0,\n  \"digital_organism_count\": 0,\n  \"errors\": [],\n  \"experiment_id\": \"DBOS-EXP-0001\",\n  \"permission_grant_count\": 0,\n  \"phase\": \"environment\",\n  \"runtime_count\": 0,\n  \"status\": \"PASS\",\n  \"validator\": \"execution_chain_validator\"\n}\n",
+      "validator": "validation/environment_validator.py",
+      "validator_digest": "sha256:4d65e311e498bbb97a947c3761a4bfec61d891adaa49fbd87c03deafc227062a"
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "validation/event_integrity_validator.py",
+        "--format",
+        "json"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "stderr": "",
+      "stdout": "{\n  \"agent_created_count\": 0,\n  \"c_e_v_level_change_count\": 0,\n  \"capability_count\": 0,\n  \"digital_organism_count\": 0,\n  \"errors\": [],\n  \"event_count\": 0,\n  \"event_observation_count\": 0,\n  \"integrity_check_definition_count\": 5,\n  \"integrity_check_run_count\": 0,\n  \"integrity_record_count\": 0,\n  \"integrity_schema_count\": 1,\n  \"integrity_status_distribution\": {\n    \"chain_broken\": 0,\n    \"invalid\": 0,\n    \"pending\": 0,\n    \"revoked\": 0,\n    \"structurally_valid\": 0,\n    \"verified\": 0\n  },\n  \"ordering_rule_count\": 23,\n  \"organism_candidate_count\": 0,\n  \"permission_grant_count\": 0,\n  \"runtime_instance_count\": 0,\n  \"status\": \"PASS\",\n  \"trust_grant_count\": 0,\n  \"witness_count\": 0,\n  \"witness_type_distribution\": {\n    \"automated\": 0,\n    \"external\": 0,\n    \"self\": 0\n  }\n}\n",
+      "validator": "validation/event_integrity_validator.py",
+      "validator_digest": "sha256:9f467e6c97ac978a21dd0345ab0ac47f7160308be99991dea406efb6b721b826"
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "validation/event_validator.py",
+        "--format",
+        "json"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "stderr": "",
+      "stdout": "{\n  \"agent_created_count\": 0,\n  \"c_e_v_level_change_count\": 0,\n  \"capability_count\": 0,\n  \"digital_organism_count\": 0,\n  \"errors\": [],\n  \"event_count\": 0,\n  \"event_observation_count\": 0,\n  \"event_status_distribution\": {\n    \"invalidated\": 0,\n    \"recorded\": 0,\n    \"revoked\": 0,\n    \"superseded\": 0,\n    \"validated\": 0\n  },\n  \"event_stream_count\": 23,\n  \"event_type_count\": 8,\n  \"organism_candidate_count\": 0,\n  \"permission_grant_count\": 0,\n  \"runtime_instance_count\": 0,\n  \"status\": \"PASS\",\n  \"stream_status_distribution\": {\n    \"active\": 0,\n    \"defined\": 23,\n    \"retired\": 0,\n    \"suspended\": 0\n  }\n}\n",
+      "validator": "validation/event_validator.py",
+      "validator_digest": "sha256:e67f1a408b7b1426d2ac0cbcd2e1ab224ddb5242a3043da8226f5687e12fe077"
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "validation/evidence_validator.py",
+        "--format",
+        "json"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "stderr": "",
+      "stdout": "{\n  \"approved_review_count\": 0,\n  \"assigned_capability_count\": 0,\n  \"capability_claim_count\": 78,\n  \"capability_evidence_count\": 78,\n  \"capability_maturity_distribution\": {\n    \"C0\": 0,\n    \"C1\": 78,\n    \"C2\": 0,\n    \"C3\": 0,\n    \"C4\": 0,\n    \"C5\": 0\n  },\n  \"capability_profile_count\": 78,\n  \"errors\": [],\n  \"evidence_level_distribution\": {\n    \"E0\": 0,\n    \"E1\": 78,\n    \"E2\": 0,\n    \"E3\": 0,\n    \"E4\": 0,\n    \"E5\": 0\n  },\n  \"evidence_status_distribution\": {\n    \"assessed\": 0,\n    \"independently_verified\": 0,\n    \"invalid\": 0,\n    \"observed\": 0,\n    \"pending\": 78,\n    \"revoked\": 0,\n    \"verified\": 0\n  },\n  \"permission_grant_count\": 0,\n  \"status\": \"PASS\",\n  \"unique_artifact_reference_path_count\": 44\n}\n",
+      "validator": "validation/evidence_validator.py",
+      "validator_digest": "sha256:423d08f5349bd76a484f219fb47b7bcdb3f44e8a6f2f4927f43aee85e5b5ae8b"
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "validation/execution_chain_validator.py",
+        "--format",
+        "json"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "stderr": "",
+      "stdout": "{\n  \"agent_count\": 0,\n  \"c_e_v_level_change_count\": 0,\n  \"capability_assignment_count\": 0,\n  \"digital_organism_count\": 0,\n  \"errors\": [],\n  \"experiment_id\": \"DBOS-EXP-0001\",\n  \"permission_grant_count\": 0,\n  \"phase\": \"environment\",\n  \"runtime_count\": 0,\n  \"status\": \"PASS\",\n  \"validator\": \"execution_chain_validator\"\n}\n",
+      "validator": "validation/execution_chain_validator.py",
+      "validator_digest": "sha256:3dff1cccc34f1fca6128f75a6679b935056ceefadb398c310ff9ad2735418eb5"
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "validation/execution_context_validator.py",
+        "--format",
+        "json"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "stderr": "",
+      "stdout": "{\n  \"agent_created_count\": 0,\n  \"attestation_count\": 0,\n  \"c_e_v_level_change_count\": 0,\n  \"capability_count\": 0,\n  \"context_status_distribution\": {\n    \"invalid\": 0,\n    \"proposed\": 0,\n    \"recorded\": 0,\n    \"revoked\": 0,\n    \"superseded\": 0,\n    \"validated\": 0\n  },\n  \"digital_organism_count\": 0,\n  \"errors\": [],\n  \"event_count\": 0,\n  \"execution_context_count\": 0,\n  \"execution_dependency_count\": 0,\n  \"input_snapshot_count\": 0,\n  \"organism_candidate_count\": 0,\n  \"output_snapshot_count\": 0,\n  \"permission_grant_count\": 0,\n  \"runtime_instance_count\": 0,\n  \"snapshot_count\": 0,\n  \"status\": \"PASS\"\n}\n",
+      "validator": "validation/execution_context_validator.py",
+      "validator_digest": "sha256:a50c526727167ec3aab84f52f8293dd033cf98ef47dfc47b1e9bd91a924c0260"
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "validation/executor_identity_validator.py",
+        "--format",
+        "json"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "stderr": "",
+      "stdout": "{\n  \"errors\": [],\n  \"schema_version\": \"0.1\",\n  \"status\": \"PASS\",\n  \"summary\": {\n    \"active_executor_authorization_count\": 0,\n    \"agent_count\": 0,\n    \"appointed_executor_count\": 0,\n    \"authority_effect\": \"none\",\n    \"boundary_type_distribution\": {\n      \"automated\": 1,\n      \"human\": 1\n    },\n    \"capability_count\": 0,\n    \"capability_verification_count\": 78,\n    \"claim_count\": 78,\n    \"enrollment_status\": \"not_started_no_identity\",\n    \"event_count\": 0,\n    \"evidence_count\": 78,\n    \"executor_boundary_count\": 2,\n    \"executor_identity_count\": 0,\n    \"executor_verification_count\": 0,\n    \"identity_type_distribution\": {\n      \"automated\": 0,\n      \"human\": 0\n    },\n    \"permission_grant_count\": 0,\n    \"remaining_gaps\": [\n      \"no human or automated executor identity evidence has been submitted\",\n      \"no executor identity verification record exists\",\n      \"no executor identity is verified\",\n      \"no Executor is appointed\",\n      \"no Executor scope exists\",\n      \"executor and experiment authorizations remain pending\",\n      \"snapshot capture, freeze, environment, and experiment readiness remain pending\"\n    ],\n    \"runtime_count\": 0,\n    \"verification_result_distribution\": {\n      \"failed\": 0,\n      \"inconclusive\": 0,\n      \"pending\": 0,\n      \"revoked\": 0,\n      \"verified\": 0\n    }\n  },\n  \"validator\": \"executor_identity_validator\"\n}\n",
+      "validator": "validation/executor_identity_validator.py",
+      "validator_digest": "sha256:fd598bef9ccd22c4d67a05ba05ecb3912b8d5f8994a4272b086b9c57385d54ac"
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "validation/executor_validator.py",
+        "--format",
+        "json"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "stderr": "",
+      "stdout": "{\n  \"errors\": [],\n  \"schema_version\": \"0.1\",\n  \"status\": \"PASS\",\n  \"summary\": {\n    \"agent_count\": 0,\n    \"authority_effect\": \"none\",\n    \"authorization_status_distribution\": {\n      \"pending\": 1\n    },\n    \"capability_count\": 0,\n    \"claim_count\": 78,\n    \"event_count\": 0,\n    \"evidence_count\": 78,\n    \"executor_authorization_count\": 1,\n    \"executor_count\": 0,\n    \"executor_identity_count\": 0,\n    \"executor_scope_count\": 0,\n    \"executor_type_distribution\": {\n      \"automated_runner\": 0,\n      \"human_operator\": 0\n    },\n    \"experiment_execution_status\": \"not_executed\",\n    \"experiment_id\": \"DBOS-EXP-0001\",\n    \"historical_evidence_change_count\": 0,\n    \"permission_grant_count\": 0,\n    \"remaining_gaps\": [\n      \"no executor identity is appointed\",\n      \"no executor scope exists\",\n      \"executor authorization has no executor, scope, authorizer, or timestamp\",\n      \"experiment and capture readiness remain pending\",\n      \"experiment authorization remains pending\",\n      \"snapshot, validator set, environment, and freeze are not frozen\",\n      \"no execution context, runtime, event, action trace, or execution evidence exists\"\n    ],\n    \"runtime_count\": 0,\n    \"verification_record_count\": 78\n  },\n  \"validator\": \"executor_validator\"\n}\n",
+      "validator": "validation/executor_validator.py",
+      "validator_digest": "sha256:f6f6b063b13ec198dd7a85564e3de4791fbe881bcf281f5e2976c2eb27aaa301"
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "validation/experimental_protocol_validator.py",
+        "--format",
+        "json"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "stderr": "",
+      "stdout": "{\n  \"agent_created_count\": 0,\n  \"attestation_count\": 0,\n  \"c_e_v_level_change_count\": 0,\n  \"capability_count\": 0,\n  \"digital_organism_count\": 0,\n  \"errors\": [],\n  \"event_count\": 0,\n  \"execution_context_count\": 0,\n  \"execution_count\": 0,\n  \"experiment_count\": 1,\n  \"experiment_observation_count\": 0,\n  \"experiment_status_distribution\": {\n    \"authorized\": 0,\n    \"completed\": 0,\n    \"defined\": 0,\n    \"invalid\": 0,\n    \"observed\": 0,\n    \"proposed\": 0,\n    \"registered\": 1,\n    \"retired\": 0,\n    \"revoked\": 0,\n    \"running\": 0\n  },\n  \"organism_candidate_count\": 0,\n  \"permission_grant_count\": 0,\n  \"procedure_count\": 1,\n  \"procedure_step_count\": 8,\n  \"reproducibility_requirement_count\": 5,\n  \"runtime_instance_count\": 0,\n  \"satisfied_reproducibility_requirement_count\": 0,\n  \"status\": \"PASS\"\n}\n",
+      "validator": "validation/experimental_protocol_validator.py",
+      "validator_digest": "sha256:6534ac10752083951463d0f8b23e5ad9aca9d1921cf0d667352fceb36b35f452"
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "validation/federation_validator.py",
+        "--format",
+        "json"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "stderr": "",
+      "stdout": "{\n  \"agent_created_count\": 0,\n  \"c_e_v_level_change_count\": 0,\n  \"capability_count\": 0,\n  \"dependency_graph_node_count\": 23,\n  \"dependency_relationship_count\": 29,\n  \"dependency_relationship_distribution\": {\n    \"depends_on\": 6,\n    \"extends\": 1,\n    \"implements\": 2,\n    \"references\": 20,\n    \"verifies\": 0\n  },\n  \"digital_organism_count\": 0,\n  \"errors\": [],\n  \"federation_member_count\": 23,\n  \"federation_role_distribution\": {\n    \"evidence\": 3,\n    \"experimental\": 3,\n    \"foundation\": 3,\n    \"governance\": 3,\n    \"protocol\": 6,\n    \"unknown\": 1,\n    \"verification\": 4\n  },\n  \"manifest_count\": 23,\n  \"manifest_status_distribution\": {\n    \"accepted\": 0,\n    \"pending\": 23,\n    \"submitted\": 0\n  },\n  \"member_status_distribution\": {\n    \"proposed\": 23,\n    \"registered\": 0,\n    \"verified\": 0\n  },\n  \"organism_candidate_count\": 0,\n  \"permission_grant_count\": 0,\n  \"project_local_manifest_adoption_count\": 0,\n  \"repository_merge_count\": 0,\n  \"runtime_instance_count\": 0,\n  \"status\": \"PASS\",\n  \"verified_interoperability_count\": 0\n}\n",
+      "validator": "validation/federation_validator.py",
+      "validator_digest": "sha256:34d4ee298a5ac0ca538f2e0a0e8d9a946be6fba578e9ec642c27794515ee8f59"
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "validation/freeze_validator.py",
+        "--format",
+        "json"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "stderr": "",
+      "stdout": "{\n  \"agent_count\": 0,\n  \"c_e_v_level_change_count\": 0,\n  \"capability_assignment_count\": 0,\n  \"digital_organism_count\": 0,\n  \"errors\": [],\n  \"experiment_id\": \"DBOS-EXP-0001\",\n  \"permission_grant_count\": 0,\n  \"phase\": \"environment\",\n  \"runtime_count\": 0,\n  \"status\": \"PASS\",\n  \"validator\": \"execution_chain_validator\"\n}\n",
+      "validator": "validation/freeze_validator.py",
+      "validator_digest": "sha256:70c1d1c428ba0c649803b7e5102bd85371c07894409a0821e393bfb75948cbc2"
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "validation/genesis_experiment_validator.py",
+        "--format",
+        "json"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "stderr": "",
+      "stdout": "{\n  \"agent_count\": 0,\n  \"c_e_v_level_change_count\": 0,\n  \"capability_assignment_count\": 0,\n  \"digital_organism_count\": 0,\n  \"errors\": [],\n  \"experiment_id\": \"DBOS-EXP-0001\",\n  \"permission_grant_count\": 0,\n  \"phase\": \"environment\",\n  \"runtime_count\": 0,\n  \"status\": \"PASS\",\n  \"validator\": \"execution_chain_validator\"\n}\n",
+      "validator": "validation/genesis_experiment_validator.py",
+      "validator_digest": "sha256:5f3cfb6c484d619f390db5dfb223b4ed1ea77c0fd13a08f69b47847a76f3950d"
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "validation/governance_evidence_validator.py",
+        "--format",
+        "json"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "stderr": "",
+      "stdout": "{\n  \"c_e_v_level_change_count\": 0,\n  \"capability_count\": 0,\n  \"digital_organism_count\": 0,\n  \"errors\": [],\n  \"governance_authority_grant_count\": 0,\n  \"governance_binding_count\": 0,\n  \"governance_claim_count\": 0,\n  \"governance_evidence_count\": 0,\n  \"governance_maturity_distribution\": {\n    \"G0\": 23,\n    \"G1\": 0,\n    \"G2\": 0,\n    \"G3\": 0,\n    \"G4\": 0,\n    \"G5\": 0\n  },\n  \"governance_observation_entry_count\": 23,\n  \"observed_governance_value_count\": 0,\n  \"organism_candidate_count\": 0,\n  \"permission_grant_count\": 0,\n  \"runtime_instance_count\": 0,\n  \"status\": \"PASS\"\n}\n",
+      "validator": "validation/governance_evidence_validator.py",
+      "validator_digest": "sha256:06ff7256ffae6a4c73d1f770d2d92048d03b58ac9d3782c1c3d2f6bbf276c630"
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "validation/governance_validator.py",
+        "--format",
+        "json"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "stderr": "",
+      "stdout": "{\n  \"agent_created_count\": 0,\n  \"archetype_distribution\": {\n    \"ecology\": 1,\n    \"federation\": 1,\n    \"hierarchy\": 1\n  },\n  \"binding_count\": 0,\n  \"binding_status_distribution\": {\n    \"active\": 0,\n    \"pending\": 0,\n    \"retired\": 0,\n    \"revoked\": 0,\n    \"suspended\": 0\n  },\n  \"c_e_v_level_change_count\": 0,\n  \"capability_count\": 0,\n  \"digital_organism_count\": 0,\n  \"errors\": [],\n  \"evaluation_dimensions\": [\n    \"coordination_efficiency\",\n    \"autonomy\",\n    \"stability\",\n    \"adaptability\",\n    \"centralization_risk\"\n  ],\n  \"executed_transition_count\": 0,\n  \"governance_archetype_count\": 3,\n  \"non_null_evaluation_score_count\": 0,\n  \"organism_candidate_count\": 0,\n  \"permission_grant_count\": 0,\n  \"runtime_instance_count\": 0,\n  \"status\": \"PASS\",\n  \"transition_definition_count\": 1\n}\n",
+      "validator": "validation/governance_validator.py",
+      "validator_digest": "sha256:1b2d71d2d2b85d8b12a39e09cce19c9e916371625ae467feb35540c8be9dcc47"
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "validation/identity_validator.py",
+        "--format",
+        "json"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "stderr": "",
+      "stdout": "{\n  \"classification_counts\": {\n    \"agent\": 0,\n    \"artifact\": 0,\n    \"governance_system\": 0,\n    \"protocol\": 10,\n    \"repository\": 5,\n    \"service\": 8\n  },\n  \"entity_count\": 23,\n  \"errors\": [],\n  \"path_identity_counts\": {\n    \"duplicate\": 5,\n    \"mirror\": 24,\n    \"temporary\": 113,\n    \"unknown\": 21\n  },\n  \"path_observation_count\": 163,\n  \"status\": \"PASS\"\n}\n",
+      "validator": "validation/identity_validator.py",
+      "validator_digest": "sha256:ee45c4ed9dc8c678a008d58fbdbd78d056cf478da458ed0d38ede5a22b729df1"
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "validation/organism_validator.py",
+        "--format",
+        "json"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "stderr": "",
+      "stdout": "{\n  \"agent_created_count\": 0,\n  \"baseline_missing_requirement_counts\": {\n    \"behavior_trace_available\": 23,\n    \"capability_verified\": 23,\n    \"evidence_level_at_least_E3\": 23,\n    \"evolution_record_available\": 23,\n    \"identity_verified\": 23,\n    \"resource_flow_recorded\": 23,\n    \"runtime_exists\": 23,\n    \"verification_level_at_least_V3\": 23\n  },\n  \"behavior_trace_count\": 0,\n  \"c_e_v_level_change_count\": 0,\n  \"candidate_count\": 0,\n  \"capability_count\": 0,\n  \"digital_organism_count\": 0,\n  \"entity_count\": 23,\n  \"errors\": [],\n  \"permission_grant_count\": 0,\n  \"qualified_candidate_count\": 0,\n  \"resource_flow_count\": 0,\n  \"runtime_instance_count\": 0,\n  \"status\": \"PASS\"\n}\n",
+      "validator": "validation/organism_validator.py",
+      "validator_digest": "sha256:d04e2f296fdc5c03beb433890baa6823ba010b0992b3c6420a19e6de17b73200"
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "validation/readiness_validator.py",
+        "--format",
+        "json"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "stderr": "",
+      "stdout": "{\n  \"agent_count\": 0,\n  \"c_e_v_level_change_count\": 0,\n  \"capability_assignment_count\": 0,\n  \"digital_organism_count\": 0,\n  \"errors\": [],\n  \"experiment_id\": \"DBOS-EXP-0001\",\n  \"permission_grant_count\": 0,\n  \"phase\": \"environment\",\n  \"runtime_count\": 0,\n  \"status\": \"PASS\",\n  \"validator\": \"execution_chain_validator\"\n}\n",
+      "validator": "validation/readiness_validator.py",
+      "validator_digest": "sha256:aad55ab09df8454f5fba9070c6abafb1870de45d14d25000b4e251811bdfa1e1"
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "validation/runner_validator.py",
+        "--format",
+        "json"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "stderr": "",
+      "stdout": "{\n  \"agent_count\": 0,\n  \"c_e_v_level_change_count\": 0,\n  \"capability_assignment_count\": 0,\n  \"digital_organism_count\": 0,\n  \"errors\": [],\n  \"experiment_id\": \"DBOS-EXP-0001\",\n  \"permission_grant_count\": 0,\n  \"phase\": \"environment\",\n  \"runtime_count\": 0,\n  \"status\": \"PASS\",\n  \"validator\": \"execution_chain_validator\"\n}\n",
+      "validator": "validation/runner_validator.py",
+      "validator_digest": "sha256:cc99115759a09823a11f238c0baa66059a582a8799fc43ece326984b0b20d5ef"
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "validation/saee_validator.py",
+        "--format",
+        "json"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "stderr": "",
+      "stdout": "{\n  \"agent_created_count\": 0,\n  \"c_e_v_level_change_count\": 0,\n  \"capability_assignment_count\": 0,\n  \"capability_count\": 0,\n  \"ecological_entity_count\": 23,\n  \"ecological_type_distribution\": {\n    \"Artifact\": 5,\n    \"Candidate Organism\": 0,\n    \"Digital Organism\": 0,\n    \"Protocol\": 10,\n    \"Runtime\": 0,\n    \"Service\": 8\n  },\n  \"entity_count\": 23,\n  \"errors\": [],\n  \"evolution_principle_count\": 5,\n  \"evolution_stage_distribution\": {\n    \"candidate-organism\": 0,\n    \"digital-organism\": 0,\n    \"ecologically-retired\": 0,\n    \"pre-organism\": 23\n  },\n  \"fitness_dimension_count\": 5,\n  \"fitness_status_distribution\": {\n    \"assessed\": 0,\n    \"invalid\": 0,\n    \"revoked\": 0,\n    \"unknown\": 23\n  },\n  \"known_fitness_score_count\": 0,\n  \"layer_mapping_count\": 12,\n  \"permission_grant_count\": 0,\n  \"status\": \"PASS\"\n}\n",
+      "validator": "validation/saee_validator.py",
+      "validator_digest": "sha256:f090e1d40522a1189a5bb1e622ef9d99c570b7ce8ce88237b972f08a8de40293"
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "validation/snapshot_capture_validator.py",
+        "--format",
+        "json"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "stderr": "",
+      "stdout": "{\n  \"agent_count\": 0,\n  \"c_e_v_level_change_count\": 0,\n  \"capability_assignment_count\": 0,\n  \"digital_organism_count\": 0,\n  \"errors\": [],\n  \"experiment_id\": \"DBOS-EXP-0001\",\n  \"permission_grant_count\": 0,\n  \"phase\": \"environment\",\n  \"runtime_count\": 0,\n  \"status\": \"PASS\",\n  \"validator\": \"execution_chain_validator\"\n}\n",
+      "validator": "validation/snapshot_capture_validator.py",
+      "validator_digest": "sha256:fefe9c053b8c9d6e7d6b91a929a8fe61fed0d27bbd868d943eac802382976f1d"
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "validation/verification_network_validator.py",
+        "--format",
+        "json"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "stderr": "",
+      "stdout": "{\n  \"agent_created_count\": 0,\n  \"assigned_capability_count\": 0,\n  \"errors\": [],\n  \"permission_grant_count\": 0,\n  \"status\": \"PASS\",\n  \"trust_established_count\": 0,\n  \"trust_graph_node_count\": 258,\n  \"trust_graph_node_type_distribution\": {\n    \"claim\": 78,\n    \"entity\": 23,\n    \"evidence\": 78,\n    \"verification_run\": 78,\n    \"verifier\": 1\n  },\n  \"trust_graph_relationship_count\": 78,\n  \"verification_record_count\": 78,\n  \"verification_run_count\": 78,\n  \"verification_run_status_distribution\": {\n    \"completed\": 0,\n    \"in_progress\": 0,\n    \"invalid\": 0,\n    \"pending\": 78,\n    \"revoked\": 0\n  },\n  \"verifier_count\": 1,\n  \"verifier_type_definition_count\": 4,\n  \"verifier_type_distribution\": {\n    \"automated\": 1,\n    \"experimental\": 0,\n    \"external\": 0,\n    \"maintainer\": 0\n  }\n}\n",
+      "validator": "validation/verification_network_validator.py",
+      "validator_digest": "sha256:56721aee801cade3d1b351710b891aafcb43943b0509e47656d44e978ee5994a"
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "validation/verification_validator.py",
+        "--format",
+        "json"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "stderr": "",
+      "stdout": "{\n  \"assigned_capability_count\": 0,\n  \"capability_claim_count\": 78,\n  \"decision_distribution\": {\n    \"fail\": 0,\n    \"inconclusive\": 0,\n    \"pass\": 0,\n    \"pending\": 78,\n    \"revoked\": 0\n  },\n  \"entity_count\": 23,\n  \"errors\": [],\n  \"permission_grant_count\": 0,\n  \"referenced_evidence_count\": 78,\n  \"status\": \"PASS\",\n  \"verification_level_distribution\": {\n    \"V0\": 78,\n    \"V1\": 0,\n    \"V2\": 0,\n    \"V3\": 0,\n    \"V4\": 0,\n    \"V5\": 0\n  },\n  \"verification_record_count\": 78,\n  \"verification_status_distribution\": {\n    \"completed\": 0,\n    \"in_progress\": 0,\n    \"invalid\": 0,\n    \"pending\": 78,\n    \"revoked\": 0\n  },\n  \"verifier_count\": 1,\n  \"verifier_trust_distribution\": {\n    \"continuous\": 0,\n    \"independent\": 0,\n    \"local_automated\": 1,\n    \"reproducible\": 0,\n    \"self_asserted\": 0,\n    \"unknown\": 0\n  },\n  \"verifier_type_distribution\": {\n    \"automated\": 1,\n    \"experimental\": 0,\n    \"external\": 0,\n    \"maintainer\": 0\n  }\n}\n",
+      "validator": "validation/verification_validator.py",
+      "validator_digest": "sha256:166e5ccb813e300a08479538443efe09f5857111ce9cf6ff58900b3138a6e110"
+    }
+  ],
+  "schema_version": "0.1",
+  "status": "PASS",
+  "timestamp": "2026-07-20T10:41:17+08:00",
+  "validator_count_executed": 29,
+  "validator_count_expected": 29
+}

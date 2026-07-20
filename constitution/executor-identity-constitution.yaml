@@ -1,0 +1,126 @@
+schema_version: "0.1"
+kind: "DigitalBiosphereExecutorIdentityConstitution"
+metadata:
+  title: "Executor Identity Constitution v0.1"
+  chinese_title: "执行者身份宪法 v0.1"
+  status: "identity_enrollment_defined_no_identity_enrolled"
+  parent_constitution: "constitution.yaml"
+  executor_constitution_reference: "executor-constitution.yaml"
+  identity_constitution_reference: "identity-constitution.yaml"
+  evidence_constitution_reference: "evidence-constitution.yaml"
+  verification_constitution_reference: "verification-constitution.yaml"
+  permission_policy_reference: "../policies/permissions.yaml"
+  authority: "executor_identity_enrollment_structure_and_validation_only"
+  effective_scope:
+    - "/Users/zhangbin/GitHub/digital-biosphere-os"
+  adopted_at: "2026-07-20T08:33:25+08:00"
+  non_claims:
+    - "This constitution does not enroll an identity, appoint an Executor, authorize execution, execute DBOS-EXP-0001, create a Runtime, generate an Event, or capture a Snapshot."
+    - "Executor Identity != Executor Appointment != Executor Authorization != Experiment Authorization."
+    - "Executor != Agent; Executor != Runtime; Executor != Candidate Organism; Executor != Digital Organism."
+
+executor_identity:
+  definition: "An Executor Identity is an attributable enrollment record for a human or automated subject that may be considered for a future bounded Executor role after separate evidence review and verification."
+  valid_identity_types:
+    human: "An attributable human subject whose source identity, consent, evidence provenance, and accountability can be reviewed."
+    automated: "An attributable automated subject whose governing owner or operator, implementation identity, version, integrity material, and control boundary can be reviewed."
+  separation_rules:
+    - "Executor Identity != Agent Identity."
+    - "Executor Identity != Runtime Identity."
+    - "Executor Identity != Organism Identity."
+    - "Executor Identity Enrollment != Executor Registration."
+    - "Executor Identity Verification != Capability Verification."
+    - "Existing Entity, Verifier, Collector, Service, Tool, Process, or User != Enrolled Executor Identity."
+  current_identity_count: 0
+  current_status: "not_started"
+
+identity_evidence:
+  source_of_truth: "../registry/executor-identities.yaml"
+  minimum_structure:
+    - "identity_evidence.source.kind is explicit"
+    - "identity_evidence.source.reference is attributable and non-empty"
+    - "identity_evidence.evidence_refs is a list"
+    - "identity_evidence.integrity_status is explicit"
+    - "identity_evidence limitations distinguish declaration, artifact, execution, and independent evidence"
+  human_requirements:
+    - "source identity and consent are attributable"
+    - "evidence collection respects privacy and data minimization"
+    - "self-declaration alone cannot support verified status"
+  automated_requirements:
+    - "governing owner or operator identity is attributable"
+    - "implementation identity and immutable version or digest are recorded"
+    - "control, update, revocation, and credential boundaries are explicit"
+    - "a process name, validator path, repository, service, or local command alone is insufficient"
+  evidence_boundary: "Identity evidence supports review only; it cannot grant capability, permission, execution authority, Agent status, Runtime status, or Organism status."
+
+enrollment:
+  source_of_truth:
+    identity_registry: "../registry/executor-identities.yaml"
+    boundary_registry: "../registry/executor-boundaries.yaml"
+    verification_registry: "../registry/executor-verifications.yaml"
+  procedure:
+    - "submit one unique executor_identity_id and identity_type"
+    - "record attributable identity source and bounded identity evidence"
+    - "select the matching defined identity-type boundary"
+    - "create a separate pending verification record"
+    - "complete review without self-verification or automatic pass"
+    - "record verified, failed, inconclusive, or revoked result append-only"
+  enrollment_gate: "Only verified identity evidence plus an explicit verification decision may move lifecycle_state from enrolled to verified."
+  non_effects:
+    - "Enrollment does not create an Executor record."
+    - "Enrollment does not populate an Executor scope."
+    - "Enrollment does not satisfy Executor authorization or experiment authorization."
+  current_enrollment_status: "not_started_no_identity"
+
+verification:
+  source_of_truth: "../registry/executor-verifications.yaml"
+  requirements:
+    - "verification_id is unique and references an existing executor identity"
+    - "method is explicit, bounded, reproducible where applicable, and appropriate to identity_type"
+    - "verifier identity and evidence references are attributable before a terminal result"
+    - "timestamp is timezone-aware for verified, failed, inconclusive, or revoked results"
+    - "pending verification has no result evidence, decision timestamp, authority, or permission effect"
+  independence_rules:
+    - "An identity cannot verify itself."
+    - "An automated check cannot claim independent human verification."
+    - "Local structural PASS cannot become executor identity verified automatically."
+  result_boundary: "Verified Executor Identity != Appointed Executor != Authorized Executor != Executed Experiment."
+  current_verification_count: 0
+  current_verified_count: 0
+
+revocation:
+  triggers:
+    - "identity source invalidated or expired"
+    - "identity evidence shown incomplete, forged, or materially misleading"
+    - "governing owner, operator, version, or control boundary changes without succession evidence"
+    - "scope or separation boundary violation"
+    - "conflict, compromise, or accountability failure"
+  procedure:
+    - "append a revocation verification record with reason, evidence, verifier, and timestamp"
+    - "set lifecycle_state to revoked without deleting prior identity or verification history"
+    - "invalidate future appointment eligibility and separately revoke any dependent authorization"
+    - "use a new identity record or explicit successor for re-enrollment"
+  deletion_prohibited: true
+  retroactive_rewrite_prohibited: true
+
+current_baseline:
+  executor_identity_count: 0
+  human_identity_count: 0
+  automated_identity_count: 0
+  executor_boundary_count: 2
+  defined_boundary_count: 2
+  executor_verification_count: 0
+  pending_verification_count: 0
+  verified_identity_count: 0
+  appointed_executor_count: 0
+  active_executor_authorization_count: 0
+  experiment_execution_count: 0
+  snapshot_hash_count: 0
+  event_count: 0
+  runtime_instance_count: 0
+  agent_created_count: 0
+  digital_organism_count: 0
+  capability_count: 0
+  permission_grant_count: 0
+  historical_evidence_change_count: 0
+  c_e_v_level_change_count: 0

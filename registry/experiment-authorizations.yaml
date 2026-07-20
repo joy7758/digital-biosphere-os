@@ -1,0 +1,67 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereExperimentAuthorizationRegistry",
+  "metadata": {
+    "title": "Genesis Experiment Authorizations v0.1",
+    "status": "two_consumed_bounded_experiment_authorizations",
+    "constitution": "../constitution/experimental-protocol-constitution.yaml",
+    "experiment_source_of_truth": "experiments.yaml",
+    "generated_at": "2026-07-20T00:54:29+08:00",
+    "authorization_count": 2,
+    "authorization_status_distribution": {"pending": 0, "authorized": 0, "denied": 0, "revoked": 0, "expired": 2},
+    "active_authorization_count": 0,
+    "execution_authority_count": 0,
+    "permission_grant_count": 0,
+    "runtime_creation_authority_count": 0,
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "The sole record is a pending authorization request boundary; authorized_by is null and no authority, permission, or execution right exists.",
+      "Authorization, if later granted, remains experiment-scoped and cannot create an Agent, Digital Organism, general capability, or general permission."
+    ]
+  },
+  "authorization_record_schema": {
+    "required_fields": ["authorization_id", "authorized_by", "scope", "status"],
+    "additional_governance_fields": ["experiment_id", "created_at", "decision_at", "limitations", "revocation_ref", "expires_at"],
+    "valid_statuses": ["pending", "authorized", "denied", "revoked", "expired"],
+    "default_status": "pending",
+    "pending_boundary": "pending requires authorized_by=null and decision_at=null and has no execution or permission effect."
+  },
+  "experiment_authorizations": [
+    {
+      "authorization_id": "DBOS-EXP-0001-AUTH-0001",
+      "authorized_by": "explicit_user_goal:DBOS-EXP-0001-COMPLETE-EXECUTION-CHAIN",
+      "scope": {
+        "experiment_id": "DBOS-EXP-0001",
+        "requested_future_actions": ["execute the eight registered steps once within the bounded local governance workspace", "write experiment-scoped context, event, integrity, attestation, evidence, and verification records"],
+        "forbidden": ["create an Agent", "create a Digital Organism", "modify member repositories", "grant general capability or permission", "upgrade C/E/V automatically", "claim reproducibility or fact formation without evidence and verification"],
+        "current_effect": "one_bounded_DBOS_EXP_0001_execution"
+      },
+      "status": "expired",
+      "experiment_id": "DBOS-EXP-0001",
+      "created_at": "2026-07-20T00:54:29+08:00",
+      "decision_at": "2026-07-20T10:29:46+08:00",
+      "amendment_refs": ["evidence/experiments/DBOS-EXP-0001/authorization/execution-authorization-v2.json"],
+      "limitations": ["consumed by failed attempt 0001", "no runtime creation", "no Agent or Digital Organism", "no general capability or permission", "authorization evidence: evidence/experiments/DBOS-EXP-0001/authorization/execution-authorization.json"],
+      "expires_at": "2026-07-20T10:36:49+08:00",
+      "terminal_evidence_ref": "evidence/experiments/DBOS-EXP-0001/run-0001/experiment-result.json"
+    },
+    {
+      "authorization_id": "DBOS-EXP-0001-AUTH-0002",
+      "authorized_by": "explicit_user_goal:DBOS-EXP-0001-COMPLETE-EXECUTION-CHAIN",
+      "scope": {
+        "experiment_id": "DBOS-EXP-0001",
+        "requested_future_actions": ["execute the eight registered steps once using the successor frozen validator manifest", "write experiment-scoped context, event, integrity, attestation, evidence, and verification records"],
+        "forbidden": ["create an Agent", "create a Runtime", "create a Digital Organism", "modify member repositories", "grant general capability or permission", "upgrade C/E/V automatically", "modify failed-attempt history"],
+        "current_effect": "one_bounded_DBOS_EXP_0001_retry"
+      },
+      "status": "expired",
+      "experiment_id": "DBOS-EXP-0001",
+      "created_at": "2026-07-20T10:47:27+08:00",
+      "decision_at": "2026-07-20T10:47:27+08:00",
+      "amendment_refs": ["evidence/experiments/DBOS-EXP-0001/authorization/execution-authorization-v3.json"],
+      "limitations": ["one deterministic local retry", "first failure remains append-only", "no Runtime, Agent, or Digital Organism", "no general capability or permission", "no C/E/V promotion"],
+      "expires_at": "2026-07-20T10:50:17+08:00",
+      "terminal_evidence_ref": "evidence/experiments/DBOS-EXP-0001/run-0002/experiment-result.json"
+    }
+  ]
+}

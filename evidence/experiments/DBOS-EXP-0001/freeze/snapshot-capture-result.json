@@ -1,0 +1,10 @@
+{
+  "archive_digest": "sha256:7e6ffcd2b07c0d6d5583d8a2fd98e44b8c85400468b4f49aefb65bd9e2542959",
+  "archive_size": 2211840,
+  "captured_at": "2026-07-20T10:20:17+08:00",
+  "file_count": 164,
+  "snapshot_manifest_digest": "sha256:7da44b98180799e9c56082340c8dfe40eb2fd41a24ce85cf1c5a69081def31df",
+  "status": "PASS",
+  "validator_count": 29,
+  "validator_manifest_digest": "sha256:7fd507f1b7acefc9afc42874cfe8bce93a9d931fc48b2c81477f8a93ba39016e"
+}

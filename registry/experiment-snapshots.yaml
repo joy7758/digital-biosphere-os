@@ -1,0 +1,47 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereExperimentSnapshotRegistry",
+  "metadata": {
+    "title": "Experiment Readiness Snapshots v0.1",
+    "status": "one_frozen_retained_snapshot",
+    "constitution": "../constitution/experiment-readiness-constitution.yaml",
+    "experiment_source_of_truth": "experiments.yaml",
+    "generated_at": "2026-07-20T01:21:56+08:00",
+    "snapshot_count": 1,
+    "snapshot_status_distribution": {"pending": 0, "frozen": 1, "ready": 0, "invalid": 0, "revoked": 0},
+    "frozen_snapshot_count": 1,
+    "ready_snapshot_count": 0,
+    "execution_count": 0,
+    "event_created_count": 0,
+    "permission_grant_count": 0,
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "The pending record is a snapshot slot, not a captured or immutable snapshot.",
+      "Null hashes cannot support frozen or ready status and cannot prove repository state, reproducibility, or fact formation."
+    ]
+  },
+  "snapshot_record_schema": {
+    "required_fields": ["snapshot_id", "experiment_id", "file_tree_hash", "config_hash", "dependency_hash", "environment_hash", "freeze_reference", "capture_reference", "status"],
+    "additional_governance_fields": ["captured_at", "retained_material_refs", "freeze_evidence_ref", "supersedes", "revocation_ref"],
+    "digest_format": "sha256:<64 lowercase hexadecimal characters>",
+    "valid_statuses": ["pending", "frozen", "ready", "invalid", "revoked"],
+    "default_status": "pending",
+    "freeze_boundary": "frozen or ready requires every digest, captured_at, retained material, and freeze evidence; mutation requires a new snapshot_id."
+  },
+  "experiment_snapshots": [
+    {
+      "snapshot_id": "DBOS-EXP-0001-SNAPSHOT-0001",
+      "experiment_id": "DBOS-EXP-0001",
+      "file_tree_hash": "sha256:7e6ffcd2b07c0d6d5583d8a2fd98e44b8c85400468b4f49aefb65bd9e2542959",
+      "config_hash": "sha256:7276c57d41cc26c7f770503d14a91a2236e477cc76e29b5ea82e5e2f693a446c",
+      "dependency_hash": "sha256:9508f8fe16370ac86859476c13f350ed995b73feac430b5e8ae88a4c8c1191e2",
+      "environment_hash": "sha256:898ee48c12e7c9c49323c49cff42795b13f4fe67d9f63341590d6b51f191f81e",
+      "freeze_reference": "DBOS-EXP-0001-FREEZE-0001",
+      "capture_reference": "DBOS-EXP-0001-CAPTURE-0001",
+      "status": "frozen",
+      "captured_at": "2026-07-20T10:20:17+08:00",
+      "retained_material_refs": ["evidence/experiments/DBOS-EXP-0001/freeze/dbos-input-snapshot.tar", "evidence/experiments/DBOS-EXP-0001/freeze/snapshot-manifest.json", "evidence/experiments/DBOS-EXP-0001/freeze/validator-manifest.json"],
+      "freeze_evidence_ref": "evidence/experiments/DBOS-EXP-0001/freeze/freeze-certificate.json"
+    }
+  ]
+}

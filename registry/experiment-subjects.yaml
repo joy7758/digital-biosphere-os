@@ -1,0 +1,51 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereExperimentSubjectRegistry",
+  "metadata": {
+    "title": "Experiment Subjects v0.1",
+    "status": "one_bounded_governance_system_subject_identity_verified",
+    "constitution": "../constitution/experiment-readiness-constitution.yaml",
+    "identity_constitution": "../constitution/identity-constitution.yaml",
+    "experiment_source_of_truth": "experiments.yaml",
+    "canonical_entity_source_of_truth": "entities.yaml",
+    "generated_at": "2026-07-20T01:21:56+08:00",
+    "subject_count": 1,
+    "subject_type_distribution": {"governance_system": 1, "agent": 0, "runtime": 0, "organism": 0},
+    "identity_status_distribution": {"registered_pending_verification": 0, "verified": 1, "invalid": 0, "revoked": 0},
+    "canonical_entity_registration_count": 0,
+    "agent_created_count": 0,
+    "runtime_created_count": 0,
+    "organism_created_count": 0,
+    "permission_grant_count": 0,
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "The registry identifies digital-biosphere-os only as the bounded governance_system subject of DBOS-EXP-0001.",
+      "Experiment-subject registration does not silently add digital-biosphere-os to registry/entities.yaml and does not create an Agent, runtime, or organism.",
+      "registered_pending_verification is not verified identity, readiness, authorization, execution, or fact formation."
+    ]
+  },
+  "subject_record_schema": {
+    "required_fields": ["subject_id", "entity_id", "entity_type", "identity_status", "evidence_ref"],
+    "valid_entity_types": ["governance_system", "repository", "protocol", "service", "artifact"],
+    "prohibited_experiment_subject_types_in_v0_1": ["agent", "runtime", "organism"],
+    "valid_identity_statuses": ["registered_pending_verification", "verified", "invalid", "revoked"],
+    "readiness_boundary": "Only verified identity plus all independent readiness criteria may support a future ready assessment; subject registration alone has no execution effect."
+  },
+  "experiment_subjects": [
+    {
+      "subject_id": "DBOS-SUBJECT-0001",
+      "entity_id": "digital-biosphere-os",
+      "entity_type": "governance_system",
+      "identity_status": "verified",
+      "evidence_ref": "evidence/experiments/DBOS-EXP-0001/identity/subject-identity-evidence.json",
+      "verified_at": "2026-07-20T10:05:25+08:00",
+      "verified_by": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "experiment_refs": ["DBOS-EXP-0001"],
+      "canonical_entity_status": "not_registered",
+      "agent_status": "not_an_agent",
+      "runtime_status": "not_a_runtime",
+      "organism_status": "not_an_organism",
+      "authority_effect": "none"
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereGovernanceTransitionRegistry",
+  "metadata": {
+    "title": "Governance Archetype Transitions v0.1",
+    "status": "definitions_only_no_executed_transition",
+    "constitution": "../constitution/governance-archetype-constitution.yaml",
+    "archetype_source_of_truth": "governance-archetypes.yaml",
+    "generated_at": "2026-07-19T23:13:05+08:00",
+    "transition_definition_count": 1,
+    "executed_transition_count": 0,
+    "automatic_transition_count": 0,
+    "identity_change_count": 0,
+    "capability_effect_count": 0,
+    "permission_effect_count": 0,
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "A transition definition is a future admissibility rule, not an actual governance change.",
+      "No entity or scope is attached to a transition in the v0.1 baseline."
+    ]
+  },
+  "transition_record_schema": {
+    "required_fields": ["transition_id", "from", "to", "trigger", "requirements"],
+    "transition_id_format": "dbio://governance-transition/<from>-to-<to>/v<version>",
+    "valid_statuses": ["defined_not_executed", "proposed", "approved", "executed", "rejected", "revoked"],
+    "execution_requirements": [
+      "subject_entity_or_scope",
+      "evidence_refs",
+      "verification_ref",
+      "decision_authority",
+      "identity_continuity_ref",
+      "rollback_plan",
+      "evolution_record",
+      "timestamp"
+    ],
+    "authority_boundary": "A transition cannot execute from a definition alone and cannot grant capability or permission."
+  },
+  "transition_definitions": [
+    {
+      "transition_id": "dbio://governance-transition/federation-to-ecology/v0.1",
+      "from": "dbio://governance-archetype/federation/v0.1",
+      "to": "dbio://governance-archetype/ecology/v0.1",
+      "trigger": ["sufficient_evidence", "stable_interaction", "verified_runtime"],
+      "requirements": [
+        "subject_entity_or_scope",
+        "evidence_refs",
+        "verification_ref",
+        "decision_authority",
+        "identity_continuity_ref",
+        "rollback_plan",
+        "evolution_record",
+        "timestamp"
+      ],
+      "status": "defined_not_executed",
+      "authority_effect": "none"
+    }
+  ],
+  "executed_transitions": []
+}

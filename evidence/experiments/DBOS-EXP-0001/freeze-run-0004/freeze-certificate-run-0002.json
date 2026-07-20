@@ -1,0 +1,40 @@
+{
+  "schema_version": "0.1",
+  "kind": "DBOSExperimentSuccessorFreezeCertificate",
+  "certificate_id": "DBOS-EXP-0001-FREEZE-CERT-0002",
+  "experiment_id": "DBOS-EXP-0001",
+  "freeze_manifest": "DBOS-EXP-0001-FREEZE-0002",
+  "snapshot_id": "DBOS-EXP-0001-SNAPSHOT-0001",
+  "snapshot_archive": {
+    "path": "evidence/experiments/DBOS-EXP-0001/freeze-run-0004/dbos-input-snapshot.tar",
+    "digest": "sha256:7e6ffcd2b07c0d6d5583d8a2fd98e44b8c85400468b4f49aefb65bd9e2542959",
+    "size": 2211840
+  },
+  "snapshot_manifest": {
+    "path": "evidence/experiments/DBOS-EXP-0001/freeze-run-0004/snapshot-manifest.json",
+    "digest": "sha256:7da44b98180799e9c56082340c8dfe40eb2fd41a24ce85cf1c5a69081def31df",
+    "size": 29350
+  },
+  "validator_manifest": {
+    "path": "evidence/experiments/DBOS-EXP-0001/freeze-run-0004/validator-manifest.json",
+    "digest": "sha256:eaf15f54b80bba9ff2062e0f06de57fe42e6eb46c4fbb13e8d5a29c51fcbbf89",
+    "size": 7213,
+    "validator_count": 29,
+    "validator_override_count": 3
+  },
+  "environment_lock_ref": "DBOS-EXP-0001-ENV-LOCK-0001",
+  "preflight_ref": "evidence/experiments/DBOS-EXP-0001/preflight-run-0007/preflight-results.json",
+  "preflight_digest": "sha256:4a315f3c997661a7508bab729355c94437cacc73df5dcc235cd596f42fe92b27",
+  "preflight_result": "PASS",
+  "preflight_pass_count": 29,
+  "issued_at": "2026-07-20T10:47:27+08:00",
+  "issuer": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+  "status": "issued",
+  "limitations": [
+    "local non-independent freeze certificate",
+    "the original archive bytes are retained and unchanged",
+    "the successor validator manifest replaces three relocation-dependent validator entries only",
+    "no execution authority, capability, permission, or C/E/V effect"
+  ],
+  "authority_effect": "none"
+}

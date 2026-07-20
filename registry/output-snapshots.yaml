@@ -1,0 +1,38 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereOutputSnapshotRegistry",
+  "metadata": {
+    "title": "Execution Output Snapshots v0.1",
+    "status": "one_retained_output_snapshot",
+    "constitution": "../constitution/execution-context-constitution.yaml",
+    "context_source_of_truth": "execution-contexts.yaml",
+    "generated_at": "2026-07-20T00:24:33+08:00",
+    "output_snapshot_count": 1,
+    "content_material_retained_count": 1,
+    "evidence_created_count": 1,
+    "permission_grant_count": 0,
+    "capability_effect_count": 0,
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "The registry contains no output snapshot in the v0.1 baseline.",
+      "A snapshot reference or hash does not prove successful execution, correctness, causal effect, production truth, or business outcome."
+    ]
+  },
+  "output_snapshot_record_schema": {
+    "required_fields": ["snapshot_id", "context_id", "output_ref", "hash", "timestamp"],
+    "snapshot_id_format": "dbio:snapshot:output:<context_id>:<sequence>",
+    "hash_format": "sha256:<64 lowercase hexadecimal characters>",
+    "timestamp_semantics": "timezone-aware snapshot capture time, distinct from event occurrence or execution time",
+    "immutability_rule": "Corrections, invalidations, revocations, and supersession are additive; original snapshot identity and hash remain discoverable."
+  },
+  "output_snapshots": [
+    {
+      "snapshot_id": "dbio:snapshot:output:dbio:execution-context:digital-biosphere-os:0001:0001",
+      "context_id": "dbio:execution-context:digital-biosphere-os:0001",
+      "output_ref": "evidence/experiments/DBOS-EXP-0001/run-0002/validator-results.json",
+      "hash": "sha256:472ddeee4d7caf6fcba281829d2b3624fbba3cc334f963ae3e4839e21a564d2d",
+      "timestamp": "2026-07-20T10:50:17+08:00",
+      "evidence_ref": "evidence/experiments/DBOS-EXP-0001/run-0002/output-snapshot.json#sha256:0d9d6015d4f4b0b34cae4d133c900ce64f87c28a37fcc578e047205736dc4762"
+    }
+  ]
+}

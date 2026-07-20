@@ -1,0 +1,102 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereCapabilityMaturityRegistry",
+  "metadata": {
+    "title": "Capability Maturity Model v0.1",
+    "status": "local_maturity_baseline",
+    "constitution": "../constitution/capability-verification-constitution.yaml",
+    "claim_registry": "capability-claims.yaml",
+    "review_registry": "capability-reviews.yaml",
+    "evidence_type_registry": "evidence-types.yaml",
+    "evidence_registry": "capability-evidence.yaml",
+    "generated_at": "2026-07-19T19:47:05+08:00",
+    "serialization": "JSON-compatible YAML 1.2",
+    "distribution_unit": "capability_claim",
+    "invariant": "Maturity != Permission"
+  },
+  "levels": [
+    {
+      "level": "C0",
+      "name": "Unknown",
+      "definition": "No registered capability claim exists, or a candidate cannot yet be attributed to one entity.",
+      "entry_requirements": []
+    },
+    {
+      "level": "C1",
+      "name": "Claimed",
+      "definition": "A traceable claim exists, but type, scope, environment, side effects, or evidence sufficiency may remain unresolved.",
+      "entry_requirements": [
+        "unique claim_id",
+        "existing entity reference",
+        "capability candidate statement",
+        "at least one existing evidence source",
+        "status=pending"
+      ]
+    },
+    {
+      "level": "C2",
+      "name": "Evidenced",
+      "definition": "Claim-specific evidence has been assessed for relevance, integrity, version, scope, environment, and side effects; no approval is implied.",
+      "entry_requirements": [
+        "C1 requirements",
+        "resolved capability_type",
+        "resolved scope",
+        "resolved environment",
+        "resolved side_effect",
+        "documented evidence sufficiency assessment"
+      ]
+    },
+    {
+      "level": "C3",
+      "name": "Verified",
+      "definition": "An attributable reviewer has approved the bounded, evidenced claim with recorded limitations.",
+      "entry_requirements": [
+        "C2 requirements",
+        "approved review record",
+        "verification_review_id referencing that review"
+      ]
+    },
+    {
+      "level": "C4",
+      "name": "Governed",
+      "definition": "A verified claim is covered by explicit policy, risk controls, monitoring, evidence retention, and revocation controls.",
+      "entry_requirements": [
+        "C3 requirements",
+        "governance_evidence",
+        "revocation mechanism",
+        "separate permission decision when exercise is requested"
+      ]
+    },
+    {
+      "level": "C5",
+      "name": "Autonomous",
+      "definition": "A governed capability has narrowly scoped, explicitly authorized autonomous exercise with runtime enforcement and revocation evidence.",
+      "entry_requirements": [
+        "C4 requirements",
+        "explicit autonomy_authorization",
+        "runtime enforcement evidence",
+        "bounded environment and expiry",
+        "tested revocation or containment path"
+      ]
+    }
+  ],
+  "transition_rules": [
+    "Levels are sequential and cannot be skipped.",
+    "No approved review means a claim cannot enter C3.",
+    "C2 requires at least assessed E2 evidence; C3 requires E2 plus an approved review.",
+    "C4 requires at least E3 evidence plus governance and revocation controls.",
+    "C5 requires E5 evidence plus explicit autonomy authorization and runtime enforcement.",
+    "No C3 verification record means a claim cannot enter C4.",
+    "No C4 governance record means a claim cannot enter C5.",
+    "Revocation preserves history and removes current reliance.",
+    "No level grants permission, capability assignment, deployment, release, or external-action authority automatically."
+  ],
+  "current_distribution": {
+    "C0": 0,
+    "C1": 78,
+    "C2": 0,
+    "C3": 0,
+    "C4": 0,
+    "C5": 0
+  }
+}

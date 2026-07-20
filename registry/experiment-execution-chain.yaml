@@ -1,0 +1,46 @@
+{
+  "schema_version": "0.1",
+  "kind": "DBOSExperimentExecutionChainRegistry",
+  "metadata": {
+    "title": "DBOS-EXP-0001 Complete Execution Chain",
+    "status": "completed_verified_local_structural",
+    "experiment_id": "DBOS-EXP-0001",
+    "fail_closed": true,
+    "agent_count": 0,
+    "runtime_count": 0,
+    "digital_organism_count": 0,
+    "capability_assignment_count": 0,
+    "permission_grant_count": 0,
+    "c_e_v_level_change_count": 0,
+    "serialization": "JSON-compatible YAML 1.2"
+  },
+  "phases": [
+    {
+      "phase": 0,
+      "name": "current_state_audit",
+      "status": "PASS",
+      "completed_at": "2026-07-20T09:52:52+08:00",
+      "evidence_refs": ["reports/DBOS-EXP-0001-CURRENT_STATE_REPORT.md"]
+    },
+    {
+      "phase": 1,
+      "name": "environment_trust_chain",
+      "status": "PASS",
+      "completed_at": "2026-07-20T10:16:52+08:00",
+      "evidence_refs": [
+        "evidence/experiments/DBOS-EXP-0001/environment/environment-observation.json",
+        "evidence/experiments/DBOS-EXP-0001/environment/environment-verification.json",
+        "registry/environment-qualifications.yaml",
+        "registry/environment-locks.yaml"
+      ]
+    },
+    {"phase": 2, "name": "experiment_freeze_chain", "status": "PASS", "completed_at": "2026-07-20T10:47:27+08:00", "evidence_refs": ["evidence/experiments/DBOS-EXP-0001/freeze/dbos-input-snapshot.tar", "evidence/experiments/DBOS-EXP-0001/freeze/snapshot-manifest.json", "evidence/experiments/DBOS-EXP-0001/freeze/validator-manifest.json", "evidence/experiments/DBOS-EXP-0001/freeze/freeze-certificate.json", "evidence/experiments/DBOS-EXP-0001/freeze-run-0004/validator-manifest.json", "evidence/experiments/DBOS-EXP-0001/freeze-run-0004/freeze-certificate-run-0002.json"]},
+    {"phase": 3, "name": "deterministic_runner", "status": "PASS", "completed_at": "2026-07-20T10:43:30+08:00", "evidence_refs": ["evidence/experiments/DBOS-EXP-0001/runner/runner-qualification.json", "evidence/experiments/DBOS-EXP-0001/runner/runner-qualification-supplement-0001.json", "evidence/experiments/DBOS-EXP-0001/runner/runner-qualification-supplement-0002.json", "evidence/experiments/DBOS-EXP-0001/preflight-run-0007/preflight-results.json", "registry/executor-identities.yaml", "registry/executor-verifications.yaml", "registry/executors.yaml", "registry/executor-scopes.yaml", "registry/runners.yaml", "registry/runner-scopes.yaml"]},
+    {"phase": 4, "name": "execution_authorization", "status": "PASS", "completed_at": "2026-07-20T10:47:27+08:00", "evidence_refs": ["evidence/experiments/DBOS-EXP-0001/authorization/execution-authorization.json", "evidence/experiments/DBOS-EXP-0001/authorization/execution-authorization-v2.json", "evidence/experiments/DBOS-EXP-0001/authorization/execution-authorization-v3.json", "evidence/experiments/DBOS-EXP-0001/authorization/authorization-gate-verification.json", "registry/experiment-authorizations.yaml", "registry/executor-authorizations.yaml", "registry/readiness-reviews.yaml"]},
+    {"phase": 5, "name": "experiment_execution", "status": "PASS", "completed_at": "2026-07-20T10:50:17+08:00", "evidence_refs": ["evidence/experiments/DBOS-EXP-0001/run-0001/experiment-result.json", "evidence/experiments/DBOS-EXP-0001/run-0002/execution-context.json", "evidence/experiments/DBOS-EXP-0001/run-0002/event-record.json", "evidence/experiments/DBOS-EXP-0001/run-0002/event-integrity.json", "evidence/experiments/DBOS-EXP-0001/run-0002/event-attestation.json", "evidence/experiments/DBOS-EXP-0001/run-0002/evidence-bundle.json", "evidence/experiments/DBOS-EXP-0001/run-0002/verification-result.json", "evidence/experiments/DBOS-EXP-0001/run-0002/experiment-result.json"]},
+    {"phase": 6, "name": "final_report_and_audit", "status": "PASS", "completed_at": "2026-07-20T11:05:52+08:00", "evidence_refs": ["evidence/experiments/DBOS-EXP-0001/audit/final-validator-audit.json", "reports/DBOS-EXP-0001-FINAL-REPORT.md", "validation/execution_chain_validator.py"]}
+  ],
+  "current_gate": null,
+  "completed_at": "2026-07-20T11:05:52+08:00",
+  "authority_effect": "none"
+}

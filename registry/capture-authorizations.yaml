@@ -1,0 +1,46 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereCaptureAuthorizationRegistry",
+  "metadata": {
+    "title": "Snapshot Capture Authorizations v0.1",
+    "status": "one_bounded_capture_authorization_completed",
+    "constitution": "../constitution/snapshot-capture-readiness-constitution.yaml",
+    "experiment_source_of_truth": "experiments.yaml",
+    "collector_source_of_truth": "capture-collectors.yaml",
+    "scope_source_of_truth": "capture-scopes.yaml",
+    "generated_at": "2026-07-20T02:00:37+08:00",
+    "capture_authorization_count": 1,
+    "authorization_status_distribution": {"pending": 0, "authorized": 1, "denied": 0, "expired": 0, "revoked": 0},
+    "active_capture_authorization_count": 1,
+    "capture_execution_authority_count": 1,
+    "experiment_execution_authority_count": 0,
+    "permission_grant_count": 0,
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "The pending record has collector_id=null and authorized_by=null and grants no capture, read, hash, repository, execution, capability, or permission authority.",
+      "A future bounded capture authorization cannot authorize experiment execution or member-repository access."
+    ]
+  },
+  "capture_authorization_schema": {
+    "required_fields": ["authorization_id", "experiment_id", "collector_id", "scope_ref", "authorized_by", "status"],
+    "additional_governance_fields": ["decision_at", "expires_at", "limitations", "revocation_ref", "current_effect"],
+    "valid_statuses": ["pending", "authorized", "denied", "expired", "revoked"],
+    "default_status": "pending",
+    "pending_boundary": "pending requires collector_id=null, authorized_by=null, decision_at=null, and current_effect=none."
+  },
+  "capture_authorizations": [
+    {
+      "authorization_id": "DBOS-EXP-0001-CAPTURE-AUTH-0001",
+      "experiment_id": "DBOS-EXP-0001",
+      "collector_id": "dbio:capture-collector:automated:dbos-snapshot:v0.1",
+      "scope_ref": "DBOS-EXP-0001-CAPTURE-SCOPE-0001",
+      "authorized_by": "explicit_user_goal:DBOS-EXP-0001-COMPLETE-EXECUTION-CHAIN",
+      "status": "authorized",
+      "decision_at": "2026-07-20T10:20:17+08:00",
+      "expires_at": null,
+      "limitations": ["one DBOS-EXP-0001 local capture only", "no event", "no runtime or Agent", "no member-repository access", "no C/E/V promotion"],
+      "revocation_ref": null,
+      "current_effect": "bounded_completed_snapshot_capture_only"
+    }
+  ]
+}

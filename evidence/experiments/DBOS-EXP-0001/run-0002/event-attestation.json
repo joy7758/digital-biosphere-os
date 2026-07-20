@@ -1,0 +1,16 @@
+{
+  "attestation_id": "dbio:attestation:DBOS-EXP-0001:0001",
+  "attestation_method": "automated_attestation",
+  "claim": "The retained frozen DBOS validator suite completed with every declared validator returning exit status 0.",
+  "event_id": "dbio:event:digital-biosphere-os:DBOS-EXP-0001:0001",
+  "limitations": [
+    "content-digest attestation, not a private-key digital signature",
+    "producer is not independent",
+    "signature does not replace source evidence"
+  ],
+  "producer_id": "dbio:event-producer:dbos-self-validation-runner:v0.1",
+  "signature_ref": "digest-attestation:sha256:48149377065de750bc6bcb1f92f61c091ea5b66bebd124beb28701fff6aa49ce",
+  "status": "attested",
+  "timestamp": "2026-07-20T10:50:17+08:00",
+  "trust_effect": "none"
+}

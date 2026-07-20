@@ -1,0 +1,36 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereGovernanceClaimRegistry",
+  "metadata": {
+    "title": "Governance Claims v0.1",
+    "status": "empty_pending_claim_baseline",
+    "constitution": "../constitution/governance-evidence-constitution.yaml",
+    "entity_source_of_truth": "entities.yaml",
+    "archetype_source_of_truth": "governance-archetypes.yaml",
+    "evidence_source_of_truth": "governance-evidence.yaml",
+    "maturity_source_of_truth": "governance-maturity.yaml",
+    "generated_at": "2026-07-19T23:31:39+08:00",
+    "claim_count": 0,
+    "pending_claim_count": 0,
+    "approved_claim_count": 0,
+    "binding_effect_count": 0,
+    "governance_authority_grant_count": 0,
+    "capability_effect_count": 0,
+    "permission_effect_count": 0,
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "The v0.1 registry contains no governance claim because no current entity has submitted one.",
+      "A claim cannot approve or bind its claimed archetype and cannot alter entity state or relationships."
+    ]
+  },
+  "claim_record_schema": {
+    "required_fields": ["claim_id", "entity_id", "claimed_archetype", "scope", "status", "evidence_refs", "governance_maturity"],
+    "claim_id_format": "dbio:governance-claim:<entity_id>:<sequence>",
+    "valid_statuses": ["pending", "evidenced", "verified", "adaptive", "ecological", "rejected", "withdrawn", "revoked"],
+    "valid_maturity_levels": ["G0", "G1", "G2", "G3", "G4", "G5"],
+    "default_status": "pending",
+    "default_maturity": "G1",
+    "approval_boundary": "Claim submission and maturity eligibility do not create a governance binding or grant governance authority."
+  },
+  "governance_claims": []
+}

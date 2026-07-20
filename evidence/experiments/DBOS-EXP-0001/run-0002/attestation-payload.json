@@ -1,0 +1,8 @@
+{
+  "claim": "The retained frozen DBOS validator suite completed with every declared validator returning exit status 0.",
+  "event_digest": "sha256:52fe5ffbb30fb7c4afbcd83f9a4b89da16aa1d238cbfe9c42dc6218a2c3fba1c",
+  "event_id": "dbio:event:digital-biosphere-os:DBOS-EXP-0001:0001",
+  "execution_id": "dbio:runner-execution:dbos-self-validation:DBOS-EXP-0001:0002",
+  "integrity_digest": "sha256:fb4d593199a470d0eda0e1b04c4b9c8e9f2f8cf8d9eda06f7481ab9132986e0e",
+  "producer_id": "dbio:event-producer:dbos-self-validation-runner:v0.1"
+}

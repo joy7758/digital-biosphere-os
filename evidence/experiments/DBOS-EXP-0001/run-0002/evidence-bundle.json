@@ -1,0 +1,66 @@
+{
+  "agent_count": 0,
+  "artifact_count": 10,
+  "artifacts": [
+    {
+      "artifact": "attestation-payload.json",
+      "digest": "sha256:48149377065de750bc6bcb1f92f61c091ea5b66bebd124beb28701fff6aa49ce",
+      "size": 537
+    },
+    {
+      "artifact": "auxiliary-input-manifest.json",
+      "digest": "sha256:17b2add3326b9e79cc1675c8111a86131764300f0326f6bb9a28304be70f0e5e",
+      "size": 2558
+    },
+    {
+      "artifact": "event-attestation.json",
+      "digest": "sha256:10a7556520ba7b744d2f7297d540ff9d052a71d745a94f3134b63c9a29f4e784",
+      "size": 758
+    },
+    {
+      "artifact": "event-integrity.json",
+      "digest": "sha256:fb4d593199a470d0eda0e1b04c4b9c8e9f2f8cf8d9eda06f7481ab9132986e0e",
+      "size": 824
+    },
+    {
+      "artifact": "event-producer.json",
+      "digest": "sha256:5f7a368c6bcb09b5ecb041a6391793b6f8e03baac71a2b1c664f71cbe7149d10",
+      "size": 359
+    },
+    {
+      "artifact": "event-record.json",
+      "digest": "sha256:52fe5ffbb30fb7c4afbcd83f9a4b89da16aa1d238cbfe9c42dc6218a2c3fba1c",
+      "size": 985
+    },
+    {
+      "artifact": "execution-context.json",
+      "digest": "sha256:31d22b4a895f4b0967273fd132068c3f48dcae659afe7e4fc554f04c60dea2f4",
+      "size": 1066
+    },
+    {
+      "artifact": "input-snapshot.json",
+      "digest": "sha256:741e31c41c9e89891f7bf98e2957e031713c132c4bc61e2f9295d2550710dc47",
+      "size": 387
+    },
+    {
+      "artifact": "output-snapshot.json",
+      "digest": "sha256:0d9d6015d4f4b0b34cae4d133c900ce64f87c28a37fcc578e047205736dc4762",
+      "size": 337
+    },
+    {
+      "artifact": "validator-results.json",
+      "digest": "sha256:472ddeee4d7caf6fcba281829d2b3624fbba3cc334f963ae3e4839e21a564d2d",
+      "size": 32965
+    }
+  ],
+  "c_e_v_level_change_count": 0,
+  "capability_assignment_count": 0,
+  "created_at": "2026-07-20T10:50:17+08:00",
+  "digital_organism_count": 0,
+  "execution_id": "dbio:runner-execution:dbos-self-validation:DBOS-EXP-0001:0002",
+  "experiment_id": "DBOS-EXP-0001",
+  "kind": "DBOSExperimentEvidenceBundle",
+  "permission_grant_count": 0,
+  "runtime_count": 0,
+  "schema_version": "0.1"
+}

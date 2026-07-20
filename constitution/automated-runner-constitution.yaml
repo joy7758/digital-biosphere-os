@@ -1,0 +1,141 @@
+schema_version: "0.1"
+kind: "DigitalBiosphereAutomatedExperimentRunnerConstitution"
+metadata:
+  title: "Automated Experiment Runner Constitution v0.1"
+  chinese_title: "自动实验执行器宪法 v0.1"
+  status: "runner_model_defined_no_runner_or_execution"
+  parent_constitution: "constitution.yaml"
+  experimental_protocol_reference: "experimental-protocol-constitution.yaml"
+  experiment_readiness_reference: "experiment-readiness-constitution.yaml"
+  executor_reference: "executor-constitution.yaml"
+  executor_identity_reference: "executor-identity-constitution.yaml"
+  execution_context_reference: "execution-context-constitution.yaml"
+  event_reference: "event-constitution.yaml"
+  attestation_reference: "event-attestation-constitution.yaml"
+  authority: "deterministic_runner_structure_and_validation_only"
+  effective_scope:
+    - "/Users/zhangbin/GitHub/digital-biosphere-os"
+  adopted_at: "2026-07-20T08:50:38+08:00"
+  non_claims:
+    - "This constitution does not register a Runner, authorize or execute DBOS-EXP-0001, generate an Event, capture a Snapshot, create a Runtime, or produce execution evidence."
+    - "Runner != Agent; Runner != Runtime; Runner != Candidate Organism; Runner != Digital Organism."
+    - "Runner Definition != Runner Registration != Runner Readiness != Execution Authorization != Experiment Execution."
+
+runner_definition:
+  definition: "An Automated Experiment Runner is a deterministic, versioned, evidence-producing implementation of a separately enrolled and appointed automated Executor, limited to registered experiments, approved steps, frozen inputs, and one qualified environment."
+  runner_type: "automated_runner"
+  execution_mode: "deterministic"
+  identity_requirements:
+    - "identity_ref resolves to a verified automated Executor Identity"
+    - "executor_ref resolves to a separately appointed automated_runner Executor"
+    - "runner version and implementation digest are explicit before readiness"
+    - "Runner identity cannot be inferred from a validator, command, script, repository, service, process, or tool name"
+  separation_rules:
+    - "Runner != Agent."
+    - "Runner != Runtime."
+    - "Runner != Organism."
+    - "Runner Identity != Executor Identity != Runtime Identity."
+    - "Runner Registration != Executor Appointment."
+    - "Runner Scope != Executor Scope != Permission."
+  current_runner_count: 0
+  current_status: "missing"
+
+deterministic_execution:
+  principle: "For one authorized execution, identical frozen inputs, runner version, ordered procedure, configuration, dependency lock, environment lock, and stop rules must select the same bounded operations without autonomous planning."
+  requirements:
+    - "experiment_id resolves to a registered experiment"
+    - "allowed_steps are an ordered subset of the registered procedure and preserve procedure order"
+    - "experiment snapshot and capture evidence are frozen and integrity-valid"
+    - "validator manifest digest equals locked_digest"
+    - "runner environment is qualified and bound to an issued environment lock"
+    - "runner, Executor, capture, and experiment authorizations are separately active"
+    - "every step has explicit inputs, expected outputs, side-effect boundary, stop conditions, and evidence requirement"
+    - "unexpected input, version, dependency, order, output, side effect, or integrity drift stops execution"
+  prohibited_nondeterminism:
+    - "dynamic step invention"
+    - "model-selected goals or branching outside registered procedure"
+    - "unrecorded retry, fallback, dependency resolution, or environment mutation"
+    - "network or external action outside explicit authorization"
+  current_execution_count: 0
+
+allowed_actions:
+  source_of_truth:
+    experiment_registry: "../registry/experiments.yaml"
+    procedure_registry: "../registry/experiment-procedures.yaml"
+    runner_scope_registry: "../registry/runner-scopes.yaml"
+  actions:
+    - "load frozen registered experiment inputs"
+    - "evaluate fail-closed readiness preconditions"
+    - "invoke one explicitly allowed registered procedure step"
+    - "collect bounded output references and execution evidence"
+    - "stop under registered stop rules or detected drift"
+  boundary: "Allowed actions are a future maximum under separate authorization; they create no capability, permission, execution, Event, Snapshot, Runtime, or C/E/V effect."
+
+forbidden_actions:
+  mandatory:
+    - "modify_constitution"
+    - "modify_history"
+    - "create_agent"
+    - "grant_permission"
+  additional:
+    - "create_runtime"
+    - "capture_snapshot_without_capture_authorization"
+    - "generate_event_without_execution_evidence"
+    - "execute_unregistered_experiment"
+    - "execute_unapproved_step"
+    - "alter_frozen_input_or_environment"
+    - "self_authorize"
+    - "upgrade_c_e_v"
+    - "access_or_modify_member_repository"
+  precedence: "forbidden_overrides_allowed"
+
+lifecycle:
+  states:
+    - "proposed"
+    - "identity_verified"
+    - "registered"
+    - "ready"
+    - "suspended"
+    - "revoked"
+    - "retired"
+  allowed_transitions:
+    - "proposed -> identity_verified"
+    - "identity_verified -> registered"
+    - "registered -> ready"
+    - "ready -> suspended"
+    - "proposed -> revoked"
+    - "identity_verified -> revoked"
+    - "registered -> revoked"
+    - "ready -> revoked"
+    - "suspended -> revoked"
+    - "proposed -> retired"
+    - "registered -> retired"
+    - "suspended -> retired"
+    - "revoked -> retired"
+  ready_gate: "ready requires verified automated identity, appointed Executor, approved matching scopes, fixed runner version and digest, qualified locked environment, complete freeze, readiness, and all separate active authorizations."
+  automatic_transition: false
+  revocation_rule: "Revocation is append-only, stops future use, preserves prior execution and evidence records, and cannot rewrite history."
+
+current_baseline:
+  experiment_id: "DBOS-EXP-0001"
+  registered_experiment_count: 1
+  registered_procedure_step_count: 8
+  runner_count: 0
+  automated_runner_count: 0
+  runner_scope_count: 0
+  runner_environment_count: 1
+  qualified_runner_environment_count: 0
+  runner_execution_count: 0
+  runner_evidence_count: 0
+  executor_identity_count: 0
+  appointed_executor_count: 0
+  active_executor_authorization_count: 0
+  experiment_execution_count: 0
+  snapshot_hash_count: 0
+  event_count: 0
+  runtime_instance_count: 0
+  agent_created_count: 0
+  digital_organism_count: 0
+  capability_count: 0
+  permission_grant_count: 0
+  c_e_v_level_change_count: 0

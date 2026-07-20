@@ -1,0 +1,29 @@
+{
+  "schema_version": "0.1",
+  "kind": "DBOSExperimentAuthorizationGateVerification",
+  "experiment_id": "DBOS-EXP-0001",
+  "checked_at": "2026-07-20T10:31:30+08:00",
+  "preconditions": {
+    "subject_verified": "PASS",
+    "environment_verified": "PASS",
+    "freeze_completed": "PASS",
+    "runner_verified": "PASS",
+    "experiment_authorization": "PASS",
+    "executor_authorization": "PASS"
+  },
+  "method": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 python3 validation/execution_chain_validator.py --phase authorization --format json",
+    "validator_digest": "sha256:ebb432bc2bcaf740374780deea45183cb29da7f885df90fe19e8e07c531c06bc",
+    "authorization_digest": "sha256:dda42cc65364673b824face6915cd43bbb8659ec2f3c64d4c75c146920833780"
+  },
+  "result": "PASS",
+  "experiment_authorized": true,
+  "scope": "one local deterministic DBOS-EXP-0001 execution",
+  "agent_count": 0,
+  "runtime_count": 0,
+  "digital_organism_count": 0,
+  "capability_assignment_count": 0,
+  "permission_grant_count": 0,
+  "c_e_v_level_change_count": 0,
+  "limitations": ["Authorization is bounded, conditional, revocable, and not a general permission grant.", "User instruction evidence is session-attributed, not cryptographically signed."]
+}

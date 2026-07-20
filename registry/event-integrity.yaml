@@ -1,0 +1,69 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereEventIntegrityRegistry",
+  "metadata": {
+    "title": "Event Integrity Records v0.1",
+    "status": "one_verified_local_nonindependent_integrity_record",
+    "constitution": "../constitution/event-integrity-constitution.yaml",
+    "event_source_of_truth": "events.yaml",
+    "stream_source_of_truth": "event-streams.yaml",
+    "ordering_source_of_truth": "event-ordering.yaml",
+    "witness_source_of_truth": "event-witnesses.yaml",
+    "generated_at": "2026-07-19T23:54:21+08:00",
+    "integrity_schema_count": 1,
+    "integrity_record_count": 1,
+    "integrity_status_distribution": {
+      "pending": 0,
+      "structurally_valid": 0,
+      "verified": 1,
+      "invalid": 0,
+      "chain_broken": 0,
+      "revoked": 0
+    },
+    "event_created_count": 1,
+    "trust_grant_count": 0,
+    "permission_grant_count": 0,
+    "capability_effect_count": 0,
+    "c_e_v_level_change_count": 0,
+    "agent_created_count": 0,
+    "runtime_created_count": 0,
+    "organism_created_count": 0,
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "The v0.1 registry is empty because no factual event exists.",
+      "Integrity registration cannot create an event or prove occurrence by hash shape alone."
+    ]
+  },
+  "integrity_record_schema": {
+    "required_fields": ["event_id", "stream_id", "sequence", "previous_hash", "current_hash", "timestamp", "clock_source", "integrity_status"],
+    "additional_governance_fields": ["witness_refs", "check_results", "limitations", "revocation_ref"],
+    "valid_integrity_statuses": ["pending", "structurally_valid", "verified", "invalid", "chain_broken", "revoked"],
+    "hash_algorithm": "sha256",
+    "hash_format": "sha256:<64 lowercase hexadecimal characters>",
+    "genesis_previous_hash": null,
+    "sequence_origin": 1,
+    "verified_boundary": "verified requires all five completed passing checks plus required witness identity and method evidence; it does not grant trust or C/E/V promotion."
+  },
+  "event_integrity_records": [
+    {
+      "event_id": "dbio:event:digital-biosphere-os:DBOS-EXP-0001:0001",
+      "stream_id": "dbio://event-stream/digital-biosphere-os/DBOS-EXP-0001/v0.1",
+      "sequence": 1,
+      "previous_hash": null,
+      "current_hash": "sha256:52fe5ffbb30fb7c4afbcd83f9a4b89da16aa1d238cbfe9c42dc6218a2c3fba1c",
+      "timestamp": "2026-07-20T10:50:17+08:00",
+      "clock_source": "local_system_clock_timezone_aware",
+      "integrity_status": "verified",
+      "witness_refs": ["dbio://event-witness/dbos-self-validation-runner/v0.1"],
+      "check_results": {
+        "hash_validation": "PASS",
+        "sequence_validation": "PASS",
+        "source_validation": "PASS",
+        "timestamp_validation": "PASS",
+        "witness_validation": "PASS_LOCAL_NONINDEPENDENT"
+      },
+      "limitations": ["genesis stream has no previous hash", "local Runner witness is not independent"],
+      "evidence_ref": "evidence/experiments/DBOS-EXP-0001/run-0002/event-integrity.json#sha256:fb4d593199a470d0eda0e1b04c4b9c8e9f2f8cf8d9eda06f7481ab9132986e0e"
+    }
+  ]
+}

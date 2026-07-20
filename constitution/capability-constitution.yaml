@@ -1,0 +1,99 @@
+schema_version: "0.1"
+kind: "DigitalBiosphereCapabilityConstitution"
+metadata:
+  title: "Digital Biosphere Capability Constitution v0.1"
+  chinese_title: "数字主体能力宪法 v0.1"
+  status: "local_capability_governance_baseline"
+  verification_constitution: "capability-verification-constitution.yaml"
+  effective_scope:
+    - "/Users/zhangbin/GitHub/digital-biosphere-os"
+  authority: "declarative_and_validation_only"
+  adopted_at: "2026-07-19T19:39:01+08:00"
+  non_claims:
+    - "This constitution does not create an Agent."
+    - "This constitution does not assign a capability."
+    - "This constitution does not grant permission, autonomy, deployment authority, release authority, or external-action authority."
+    - "Potential capability evidence is not proof of an operational capability."
+
+capability_definition:
+  capability: "An evidence-backed, bounded description of what an identified entity can technically perform under stated conditions."
+  potential_capability_evidence: "A source statement suggesting a possible function; it remains unknown until definition, scope, risk, and evidence are reviewed."
+  permission: "A separate explicit authorization governing whether, where, when, how, and by whom a capability may be exercised."
+  exercise: "A recorded attempt or execution of a capability; existence and permission do not prove successful exercise."
+  invariant: "Capability != Permission"
+
+capability_types:
+  A_information:
+    name: "information"
+    boundary: "Read, retrieve, discover, describe, or summarize; access to a particular source still requires separate permission."
+  B_computation:
+    name: "computation"
+    boundary: "Calculate, validate, transform, compare, simulate, or reason without an authorized external side effect."
+  C_modification:
+    name: "modification"
+    boundary: "Change data, code, schemas, configuration, evidence, or state."
+  D_external_action:
+    name: "external_action"
+    boundary: "Cause an effect outside the local governed boundary."
+  E_self_evolution:
+    name: "self_evolution"
+    boundary: "Change the entity's own identity, capability set, policy, code, model, goals, lifecycle, or successor relationship."
+
+capability_inheritance:
+  default: "none"
+  rules:
+    - "Parent-child identity does not transfer capabilities."
+    - "Repository dependencies do not transfer capabilities."
+    - "Protocol implementation does not inherit protocol claims as runtime capabilities."
+    - "Package installation, MCP exposure, demo availability, or CI success does not transfer capability to an entity."
+    - "Successor identity does not inherit capabilities without a new evidence-backed record."
+
+capability_boundary:
+  requirements:
+    - "A capability must name its subject entity, operation, input boundary, output boundary, side-effect class, environment, version axis, and evidence."
+    - "A documented feature is not necessarily installed, reachable, configured, deployed, or usable."
+    - "Local, synthetic, demo, review-ready, released, deployed, externally validated, and production states remain distinct."
+    - "Capability scope cannot exceed its evidence scope."
+  unknown_default: "If subject, scope, environment, side effects, version, or evidence is unresolved, the entity-capability relationship remains unknown."
+
+dangerous_capability:
+  presumptively_dangerous_types:
+    - "modification"
+    - "external_action"
+    - "self_evolution"
+  contextual_danger:
+    - "information access involving credentials, private data, regulated data, or secrets"
+    - "computation controlling production, safety, finance, legal status, identity, or irreversible decisions"
+  requirements:
+    - "risk_level must be high or critical unless a documented assessment supports a lower level."
+    - "explicit permission is mandatory."
+    - "human approval is mandatory."
+    - "pre-execution policy decision and post-execution evidence are mandatory."
+    - "rollback or containment must be defined when technically possible."
+
+approval_requirement:
+  default: "No capability may be exercised from discovery or potential evidence alone."
+  allowed_gate:
+    - "A confirmed capability record exists."
+    - "The entity-capability relationship is explicitly verified."
+    - "A separate permission record explicitly grants the action."
+    - "Scope, environment, inputs, outputs, side effects, expiry, and approver are recorded."
+    - "Required evidence and risk controls are present."
+  restricted_gate:
+    - "Human confirmation is required for dangerous, high-risk, external, modifying, or self-evolving capabilities."
+    - "Unknown or incomplete evidence remains restricted and unassigned."
+  forbidden_gate:
+    - "Permission may not be auto-derived from capability."
+    - "Capability may not be auto-derived from entity type, repository, package, protocol, service, artifact, dependency, parent, or child."
+    - "Self-evolution without explicit constitutional approval is forbidden."
+    - "Historical evidence deletion and unrecorded external action are forbidden."
+
+current_baseline:
+  entity_count: 22
+  registered_capability_count: 0
+  assigned_capability_count: 0
+  potential_capability_evidence_count: 78
+  pending_capability_claim_count: 78
+  approved_capability_claim_count: 0
+  capability_claim_maturity: "C1"
+  default_relationship_status: "unknown"

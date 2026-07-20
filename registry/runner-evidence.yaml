@@ -1,0 +1,113 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereAutomatedRunnerEvidenceRegistry",
+  "metadata": {
+    "title": "Automated Runner Evidence v0.1",
+    "status": "six_retained_execution_evidence_records",
+    "constitution": "../constitution/automated-runner-constitution.yaml",
+    "execution_source_of_truth": "runner-executions.yaml",
+    "generated_at": "2026-07-20T08:50:38+08:00",
+    "runner_evidence_count": 6,
+    "verified_digest_count": 6,
+    "event_created_count": 1,
+    "snapshot_created_count": 2,
+    "trust_grant_count": 0,
+    "capability_effect_count": 0,
+    "permission_grant_count": 0,
+    "c_e_v_level_change_count": 0,
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "The registry is empty because no Runner execution has occurred.",
+      "A digest can bind bytes to an execution record but cannot prove execution occurrence, correctness, completeness, reproducibility, or independent verification by itself.",
+      "Runner evidence cannot automatically become an Event, capability evidence, verification decision, trust grant, permission, or C/E/V promotion."
+    ]
+  },
+  "runner_evidence_schema": {
+    "required_fields": ["evidence_id", "execution_id", "artifact", "digest", "timestamp"],
+    "additional_governance_fields": ["artifact_type", "method", "collector_ref", "limitations", "verification_status", "revocation_ref", "authority_effect"],
+    "evidence_id_format": "dbio:runner-evidence:<execution-id>:<sequence>",
+    "digest_format": "sha256:<64 lowercase hexadecimal characters>",
+    "record_boundary": "Evidence requires an existing execution, non-empty artifact reference, valid digest, attributable collection method, timezone-aware timestamp, and retained material.",
+    "authority_boundary": "Evidence records no capability, permission, execution authorization, Event authority, or C/E/V effect."
+  },
+  "runner_evidence": [
+    {
+      "evidence_id": "dbio:runner-evidence:DBOS-EXP-0001:attempt-0001:result",
+      "execution_id": "dbio:runner-execution:dbos-self-validation:DBOS-EXP-0001:0001",
+      "artifact": "evidence/experiments/DBOS-EXP-0001/run-0001/experiment-result.json",
+      "digest": "sha256:f3458bc33550207c686d4586ec1eb67cb3c2e8f45858d832d902cbc7cb850e7a",
+      "timestamp": "2026-07-20T10:36:49+08:00",
+      "artifact_type": "failed_execution_result",
+      "method": "sha256 retained file digest",
+      "collector_ref": "dbio:runner:automated:dbos-self-validation:v0.1",
+      "verification_status": "digest_verified",
+      "limitations": ["records failure, not a successful fact"],
+      "authority_effect": "none"
+    },
+    {
+      "evidence_id": "dbio:runner-evidence:DBOS-EXP-0001:attempt-0001:validators",
+      "execution_id": "dbio:runner-execution:dbos-self-validation:DBOS-EXP-0001:0001",
+      "artifact": "evidence/experiments/DBOS-EXP-0001/run-0001/validator-results.json",
+      "digest": "sha256:a4eda793cf0601a72aaef03b7889a1824abc18f34f525ea913224dd1ea6a4093",
+      "timestamp": "2026-07-20T10:36:49+08:00",
+      "artifact_type": "failed_validator_results",
+      "method": "sha256 retained file digest",
+      "collector_ref": "dbio:runner:automated:dbos-self-validation:v0.1",
+      "verification_status": "digest_verified",
+      "limitations": ["3 PASS, 1 FAIL, 25 not executed"],
+      "authority_effect": "none"
+    },
+    {
+      "evidence_id": "dbio:runner-evidence:DBOS-EXP-0001:attempt-0002:validators",
+      "execution_id": "dbio:runner-execution:dbos-self-validation:DBOS-EXP-0001:0002",
+      "artifact": "evidence/experiments/DBOS-EXP-0001/run-0002/validator-results.json",
+      "digest": "sha256:472ddeee4d7caf6fcba281829d2b3624fbba3cc334f963ae3e4839e21a564d2d",
+      "timestamp": "2026-07-20T10:50:17+08:00",
+      "artifact_type": "validator_results",
+      "method": "sha256 retained file digest",
+      "collector_ref": "dbio:runner:automated:dbos-self-validation:v0.1",
+      "verification_status": "digest_verified",
+      "limitations": ["29 local structural validator results", "not independent"],
+      "authority_effect": "none"
+    },
+    {
+      "evidence_id": "dbio:runner-evidence:DBOS-EXP-0001:attempt-0002:bundle",
+      "execution_id": "dbio:runner-execution:dbos-self-validation:DBOS-EXP-0001:0002",
+      "artifact": "evidence/experiments/DBOS-EXP-0001/run-0002/evidence-bundle.json",
+      "digest": "sha256:700c851f047ba66a32c031e771b7e968f5478d9d46d4ebd02bd9acf375d673ee",
+      "timestamp": "2026-07-20T10:50:17+08:00",
+      "artifact_type": "evidence_bundle",
+      "method": "sha256 retained file digest plus member digest verification",
+      "collector_ref": "dbio:runner:automated:dbos-self-validation:v0.1",
+      "verification_status": "digest_verified",
+      "limitations": ["local evidence bundle", "does not upgrade E level"],
+      "authority_effect": "none"
+    },
+    {
+      "evidence_id": "dbio:runner-evidence:DBOS-EXP-0001:attempt-0002:verification",
+      "execution_id": "dbio:runner-execution:dbos-self-validation:DBOS-EXP-0001:0002",
+      "artifact": "evidence/experiments/DBOS-EXP-0001/run-0002/verification-result.json",
+      "digest": "sha256:1c1c8531ae3bb9c8294ecc94b799ce3ed3bdc716d83ce108f8ec2dcf8fe09d0d",
+      "timestamp": "2026-07-20T10:50:17+08:00",
+      "artifact_type": "local_structural_verification_result",
+      "method": "sha256 retained file digest",
+      "collector_ref": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_status": "digest_verified",
+      "limitations": ["not independent", "no V-level effect"],
+      "authority_effect": "none"
+    },
+    {
+      "evidence_id": "dbio:runner-evidence:DBOS-EXP-0001:attempt-0002:result",
+      "execution_id": "dbio:runner-execution:dbos-self-validation:DBOS-EXP-0001:0002",
+      "artifact": "evidence/experiments/DBOS-EXP-0001/run-0002/experiment-result.json",
+      "digest": "sha256:d7bdb5eb4cd8f4f6cb0fc1f636ca0d5210bc8651fe90be7e16fe073b8046808e",
+      "timestamp": "2026-07-20T10:50:17+08:00",
+      "artifact_type": "completed_execution_result",
+      "method": "sha256 retained file digest",
+      "collector_ref": "dbio:runner:automated:dbos-self-validation:v0.1",
+      "verification_status": "digest_verified",
+      "limitations": ["bounded local fact only", "not production certification"],
+      "authority_effect": "none"
+    }
+  ]
+}

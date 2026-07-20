@@ -1,0 +1,57 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereExecutionContextRegistry",
+  "metadata": {
+    "title": "Event Execution Contexts v0.1",
+    "status": "one_validated_local_execution_context",
+    "constitution": "../constitution/execution-context-constitution.yaml",
+    "entity_source_of_truth": "entities.yaml",
+    "environment_source_of_truth": "environments.yaml",
+    "dependency_source_of_truth": "execution-dependencies.yaml",
+    "generated_at": "2026-07-20T00:24:33+08:00",
+    "execution_context_count": 1,
+    "context_status_distribution": {"proposed": 0, "recorded": 0, "validated": 1, "invalid": 0, "revoked": 0, "superseded": 0},
+    "reproducible_context_count": 1,
+    "event_created_count": 1,
+    "runtime_created_count": 0,
+    "agent_created_count": 0,
+    "organism_created_count": 0,
+    "capability_effect_count": 0,
+    "permission_grant_count": 0,
+    "c_e_v_level_change_count": 0,
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "The v0.1 registry is empty because no attributable event execution context has been submitted.",
+      "Context registration describes declared conditions and cannot create an execution, event, runtime, Agent, or authority."
+    ]
+  },
+  "execution_context_record_schema": {
+    "required_fields": ["context_id", "entity_id", "environment_ref", "software_version", "configuration_digest", "dependency_refs", "status"],
+    "additional_governance_fields": ["execution_method", "platform", "input_snapshot_refs", "output_snapshot_refs", "timestamp", "reproducibility", "limitations", "revocation_ref", "supersedes"],
+    "context_id_format": "dbio:execution-context:<entity_id>:<sequence>",
+    "configuration_digest_format": "sha256:<64 lowercase hexadecimal characters>",
+    "valid_statuses": ["proposed", "recorded", "validated", "invalid", "revoked", "superseded"],
+    "default_status": "proposed",
+    "dependency_ref_semantics": "Each dependency_ref is a dependency name scoped to context_id and must match exactly one execution-dependency record.",
+    "validated_boundary": "validated means declared structure and references are locally consistent; it does not prove execution, reproducibility, factual truth, independent verification, or authorization."
+  },
+  "execution_contexts": [
+    {
+      "context_id": "dbio:execution-context:digital-biosphere-os:0001",
+      "entity_id": "digital-biosphere-os",
+      "environment_ref": "dbio://runner-environment/dbos-exp-0001/local-governance-workspace/v0.1",
+      "software_version": "DBOS v0.1",
+      "configuration_digest": "sha256:dddfb9f73a3d16a652de0035d696eab5033f8b5bab4b82e1a0fce4c03edd26e7",
+      "dependency_refs": ["python_standard_library"],
+      "status": "validated",
+      "execution_method": "deterministic_frozen_validator_suite",
+      "platform": {"python": "3.14.5", "system": "Darwin", "machine": "arm64"},
+      "input_snapshot_refs": ["dbio:snapshot:input:dbio:execution-context:digital-biosphere-os:0001:0001"],
+      "output_snapshot_refs": ["dbio:snapshot:output:dbio:execution-context:digital-biosphere-os:0001:0001"],
+      "timestamp": "2026-07-20T10:50:17+08:00",
+      "reproducibility": "bounded_to_retained_snapshot_environment_and_method",
+      "limitations": ["local structural validation only", "not independent verification", "no capability or permission effect"],
+      "evidence_ref": "evidence/experiments/DBOS-EXP-0001/run-0002/execution-context.json#sha256:31d22b4a895f4b0967273fd132068c3f48dcae659afe7e4fc554f04c60dea2f4"
+    }
+  ]
+}

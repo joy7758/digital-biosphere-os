@@ -1,0 +1,103 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereExecutorIdentityBoundaryRegistry",
+  "metadata": {
+    "title": "Executor Identity Boundaries v0.1",
+    "status": "two_defined_non_authorizing_boundaries",
+    "constitution": "../constitution/executor-identity-constitution.yaml",
+    "generated_at": "2026-07-20T08:33:25+08:00",
+    "boundary_count": 2,
+    "executor_type_distribution": {"human": 1, "automated": 1},
+    "boundary_status_distribution": {"defined": 2, "superseded": 0, "revoked": 0},
+    "permission_expansion_count": 0,
+    "execution_authority_count": 0,
+    "appointed_executor_count": 0,
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "These records define enrollment ceilings for identity types; they do not bind an identity or grant an action right.",
+      "Allowed enrollment actions are administrative evidence actions only and never include experiment execution.",
+      "Forbidden actions override allowed actions; a boundary cannot expand policy, capability, permission, scope, or authorization."
+    ]
+  },
+  "executor_boundary_schema": {
+    "required_fields": ["boundary_id", "executor_type", "allowed_actions", "forbidden_actions"],
+    "additional_governance_fields": ["status", "limitations", "supersedes", "revocation_ref", "authority_effect"],
+    "valid_executor_types": ["human", "automated"],
+    "valid_statuses": ["defined", "superseded", "revoked"],
+    "default_status": "defined",
+    "mandatory_forbidden_actions": ["modify constitution", "modify historical evidence", "create agent", "grant permission"],
+    "authority_boundary": "A boundary is declarative and deny-by-default; authority_effect must remain none."
+  },
+  "allowed_action_vocabulary": [
+    "submit executor identity enrollment request",
+    "submit executor identity enrollment manifest",
+    "provide bounded identity evidence",
+    "provide versioned identity evidence",
+    "participate in identity verification",
+    "undergo bounded identity verification",
+    "request suspension or revocation",
+    "request suspension or revocation through accountable operator"
+  ],
+  "mandatory_forbidden_actions": [
+    "modify constitution",
+    "modify historical evidence",
+    "create agent",
+    "grant permission"
+  ],
+  "executor_boundaries": [
+    {
+      "boundary_id": "dbio:executor-boundary:human:v0.1",
+      "executor_type": "human",
+      "allowed_actions": [
+        "submit executor identity enrollment request",
+        "provide bounded identity evidence",
+        "participate in identity verification",
+        "request suspension or revocation"
+      ],
+      "forbidden_actions": [
+        "modify constitution",
+        "modify historical evidence",
+        "create agent",
+        "grant permission",
+        "self-verify identity",
+        "self-appoint executor",
+        "self-authorize execution",
+        "execute experiment",
+        "create runtime",
+        "generate event",
+        "capture snapshot",
+        "claim organism status"
+      ],
+      "status": "defined",
+      "limitations": ["identity enrollment administration only", "no identity bound", "no execution authority"],
+      "authority_effect": "none"
+    },
+    {
+      "boundary_id": "dbio:executor-boundary:automated:v0.1",
+      "executor_type": "automated",
+      "allowed_actions": [
+        "submit executor identity enrollment manifest",
+        "provide versioned identity evidence",
+        "undergo bounded identity verification",
+        "request suspension or revocation through accountable operator"
+      ],
+      "forbidden_actions": [
+        "modify constitution",
+        "modify historical evidence",
+        "create agent",
+        "grant permission",
+        "self-verify identity",
+        "self-appoint executor",
+        "self-authorize execution",
+        "execute experiment",
+        "create runtime",
+        "generate event",
+        "capture snapshot",
+        "claim organism status"
+      ],
+      "status": "defined",
+      "limitations": ["identity enrollment administration only", "no identity bound", "no execution authority", "accountable operator required for future enrollment"],
+      "authority_effect": "none"
+    }
+  ]
+}

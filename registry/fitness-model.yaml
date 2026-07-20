@@ -1,0 +1,82 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereEcologicalFitnessModel",
+  "metadata": {
+    "title": "SAEE Ecological Fitness Model v0.1",
+    "status": "model_definition_only",
+    "constitution": "../constitution/saee-constitution.yaml",
+    "generated_at": "2026-07-19T21:55:39+08:00",
+    "score_status": "not_calculated",
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "The model defines dimensions only and does not calculate, rank, select, approve, or retire an entity.",
+      "Fitness does not create capability, permission, runtime, Candidate Organism, or Digital Organism status."
+    ]
+  },
+  "fitness_dimensions": {
+    "reliability": {
+      "definition": "Consistency of bounded behavior and recovery under declared conditions.",
+      "required_evidence": [
+        "declared environment and observation window",
+        "attributable outcomes and failure records",
+        "recovery and limitation evidence"
+      ],
+      "score": null,
+      "status": "unknown"
+    },
+    "evidence_quality": {
+      "definition": "Relevance, integrity, provenance, completeness, independence, and freshness of evidence supporting ecological claims.",
+      "required_evidence": [
+        "claim-bound provenance",
+        "integrity and version binding",
+        "verification and limitation records"
+      ],
+      "score": null,
+      "status": "unknown"
+    },
+    "efficiency": {
+      "definition": "Bounded resource use relative to attributable ecological function and externalities.",
+      "required_evidence": [
+        "resource inputs and outputs",
+        "measurement method and baseline",
+        "externality and shared-resource accounting"
+      ],
+      "score": null,
+      "status": "unknown"
+    },
+    "adaptability": {
+      "definition": "Evidence-backed ability to improve fit under declared environmental change without violating identity, history, capability, or permission boundaries.",
+      "required_evidence": [
+        "environmental change record",
+        "versioned adaptation proposal",
+        "before-and-after evidence and limitations"
+      ],
+      "score": null,
+      "status": "unknown"
+    },
+    "stability": {
+      "definition": "Contribution to ecosystem resilience, diversity, bounded failure, recovery, and sustainable resource balance.",
+      "required_evidence": [
+        "dependency and failure-propagation model",
+        "diversity and concentration analysis",
+        "recovery, drift, incident, and retirement evidence"
+      ],
+      "score": null,
+      "status": "unknown"
+    }
+  },
+  "aggregate_fitness": {
+    "score": null,
+    "status": "undefined",
+    "method": null,
+    "weights": null,
+    "ranking": null
+  },
+  "governance_effect": {
+    "capability_effect": "none",
+    "permission_effect": "none",
+    "c_e_v_level_effect": "none",
+    "organism_status_effect": "none",
+    "selection_effect": "none_without_future_evidence_and_review"
+  }
+}

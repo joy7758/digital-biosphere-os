@@ -1,0 +1,62 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereEvolutionPrincipleRegistry",
+  "metadata": {
+    "title": "SAEE Evolution Principles v0.1",
+    "status": "defined_principle_baseline",
+    "constitution": "../constitution/saee-constitution.yaml",
+    "generated_at": "2026-07-19T21:55:39+08:00",
+    "principle_count": 5,
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "Principles constrain future evolution; they do not authorize a mutation, capability, permission, runtime, or organism promotion.",
+      "All historical identity, evidence, verification, and ledger records remain append-only."
+    ]
+  },
+  "principle_schema": {
+    "required_fields": [
+      "principle_id",
+      "name",
+      "description",
+      "affected_layer",
+      "constraint"
+    ]
+  },
+  "principles": [
+    {
+      "principle_id": "identity_preservation",
+      "name": "Identity Preservation",
+      "description": "Evolution preserves canonical subject identity or records an explicit successor, retirement, and lineage transition.",
+      "affected_layer": "Identity",
+      "constraint": "No mutation may erase, silently replace, merge, or reassign identity; identity changes require additive lineage evidence."
+    },
+    {
+      "principle_id": "evidence_preservation",
+      "name": "Evidence Preservation",
+      "description": "Evolution memory is retained through attributable, append-only evidence, verification, and revocation history.",
+      "affected_layer": "Evidence",
+      "constraint": "Historical evidence cannot be deleted, overwritten, detached, or rewritten; corrections and invalidations must be additive."
+    },
+    {
+      "principle_id": "adaptive_improvement",
+      "name": "Adaptive Improvement",
+      "description": "Proposed changes may improve fit to an environment when their scope, evidence, effects, and governance gates remain explicit.",
+      "affected_layer": "Evolution",
+      "constraint": "Adaptation remains a proposal until existing identity, capability, evidence, verification, and permission rules are satisfied."
+    },
+    {
+      "principle_id": "resource_balance",
+      "name": "Resource Balance",
+      "description": "Resource use is evaluated across entities and time rather than optimized for one entity without regard to externalities.",
+      "affected_layer": "Ecology",
+      "constraint": "Future selection must account for resource limits, attribution, shared dependencies, recovery, and ecosystem stability."
+    },
+    {
+      "principle_id": "ecological_diversity",
+      "name": "Ecological Diversity",
+      "description": "The ecosystem preserves multiple roles, implementations, lineages, and recovery options where evidence supports them.",
+      "affected_layer": "Ecology",
+      "constraint": "Selection cannot treat concentration, monoculture, or removal of independent lineage as fitness improvement without stability evidence."
+    }
+  ]
+}

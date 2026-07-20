@@ -1,0 +1,99 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereRunnerEnvironmentEvidenceRegistry",
+  "metadata": {
+    "title": "Runner Environment Evidence v0.1",
+    "status": "six_verified_environment_qualification_evidence_records",
+    "constitution": "../constitution/environment-qualification-constitution.yaml",
+    "environment_identity_source_of_truth": "environment-identities.yaml",
+    "generated_at": "2026-07-20T09:07:42+08:00",
+    "environment_evidence_count": 6,
+    "evidence_type_distribution": {"identity": 1, "os_inventory": 1, "python_inventory": 1, "dependency_lock": 1, "configuration": 1, "lock_material": 1},
+    "nonempty_digest_count": 6,
+    "verified_evidence_count": 6,
+    "event_created_count": 0,
+    "snapshot_created_count": 0,
+    "permission_grant_count": 0,
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "No environment inventory, dependency, configuration, or lock material has been captured by this registry.",
+      "An evidence slot or digest format cannot create evidence, qualification, trust, authorization, capability, permission, Runtime, or Agent."
+    ]
+  },
+  "environment_evidence_schema": {
+    "required_fields": ["evidence_id", "environment_id", "evidence_type", "source", "digest", "timestamp"],
+    "additional_governance_fields": ["status", "verification", "supersedes", "revocation_ref", "authority_effect"],
+    "valid_evidence_types": ["identity", "os_inventory", "python_inventory", "dependency_lock", "configuration", "lock_material"],
+    "valid_statuses": ["pending", "captured", "verified", "invalid", "revoked"],
+    "digest_format": "sha256:<64 lowercase hexadecimal characters>",
+    "empty_registry_rule": "No null-subject or simulated evidence record is generated when no material was captured."
+  },
+  "environment_evidence": [
+    {
+      "evidence_id": "DBOS-EXP-0001-ENV-QUALIFICATION-EVIDENCE-0001",
+      "environment_id": "dbio://runner-environment/dbos-exp-0001/local-governance-workspace/v0.1",
+      "evidence_type": "identity",
+      "source": "evidence/experiments/DBOS-EXP-0001/identity/subject-identity-evidence.json",
+      "digest": "sha256:91f5d1e6842fa0a8e5abbdc19ed2ac4560f8bac93f6a04292d295c7211c7b1f5",
+      "timestamp": "2026-07-20T10:07:49+08:00",
+      "status": "verified",
+      "verification": "validation/execution_chain_validator.py#environment",
+      "authority_effect": "none"
+    },
+    {
+      "evidence_id": "DBOS-EXP-0001-ENV-QUALIFICATION-EVIDENCE-0002",
+      "environment_id": "dbio://runner-environment/dbos-exp-0001/local-governance-workspace/v0.1",
+      "evidence_type": "os_inventory",
+      "source": "evidence/experiments/DBOS-EXP-0001/environment/environment-observation.json#/facts/0",
+      "digest": "sha256:61a158347002b0dae542203f5260309ad8783fb8b898d14788a8eec887a5e3f9",
+      "timestamp": "2026-07-20T10:07:49+08:00",
+      "status": "verified",
+      "verification": "validation/execution_chain_validator.py#environment",
+      "authority_effect": "none"
+    },
+    {
+      "evidence_id": "DBOS-EXP-0001-ENV-QUALIFICATION-EVIDENCE-0003",
+      "environment_id": "dbio://runner-environment/dbos-exp-0001/local-governance-workspace/v0.1",
+      "evidence_type": "python_inventory",
+      "source": "evidence/experiments/DBOS-EXP-0001/environment/environment-observation.json#/facts/1",
+      "digest": "sha256:61a158347002b0dae542203f5260309ad8783fb8b898d14788a8eec887a5e3f9",
+      "timestamp": "2026-07-20T10:07:49+08:00",
+      "status": "verified",
+      "verification": "validation/execution_chain_validator.py#environment",
+      "authority_effect": "none"
+    },
+    {
+      "evidence_id": "DBOS-EXP-0001-ENV-QUALIFICATION-EVIDENCE-0004",
+      "environment_id": "dbio://runner-environment/dbos-exp-0001/local-governance-workspace/v0.1",
+      "evidence_type": "dependency_lock",
+      "source": "DBOS-EXP-0001-ENV-DIGEST-DEPENDENCY-0001",
+      "digest": "sha256:9508f8fe16370ac86859476c13f350ed995b73feac430b5e8ae88a4c8c1191e2",
+      "timestamp": "2026-07-20T10:07:49+08:00",
+      "status": "verified",
+      "verification": "validation/execution_chain_validator.py#environment",
+      "authority_effect": "none"
+    },
+    {
+      "evidence_id": "DBOS-EXP-0001-ENV-QUALIFICATION-EVIDENCE-0005",
+      "environment_id": "dbio://runner-environment/dbos-exp-0001/local-governance-workspace/v0.1",
+      "evidence_type": "configuration",
+      "source": "DBOS-EXP-0001-ENV-DIGEST-CONFIGURATION-0001",
+      "digest": "sha256:7276c57d41cc26c7f770503d14a91a2236e477cc76e29b5ea82e5e2f693a446c",
+      "timestamp": "2026-07-20T10:07:49+08:00",
+      "status": "verified",
+      "verification": "validation/execution_chain_validator.py#environment",
+      "authority_effect": "none"
+    },
+    {
+      "evidence_id": "DBOS-EXP-0001-ENV-QUALIFICATION-EVIDENCE-0006",
+      "environment_id": "dbio://runner-environment/dbos-exp-0001/local-governance-workspace/v0.1",
+      "evidence_type": "lock_material",
+      "source": "registry/environment-locks.yaml#DBOS-EXP-0001-ENV-LOCK-0001 canonical lock payload",
+      "digest": "sha256:a167dc7ff53d6fd06f3fc00db9a6acd08c83cb49e13a8e5d8390a3504fbbbcb6",
+      "timestamp": "2026-07-20T10:07:49+08:00",
+      "status": "verified",
+      "verification": "validation/execution_chain_validator.py#environment",
+      "authority_effect": "none"
+    }
+  ]
+}

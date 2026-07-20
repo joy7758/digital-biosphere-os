@@ -1,0 +1,143 @@
+schema_version: "0.1"
+kind: "DigitalBiosphereSnapshotCaptureConstitution"
+metadata:
+  title: "Snapshot Capture Constitution v0.1"
+  chinese_title: "实验快照捕获宪法 v0.1"
+  status: "capture_mechanism_defined_one_pending_capture"
+  parent_constitution: "constitution.yaml"
+  experiment_freeze_reference: "experiment-freeze-constitution.yaml"
+  execution_context_reference: "execution-context-constitution.yaml"
+  event_integrity_reference: "event-integrity-constitution.yaml"
+  capture_readiness_reference: "snapshot-capture-readiness-constitution.yaml"
+  authority: "pre_execution_snapshot_capture_structure_and_validation_only"
+  effective_scope:
+    - "/Users/zhangbin/GitHub/digital-biosphere-os"
+  adopted_at: "2026-07-20T01:44:35+08:00"
+  non_claims:
+    - "This constitution defines capture contracts and one pending capture request but does not claim that DBOS-EXP-0001 has been captured or frozen."
+    - "A source definition, capture identifier, empty digest registry, or empty evidence registry is not captured material, freeze evidence, event evidence, execution, or reproducibility proof."
+    - "Snapshot capture cannot authorize or execute an experiment, create a runtime or Agent, produce an event or Digital Organism, grant capability or permission, or upgrade C/E/V."
+
+capture_scope:
+  definition: "A bounded, attributable, non-executing acquisition of the files and configuration material required to describe DBOS-EXP-0001 immediately before a possible future freeze."
+  source_of_truth: "../registry/snapshot-captures.yaml"
+  required_binding:
+    experiment_id: "DBOS-EXP-0001"
+    snapshot_id: "DBOS-EXP-0001-SNAPSHOT-0001"
+    freeze_id: "DBOS-EXP-0001-FREEZE-0001"
+  included_material_categories:
+    - "constitution and policy files inside digital-biosphere-os"
+    - "registry and schema files inside digital-biosphere-os"
+    - "validator source files inside digital-biosphere-os"
+    - "declared local environment and dependency descriptions"
+  excluded_scope:
+    - "member repository contents"
+    - "external storage contents without separate access authority"
+    - "credentials, secrets, private account data, and unrelated user files"
+    - "runtime output, events, attestations, and experimental results"
+  current_status: "pending"
+
+readiness_requirement:
+  constitution: "snapshot-capture-readiness-constitution.yaml"
+  collector_registry: "../registry/capture-collectors.yaml"
+  scope_registry: "../registry/capture-scopes.yaml"
+  authorization_registry: "../registry/capture-authorizations.yaml"
+  readiness_review_registry: "../registry/capture-readiness-reviews.yaml"
+  required_criteria:
+    - "collector"
+    - "scope"
+    - "authorization"
+    - "privacy"
+  current_status: "pending"
+  blocking_reason: "Collector registry is empty, capture authorization is pending, privacy evidence is absent, and all four readiness reviews remain pending."
+  automatic_capture: false
+  automatic_authorization: false
+  execution_authority: "none"
+
+source_types:
+  source_of_truth: "../registry/snapshot-sources.yaml"
+  allowed:
+    filesystem: "A bounded local filesystem tree captured through deterministic enumeration and byte hashing."
+    git: "A repository identity captured through commit, tree, index, and worktree status when valid Git metadata exists."
+    artifact_registry: "An artifact identity captured through registry locator, immutable version, digest, and provenance metadata."
+    external_storage: "An externally stored object captured through immutable locator, provider metadata, digest, and separately authorized access evidence."
+  selection_rule: "A capture declares one primary source type. Source type availability or definition does not grant access and does not prove capture."
+  current_primary_source: "filesystem"
+  current_git_availability: "unavailable_not_a_git_repository"
+
+digest_rules:
+  source_of_truth: "../registry/artifact-digests.yaml"
+  algorithm: "sha256"
+  format: "sha256:<64 lowercase hexadecimal characters>"
+  canonicalization_requirements:
+    - "artifact paths are normalized and scoped to the declared source"
+    - "regular-file bytes are hashed without content rewriting"
+    - "directory aggregates use a declared deterministic path, type, size, and child-digest ordering"
+    - "symlink and special-file handling is explicit"
+    - "file size and capture timestamp accompany every digest"
+  captured_gate: "A capture cannot have status=captured unless at least one valid artifact digest belongs to its snapshot and the complete intended scope is accounted for."
+  current_digest_count: 0
+
+capture_evidence:
+  source_of_truth: "../registry/capture-evidence.yaml"
+  requirements:
+    - "evidence references an existing capture_id"
+    - "method identifies the deterministic collection procedure"
+    - "collector is attributable and consistent with the capture record"
+    - "result records success, failure, partial coverage, exclusions, and errors"
+    - "timestamp is timezone-aware"
+  evidence_boundary: "Capture evidence can support that a method ran over declared material; it cannot by itself prove completeness, immutability, freeze, authorization, execution, event truth, or verification."
+  current_evidence_count: 0
+
+retention:
+  principle: "Captured digest records and evidence are append-only governance memory. Original material retention follows declared access, privacy, and storage policy."
+  requirements:
+    - "preserve digest identity, snapshot binding, path, algorithm, size, and capture time"
+    - "preserve failed, partial, invalid, revoked, and superseded capture evidence"
+    - "never overwrite a prior digest to represent changed bytes"
+    - "create successor capture and snapshot identities for later material"
+    - "record unavailable or intentionally excluded material instead of fabricating a digest"
+  deletion_boundary: "Historical digest and evidence records cannot be silently deleted; revocation and retention expiry require append-only records."
+
+capture_lifecycle:
+  valid_statuses:
+    pending: "Capture identity and source are declared; no collector, time, digest, or evidence is asserted."
+    captured: "Attributable collection time, collector, complete scoped digest set, and capture evidence exist; freeze and correctness are not implied."
+    validated: "Capture structure, scope, digests, and evidence have passed the declared validation method; independent verification is not implied."
+    partial: "Some declared material was captured while gaps remain explicit."
+    invalid: "Capture identity, scope, digest, evidence, or provenance failed."
+    revoked: "Current reliance is withdrawn while history remains."
+    superseded: "A successor capture replaces future reliance without deleting this record."
+  current_status: "pending"
+  automatic_freeze: false
+  automatic_readiness: false
+  automatic_authorization: false
+
+current_baseline:
+  snapshot_capture_count: 1
+  pending_capture_count: 1
+  captured_count: 0
+  artifact_digest_count: 0
+  capture_evidence_count: 0
+  source_type_definition_count: 4
+  capture_collector_count: 0
+  capture_scope_count: 1
+  capture_authorization_count: 1
+  active_capture_authorization_count: 0
+  capture_readiness_review_count: 4
+  pending_capture_readiness_review_count: 4
+  filesystem_capture_count: 1
+  git_capture_count: 0
+  artifact_registry_capture_count: 0
+  external_storage_capture_count: 0
+  freeze_manifest_count: 1
+  frozen_manifest_count: 0
+  active_authorization_count: 0
+  execution_count: 0
+  event_count: 0
+  runtime_instance_count: 0
+  agent_created_count: 0
+  digital_organism_count: 0
+  capability_count: 0
+  permission_grant_count: 0
+  c_e_v_level_change_count: 0

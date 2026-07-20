@@ -1,0 +1,43 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereCapabilityReviewRegistry",
+  "metadata": {
+    "title": "Capability Review Registry v0.1",
+    "status": "empty_review_baseline",
+    "claim_source_of_truth": "capability-claims.yaml",
+    "constitution": "../constitution/capability-verification-constitution.yaml",
+    "generated_at": "2026-07-19T19:47:05+08:00",
+    "review_count": 0,
+    "decision_counts": {
+      "approved": 0,
+      "rejected": 0,
+      "needs_changes": 0,
+      "revoked": 0
+    },
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "No reviewer identity or decision is simulated.",
+      "An empty review list means no capability claim has passed review.",
+      "Review approval would verify a bounded claim only; it would not grant capability assignment or permission."
+    ]
+  },
+  "review_record_schema": {
+    "required_fields": [
+      "review_id",
+      "claim_id",
+      "reviewer",
+      "decision",
+      "limitations",
+      "timestamp"
+    ],
+    "valid_decisions": [
+      "approved",
+      "rejected",
+      "needs_changes",
+      "revoked"
+    ],
+    "approval_boundary": "Only an explicit attributable approved review may support C3 Verified; approval never grants permission."
+  },
+  "reviews": []
+}
+

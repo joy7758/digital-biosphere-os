@@ -1,0 +1,116 @@
+schema_version: "0.1"
+kind: "DigitalOrganismGenesisConstitution"
+metadata:
+  title: "Digital Organism Genesis Constitution v0.1"
+  chinese_title: "数字生命候选体形成宪法 v0.1"
+  status: "qualification_model_empty_runtime_baseline"
+  parent_constitution: "saee-constitution.yaml"
+  authority: "declarative_and_validation_only"
+  effective_scope:
+    - "/Users/zhangbin/GitHub/digital-biosphere-os"
+  adopted_at: "2026-07-19T22:10:23+08:00"
+  non_claims:
+    - "This constitution does not create an Agent, runtime instance, Candidate Organism, or Digital Organism."
+    - "Qualification criteria do not grant a capability, permission, autonomy, execution authority, or organism status."
+    - "No current entity satisfies the complete qualification model."
+    - "This constitution does not modify external projects or upgrade any C, E, or V level."
+
+organism_candidate_definition:
+  definition: "An attributable qualification application for one existing entity that has passed every Genesis criterion and an explicit review; it is not an Agent or Digital Organism."
+  source_of_truth: "../registry/organism-candidates.yaml"
+  identity_boundary:
+    - "Entity != Runtime."
+    - "Runtime != Organism Candidate."
+    - "Organism Candidate != Digital Organism."
+    - "Candidate registration cannot replace canonical entity identity."
+    - "Naming, ecological classification, capability claims, fitness, or verification alone cannot create a candidate."
+
+qualification_criteria:
+  combination_rule: "all_required"
+  criteria:
+    identity_verified:
+      definition: "Canonical entity identity has completed the existing identity-verification process and is not provisional, invalid, revoked, or retired."
+      source: "../registry/entities.yaml"
+    runtime_exists:
+      definition: "An attributable active runtime instance exists for the same entity in a declared environment."
+      source: "../registry/runtime-instances.yaml"
+    capability_verified:
+      definition: "At least one entity-bound capability is registered and supported by a C3-or-higher approved claim without deriving permission."
+      sources:
+        - "../registry/capabilities.yaml"
+        - "../registry/capability-claims.yaml"
+        - "../registry/capability-reviews.yaml"
+    evidence_level_at_least_E3:
+      definition: "At least one relevant, non-invalid entity-bound evidence record has reached E3 or higher."
+      source: "../registry/capability-evidence.yaml"
+    verification_level_at_least_V3:
+      definition: "At least one relevant entity-bound verification has reached V3 or higher with a completed pass decision."
+      source: "../registry/verification-records.yaml"
+    resource_flow_recorded:
+      definition: "The qualifying runtime has attributable input and output resource-flow records."
+      source: "../registry/resource-flows.yaml"
+    behavior_trace_available:
+      definition: "The qualifying runtime has an attributable action/result trace linked to evidence."
+      source: "../registry/behavior-traces.yaml"
+    evolution_record_available:
+      definition: "An append-only evolution-ledger record names the entity as its subject and preserves lineage."
+      source: "../evolution/evolution-ledger.yaml"
+  invariant: "All eight criteria plus explicit qualification review are required; no criterion can be inferred from another."
+
+qualification_process:
+  sequence:
+    - "Register runtime, resource flow, behavior trace, and evidence references without creating a candidate."
+    - "Resolve the canonical entity and calculate missing requirements without changing C/E/V."
+    - "Create an attributable candidate application only when all source records already exist."
+    - "Perform a separate qualification review and record limitations, decision, timestamp, and revocation conditions."
+    - "A qualified candidate remains Candidate Organism only; Digital Organism requires a future separate constitution and promotion decision."
+  fail_closed_rules:
+    - "Missing or unknown requirement means not qualified."
+    - "Revoked, invalid, expired, mismatched, synthetic-as-real, or out-of-scope evidence cannot satisfy qualification."
+    - "Qualification never grants permission or self_evolution authority."
+
+lifecycle:
+  states:
+    not_registered: "No candidate application exists."
+    proposed: "An attributable application exists but one or more requirements or review fields remain incomplete."
+    qualifying: "All source records are under bounded qualification review; no candidate status is established."
+    qualified: "All eight criteria and explicit review pass within a recorded scope and validity period."
+    disqualified: "One or more required conditions failed or reliance was withdrawn."
+    withdrawn: "The applicant or authority withdrew the application without deleting history."
+    retired: "The candidate lineage is closed while all records remain preserved."
+  transitions:
+    - "not_registered -> proposed"
+    - "proposed -> qualifying"
+    - "qualifying -> qualified/disqualified/withdrawn"
+    - "qualified -> disqualified/retired"
+  boundary: "No lifecycle state in this constitution is a Digital Organism state."
+
+disqualification:
+  triggers:
+    - "canonical identity becomes unresolved, invalid, revoked, conflicting, or retired"
+    - "qualifying runtime is absent, stopped, revoked, unbound, or outside its declared environment"
+    - "capability verification, approved review, E3 evidence, or V3 verification falls below the qualification floor"
+    - "resource-flow or behavior-trace records are missing, invalid, contradicted, or detached"
+    - "evolution record or lineage is missing, deleted, overwritten, or rewritten"
+    - "scope, version, environment, side effect, resource boundary, or behavior changes materially"
+    - "permission, safety, containment, or ecological-stability boundary is violated"
+  requirements:
+    - "Record reason, authority, timestamp, affected scope, prior status, and remediation or successor when known."
+    - "Preserve identity, runtime, resource, trace, evidence, verification, review, and evolution history append-only."
+    - "Disqualification cannot delete evidence or silently downgrade prior records."
+
+current_baseline:
+  entity_count: 23
+  identity_verified_count: 0
+  runtime_instance_count: 0
+  verified_capability_count: 0
+  E3_or_higher_entity_count: 0
+  V3_or_higher_entity_count: 0
+  resource_flow_count: 0
+  behavior_trace_count: 0
+  entity_evolution_record_count: 0
+  organism_candidate_count: 0
+  digital_organism_count: 0
+  agent_created_count: 0
+  permission_grant_count: 0
+  c_e_v_level_change_count: 0

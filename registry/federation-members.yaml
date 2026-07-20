@@ -1,0 +1,55 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereFederationMemberRegistry",
+  "metadata": {
+    "title": "Digital Biosphere Federation Members v0.1",
+    "status": "all_members_proposed",
+    "constitution": "../constitution/federation-constitution.yaml",
+    "entity_source_of_truth": "entities.yaml",
+    "generated_at": "2026-07-19T22:49:34+08:00",
+    "member_count": 23,
+    "proposed_member_count": 23,
+    "registered_member_count": 0,
+    "verified_member_count": 0,
+    "project_local_manifest_adoption_count": 0,
+    "repository_merge_count": 0,
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "Every current entity is only a proposed federation member.",
+      "Central registration does not prove project-local adoption and does not modify or take ownership of a repository.",
+      "Membership creates no capability, permission, Agent, runtime, organism, trust, compatibility, or C/E/V effect."
+    ]
+  },
+  "member_record_schema": {
+    "required_fields": ["member_id", "entity_id", "repository", "entity_type", "federation_status", "constitution_ref", "manifest_status"],
+    "member_id_format": "dbio://federation-member/<entity-id>/<version>",
+    "valid_federation_statuses": ["proposed", "registered", "verified"],
+    "default_federation_status": "proposed",
+    "default_manifest_status": "pending"
+  },
+  "members": [
+    {"member_id":"dbio://federation-member/digital-biosphere-architecture/v0.1","entity_id":"digital-biosphere-architecture","repository":"/Users/zhangbin/GitHub/digital-biosphere-architecture","entity_type":"repository","federation_status":"proposed","constitution_ref":"constitution/constitution.yaml","manifest_status":"pending"},
+    {"member_id":"dbio://federation-member/pop-persona-object-protocol/v0.1","entity_id":"pop-persona-object-protocol","repository":"/Users/zhangbin/GitHub/persona-object-protocol","entity_type":"protocol","federation_status":"proposed","constitution_ref":"constitution/constitution.yaml","manifest_status":"pending"},
+    {"member_id":"dbio://federation-member/aip-agent-intent-protocol/v0.1","entity_id":"aip-agent-intent-protocol","repository":"/Users/zhangbin/GitHub/agent-intent-protocol","entity_type":"protocol","federation_status":"proposed","constitution_ref":"constitution/constitution.yaml","manifest_status":"pending"},
+    {"member_id":"dbio://federation-member/token-governor-reference/v0.1","entity_id":"token-governor-reference","repository":"/Users/zhangbin/GitHub/token-governor","entity_type":"protocol","federation_status":"proposed","constitution_ref":"constitution/constitution.yaml","manifest_status":"pending"},
+    {"member_id":"dbio://federation-member/fdo-kernel-mvk/v0.1","entity_id":"fdo-kernel-mvk","repository":"/Users/zhangbin/GitHub/fdo-kernel-mvk","entity_type":"service","federation_status":"proposed","constitution_ref":"constitution/constitution.yaml","manifest_status":"pending"},
+    {"member_id":"dbio://federation-member/agent-evidence-eeoap/v0.1","entity_id":"agent-evidence-eeoap","repository":"/Users/zhangbin/GitHub/agent-evidence","entity_type":"protocol","federation_status":"proposed","constitution_ref":"constitution/constitution.yaml","manifest_status":"pending"},
+    {"member_id":"dbio://federation-member/aro-audit-reference/v0.1","entity_id":"aro-audit-reference","repository":"/Users/zhangbin/GitHub/aro-audit","entity_type":"protocol","federation_status":"proposed","constitution_ref":"constitution/constitution.yaml","manifest_status":"pending"},
+    {"member_id":"dbio://federation-member/verifiable-agent-demo/v0.1","entity_id":"verifiable-agent-demo","repository":"/Users/zhangbin/GitHub/verifiable-agent-demo","entity_type":"repository","federation_status":"proposed","constitution_ref":"constitution/constitution.yaml","manifest_status":"pending"},
+    {"member_id":"dbio://federation-member/execution-integrity-core/v0.1","entity_id":"execution-integrity-core","repository":"/Users/zhangbin/GitHub/execution-integrity-core","entity_type":"service","federation_status":"proposed","constitution_ref":"constitution/constitution.yaml","manifest_status":"pending"},
+    {"member_id":"dbio://federation-member/agent-evidence-receipt-layer/v0.1","entity_id":"agent-evidence-receipt-layer","repository":"/Users/zhangbin/GitHub/agent-evidence-layer","entity_type":"service","federation_status":"proposed","constitution_ref":"constitution/constitution.yaml","manifest_status":"pending"},
+    {"member_id":"dbio://federation-member/saee-agent-readiness/v0.1","entity_id":"saee-agent-readiness","repository":"/Users/zhangbin/GitHub/SAEE","entity_type":"service","federation_status":"proposed","constitution_ref":"constitution/constitution.yaml","manifest_status":"pending"},
+    {"member_id":"dbio://federation-member/agent-governance-toolkit-external/v0.1","entity_id":"agent-governance-toolkit-external","repository":"/Users/zhangbin/GitHub/agent-governance-toolkit","entity_type":"repository","federation_status":"proposed","constitution_ref":"constitution/constitution.yaml","manifest_status":"pending"},
+    {"member_id":"dbio://federation-member/agent-governance-benchmark/v0.1","entity_id":"agent-governance-benchmark","repository":"/Users/zhangbin/GitHub/agent-governance-benchmark","entity_type":"repository","federation_status":"proposed","constitution_ref":"constitution/constitution.yaml","manifest_status":"pending"},
+    {"member_id":"dbio://federation-member/agent-receipt-validator-mcp/v0.1","entity_id":"agent-receipt-validator-mcp","repository":"/Users/zhangbin/GitHub/agent-receipt-validator-mcp","entity_type":"service","federation_status":"proposed","constitution_ref":"constitution/constitution.yaml","manifest_status":"pending"},
+    {"member_id":"dbio://federation-member/agent-accountability-evidence-layer/v0.1","entity_id":"agent-accountability-evidence-layer","repository":"/Users/zhangbin/GitHub/agent-accountability-evidence-layer","entity_type":"protocol","federation_status":"proposed","constitution_ref":"constitution/constitution.yaml","manifest_status":"pending"},
+    {"member_id":"dbio://federation-member/agent-object-protocol/v0.1","entity_id":"agent-object-protocol","repository":"/Users/zhangbin/GitHub/agent-object-protocol","entity_type":"protocol","federation_status":"proposed","constitution_ref":"constitution/constitution.yaml","manifest_status":"pending"},
+    {"member_id":"dbio://federation-member/ecl-execution-compact-layer/v0.1","entity_id":"ecl-execution-compact-layer","repository":"/Users/zhangbin/GitHub/ecl-execution-compact-layer","entity_type":"protocol","federation_status":"proposed","constitution_ref":"constitution/constitution.yaml","manifest_status":"pending"},
+    {"member_id":"dbio://federation-member/cellcaps/v0.1","entity_id":"cellcaps","repository":"/Users/zhangbin/GitHub/cellcaps","entity_type":"service","federation_status":"proposed","constitution_ref":"constitution/constitution.yaml","manifest_status":"pending"},
+    {"member_id":"dbio://federation-member/pra-server/v0.1","entity_id":"pra-server","repository":"/Users/zhangbin/pra-server","entity_type":"service","federation_status":"proposed","constitution_ref":"constitution/constitution.yaml","manifest_status":"pending"},
+    {"member_id":"dbio://federation-member/standalone-agent-object-protocol-draft/v0.1","entity_id":"standalone-agent-object-protocol-draft","repository":"/Users/zhangbin/agent","entity_type":"protocol","federation_status":"proposed","constitution_ref":"constitution/constitution.yaml","manifest_status":"pending"},
+    {"member_id":"dbio://federation-member/sovereign-agent-local-gate/v0.1","entity_id":"sovereign-agent-local-gate","repository":"/Users/zhangbin/sovereign-agent","entity_type":"service","federation_status":"proposed","constitution_ref":"constitution/constitution.yaml","manifest_status":"pending"},
+    {"member_id":"dbio://federation-member/mcp-agent-ei-external/v0.1","entity_id":"mcp-agent-ei-external","repository":"/Users/zhangbin/GitHub/mcp-agent-ei","entity_type":"repository","federation_status":"proposed","constitution_ref":"constitution/constitution.yaml","manifest_status":"pending"},
+    {"member_id":"dbio://federation-member/autonomous-cell-protocol/v0.1","entity_id":"autonomous-cell-protocol","repository":"/Users/zhangbin/GitHub/海洋/autonomous-cell-protocol","entity_type":"protocol","federation_status":"proposed","constitution_ref":"constitution/constitution.yaml","manifest_status":"pending"}
+  ]
+}

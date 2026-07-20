@@ -1,0 +1,36 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereExperimentStopRuleRegistry",
+  "metadata": {
+    "title": "Genesis Experiment Stop Rules v0.1",
+    "status": "evaluated_with_preserved_failed_attempt_and_successful_retry",
+    "constitution": "../constitution/experimental-protocol-constitution.yaml",
+    "experiment_source_of_truth": "experiments.yaml",
+    "generated_at": "2026-07-20T00:54:29+08:00",
+    "stop_rule_count": 4,
+    "stop_rule_status_distribution": {"defined": 0, "triggered": 1, "cleared": 3, "invalid": 0, "revoked": 0},
+    "success_rule_count": 1,
+    "failure_rule_count": 3,
+    "evaluated_rule_count": 4,
+    "experiment_execution_count": 2,
+    "automatic_execution_effect": "none",
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "Stop rules are declarative and have not been evaluated because the experiment is not authorized or executed.",
+      "The success rule is a validator gate condition and does not by itself prove fact formation, reproducibility, correctness, evidence sufficiency, or experiment completion."
+    ]
+  },
+  "stop_rule_record_schema": {
+    "required_fields": ["stop_rule_id", "experiment_id", "outcome", "condition", "scope", "action", "status"],
+    "valid_outcomes": ["success", "failure"],
+    "valid_statuses": ["defined", "triggered", "cleared", "invalid", "revoked"],
+    "default_status": "defined",
+    "evaluation_boundary": "Only a later authorized run may evaluate a rule; definition cannot trigger, clear, execute, or complete an experiment."
+  },
+  "experiment_stop_rules": [
+    {"stop_rule_id":"DBOS-EXP-0001-STOP-SUCCESS-0001","experiment_id":"DBOS-EXP-0001","outcome":"success","condition":"all required validators pass","scope":"validator_gate","action":"allow human review for the next registered procedure step; do not declare experiment completion","status":"triggered","evaluation_ref":"evidence/experiments/DBOS-EXP-0001/run-0002/validator-results.json","evaluation_result":"29_of_29_passed"},
+    {"stop_rule_id":"DBOS-EXP-0001-STOP-FAIL-0001","experiment_id":"DBOS-EXP-0001","outcome":"failure","condition":"any integrity failure","scope":"integrity_gate","action":"stop the future run, preserve records, and require review","status":"cleared","evaluation_ref":"evidence/experiments/DBOS-EXP-0001/run-0002/event-integrity.json"},
+    {"stop_rule_id":"DBOS-EXP-0001-STOP-FAIL-0002","experiment_id":"DBOS-EXP-0001","outcome":"failure","condition":"missing evidence","scope":"evidence_gate","action":"stop the future run, preserve missing-evidence state, and prohibit promotion","status":"cleared","evaluation_ref":"evidence/experiments/DBOS-EXP-0001/run-0002/evidence-bundle.json","attempt_history":[{"execution_id":"dbio:runner-execution:dbos-self-validation:DBOS-EXP-0001:0001","result":"triggered_and_preserved"},{"execution_id":"dbio:runner-execution:dbos-self-validation:DBOS-EXP-0001:0002","result":"cleared"}]},
+    {"stop_rule_id":"DBOS-EXP-0001-STOP-FAIL-0003","experiment_id":"DBOS-EXP-0001","outcome":"failure","condition":"reproducibility failure","scope":"reproducibility_gate","action":"stop the future run, preserve failure evidence, and prohibit fact-formation claims","status":"cleared","evaluation_ref":"evidence/experiments/DBOS-EXP-0001/run-0002/verification-result.json","attempt_history":[{"execution_id":"dbio:runner-execution:dbos-self-validation:DBOS-EXP-0001:0001","result":"triggered_and_preserved"},{"execution_id":"dbio:runner-execution:dbos-self-validation:DBOS-EXP-0001:0002","result":"cleared_with_local_nonindependent_limit"}]}
+  ]
+}

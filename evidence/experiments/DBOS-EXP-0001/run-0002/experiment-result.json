@@ -1,0 +1,32 @@
+{
+  "agent_count": 0,
+  "authorization_ref": "execution-authorization-v3.json#sha256:dddfb9f73a3d16a652de0035d696eab5033f8b5bab4b82e1a0fce4c03edd26e7",
+  "c_e_v_level_change_count": 0,
+  "capability_assignment_count": 0,
+  "completed_at": "2026-07-20T10:50:17+08:00",
+  "digital_organism_count": 0,
+  "event_id": "dbio:event:digital-biosphere-os:DBOS-EXP-0001:0001",
+  "evidence_bundle_ref": "evidence-bundle.json#sha256:700c851f047ba66a32c031e771b7e968f5478d9d46d4ebd02bd9acf375d673ee",
+  "executed_steps": [
+    "DBOS-EXP-0001-STEP-01",
+    "DBOS-EXP-0001-STEP-02",
+    "DBOS-EXP-0001-STEP-03",
+    "DBOS-EXP-0001-STEP-04",
+    "DBOS-EXP-0001-STEP-05",
+    "DBOS-EXP-0001-STEP-06",
+    "DBOS-EXP-0001-STEP-07",
+    "DBOS-EXP-0001-STEP-08"
+  ],
+  "execution_id": "dbio:runner-execution:dbos-self-validation:DBOS-EXP-0001:0002",
+  "experiment_id": "DBOS-EXP-0001",
+  "fact_claim": "The retained frozen DBOS validator suite completed with every declared validator returning exit status 0.",
+  "fact_scope": "retained frozen DBOS v0.1 local structural validation",
+  "failure_count": 0,
+  "permission_grant_count": 0,
+  "procedure_status": "completed",
+  "runner_id": "dbio:runner:automated:dbos-self-validation:v0.1",
+  "runtime_count": 0,
+  "started_at": "2026-07-20T10:50:16+08:00",
+  "status": "completed",
+  "verification_result_ref": "verification-result.json#sha256:1c1c8531ae3bb9c8294ecc94b799ce3ed3bdc716d83ce108f8ec2dcf8fe09d0d"
+}

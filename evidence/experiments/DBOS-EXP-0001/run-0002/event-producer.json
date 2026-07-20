@@ -1,0 +1,9 @@
+{
+  "agent_status": "not_an_agent",
+  "capability_scope": "authorized DBOS-EXP-0001 evidence output only",
+  "identity_ref": "dbio:runner:automated:dbos-self-validation:v0.1",
+  "producer_id": "dbio:event-producer:dbos-self-validation-runner:v0.1",
+  "producer_type": "automated",
+  "runtime_status": "not_a_runtime",
+  "status": "active_for_completed_run"
+}

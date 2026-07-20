@@ -1,0 +1,105 @@
+schema_version: "0.1"
+kind: "DigitalBiosphereEcologicalEnvironmentConstitution"
+metadata:
+  title: "Ecological Environment Constitution v0.1"
+  chinese_title: "数字生物圈生态环境宪法 v0.1"
+  status: "defined_environment_model_no_runtime"
+  parent_constitution: "saee-constitution.yaml"
+  related_constitution: "organism-genesis-constitution.yaml"
+  authority: "declarative_and_validation_only"
+  effective_scope:
+    - "/Users/zhangbin/GitHub/digital-biosphere-os"
+  adopted_at: "2026-07-19T22:27:22+08:00"
+  non_claims:
+    - "This constitution does not create an Agent, runtime instance, Candidate Organism, or Digital Organism."
+    - "An environment definition is not evidence that an entity operates in that environment."
+    - "Resource models define measurement vocabulary but do not allocate resources, grant data access, or bind an entity."
+    - "Selection pressure definitions do not calculate fitness, select an entity, or change C, E, or V levels."
+    - "This constitution grants no capability, permission, execution authority, or external action authority."
+
+environment_definition:
+  definition: "A bounded, attributable set of resource conditions, task conditions, constraints, observations, and selection-pressure definitions within which future runtime behavior could be evaluated."
+  source_of_truth: "../registry/environments.yaml"
+  valid_environment_types:
+    - "governance_workspace"
+    - "development"
+    - "test"
+    - "simulation"
+    - "production"
+    - "external"
+  states:
+    defined: "The model and boundary are recorded; no activation or runtime participation is implied."
+    active: "Future state requiring separate activation evidence, authority, observation window, and resource limits."
+    suspended: "Use is temporarily prohibited while history remains preserved."
+    retired: "The environment is closed and retained for lineage and evidence."
+  default_state: "defined"
+  identity_boundary:
+    - "Environment != Entity."
+    - "Environment != Runtime."
+    - "Environment != Agent."
+    - "Environment != Candidate Organism != Digital Organism."
+    - "Environment membership must be recorded as an interaction; it cannot be inferred from repository location or naming."
+
+resource_environment:
+  source_of_truth: "../registry/resource-models.yaml"
+  resource_types:
+    token: "Countable model input/output units; definition does not allocate a model or quota."
+    compute: "Measured processing consumption such as CPU, accelerator, memory-time, or wall-clock usage."
+    storage: "Measured persistent or transient byte consumption and retention duration."
+    data_access: "Measured access events and transferred data under a separately governed authorization boundary."
+    human_attention: "Measured human review, approval, supervision, or intervention time."
+  rules:
+    - "Every resource model declares a measurement vocabulary and an explicit limit value or null."
+    - "A null limit means undefined, not unlimited."
+    - "Resource models remain unbound to entities in v0.1."
+    - "Data-access measurement does not grant access or override privacy, security, identity, capability, or permission governance."
+    - "Resource-model existence is not resource-flow evidence."
+
+task_environment:
+  definition: "A declared task vocabulary, expected inputs and outputs, constraints, success conditions, and prohibited effects for one environment."
+  rules:
+    - "Task definition does not prove task execution, success, capability, deployment, or production fitness."
+    - "Future task execution must bind an entity, runtime, environment, method, resource flow, behavior trace, evidence, and timestamp."
+    - "Synthetic, local, review, released, deployed, and production task states remain distinct."
+    - "The v0.1 governance-workspace task model authorizes structural description only, not external-project mutation or runtime execution."
+
+selection_pressure:
+  source_of_truth: "../registry/selection-pressures.yaml"
+  dimensions:
+    reliability_pressure: "Pressure toward repeatable bounded outcomes and recoverability."
+    evidence_pressure: "Pressure toward attributable, relevant, intact, independently checkable evidence."
+    efficiency_pressure: "Pressure toward accountable resource use without hiding externalities."
+    adaptability_pressure: "Pressure toward evidence-backed response to declared environmental change while preserving governance boundaries."
+    stability_pressure: "Pressure toward ecosystem resilience, diversity, recovery, and bounded failure propagation."
+  rules:
+    - "Every threshold remains null until an evidence-backed method, unit, baseline, observation window, and review exist."
+    - "A defined pressure is not an applied pressure or a selection result."
+    - "Selection pressure cannot write, calculate, rank, or modify fitness directly."
+    - "Fitness remains unknown and null until the existing SAEE fitness governance conditions are satisfied."
+    - "Pressure cannot create capability, permission, runtime, Candidate Organism, Digital Organism, or C/E/V promotion."
+
+ecological_boundary:
+  interaction_registry: "../registry/ecological-interactions.yaml"
+  rules:
+    - "Entity-environment interaction requires an explicit attributable record; the v0.1 interaction registry is empty."
+    - "An interaction may describe dependency or effect but cannot itself grant permission, establish trust, or prove successful execution."
+    - "Environment status does not change ecological_type, evolution_stage, fitness_status, or organism qualification."
+    - "Environment -> Evolution Pressure is an interpretive mapping only and has no automatic selection or mutation effect."
+    - "Identity, evidence, verification, resource, behavior, evolution, and retirement histories remain append-only."
+  invariant: "Environment Definition != Runtime Participation != Selection Result != Organism Status"
+
+current_baseline:
+  environment_count: 1
+  defined_environment_count: 1
+  active_environment_count: 0
+  resource_model_count: 5
+  bounded_resource_limit_count: 0
+  selection_pressure_count: 5
+  non_null_pressure_threshold_count: 0
+  ecological_interaction_count: 0
+  runtime_instance_count: 0
+  organism_candidate_count: 0
+  digital_organism_count: 0
+  agent_created_count: 0
+  permission_grant_count: 0
+  c_e_v_level_change_count: 0

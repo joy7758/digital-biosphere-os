@@ -1,0 +1,98 @@
+schema_version: "0.1"
+kind: "DigitalBiosphereIdentityRules"
+metadata:
+  title: "Canonical Identity Rules"
+  status: "local_identity_baseline"
+  source_of_truth: "registry/entities.yaml"
+  compatibility_view: "registry/agents.yaml"
+  enforcement: "validation_only"
+
+valid_entity_types:
+  - "agent"
+  - "protocol"
+  - "repository"
+  - "service"
+  - "artifact"
+
+valid_lifecycle_states:
+  - "proposed"
+  - "active"
+  - "verified"
+  - "deprecated"
+  - "retired"
+
+path_identity_statuses:
+  duplicate:
+    meaning: "A discovered path is a duplicate surface; it is not assigned a new entity identity."
+  mirror:
+    meaning: "A discovered path is a mirror or synchronized copy; authoritative content and hydration were not re-verified."
+  temporary:
+    meaning: "A discovered path is an isolated worktree, migration staging area, review workspace, or task workspace."
+  unknown:
+    meaning: "A discovered path is a vendor, dependency, nested, or otherwise unverified repository relationship."
+
+canonical_naming:
+  scheme: "dbio"
+  format: "dbio://<entity_type>/<canonical_name>/<version>"
+  canonical_name_pattern: "^[a-z0-9][a-z0-9.-]*$"
+  provisional_version_sentinels:
+    - "unversioned"
+    - "unresolved"
+  requirements:
+    - "canonical_id must be unique."
+    - "The entity_type segment must match entity_type."
+    - "The version segment must match version."
+    - "unversioned and unresolved identities must remain lifecycle.state=proposed."
+
+rules:
+  - id: "DBIO-ID-001"
+    statement: "A repository is not an agent."
+    validation_effect: "Repository discovery alone cannot produce entity_type=agent."
+
+  - id: "DBIO-ID-002"
+    statement: "A protocol is not a runtime agent instance."
+    validation_effect: "Protocol schemas, packages, demos, and CI do not establish a running principal."
+
+  - id: "DBIO-ID-003"
+    statement: "An artifact must belong to an existing parent entity."
+    validation_effect: "entity_type=artifact requires a non-null parent_entity that resolves in entities.yaml."
+
+  - id: "DBIO-ID-004"
+    statement: "Retiring an entity must preserve a retirement record."
+    validation_effect: "lifecycle.state=retired requires lifecycle.retirement_record; the entity record is retained."
+
+  - id: "DBIO-ID-005"
+    statement: "Discovery does not prove ownership."
+    validation_effect: "A Git remote namespace may be recorded only as repository_namespace_only, not verified ownership."
+
+  - id: "DBIO-ID-006"
+    statement: "Path aliases do not create entities."
+    validation_effect: "Mirrors, duplicates, temporary worktrees, and vendor paths are path_observations without entity_id."
+
+  - id: "DBIO-ID-007"
+    statement: "Unknown or conflicting versions remain provisional."
+    validation_effect: "unversioned or unresolved versions cannot use lifecycle.state=verified."
+
+  - id: "DBIO-ID-008"
+    statement: "Runtime agent identity requires runtime-principal evidence."
+    validation_effect: "An agent must have evidence beyond a repository name, framework, protocol, package, service, or demo."
+
+  - id: "DBIO-ID-009"
+    statement: "Package, schema, protocol, repository release, and checkout versions are separate identity axes."
+    validation_effect: "A version from one axis cannot populate canonical_id for another axis without explicit binding evidence."
+
+ownership:
+  owner_statuses:
+    - "unknown"
+    - "repository_namespace_only"
+    - "verified"
+  requirements:
+    - "verified ownership requires explicit governance-authority evidence."
+    - "Ownership does not inherit automatically from parent_entity."
+    - "Repository namespace does not grant permissions."
+
+lineage:
+  parent_rule: "parent_entity must resolve to an existing entity_id."
+  child_rule: "child_entities must resolve to existing entity_id values."
+  successor_rule: "lifecycle.successor must resolve to an existing entity_id when non-null."
+  inheritance_rule: "Identity lineage does not automatically transfer permissions, ownership, lifecycle state, or evidence sufficiency."

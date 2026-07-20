@@ -1,0 +1,30 @@
+{
+  "configuration_digest": "sha256:dddfb9f73a3d16a652de0035d696eab5033f8b5bab4b82e1a0fce4c03edd26e7",
+  "context_id": "dbio:execution-context:digital-biosphere-os:0001",
+  "dependency_refs": [
+    "python_standard_library"
+  ],
+  "entity_id": "digital-biosphere-os",
+  "environment_ref": "dbio://runner-environment/dbos-exp-0001/local-governance-workspace/v0.1",
+  "execution_method": "deterministic_frozen_validator_suite",
+  "input_snapshot_refs": [
+    "dbio:snapshot:input:dbio:execution-context:digital-biosphere-os:0001:0001"
+  ],
+  "limitations": [
+    "local structural validation only",
+    "not independent verification",
+    "no capability or permission effect"
+  ],
+  "output_snapshot_refs": [
+    "dbio:snapshot:output:dbio:execution-context:digital-biosphere-os:0001:0001"
+  ],
+  "platform": {
+    "machine": "arm64",
+    "python": "3.14.5",
+    "system": "Darwin"
+  },
+  "reproducibility": "bounded_to_retained_snapshot_environment_and_method",
+  "software_version": "DBOS v0.1",
+  "status": "validated",
+  "timestamp": "2026-07-20T10:50:17+08:00"
+}

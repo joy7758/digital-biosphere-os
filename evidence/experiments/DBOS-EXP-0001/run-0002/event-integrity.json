@@ -1,0 +1,24 @@
+{
+  "check_results": {
+    "hash_validation": "PASS",
+    "sequence_validation": "PASS",
+    "source_validation": "PASS",
+    "timestamp_validation": "PASS",
+    "witness_validation": "PASS_LOCAL_NONINDEPENDENT"
+  },
+  "clock_source": "local_system_clock_timezone_aware",
+  "current_hash": "sha256:52fe5ffbb30fb7c4afbcd83f9a4b89da16aa1d238cbfe9c42dc6218a2c3fba1c",
+  "event_id": "dbio:event:digital-biosphere-os:DBOS-EXP-0001:0001",
+  "integrity_status": "verified",
+  "limitations": [
+    "genesis stream has no previous hash",
+    "local Runner witness is not independent"
+  ],
+  "previous_hash": null,
+  "sequence": 1,
+  "stream_id": "dbio://event-stream/digital-biosphere-os/DBOS-EXP-0001/v0.1",
+  "timestamp": "2026-07-20T10:50:17+08:00",
+  "witness_refs": [
+    "dbio:runner:automated:dbos-self-validation:v0.1"
+  ]
+}

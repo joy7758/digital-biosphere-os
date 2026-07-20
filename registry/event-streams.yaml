@@ -1,0 +1,59 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereEventStreamRegistry",
+  "metadata": {
+    "title": "Digital Biosphere Event Streams v0.1",
+    "status": "twenty_three_defined_and_one_active_experiment_stream",
+    "constitution": "../constitution/event-constitution.yaml",
+    "entity_source_of_truth": "entities.yaml",
+    "event_type_source_of_truth": "event-types.yaml",
+    "generated_at": "2026-07-19T23:41:50+08:00",
+    "stream_count": 24,
+    "defined_stream_count": 23,
+    "active_stream_count": 1,
+    "streamed_event_count": 1,
+    "observer_count": 0,
+    "agent_created_count": 0,
+    "runtime_created_count": 0,
+    "permission_grant_count": 0,
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "One declarative stream exists for each canonical entity.",
+      "status=defined means an event-routing contract exists; it does not mean active collection, subscription, monitoring, runtime, or observation."
+    ]
+  },
+  "stream_record_schema": {
+    "required_fields": ["stream_id", "entity_id", "event_types", "retention", "status"],
+    "stream_id_format": "dbio://event-stream/<entity-id>/v<version>",
+    "valid_statuses": ["defined", "active", "suspended", "retired"],
+    "default_status": "defined",
+    "default_retention": "append_only_until_explicit_retirement_policy",
+    "activation_boundary": "A defined stream cannot become active without a separately authorized collector, environment, provenance method, and evidence path."
+  },
+  "event_streams": [
+    {"stream_id":"dbio://event-stream/digital-biosphere-architecture/v0.1","entity_id":"digital-biosphere-architecture","event_types":["identity_event","capability_event","evidence_event","verification_event","resource_event","execution_event","evolution_event","governance_event"],"retention":"append_only_until_explicit_retirement_policy","status":"defined"},
+    {"stream_id":"dbio://event-stream/pop-persona-object-protocol/v0.1","entity_id":"pop-persona-object-protocol","event_types":["identity_event","capability_event","evidence_event","verification_event","resource_event","execution_event","evolution_event","governance_event"],"retention":"append_only_until_explicit_retirement_policy","status":"defined"},
+    {"stream_id":"dbio://event-stream/aip-agent-intent-protocol/v0.1","entity_id":"aip-agent-intent-protocol","event_types":["identity_event","capability_event","evidence_event","verification_event","resource_event","execution_event","evolution_event","governance_event"],"retention":"append_only_until_explicit_retirement_policy","status":"defined"},
+    {"stream_id":"dbio://event-stream/token-governor-reference/v0.1","entity_id":"token-governor-reference","event_types":["identity_event","capability_event","evidence_event","verification_event","resource_event","execution_event","evolution_event","governance_event"],"retention":"append_only_until_explicit_retirement_policy","status":"defined"},
+    {"stream_id":"dbio://event-stream/fdo-kernel-mvk/v0.1","entity_id":"fdo-kernel-mvk","event_types":["identity_event","capability_event","evidence_event","verification_event","resource_event","execution_event","evolution_event","governance_event"],"retention":"append_only_until_explicit_retirement_policy","status":"defined"},
+    {"stream_id":"dbio://event-stream/agent-evidence-eeoap/v0.1","entity_id":"agent-evidence-eeoap","event_types":["identity_event","capability_event","evidence_event","verification_event","resource_event","execution_event","evolution_event","governance_event"],"retention":"append_only_until_explicit_retirement_policy","status":"defined"},
+    {"stream_id":"dbio://event-stream/aro-audit-reference/v0.1","entity_id":"aro-audit-reference","event_types":["identity_event","capability_event","evidence_event","verification_event","resource_event","execution_event","evolution_event","governance_event"],"retention":"append_only_until_explicit_retirement_policy","status":"defined"},
+    {"stream_id":"dbio://event-stream/verifiable-agent-demo/v0.1","entity_id":"verifiable-agent-demo","event_types":["identity_event","capability_event","evidence_event","verification_event","resource_event","execution_event","evolution_event","governance_event"],"retention":"append_only_until_explicit_retirement_policy","status":"defined"},
+    {"stream_id":"dbio://event-stream/execution-integrity-core/v0.1","entity_id":"execution-integrity-core","event_types":["identity_event","capability_event","evidence_event","verification_event","resource_event","execution_event","evolution_event","governance_event"],"retention":"append_only_until_explicit_retirement_policy","status":"defined"},
+    {"stream_id":"dbio://event-stream/agent-evidence-receipt-layer/v0.1","entity_id":"agent-evidence-receipt-layer","event_types":["identity_event","capability_event","evidence_event","verification_event","resource_event","execution_event","evolution_event","governance_event"],"retention":"append_only_until_explicit_retirement_policy","status":"defined"},
+    {"stream_id":"dbio://event-stream/saee-agent-readiness/v0.1","entity_id":"saee-agent-readiness","event_types":["identity_event","capability_event","evidence_event","verification_event","resource_event","execution_event","evolution_event","governance_event"],"retention":"append_only_until_explicit_retirement_policy","status":"defined"},
+    {"stream_id":"dbio://event-stream/agent-governance-toolkit-external/v0.1","entity_id":"agent-governance-toolkit-external","event_types":["identity_event","capability_event","evidence_event","verification_event","resource_event","execution_event","evolution_event","governance_event"],"retention":"append_only_until_explicit_retirement_policy","status":"defined"},
+    {"stream_id":"dbio://event-stream/agent-governance-benchmark/v0.1","entity_id":"agent-governance-benchmark","event_types":["identity_event","capability_event","evidence_event","verification_event","resource_event","execution_event","evolution_event","governance_event"],"retention":"append_only_until_explicit_retirement_policy","status":"defined"},
+    {"stream_id":"dbio://event-stream/agent-receipt-validator-mcp/v0.1","entity_id":"agent-receipt-validator-mcp","event_types":["identity_event","capability_event","evidence_event","verification_event","resource_event","execution_event","evolution_event","governance_event"],"retention":"append_only_until_explicit_retirement_policy","status":"defined"},
+    {"stream_id":"dbio://event-stream/agent-accountability-evidence-layer/v0.1","entity_id":"agent-accountability-evidence-layer","event_types":["identity_event","capability_event","evidence_event","verification_event","resource_event","execution_event","evolution_event","governance_event"],"retention":"append_only_until_explicit_retirement_policy","status":"defined"},
+    {"stream_id":"dbio://event-stream/agent-object-protocol/v0.1","entity_id":"agent-object-protocol","event_types":["identity_event","capability_event","evidence_event","verification_event","resource_event","execution_event","evolution_event","governance_event"],"retention":"append_only_until_explicit_retirement_policy","status":"defined"},
+    {"stream_id":"dbio://event-stream/ecl-execution-compact-layer/v0.1","entity_id":"ecl-execution-compact-layer","event_types":["identity_event","capability_event","evidence_event","verification_event","resource_event","execution_event","evolution_event","governance_event"],"retention":"append_only_until_explicit_retirement_policy","status":"defined"},
+    {"stream_id":"dbio://event-stream/cellcaps/v0.1","entity_id":"cellcaps","event_types":["identity_event","capability_event","evidence_event","verification_event","resource_event","execution_event","evolution_event","governance_event"],"retention":"append_only_until_explicit_retirement_policy","status":"defined"},
+    {"stream_id":"dbio://event-stream/pra-server/v0.1","entity_id":"pra-server","event_types":["identity_event","capability_event","evidence_event","verification_event","resource_event","execution_event","evolution_event","governance_event"],"retention":"append_only_until_explicit_retirement_policy","status":"defined"},
+    {"stream_id":"dbio://event-stream/standalone-agent-object-protocol-draft/v0.1","entity_id":"standalone-agent-object-protocol-draft","event_types":["identity_event","capability_event","evidence_event","verification_event","resource_event","execution_event","evolution_event","governance_event"],"retention":"append_only_until_explicit_retirement_policy","status":"defined"},
+    {"stream_id":"dbio://event-stream/sovereign-agent-local-gate/v0.1","entity_id":"sovereign-agent-local-gate","event_types":["identity_event","capability_event","evidence_event","verification_event","resource_event","execution_event","evolution_event","governance_event"],"retention":"append_only_until_explicit_retirement_policy","status":"defined"},
+    {"stream_id":"dbio://event-stream/mcp-agent-ei-external/v0.1","entity_id":"mcp-agent-ei-external","event_types":["identity_event","capability_event","evidence_event","verification_event","resource_event","execution_event","evolution_event","governance_event"],"retention":"append_only_until_explicit_retirement_policy","status":"defined"},
+    {"stream_id":"dbio://event-stream/autonomous-cell-protocol/v0.1","entity_id":"autonomous-cell-protocol","event_types":["identity_event","capability_event","evidence_event","verification_event","resource_event","execution_event","evolution_event","governance_event"],"retention":"append_only_until_explicit_retirement_policy","status":"defined"},
+    {"stream_id":"dbio://event-stream/digital-biosphere-os/DBOS-EXP-0001/v0.1","entity_id":"digital-biosphere-os","event_types":["execution_event"],"retention":"append_only_until_explicit_retirement_policy","status":"active","subject_ref":"DBOS-SUBJECT-0001","authorization_ref":"DBOS-EXP-0001-AUTH-0002"}
+  ]
+}

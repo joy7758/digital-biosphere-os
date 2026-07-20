@@ -1,0 +1,87 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereExperimentFreezeManifestRegistry",
+  "metadata": {
+    "title": "Experiment Freeze Manifests v0.1",
+    "status": "two_append_only_frozen_manifests",
+    "constitution": "../constitution/experiment-freeze-constitution.yaml",
+    "experiment_source_of_truth": "experiments.yaml",
+    "snapshot_source_of_truth": "experiment-snapshots.yaml",
+    "validator_manifest_source_of_truth": "validator-manifests.yaml",
+    "environment_source_of_truth": "environments.yaml",
+    "environment_lock_source_of_truth": "environment-locks.yaml",
+    "generated_at": "2026-07-20T01:35:20+08:00",
+    "freeze_manifest_count": 2,
+    "freeze_status_distribution": {"pending": 0, "frozen": 2, "thawed": 0, "invalid": 0, "revoked": 0},
+    "frozen_manifest_count": 2,
+    "execution_authority_count": 0,
+    "event_created_count": 0,
+    "runtime_created_count": 0,
+    "agent_created_count": 0,
+    "organism_created_count": 0,
+    "capability_effect_count": 0,
+    "permission_grant_count": 0,
+    "c_e_v_level_change_count": 0,
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "The sole record binds candidate freeze inputs but remains pending; references do not assert that their targets are frozen.",
+      "A freeze manifest cannot authorize or execute an experiment and cannot modify member repositories."
+    ]
+  },
+  "freeze_manifest_schema": {
+    "required_fields": ["freeze_id", "experiment_id", "snapshot_refs", "validator_manifest_ref", "environment_ref", "status"],
+    "additional_governance_fields": ["environment_lock_ref", "certificate_ref", "snapshot_capture_requirement", "scope", "created_at", "frozen_at", "thaw_ref", "revocation_ref", "authority_effect"],
+    "valid_statuses": ["pending", "frozen", "thawed", "invalid", "revoked"],
+    "default_status": "pending",
+    "freeze_boundary": "frozen requires frozen snapshots, a locked validator manifest, a frozen environment lock, complete digests, and an issued attributable certificate."
+  },
+  "freeze_manifests": [
+    {
+      "freeze_id": "DBOS-EXP-0001-FREEZE-0001",
+      "experiment_id": "DBOS-EXP-0001",
+      "snapshot_refs": ["DBOS-EXP-0001-SNAPSHOT-0001"],
+      "validator_manifest_ref": "DBOS-EXP-0001-VALIDATOR-MANIFEST-0001",
+      "environment_ref": "dbio://environment/local-governance-workspace/v0.1",
+      "environment_lock_ref": "DBOS-EXP-0001-ENV-LOCK-0001",
+      "certificate_ref": "DBOS-EXP-0001-FREEZE-CERT-0001",
+      "snapshot_capture_requirement": {
+        "capture_ref": "DBOS-EXP-0001-CAPTURE-0001",
+        "required_status": "captured",
+        "minimum_artifact_digest_count": 1,
+        "capture_evidence_required": true,
+        "current_status": "validated"
+      },
+      "scope": "DBOS-EXP-0001 local pre-execution configuration only",
+      "status": "frozen",
+      "created_at": "2026-07-20T01:35:20+08:00",
+      "frozen_at": "2026-07-20T10:20:17+08:00",
+      "thaw_ref": null,
+      "revocation_ref": null,
+      "authority_effect": "none"
+    },
+    {
+      "freeze_id": "DBOS-EXP-0001-FREEZE-0002",
+      "experiment_id": "DBOS-EXP-0001",
+      "snapshot_refs": ["DBOS-EXP-0001-SNAPSHOT-0001"],
+      "validator_manifest_ref": "DBOS-EXP-0001-VALIDATOR-MANIFEST-0002",
+      "environment_ref": "dbio://environment/local-governance-workspace/v0.1",
+      "environment_lock_ref": "DBOS-EXP-0001-ENV-LOCK-0001",
+      "certificate_ref": "DBOS-EXP-0001-FREEZE-CERT-0002",
+      "snapshot_capture_requirement": {
+        "capture_ref": "DBOS-EXP-0001-CAPTURE-0001",
+        "required_status": "captured",
+        "minimum_artifact_digest_count": 1,
+        "capture_evidence_required": true,
+        "current_status": "validated"
+      },
+      "scope": "DBOS-EXP-0001 second-attempt successor validator freeze; original snapshot and environment lock retained",
+      "status": "frozen",
+      "created_at": "2026-07-20T10:47:27+08:00",
+      "frozen_at": "2026-07-20T10:47:27+08:00",
+      "supersedes": "DBOS-EXP-0001-FREEZE-0001",
+      "thaw_ref": null,
+      "revocation_ref": null,
+      "authority_effect": "none"
+    }
+  ]
+}

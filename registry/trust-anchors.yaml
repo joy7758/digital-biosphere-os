@@ -1,0 +1,30 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereTrustAnchorRegistry",
+  "metadata": {
+    "title": "Event Attestation Trust Anchors v0.1",
+    "status": "empty_trust_anchor_baseline",
+    "constitution": "../constitution/event-attestation-constitution.yaml",
+    "generated_at": "2026-07-20T00:09:24+08:00",
+    "trust_anchor_count": 0,
+    "trust_level_distribution": {"unknown": 0, "identity_supported": 0, "scope_supported": 0, "independently_verified": 0, "revoked": 0},
+    "trust_grant_count": 0,
+    "authority_grant_count": 0,
+    "permission_grant_count": 0,
+    "capability_effect_count": 0,
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "Trust-anchor registration creates a reference point, not trust, authority, capability, permission, or event truth.",
+      "Every trust level above unknown requires separate current evidence within explicit scope and remains revocable."
+    ]
+  },
+  "trust_anchor_record_schema": {
+    "required_fields": ["anchor_id", "identity_ref", "evidence_ref", "scope", "trust_level"],
+    "anchor_id_format": "dbio://trust-anchor/<identity>/<scope>/v<version>",
+    "valid_trust_levels": ["unknown", "identity_supported", "scope_supported", "independently_verified", "revoked"],
+    "default_trust_level": "unknown",
+    "evidence_boundary": "unknown may use evidence_ref=null; every higher current reliance state requires resolvable evidence and cannot be inferred from identity, type, signature, or registration.",
+    "revocation_boundary": "Revocation is additive; historical anchors and attestations remain discoverable."
+  },
+  "trust_anchors": []
+}

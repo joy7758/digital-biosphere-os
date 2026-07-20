@@ -1,0 +1,2075 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereEntityRegistry",
+  "metadata": {
+    "title": "Canonical Identity Registry",
+    "status": "local_identity_baseline",
+    "identity_constitution": "../constitution/identity-constitution.yaml",
+    "identity_rules": "identity-rules.yaml",
+    "generated_from": "agents.yaml existing 22-object scan plus explicit ACP protocol registration",
+    "generated_at": "2026-07-19T22:26:53+08:00",
+    "entity_count": 23,
+    "classification_counts": {
+      "protocol": 10,
+      "agent": 0,
+      "repository": 5,
+      "artifact": 0,
+      "service": 8
+    },
+    "path_observation_count": 163,
+    "path_identity_counts": {
+      "duplicate": 5,
+      "mirror": 24,
+      "temporary": 113,
+      "unknown": 21
+    },
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "One ACP protocol entity was added by explicit user request; no Agent identity was created.",
+      "No repository or protocol was promoted to an agent instance.",
+      "Path observations do not receive entity_id or canonical_id.",
+      "unversioned and unresolved are explicit provisional version states, not release claims.",
+      "Package, schema, protocol, repository-tag, and checkout versions are separate axes unless evidence explicitly binds them."
+    ]
+  },
+  "entities": [
+    {
+      "entity_id": "digital-biosphere-architecture",
+      "canonical_id": "dbio://repository/digital-biosphere-architecture/unversioned",
+      "entity_type": "repository",
+      "name": "Digital Biosphere Architecture",
+      "version": "unversioned",
+      "status": "proposed_identity",
+      "lifecycle": {
+        "state": "proposed",
+        "created": null,
+        "last_verified": "2026-07-19T18:41:01+08:00",
+        "successor": null
+      },
+      "owner": {
+        "status": "repository_namespace_only",
+        "value": "joy7758",
+        "evidence_source": [
+          "/Users/zhangbin/GitHub/digital-biosphere-architecture/.git/config"
+        ],
+        "limitation": "Repository namespace is not proof of legal ownership or governance authority."
+      },
+      "parent_entity": null,
+      "child_entities": [],
+      "repository": "/Users/zhangbin/GitHub/digital-biosphere-architecture",
+      "purpose": "Define vocabulary, conceptual boundaries, and citation context for the Digital Biosphere Architecture.",
+      "source_registry_id": "digital-biosphere-architecture",
+      "verification": {
+        "status": "evidence_backed_provisional",
+        "verified_at": "2026-07-19T18:41:01+08:00",
+        "method": "local registry classification and evidence-source presence review",
+        "evidence_source": [
+          "/Users/zhangbin/GitHub/digital-biosphere-architecture/AGENTS.md",
+          "/Users/zhangbin/GitHub/digital-biosphere-architecture/README.md",
+          "/Users/zhangbin/GitHub/digital-biosphere-architecture/docs/ai-discovery-index.md"
+        ],
+        "issues": [
+          "no evidence-backed entity version was found"
+        ]
+      }
+    },
+    {
+      "entity_id": "pop-persona-object-protocol",
+      "canonical_id": "dbio://protocol/persona-object-protocol/unresolved",
+      "entity_type": "protocol",
+      "name": "Persona Object Protocol (POP)",
+      "version": "unresolved",
+      "status": "proposed_identity",
+      "lifecycle": {
+        "state": "proposed",
+        "created": null,
+        "last_verified": "2026-07-19T18:41:01+08:00",
+        "successor": null
+      },
+      "owner": {
+        "status": "repository_namespace_only",
+        "value": "joy7758",
+        "evidence_source": [
+          "/Users/zhangbin/GitHub/persona-object-protocol/.git/config"
+        ],
+        "limitation": "Repository namespace is not proof of legal ownership or governance authority."
+      },
+      "parent_entity": null,
+      "child_entities": [],
+      "repository": "/Users/zhangbin/GitHub/persona-object-protocol",
+      "purpose": "Provide a portable persona object layer and projection model across agent runtimes.",
+      "source_registry_id": "pop-persona-object-protocol",
+      "verification": {
+        "status": "evidence_backed_provisional",
+        "verified_at": "2026-07-19T18:41:01+08:00",
+        "method": "local registry classification and evidence-source presence review",
+        "evidence_source": [
+          "/Users/zhangbin/GitHub/persona-object-protocol/README.md",
+          "/Users/zhangbin/GitHub/persona-object-protocol/llms.txt",
+          "/Users/zhangbin/GitHub/persona-object-protocol/pyproject.toml"
+        ],
+        "issues": [
+          "version_axis_conflict: canonical schema baseline v0.1.0 and package/repository release surface v0.1.7 are not one proven entity version"
+        ]
+      }
+    },
+    {
+      "entity_id": "aip-agent-intent-protocol",
+      "canonical_id": "dbio://protocol/agent-intent-protocol/unversioned",
+      "entity_type": "protocol",
+      "name": "Agent Intent Protocol (AIP)",
+      "version": "unversioned",
+      "status": "proposed_identity",
+      "lifecycle": {
+        "state": "proposed",
+        "created": null,
+        "last_verified": "2026-07-19T18:41:01+08:00",
+        "successor": null
+      },
+      "owner": {
+        "status": "repository_namespace_only",
+        "value": "joy7758",
+        "evidence_source": [
+          "/Users/zhangbin/GitHub/agent-intent-protocol/.git/config"
+        ],
+        "limitation": "Repository namespace is not proof of legal ownership or governance authority."
+      },
+      "parent_entity": null,
+      "child_entities": [],
+      "repository": "/Users/zhangbin/GitHub/agent-intent-protocol",
+      "purpose": "Define machine-readable intent, action, and result objects for agent interactions.",
+      "source_registry_id": "aip-agent-intent-protocol",
+      "verification": {
+        "status": "evidence_backed_provisional",
+        "verified_at": "2026-07-19T18:41:01+08:00",
+        "method": "local registry classification and evidence-source presence review",
+        "evidence_source": [
+          "/Users/zhangbin/GitHub/agent-intent-protocol/README.md"
+        ],
+        "issues": [
+          "no evidence-backed entity version was found"
+        ]
+      }
+    },
+    {
+      "entity_id": "token-governor-reference",
+      "canonical_id": "dbio://protocol/token-governor/unversioned",
+      "entity_type": "protocol",
+      "name": "Token Governor (TianJiang)",
+      "version": "unversioned",
+      "status": "proposed_identity",
+      "lifecycle": {
+        "state": "proposed",
+        "created": null,
+        "last_verified": "2026-07-19T18:41:01+08:00",
+        "successor": null
+      },
+      "owner": {
+        "status": "repository_namespace_only",
+        "value": "joy7758",
+        "evidence_source": [
+          "/Users/zhangbin/GitHub/token-governor/.git/config"
+        ],
+        "limitation": "Repository namespace is not proof of legal ownership or governance authority."
+      },
+      "parent_entity": null,
+      "child_entities": [],
+      "repository": "/Users/zhangbin/GitHub/token-governor",
+      "purpose": "Document a public reference interface for budget-window inputs, toy policies, and example reports.",
+      "source_registry_id": "token-governor-reference",
+      "verification": {
+        "status": "evidence_backed_provisional",
+        "verified_at": "2026-07-19T18:41:01+08:00",
+        "method": "local registry classification and evidence-source presence review",
+        "evidence_source": [
+          "/Users/zhangbin/GitHub/token-governor/README.md"
+        ],
+        "issues": [
+          "no evidence-backed entity version was found"
+        ]
+      }
+    },
+    {
+      "entity_id": "fdo-kernel-mvk",
+      "canonical_id": "dbio://service/fdo-kernel-mvk/unversioned",
+      "entity_type": "service",
+      "name": "FDO Kernel MVK",
+      "version": "unversioned",
+      "status": "proposed_identity",
+      "lifecycle": {
+        "state": "proposed",
+        "created": null,
+        "last_verified": "2026-07-19T18:41:01+08:00",
+        "successor": null
+      },
+      "owner": {
+        "status": "repository_namespace_only",
+        "value": "joy7758",
+        "evidence_source": [
+          "/Users/zhangbin/GitHub/fdo-kernel-mvk/.git/config"
+        ],
+        "limitation": "Repository namespace is not proof of legal ownership or governance authority."
+      },
+      "parent_entity": null,
+      "child_entities": [],
+      "repository": "/Users/zhangbin/GitHub/fdo-kernel-mvk",
+      "purpose": "Provide deterministic execution-integrity examples and toy checksum-oriented validation.",
+      "source_registry_id": "fdo-kernel-mvk",
+      "verification": {
+        "status": "evidence_backed_provisional",
+        "verified_at": "2026-07-19T18:41:01+08:00",
+        "method": "local registry classification and evidence-source presence review",
+        "evidence_source": [
+          "/Users/zhangbin/GitHub/fdo-kernel-mvk/README.md",
+          "/Users/zhangbin/GitHub/fdo-kernel-mvk/AGENTS.md"
+        ],
+        "issues": [
+          "no evidence-backed entity version was found"
+        ]
+      }
+    },
+    {
+      "entity_id": "agent-evidence-eeoap",
+      "canonical_id": "dbio://protocol/agent-evidence/unresolved",
+      "entity_type": "protocol",
+      "name": "Agent Evidence",
+      "version": "unresolved",
+      "status": "proposed_identity",
+      "lifecycle": {
+        "state": "proposed",
+        "created": null,
+        "last_verified": "2026-07-19T18:41:01+08:00",
+        "successor": null
+      },
+      "owner": {
+        "status": "repository_namespace_only",
+        "value": "joy7758",
+        "evidence_source": [
+          "/Users/zhangbin/GitHub/agent-evidence/.git/config"
+        ],
+        "limitation": "Repository namespace is not proof of legal ownership or governance authority."
+      },
+      "parent_entity": null,
+      "child_entities": [],
+      "repository": "/Users/zhangbin/GitHub/agent-evidence",
+      "purpose": "Turn agent or service operations into auditable and verifiable evidence objects through the public EEOAP schema and validator surface.",
+      "source_registry_id": "agent-evidence-eeoap",
+      "verification": {
+        "status": "evidence_backed_provisional",
+        "verified_at": "2026-07-19T18:41:01+08:00",
+        "method": "local registry classification and evidence-source presence review",
+        "evidence_source": [
+          "/Users/zhangbin/GitHub/agent-evidence/README.md",
+          "/Users/zhangbin/GitHub/agent-evidence/AGENTS.md",
+          "/Users/zhangbin/GitHub/agent-evidence/llms.txt",
+          "/Users/zhangbin/GitHub/agent-evidence/pyproject.toml"
+        ],
+        "issues": [
+          "version_conflict: pyproject.toml=0.1.0rc3; README.md reports v0.6.0 release"
+        ]
+      }
+    },
+    {
+      "entity_id": "aro-audit-reference",
+      "canonical_id": "dbio://protocol/aro-audit/v0.1.0",
+      "entity_type": "protocol",
+      "name": "ARO-Audit",
+      "version": "v0.1.0",
+      "status": "proposed_identity",
+      "lifecycle": {
+        "state": "proposed",
+        "created": null,
+        "last_verified": "2026-07-19T18:41:01+08:00",
+        "successor": null
+      },
+      "owner": {
+        "status": "repository_namespace_only",
+        "value": "joy7758",
+        "evidence_source": [
+          "/Users/zhangbin/GitHub/aro-audit/.git/config"
+        ],
+        "limitation": "Repository namespace is not proof of legal ownership or governance authority."
+      },
+      "parent_entity": null,
+      "child_entities": [],
+      "repository": "/Users/zhangbin/GitHub/aro-audit",
+      "purpose": "Provide public receipt-shaped artifacts, audit-format examples, and independent toy verification.",
+      "source_registry_id": "aro-audit-reference",
+      "verification": {
+        "status": "evidence_backed_provisional",
+        "verified_at": "2026-07-19T18:41:01+08:00",
+        "method": "local registry classification and evidence-source presence review",
+        "evidence_source": [
+          "/Users/zhangbin/GitHub/aro-audit/README.md",
+          "/Users/zhangbin/GitHub/aro-audit/llms.txt",
+          "/Users/zhangbin/GitHub/aro-audit/pyproject.toml"
+        ],
+        "issues": []
+      }
+    },
+    {
+      "entity_id": "verifiable-agent-demo",
+      "canonical_id": "dbio://repository/verifiable-agent-demo/unversioned",
+      "entity_type": "repository",
+      "name": "Verifiable Agent Demo",
+      "version": "unversioned",
+      "status": "proposed_identity",
+      "lifecycle": {
+        "state": "proposed",
+        "created": null,
+        "last_verified": "2026-07-19T18:41:01+08:00",
+        "successor": null
+      },
+      "owner": {
+        "status": "repository_namespace_only",
+        "value": "joy7758",
+        "evidence_source": [
+          "/Users/zhangbin/GitHub/verifiable-agent-demo/.git/config"
+        ],
+        "limitation": "Repository namespace is not proof of legal ownership or governance authority."
+      },
+      "parent_entity": null,
+      "child_entities": [],
+      "repository": "/Users/zhangbin/GitHub/verifiable-agent-demo",
+      "purpose": "Demonstrate a minimal runnable single-path toy receipt validation flow.",
+      "source_registry_id": "verifiable-agent-demo",
+      "verification": {
+        "status": "evidence_backed_provisional",
+        "verified_at": "2026-07-19T18:41:01+08:00",
+        "method": "local registry classification and evidence-source presence review",
+        "evidence_source": [
+          "/Users/zhangbin/GitHub/verifiable-agent-demo/README.md",
+          "/Users/zhangbin/GitHub/verifiable-agent-demo/llms.txt",
+          "/Users/zhangbin/GitHub/verifiable-agent-demo/pyproject.toml"
+        ],
+        "issues": [
+          "repository checkout has no exact tag; pyproject.toml package version is not treated as repository identity version",
+          "no evidence-backed repository identity version was found"
+        ]
+      }
+    },
+    {
+      "entity_id": "execution-integrity-core",
+      "canonical_id": "dbio://service/execution-integrity-core/v0.8.0",
+      "entity_type": "service",
+      "name": "Execution Integrity Core",
+      "version": "v0.8.0",
+      "status": "proposed_identity",
+      "lifecycle": {
+        "state": "proposed",
+        "created": null,
+        "last_verified": "2026-07-19T18:41:01+08:00",
+        "successor": null
+      },
+      "owner": {
+        "status": "repository_namespace_only",
+        "value": "joy7758",
+        "evidence_source": [
+          "/Users/zhangbin/GitHub/execution-integrity-core/.git/config"
+        ],
+        "limitation": "Repository namespace is not proof of legal ownership or governance authority."
+      },
+      "parent_entity": null,
+      "child_entities": [],
+      "repository": "/Users/zhangbin/GitHub/execution-integrity-core",
+      "purpose": "Provide the VAES/ARO v0.8 reference kernel and VES v0.1 local manifest-first execution layer.",
+      "source_registry_id": "execution-integrity-core",
+      "verification": {
+        "status": "evidence_backed_provisional",
+        "verified_at": "2026-07-19T18:41:01+08:00",
+        "method": "local registry classification and evidence-source presence review",
+        "evidence_source": [
+          "/Users/zhangbin/GitHub/execution-integrity-core/README.md",
+          "/Users/zhangbin/GitHub/execution-integrity-core/AGENTS.md",
+          "/Users/zhangbin/GitHub/execution-integrity-core/agent-index.json",
+          "/Users/zhangbin/GitHub/execution-integrity-core/pyproject.toml"
+        ],
+        "issues": []
+      }
+    },
+    {
+      "entity_id": "agent-evidence-receipt-layer",
+      "canonical_id": "dbio://service/agent-evidence-receipt/v0.2.0",
+      "entity_type": "service",
+      "name": "Agent Evidence Receipt",
+      "version": "v0.2.0",
+      "status": "proposed_identity",
+      "lifecycle": {
+        "state": "proposed",
+        "created": null,
+        "last_verified": "2026-07-19T18:41:01+08:00",
+        "successor": null
+      },
+      "owner": {
+        "status": "unknown",
+        "value": null,
+        "evidence_source": [],
+        "limitation": "No explicit entity owner was established by the scan."
+      },
+      "parent_entity": null,
+      "child_entities": [],
+      "repository": "/Users/zhangbin/GitHub/agent-evidence-layer",
+      "purpose": "Package one agent run into a transferable and offline-verifiable evidence package.",
+      "source_registry_id": "agent-evidence-receipt-layer",
+      "verification": {
+        "status": "evidence_backed_provisional",
+        "verified_at": "2026-07-19T18:41:01+08:00",
+        "method": "local registry classification and evidence-source presence review",
+        "evidence_source": [
+          "/Users/zhangbin/GitHub/agent-evidence-layer/README.md",
+          "/Users/zhangbin/GitHub/agent-evidence-layer/AGENTS.md",
+          "/Users/zhangbin/GitHub/agent-evidence-layer/PROJECT_LEDGER.md",
+          "/Users/zhangbin/GitHub/agent-evidence-layer/pyproject.toml"
+        ],
+        "issues": [
+          "entity owner is unknown"
+        ]
+      }
+    },
+    {
+      "entity_id": "saee-agent-readiness",
+      "canonical_id": "dbio://service/saee-agent-readiness/v2",
+      "entity_type": "service",
+      "name": "SAEE Agent Readiness Capability",
+      "version": "v2",
+      "status": "proposed_identity",
+      "lifecycle": {
+        "state": "proposed",
+        "created": null,
+        "last_verified": "2026-07-19T18:41:01+08:00",
+        "successor": null
+      },
+      "owner": {
+        "status": "unknown",
+        "value": null,
+        "evidence_source": [],
+        "limitation": "No explicit entity owner was established by the scan."
+      },
+      "parent_entity": null,
+      "child_entities": [],
+      "repository": "/Users/zhangbin/GitHub/SAEE",
+      "purpose": "Evaluate whether AI agents have sufficient execution evidence before real-world deployment.",
+      "source_registry_id": "saee-agent-readiness",
+      "verification": {
+        "status": "evidence_backed_provisional",
+        "verified_at": "2026-07-19T18:41:01+08:00",
+        "method": "local registry classification and evidence-source presence review",
+        "evidence_source": [
+          "/Users/zhangbin/GitHub/SAEE/README.md",
+          "/Users/zhangbin/GitHub/SAEE/AGENTS.md",
+          "/Users/zhangbin/GitHub/SAEE/capability-package/manifest.json",
+          "/Users/zhangbin/GitHub/SAEE/governance/README.md"
+        ],
+        "issues": [
+          "entity owner is unknown"
+        ]
+      }
+    },
+    {
+      "entity_id": "agent-governance-toolkit-external",
+      "canonical_id": "dbio://repository/agent-governance-toolkit/unversioned",
+      "entity_type": "repository",
+      "name": "Agent Governance Toolkit",
+      "version": "unversioned",
+      "status": "proposed_identity",
+      "lifecycle": {
+        "state": "proposed",
+        "created": null,
+        "last_verified": "2026-07-19T18:41:01+08:00",
+        "successor": null
+      },
+      "owner": {
+        "status": "repository_namespace_only",
+        "value": "microsoft",
+        "evidence_source": [
+          "/Users/zhangbin/GitHub/agent-governance-toolkit/.git/config"
+        ],
+        "limitation": "Repository namespace is not proof of legal ownership or governance authority."
+      },
+      "parent_entity": null,
+      "child_entities": [],
+      "repository": "/Users/zhangbin/GitHub/agent-governance-toolkit",
+      "purpose": "Provide deterministic runtime governance, policy enforcement, identity, sandboxing, and audit logging for agent actions.",
+      "source_registry_id": "agent-governance-toolkit-external",
+      "verification": {
+        "status": "evidence_backed_provisional",
+        "verified_at": "2026-07-19T18:41:01+08:00",
+        "method": "local registry classification and evidence-source presence review",
+        "evidence_source": [
+          "/Users/zhangbin/GitHub/agent-governance-toolkit/README.md",
+          "/Users/zhangbin/GitHub/agent-governance-toolkit/AGENTS.md"
+        ],
+        "issues": [
+          "repository checkout has no exact tag; README package release text is not treated as checkout identity version",
+          "no evidence-backed repository identity version was found"
+        ]
+      }
+    },
+    {
+      "entity_id": "agent-governance-benchmark",
+      "canonical_id": "dbio://repository/agent-governance-benchmark/unversioned",
+      "entity_type": "repository",
+      "name": "Agent Governance Benchmark",
+      "version": "unversioned",
+      "status": "proposed_identity",
+      "lifecycle": {
+        "state": "proposed",
+        "created": null,
+        "last_verified": "2026-07-19T18:41:01+08:00",
+        "successor": null
+      },
+      "owner": {
+        "status": "repository_namespace_only",
+        "value": "joy7758",
+        "evidence_source": [
+          "/Users/zhangbin/GitHub/agent-governance-benchmark/.git/config"
+        ],
+        "limitation": "Repository namespace is not proof of legal ownership or governance authority."
+      },
+      "parent_entity": null,
+      "child_entities": [],
+      "repository": "/Users/zhangbin/GitHub/agent-governance-benchmark",
+      "purpose": "Compare a baseline agent and governed agent on policy, token, persona, and audit metrics using deterministic offline scenarios.",
+      "source_registry_id": "agent-governance-benchmark",
+      "verification": {
+        "status": "evidence_backed_provisional",
+        "verified_at": "2026-07-19T18:41:01+08:00",
+        "method": "local registry classification and evidence-source presence review",
+        "evidence_source": [
+          "/Users/zhangbin/GitHub/agent-governance-benchmark/README.md"
+        ],
+        "issues": [
+          "no evidence-backed entity version was found"
+        ]
+      }
+    },
+    {
+      "entity_id": "agent-receipt-validator-mcp",
+      "canonical_id": "dbio://service/agent-receipt-validator-mcp/v0.1.1",
+      "entity_type": "service",
+      "name": "Agent Receipt Validator MCP",
+      "version": "v0.1.1",
+      "status": "proposed_identity",
+      "lifecycle": {
+        "state": "proposed",
+        "created": null,
+        "last_verified": "2026-07-19T18:41:01+08:00",
+        "successor": null
+      },
+      "owner": {
+        "status": "repository_namespace_only",
+        "value": "joy7758",
+        "evidence_source": [
+          "/Users/zhangbin/GitHub/agent-receipt-validator-mcp/.git/config"
+        ],
+        "limitation": "Repository namespace is not proof of legal ownership or governance authority."
+      },
+      "parent_entity": null,
+      "child_entities": [],
+      "repository": "/Users/zhangbin/GitHub/agent-receipt-validator-mcp",
+      "purpose": "Validate signed agent execution receipts against evidence bundles through a local stdio MCP server.",
+      "source_registry_id": "agent-receipt-validator-mcp",
+      "verification": {
+        "status": "evidence_backed_provisional",
+        "verified_at": "2026-07-19T18:41:01+08:00",
+        "method": "local registry classification and evidence-source presence review",
+        "evidence_source": [
+          "/Users/zhangbin/GitHub/agent-receipt-validator-mcp/README.md",
+          "/Users/zhangbin/GitHub/agent-receipt-validator-mcp/llms.txt",
+          "/Users/zhangbin/GitHub/agent-receipt-validator-mcp/pyproject.toml"
+        ],
+        "issues": []
+      }
+    },
+    {
+      "entity_id": "agent-accountability-evidence-layer",
+      "canonical_id": "dbio://protocol/agent-accountability-evidence-layer/v0.1.0",
+      "entity_type": "protocol",
+      "name": "Agent Accountability Evidence Layer",
+      "version": "v0.1.0",
+      "status": "proposed_identity",
+      "lifecycle": {
+        "state": "proposed",
+        "created": null,
+        "last_verified": "2026-07-19T18:41:01+08:00",
+        "successor": null
+      },
+      "owner": {
+        "status": "repository_namespace_only",
+        "value": "joy7758",
+        "evidence_source": [
+          "/Users/zhangbin/GitHub/agent-accountability-evidence-layer/.git/config"
+        ],
+        "limitation": "Repository namespace is not proof of legal ownership or governance authority."
+      },
+      "parent_entity": null,
+      "child_entities": [],
+      "repository": "/Users/zhangbin/GitHub/agent-accountability-evidence-layer",
+      "purpose": "Define the ASIEP public evidence-profile shape for auditable agent self-improvement.",
+      "source_registry_id": "agent-accountability-evidence-layer",
+      "verification": {
+        "status": "evidence_backed_provisional",
+        "verified_at": "2026-07-19T18:41:01+08:00",
+        "method": "local registry classification and evidence-source presence review",
+        "evidence_source": [
+          "/Users/zhangbin/GitHub/agent-accountability-evidence-layer/README.md",
+          "/Users/zhangbin/GitHub/agent-accountability-evidence-layer/AGENTS.md",
+          "/Users/zhangbin/GitHub/agent-accountability-evidence-layer/pyproject.toml"
+        ],
+        "issues": []
+      }
+    },
+    {
+      "entity_id": "agent-object-protocol",
+      "canonical_id": "dbio://protocol/agent-object-protocol/v1.1.2",
+      "entity_type": "protocol",
+      "name": "Agent Object Protocol",
+      "version": "v1.1.2",
+      "status": "proposed_identity",
+      "lifecycle": {
+        "state": "proposed",
+        "created": null,
+        "last_verified": "2026-07-19T18:41:01+08:00",
+        "successor": null
+      },
+      "owner": {
+        "status": "repository_namespace_only",
+        "value": "joy7758",
+        "evidence_source": [
+          "/Users/zhangbin/GitHub/agent-object-protocol/.git/config"
+        ],
+        "limitation": "Repository namespace is not proof of legal ownership or governance authority."
+      },
+      "parent_entity": null,
+      "child_entities": [],
+      "repository": "/Users/zhangbin/GitHub/agent-object-protocol",
+      "purpose": "Define portable executable object contracts and conformance artifacts for AI agent ecosystems.",
+      "source_registry_id": "agent-object-protocol",
+      "verification": {
+        "status": "evidence_backed_provisional",
+        "verified_at": "2026-07-19T18:41:01+08:00",
+        "method": "local registry classification and evidence-source presence review",
+        "evidence_source": [
+          "/Users/zhangbin/GitHub/agent-object-protocol/README.md"
+        ],
+        "issues": []
+      }
+    },
+    {
+      "entity_id": "ecl-execution-compact-layer",
+      "canonical_id": "dbio://protocol/execution-compact-layer/v0.1.0",
+      "entity_type": "protocol",
+      "name": "Execution Compact Layer (ECL)",
+      "version": "v0.1.0",
+      "status": "proposed_identity",
+      "lifecycle": {
+        "state": "proposed",
+        "created": null,
+        "last_verified": "2026-07-19T18:41:01+08:00",
+        "successor": null
+      },
+      "owner": {
+        "status": "repository_namespace_only",
+        "value": "joy7758",
+        "evidence_source": [
+          "/Users/zhangbin/GitHub/ecl-execution-compact-layer/.git/config"
+        ],
+        "limitation": "Repository namespace is not proof of legal ownership or governance authority."
+      },
+      "parent_entity": null,
+      "child_entities": [],
+      "repository": "/Users/zhangbin/GitHub/ecl-execution-compact-layer",
+      "purpose": "Represent agent execution as a deterministic intermediate representation of state, intent, action, and evidence.",
+      "source_registry_id": "ecl-execution-compact-layer",
+      "verification": {
+        "status": "evidence_backed_provisional",
+        "verified_at": "2026-07-19T18:41:01+08:00",
+        "method": "local registry classification and evidence-source presence review",
+        "evidence_source": [
+          "/Users/zhangbin/GitHub/ecl-execution-compact-layer/README.md",
+          "/Users/zhangbin/GitHub/ecl-execution-compact-layer/AGENTS.md",
+          "/Users/zhangbin/GitHub/ecl-execution-compact-layer/pyproject.toml"
+        ],
+        "issues": []
+      }
+    },
+    {
+      "entity_id": "cellcaps",
+      "canonical_id": "dbio://service/cellcaps/v0.1.0",
+      "entity_type": "service",
+      "name": "CellCaps",
+      "version": "v0.1.0",
+      "status": "proposed_identity",
+      "lifecycle": {
+        "state": "proposed",
+        "created": null,
+        "last_verified": "2026-07-19T18:41:01+08:00",
+        "successor": null
+      },
+      "owner": {
+        "status": "unknown",
+        "value": null,
+        "evidence_source": [],
+        "limitation": "No explicit entity owner was established by the scan."
+      },
+      "parent_entity": null,
+      "child_entities": [],
+      "repository": "/Users/zhangbin/GitHub/cellcaps",
+      "purpose": "Provide semantic cells, trusted recursive capsule graphs, deterministic validation, replay, and evidence tracing.",
+      "source_registry_id": "cellcaps",
+      "verification": {
+        "status": "evidence_backed_provisional",
+        "verified_at": "2026-07-19T18:41:01+08:00",
+        "method": "local registry classification and evidence-source presence review",
+        "evidence_source": [
+          "/Users/zhangbin/GitHub/cellcaps/README.md",
+          "/Users/zhangbin/GitHub/cellcaps/AGENTS.md",
+          "/Users/zhangbin/GitHub/cellcaps/pyproject.toml"
+        ],
+        "issues": [
+          "entity owner is unknown"
+        ]
+      }
+    },
+    {
+      "entity_id": "pra-server",
+      "canonical_id": "dbio://service/pra-server/v0.1.0",
+      "entity_type": "service",
+      "name": "PRA-Server",
+      "version": "v0.1.0",
+      "status": "proposed_identity",
+      "lifecycle": {
+        "state": "proposed",
+        "created": null,
+        "last_verified": "2026-07-19T18:41:01+08:00",
+        "successor": null
+      },
+      "owner": {
+        "status": "unknown",
+        "value": null,
+        "evidence_source": [],
+        "limitation": "No explicit entity owner was established by the scan."
+      },
+      "parent_entity": null,
+      "child_entities": [],
+      "repository": "/Users/zhangbin/pra-server",
+      "purpose": "Operate a minimal personal research agent runtime with project state, evidence events, runtime policy, and approval queues.",
+      "source_registry_id": "pra-server",
+      "verification": {
+        "status": "evidence_backed_provisional",
+        "verified_at": "2026-07-19T18:41:01+08:00",
+        "method": "local registry classification and evidence-source presence review",
+        "evidence_source": [
+          "/Users/zhangbin/pra-server/README.md",
+          "/Users/zhangbin/pra-server/AGENTS.md",
+          "/Users/zhangbin/pra-server/policy/runtime-policy.yaml",
+          "/Users/zhangbin/pra-server/pyproject.toml"
+        ],
+        "issues": [
+          "entity owner is unknown"
+        ]
+      }
+    },
+    {
+      "entity_id": "standalone-agent-object-protocol-draft",
+      "canonical_id": "dbio://protocol/agent-object-protocol-standalone-draft/v0.1-draft",
+      "entity_type": "protocol",
+      "name": "Agent Object Protocol v0.1 Draft (standalone)",
+      "version": "v0.1-draft",
+      "status": "proposed_identity",
+      "lifecycle": {
+        "state": "proposed",
+        "created": null,
+        "last_verified": "2026-07-19T18:41:01+08:00",
+        "successor": null
+      },
+      "owner": {
+        "status": "unknown",
+        "value": null,
+        "evidence_source": [],
+        "limitation": "No explicit entity owner was established by the scan."
+      },
+      "parent_entity": null,
+      "child_entities": [],
+      "repository": "/Users/zhangbin/agent",
+      "purpose": "Specify a verifiable AI agent execution-evidence object model with a minimal reference implementation and conformance vectors.",
+      "source_registry_id": "standalone-agent-object-protocol-draft",
+      "verification": {
+        "status": "evidence_backed_provisional",
+        "verified_at": "2026-07-19T18:41:01+08:00",
+        "method": "local registry classification and evidence-source presence review",
+        "evidence_source": [
+          "/Users/zhangbin/agent/README.md"
+        ],
+        "issues": [
+          "entity owner is unknown"
+        ]
+      }
+    },
+    {
+      "entity_id": "sovereign-agent-local-gate",
+      "canonical_id": "dbio://service/sovereign-agent-local-gate/unversioned",
+      "entity_type": "service",
+      "name": "Sovereign Agent Local Gate Workflow",
+      "version": "unversioned",
+      "status": "proposed_identity",
+      "lifecycle": {
+        "state": "proposed",
+        "created": null,
+        "last_verified": "2026-07-19T18:41:01+08:00",
+        "successor": null
+      },
+      "owner": {
+        "status": "unknown",
+        "value": null,
+        "evidence_source": [],
+        "limitation": "No explicit entity owner was established by the scan."
+      },
+      "parent_entity": null,
+      "child_entities": [],
+      "repository": "/Users/zhangbin/sovereign-agent",
+      "purpose": "Gate sensitive raw material locally, produce redacted structured packets, and separate internal, cloud-safe, public, and release stages.",
+      "source_registry_id": "sovereign-agent-local-gate",
+      "verification": {
+        "status": "evidence_backed_provisional",
+        "verified_at": "2026-07-19T18:41:01+08:00",
+        "method": "local registry classification and evidence-source presence review",
+        "evidence_source": [
+          "/Users/zhangbin/sovereign-agent/BOUNDARY.md"
+        ],
+        "issues": [
+          "no evidence-backed entity version was found",
+          "entity owner is unknown"
+        ]
+      }
+    },
+    {
+      "entity_id": "mcp-agent-ei-external",
+      "canonical_id": "dbio://repository/mcp-agent-external-checkout/unversioned",
+      "entity_type": "repository",
+      "name": "mcp-agent",
+      "version": "unversioned",
+      "status": "proposed_identity",
+      "lifecycle": {
+        "state": "proposed",
+        "created": null,
+        "last_verified": "2026-07-19T18:41:01+08:00",
+        "successor": null
+      },
+      "owner": {
+        "status": "repository_namespace_only",
+        "value": "joy7758",
+        "evidence_source": [
+          "/Users/zhangbin/GitHub/mcp-agent-ei/.git/config"
+        ],
+        "limitation": "Repository namespace is not proof of legal ownership or governance authority."
+      },
+      "parent_entity": null,
+      "child_entities": [],
+      "repository": "/Users/zhangbin/GitHub/mcp-agent-ei",
+      "purpose": "Provide composable agent patterns and MCP server lifecycle support.",
+      "source_registry_id": "mcp-agent-ei-external",
+      "verification": {
+        "status": "evidence_backed_provisional",
+        "verified_at": "2026-07-19T18:41:01+08:00",
+        "method": "local registry classification and evidence-source presence review",
+        "evidence_source": [
+          "/Users/zhangbin/GitHub/mcp-agent-ei/README.md",
+          "/Users/zhangbin/GitHub/mcp-agent-ei/pyproject.toml"
+        ],
+        "issues": [
+          "repository checkout has no exact tag; pyproject.toml package version is not treated as repository identity version",
+          "no evidence-backed repository identity version was found"
+        ]
+      }
+    },
+    {
+      "entity_id": "autonomous-cell-protocol",
+      "canonical_id": "dbio://protocol/autonomous-cell-protocol/v0.1.0-alpha",
+      "entity_type": "protocol",
+      "name": "Autonomous Cell Protocol (ACP)",
+      "version": "v0.1.0-alpha",
+      "status": "proposed_identity",
+      "lifecycle": {
+        "state": "proposed",
+        "created": null,
+        "last_verified": "2026-07-19T22:26:53+08:00",
+        "successor": null
+      },
+      "owner": {
+        "status": "repository_namespace_only",
+        "value": "joy7758",
+        "evidence_source": [
+          "/Users/zhangbin/GitHub/海洋/autonomous-cell-protocol/.git/config"
+        ],
+        "limitation": "Repository namespace is not proof of legal ownership or governance authority."
+      },
+      "parent_entity": null,
+      "child_entities": [],
+      "repository": "/Users/zhangbin/GitHub/海洋/autonomous-cell-protocol",
+      "purpose": "Define an open protocol specification for autonomous physical cells; Ocean Cell is the first application Profile and does not limit ACP Core.",
+      "source_registry_id": "autonomous-cell-protocol",
+      "verification": {
+        "status": "evidence_backed_provisional",
+        "verified_at": "2026-07-19T22:26:53+08:00",
+        "method": "local identity registration and release-surface presence review",
+        "evidence_source": [
+          "/Users/zhangbin/GitHub/海洋/autonomous-cell-protocol/README.md",
+          "/Users/zhangbin/GitHub/海洋/autonomous-cell-protocol/VERSION",
+          "/Users/zhangbin/GitHub/海洋/autonomous-cell-protocol/CITATION.cff",
+          "/Users/zhangbin/GitHub/海洋/autonomous-cell-protocol/constitution/acp-principles.md",
+          "/Users/zhangbin/GitHub/海洋/autonomous-cell-protocol/schema/cell.schema.json",
+          "/Users/zhangbin/GitHub/海洋/autonomous-cell-protocol/specification/ACP-0001-identity.md"
+        ],
+        "issues": [
+          "ACP-0001 remains Draft — Pending Human Approval.",
+          "ACP-0002 through ACP-0005 remain placeholder drafts.",
+          "No runtime Agent identity, assigned capability, permission, production interoperability, industrial certification, evidence-level promotion, or verification result is established by this registration."
+        ]
+      }
+    }
+  ],
+  "path_observations": [
+    {
+      "path": "/Users/zhangbin/GitHub/.runtime-node-01-migration-staging/AB-AEB",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/.runtime-node-01-migration-staging/SAEE",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/.runtime-node-01-migration-staging/SAEE-c1-agent-evidence-baseline-isolated-001",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/.runtime-node-01-migration-staging/SAEE-c1-agent-evidence-baseline-isolated-002",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/.runtime-node-01-migration-staging/SAEE-f1-complete-isolated-construction-001",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/.runtime-node-01-migration-staging/SAEE-f1-isolated-construction-001",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/.runtime-node-01-migration-staging/SAEE-p1-contract-baseline-isolated-001",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/.runtime-node-01-migration-staging/SAEE/build/external-publication/saee-github-public",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/.runtime-node-01-migration-staging/SAEE/sites/saee-commercial",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/.runtime-node-01-migration-staging/atu",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/.runtime-node-01-migration-staging/卫星通讯",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/.runtime-node-01-migration-staging/数字生物圈",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/.runtime-node-01-migration-staging/科研证据链",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/4.16zonghe/mac/.build/checkouts/swift-syntax",
+      "identity_status": "unknown",
+      "observation_type": "vendor_or_dependency_checkout",
+      "canonical_entity": null,
+      "basis": "vendor/dependency location found; authoritative entity relationship not verified"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/4.16zonghe/mac/.build/checkouts/swift-testing",
+      "identity_status": "unknown",
+      "observation_type": "vendor_or_dependency_checkout",
+      "canonical_entity": null,
+      "basis": "vendor/dependency location found; authoritative entity relationship not verified"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/4.16zonghe/mac/mac/release/DerivedData/SourcePackages/checkouts/swift-syntax",
+      "identity_status": "unknown",
+      "observation_type": "vendor_or_dependency_checkout",
+      "canonical_entity": null,
+      "basis": "vendor/dependency location found; authoritative entity relationship not verified"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/4.16zonghe/mac/mac/release/DerivedData/SourcePackages/checkouts/swift-testing",
+      "identity_status": "unknown",
+      "observation_type": "vendor_or_dependency_checkout",
+      "canonical_entity": null,
+      "basis": "vendor/dependency location found; authoritative entity relationship not verified"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/4.16zonghe/mac/release/DerivedData/SourcePackages/checkouts/swift-syntax",
+      "identity_status": "unknown",
+      "observation_type": "vendor_or_dependency_checkout",
+      "canonical_entity": null,
+      "basis": "vendor/dependency location found; authoritative entity relationship not verified"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/4.16zonghe/mac/release/DerivedData/SourcePackages/checkouts/swift-testing",
+      "identity_status": "unknown",
+      "observation_type": "vendor_or_dependency_checkout",
+      "canonical_entity": null,
+      "basis": "vendor/dependency location found; authoritative entity relationship not verified"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/SAEE/build/external-publication/saee-github-public",
+      "identity_status": "unknown",
+      "observation_type": "nested_repository",
+      "canonical_entity": null,
+      "basis": "nested repository found; canonical entity relationship not verified"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/SAEE/sites/saee-commercial",
+      "identity_status": "unknown",
+      "observation_type": "nested_repository",
+      "canonical_entity": null,
+      "basis": "nested repository found; canonical entity relationship not verified"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/_oss/cosign-digest-docfix/cosign",
+      "identity_status": "unknown",
+      "observation_type": "vendor_or_dependency_checkout",
+      "canonical_entity": null,
+      "basis": "vendor/dependency location found; authoritative entity relationship not verified"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/_outward-pass/digital-biosphere-architecture",
+      "identity_status": "duplicate",
+      "observation_type": "duplicate_surface",
+      "canonical_entity": null,
+      "basis": "scan path is inside an explicitly named surface/outward pass copy"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/_surface-pass/agent-evidence",
+      "identity_status": "duplicate",
+      "observation_type": "duplicate_surface",
+      "canonical_entity": null,
+      "basis": "scan path is inside an explicitly named surface/outward pass copy"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/_surface-pass/aro-audit",
+      "identity_status": "duplicate",
+      "observation_type": "duplicate_surface",
+      "canonical_entity": null,
+      "basis": "scan path is inside an explicitly named surface/outward pass copy"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/_surface-pass/digital-biosphere-architecture",
+      "identity_status": "duplicate",
+      "observation_type": "duplicate_surface",
+      "canonical_entity": null,
+      "basis": "scan path is inside an explicitly named surface/outward pass copy"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/_surface-pass/verifiable-agent-demo",
+      "identity_status": "duplicate",
+      "observation_type": "duplicate_surface",
+      "canonical_entity": null,
+      "basis": "scan path is inside an explicitly named surface/outward pass copy"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/agent-evidence-agt-double-merged-status",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/agent-evidence-agt-eeoap-adapter",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/agent-evidence-agt-upstream-copy-pack",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/agent-evidence-csi-editor-riskfix",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/agent-evidence-csi-submission-materials",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/agent-evidence-docs-link-check",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/agent-evidence-job-search-resume-and-pins",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/agent-evidence-link-cleanup",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/agent-evidence-main-entry",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/agent-evidence-p10",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/agent-evidence-p11",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/agent-evidence-p11-review",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/agent-evidence-p12",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/agent-evidence-p12-review",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/agent-evidence-p14-audit",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/agent-evidence-p15",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/agent-evidence-p17-review",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/agent-evidence-p18",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/agent-evidence-p21",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/agent-evidence-p22",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/agent-evidence-p24",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/agent-evidence-p26-review",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/agent-evidence-p28-1",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/agent-evidence-p28-audit",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/agent-evidence-p30",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/agent-evidence-p33",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/agent-evidence-p39",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/agent-evidence-p40-review",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/agent-evidence-p41",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/agent-evidence-p42-review",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/agent-evidence-p43",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/agent-evidence-p44-review",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/agent-evidence-p45",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/agent-evidence-p46-review",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/agent-evidence-p47",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/agent-evidence-p47-review",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/agent-evidence-p48",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/agent-evidence-p49-review",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/agent-evidence-p50",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/agent-evidence-p51-review",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/agent-evidence-p52",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/agent-evidence-p54",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/agent-evidence-p55",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/agent-evidence-p55-review",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/agent-evidence-p56",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/agent-evidence-p57-review",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/agent-evidence-p58",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/agent-evidence-p58-review",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/agent-evidence-p59",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/agent-evidence-p60",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/agent-evidence-p60-review",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/agent-evidence-p61",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/agent-evidence-p62",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/agent-evidence-p62-review",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/agent-evidence-p63",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/agent-evidence-p63-review",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/agent-evidence-p7-review",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/agent-evidence-p8",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/agent-evidence-p9",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/agent-evidence-paper-bib-format",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/agent-evidence-paper-rc",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/agent-evidence-paper-source-verify",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/agent-evidence-paper-text-polish",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/agent-evidence-readme-only",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/agent-evidence-sync",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/agent-evidence-v0.5.0-pypi",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/agent-evidence-validator-error",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/cellcaps-rc6-review",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/iCloud-Drive-local/Desktop",
+      "identity_status": "mirror",
+      "observation_type": "mirror_path",
+      "canonical_entity": null,
+      "basis": "scan path is inside iCloud-Drive-local; content identity was not re-verified"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/iCloud-Drive-local/Documents/Origin",
+      "identity_status": "mirror",
+      "observation_type": "mirror_path",
+      "canonical_entity": null,
+      "basis": "scan path is inside iCloud-Drive-local; content identity was not re-verified"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/iCloud-Drive-local/Documents/boshi",
+      "identity_status": "mirror",
+      "observation_type": "mirror_path",
+      "canonical_entity": null,
+      "basis": "scan path is inside iCloud-Drive-local; content identity was not re-verified"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/iCloud-Drive-local/Documents/卫星通讯",
+      "identity_status": "mirror",
+      "observation_type": "mirror_path",
+      "canonical_entity": null,
+      "basis": "scan path is inside iCloud-Drive-local; content identity was not re-verified"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/iCloud-Drive-local/Documents/孙小娟老师",
+      "identity_status": "mirror",
+      "observation_type": "mirror_path",
+      "canonical_entity": null,
+      "basis": "scan path is inside iCloud-Drive-local; content identity was not re-verified"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/iCloud-Drive-local/Documents/文稿 - runtime-node-01/AB-AEB",
+      "identity_status": "mirror",
+      "observation_type": "mirror_path",
+      "canonical_entity": null,
+      "basis": "scan path is inside iCloud-Drive-local; content identity was not re-verified"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/iCloud-Drive-local/Documents/文稿 - runtime-node-01/AFAC",
+      "identity_status": "mirror",
+      "observation_type": "mirror_path",
+      "canonical_entity": null,
+      "basis": "scan path is inside iCloud-Drive-local; content identity was not re-verified"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/iCloud-Drive-local/Documents/文稿 - runtime-node-01/Codex/2026-06-29/codex-vep-section-1-6-1/outputs/vep-minimal-runtime",
+      "identity_status": "mirror",
+      "observation_type": "mirror_path",
+      "canonical_entity": null,
+      "basis": "scan path is inside iCloud-Drive-local; content identity was not re-verified"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/iCloud-Drive-local/Documents/文稿 - runtime-node-01/SAEE",
+      "identity_status": "mirror",
+      "observation_type": "mirror_path",
+      "canonical_entity": null,
+      "basis": "scan path is inside iCloud-Drive-local; content identity was not re-verified"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/iCloud-Drive-local/Documents/文稿 - runtime-node-01/SAEE-c1-agent-evidence-baseline-isolated-001",
+      "identity_status": "mirror",
+      "observation_type": "mirror_path",
+      "canonical_entity": null,
+      "basis": "scan path is inside iCloud-Drive-local; content identity was not re-verified"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/iCloud-Drive-local/Documents/文稿 - runtime-node-01/SAEE-c1-agent-evidence-baseline-isolated-002",
+      "identity_status": "mirror",
+      "observation_type": "mirror_path",
+      "canonical_entity": null,
+      "basis": "scan path is inside iCloud-Drive-local; content identity was not re-verified"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/iCloud-Drive-local/Documents/文稿 - runtime-node-01/SAEE-contract-alignment-attempt-001",
+      "identity_status": "mirror",
+      "observation_type": "mirror_path",
+      "canonical_entity": null,
+      "basis": "scan path is inside iCloud-Drive-local; content identity was not re-verified"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/iCloud-Drive-local/Documents/文稿 - runtime-node-01/SAEE-d1-external-governance-evidence-anchor-isolated-001",
+      "identity_status": "mirror",
+      "observation_type": "mirror_path",
+      "canonical_entity": null,
+      "basis": "scan path is inside iCloud-Drive-local; content identity was not re-verified"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/iCloud-Drive-local/Documents/文稿 - runtime-node-01/SAEE-f1-complete-isolated-construction-001",
+      "identity_status": "mirror",
+      "observation_type": "mirror_path",
+      "canonical_entity": null,
+      "basis": "scan path is inside iCloud-Drive-local; content identity was not re-verified"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/iCloud-Drive-local/Documents/文稿 - runtime-node-01/SAEE-f1-isolated-construction-001",
+      "identity_status": "mirror",
+      "observation_type": "mirror_path",
+      "canonical_entity": null,
+      "basis": "scan path is inside iCloud-Drive-local; content identity was not re-verified"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/iCloud-Drive-local/Documents/文稿 - runtime-node-01/SAEE-p1-contract-baseline-isolated-001",
+      "identity_status": "mirror",
+      "observation_type": "mirror_path",
+      "canonical_entity": null,
+      "basis": "scan path is inside iCloud-Drive-local; content identity was not re-verified"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/iCloud-Drive-local/Documents/文稿 - runtime-node-01/SAEE/build/external-publication/saee-github-public",
+      "identity_status": "mirror",
+      "observation_type": "mirror_path",
+      "canonical_entity": null,
+      "basis": "scan path is inside iCloud-Drive-local; content identity was not re-verified"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/iCloud-Drive-local/Documents/文稿 - runtime-node-01/SAEE/sites/saee-commercial",
+      "identity_status": "mirror",
+      "observation_type": "mirror_path",
+      "canonical_entity": null,
+      "basis": "scan path is inside iCloud-Drive-local; content identity was not re-verified"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/iCloud-Drive-local/Documents/文稿 - runtime-node-01/VEP",
+      "identity_status": "mirror",
+      "observation_type": "mirror_path",
+      "canonical_entity": null,
+      "basis": "scan path is inside iCloud-Drive-local; content identity was not re-verified"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/iCloud-Drive-local/Documents/文稿 - runtime-node-01/atu",
+      "identity_status": "mirror",
+      "observation_type": "mirror_path",
+      "canonical_entity": null,
+      "basis": "scan path is inside iCloud-Drive-local; content identity was not re-verified"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/iCloud-Drive-local/Documents/文稿 - runtime-node-01/卫星通讯",
+      "identity_status": "mirror",
+      "observation_type": "mirror_path",
+      "canonical_entity": null,
+      "basis": "scan path is inside iCloud-Drive-local; content identity was not re-verified"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/iCloud-Drive-local/Documents/文稿 - runtime-node-01/数字生物圈",
+      "identity_status": "mirror",
+      "observation_type": "mirror_path",
+      "canonical_entity": null,
+      "basis": "scan path is inside iCloud-Drive-local; content identity was not re-verified"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/iCloud-Drive-local/Documents/文稿 - runtime-node-01/科研证据链",
+      "identity_status": "mirror",
+      "observation_type": "mirror_path",
+      "canonical_entity": null,
+      "basis": "scan path is inside iCloud-Drive-local; content identity was not re-verified"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/iCloud-Drive-local/Documents/海南数字纪检",
+      "identity_status": "mirror",
+      "observation_type": "mirror_path",
+      "canonical_entity": null,
+      "basis": "scan path is inside iCloud-Drive-local; content identity was not re-verified"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/joy7758-agt-double-merged-profile",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/joy7758-agt-upstream-homepage-line",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/reverse-audq9j/tools/spidermonkey-dumper",
+      "identity_status": "unknown",
+      "observation_type": "vendor_or_dependency_checkout",
+      "canonical_entity": null,
+      "basis": "vendor/dependency location found; authoritative entity relationship not verified"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/文稿 - runtime-node-01/AFAC",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/文稿 - runtime-node-01/Codex/2026-06-29/codex-vep-section-1-6-1/outputs/vep-minimal-runtime",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/文稿 - runtime-node-01/SAEE-d1-external-governance-evidence-anchor-isolated-001",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/GitHub/文稿 - runtime-node-01/VEP",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/SAEE-c1-baseline-commit-isolated-001",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/SAEE-c1-baseline-recovery-001",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/SAEE-d1-baseline-recovery-001",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/SAEE-openai-build-week-2026",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/cosmos-metabolic-hijack/lib/forge-std",
+      "identity_status": "unknown",
+      "observation_type": "vendor_or_dependency_checkout",
+      "canonical_entity": null,
+      "basis": "vendor/dependency location found; authoritative entity relationship not verified"
+    },
+    {
+      "path": "/Users/zhangbin/joy7758-repo-cleanup/work/digital-biosphere-architecture",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/joy7758-repo-cleanup/work/joy7758",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/joy7758-repo-cleanup/work/repos/DOIP-Segments-Specification",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/joy7758-repo-cleanup/work/repos/RedRock-Constitution",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/joy7758-repo-cleanup/work/repos/ToolAgents",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/joy7758-repo-cleanup/work/repos/agent-object-protocol",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/joy7758-repo-cleanup/work/repos/agno",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/joy7758-repo-cleanup/work/repos/aro-audit",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/joy7758-repo-cleanup/work/repos/aro-audit-langchain-receipt",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/joy7758-repo-cleanup/work/repos/docs",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/joy7758-repo-cleanup/work/repos/execution-integrity-core",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/joy7758-repo-cleanup/work/repos/freeact",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/joy7758-repo-cleanup/work/repos/god-spear-mcp-gate",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/joy7758-repo-cleanup/work/repos/gptme",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/joy7758-repo-cleanup/work/repos/langchain-aro",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/joy7758-repo-cleanup/work/repos/langchain-pop",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/joy7758-repo-cleanup/work/repos/mcp-agent",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/joy7758-repo-cleanup/work/repos/pop-persona-pack",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/joy7758-repo-cleanup/work/repos/pydantic-ai",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/joy7758-repo-cleanup/work/repos/token-governor",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/joy7758-repo-cleanup/work/repos/token-governor-langchain-middleware",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/joy7758-repo-cleanup/work/repos/verifiable-agent-demo",
+      "identity_status": "temporary",
+      "observation_type": "worktree_or_task_workspace",
+      "canonical_entity": null,
+      "basis": "scan path naming/location identifies an isolated, review, migration, or task workspace"
+    },
+    {
+      "path": "/Users/zhangbin/opensea-poc/lib/forge-std",
+      "identity_status": "unknown",
+      "observation_type": "vendor_or_dependency_checkout",
+      "canonical_entity": null,
+      "basis": "vendor/dependency location found; authoritative entity relationship not verified"
+    },
+    {
+      "path": "/Users/zhangbin/pra-server/projects/fdo-agent-evidence/12-skill-integration/vendor-sandbox/_failed-clones/paper-qa",
+      "identity_status": "unknown",
+      "observation_type": "vendor_or_dependency_checkout",
+      "canonical_entity": null,
+      "basis": "vendor/dependency location found; authoritative entity relationship not verified"
+    },
+    {
+      "path": "/Users/zhangbin/pra-server/projects/fdo-agent-evidence/12-skill-integration/vendor-sandbox/_failed-clones/paper-qa.partial-20260526T074548Z",
+      "identity_status": "unknown",
+      "observation_type": "vendor_or_dependency_checkout",
+      "canonical_entity": null,
+      "basis": "vendor/dependency location found; authoritative entity relationship not verified"
+    },
+    {
+      "path": "/Users/zhangbin/pra-server/projects/fdo-agent-evidence/12-skill-integration/vendor-sandbox/_failed-clones/paper-qa.partial-20260526T075402Z",
+      "identity_status": "unknown",
+      "observation_type": "vendor_or_dependency_checkout",
+      "canonical_entity": null,
+      "basis": "vendor/dependency location found; authoritative entity relationship not verified"
+    },
+    {
+      "path": "/Users/zhangbin/pra-server/projects/fdo-agent-evidence/12-skill-integration/vendor-sandbox/_failed-clones/paper-qa.partial-20260526T080000Z",
+      "identity_status": "unknown",
+      "observation_type": "vendor_or_dependency_checkout",
+      "canonical_entity": null,
+      "basis": "vendor/dependency location found; authoritative entity relationship not verified"
+    },
+    {
+      "path": "/Users/zhangbin/pra-server/projects/fdo-agent-evidence/12-skill-integration/vendor-sandbox/academic-research-skills-codex",
+      "identity_status": "unknown",
+      "observation_type": "vendor_or_dependency_checkout",
+      "canonical_entity": null,
+      "basis": "vendor/dependency location found; authoritative entity relationship not verified"
+    },
+    {
+      "path": "/Users/zhangbin/pra-server/projects/fdo-agent-evidence/12-skill-integration/vendor-sandbox/research-paper-writing-skills",
+      "identity_status": "unknown",
+      "observation_type": "vendor_or_dependency_checkout",
+      "canonical_entity": null,
+      "basis": "vendor/dependency location found; authoritative entity relationship not verified"
+    },
+    {
+      "path": "/Users/zhangbin/projects/hongyan-workbench/vendor/paper-trace-assistant",
+      "identity_status": "unknown",
+      "observation_type": "vendor_or_dependency_checkout",
+      "canonical_entity": null,
+      "basis": "vendor/dependency location found; authoritative entity relationship not verified"
+    },
+    {
+      "path": "/Users/zhangbin/projects/hongyan-workbench/vendor/paper-trace-assistant/vendor/agent-evidence",
+      "identity_status": "unknown",
+      "observation_type": "vendor_or_dependency_checkout",
+      "canonical_entity": null,
+      "basis": "vendor/dependency location found; authoritative entity relationship not verified"
+    },
+    {
+      "path": "/Users/zhangbin/projects/paper-trace-assistant/vendor/agent-evidence",
+      "identity_status": "unknown",
+      "observation_type": "vendor_or_dependency_checkout",
+      "canonical_entity": null,
+      "basis": "vendor/dependency location found; authoritative entity relationship not verified"
+    }
+  ]
+}

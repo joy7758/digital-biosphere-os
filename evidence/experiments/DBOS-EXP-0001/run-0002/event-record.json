@@ -1,0 +1,18 @@
+{
+  "claim": "The retained frozen DBOS validator suite completed with every declared validator returning exit status 0.",
+  "claim_boundary": "local structural validator result only",
+  "entity_id": "digital-biosphere-os",
+  "event_id": "dbio:event:digital-biosphere-os:DBOS-EXP-0001:0001",
+  "event_type": "execution_event",
+  "evidence_ref": "validator-results.json#sha256:472ddeee4d7caf6fcba281829d2b3624fbba3cc334f963ae3e4839e21a564d2d",
+  "input_ref": "dbio:snapshot:input:dbio:execution-context:digital-biosphere-os:0001:0001",
+  "output_ref": "dbio:snapshot:output:dbio:execution-context:digital-biosphere-os:0001:0001",
+  "resource_ref": "dbio://runner-environment/dbos-exp-0001/local-governance-workspace/v0.1",
+  "source": {
+    "collected_at": "2026-07-20T10:50:17+08:00",
+    "kind": "authorized_deterministic_runner",
+    "locator": "dbio:runner-execution:dbos-self-validation:DBOS-EXP-0001:0002"
+  },
+  "status": "validated",
+  "timestamp": "2026-07-20T10:50:17+08:00"
+}

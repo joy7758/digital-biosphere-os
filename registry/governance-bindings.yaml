@@ -1,0 +1,40 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereGovernanceBindingRegistry",
+  "metadata": {
+    "title": "Governance Archetype Bindings v0.1",
+    "status": "empty_binding_baseline",
+    "constitution": "../constitution/governance-archetype-constitution.yaml",
+    "entity_source_of_truth": "entities.yaml",
+    "archetype_source_of_truth": "governance-archetypes.yaml",
+    "generated_at": "2026-07-19T23:13:05+08:00",
+    "binding_count": 0,
+    "pending_binding_count": 0,
+    "active_binding_count": 0,
+    "automatic_binding_count": 0,
+    "identity_change_count": 0,
+    "capability_effect_count": 0,
+    "permission_effect_count": 0,
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "The v0.1 registry is empty because no entity has supplied archetype-binding evidence or approval.",
+      "Federation membership, ecological classification, repository location, or naming cannot create a governance binding."
+    ]
+  },
+  "binding_record_schema": {
+    "required_fields": ["binding_id", "entity_id", "archetype_id", "scope", "status", "evidence_ref"],
+    "binding_id_format": "dbio://governance-binding/<entity-id>/<archetype>/<version>",
+    "valid_statuses": ["pending", "active", "suspended", "revoked", "retired"],
+    "default_status": "pending",
+    "activation_requirements": [
+      "entity exists",
+      "archetype exists",
+      "scope is bounded",
+      "evidence reference exists",
+      "attributable approval exists",
+      "identity continuity is preserved"
+    ],
+    "authority_boundary": "A binding describes a governance coordination context and cannot modify identity, capability, permission, entity relationships, runtime, organism status, fitness, or C/E/V levels."
+  },
+  "governance_bindings": []
+}

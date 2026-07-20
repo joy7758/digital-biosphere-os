@@ -1,0 +1,38 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Test cache
+.pytest_cache/
+.coverage
+
+# OS files
+.DS_Store
+
+# Editors
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# Local runtime data
+*.sqlite
+*.db
+
+# Build artifacts
+dist/
+build/
+
+# Node artifacts if introduced later
+node_modules/

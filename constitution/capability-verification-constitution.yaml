@@ -1,0 +1,129 @@
+schema_version: "0.1"
+kind: "DigitalBiosphereCapabilityVerificationConstitution"
+metadata:
+  title: "Digital Biosphere Capability Verification Constitution v0.1"
+  chinese_title: "数字主体能力验证宪法 v0.1"
+  status: "local_claim_and_review_baseline"
+  evidence_constitution: "evidence-constitution.yaml"
+  verification_constitution: "verification-constitution.yaml"
+  effective_scope:
+    - "/Users/zhangbin/GitHub/digital-biosphere-os"
+  authority: "declarative_and_validation_only"
+  adopted_at: "2026-07-19T19:47:05+08:00"
+  non_claims:
+    - "This constitution does not create an Agent."
+    - "A capability claim is not a confirmed or assigned capability."
+    - "An evidence path is not a finding that the evidence is sufficient."
+    - "A review record does not grant permission, autonomy, deployment authority, release authority, or external-action authority."
+
+capability_claim:
+  definition: "A traceable, reviewable assertion that one identified entity may possess one bounded capability candidate."
+  source_of_truth: "../registry/capability-claims.yaml"
+  minimum_fields:
+    - "claim_id"
+    - "entity_id"
+    - "capability_candidate"
+    - "capability_type"
+    - "scope"
+    - "environment"
+    - "side_effect"
+    - "evidence_sources"
+    - "status"
+  default_status: "pending"
+  default_maturity: "C1"
+  boundaries:
+    - "Claim != Capability."
+    - "Claim != Assignment."
+    - "Claim != Permission."
+    - "Claim != Successful execution."
+    - "Unknown type, scope, environment, or side effect remains explicit until review."
+
+evidence_requirement:
+  evidence_registry: "../registry/capability-evidence.yaml"
+  evidence_type_registry: "../registry/evidence-types.yaml"
+  verifier_registry: "../registry/verifiers.yaml"
+  verification_level_registry: "../registry/verification-level.yaml"
+  verification_record_registry: "../registry/verification-records.yaml"
+  structural_gate:
+    - "Every claim must identify at least one existing, inspectable evidence source."
+    - "Every converted claim must retain its source potential-evidence identifier."
+    - "Claim entity, candidate statement, and evidence paths must match the source potential evidence."
+  sufficiency_gate:
+    - "File existence proves only source availability, not capability existence or evidence sufficiency."
+    - "C2 requires claim-specific relevance, integrity, version, scope, environment, and side-effect assessment."
+    - "Evidence scope limits claim scope."
+    - "Synthetic, demo, local, review-ready, released, deployed, externally validated, and production evidence remain distinct."
+  prohibited_substitutions:
+    - "Repository or package presence cannot substitute for execution evidence."
+    - "README, schema, API, MCP, CLI, test, or demo statements cannot independently prove runtime reachability or autonomy."
+    - "Identity evidence cannot substitute for capability evidence or permission evidence."
+    - "A V-level or verification pass cannot substitute for an approved capability review."
+
+review_process:
+  source_of_truth: "../registry/capability-reviews.yaml"
+  default_decision: "no_decision"
+  required_sequence:
+    - "Register a pending claim without permission or assignment."
+    - "Check evidence availability and claim-source integrity."
+    - "Assess evidence sufficiency, capability type, scope, environment, side effects, version, and limitations."
+    - "Record an attributable review decision with timestamp and limitations."
+    - "Only an explicit approved review may support C3 Verified."
+  reviewer_boundary:
+    - "The converter and validator are not reviewers."
+    - "An empty review registry means no claim has passed review."
+    - "Automated validation may reject an invalid record but may not approve a capability claim."
+    - "A verifier is not a reviewer unless separately registered and authorized for that role."
+  decisions:
+    - "approved"
+    - "rejected"
+    - "needs_changes"
+    - "revoked"
+
+maturity_level:
+  source_of_truth: "../registry/capability-maturity.yaml"
+  sequence:
+    - "C0 Unknown"
+    - "C1 Claimed"
+    - "C2 Evidenced"
+    - "C3 Verified"
+    - "C4 Governed"
+    - "C5 Autonomous"
+  transition_invariants:
+    - "C1 does not imply C2."
+    - "C2 does not imply C3."
+    - "A claim without an approved review cannot enter C3."
+    - "A claim that has not entered C3 cannot enter C4."
+    - "A claim that has not entered C4 cannot enter C5."
+    - "No maturity level grants permission automatically."
+  current_baseline: "All 78 converted claims are pending at C1; no claim is evidenced, verified, governed, or autonomous."
+
+revocation:
+  effect: "Revocation disables reliance on a claim for current governance decisions while preserving its identity, evidence, reviews, prior maturity, and revocation history."
+  requirements:
+    - "Record the revoking reviewer or authority, reason, timestamp, affected scope, and replacement or remediation when known."
+    - "Preserve the original claim and all historical evidence and reviews."
+    - "Do not delete, overwrite, or silently downgrade historical records."
+    - "Revoked claims cannot support capability assignment, permission, governance, or autonomy."
+  triggers:
+    - "Evidence is invalidated, unavailable, contradicted, or out of scope."
+    - "Entity, version, environment, implementation, or side-effect boundary changes materially."
+    - "A governance policy or approving authority withdraws reliance."
+
+current_baseline:
+  entity_count: 22
+  source_potential_evidence_count: 78
+  capability_claim_count: 78
+  pending_claim_count: 78
+  review_count: 0
+  approved_review_count: 0
+  capability_evidence_count: 78
+  evidence_level: "E1"
+  verifier_count: 1
+  verification_record_count: 78
+  pending_verification_count: 78
+  verification_level: "V0"
+  verification_pass_count: 0
+  confirmed_capability_count: 0
+  assigned_capability_count: 0
+  permission_grant_count: 0
+  agent_created_count: 0

@@ -1,0 +1,100 @@
+schema_version: "0.1"
+kind: "DigitalEntityIdentityConstitution"
+metadata:
+  title: "Digital Entity Identity Constitution v0.1"
+  chinese_title: "数字主体规范身份宪法 v0.1"
+  status: "local_identity_baseline"
+  effective_scope:
+    - "/Users/zhangbin/GitHub/digital-biosphere-os"
+  authority: "declarative_and_validation_only"
+  adopted_at: "2026-07-19T18:41:01+08:00"
+  non_claims:
+    - "This constitution does not create runtime agents."
+    - "This constitution does not grant ownership, permissions, legal personality, deployment authority, or release status."
+    - "This constitution does not modify any discovered project."
+
+entity_definition:
+  entity: "A separately identifiable digital subject or governed digital object supported by scan evidence and represented by one canonical identity record."
+  valid_types:
+    agent: "A runtime principal with evidence of a distinct identity and attributable behavior; repository names and frameworks are insufficient."
+    protocol: "A versioned or provisionally versioned contract, schema family, profile, or interoperability specification."
+    repository: "A source-control or local repository surface when the scan supports the repository but not a more specific independent subject."
+    service: "A runnable capability, server, kernel, validator, or governed workflow; service classification does not imply deployment."
+    artifact: "A bounded evidence, demo, package, report, or other produced object that must identify a parent entity."
+    governance_system: "A constitution- and registry-bearing governance subject whose bounded identity may be used for governance or experiment review; it is not an Agent, runtime, organism, legal person, or execution authority."
+  instance_boundary: "The v0.1 type vocabulary has no separate instance type. A runtime instance may be classified as agent only after distinct runtime-principal evidence exists; adding instance requires constitutional amendment."
+  governance_system_boundary: "governance_system is an allowed identity type for specialized governed-subject registries. Registration in an experiment subject registry does not automatically create or verify a canonical registry/entities.yaml record."
+
+canonical_naming:
+  uri_scheme: "dbio"
+  format: "dbio://<entity_type>/<canonical_name>/<version>"
+  stable_key: "entity_id remains stable across version-addressed canonical_id changes."
+  provisional_versions:
+    unversioned: "No evidence-backed entity version was found."
+    unresolved: "Conflicting version evidence prevents one version claim."
+  uniqueness: "No two entity records may share entity_id or canonical_id."
+  version_axis_boundary: "Package, schema, protocol, repository-tag, and checkout versions remain distinct unless an evidence source explicitly binds them."
+
+lifecycle:
+  states:
+    proposed: "Identity is evidence-backed but has not completed authority, ownership, version, and lineage confirmation."
+    active: "The entity is currently maintained or operated under an explicit authority record."
+    verified: "Identity, version, owner or authority, and lineage have passed the defined verification gate."
+    deprecated: "The entity remains addressable but should not be selected for new use."
+    retired: "The entity is no longer active; its identity and retirement record remain preserved."
+  required_fields:
+    - "state"
+    - "created"
+    - "last_verified"
+    - "successor"
+  transition_boundary: "The v0.1 upgrade places all 22 identities in proposed state because authority and ownership were not fully established by the scan."
+  preservation: "Deprecated and retired identities remain in the registry."
+
+inheritance:
+  parent_child: "parent_entity and child_entities express identity lineage only."
+  non_inherited_properties:
+    - "permissions"
+    - "ownership"
+    - "lifecycle state"
+    - "risk level"
+    - "verification result"
+    - "release, deployment, adoption, or approval status"
+  artifact_requirement: "Every artifact must resolve to an existing parent_entity."
+
+ownership:
+  definition: "Owner means the authority accountable for identity governance, not merely a filesystem user or Git remote namespace."
+  allowed_statuses:
+    - "unknown"
+    - "repository_namespace_only"
+    - "verified"
+  verification_gate:
+    - "An explicit owner or governance authority statement exists."
+    - "The evidence source is recorded."
+    - "Repository namespace alone is not sufficient."
+
+lineage:
+  requirements:
+    - "parent_entity, child_entities, and successor references resolve to entity_id values."
+    - "A successor does not erase or overwrite its predecessor."
+    - "Retirement requires an append-only retirement record."
+    - "Mirrors, duplicates, worktrees, and vendor checkouts are path observations, not lineage nodes, until separately verified."
+
+verification:
+  source_of_truth: "../registry/entities.yaml"
+  experiment_subject_registry: "../registry/experiment-subjects.yaml"
+  rules: "../registry/identity-rules.yaml"
+  validator: "../validation/identity_validator.py"
+  minimum_checks:
+    - "canonical_id uniqueness"
+    - "valid entity_type"
+    - "parent_entity resolution"
+    - "valid lifecycle state"
+  fail_closed: "A failed validation prevents an identity baseline from being described as verified."
+
+current_finding:
+  scanned_object_count: 22
+  canonical_entity_count: 23
+  experiment_governance_system_subject_count: 1
+  canonical_governance_system_entity_count: 0
+  verified_agent_instance_count: 0
+  conclusion: "The canonical registry contains protocols, repositories, services, and repository-level surfaces but no evidence-backed runtime Agent identity; digital-biosphere-os is separately registered as one bounded governance_system experiment subject pending identity verification and is not silently added to the canonical registry."

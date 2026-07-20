@@ -1,0 +1,64 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereExperimentEnvironmentLockRegistry",
+  "metadata": {
+    "title": "Experiment Environment Locks v0.1",
+    "status": "one_frozen_environment_lock",
+    "constitution": "../constitution/experiment-freeze-constitution.yaml",
+    "qualification_constitution": "../constitution/environment-qualification-constitution.yaml",
+    "environment_source_of_truth": "environments.yaml",
+    "runner_environment_source_of_truth": "runner-environments.yaml",
+    "environment_qualification_source_of_truth": "environment-qualifications.yaml",
+    "environment_evidence_capture_source_of_truth": "environment-evidence-captures.yaml",
+    "environment_collection_evidence_source_of_truth": "environment-collection-evidence.yaml",
+    "generated_at": "2026-07-20T01:35:20+08:00",
+    "environment_lock_count": 1,
+    "lock_status_distribution": {"pending": 0, "frozen": 1, "thawed": 0, "invalid": 0, "revoked": 0},
+    "frozen_environment_lock_count": 1,
+    "execution_authority_count": 0,
+    "runtime_created_count": 0,
+    "event_created_count": 0,
+    "permission_grant_count": 0,
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "The record is a pending environment-lock slot; null OS, runtime, and dependency fields are not a lock.",
+      "Environment locking records reproducibility material only and cannot activate an environment, create a runtime, or grant execution authority.",
+      "The existing Freeze Layer lock is extended in place for qualification compatibility; no replacement or second lock was created.",
+      "evidence_capture_reference points only to a pending collection request, while evidence_reference remains null because no collection evidence exists."
+    ]
+  },
+  "environment_lock_schema": {
+    "required_fields": ["lock_id", "environment_id", "os_version", "runtime_version", "dependency_hash", "os", "python", "dependencies_digest", "configuration_digest", "locked_at", "status"],
+    "additional_governance_fields": ["runner_environment_ref", "qualification_reference", "evidence_capture_reference", "evidence_reference", "experiment_id", "evidence_refs", "supersedes", "thaw_ref", "revocation_ref", "authority_effect"],
+    "digest_format": "sha256:<64 lowercase hexadecimal characters>",
+    "valid_statuses": ["pending", "frozen", "thawed", "invalid", "revoked"],
+    "default_status": "pending",
+    "lock_boundary": "frozen requires exact attributable OS and runtime versions, dependency and configuration digests, timezone-aware locked_at, and retained evidence references.",
+    "qualification_alias_rule": "os=os_version, python=runtime_version, and dependencies_digest=dependency_hash whenever either member of an alias pair is populated."
+  },
+  "environment_locks": [
+    {
+      "lock_id": "DBOS-EXP-0001-ENV-LOCK-0001",
+      "environment_id": "dbio://environment/local-governance-workspace/v0.1",
+      "os_version": "macOS 26.5.2 (25F84; Darwin 25.5.0)",
+      "runtime_version": "CPython 3.14.5",
+      "dependency_hash": "sha256:9508f8fe16370ac86859476c13f350ed995b73feac430b5e8ae88a4c8c1191e2",
+      "os": "macOS 26.5.2 (25F84; Darwin 25.5.0)",
+      "python": "CPython 3.14.5",
+      "dependencies_digest": "sha256:9508f8fe16370ac86859476c13f350ed995b73feac430b5e8ae88a4c8c1191e2",
+      "configuration_digest": "sha256:7276c57d41cc26c7f770503d14a91a2236e477cc76e29b5ea82e5e2f693a446c",
+      "status": "frozen",
+      "runner_environment_ref": "dbio://runner-environment/dbos-exp-0001/local-governance-workspace/v0.1",
+      "qualification_reference": "DBOS-EXP-0001-RUNNER-ENV-QUAL-0001",
+      "evidence_capture_reference": "DBOS-EXP-0001-ENV-EVIDENCE-CAPTURE-0001",
+      "evidence_reference": "DBOS-EXP-0001-ENV-COLLECTION-EVIDENCE-0001",
+      "experiment_id": "DBOS-EXP-0001",
+      "locked_at": "2026-07-20T10:07:49+08:00",
+      "evidence_refs": ["DBOS-EXP-0001-ENV-QUALIFICATION-EVIDENCE-0002", "DBOS-EXP-0001-ENV-QUALIFICATION-EVIDENCE-0003", "DBOS-EXP-0001-ENV-QUALIFICATION-EVIDENCE-0004", "DBOS-EXP-0001-ENV-QUALIFICATION-EVIDENCE-0005", "DBOS-EXP-0001-ENV-QUALIFICATION-EVIDENCE-0006"],
+      "supersedes": null,
+      "thaw_ref": null,
+      "revocation_ref": null,
+      "authority_effect": "none"
+    }
+  ]
+}

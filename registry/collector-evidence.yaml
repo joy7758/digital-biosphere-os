@@ -1,0 +1,49 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereEnvironmentCollectorEvidenceRegistry",
+  "metadata": {
+    "title": "Environment Collector Evidence v0.1",
+    "status": "one_verified_collector_evidence_record",
+    "constitution": "../constitution/environment-collector-constitution.yaml",
+    "run_source_of_truth": "collector-runs.yaml",
+    "fact_source_of_truth": "environment-facts.yaml",
+    "digest_source_of_truth": "environment-digests.yaml",
+    "generated_at": "2026-07-20T09:37:43+08:00",
+    "collector_evidence_count": 1,
+    "verified_collector_evidence_count": 1,
+    "qualification_evidence_created_count": 1,
+    "environment_qualification_count": 1,
+    "capability_effect_count": 0,
+    "permission_grant_count": 0,
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "The registry is empty because no Collector run occurred and no fact or digest exists.",
+      "Collector evidence cannot automatically create qualification evidence, certify or freeze an environment, grant authority, or promote C/E/V."
+    ]
+  },
+  "collector_evidence_schema": {
+    "required_fields": ["evidence_id", "run_id", "fact_refs", "digest_refs", "method", "timestamp"],
+    "additional_governance_fields": ["collector_id", "environment_id", "source_refs", "status", "verification_ref", "limitations", "supersedes", "revocation_ref", "authority_effect"],
+    "valid_statuses": ["captured", "verified", "partial", "failed", "invalid", "revoked"],
+    "verification_boundary": "verified requires a completed matching run, retained facts and digests, attributable method and source, and separate verification; verified still does not qualify an environment."
+  },
+  "collector_evidence": [
+    {
+      "evidence_id": "DBOS-EXP-0001-ENV-COLLECTOR-EVIDENCE-0001",
+      "run_id": "DBOS-EXP-0001-ENV-COLLECTOR-RUN-0001",
+      "fact_refs": ["DBOS-EXP-0001-ENV-FACT-OS-0001", "DBOS-EXP-0001-ENV-FACT-PYTHON-0001", "DBOS-EXP-0001-ENV-FACT-DEPENDENCY-0001", "DBOS-EXP-0001-ENV-FACT-CONFIGURATION-0001", "DBOS-EXP-0001-ENV-FACT-HARDWARE-0001"],
+      "digest_refs": ["DBOS-EXP-0001-ENV-DIGEST-DEPENDENCY-0001", "DBOS-EXP-0001-ENV-DIGEST-CONFIGURATION-0001", "DBOS-EXP-0001-ENV-DIGEST-ENVIRONMENT-0001"],
+      "method": "execution/dbos_exp_0001.py collect-environment",
+      "timestamp": "2026-07-20T10:07:49+08:00",
+      "collector_id": "dbio:collector:automated:dbos-environment-read-only:v0.1",
+      "environment_id": "dbio://runner-environment/dbos-exp-0001/local-governance-workspace/v0.1",
+      "source_refs": ["evidence/experiments/DBOS-EXP-0001/environment/environment-observation.json", "evidence/experiments/DBOS-EXP-0001/environment/environment-observation.receipt.json"],
+      "status": "verified",
+      "verification_ref": "validation/execution_chain_validator.py#environment",
+      "limitations": ["local automated verification", "not independent", "does not itself qualify the environment"],
+      "supersedes": null,
+      "revocation_ref": null,
+      "authority_effect": "none"
+    }
+  ]
+}

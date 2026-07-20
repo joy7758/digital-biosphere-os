@@ -1,0 +1,181 @@
+schema_version: "0.1"
+kind: "DigitalBiosphereRunnerEnvironmentQualificationConstitution"
+metadata:
+  title: "Runner Environment Qualification Constitution v0.1"
+  chinese_title: "自动实验运行器环境资格宪法 v0.1"
+  status: "qualification_model_defined_no_qualified_environment"
+  parent_constitution: "constitution.yaml"
+  runner_reference: "automated-runner-constitution.yaml"
+  environment_reference: "environment-constitution.yaml"
+  execution_context_reference: "execution-context-constitution.yaml"
+  freeze_reference: "experiment-freeze-constitution.yaml"
+  environment_evidence_capture_reference: "environment-evidence-capture-constitution.yaml"
+  environment_collector_reference: "environment-collector-constitution.yaml"
+  authority: "environment_qualification_structure_and_validation_only"
+  effective_scope:
+    - "/Users/zhangbin/GitHub/digital-biosphere-os"
+  adopted_at: "2026-07-20T09:07:42+08:00"
+  non_claims:
+    - "This constitution does not qualify or activate an environment, create a Runner, execute an experiment, generate an Event or Snapshot, or create a Runtime or Agent."
+    - "Environment Definition != Environment Qualification != Environment Lock != Execution Authorization."
+    - "A validator PASS is a local structural result and cannot issue a qualification decision, capability, permission, or C/E/V promotion."
+
+environment_identity:
+  source_of_truth: "../registry/environment-identities.yaml"
+  definition: "An append-only identity binding for one already declared Runner environment slot and its attributable ecological-environment and lock references."
+  requirements:
+    - "environment_id is unique and resolves to an existing runner-environments.yaml record"
+    - "environment_type is explicit"
+    - "owner is explicit or null when no attributable owner evidence exists"
+    - "source preserves the runner-environment, ecological-environment, and lock lineage"
+    - "status is one declared lifecycle state"
+  lifecycle_states:
+    - "defined"
+    - "qualified"
+    - "suspended"
+    - "revoked"
+    - "retired"
+  boundaries:
+    - "Environment Identity != Runtime Identity."
+    - "Environment Identity != Runner Identity != Agent Identity."
+    - "Registering an identity mapping does not activate, qualify, lock, authorize, or execute the environment."
+
+environment_evidence:
+  source_of_truth: "../registry/environment-evidence.yaml"
+  valid_types:
+    - "identity"
+    - "os_inventory"
+    - "python_inventory"
+    - "dependency_lock"
+    - "configuration"
+    - "lock_material"
+  requirements:
+    - "evidence_id is unique"
+    - "environment_id resolves to an environment identity"
+    - "source identifies retained attributable material"
+    - "digest uses sha256:<64 lowercase hexadecimal characters>"
+    - "timestamp is timezone-aware"
+  current_evidence_count: 0
+  boundary: "Evidence Schema != Captured Evidence != Verified Environment."
+
+evidence_capture_dependency:
+  constitution_ref: "environment-evidence-capture-constitution.yaml"
+  capture_registry: "../registry/environment-evidence-captures.yaml"
+  fact_registry: "../registry/environment-facts.yaml"
+  digest_registry: "../registry/environment-digests.yaml"
+  collection_evidence_registry: "../registry/environment-collection-evidence.yaml"
+  qualification_evidence_registry: "../registry/environment-evidence.yaml"
+  requirements:
+    - "A qualification criterion may reference only retained evidence derived from an attributable completed environment capture."
+    - "OS, Python, dependency, configuration, and hardware facts retain exact source and observation time."
+    - "Dependency and configuration digests retain canonicalization, source material, and integrity evidence."
+    - "Collection facts, digests, and evidence do not populate environment-evidence.yaml automatically."
+    - "A separate evidence validation and qualification review is required before any criterion can pass."
+  current_capture_status: "pending"
+  current_fact_count: 0
+  current_digest_count: 0
+  current_collection_evidence_count: 0
+  current_qualification_evidence_count: 0
+  automatic_qualification_evidence_creation: false
+  qualification_effect: "none"
+
+collector_evidence_requirement:
+  constitution_ref: "environment-collector-constitution.yaml"
+  collector_registry: "../registry/environment-collectors.yaml"
+  scope_registry: "../registry/collector-scopes.yaml"
+  run_registry: "../registry/collector-runs.yaml"
+  collector_evidence_registry: "../registry/collector-evidence.yaml"
+  requirements:
+    - "Qualification evidence derived from automated collection traces to an existing registered read-only Collector identity."
+    - "The Collector run is completed within an approved matching scope and records zero write side effects."
+    - "Collector evidence references retained facts and digests created by that run and preserves method, source, timestamp, exclusions, and limitations."
+    - "Collector evidence is separately validated before it may be mapped into environment-evidence.yaml."
+    - "Collector registration, scope, run completion, evidence generation, and verification cannot automatically pass a qualification criterion."
+  current_collector_count: 0
+  current_collector_run_count: 0
+  current_collector_evidence_count: 0
+  current_qualification_evidence_count: 0
+  automatic_criterion_pass: false
+  automatic_qualification: false
+  authority_effect: "none"
+
+qualification_criteria:
+  source_of_truth: "../registry/environment-qualifications.yaml"
+  required_criteria:
+    - "identity_attributed"
+    - "os_captured"
+    - "python_captured"
+    - "dependencies_digested"
+    - "configuration_digested"
+    - "environment_lock_complete"
+  valid_results:
+    - "pending"
+    - "verified"
+    - "failed"
+    - "inconclusive"
+    - "revoked"
+  verification_gate:
+    - "all required criteria are individually evidenced and passed"
+    - "all referenced evidence records are attributable and digest-valid"
+    - "OS and Python versions are explicit"
+    - "dependency and configuration digests are non-empty and valid"
+    - "the shared environment lock is frozen with attributable lock evidence"
+    - "verified_by references an existing verifier whose declared scope covers environment qualification"
+    - "timestamp is timezone-aware"
+  automatic_pass: false
+  current_result: "pending"
+  boundary: "Criteria Present != Criteria Satisfied != Qualification Verified."
+
+environment_lock:
+  source_of_truth: "../registry/environment-locks.yaml"
+  compatibility_rule: "The existing DBOS-EXP-0001 freeze lock is reused and extended; it is not replaced and no second lock is fabricated."
+  required_material:
+    - "exact OS version"
+    - "exact Python version"
+    - "dependency digest"
+    - "configuration digest"
+    - "timezone-aware locked_at"
+    - "retained evidence references"
+  alias_rules:
+    - "os equals os_version when either is populated"
+    - "python equals runtime_version when either is populated"
+    - "dependencies_digest equals dependency_hash when either is populated"
+  current_lock_status: "pending"
+  boundary: "Pending Lock Slot != Frozen Environment != Qualified Environment."
+
+revocation:
+  principle: "Qualification revocation is append-only and prevents future reliance without deleting or rewriting identity, evidence, lock, verification, execution, or evolution history."
+  requirements:
+    - "retain the prior qualification record and decision scope"
+    - "record attributable reason, issuer, timestamp, and superseding or revocation reference"
+    - "stop new execution-context eligibility until requalification"
+    - "do not reinterpret prior executions beyond the recorded qualification scope"
+  authority_effect: "none"
+
+current_baseline:
+  runner_environment_count: 1
+  environment_identity_count: 1
+  environment_evidence_count: 0
+  environment_evidence_capture_count: 1
+  pending_environment_evidence_capture_count: 1
+  environment_fact_count: 0
+  environment_digest_count: 0
+  environment_collection_evidence_count: 0
+  environment_collector_count: 0
+  environment_collector_scope_count: 0
+  environment_collector_run_count: 0
+  environment_collector_evidence_count: 0
+  environment_qualification_count: 1
+  pending_qualification_count: 1
+  qualified_environment_count: 0
+  environment_lock_count: 1
+  pending_environment_lock_count: 1
+  runner_count: 0
+  experiment_execution_count: 0
+  event_count: 0
+  snapshot_hash_count: 0
+  runtime_instance_count: 0
+  agent_created_count: 0
+  capability_count: 0
+  permission_grant_count: 0
+  c_e_v_level_change_count: 0

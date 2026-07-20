@@ -1,0 +1,34 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereEventIntegrityCheckRegistry",
+  "metadata": {
+    "title": "Event Integrity Checks v0.1",
+    "status": "defined_checks_no_runs",
+    "constitution": "../constitution/event-integrity-constitution.yaml",
+    "generated_at": "2026-07-19T23:54:21+08:00",
+    "check_definition_count": 5,
+    "check_run_count": 0,
+    "pass_count": 0,
+    "fail_count": 0,
+    "trust_grant_count": 0,
+    "permission_grant_count": 0,
+    "capability_effect_count": 0,
+    "c_e_v_level_change_count": 0,
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "Check definitions are methods, not completed checks or verification decisions.",
+      "A future passing check is scoped to its recorded inputs and cannot grant trust, capability, permission, or C/E/V promotion."
+    ]
+  },
+  "check_definition_schema": {
+    "required_fields": ["check_id", "description", "required_inputs", "pass_condition", "failure_status", "authority_effect"]
+  },
+  "check_definitions": [
+    {"check_id":"hash_validation","description":"Validate declared hash format and recomputation under the registered canonicalization contract.","required_inputs":["event content","stream_id","sequence","previous_hash","timestamp","clock_source","hash method"],"pass_condition":"declared current_hash equals independently recomputed hash","failure_status":"invalid","authority_effect":"none"},
+    {"check_id":"sequence_validation","description":"Validate unique contiguous per-stream sequence and immediate predecessor hash linkage.","required_inputs":["stream ordering rule","sequence","previous_hash","prior integrity record"],"pass_condition":"sequence and predecessor link satisfy the per-stream rule","failure_status":"chain_broken","authority_effect":"none"},
+    {"check_id":"source_validation","description":"Validate that event source and integrity provenance identifiers exist and are scoped without asserting source truth automatically.","required_inputs":["event source","source locator","integrity method","limitations"],"pass_condition":"required provenance is attributable and internally consistent","failure_status":"invalid","authority_effect":"none"},
+    {"check_id":"timestamp_validation","description":"Validate occurrence and integrity timestamps, timezone presence, clock source, and declared clock limitations.","required_inputs":["event timestamp","source collection timestamp","integrity timestamp","clock_source"],"pass_condition":"timestamps are parseable, timezone-aware, and consistent with the declared clock model","failure_status":"invalid","authority_effect":"none"},
+    {"check_id":"witness_validation","description":"Validate referenced witness identity, type, method, scope, trust evidence, independence evidence, and lifecycle.","required_inputs":["witness_refs","witness registry","identity_ref","verification_method","trust_level"],"pass_condition":"every required witness reference exists and satisfies the target integrity status requirements","failure_status":"invalid","authority_effect":"none"}
+  ],
+  "check_runs": []
+}

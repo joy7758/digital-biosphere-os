@@ -1,0 +1,79 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereCaptureReadinessReviewRegistry",
+  "metadata": {
+    "title": "Snapshot Capture Readiness Reviews v0.1",
+    "status": "four_ready_criteria_capture_completed",
+    "constitution": "../constitution/snapshot-capture-readiness-constitution.yaml",
+    "experiment_source_of_truth": "experiments.yaml",
+    "generated_at": "2026-07-20T02:00:37+08:00",
+    "review_count": 4,
+    "capture_readiness_status": "ready_at_capture_time",
+    "review_status_distribution": {"pending": 0, "ready": 4, "not_ready": 0, "invalid": 0, "revoked": 0},
+    "pending_criterion_count": 0,
+    "ready_criterion_count": 4,
+    "capture_execution_authority_count": 1,
+    "snapshot_hash_created_count": 1,
+    "event_created_count": 0,
+    "runtime_created_count": 0,
+    "agent_created_count": 0,
+    "capability_effect_count": 0,
+    "permission_grant_count": 0,
+    "c_e_v_level_change_count": 0,
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "All four criteria are pending; evidence_ref values identify review inputs only and do not prove readiness.",
+      "Capture readiness cannot create a collector, authorization, snapshot, hash, event, runtime, Agent, capability, permission, or C/E/V promotion."
+    ]
+  },
+  "capture_readiness_review_schema": {
+    "required_fields": ["review_id", "experiment_id", "criterion", "status", "evidence_ref"],
+    "additional_governance_fields": ["missing_conditions", "limitations", "capture_effect"],
+    "valid_criteria": ["collector", "scope", "authorization", "privacy"],
+    "valid_statuses": ["pending", "ready", "not_ready", "invalid", "revoked"],
+    "default_status": "pending",
+    "ready_boundary": "ready requires criterion-specific attributable evidence and cannot create capture or experiment authority."
+  },
+  "capture_readiness_reviews": [
+    {
+      "review_id": "DBOS-EXP-0001-CAPTURE-READINESS-0001",
+      "experiment_id": "DBOS-EXP-0001",
+      "criterion": "collector",
+      "status": "ready",
+      "evidence_ref": "dbio:capture-collector:automated:dbos-snapshot:v0.1",
+      "missing_conditions": [],
+      "limitations": ["automated local collector only"],
+      "capture_effect": "none"
+    },
+    {
+      "review_id": "DBOS-EXP-0001-CAPTURE-READINESS-0002",
+      "experiment_id": "DBOS-EXP-0001",
+      "criterion": "scope",
+      "status": "ready",
+      "evidence_ref": "DBOS-EXP-0001-CAPTURE-SCOPE-0001",
+      "missing_conditions": [],
+      "limitations": ["scope limited to four DBOS roots"],
+      "capture_effect": "none"
+    },
+    {
+      "review_id": "DBOS-EXP-0001-CAPTURE-READINESS-0003",
+      "experiment_id": "DBOS-EXP-0001",
+      "criterion": "authorization",
+      "status": "ready",
+      "evidence_ref": "DBOS-EXP-0001-CAPTURE-AUTH-0001",
+      "missing_conditions": [],
+      "limitations": ["authorization from explicit user goal; session-attributed, not cryptographically verified"],
+      "capture_effect": "none"
+    },
+    {
+      "review_id": "DBOS-EXP-0001-CAPTURE-READINESS-0004",
+      "experiment_id": "DBOS-EXP-0001",
+      "criterion": "privacy",
+      "status": "ready",
+      "evidence_ref": "DBOS-EXP-0001-CAPTURE-SCOPE-0001",
+      "missing_conditions": [],
+      "limitations": ["deny-overrides-allow exclusions; no secret-pattern, cache, Git metadata, symlink, external, or non-materialized content"],
+      "capture_effect": "none"
+    }
+  ]
+}

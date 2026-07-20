@@ -1,0 +1,3293 @@
+schema_version: "0.1"
+kind: "DigitalBiosphereEvolutionLedger"
+metadata:
+  status: "append_only"
+  note: "Add new entries; do not rewrite prior entries to change historical meaning."
+
+entries:
+  - id: "DBOS-EVO-0001"
+    recorded_at: "2026-07-19T18:23:07+08:00"
+    change_type: "governance_skeleton_bootstrap"
+    authorization: "explicit_user_request"
+    status: "completed_local_uncommitted"
+    summary: "Scanned the workspace and created the Digital Biosphere OS v0.1 declarative governance skeleton without modifying existing project code."
+    scope:
+      created_root: "/Users/zhangbin/GitHub/digital-biosphere-os"
+      existing_repository_changes: false
+      git_commit_created: false
+      runtime_enforcement_added: false
+    evidence:
+      - "constitution/constitution.yaml"
+      - "registry/agents.yaml"
+      - "policies/permissions.yaml"
+      - "evidence/README.md"
+      - "README.md"
+
+  - id: "DBOS-EVO-0002"
+    recorded_at: "2026-07-19T18:26:27+08:00"
+    change_type: "theory_reference_import"
+    authorization: "explicit_user_request"
+    status: "completed_local_uncommitted"
+    summary: "Imported the Digital Biosphere Constitution System research report as a non-normative local reference."
+    normative_effect: false
+    implementation_authorized: false
+    source:
+      path: "/Users/zhangbin/.codex/attachments/9b4d08ca-6ecc-42af-86d8-a83086dc354f/pasted-text.txt"
+      sha256: "a9f7ad80981e9d4778b5598bb0a1d3226932fea9d1cfb7ad220876014dc10d2e"
+    imported_path: "references/theory/数字生物圈宪法体系研究报告.txt"
+    imported_sha256: "6f1300eb9a92c67d73cb919cc8c2d6c622d30694773997f4c3983d7c3325cb60"
+    normalization: "content unchanged; one terminal newline added"
+    evidence:
+      - "references/README.md"
+      - "references/theory/数字生物圈宪法体系研究报告.txt"
+
+  - id: "DBOS-EVO-0003"
+    recorded_at: "2026-07-19T18:44:10+08:00"
+    change_type: "canonical_identity_layer_v0.1"
+    authorization: "explicit_user_request"
+    status: "completed_local_uncommitted"
+    summary: "Reclassified the existing 22 scanned objects, established canonical identity rules and lifecycle fields, recorded non-entity path observations, and added a zero-dependency validator."
+    scope:
+      existing_entity_count: 22
+      new_entity_count: 0
+      existing_project_changes: false
+      git_commit_created: false
+      capability_constitution_started: false
+      permission_enforcement_added: false
+    classification_counts:
+      protocol: 9
+      agent: 0
+      repository: 5
+      artifact: 0
+      service: 8
+    path_identity_counts:
+      duplicate: 5
+      mirror: 24
+      temporary: 113
+      unknown: 21
+    validation:
+      command: "python3 validation/identity_validator.py --format json"
+      result: "PASS"
+      error_count: 0
+    evidence:
+      - "constitution/identity-constitution.yaml"
+      - "registry/entities.yaml"
+      - "registry/agents.yaml"
+      - "registry/identity-rules.yaml"
+      - "validation/identity_validator.py"
+      - "evidence/README.md"
+
+  - id: "DBOS-EVO-0004"
+    recorded_at: "2026-07-19T19:40:42+08:00"
+    change_type: "capability_constitution_v0.1"
+    authorization: "explicit_user_request"
+    status: "completed_local_uncommitted"
+    summary: "Established the capability constitution, empty confirmed-capability registry, unknown entity-capability relationships, capability policy, potential evidence inventory, and fail-closed validator."
+    scope:
+      existing_entity_count: 22
+      new_agent_count: 0
+      registered_capability_count: 0
+      assigned_capability_count: 0
+      permission_derived_count: 0
+      existing_project_changes: false
+      git_commit_created: false
+      runtime_enforcement_added: false
+    capability_classification_counts:
+      information: 0
+      computation: 0
+      modification: 0
+      external_action: 0
+      self_evolution: 0
+    relationship_status_counts:
+      unknown: 22
+      proposed: 0
+      verified: 0
+    potential_capability_evidence_count: 78
+    validation:
+      command: "python3 validation/capability_validator.py --format json"
+      result: "PASS"
+      error_count: 0
+      negative_duplicate_id_check: "PASS"
+      negative_permission_derivation_check: "PASS"
+    evidence:
+      - "constitution/capability-constitution.yaml"
+      - "registry/capabilities.yaml"
+      - "registry/entity-capabilities.yaml"
+      - "policies/capability-policy.yaml"
+      - "validation/capability_validator.py"
+      - "evidence/README.md"
+
+  - id: "DBOS-EVO-0005"
+    recorded_at: "2026-07-19T19:53:16+08:00"
+    change_type: "capability_verification_layer_v0.1"
+    authorization: "explicit_user_request"
+    status: "completed_local_uncommitted"
+    summary: "Converted all 78 potential capability-evidence records into pending C1 claims, established empty review and maturity registries, and added fail-closed evidence, review, governance, and autonomy gates."
+    scope:
+      existing_entity_count: 22
+      source_potential_evidence_count: 78
+      capability_claim_count: 78
+      new_agent_count: 0
+      registered_capability_count: 0
+      assigned_capability_count: 0
+      permission_grant_count: 0
+      existing_project_changes: false
+      git_commit_created: false
+      runtime_enforcement_added: false
+    claim_classification_counts:
+      unknown: 78
+      information: 0
+      computation: 0
+      modification: 0
+      external_action: 0
+      self_evolution: 0
+    claim_status_counts:
+      pending: 78
+      evidenced: 0
+      verified: 0
+      governed: 0
+      autonomous: 0
+      rejected: 0
+      withdrawn: 0
+      revoked: 0
+    maturity_distribution:
+      C0: 0
+      C1: 78
+      C2: 0
+      C3: 0
+      C4: 0
+      C5: 0
+    evidence_source_paths:
+      unique: 44
+      existing: 44
+      missing: 0
+      sufficiency_reviewed: 0
+    reviews:
+      total: 0
+      approved: 0
+    validation:
+      command: "python3 validation/capability_claim_validator.py --format json"
+      result: "PASS"
+      error_count: 0
+      missing_evidence_rejection_check: "PASS"
+      verified_without_review_rejection_check: "PASS"
+      governed_without_verified_rejection_check: "PASS"
+      autonomous_without_governed_rejection_check: "PASS"
+    evidence:
+      - "constitution/capability-verification-constitution.yaml"
+      - "registry/capability-claims.yaml"
+      - "registry/capability-reviews.yaml"
+      - "registry/capability-maturity.yaml"
+      - "validation/capability_claim_validator.py"
+      - "evidence/README.md"
+
+  - id: "DBOS-EVO-0006"
+    recorded_at: "2026-07-19T20:10:09+08:00"
+    change_type: "evidence_constitution_layer_v0.1"
+    authorization: "explicit_user_request"
+    status: "completed_local_uncommitted"
+    summary: "Established the E0-E5 Evidence Constitution, converted all 78 pending capability claims into E1 declaration records, created candidate-only capability profiles, and added fail-closed evidence hierarchy and C/E support validation."
+    scope:
+      existing_entity_count: 22
+      capability_claim_count: 78
+      capability_evidence_count: 78
+      capability_profile_count: 78
+      new_agent_count: 0
+      registered_capability_count: 0
+      approved_capability_count: 0
+      assigned_capability_count: 0
+      permission_grant_count: 0
+      existing_project_changes: false
+      git_commit_created: false
+      runtime_enforcement_added: false
+    evidence_level_distribution:
+      E0: 0
+      E1: 78
+      E2: 0
+      E3: 0
+      E4: 0
+      E5: 0
+    evidence_status_distribution:
+      pending: 78
+      assessed: 0
+      verified: 0
+      independently_verified: 0
+      observed: 0
+      invalid: 0
+      revoked: 0
+    capability_maturity_distribution:
+      C0: 0
+      C1: 78
+      C2: 0
+      C3: 0
+      C4: 0
+      C5: 0
+    artifact_reference_paths:
+      unique: 44
+      existing: 44
+      missing: 0
+      artifact_sufficiency_assessed: 0
+    validation:
+      command: "python3 validation/evidence_validator.py --format json"
+      result: "PASS"
+      error_count: 0
+      unknown_claim_rejection_check: "PASS"
+      invalid_evidence_type_rejection_check: "PASS"
+      evidence_level_skip_rejection_check: "PASS"
+      E1_C3_rejection_check: "PASS"
+      E2_C4_rejection_check: "PASS"
+      E3_C5_rejection_check: "PASS"
+    evidence:
+      - "constitution/evidence-constitution.yaml"
+      - "registry/evidence-types.yaml"
+      - "registry/capability-evidence.yaml"
+      - "registry/capability-profiles.yaml"
+      - "validation/evidence_validator.py"
+      - "evidence/README.md"
+
+  - id: "DBOS-EVO-0007"
+    recorded_at: "2026-07-19T20:38:21+08:00"
+    change_type: "verification_constitution_layer_v0.1"
+    authorization: "explicit_user_request"
+    status: "completed_local_uncommitted"
+    summary: "Established verifier identity, V0-V5 levels, evidence support ceilings, and one pending V0 verification record for each of the 78 existing capability claims without issuing a verification decision."
+    scope:
+      existing_entity_count: 22
+      capability_claim_count: 78
+      capability_evidence_count: 78
+      verifier_count: 1
+      verification_record_count: 78
+      new_agent_count: 0
+      registered_capability_count: 0
+      approved_capability_count: 0
+      assigned_capability_count: 0
+      permission_grant_count: 0
+      existing_project_changes: false
+      git_commit_created: false
+      runtime_enforcement_added: false
+      external_certification_created: false
+    verifier_distribution:
+      automated_validator: 1
+      human: 0
+      organization: 0
+      service: 0
+      continuous_monitor: 0
+    verifier_trust_distribution:
+      local_automated: 1
+      independent: 0
+      continuous: 0
+    verification_level_distribution:
+      V0: 78
+      V1: 0
+      V2: 0
+      V3: 0
+      V4: 0
+      V5: 0
+    verification_decision_distribution:
+      pending: 78
+      pass: 0
+      fail: 0
+      inconclusive: 0
+      revoked: 0
+    validation:
+      command: "python3 validation/verification_validator.py --format json"
+      result: "PASS"
+      error_count: 0
+      five_validator_suite: "PASS"
+      yaml_parse_check: "PASS"
+      negative_check_count: 18
+      negative_reference_rejection_checks: "PASS"
+      negative_duplicate_id_rejection_checks: "PASS"
+      negative_level_and_evidence_ceiling_checks: "PASS"
+      negative_independence_and_observation_checks: "PASS"
+      negative_pending_fabrication_checks: "PASS"
+      negative_capability_and_permission_checks: "PASS"
+    boundaries:
+      - "The local structural validation suite is not an Agent, reviewer, independent verification authority, certification body, or production-readiness authority."
+      - "All 78 records remain decision=pending, verification_level=V0, and timestamp=null."
+      - "E1 provides at most a V1 eligibility ceiling and creates no automatic verification level or pass decision."
+      - "Verification != Review Approval != Capability != Permission."
+    evidence:
+      - "constitution/verification-constitution.yaml"
+      - "registry/verifiers.yaml"
+      - "registry/verification-level.yaml"
+      - "registry/verification-records.yaml"
+      - "validation/verification_validator.py"
+      - "evidence/README.md"
+
+  - id: "DBOS-EVO-0008"
+    recorded_at: "2026-07-19T20:57:33+08:00"
+    change_type: "verification_network_layer_v0.1"
+    authorization: "explicit_user_request"
+    status: "completed_local_uncommitted"
+    summary: "Defined four verifier types, migrated the existing local structural suite to automated type, registered one pending run per existing verification record, and created a non-authoritative provenance trust graph."
+    scope:
+      existing_entity_count: 22
+      capability_claim_count: 78
+      capability_evidence_count: 78
+      verification_record_count: 78
+      verifier_type_definition_count: 4
+      verifier_count: 1
+      verification_run_count: 78
+      trust_graph_node_count: 257
+      trust_graph_relationship_count: 78
+      new_agent_count: 0
+      registered_capability_count: 0
+      assigned_capability_count: 0
+      permission_grant_count: 0
+      existing_project_changes: false
+      git_commit_created: false
+      runtime_enforcement_added: false
+      external_verifier_registered: false
+      external_certification_created: false
+    verifier_type_distribution:
+      automated: 1
+      maintainer: 0
+      external: 0
+      experimental: 0
+    verification_run_status_distribution:
+      pending: 78
+      in_progress: 0
+      completed: 0
+      invalid: 0
+      revoked: 0
+    verification_run_result_distribution:
+      pending: 78
+      pass: 0
+      fail: 0
+      inconclusive: 0
+      revoked: 0
+    trust_graph_node_distribution:
+      entity: 22
+      claim: 78
+      evidence: 78
+      verifier: 1
+      verification_run: 78
+    trust_graph:
+      relationship_count: 78
+      pending_relationship_count: 78
+      trust_established_count: 0
+    validation:
+      command: "python3 validation/verification_network_validator.py --format json"
+      result: "PASS"
+      error_count: 0
+      six_validator_suite: "PASS"
+      yaml_parse_check: "PASS"
+      negative_check_count: 15
+      invalid_type_and_reference_rejection_checks: "PASS"
+      out_of_scope_rejection_check: "PASS"
+      external_identity_evidence_rejection_check: "PASS"
+      pending_run_fabrication_rejection_checks: "PASS"
+      trust_graph_integrity_rejection_checks: "PASS"
+      capability_permission_and_agent_rejection_checks: "PASS"
+    boundaries:
+      - "The four verifier types are taxonomy definitions, not four verifier instances."
+      - "Only one evidence-backed automated local structural verifier is registered."
+      - "All 78 runs remain pending with input_digest=null, method=null, result=pending, timestamp=null, and no V-level effect."
+      - "All trust relationships remain pending with trust_effect=none."
+      - "Verification Run != Method Execution != Verification Result != Capability != Permission."
+    evidence:
+      - "constitution/verification-network-constitution.yaml"
+      - "registry/verifier-types.yaml"
+      - "registry/verifiers.yaml"
+      - "registry/verification-runs.yaml"
+      - "registry/trust-graph.yaml"
+      - "validation/verification_network_validator.py"
+      - "evidence/README.md"
+
+  - id: "DBOS-EVO-0009"
+    recorded_at: "2026-07-19T22:03:42+08:00"
+    change_type: "saee_ecological_constitution_layer_v0.1"
+    authorization: "explicit_user_request"
+    status: "completed_local_uncommitted"
+    summary: "Integrated SAEE as the highest ecological interpretation layer, conservatively mapped all 22 existing identities to non-organism ecological classes, defined evolution and fitness models, and preserved all operational governance authorities and maturity levels."
+    id_assignment:
+      requested_id: "DBOS-EVO-0008"
+      assigned_id: "DBOS-EVO-0009"
+      reason: "DBOS-EVO-0008 already records Verification Network Layer v0.1; append-only history and identifier uniqueness prohibit reuse or rewrite."
+    scope:
+      existing_entity_count: 22
+      ecological_entity_count: 22
+      evolution_principle_count: 5
+      fitness_dimension_count: 5
+      evolution_mapping_count: 5
+      capability_claim_count: 78
+      capability_evidence_count: 78
+      verification_record_count: 78
+      new_agent_count: 0
+      registered_capability_count: 0
+      assigned_capability_count: 0
+      permission_grant_count: 0
+      c_e_v_level_change_count: 0
+      external_project_changes: false
+      git_commit_created: false
+      runtime_created: false
+      candidate_organism_created: false
+      digital_organism_created: false
+    ecological_type_distribution:
+      Artifact: 5
+      Protocol: 9
+      Service: 8
+      Runtime: 0
+      Candidate Organism: 0
+      Digital Organism: 0
+    evolution_stage_distribution:
+      pre-organism: 22
+      candidate-organism: 0
+      digital-organism: 0
+      ecologically-retired: 0
+    fitness_model:
+      dimensions:
+        - "reliability"
+        - "evidence_quality"
+        - "efficiency"
+        - "adaptability"
+        - "stability"
+      known_dimension_score_count: 0
+      aggregate_score: null
+      selection_result_count: 0
+    preserved_governance_baseline:
+      claim_maturity: "C1: 78"
+      evidence_level: "E1: 78"
+      verification_level: "V0: 78"
+      approved_review_count: 0
+      capability_count: 0
+      permission_grant_count: 0
+      agent_count: 0
+    validation:
+      command: "python3 validation/saee_validator.py --format json"
+      result: "PASS"
+      error_count: 0
+      seven_validator_suite: "PASS"
+      yaml_parse_check: "PASS"
+      negative_check_count: 18
+      invalid_type_and_stage_rejection_checks: "PASS"
+      automatic_organism_promotion_rejection_checks: "PASS"
+      runtime_fabrication_rejection_checks: "PASS"
+      fitness_authority_rejection_checks: "PASS"
+      evidence_history_preservation_rejection_checks: "PASS"
+      operational_authority_override_rejection_checks: "PASS"
+      capability_permission_agent_and_level_rejection_checks: "PASS"
+    boundaries:
+      - "SAEE is the highest ecological interpretation layer, not a new project, Agent, capability module, runtime, or permission authority."
+      - "Identity, Capability, Evidence, Verification, Verification Network, and permission operational authority remain unchanged."
+      - "Every entity remains pre-organism with fitness_status=unknown and fitness_score=null."
+      - "Entity != Runtime != Candidate Organism != Digital Organism."
+      - "Evolution preserves identity, evidence, lineage, and append-only history."
+    evidence:
+      - "constitution/saee-constitution.yaml"
+      - "registry/ecological-entities.yaml"
+      - "registry/evolution-principles.yaml"
+      - "registry/fitness-model.yaml"
+      - "registry/evolution-mapping.yaml"
+      - "validation/saee_validator.py"
+      - "references/theory/数字生物圈宪法体系研究报告.txt"
+      - "evidence/README.md"
+
+  - id: "DBOS-EVO-0010"
+    recorded_at: "2026-07-19T22:20:05+08:00"
+    change_type: "digital_organism_genesis_layer_v0.1"
+    authorization: "explicit_user_request"
+    status: "completed_local_uncommitted"
+    summary: "Established an evidence-gated and nonautomatic Digital Organism candidate qualification model with empty runtime, resource-flow, behavior-trace, and candidate registries; created no runtime, Agent, candidate, Digital Organism, capability, or permission."
+    scope:
+      existing_entity_count: 22
+      runtime_registration_model_count: 1
+      runtime_instance_count: 0
+      resource_flow_count: 0
+      behavior_trace_count: 0
+      organism_candidate_count: 0
+      qualified_candidate_count: 0
+      digital_organism_count: 0
+      new_agent_count: 0
+      registered_capability_count: 0
+      assigned_capability_count: 0
+      permission_grant_count: 0
+      c_e_v_level_change_count: 0
+      external_project_changes: false
+      git_commit_created: false
+    qualification_model:
+      transition: "Runtime -> Candidate Organism"
+      automatic: false
+      all_requirements_required: true
+      independent_qualification_review_required: true
+      requirements:
+        - "identity_verified"
+        - "runtime_exists"
+        - "capability_verified"
+        - "evidence_level_at_least_E3"
+        - "verification_level_at_least_V3"
+        - "resource_flow_recorded"
+        - "behavior_trace_available"
+        - "evolution_record_available"
+    baseline_missing_requirement_counts:
+      identity_verified: 22
+      runtime_exists: 22
+      capability_verified: 22
+      evidence_level_at_least_E3: 22
+      verification_level_at_least_V3: 22
+      resource_flow_recorded: 22
+      behavior_trace_available: 22
+      evolution_record_available: 22
+    preserved_governance_baseline:
+      claim_maturity: "C1: 78"
+      evidence_level: "E1: 78"
+      verification_level: "V0: 78"
+      approved_review_count: 0
+      capability_count: 0
+      permission_grant_count: 0
+      agent_count: 0
+    validation:
+      command: "python3 validation/organism_validator.py --format json"
+      result: "PASS"
+      error_count: 0
+      eight_validator_suite: "PASS"
+      yaml_parse_check: "PASS"
+      negative_check_count: 20
+      qualification_bypass_rejection_checks: "PASS"
+      missing_runtime_resource_trace_and_evolution_rejection_checks: "PASS"
+      insufficient_identity_c_e_v_rejection_checks: "PASS"
+      automatic_transition_rejection_check: "PASS"
+      fabricated_runtime_and_reference_rejection_checks: "PASS"
+      capability_permission_agent_and_organism_rejection_checks: "PASS"
+    boundaries:
+      - "The Genesis layer is a qualification model and registration surface, not a runtime implementation or organism experiment."
+      - "Runtime registration model existence does not establish a runtime instance."
+      - "A governance-layer ledger entry without an explicit subject_entity_id and runtime binding is not entity evolution evidence."
+      - "Runtime != Candidate Organism != Digital Organism."
+      - "Qualification != Capability != Permission != Agent identity."
+    evidence:
+      - "constitution/organism-genesis-constitution.yaml"
+      - "registry/runtime-instances.yaml"
+      - "registry/resource-flows.yaml"
+      - "registry/behavior-traces.yaml"
+      - "registry/organism-candidates.yaml"
+      - "registry/evolution-mapping.yaml"
+      - "validation/organism_validator.py"
+      - "evidence/README.md"
+
+  - id: "DBOS-EVO-0011"
+    recorded_at: "2026-07-19T22:26:53+08:00"
+    change_type: "acp_protocol_identity_registration"
+    authorization: "explicit_user_request"
+    status: "completed_local_uncommitted"
+    summary: "Registered Autonomous Cell Protocol as one proposed protocol entity and synchronized only identity-derived DBOS views; created no Agent, capability, permission, claim, evidence level, verification result, runtime, candidate, or Digital Organism."
+    recommendation_gate:
+      recommend_as_public_experimental_protocol: true
+      recommend_as_approved_standard: false
+      reason: "ACP is public, versioned, and citable, but ACP-0001 remains pending human approval, ACP-0002 through ACP-0005 remain placeholder drafts, and no production interoperability or certification evidence exists."
+    identity:
+      entity_id: "autonomous-cell-protocol"
+      canonical_id: "dbio://protocol/autonomous-cell-protocol/v0.1.0-alpha"
+      entity_type: "protocol"
+      lifecycle_state: "proposed"
+      identity_source_of_truth: "registry/entities.yaml"
+    scope:
+      entity_count_before: 22
+      entity_count_after: 23
+      protocol_count_before: 9
+      protocol_count_after: 10
+      new_agent_count: 0
+      registered_capability_count: 0
+      assigned_capability_count: 0
+      new_potential_capability_evidence_count: 0
+      new_capability_claim_count: 0
+      permission_grant_count: 0
+      c_e_v_level_change_count: 0
+      runtime_instance_count: 0
+      organism_candidate_count: 0
+      digital_organism_count: 0
+      external_project_changes: false
+      git_commit_created: false
+    derived_views:
+      - "registry/agents.yaml"
+      - "registry/entity-capabilities.yaml"
+      - "registry/ecological-entities.yaml"
+      - "registry/trust-graph.yaml"
+      - "registry/organism-candidates.yaml"
+    release_evidence:
+      release_tag: "v0.1.0-alpha"
+      version_doi: "10.5281/zenodo.21442282"
+      local_sources:
+        - "/Users/zhangbin/GitHub/海洋/autonomous-cell-protocol/README.md"
+        - "/Users/zhangbin/GitHub/海洋/autonomous-cell-protocol/VERSION"
+        - "/Users/zhangbin/GitHub/海洋/autonomous-cell-protocol/CITATION.cff"
+        - "/Users/zhangbin/GitHub/海洋/autonomous-cell-protocol/constitution/acp-principles.md"
+        - "/Users/zhangbin/GitHub/海洋/autonomous-cell-protocol/schema/cell.schema.json"
+        - "/Users/zhangbin/GitHub/海洋/autonomous-cell-protocol/specification/ACP-0001-identity.md"
+    validation:
+      command: "for validator_file in validation/*_validator.py; do python3 \"$validator_file\" --format json || exit 1; done"
+      result: "PASS"
+      validator_count: 9
+      entity_count: 23
+      agent_count: 0
+      protocol_count: 10
+      relationship_status_unknown_count: 23
+      capability_claim_count: 78
+      evidence_level: "E1: 78"
+      verification_level: "V0: 78"
+      trust_graph_node_count: 258
+      trust_graph_relationship_count: 78
+      runtime_instance_count: 0
+      organism_candidate_count: 0
+      digital_organism_count: 0
+    boundaries:
+      - "ACP is registered as a proposed protocol entity in the local DBOS governance index; registration is not DBOS adoption or standards approval."
+      - "The ACP constitution remains project-local and is not merged into the DBOS total constitution."
+      - "Protocol identity does not create an Agent identity, capability, permission, trust, runtime, or organism status."
+      - "Validator PASS proves internal registry consistency only; it does not verify ACP technical correctness or production interoperability."
+    evidence:
+      - "registry/entities.yaml"
+      - "registry/agents.yaml"
+      - "registry/entity-capabilities.yaml"
+      - "registry/ecological-entities.yaml"
+      - "registry/trust-graph.yaml"
+      - "registry/organism-candidates.yaml"
+      - "README.md"
+      - "evidence/README.md"
+
+  - id: "DBOS-EVO-0012"
+    recorded_at: "2026-07-19T22:36:39+08:00"
+    change_type: "ecological_environment_layer_v0.1"
+    authorization: "explicit_user_request"
+    status: "completed_local_uncommitted"
+    summary: "Established a bounded ecological environment model with one defined inactive governance workspace, five entity-unbound resource measurement models, five non-applied null-threshold selection pressures, and an empty interaction registry; created no Agent, runtime, organism, capability, permission, fitness result, or C/E/V upgrade."
+    id_assignment:
+      assigned_id: "DBOS-EVO-0012"
+      reason: "DBOS-EVO-0011 was appended concurrently for the separately authorized ACP protocol identity registration; append-only history and identifier uniqueness prohibit reuse or rewrite."
+    scope:
+      current_entity_count: 23
+      initial_scan_entity_count: 22
+      post_scan_authorized_protocol_identity_count: 1
+      environment_count: 1
+      defined_environment_count: 1
+      active_environment_count: 0
+      resource_model_count: 5
+      entity_bound_resource_model_count: 0
+      non_null_resource_limit_count: 0
+      selection_pressure_count: 5
+      non_null_pressure_threshold_count: 0
+      applied_pressure_count: 0
+      ecological_interaction_count: 0
+      known_fitness_score_count: 0
+      selection_result_count: 0
+      runtime_instance_count: 0
+      organism_candidate_count: 0
+      digital_organism_count: 0
+      new_agent_count: 0
+      registered_capability_count: 0
+      assigned_capability_count: 0
+      permission_grant_count: 0
+      c_e_v_level_change_count: 0
+      external_project_changes: false
+      git_commit_created: false
+    environment_model:
+      environment_id: "dbio://environment/local-governance-workspace/v0.1"
+      environment_type: "governance_workspace"
+      status: "defined"
+      activation_status: "not_active"
+      evidence_claim: "path_exists_only"
+      runtime_effect: "none"
+      organism_effect: "none"
+    resource_types:
+      token: 1
+      compute: 1
+      storage: 1
+      data_access: 1
+      human_attention: 1
+    selection_pressure_dimensions:
+      reliability_pressure: 1
+      evidence_pressure: 1
+      efficiency_pressure: 1
+      adaptability_pressure: 1
+      stability_pressure: 1
+    saee_mapping:
+      relation: "Environment -> Evolution Pressure"
+      status: "defined_model_not_applied"
+      authority_effect: "none"
+      fitness_effect: "none"
+      automatic_selection: false
+    preserved_governance_baseline:
+      capability_claim_count: 78
+      claim_maturity: "C1: 78"
+      evidence_level: "E1: 78"
+      verification_level: "V0: 78"
+      approved_review_count: 0
+      capability_count: 0
+      permission_grant_count: 0
+      agent_count: 0
+    validation:
+      command: "python3 validation/environment_validator.py --format json"
+      result: "PASS"
+      error_count: 0
+      nine_validator_suite: "PASS"
+      yaml_parse_check: "PASS"
+      yaml_file_count: 42
+      negative_check_count: 31
+      invalid_environment_and_reference_rejection_checks: "PASS"
+      resource_binding_limit_and_allocation_rejection_checks: "PASS"
+      pressure_threshold_application_and_fitness_rejection_checks: "PASS"
+      interaction_runtime_and_organism_rejection_checks: "PASS"
+      capability_permission_agent_and_level_rejection_checks: "PASS"
+      saee_mapping_authority_rejection_checks: "PASS"
+    boundaries:
+      - "Defined environment does not mean active environment or entity participation."
+      - "Resource measurement model does not allocate resources or grant data access."
+      - "Null resource limit and pressure threshold mean undefined, not unlimited."
+      - "Selection-pressure definition does not calculate fitness or produce a selection result."
+      - "Environment -> Evolution Pressure is interpretive and cannot create runtime or organism status."
+      - "Environment != Runtime != Candidate Organism != Digital Organism."
+    evidence:
+      - "constitution/environment-constitution.yaml"
+      - "registry/environments.yaml"
+      - "registry/resource-models.yaml"
+      - "registry/selection-pressures.yaml"
+      - "registry/ecological-interactions.yaml"
+      - "registry/evolution-mapping.yaml"
+      - "validation/environment_validator.py"
+      - "README.md"
+      - "evidence/README.md"
+
+  - id: "DBOS-EVO-0013"
+    recorded_at: "2026-07-19T23:02:02+08:00"
+    change_type: "digital_biosphere_federation_layer_v0.1"
+    authorization: "explicit_user_request"
+    status: "completed_local_uncommitted"
+    summary: "Established a non-merge federation control plane for 23 independent entities using proposed membership, central pending manifest placeholders, evidence-bound dependency relations, interoperability rules, a federation role map, and a future project-manifest schema; modified no member repository."
+    scope:
+      canonical_entity_count: 23
+      federation_member_count: 23
+      proposed_member_count: 23
+      registered_member_count: 0
+      verified_member_count: 0
+      central_pending_manifest_count: 23
+      project_local_manifest_count: 0
+      project_local_manifest_adoption_count: 0
+      dependency_graph_node_count: 23
+      dependency_relationship_count: 29
+      verified_interoperability_count: 0
+      repository_merge_count: 0
+      repository_move_count: 0
+      external_project_changes: false
+      git_commit_created: false
+      new_agent_count: 0
+      runtime_instance_count: 0
+      organism_candidate_count: 0
+      digital_organism_count: 0
+      registered_capability_count: 0
+      assigned_capability_count: 0
+      permission_grant_count: 0
+      c_e_v_level_change_count: 0
+    relationship_type_distribution:
+      depends_on: 6
+      implements: 2
+      verifies: 0
+      extends: 1
+      references: 20
+    federation_role_distribution:
+      foundation: 3
+      protocol: 6
+      governance: 3
+      evidence: 3
+      verification: 4
+      experimental: 3
+      unknown: 1
+    membership_baseline:
+      default_member_status: "proposed"
+      default_manifest_status: "pending"
+      shared_constitution_ref: "constitution/constitution.yaml"
+      shared_constitution_adoption_status: "not_adopted_by_member_projects"
+      cross_project_discoverability_status: "central_control_plane_only"
+    preserved_governance_baseline:
+      capability_claim_count: 78
+      claim_maturity: "C1: 78"
+      evidence_level: "E1: 78"
+      verification_level: "V0: 78"
+      approved_review_count: 0
+      capability_count: 0
+      permission_grant_count: 0
+      agent_count: 0
+    validation:
+      command: "python3 validation/federation_validator.py --format json"
+      result: "PASS"
+      error_count: 0
+      ten_validator_suite: "PASS"
+      yaml_parse_check: "PASS"
+      yaml_file_count: 49
+      negative_check_count: 48
+      member_identity_and_status_rejection_checks: "PASS"
+      manifest_adoption_and_authority_rejection_checks: "PASS"
+      dependency_reference_and_evidence_rejection_checks: "PASS"
+      repository_merge_and_role_authority_rejection_checks: "PASS"
+      capability_permission_agent_runtime_organism_rejection_checks: "PASS"
+      c_e_v_level_rejection_checks: "PASS"
+    boundaries:
+      - "Federation is a shared governance context, not a monorepo, ownership transfer, repository merge, or identity merge."
+      - "All members remain proposed; no project has submitted or adopted a project-local manifest."
+      - "Central manifest placeholders do not make federation context automatically discoverable from member repositories."
+      - "Documented dependency and implementation relations are not verified interoperability or compatibility."
+      - "Federation role does not replace canonical entity_type or create capability, permission, trust, runtime, or organism status."
+      - "Future cross-project changes require target-specific authorization and additive evolution evidence."
+    evidence:
+      - "constitution/federation-constitution.yaml"
+      - "registry/federation-members.yaml"
+      - "registry/project-manifests.yaml"
+      - "registry/dependency-graph.yaml"
+      - "registry/interoperability-rules.yaml"
+      - "registry/federation-map.yaml"
+      - "schemas/project-manifest.schema.yaml"
+      - "validation/federation_validator.py"
+      - "README.md"
+      - "evidence/README.md"
+
+  - id: "DBOS-EVO-0014"
+    recorded_at: "2026-07-19T23:07:14+08:00"
+    change_type: "mandatory_user_response_translation_policy"
+    authorization: "explicit_user_request"
+    status: "completed_local_uncommitted"
+    summary: "Added a mandatory total-constitution communication rule requiring Chinese as the default user-facing language and an adjacent Chinese translation or explanation for every English word, phrase, sentence, title, or term in user-facing responses."
+    scope:
+      modified_file_count: 1
+      modified_total_constitution: true
+      external_project_changes: false
+      git_commit_created: false
+      capability_change_count: 0
+      permission_grant_count: 0
+      c_e_v_level_change_count: 0
+      agent_created_count: 0
+      runtime_created_count: 0
+      organism_created_count: 0
+    policy:
+      default_user_facing_language: "Chinese"
+      english_translation_required: true
+      applies_to:
+        - "commentary"
+        - "plans"
+        - "questions"
+        - "explanations"
+        - "reports"
+        - "final responses"
+      exact_identifier_rule: "Paths, commands, hashes, task IDs, issue IDs, PR numbers, status constants, and code identifiers remain exact but require adjacent Chinese context in prose."
+      code_block_rule: "Executable source and commands may remain exact inside code blocks, with Chinese explanation around the block."
+    validation:
+      yaml_parse_check: "PASS"
+      existing_validator_regression_required: true
+    boundaries:
+      - "The rule governs user-facing communication and does not translate or rewrite source identifiers, commands, evidence, or historical records."
+      - "Translation must preserve status, scope, negation, evidence level, and technical meaning."
+    evidence:
+      - "constitution/constitution.yaml"
+      - "evolution/evolution-ledger.yaml"
+
+  - id: "DBOS-EVO-0015"
+    recorded_at: "2026-07-19T23:13:05+08:00"
+    change_type: "governance_archetype_layer_v0.1"
+    authorization: "explicit_user_request"
+    status: "completed_local_uncommitted"
+    summary: "Established three descriptive and replaceable governance archetypes, an empty binding registry, one unexecuted federation-to-ecology transition definition, five null-score evaluation dimensions, and a zero-dependency validator without changing identity, relationships, capability, permission, runtime, organism, or C/E/V state."
+    id_assignment:
+      requested_id: "DBOS-EVO-0014"
+      assigned_id: "DBOS-EVO-0015"
+      reason: "DBOS-EVO-0014 already records the mandatory user-response translation policy; append-only history and identifier uniqueness prohibit overwrite or reuse."
+    recommendation_gate:
+      recommend_for_declarative_multi_entity_governance_modeling: true
+      recommend_as_active_decision_authority: false
+      unresolved_reasons:
+        - "No entity has supplied governance-binding evidence or approval."
+        - "No governance transition has execution evidence."
+        - "No evaluation method, observation window, reviewer authority, or score exists."
+    scope:
+      canonical_entity_count: 23
+      governance_archetype_count: 3
+      governance_binding_count: 0
+      pending_binding_count: 0
+      transition_definition_count: 1
+      executed_transition_count: 0
+      evaluation_dimension_count: 5
+      non_null_evaluation_score_count: 0
+      external_project_changes: false
+      git_commit_created: false
+      identity_change_count: 0
+      relationship_change_count: 0
+      new_agent_count: 0
+      runtime_instance_count: 0
+      organism_candidate_count: 0
+      digital_organism_count: 0
+      registered_capability_count: 0
+      assigned_capability_count: 0
+      permission_grant_count: 0
+      c_e_v_level_change_count: 0
+    archetype_distribution:
+      federation: 1
+      hierarchy: 1
+      ecology: 1
+    transition_baseline:
+      defined_path: "federation -> ecology"
+      triggers:
+        - "sufficient_evidence"
+        - "stable_interaction"
+        - "verified_runtime"
+      status: "defined_not_executed"
+      authority_effect: "none"
+    preserved_governance_baseline:
+      capability_claim_count: 78
+      claim_maturity: "C1: 78"
+      evidence_level: "E1: 78"
+      verification_level: "V0: 78"
+      approved_review_count: 0
+      capability_count: 0
+      permission_grant_count: 0
+      agent_count: 0
+    validation:
+      command: "for validator_file in validation/*_validator.py; do PYTHONDONTWRITEBYTECODE=1 python3 \"$validator_file\" --format json || exit 1; done"
+      result: "PASS"
+      error_count: 0
+      eleven_validator_suite: "PASS"
+      yaml_parse_check: "PASS"
+      yaml_file_count: 54
+      governance_negative_check_count: 19
+      archetype_taxonomy_rejection_checks: "PASS"
+      binding_reference_and_authority_rejection_checks: "PASS"
+      transition_bypass_and_execution_rejection_checks: "PASS"
+      evaluation_score_and_selection_rejection_checks: "PASS"
+      capability_permission_agent_runtime_organism_rejection_checks: "PASS"
+      c_e_v_level_rejection_checks: "PASS"
+    boundaries:
+      - "Governance Archetype != Entity Identity != Capability != Permission."
+      - "All current entities remain unbound; federation membership does not create a governance binding."
+      - "The federation-to-ecology record is a transition definition, not an executed transition."
+      - "All governance evaluation scores remain null and have no fitness, selection, capability, permission, or authority effect."
+      - "Federation is one available governance mode and not the exclusive governance mode."
+      - "SAEE treats governance mode as an ecological adaptation strategy with authority_effect=none."
+    evidence:
+      - "constitution/governance-archetype-constitution.yaml"
+      - "registry/governance-archetypes.yaml"
+      - "registry/governance-bindings.yaml"
+      - "registry/governance-transitions.yaml"
+      - "registry/governance-evaluation.yaml"
+      - "validation/governance_validator.py"
+      - "constitution/federation-constitution.yaml"
+      - "constitution/saee-constitution.yaml"
+      - "evolution/evolution-ledger.yaml"
+
+  - id: "DBOS-EVO-0016"
+    recorded_at: "2026-07-19T23:31:39+08:00"
+    change_type: "governance_evidence_layer_v0.1"
+    authorization: "explicit_user_request"
+    status: "completed_local_uncommitted"
+    summary: "Established an empty governance-claim and governance-evidence baseline, a separate sequential G0-G5 maturity model, and one unobserved null-value intake entry for each of 23 canonical entities without binding an archetype, granting governance authority, changing entity state, or upgrading C/E/V."
+    id_assignment:
+      assigned_id: "DBOS-EVO-0016"
+      reason: "DBOS-EVO-0015 is the latest existing unique entry; append-only history requires the next unused identifier."
+    recommendation_gate:
+      recommend_for_governance_evidence_intake_and_audit: true
+      recommend_as_verified_or_active_governance: false
+      unresolved_reasons:
+        - "No governance claim has been submitted."
+        - "No governance evidence has been registered or independently verified."
+        - "All observation entries are unobserved placeholders with null values and timestamps."
+        - "No governance binding or decision authority exists."
+    scope:
+      canonical_entity_count: 23
+      governance_claim_count: 0
+      governance_evidence_count: 0
+      governance_evidence_type_definition_count: 6
+      governance_observation_entry_count: 23
+      observed_governance_value_count: 0
+      non_null_observation_timestamp_count: 0
+      governance_binding_count: 0
+      governance_authority_grant_count: 0
+      external_project_changes: false
+      git_commit_created: false
+      identity_change_count: 0
+      relationship_change_count: 0
+      new_agent_count: 0
+      runtime_instance_count: 0
+      organism_candidate_count: 0
+      digital_organism_count: 0
+      registered_capability_count: 0
+      assigned_capability_count: 0
+      permission_grant_count: 0
+      c_e_v_level_change_count: 0
+    governance_maturity_distribution:
+      G0: 23
+      G1: 0
+      G2: 0
+      G3: 0
+      G4: 0
+      G5: 0
+    governance_evidence_namespace:
+      levels:
+        - "GE0 Unknown"
+        - "GE1 Declaration"
+        - "GE2 Artifact Evidence"
+        - "GE3 Observed Coordination Evidence"
+        - "GE4 Independent Governance Verification"
+        - "GE5 Continuous Ecological Observation"
+      existing_record_count: 0
+      capability_evidence_axis_effect: "none"
+    observation_baseline:
+      entry_type: "unobserved_intake_placeholder"
+      governance_dimension: "unknown"
+      value: null
+      timestamp: null
+      status: "unobserved"
+      claim_effect: "none"
+      evidence_effect: "none"
+      maturity_effect: "none"
+      binding_effect: "none"
+    preserved_governance_baseline:
+      capability_claim_count: 78
+      claim_maturity: "C1: 78"
+      capability_evidence_level: "E1: 78"
+      verification_level: "V0: 78"
+      governance_archetype_count: 3
+      governance_binding_count: 0
+      executed_governance_transition_count: 0
+      approved_review_count: 0
+      capability_count: 0
+      permission_grant_count: 0
+      agent_count: 0
+    validation:
+      command: "for validator_file in validation/*_validator.py; do PYTHONDONTWRITEBYTECODE=1 python3 \"$validator_file\" --format json || exit 1; done"
+      result: "PASS"
+      error_count: 0
+      twelve_validator_suite: "PASS"
+      yaml_parse_check: "PASS"
+      yaml_file_count: 59
+      governance_evidence_negative_check_count: 27
+      claim_entity_and_archetype_reference_rejection_checks: "PASS"
+      evidence_claim_independence_and_authority_rejection_checks: "PASS"
+      governance_maturity_skip_rejection_checks: "PASS"
+      observation_placeholder_integrity_rejection_checks: "PASS"
+      automatic_binding_and_authority_rejection_checks: "PASS"
+      capability_permission_agent_runtime_organism_rejection_checks: "PASS"
+      c_e_v_level_rejection_checks: "PASS"
+    boundaries:
+      - "Governance Claim != Governance Binding."
+      - "Governance Evidence != Governance Authority."
+      - "An unobserved intake entry is not an observed governance fact."
+      - "G0 is the absence-of-claim baseline, not an assigned or verified governance state."
+      - "GE0-GE5 is separate from and has no effect on capability Evidence E0-E5."
+      - "No claim, evidence, maturity level, observation, verification, or score grants authority, capability, or permission."
+    evidence:
+      - "constitution/governance-evidence-constitution.yaml"
+      - "registry/governance-claims.yaml"
+      - "registry/governance-evidence.yaml"
+      - "registry/governance-maturity.yaml"
+      - "registry/governance-observations.yaml"
+      - "validation/governance_evidence_validator.py"
+      - "constitution/governance-archetype-constitution.yaml"
+      - "evolution/evolution-ledger.yaml"
+
+  - id: "DBOS-EVO-0017"
+    recorded_at: "2026-07-19T23:41:50+08:00"
+    change_type: "digital_biosphere_event_layer_v0.1"
+    authorization: "explicit_user_request"
+    status: "completed_local_uncommitted"
+    summary: "Established eight non-executing event-type definitions, an empty immutable event registry, one defined inactive append-only stream for each of 23 canonical entities, an empty event-observation registry, and an Event-to-Observation-to-Evolution SAEE mapping without creating a factual event, observation, Agent, runtime, organism, capability, permission, or C/E/V upgrade."
+    id_assignment:
+      assigned_id: "DBOS-EVO-0017"
+      reason: "DBOS-EVO-0016 is the latest existing unique entry; append-only history requires the next unused identifier."
+    recommendation_gate:
+      recommend_for_event_schema_and_future_fact_intake: true
+      recommend_as_active_monitoring_or_runtime_truth: false
+      unresolved_reasons:
+        - "No factual event has been registered."
+        - "No event observation has been recorded."
+        - "No collector, source adapter, clock policy, ordering mechanism, deduplication method, or integrity chain exists."
+        - "Defined streams are inactive routing contracts only."
+    scope:
+      canonical_entity_count: 23
+      event_type_count: 8
+      event_count: 0
+      event_stream_count: 23
+      defined_stream_count: 23
+      active_stream_count: 0
+      event_observation_count: 0
+      evidence_created_count: 0
+      fitness_effect_count: 0
+      evolution_result_count: 0
+      external_project_changes: false
+      git_commit_created: false
+      identity_change_count: 0
+      new_agent_count: 0
+      runtime_instance_count: 0
+      organism_candidate_count: 0
+      digital_organism_count: 0
+      registered_capability_count: 0
+      assigned_capability_count: 0
+      permission_grant_count: 0
+      c_e_v_level_change_count: 0
+    event_type_distribution:
+      identity_event: 1
+      capability_event: 1
+      evidence_event: 1
+      verification_event: 1
+      resource_event: 1
+      execution_event: 1
+      evolution_event: 1
+      governance_event: 1
+    event_stream_baseline:
+      per_canonical_entity: true
+      event_types_per_stream: 8
+      retention: "append_only_until_explicit_retirement_policy"
+      status: "defined"
+      collection_active: false
+      observer_created: false
+    saee_mapping:
+      relation: "Event -> Observation -> Evolution"
+      mapping_count_before: 6
+      mapping_count_after: 7
+      status: "defined_event_model_no_events"
+      automatic_evolution: false
+      authority_effect: "none"
+      fitness_effect: "none"
+    preserved_governance_baseline:
+      capability_claim_count: 78
+      capability_claim_maturity: "C1: 78"
+      capability_evidence_level: "E1: 78"
+      verification_level: "V0: 78"
+      governance_claim_count: 0
+      governance_evidence_count: 0
+      governance_binding_count: 0
+      governance_maturity: "G0: 23"
+      capability_count: 0
+      permission_grant_count: 0
+      agent_count: 0
+    validation:
+      command: "for validator_file in validation/*_validator.py; do PYTHONDONTWRITEBYTECODE=1 python3 \"$validator_file\" --format json || exit 1; done"
+      result: "PASS"
+      error_count: 0
+      thirteen_validator_suite: "PASS"
+      yaml_parse_check: "PASS"
+      yaml_file_count: 64
+      event_negative_check_count: 24
+      event_type_and_entity_reference_rejection_checks: "PASS"
+      provenance_timestamp_and_evidence_linkage_rejection_checks: "PASS"
+      stream_activation_retention_and_authority_rejection_checks: "PASS"
+      event_observation_reference_rejection_checks: "PASS"
+      automatic_evolution_fitness_and_authority_rejection_checks: "PASS"
+      capability_permission_agent_runtime_organism_rejection_checks: "PASS"
+      c_e_v_level_rejection_checks: "PASS"
+    boundaries:
+      - "Event registration reports a fact and does not cause or prove the reported occurrence by structure alone."
+      - "A defined event stream is not active monitoring, a collector, an observer, an Agent, or a runtime."
+      - "Event != Evidence != Verification != Permission."
+      - "Event observation does not calculate fitness or trigger evolution automatically."
+      - "Historical events are immutable; corrections, invalidations, supersession, and revocation are additive."
+    evidence:
+      - "constitution/event-constitution.yaml"
+      - "registry/event-types.yaml"
+      - "registry/events.yaml"
+      - "registry/event-streams.yaml"
+      - "registry/event-observations.yaml"
+      - "validation/event_validator.py"
+      - "registry/evolution-mapping.yaml"
+      - "validation/saee_validator.py"
+      - "evolution/evolution-ledger.yaml"
+
+  - id: "DBOS-EVO-0018"
+    recorded_at: "2026-07-19T23:54:21+08:00"
+    change_type: "event_integrity_layer_v0.1"
+    authorization: "explicit_user_request"
+    status: "completed_local_uncommitted"
+    summary: "Established one empty event-integrity record schema, three witness-type definitions with zero witness instances, one sequence-and-hash-chain ordering rule for each of 23 defined event streams, five integrity-check definitions with zero runs, and an Event-Integrity-to-Evidence-Reliability SAEE mapping without creating events, trust, runtime, Agent, organism, capability, permission, or C/E/V promotion."
+    id_assignment:
+      assigned_id: "DBOS-EVO-0018"
+      reason: "DBOS-EVO-0017 is the latest existing unique entry; append-only history requires the next unused identifier."
+    recommendation_gate:
+      recommend_for_future_event_identity_ordering_and_tamper_detection_contracts: true
+      recommend_as_verified_event_integrity_or_event_truth: false
+      unresolved_reasons:
+        - "No factual event or integrity record exists."
+        - "No witness identity or witness result exists."
+        - "No integrity check has executed."
+        - "Canonical serialization, hash computation, signing, storage enforcement, and independent recomputation are not implemented."
+    scope:
+      canonical_entity_count: 23
+      event_type_count: 8
+      event_count: 0
+      event_stream_count: 23
+      event_observation_count: 0
+      integrity_schema_count: 1
+      integrity_record_count: 0
+      witness_type_definition_count: 3
+      witness_count: 0
+      ordering_rule_count: 23
+      integrity_check_definition_count: 5
+      integrity_check_run_count: 0
+      trust_grant_count: 0
+      evidence_created_count: 0
+      external_project_changes: false
+      git_commit_created: false
+      new_agent_count: 0
+      runtime_instance_count: 0
+      organism_candidate_count: 0
+      digital_organism_count: 0
+      registered_capability_count: 0
+      assigned_capability_count: 0
+      permission_grant_count: 0
+      c_e_v_level_change_count: 0
+    integrity_status_distribution:
+      pending: 0
+      structurally_valid: 0
+      verified: 0
+      invalid: 0
+      chain_broken: 0
+      revoked: 0
+    witness_type_distribution:
+      self: 0
+      automated: 0
+      external: 0
+    ordering_baseline:
+      ordering_method: "sequence_ordering_with_hash_chaining"
+      sequence_rule: "start_at_1_and_increment_by_1"
+      hash_chain_rule: "sequence_1_previous_hash_null_then_match_prior_current_hash"
+      deduplication_rule: "reject_duplicate_event_id_current_hash_or_stream_sequence"
+      clock_model: "event_occurrence_time_plus_integrity_record_time_no_global_total_order"
+      global_total_order_defined: false
+      occupied_sequence_count: 0
+    saee_mapping:
+      relation: "Event Integrity -> Evidence Reliability"
+      mapping_count_before: 7
+      mapping_count_after: 8
+      status: "defined_integrity_model_no_records"
+      authority_effect: "none"
+      evidence_level_effect: "none"
+      fitness_effect: "none"
+    preserved_governance_baseline:
+      capability_claim_count: 78
+      capability_claim_maturity: "C1: 78"
+      capability_evidence_level: "E1: 78"
+      verification_level: "V0: 78"
+      governance_claim_count: 0
+      governance_evidence_count: 0
+      governance_binding_count: 0
+      governance_maturity: "G0: 23"
+      capability_count: 0
+      permission_grant_count: 0
+      agent_count: 0
+    validation:
+      command: "for validator_file in validation/*_validator.py; do PYTHONDONTWRITEBYTECODE=1 python3 \"$validator_file\" --format json || exit 1; done"
+      result: "PASS"
+      error_count: 0
+      fourteen_validator_suite: "PASS"
+      yaml_parse_check: "PASS"
+      yaml_file_count: 69
+      event_integrity_negative_check_count: 34
+      expected_reason_rejection_count: 34
+      unknown_event_and_stream_reference_rejection_checks: "PASS"
+      missing_hash_sequence_and_chain_rejection_checks: "PASS"
+      witness_type_and_automatic_trust_rejection_checks: "PASS"
+      ordering_and_duplicate_control_rejection_checks: "PASS"
+      fabricated_check_run_rejection_checks: "PASS"
+      capability_permission_agent_runtime_organism_rejection_checks: "PASS"
+      c_e_v_level_rejection_checks: "PASS"
+    boundaries:
+      - "Integrity Identity != Event Identity != Entity Identity."
+      - "Hash Shape != Hash Recalculation != Event Occurrence Truth."
+      - "Witness Type != Witness Identity != Trust."
+      - "A defined ordering rule does not occupy a sequence position or create an event."
+      - "Integrity and witness results cannot upgrade C/E/V, grant capability or permission, calculate fitness, or trigger evolution."
+    evidence:
+      - "constitution/event-integrity-constitution.yaml"
+      - "registry/event-integrity.yaml"
+      - "registry/event-witnesses.yaml"
+      - "registry/event-ordering.yaml"
+      - "registry/event-integrity-checks.yaml"
+      - "validation/event_integrity_validator.py"
+      - "constitution/event-constitution.yaml"
+      - "registry/evolution-mapping.yaml"
+      - "validation/saee_validator.py"
+      - "evolution/evolution-ledger.yaml"
+
+  - id: "DBOS-EVO-0019"
+    recorded_at: "2026-07-20T00:17:32+08:00"
+    change_type: "event_attestation_layer_v0.1"
+    authorization: "explicit_user_request"
+    status: "completed_local_uncommitted"
+    summary: "Established four event-producer type definitions with zero producers, three bounded attestation-method definitions, empty event-attestation and trust-anchor registries, a fail-closed structural validator, and an Attestation-to-Evidence-Reliability SAEE mapping without creating events, signatures, trust, runtime, Agent, organism, capability, permission, or C/E/V promotion."
+    id_assignment:
+      assigned_id: "DBOS-EVO-0019"
+      reason: "DBOS-EVO-0018 is the latest existing unique entry; append-only history requires the next unused identifier."
+    recommendation_gate:
+      recommend_for_agent_readable_event_producer_attestation_and_signature_boundary_contracts: true
+      recommend_as_event_truth_trust_infrastructure_or_production_signing_system: false
+      unresolved_reasons:
+        - "No factual event, identified event producer, attestation, signature, or trust anchor exists."
+        - "No canonicalization, signing, key management, key rotation, revocation, timestamping, or signature-verification implementation exists."
+        - "No generic human identity registry exists; a human producer cannot currently resolve through a type-appropriate identity source."
+        - "The evidence registry is capability-specific and does not yet provide a general event-attestation evidence namespace."
+        - "Cryptographic validity would bind a signer to a bounded claim but would not establish event occurrence, provider origin, source completeness, causal effect, or execution completeness."
+    scope:
+      canonical_entity_count: 23
+      event_count: 0
+      event_integrity_record_count: 0
+      producer_type_definition_count: 4
+      producer_count: 0
+      attestation_method_count: 3
+      attestation_count: 0
+      trust_anchor_count: 0
+      signature_count: 0
+      trust_grant_count: 0
+      evidence_created_count: 0
+      external_project_changes: false
+      git_commit_created: false
+      new_agent_count: 0
+      runtime_instance_count: 0
+      organism_candidate_count: 0
+      digital_organism_count: 0
+      registered_capability_count: 0
+      assigned_capability_count: 0
+      permission_grant_count: 0
+      c_e_v_level_change_count: 0
+    producer_type_distribution:
+      runtime: 0
+      service: 0
+      human: 0
+      automated: 0
+    attestation_status_distribution:
+      pending: 0
+      signed: 0
+      verified: 0
+      invalid: 0
+      revoked: 0
+      superseded: 0
+    trust_level_distribution:
+      unknown: 0
+      identity_supported: 0
+      scope_supported: 0
+      independently_verified: 0
+      revoked: 0
+    attestation_methods:
+      self_attestation:
+        independence: "none"
+        trust_effect: "none"
+        fact_effect: "none"
+      automated_attestation:
+        independence: "none_without_separate_identity_method_and_conflict_evidence"
+        trust_effect: "none"
+        fact_effect: "none"
+      external_attestation:
+        independence: "requires_separate_identity_and_conflict_evidence"
+        trust_effect: "none"
+        fact_effect: "none"
+    saee_mapping:
+      relation: "Attestation -> Evidence Reliability"
+      mapping_count_before: 8
+      mapping_count_after: 9
+      status: "defined_attestation_model_no_records"
+      authority_effect: "none"
+      evidence_level_effect: "none"
+      fitness_effect: "none"
+    preserved_governance_baseline:
+      capability_claim_count: 78
+      capability_claim_maturity: "C1: 78"
+      capability_evidence_level: "E1: 78"
+      verification_level: "V0: 78"
+      capability_count: 0
+      permission_grant_count: 0
+      agent_count: 0
+    validation:
+      command: "for validator_file in validation/*_validator.py; do PYTHONDONTWRITEBYTECODE=1 python3 \"$validator_file\" --format json || exit 1; done"
+      result: "PASS"
+      error_count: 0
+      fifteen_validator_suite: "PASS"
+      yaml_parse_check: "PASS"
+      yaml_file_count: 74
+      attestation_negative_check_count: 49
+      expected_reason_rejection_count: 49
+      producer_identity_type_scope_and_status_rejection_checks: "PASS"
+      method_independence_and_automatic_trust_rejection_checks: "PASS"
+      event_producer_method_and_claim_reference_rejection_checks: "PASS"
+      signature_source_evidence_and_secret_boundary_rejection_checks: "PASS"
+      trust_anchor_identity_evidence_scope_and_trust_rejection_checks: "PASS"
+      capability_permission_agent_runtime_organism_rejection_checks: "PASS"
+      c_e_v_level_rejection_checks: "PASS"
+    boundaries:
+      - "Attestation != Event != Evidence != Verification."
+      - "Producer Type != Producer Identity != Agent Identity."
+      - "Trust Anchor != Trust Grant."
+      - "Signature Validity != Event Occurrence Truth != Provider Origin."
+      - "Attestation cannot upgrade C/E/V, grant capability or permission, calculate fitness, or trigger evolution."
+    evidence:
+      - "constitution/event-attestation-constitution.yaml"
+      - "registry/event-producers.yaml"
+      - "registry/event-attestations.yaml"
+      - "registry/trust-anchors.yaml"
+      - "registry/attestation-methods.yaml"
+      - "validation/attestation_validator.py"
+      - "constitution/event-integrity-constitution.yaml"
+      - "registry/evolution-mapping.yaml"
+      - "validation/saee_validator.py"
+      - "evolution/evolution-ledger.yaml"
+
+  - id: "DBOS-EVO-0020"
+    recorded_at: "2026-07-20T00:32:53+08:00"
+    change_type: "event_execution_context_layer_v0.1"
+    authorization: "explicit_user_request"
+    status: "completed_local_uncommitted"
+    summary: "Established an empty event-execution-context model, empty input- and output-snapshot registries, an empty context-scoped dependency registry, a fail-closed structural validator, an Execution-Context-to-Event-Reliability SAEE mapping, and an attestation reference without creating events, execution results, runtime, Agent, organism, capability, permission, or C/E/V promotion."
+    id_assignment:
+      assigned_id: "DBOS-EVO-0020"
+      reason: "DBOS-EVO-0019 is the latest existing unique entry; append-only history requires the next unused identifier."
+    recommendation_gate:
+      recommend_for_agent_readable_execution_context_snapshot_and_dependency_contracts: true
+      recommend_as_runtime_replay_reproducibility_proof_or_production_execution_evidence: false
+      unresolved_reasons:
+        - "No execution context, input snapshot, output snapshot, dependency record, runtime, or factual event exists."
+        - "The current environment record is defined but not active, observed, authorized, runtime-bound, or production-bound."
+        - "The required dependency fields include name, version, and source but not immutable artifact digest, lock material, platform resolution, or transitive closure."
+        - "No canonicalization contract, retained snapshot bytes, execution method record, platform identity, resource envelope, clock model, or nondeterminism control has been implemented."
+        - "A valid configuration or snapshot digest would support content-consistency checks but would not establish execution occurrence, environment completeness, correctness, causality, provider origin, or business truth."
+    scope:
+      canonical_entity_count: 23
+      environment_count: 1
+      active_environment_count: 0
+      event_count: 0
+      event_attestation_count: 0
+      execution_context_schema_count: 1
+      execution_context_count: 0
+      input_snapshot_count: 0
+      output_snapshot_count: 0
+      snapshot_count: 0
+      execution_dependency_count: 0
+      reproducibility_record_count: 0
+      evidence_created_count: 0
+      external_project_changes: false
+      git_commit_created: false
+      new_agent_count: 0
+      runtime_instance_count: 0
+      organism_candidate_count: 0
+      digital_organism_count: 0
+      registered_capability_count: 0
+      assigned_capability_count: 0
+      permission_grant_count: 0
+      c_e_v_level_change_count: 0
+    context_status_distribution:
+      proposed: 0
+      recorded: 0
+      validated: 0
+      invalid: 0
+      revoked: 0
+      superseded: 0
+    snapshot_baseline:
+      hash_algorithm: "sha256"
+      digest_format: "sha256:<64 lowercase hexadecimal characters>"
+      retained_input_material_count: 0
+      retained_output_material_count: 0
+      input_availability_claim_count: 0
+      output_correctness_claim_count: 0
+    dependency_baseline:
+      identity_rule: "composite(context_id, dependency)"
+      resolved_artifact_count: 0
+      transitive_dependency_coverage_count: 0
+      installation_authority_count: 0
+    saee_mapping:
+      relation: "Execution Context -> Event Reliability"
+      mapping_count_before: 9
+      mapping_count_after: 10
+      status: "defined_execution_context_model_no_records"
+      authority_effect: "none"
+      evidence_level_effect: "none"
+      fitness_effect: "none"
+    preserved_governance_baseline:
+      capability_claim_count: 78
+      capability_claim_maturity: "C1: 78"
+      capability_evidence_level: "E1: 78"
+      verification_level: "V0: 78"
+      capability_count: 0
+      permission_grant_count: 0
+      agent_count: 0
+    validation:
+      command: "for validator_file in validation/*_validator.py; do PYTHONDONTWRITEBYTECODE=1 python3 \"$validator_file\" --format json || exit 1; done"
+      result: "PASS"
+      error_count: 0
+      sixteen_validator_suite: "PASS"
+      yaml_parse_check: "PASS"
+      yaml_file_count: 79
+      execution_context_negative_check_count: 66
+      expected_reason_rejection_count: 66
+      context_entity_environment_identity_and_status_rejection_checks: "PASS"
+      configuration_and_snapshot_digest_rejection_checks: "PASS"
+      snapshot_context_ownership_and_cross_registry_identity_rejection_checks: "PASS"
+      dependency_identity_version_source_and_reference_rejection_checks: "PASS"
+      unsupported_reproducibility_claim_rejection_checks: "PASS"
+      capability_permission_agent_runtime_organism_rejection_checks: "PASS"
+      c_e_v_level_rejection_checks: "PASS"
+    boundaries:
+      - "Execution Context != Runtime != Event."
+      - "Environment Definition != Active Environment != Execution Occurrence."
+      - "Digest Validity != Retained Content != Reproducibility."
+      - "Output Snapshot != Successful Execution != Correct Result."
+      - "Execution context cannot upgrade C/E/V, grant capability or permission, calculate fitness, or trigger evolution."
+    evidence:
+      - "constitution/execution-context-constitution.yaml"
+      - "registry/execution-contexts.yaml"
+      - "registry/input-snapshots.yaml"
+      - "registry/output-snapshots.yaml"
+      - "registry/execution-dependencies.yaml"
+      - "validation/execution_context_validator.py"
+      - "constitution/event-attestation-constitution.yaml"
+      - "registry/evolution-mapping.yaml"
+      - "validation/saee_validator.py"
+      - "evolution/evolution-ledger.yaml"
+
+  - id: "DBOS-EVO-0021"
+    recorded_at: "2026-07-20T00:49:07+08:00"
+    change_type: "experimental_protocol_layer_v0.1"
+    authorization: "explicit_user_request"
+    status: "completed_local_uncommitted"
+    summary: "Established an empty controlled-experiment registry with default future status defined, an empty procedure registry, five non-satisfied reproducibility requirement definitions, an empty experiment-observation registry, a fail-closed structural validator, an Experiment-to-Observation-to-Evolution SAEE mapping, and an execution-context reference without creating or executing an experiment, event, runtime, Agent, organism, capability, permission, fitness result, evolution result, or C/E/V promotion."
+    id_assignment:
+      assigned_id: "DBOS-EVO-0021"
+      reason: "DBOS-EVO-0020 is the latest existing unique entry; append-only history requires the next unused identifier."
+    recommendation_gate:
+      recommend_for_agent_readable_controlled_experiment_preregistration_and_reproducibility_contracts: true
+      recommend_as_executed_experiment_empirical_result_or_reproducibility_proof: false
+      unresolved_reasons:
+        - "No experiment objective, canonical subject choice, procedure, concrete input, expected output, authorization, run, event, observation, or result exists."
+        - "The five reproducibility records are requirement definitions and have zero satisfaction or verification records."
+        - "No active environment, runtime, execution context, retained input or output material, dependency closure, execution method record, or behavior trace exists."
+        - "No preregistration authority, experiment-run identity, metric definition review, stop-rule decision, statistical plan, or independent verification path has been selected."
+        - "Protocol structure can support a future controlled experiment but cannot establish execution occurrence, correctness, reproducibility, causal effect, external validity, production fitness, or business truth."
+    scope:
+      canonical_entity_count: 23
+      environment_count: 1
+      active_environment_count: 0
+      experimental_protocol_schema_count: 1
+      experiment_count: 0
+      procedure_count: 0
+      procedure_step_count: 0
+      reproducibility_requirement_definition_count: 5
+      reproducibility_requirement_satisfied_count: 0
+      reproducibility_requirement_verified_count: 0
+      experiment_observation_count: 0
+      experiment_execution_count: 0
+      event_count: 0
+      event_observation_count: 0
+      event_attestation_count: 0
+      execution_context_count: 0
+      input_snapshot_count: 0
+      output_snapshot_count: 0
+      runtime_instance_count: 0
+      evidence_created_count: 0
+      fitness_result_count: 0
+      evolution_result_count: 0
+      external_project_changes: false
+      git_commit_created: false
+      new_agent_count: 0
+      organism_candidate_count: 0
+      digital_organism_count: 0
+      registered_capability_count: 0
+      assigned_capability_count: 0
+      permission_grant_count: 0
+      c_e_v_level_change_count: 0
+    experiment_status_distribution:
+      proposed: 0
+      defined: 0
+      authorized: 0
+      running: 0
+      observed: 0
+      completed: 0
+      invalid: 0
+      revoked: 0
+      retired: 0
+    reproducibility_requirements:
+      version_lock:
+        definition_count: 1
+        satisfied_count: 0
+      dependency_lock:
+        definition_count: 1
+        satisfied_count: 0
+      input_consistency:
+        definition_count: 1
+        satisfied_count: 0
+      environment_consistency:
+        definition_count: 1
+        satisfied_count: 0
+      execution_method:
+        definition_count: 1
+        satisfied_count: 0
+    first_verifiable_fact_experiment_gate:
+      current_gate: "G0_not_started"
+      automatic_transition: false
+      execution_authority: "none"
+      required_future_route:
+        - "preregister experiment identity, objective, canonical subject, protocol, limitations, and creation time"
+        - "define bounded ordered procedure, environment, inputs, expected outputs, stop conditions, side effects, evidence requirements, and authority requirements"
+        - "bind and separately satisfy all five reproducibility requirements"
+        - "obtain separate attributable execution authorization"
+        - "record runtime, execution context, resource use, dependencies, inputs, outputs, and behavior during a real run"
+        - "produce event, integrity, attestation, and observation records"
+        - "submit bounded evidence and verification claims without automatic level promotion"
+    saee_mapping:
+      relation: "Experiment -> Observation -> Evolution"
+      mapping_count_before: 10
+      mapping_count_after: 11
+      status: "defined_experimental_protocol_no_experiments"
+      authority_effect: "none"
+      evidence_level_effect: "none"
+      fitness_effect: "none"
+      automatic_evolution: false
+    preserved_governance_baseline:
+      capability_claim_count: 78
+      capability_claim_maturity: "C1: 78"
+      capability_evidence_level: "E1: 78"
+      verification_level: "V0: 78"
+      capability_count: 0
+      permission_grant_count: 0
+      agent_count: 0
+    validation:
+      command: "for validator_file in validation/*_validator.py; do PYTHONDONTWRITEBYTECODE=1 python3 \"$validator_file\" --format json || exit 1; done"
+      result: "PASS"
+      error_count: 0
+      seventeen_validator_suite: "PASS"
+      yaml_parse_check: "PASS"
+      yaml_file_count: 84
+      experimental_protocol_negative_check_count: 83
+      expected_reason_rejection_count: 83
+      requirement_order_definition_and_non_satisfaction_rejection_checks: "PASS"
+      experiment_identity_subject_protocol_status_and_authorization_rejection_checks: "PASS"
+      procedure_environment_step_output_and_non_execution_rejection_checks: "PASS"
+      observation_reference_value_timestamp_and_non_fitness_rejection_checks: "PASS"
+      event_context_attestation_runtime_and_result_non_creation_rejection_checks: "PASS"
+      capability_permission_agent_runtime_organism_rejection_checks: "PASS"
+      c_e_v_level_rejection_checks: "PASS"
+    boundaries:
+      - "Experiment Definition != Experiment Run != Experiment Result."
+      - "Defined != Authorized != Running != Observed != Verified."
+      - "Expected Output != Actual Output != Correct Result."
+      - "Requirement Definition != Requirement Satisfaction != Reproducibility Proof."
+      - "Experiment observation cannot upgrade C/E/V, grant capability or permission, calculate fitness, or trigger evolution."
+    evidence:
+      - "constitution/experimental-protocol-constitution.yaml"
+      - "registry/experiments.yaml"
+      - "registry/experiment-procedures.yaml"
+      - "registry/reproducibility-requirements.yaml"
+      - "registry/experiment-observations.yaml"
+      - "validation/experimental_protocol_validator.py"
+      - "constitution/execution-context-constitution.yaml"
+      - "registry/evolution-mapping.yaml"
+      - "validation/saee_validator.py"
+      - "evolution/evolution-ledger.yaml"
+
+  - id: "DBOS-EVO-0022"
+    recorded_at: "2026-07-20T01:03:03+08:00"
+    change_type: "genesis_experiment_registration_v0.1"
+    authorization: "explicit_user_request"
+    status: "completed_local_uncommitted"
+    summary: "Registered DBOS-EXP-0001 Digital Biosphere Self Validation Experiment with a bounded governed-system subject reference, one eight-step procedure, three pending unfrozen inputs, six expected ungenerated outputs, four defined unevaluated stop rules, one pending powerless authorization, a fail-closed validator, and an Experiment-to-Fact-Formation SAEE mapping without executing the experiment or creating any context, event, integrity record, attestation, evidence bundle, verification result, runtime, Agent, organism, capability, permission, fitness result, evolution result, or C/E/V promotion."
+    id_assignment:
+      assigned_id: "DBOS-EVO-0022"
+      reason: "DBOS-EVO-0021 is the latest existing unique entry; append-only history requires the next unused identifier."
+    recommendation_gate:
+      recommend_registration_as_agent_readable_genesis_experiment_preregistration: true
+      recommend_execution_or_fact_formation_claim_now: false
+      unresolved_reasons:
+        - "The authorization record is pending with authorized_by=null, decision_at=null, current_effect=none, and zero execution authority."
+        - "digital-biosphere-os is not a canonical entity registry record; the experiment uses an explicit governed_system_subject exception bound to constitution/constitution.yaml."
+        - "All three inputs are pending and unfrozen with digest=null; the validator-list record is a live registration-time declaration rather than an immutable snapshot."
+        - "The DBOS root is not a Git repository, so repository commit identity and working-tree state cannot currently be frozen through Git."
+        - "The local governance environment is defined but not active or runtime-bound, and no runtime or execution context exists."
+        - "All six outputs are expected with artifact_ref=null and evidence_ref=null; no fact, evidence bundle, or verification result exists."
+        - "All five reproducibility requirements remain definitions with zero satisfaction and verification records."
+    scope:
+      canonical_entity_count: 23
+      governed_system_subject_exception_count: 1
+      experiment_count: 1
+      registered_experiment_count: 1
+      procedure_count: 1
+      procedure_step_count: 8
+      declared_input_count: 3
+      pending_input_count: 3
+      frozen_input_count: 0
+      expected_output_count: 6
+      generated_output_count: 0
+      stop_rule_count: 4
+      evaluated_stop_rule_count: 0
+      authorization_count: 1
+      pending_authorization_count: 1
+      active_authorization_count: 0
+      experiment_execution_count: 0
+      execution_context_count: 0
+      event_count: 0
+      integrity_record_count: 0
+      attestation_count: 0
+      experiment_observation_count: 0
+      evidence_bundle_count: 0
+      verification_result_count: 0
+      runtime_instance_count: 0
+      fitness_result_count: 0
+      evolution_result_count: 0
+      external_project_changes: false
+      git_commit_created: false
+      new_agent_count: 0
+      organism_candidate_count: 0
+      digital_organism_count: 0
+      registered_capability_count: 0
+      assigned_capability_count: 0
+      permission_grant_count: 0
+      c_e_v_level_change_count: 0
+    experiment_state:
+      experiment_id: "DBOS-EXP-0001"
+      name: "Digital Biosphere Self Validation Experiment"
+      subject: "digital-biosphere-os"
+      subject_kind: "governed_system_subject"
+      subject_ref: "constitution/constitution.yaml"
+      experiment_status: "registered"
+      procedure_status: "procedure_defined"
+      authorization_status: "pending"
+      execution_status: "not_executed"
+      fact_formation_status: "not_formed"
+      current_gate: "G1_registered_procedure_defined_G2_blocked_inputs_pending"
+    input_state:
+      constitution_version:
+        status: "pending"
+        digest: null
+      validator_list:
+        status: "pending"
+        validator_count: 18
+        digest: null
+      repository_state:
+        status: "pending"
+        git_repository: false
+        commit: null
+        digest: null
+    expected_outputs:
+      execution_context: "expected"
+      event: "expected"
+      integrity_record: "expected"
+      attestation: "expected"
+      evidence_bundle: "expected"
+      verification_result: "expected"
+    stop_rule_state:
+      all_required_validators_pass: "defined_not_evaluated"
+      any_integrity_failure: "defined_not_evaluated"
+      missing_evidence: "defined_not_evaluated"
+      reproducibility_failure: "defined_not_evaluated"
+    saee_mapping:
+      relation: "Experiment -> Fact Formation"
+      mapping_count_before: 11
+      mapping_count_after: 12
+      status: "registered_genesis_experiment_not_authorized"
+      authority_effect: "none"
+      automatic_fact_formation: false
+    preserved_governance_baseline:
+      capability_claim_count: 78
+      capability_claim_maturity: "C1: 78"
+      capability_evidence_level: "E1: 78"
+      verification_level: "V0: 78"
+      capability_count: 0
+      permission_grant_count: 0
+      agent_count: 0
+    validation:
+      command: "for validator_file in validation/*_validator.py; do PYTHONDONTWRITEBYTECODE=1 python3 \"$validator_file\" --format json || exit 1; done"
+      result: "PASS"
+      error_count: 0
+      eighteen_validator_suite: "PASS"
+      yaml_parse_check: "PASS"
+      yaml_file_count: 88
+      genesis_experiment_negative_check_count: 108
+      expected_reason_rejection_count: 108
+      experiment_identity_subject_protocol_status_and_non_execution_rejection_checks: "PASS"
+      procedure_order_authorization_stop_and_result_rejection_checks: "PASS"
+      pending_input_and_expected_output_state_rejection_checks: "PASS"
+      stop_rule_definition_and_non_evaluation_rejection_checks: "PASS"
+      pending_authorization_and_zero_authority_rejection_checks: "PASS"
+      context_event_integrity_attestation_runtime_and_result_non_creation_rejection_checks: "PASS"
+      capability_permission_agent_runtime_organism_rejection_checks: "PASS"
+      c_e_v_level_rejection_checks: "PASS"
+    boundaries:
+      - "Registered != Authorized != Executed != Observed != Verified."
+      - "Procedure Defined != Procedure Executed."
+      - "Pending Input != Frozen Snapshot."
+      - "Expected Output != Generated Artifact != Verified Fact."
+      - "Experiment -> Fact Formation is a future governed route; fact_formation_status remains not_formed."
+    evidence:
+      - "registry/experiments.yaml"
+      - "registry/experiment-procedures.yaml"
+      - "registry/experiment-inputs.yaml"
+      - "registry/experiment-outputs.yaml"
+      - "registry/experiment-stop-rules.yaml"
+      - "registry/experiment-authorizations.yaml"
+      - "validation/genesis_experiment_validator.py"
+      - "constitution/experimental-protocol-constitution.yaml"
+      - "registry/evolution-mapping.yaml"
+      - "validation/experimental_protocol_validator.py"
+      - "validation/saee_validator.py"
+      - "evolution/evolution-ledger.yaml"
+
+  - id: "DBOS-EVO-0023"
+    recorded_at: "2026-07-20T01:29:05+08:00"
+    change_type: "experiment_readiness_layer_v0.1"
+    authorization: "explicit_user_request"
+    status: "completed_local_uncommitted"
+    summary: "Established the DBOS-EXP-0001 pre-execution readiness constitution, registered one bounded governance_system experiment subject, created one pending unfrozen snapshot slot, one pending unfrozen nineteen-validator manifest, five pending readiness reviews, and a fail-closed validator without authorizing or executing the experiment or creating any event, context, runtime, Agent, organism, capability, permission, evidence result, verification result, fact, or C/E/V promotion."
+    id_assignment:
+      assigned_id: "DBOS-EVO-0023"
+      reason: "DBOS-EVO-0022 is the latest existing unique entry; append-only history requires the next unused identifier."
+    recommendation_gate:
+      recommend_readiness_layer_as_agent_readable_pre_execution_contract: true
+      recommend_experiment_execution_now: false
+      unresolved_reasons:
+        - "The bounded governance_system subject has identity_status=registered_pending_verification and canonical_entity_status=not_registered."
+        - "The aggregate experiment snapshot is pending with file_tree_hash, config_hash, dependency_hash, and environment_hash all null; no freeze evidence exists."
+        - "The nineteen-validator manifest is a live declaration with digest=null, frozen_at=null, and no retained manifest or freeze evidence."
+        - "The local governance environment remains defined with activation_status=not_active and has no experiment-scoped qualification record."
+        - "DBOS-EXP-0001-AUTH-0001 remains pending with authorized_by=null, decision_at=null, and current_effect=none."
+        - "The DBOS root is not a Git repository, so no Git commit identity is available for an immutable repository-state snapshot."
+    scope:
+      canonical_entity_count: 23
+      canonical_entity_count_change: 0
+      experiment_subject_count: 1
+      governance_system_subject_count: 1
+      verified_subject_count: 0
+      snapshot_count: 1
+      pending_snapshot_count: 1
+      frozen_snapshot_count: 0
+      validator_manifest_count: 1
+      declared_validator_count: 19
+      pending_validator_manifest_count: 1
+      frozen_validator_manifest_count: 0
+      readiness_review_count: 5
+      pending_readiness_review_count: 5
+      ready_readiness_review_count: 0
+      active_authorization_count: 0
+      experiment_execution_count: 0
+      execution_context_count: 0
+      event_count: 0
+      runtime_instance_count: 0
+      external_project_changes: false
+      git_commit_created: false
+      new_agent_count: 0
+      organism_candidate_count: 0
+      digital_organism_count: 0
+      registered_capability_count: 0
+      assigned_capability_count: 0
+      permission_grant_count: 0
+      c_e_v_level_change_count: 0
+    readiness_state:
+      experiment_id: "DBOS-EXP-0001"
+      subject:
+        subject_id: "DBOS-SUBJECT-0001"
+        entity_id: "digital-biosphere-os"
+        entity_type: "governance_system"
+        identity_status: "registered_pending_verification"
+        canonical_entity_status: "not_registered"
+      snapshot:
+        snapshot_id: "DBOS-EXP-0001-SNAPSHOT-0001"
+        status: "pending"
+        frozen: false
+      validator_manifest:
+        manifest_id: "DBOS-EXP-0001-VALIDATOR-MANIFEST-0001"
+        status: "pending"
+        declared_validator_count: 19
+        frozen: false
+      reviews:
+        subject_readiness: "pending"
+        snapshot_readiness: "pending"
+        validator_freeze: "pending"
+        environment_readiness: "pending"
+        authorization_readiness: "pending"
+      aggregate_readiness_status: "pending"
+      authorization_status: "pending"
+      execution_status: "not_executed"
+    preserved_governance_baseline:
+      capability_claim_count: 78
+      capability_claim_maturity: "C1: 78"
+      capability_evidence_level: "E1: 78"
+      verification_level: "V0: 78"
+      capability_count: 0
+      permission_grant_count: 0
+      agent_count: 0
+    validation:
+      command: "for validator_file in validation/*_validator.py; do PYTHONDONTWRITEBYTECODE=1 python3 \"$validator_file\" --format json || exit 1; done"
+      result: "PASS"
+      error_count: 0
+      nineteen_validator_suite: "PASS"
+      yaml_parse_check: "PASS"
+      yaml_file_count: 93
+      readiness_negative_check_count: 44
+      expected_reason_rejection_count: 44
+      subject_identity_type_and_non_agent_rejection_checks: "PASS"
+      snapshot_freeze_hash_material_and_status_rejection_checks: "PASS"
+      validator_manifest_freeze_digest_membership_and_status_rejection_checks: "PASS"
+      readiness_criterion_reference_status_and_non_authority_rejection_checks: "PASS"
+      authorization_environment_execution_and_event_rejection_checks: "PASS"
+      capability_permission_agent_runtime_organism_rejection_checks: "PASS"
+      c_e_v_level_rejection_checks: "PASS"
+    boundaries:
+      - "Subject Registered != Identity Verified != Canonical Entity Registered."
+      - "Pending Snapshot != Frozen Snapshot != Ready Snapshot."
+      - "Validator List Declared != Validator Manifest Frozen."
+      - "Readiness Pending != Readiness Ready != Execution Authorized."
+      - "Validator PASS != Experiment Execution != Fact Formation."
+    evidence:
+      - "constitution/experiment-readiness-constitution.yaml"
+      - "registry/experiment-subjects.yaml"
+      - "registry/experiment-snapshots.yaml"
+      - "registry/validator-manifests.yaml"
+      - "registry/readiness-reviews.yaml"
+      - "validation/readiness_validator.py"
+      - "constitution/identity-constitution.yaml"
+      - "constitution/experimental-protocol-constitution.yaml"
+      - "registry/experiment-inputs.yaml"
+      - "evolution/evolution-ledger.yaml"
+
+  - id: "DBOS-EVO-0025"
+    recorded_at: "2026-07-20T01:50:32+08:00"
+    change_type: "experiment_snapshot_capture_layer_v0.1"
+    authorization: "explicit_user_request"
+    status: "completed_local_uncommitted"
+    summary: "Established the DBOS-EXP-0001 pre-execution snapshot-capture constitution, one pending filesystem capture request, four source-type method definitions, empty artifact-digest and capture-evidence registries, snapshot and freeze-manifest capture references, and a fail-closed validator without claiming that any material was captured or frozen and without executing the experiment or creating any event, context, runtime, Agent, organism, capability, permission, authorization, evidence maturity, verification result, fact, or C/E/V promotion."
+    id_assignment:
+      assigned_id: "DBOS-EVO-0025"
+      reason: "DBOS-EVO-0024 is the latest existing unique entry; append-only history requires the next unused identifier."
+    recommendation_gate:
+      recommend_snapshot_capture_layer_as_agent_readable_contract: true
+      recommend_capture_completion_claim_now: false
+      recommend_freeze_or_experiment_execution_now: false
+      unresolved_reasons:
+        - "DBOS-EXP-0001-CAPTURE-0001 remains pending with collector=null and captured_at=null."
+        - "The artifact-digest registry is empty, so no artifact bytes or aggregate snapshot material have a recorded hash."
+        - "The capture-evidence registry is empty, so no collection method, result, exclusions, errors, or timestamp have been recorded."
+        - "DBOS-EXP-0001-SNAPSHOT-0001 retains four null aggregate hashes and remains pending and unfrozen."
+        - "The validator manifest and environment lock remain pending with no locked digests or environment version material."
+        - "The freeze manifest, freeze certificate, readiness reviews, and experiment authorization remain pending."
+        - "The DBOS root is not a Git repository; git is defined as a source type but is unavailable for this capture target."
+    scope:
+      experiment_count: 1
+      snapshot_capture_count: 1
+      pending_capture_count: 1
+      captured_count: 0
+      validated_capture_count: 0
+      artifact_digest_count: 0
+      capture_evidence_count: 0
+      source_type_definition_count: 4
+      filesystem_capture_count: 1
+      git_capture_count: 0
+      artifact_registry_capture_count: 0
+      external_storage_capture_count: 0
+      snapshot_count: 1
+      frozen_snapshot_count: 0
+      freeze_manifest_count: 1
+      frozen_freeze_manifest_count: 0
+      validator_manifest_count: 1
+      declared_validator_count: 21
+      environment_lock_count: 1
+      freeze_certificate_count: 1
+      readiness_review_count: 5
+      pending_readiness_review_count: 5
+      active_authorization_count: 0
+      experiment_execution_count: 0
+      execution_context_count: 0
+      event_count: 0
+      runtime_instance_count: 0
+      external_project_changes: false
+      git_commit_created: false
+      new_agent_count: 0
+      organism_candidate_count: 0
+      digital_organism_count: 0
+      registered_capability_count: 0
+      assigned_capability_count: 0
+      permission_grant_count: 0
+      c_e_v_level_change_count: 0
+    capture_state:
+      experiment_id: "DBOS-EXP-0001"
+      capture_id: "DBOS-EXP-0001-CAPTURE-0001"
+      snapshot_id: "DBOS-EXP-0001-SNAPSHOT-0001"
+      source_type: "filesystem"
+      source_ref: "/Users/zhangbin/GitHub/digital-biosphere-os"
+      collector: null
+      captured_at: null
+      capture_status: "pending"
+      artifact_digest_count: 0
+      capture_evidence_count: 0
+      freeze_status: "pending"
+      readiness_status: "pending"
+      authorization_status: "pending"
+      execution_status: "not_executed"
+    source_type_distribution:
+      filesystem: 1
+      git: 1
+      artifact_registry: 1
+      external_storage: 1
+    preserved_governance_baseline:
+      capability_claim_count: 78
+      capability_claim_maturity: "C1: 78"
+      capability_evidence_level: "E1: 78"
+      verification_level: "V0: 78"
+      capability_count: 0
+      permission_grant_count: 0
+      agent_count: 0
+    validation:
+      command: "for validator_file in validation/*_validator.py; do PYTHONDONTWRITEBYTECODE=1 python3 \"$validator_file\" --format json || exit 1; done"
+      result: "PASS"
+      error_count: 0
+      twenty_one_validator_suite: "PASS"
+      yaml_parse_check: "PASS"
+      yaml_file_count: 102
+      snapshot_capture_negative_check_count: 53
+      expected_reason_rejection_count: 53
+      experiment_snapshot_capture_and_source_reference_rejection_checks: "PASS"
+      captured_without_digest_or_evidence_rejection_checks: "PASS"
+      digest_hash_algorithm_path_size_timestamp_and_snapshot_rejection_checks: "PASS"
+      capture_evidence_method_collector_result_timestamp_and_reference_rejection_checks: "PASS"
+      freeze_authorization_execution_event_context_and_runtime_rejection_checks: "PASS"
+      capability_permission_agent_runtime_organism_rejection_checks: "PASS"
+      c_e_v_level_rejection_checks: "PASS"
+    boundaries:
+      - "Capture Contract Defined != Material Captured."
+      - "Source Type Defined != Source Access Granted."
+      - "Capture ID != Artifact Digest != Capture Evidence."
+      - "Captured != Frozen != Ready != Authorized != Executed."
+      - "Validator PASS != Capture Completion != Fact Formation."
+    evidence:
+      - "constitution/snapshot-capture-constitution.yaml"
+      - "registry/snapshot-captures.yaml"
+      - "registry/artifact-digests.yaml"
+      - "registry/capture-evidence.yaml"
+      - "registry/snapshot-sources.yaml"
+      - "registry/experiment-snapshots.yaml"
+      - "registry/freeze-manifests.yaml"
+      - "validation/snapshot_capture_validator.py"
+      - "validation/freeze_validator.py"
+      - "constitution/experiment-freeze-constitution.yaml"
+      - "registry/validator-manifests.yaml"
+      - "registry/experiment-inputs.yaml"
+      - "evolution/evolution-ledger.yaml"
+
+  - id: "DBOS-EVO-0026"
+    recorded_at: "2026-07-20T02:06:59+08:00"
+    change_type: "snapshot_capture_readiness_layer_v0.1"
+    authorization: "explicit_user_request"
+    status: "completed_local_uncommitted"
+    summary: "Established the DBOS-EXP-0001 snapshot-capture readiness constitution, an empty collector registry, one deny-by-default defined local scope, one pending powerless capture authorization with no collector or authorizer, four pending collector/scope/authorization/privacy reviews, cross-layer readiness dependencies, and a fail-closed validator without appointing a collector, authorizing or executing capture, generating a snapshot hash or event, creating a runtime or Agent, or changing capability, permission, organism, C/E/V, freeze, experiment-readiness, authorization, or execution state."
+    id_assignment:
+      assigned_id: "DBOS-EVO-0026"
+      reason: "DBOS-EVO-0025 is the latest existing unique entry; append-only history requires the next unused identifier."
+    recommendation_gate:
+      recommend_capture_readiness_layer_as_agent_readable_pre_execution_gate: true
+      recommend_collector_appointment_now: false
+      recommend_capture_authorization_or_execution_now: false
+      unresolved_reasons:
+        - "capture-collectors.yaml remains empty because no human or automated governed identity has been explicitly appointed as collector."
+        - "The single capture scope is defined but not approved; privacy_status remains pending and no privacy evidence exists."
+        - "DBOS-EXP-0001-CAPTURE-AUTH-0001 remains pending with collector_id=null, authorized_by=null, decision_at=null, and current_effect=none."
+        - "Collector, scope, authorization, and privacy readiness reviews all remain pending."
+        - "DBOS-EXP-0001-CAPTURE-0001 remains pending with collector=null, captured_at=null, and empty digest and evidence references."
+        - "Artifact digest and capture evidence registries are empty, and all experiment snapshot hashes remain null."
+        - "Freeze, experiment readiness, and experiment authorization remain pending."
+    scope:
+      experiment_count: 1
+      collector_count: 0
+      human_collector_count: 0
+      automated_collector_count: 0
+      capture_scope_count: 1
+      defined_scope_count: 1
+      approved_scope_count: 0
+      capture_authorization_count: 1
+      pending_capture_authorization_count: 1
+      active_capture_authorization_count: 0
+      capture_readiness_review_count: 4
+      pending_capture_readiness_review_count: 4
+      ready_capture_readiness_review_count: 0
+      snapshot_capture_count: 1
+      completed_snapshot_capture_count: 0
+      artifact_digest_count: 0
+      snapshot_hash_count: 0
+      capture_evidence_count: 0
+      freeze_manifest_count: 1
+      frozen_freeze_manifest_count: 0
+      readiness_review_count: 5
+      active_experiment_authorization_count: 0
+      experiment_execution_count: 0
+      execution_context_count: 0
+      event_count: 0
+      runtime_instance_count: 0
+      external_project_changes: false
+      git_commit_created: false
+      new_agent_count: 0
+      organism_candidate_count: 0
+      digital_organism_count: 0
+      registered_capability_count: 0
+      assigned_capability_count: 0
+      permission_grant_count: 0
+      c_e_v_level_change_count: 0
+    readiness_state:
+      experiment_id: "DBOS-EXP-0001"
+      collector:
+        count: 0
+        status: "missing"
+      scope:
+        scope_id: "DBOS-EXP-0001-CAPTURE-SCOPE-0001"
+        status: "defined"
+        privacy_status: "pending"
+        exclusion_precedence: "deny_overrides_allow"
+      authorization:
+        authorization_id: "DBOS-EXP-0001-CAPTURE-AUTH-0001"
+        collector_id: null
+        authorized_by: null
+        decision_at: null
+        status: "pending"
+        current_effect: "none"
+      reviews:
+        collector: "pending"
+        scope: "pending"
+        authorization: "pending"
+        privacy: "pending"
+      aggregate_capture_readiness_status: "pending"
+      capture_status: "pending"
+      freeze_status: "pending"
+      experiment_readiness_status: "pending"
+      experiment_authorization_status: "pending"
+      execution_status: "not_executed"
+    preserved_governance_baseline:
+      capability_claim_count: 78
+      capability_claim_maturity: "C1: 78"
+      capability_evidence_level: "E1: 78"
+      verification_level: "V0: 78"
+      capability_count: 0
+      permission_grant_count: 0
+      agent_count: 0
+    validation:
+      command: "for validator_file in validation/*_validator.py; do PYTHONDONTWRITEBYTECODE=1 python3 \"$validator_file\" --format json || exit 1; done"
+      result: "PASS"
+      error_count: 0
+      twenty_two_validator_suite: "PASS"
+      yaml_parse_check: "PASS"
+      yaml_file_count: 107
+      capture_readiness_negative_check_count: 65
+      expected_reason_rejection_count: 65
+      collector_identity_type_method_status_and_non_appointment_rejection_checks: "PASS"
+      scope_root_allowlist_exclusion_privacy_status_and_non_authority_rejection_checks: "PASS"
+      capture_authorization_collector_scope_authorizer_timestamp_and_non_generation_rejection_checks: "PASS"
+      collector_scope_authorization_privacy_readiness_rejection_checks: "PASS"
+      snapshot_hash_capture_evidence_event_context_runtime_and_agent_rejection_checks: "PASS"
+      capability_permission_organism_and_c_e_v_level_rejection_checks: "PASS"
+    boundaries:
+      - "Collector Registry Empty != Collector Missing Error Hidden."
+      - "Scope Defined != Scope Approved != Capture Authorized."
+      - "Capture Readiness Pending != Capture Execution Authorized."
+      - "Capture Authorization != Experiment Authorization."
+      - "Readiness Validator PASS != Capture Run != Snapshot Hash."
+    evidence:
+      - "constitution/snapshot-capture-readiness-constitution.yaml"
+      - "registry/capture-collectors.yaml"
+      - "registry/capture-scopes.yaml"
+      - "registry/capture-authorizations.yaml"
+      - "registry/capture-readiness-reviews.yaml"
+      - "validation/capture_readiness_validator.py"
+      - "constitution/snapshot-capture-constitution.yaml"
+      - "constitution/experiment-readiness-constitution.yaml"
+      - "registry/validator-manifests.yaml"
+      - "registry/experiment-inputs.yaml"
+      - "evolution/evolution-ledger.yaml"
+  - id: "DBOS-EVO-0024"
+    recorded_at: "2026-07-20T01:41:02+08:00"
+    change_type: "experiment_freeze_layer_v0.1"
+    authorization: "explicit_user_request"
+    status: "completed_local_uncommitted"
+    summary: "Established the DBOS-EXP-0001 freeze constitution and a complete pending reference chain across one experiment snapshot, one twenty-validator manifest, one environment lock, one freeze manifest, and one unissued freeze certificate without claiming that the experiment is frozen, ready, authorized, executed, observed, or fact-forming and without creating any event, context, runtime, Agent, organism, capability, permission, evidence result, verification result, or C/E/V promotion."
+    id_assignment:
+      assigned_id: "DBOS-EVO-0024"
+      reason: "DBOS-EVO-0023 is the latest existing unique entry; append-only history requires the next unused identifier."
+    recommendation_gate:
+      recommend_freeze_layer_as_agent_readable_pre_execution_contract: true
+      recommend_freeze_certificate_issuance_now: false
+      recommend_experiment_execution_now: false
+      unresolved_reasons:
+        - "DBOS-EXP-0001-SNAPSHOT-0001 remains pending with four null hashes, captured_at=null, empty retained material, and no freeze evidence."
+        - "DBOS-EXP-0001-VALIDATOR-MANIFEST-0001 remains pending with digest=null, locked_digest=null, frozen_at=null, and no retained manifest or freeze evidence."
+        - "DBOS-EXP-0001-ENV-LOCK-0001 remains pending with os_version=null, runtime_version=null, dependency_hash=null, locked_at=null, and empty evidence_refs."
+        - "DBOS-EXP-0001-FREEZE-0001 remains pending with frozen_at=null."
+        - "DBOS-EXP-0001-FREEZE-CERT-0001 remains pending and unissued with issuer=null and created_at=null."
+        - "All five readiness reviews and the experiment authorization remain pending."
+        - "The DBOS root is not a Git repository, so no commit-bound repository snapshot can currently be asserted."
+    scope:
+      experiment_count: 1
+      freeze_manifest_count: 1
+      pending_freeze_manifest_count: 1
+      frozen_freeze_manifest_count: 0
+      environment_lock_count: 1
+      pending_environment_lock_count: 1
+      frozen_environment_lock_count: 0
+      freeze_certificate_count: 1
+      pending_freeze_certificate_count: 1
+      issued_freeze_certificate_count: 0
+      snapshot_count: 1
+      frozen_snapshot_count: 0
+      validator_manifest_count: 1
+      declared_validator_count: 20
+      frozen_validator_manifest_count: 0
+      readiness_review_count: 5
+      pending_readiness_review_count: 5
+      active_authorization_count: 0
+      experiment_execution_count: 0
+      execution_context_count: 0
+      event_count: 0
+      runtime_instance_count: 0
+      external_project_changes: false
+      git_commit_created: false
+      new_agent_count: 0
+      organism_candidate_count: 0
+      digital_organism_count: 0
+      registered_capability_count: 0
+      assigned_capability_count: 0
+      permission_grant_count: 0
+      c_e_v_level_change_count: 0
+    freeze_state:
+      experiment_id: "DBOS-EXP-0001"
+      snapshot:
+        snapshot_id: "DBOS-EXP-0001-SNAPSHOT-0001"
+        freeze_reference: "DBOS-EXP-0001-FREEZE-0001"
+        status: "pending"
+        immutable: false
+      validator_manifest:
+        manifest_id: "DBOS-EXP-0001-VALIDATOR-MANIFEST-0001"
+        validator_count: 20
+        digest: null
+        locked_digest: null
+        status: "pending"
+      environment_lock:
+        lock_id: "DBOS-EXP-0001-ENV-LOCK-0001"
+        status: "pending"
+      freeze_manifest:
+        freeze_id: "DBOS-EXP-0001-FREEZE-0001"
+        status: "pending"
+      freeze_certificate:
+        certificate_id: "DBOS-EXP-0001-FREEZE-CERT-0001"
+        status: "pending"
+        issuer: null
+        created_at: null
+      aggregate_freeze_status: "pending"
+      readiness_status: "pending"
+      authorization_status: "pending"
+      execution_status: "not_executed"
+    preserved_governance_baseline:
+      capability_claim_count: 78
+      capability_claim_maturity: "C1: 78"
+      capability_evidence_level: "E1: 78"
+      verification_level: "V0: 78"
+      capability_count: 0
+      permission_grant_count: 0
+      agent_count: 0
+    validation:
+      command: "for validator_file in validation/*_validator.py; do PYTHONDONTWRITEBYTECODE=1 python3 \"$validator_file\" --format json || exit 1; done"
+      result: "PASS"
+      error_count: 0
+      twenty_validator_suite: "PASS"
+      yaml_parse_check: "PASS"
+      yaml_file_count: 97
+      freeze_negative_check_count: 50
+      expected_reason_rejection_count: 50
+      experiment_snapshot_validator_environment_reference_rejection_checks: "PASS"
+      freeze_status_digest_timestamp_material_and_certificate_rejection_checks: "PASS"
+      environment_lock_version_digest_timestamp_and_evidence_rejection_checks: "PASS"
+      authorization_execution_event_context_and_runtime_rejection_checks: "PASS"
+      capability_permission_agent_runtime_organism_rejection_checks: "PASS"
+      c_e_v_level_rejection_checks: "PASS"
+    boundaries:
+      - "Freeze Layer Defined != Experiment Frozen."
+      - "Pending Freeze Reference != Immutable Artifact."
+      - "Pending Certificate != Issued Certificate."
+      - "Frozen != Ready != Authorized != Executed."
+      - "Validator PASS != Freeze Completion != Fact Formation."
+    evidence:
+      - "constitution/experiment-freeze-constitution.yaml"
+      - "registry/freeze-manifests.yaml"
+      - "registry/environment-locks.yaml"
+      - "registry/freeze-certificates.yaml"
+      - "registry/experiment-snapshots.yaml"
+      - "registry/validator-manifests.yaml"
+      - "validation/freeze_validator.py"
+      - "validation/readiness_validator.py"
+      - "constitution/experiment-readiness-constitution.yaml"
+      - "registry/experiment-inputs.yaml"
+      - "evolution/evolution-ledger.yaml"
+
+  - id: "DBOS-EVO-0027"
+    recorded_at: "2026-07-20T02:11:57+08:00"
+    change_type: "executor_layer_v0.1"
+    authorization: "explicit_user_request"
+    status: "completed_local_uncommitted"
+    summary: "Established the DBOS-EXP-0001 Experiment Executor Constitution, an empty executor registry, an empty executor-scope registry, one powerless pending executor-authorization slot, collector/executor separation, an executor-readiness dependency, and a fail-closed validator without appointing an executor, authorizing or executing the experiment, capturing a snapshot, generating an event, creating a runtime, Agent, or Digital Organism, granting capability or permission, altering historical evidence, or changing C/E/V state."
+    id_assignment:
+      assigned_id: "DBOS-EVO-0027"
+      reason: "DBOS-EVO-0026 is the latest existing unique entry; append-only history requires the next unused identifier."
+    recommendation_gate:
+      recommend_executor_layer_as_agent_readable_pre_execution_gate: true
+      recommend_executor_appointment_now: false
+      recommend_scope_or_authorization_now: false
+      recommend_experiment_execution_now: false
+      unresolved_reasons:
+        - "executors.yaml remains empty because no attributable governed identity has been explicitly appointed and verified as an executor."
+        - "executor-scopes.yaml remains empty because a scope cannot reference a nonexistent executor."
+        - "DBOS-EXP-0001-EXECUTOR-AUTH-0001 remains pending with executor_id=null, scope_ref=null, authorized_by=null, timestamp=null, and current_effect=none."
+        - "The experiment subject identity remains registered_pending_verification and cannot automatically become an executor."
+        - "Snapshot capture readiness, experiment readiness, freeze, environment qualification, and experiment authorization remain pending."
+        - "No execution context, runtime, event, behavior trace, resource flow, execution evidence, or verification result exists for the experiment."
+        - "The inherited ledger order places DBOS-EVO-0024 after DBOS-EVO-0026; IDs remain unique and DBOS-EVO-0027 is appended last, but chronological reordering was not authorized and remains a separate integrity issue."
+    scope:
+      experiment_count: 1
+      executor_count: 0
+      automated_runner_count: 0
+      human_operator_count: 0
+      executor_scope_count: 0
+      executor_authorization_count: 1
+      pending_executor_authorization_count: 1
+      active_executor_authorization_count: 0
+      capture_collector_count: 0
+      capture_scope_count: 1
+      active_capture_authorization_count: 0
+      snapshot_hash_count: 0
+      artifact_digest_count: 0
+      capture_evidence_count: 0
+      experiment_execution_count: 0
+      execution_context_count: 0
+      event_count: 0
+      runtime_instance_count: 0
+      behavior_trace_count: 0
+      resource_flow_count: 0
+      external_project_changes: false
+      git_commit_created: false
+      new_agent_count: 0
+      organism_candidate_count: 0
+      digital_organism_count: 0
+      registered_capability_count: 0
+      assigned_capability_count: 0
+      permission_grant_count: 0
+      historical_evidence_change_count: 0
+      c_e_v_level_change_count: 0
+    executor_state:
+      experiment_id: "DBOS-EXP-0001"
+      registry_status: "empty_executor_baseline"
+      executor_types:
+        automated_runner: 0
+        human_operator: 0
+      scope_status: "empty_executor_scope_baseline"
+      authorization:
+        authorization_id: "DBOS-EXP-0001-EXECUTOR-AUTH-0001"
+        executor_id: null
+        scope_ref: null
+        authorized_by: null
+        timestamp: null
+        status: "pending"
+        current_effect: "none"
+      experiment_authorization_status: "pending"
+      capture_readiness_status: "pending"
+      experiment_readiness_status: "pending"
+      freeze_status: "pending"
+      execution_status: "not_executed"
+    preserved_governance_baseline:
+      capability_claim_count: 78
+      capability_claim_maturity: "C1: 78"
+      capability_evidence_level: "E1: 78"
+      verification_level: "V0: 78"
+      capability_count: 0
+      permission_grant_count: 0
+      agent_count: 0
+    validation:
+      command: "for validator_file in validation/*_validator.py; do PYTHONDONTWRITEBYTECODE=1 python3 \"$validator_file\" --format json || exit 1; done"
+      result: "PASS"
+      error_count: 0
+      twenty_three_validator_suite: "PASS"
+      yaml_parse_check: "PASS"
+      yaml_file_count: 111
+      executor_negative_check_count: 22
+      expected_reason_rejection_count: 22
+      executor_identity_type_version_status_and_non_appointment_checks: "PASS"
+      scope_reference_action_allowlist_mandatory_forbidden_and_non_authority_checks: "PASS"
+      authorization_executor_scope_authorizer_timestamp_and_non_execution_checks: "PASS"
+      collector_executor_separation_and_readiness_dependency_checks: "PASS"
+      capability_permission_agent_runtime_organism_and_c_e_v_rejection_checks: "PASS"
+      historical_evidence_snapshot_event_context_and_trace_preservation_checks: "PASS"
+    boundaries:
+      - "Executor Registry Empty != Executor Identity Hidden."
+      - "Executor != Agent != Runtime != Digital Organism."
+      - "Executor Scope != Executor Authorization != Experiment Authorization."
+      - "Executor Authorized != Experiment Executed != Event Recorded."
+      - "Validator PASS != Executor Appointment != Execution Authority."
+    evidence:
+      - "constitution/executor-constitution.yaml"
+      - "registry/executors.yaml"
+      - "registry/executor-scopes.yaml"
+      - "registry/executor-authorizations.yaml"
+      - "validation/executor_validator.py"
+      - "constitution/snapshot-capture-readiness-constitution.yaml"
+      - "constitution/experiment-readiness-constitution.yaml"
+      - "registry/validator-manifests.yaml"
+      - "registry/experiment-inputs.yaml"
+      - "evolution/evolution-ledger.yaml"
+
+  - id: "DBOS-EVO-0028"
+    recorded_at: "2026-07-20T08:33:25+08:00"
+    change_type: "executor_identity_enrollment_layer_v0.1"
+    authorization: "explicit_user_request"
+    status: "completed_local_uncommitted"
+    summary: "Established the Executor Identity Constitution, empty human/automated identity and verification registries, two defined non-authorizing identity-type boundaries, identity enrollment and verified-identity gates for future Executor appointment and experiment readiness, and a fail-closed validator without enrolling an identity, appointing an Executor, authorizing or executing the experiment, creating a Runtime or Agent, generating an Event or Snapshot, granting capability or permission, altering historical evidence, or changing C/E/V state."
+    id_assignment:
+      assigned_id: "DBOS-EVO-0028"
+      reason: "DBOS-EVO-0027 is the latest existing unique identifier and the last physical ledger entry; append-only history requires the next unused identifier."
+    recommendation_gate:
+      recommend_executor_identity_layer_as_agent_readable_enrollment_gate: true
+      recommend_identity_enrollment_now: false
+      recommend_executor_appointment_now: false
+      recommend_execution_authorization_now: false
+      unresolved_reasons:
+        - "No attributable human or automated Executor identity evidence has been submitted."
+        - "executor-identities.yaml remains empty and enrollment_status remains not_started_no_identity."
+        - "executor-verifications.yaml remains empty because no identity exists to verify; no null-subject or simulated verification was generated."
+        - "The two executor boundaries are declarative identity-type ceilings only and bind no identity or authority."
+        - "executors.yaml and executor-scopes.yaml remain empty, while the Executor authorization slot remains pending and unbound."
+        - "Experiment authorization, capture readiness, freeze, environment qualification, and experiment readiness remain pending."
+        - "The inherited ledger order still places DBOS-EVO-0024 after DBOS-EVO-0026; IDs are unique and DBOS-EVO-0028 is appended last without reordering historical records."
+    scope:
+      executor_identity_count: 0
+      human_identity_count: 0
+      automated_identity_count: 0
+      executor_verification_count: 0
+      pending_executor_verification_count: 0
+      verified_executor_identity_count: 0
+      executor_boundary_count: 2
+      human_boundary_count: 1
+      automated_boundary_count: 1
+      defined_boundary_count: 2
+      appointed_executor_count: 0
+      executor_scope_count: 0
+      executor_authorization_count: 1
+      pending_executor_authorization_count: 1
+      active_executor_authorization_count: 0
+      experiment_execution_count: 0
+      snapshot_hash_count: 0
+      event_count: 0
+      runtime_instance_count: 0
+      external_project_changes: false
+      git_commit_created: false
+      new_agent_count: 0
+      organism_candidate_count: 0
+      digital_organism_count: 0
+      registered_capability_count: 0
+      assigned_capability_count: 0
+      permission_grant_count: 0
+      historical_evidence_change_count: 0
+      c_e_v_level_change_count: 0
+    enrollment_state:
+      identity_registry_status: "empty_executor_identity_baseline"
+      enrollment_status: "not_started_no_identity"
+      identity_types:
+        human: 0
+        automated: 0
+      boundaries:
+        human: "defined"
+        automated: "defined"
+        authority_effect: "none"
+      verification:
+        count: 0
+        pending: 0
+        verified: 0
+        automatic_pass_count: 0
+      executor_appointment_status: "not_appointed"
+      executor_authorization_status: "pending"
+      experiment_authorization_status: "pending"
+      experiment_readiness_status: "pending"
+      execution_status: "not_executed"
+    preserved_governance_baseline:
+      capability_claim_count: 78
+      capability_claim_maturity: "C1: 78"
+      capability_evidence_level: "E1: 78"
+      verification_level: "V0: 78"
+      capability_count: 0
+      permission_grant_count: 0
+      agent_count: 0
+    validation:
+      command: "for validator_file in validation/*_validator.py; do PYTHONDONTWRITEBYTECODE=1 python3 \"$validator_file\" --format json || exit 1; done"
+      result: "PASS"
+      error_count: 0
+      twenty_four_validator_suite: "PASS"
+      yaml_parse_check: "PASS"
+      yaml_file_count: 115
+      executor_identity_negative_check_count: 37
+      expected_reason_rejection_count: 37
+      executor_identity_source_evidence_type_status_and_non_enrollment_checks: "PASS"
+      executor_verification_reference_method_result_timestamp_and_no_auto_pass_checks: "PASS"
+      boundary_type_action_allowlist_mandatory_forbidden_and_non_expansion_checks: "PASS"
+      identity_verification_appointment_authorization_and_readiness_separation_checks: "PASS"
+      capability_permission_agent_runtime_event_snapshot_and_c_e_v_rejection_checks: "PASS"
+      historical_evidence_and_append_only_ledger_preservation_checks: "PASS"
+    boundaries:
+      - "Executor Identity Enrollment != Executor Appointment."
+      - "Executor Identity Verification != Executor Authorization."
+      - "Boundary Defined != Permission Granted."
+      - "Verified Identity != Appointed Executor != Authorized Executor."
+      - "Validator PASS != Identity Enrollment != Experiment Execution."
+    evidence:
+      - "constitution/executor-identity-constitution.yaml"
+      - "registry/executor-identities.yaml"
+      - "registry/executor-boundaries.yaml"
+      - "registry/executor-verifications.yaml"
+      - "validation/executor_identity_validator.py"
+      - "constitution/executor-constitution.yaml"
+      - "constitution/experiment-readiness-constitution.yaml"
+      - "registry/executors.yaml"
+      - "validation/executor_validator.py"
+      - "registry/validator-manifests.yaml"
+      - "registry/experiment-inputs.yaml"
+      - "evolution/evolution-ledger.yaml"
+
+  - id: "DBOS-EVO-0029"
+    recorded_at: "2026-07-20T08:50:38+08:00"
+    change_type: "automated_experiment_runner_layer_v0.1"
+    authorization: "explicit_user_request"
+    status: "completed_local_uncommitted"
+    summary: "Established the Automated Experiment Runner Constitution, empty Runner, Runner-scope, execution, and Runner-evidence registries, one defined but unqualified environment slot with no fabricated versions or dependencies, deterministic execution and registered-experiment boundaries, cross-layer Executor/readiness/context references, and a fail-closed validator without registering a Runner, authorizing or executing DBOS-EXP-0001, generating an Event or Snapshot, creating a Runtime or Agent, granting capability or permission, or changing C/E/V state."
+    id_assignment:
+      assigned_id: "DBOS-EVO-0029"
+      reason: "DBOS-EVO-0028 is the latest existing unique identifier and last physical ledger entry; append-only history requires the next unused identifier."
+    recommendation_gate:
+      recommend_automated_runner_model_as_agent_readable_deterministic_contract: true
+      recommend_runner_registration_now: false
+      recommend_runner_environment_qualification_now: false
+      recommend_execution_authorization_now: false
+      recommend_experiment_execution_now: false
+      unresolved_reasons:
+        - "No verified automated Executor Identity exists and no automated_runner Executor is appointed."
+        - "runners.yaml and runner-scopes.yaml remain empty; reference catalogs do not create a scope assignment."
+        - "The sole Runner environment is defined but has os=null, python_version=null, dependencies=[], configuration_digest=null, locked_at=null, empty evidence_refs, and qualification_status=not_qualified."
+        - "runner-executions.yaml and runner-evidence.yaml remain empty because no Runner exists and no experiment was executed."
+        - "Snapshot capture, validator manifest, environment lock, freeze certificate, capture readiness, Executor authorization, experiment authorization, and experiment readiness remain pending."
+        - "No execution context, Event, Runtime, output artifact, or execution evidence exists."
+        - "The inherited ledger order still places DBOS-EVO-0024 after DBOS-EVO-0026; IDs are unique and DBOS-EVO-0029 is appended last without reordering historical records."
+    scope:
+      registered_experiment_count: 1
+      registered_procedure_step_count: 8
+      runner_count: 0
+      automated_runner_count: 0
+      deterministic_runner_count: 0
+      runner_scope_count: 0
+      runner_environment_count: 1
+      defined_runner_environment_count: 1
+      qualified_runner_environment_count: 0
+      runner_execution_count: 0
+      runner_evidence_count: 0
+      executor_identity_count: 0
+      appointed_executor_count: 0
+      active_executor_authorization_count: 0
+      active_experiment_authorization_count: 0
+      execution_context_count: 0
+      event_count: 0
+      snapshot_hash_count: 0
+      runtime_instance_count: 0
+      external_project_changes: false
+      git_commit_created: false
+      new_agent_count: 0
+      organism_candidate_count: 0
+      digital_organism_count: 0
+      registered_capability_count: 0
+      assigned_capability_count: 0
+      permission_grant_count: 0
+      c_e_v_level_change_count: 0
+    runner_state:
+      experiment_id: "DBOS-EXP-0001"
+      registered_step_count: 8
+      runner_registry_status: "empty_runner_baseline"
+      runner_type:
+        automated_runner: 0
+      execution_mode:
+        deterministic: 0
+      scope_status: "empty_runner_scope_baseline"
+      environment:
+        environment_id: "dbio://runner-environment/dbos-exp-0001/local-governance-workspace/v0.1"
+        status: "defined"
+        qualification_status: "not_qualified"
+        os: null
+        python_version: null
+        dependency_count: 0
+        configuration_digest: null
+        runtime_status: "not_a_runtime"
+        authority_effect: "none"
+      execution_status: "not_executed"
+      evidence_status: "empty"
+      executor_authorization_status: "pending"
+      experiment_authorization_status: "pending"
+      experiment_readiness_status: "pending"
+    preserved_governance_baseline:
+      capability_claim_count: 78
+      capability_claim_maturity: "C1: 78"
+      capability_evidence_level: "E1: 78"
+      verification_level: "V0: 78"
+      capability_count: 0
+      permission_grant_count: 0
+      agent_count: 0
+    validation:
+      command: "for validator_file in validation/*_validator.py; do PYTHONDONTWRITEBYTECODE=1 python3 \"$validator_file\" --format json || exit 1; done"
+      result: "PASS"
+      error_count: 0
+      twenty_five_validator_suite: "PASS"
+      yaml_parse_check: "PASS"
+      yaml_file_count: 121
+      runner_negative_check_count: 58
+      expected_reason_rejection_count: 58
+      runner_identity_type_version_mode_status_and_non_registration_checks: "PASS"
+      scope_registered_experiment_ordered_step_forbidden_operation_and_non_authority_checks: "PASS"
+      environment_reference_version_dependency_lock_qualification_and_non_runtime_checks: "PASS"
+      execution_runner_scope_environment_time_output_and_non_execution_checks: "PASS"
+      evidence_execution_artifact_digest_timestamp_and_non_promotion_checks: "PASS"
+      event_snapshot_context_runtime_agent_capability_permission_and_c_e_v_rejection_checks: "PASS"
+    boundaries:
+      - "Runner != Agent != Runtime != Digital Organism."
+      - "Runner Registration != Executor Appointment."
+      - "Registered Experiment Catalog != Runner Scope."
+      - "Defined Environment != Qualified Environment != Runtime."
+      - "Runner Model != Execution Authorization != Experiment Execution."
+      - "Validator PASS != Runner Ready != Event Generated."
+    evidence:
+      - "constitution/automated-runner-constitution.yaml"
+      - "registry/runners.yaml"
+      - "registry/runner-scopes.yaml"
+      - "registry/runner-environments.yaml"
+      - "registry/runner-executions.yaml"
+      - "registry/runner-evidence.yaml"
+      - "validation/runner_validator.py"
+      - "constitution/executor-constitution.yaml"
+      - "constitution/experiment-readiness-constitution.yaml"
+      - "constitution/execution-context-constitution.yaml"
+      - "registry/validator-manifests.yaml"
+      - "registry/experiment-inputs.yaml"
+      - "evolution/evolution-ledger.yaml"
+
+  - id: "DBOS-EVO-0030"
+    recorded_at: "2026-07-20T09:07:42+08:00"
+    change_type: "runner_environment_qualification_layer_v0.1"
+    authorization: "explicit_user_request"
+    status: "completed_local_uncommitted"
+    summary: "Established a Runner Environment Qualification Constitution, one identity mapping for the already-defined Runner environment, an empty environment-evidence registry, one pending six-criterion qualification review, compatibility fields on the existing pending Freeze Layer environment lock, execution-context and readiness dependencies, and a fail-closed validator without qualifying or activating an environment, creating a Runner, Runtime, Agent, Event, or Snapshot, executing DBOS-EXP-0001, granting capability or permission, or changing C/E/V state."
+    id_assignment:
+      assigned_id: "DBOS-EVO-0030"
+      reason: "DBOS-EVO-0029 is the latest existing unique identifier and last physical ledger entry; append-only history requires the next unused identifier."
+    recommendation_gate:
+      recommend_agent_readable_environment_qualification_contract_to_potential_customer: true
+      recommend_current_environment_as_qualified: false
+      recommend_runner_creation_now: false
+      recommend_experiment_execution_now: false
+      unresolved_reasons:
+        - "The environment owner is not attributable and environment-evidence.yaml is empty."
+        - "OS and Python versions are null, dependencies are empty, and dependency and configuration digests are absent."
+        - "All six qualification criteria remain pending, verified_by and timestamp are null, and no in-scope verifier decision exists."
+        - "The existing DBOS-EXP-0001 environment lock remains pending with no captured material or evidence."
+        - "No verified automated Executor Identity, appointed Executor, Runner, or Runner scope exists."
+        - "Snapshot capture, validator freeze, experiment freeze, capture authorization, Executor authorization, experiment authorization, and experiment readiness remain pending."
+        - "The inherited ledger order still places DBOS-EVO-0024 after DBOS-EVO-0026; IDs are unique and DBOS-EVO-0030 is appended last without reordering historical records."
+    scope:
+      ecological_environment_count: 1
+      runner_environment_count: 1
+      environment_identity_count: 1
+      environment_evidence_count: 0
+      environment_qualification_count: 1
+      pending_environment_qualification_count: 1
+      qualified_environment_count: 0
+      environment_lock_count: 1
+      pending_environment_lock_count: 1
+      frozen_environment_lock_count: 0
+      runner_count: 0
+      runner_scope_count: 0
+      experiment_execution_count: 0
+      event_count: 0
+      snapshot_hash_count: 0
+      runtime_instance_count: 0
+      external_project_changes: false
+      git_commit_created: false
+      new_agent_count: 0
+      organism_candidate_count: 0
+      digital_organism_count: 0
+      registered_capability_count: 0
+      assigned_capability_count: 0
+      permission_grant_count: 0
+      c_e_v_level_change_count: 0
+    qualification_state:
+      environment_id: "dbio://runner-environment/dbos-exp-0001/local-governance-workspace/v0.1"
+      identity_status: "defined"
+      owner: null
+      evidence_count: 0
+      qualification_id: "DBOS-EXP-0001-RUNNER-ENV-QUAL-0001"
+      qualification_result: "pending"
+      criterion_distribution:
+        pending: 6
+        passed: 0
+        failed: 0
+        inconclusive: 0
+      verified_by: null
+      qualification_timestamp: null
+      lock_id: "DBOS-EXP-0001-ENV-LOCK-0001"
+      lock_status: "pending"
+      os: null
+      python: null
+      dependency_digest: null
+      configuration_digest: null
+      authority_effect: "none"
+    preserved_governance_baseline:
+      capability_claim_count: 78
+      capability_claim_maturity: "C1: 78"
+      capability_evidence_level: "E1: 78"
+      verification_level: "V0: 78"
+      capability_count: 0
+      permission_grant_count: 0
+      agent_count: 0
+    validation:
+      command: "for validator_file in validation/*_validator.py; do PYTHONDONTWRITEBYTECODE=1 python3 \"$validator_file\" --format json || exit 1; done"
+      result: "PASS"
+      error_count: 0
+      twenty_six_validator_suite: "PASS"
+      yaml_parse_check: "PASS"
+      yaml_file_count: 125
+      environment_qualification_negative_check_count: 58
+      expected_reason_rejection_count: 58
+      environment_identity_source_type_status_and_non_runtime_checks: "PASS"
+      evidence_reference_type_digest_timestamp_and_non_fabrication_checks: "PASS"
+      qualification_criteria_result_verifier_scope_and_no_auto_pass_checks: "PASS"
+      shared_lock_reference_alias_digest_timestamp_and_pending_state_checks: "PASS"
+      runner_execution_event_snapshot_agent_capability_permission_and_c_e_v_rejection_checks: "PASS"
+      append_only_ledger_and_validator_manifest_consistency_checks: "PASS"
+    boundaries:
+      - "Environment Definition != Environment Qualification."
+      - "Environment Qualification != Environment Lock."
+      - "Qualified Environment != Execution Authorization != Experiment Execution."
+      - "Environment Identity != Runtime Identity != Agent Identity."
+      - "Validator PASS != Qualification Decision."
+    evidence:
+      - "constitution/environment-qualification-constitution.yaml"
+      - "registry/environment-identities.yaml"
+      - "registry/environment-evidence.yaml"
+      - "registry/environment-qualifications.yaml"
+      - "registry/environment-locks.yaml"
+      - "registry/runner-environments.yaml"
+      - "validation/environment_qualification_validator.py"
+      - "validation/runner_validator.py"
+      - "constitution/execution-context-constitution.yaml"
+      - "constitution/experiment-readiness-constitution.yaml"
+      - "registry/validator-manifests.yaml"
+      - "registry/experiment-inputs.yaml"
+      - "evolution/evolution-ledger.yaml"
+
+  - id: "DBOS-EVO-0031"
+    recorded_at: "2026-07-20T09:23:44+08:00"
+    change_type: "environment_evidence_capture_layer_v0.1"
+    authorization: "explicit_user_request"
+    status: "completed_local_uncommitted"
+    summary: "Established an Environment Evidence Capture Constitution, one pending unperformed capture request for the existing Runner environment, empty environment-fact, environment-digest, and collection-evidence registries, an explicit non-automatic dependency into qualification, a null evidence reference on the existing pending environment lock, and a fail-closed validator without collecting material, qualifying or freezing an environment, creating a Runner, Runtime, Agent, Event, or Snapshot, executing DBOS-EXP-0001, granting capability or permission, or changing C/E/V state."
+    id_assignment:
+      assigned_id: "DBOS-EVO-0031"
+      reason: "DBOS-EVO-0030 is the latest existing unique identifier and last physical ledger entry; append-only history requires the next unused identifier."
+    recommendation_gate:
+      recommend_agent_readable_environment_evidence_capture_contract_to_potential_customer: true
+      recommend_environment_collection_execution_now: false
+      recommend_current_environment_as_qualified_or_frozen: false
+      recommend_runner_creation_or_experiment_execution_now: false
+      unresolved_reasons:
+        - "No attributable collector is enrolled or authorized for environment evidence collection."
+        - "DBOS-EXP-0001-ENV-EVIDENCE-CAPTURE-0001 remains pending with collector=null and timestamp=null."
+        - "Environment fact, digest, and collection-evidence registries are empty."
+        - "The qualification evidence registry remains empty and all six qualification criteria remain pending."
+        - "The existing DBOS-EXP-0001 environment lock remains pending with evidence_reference=null and no captured material."
+        - "No verified automated Executor Identity, appointed Executor, Runner, or Runner scope exists."
+        - "Snapshot capture, validator freeze, experiment freeze, capture authorization, Executor authorization, experiment authorization, and experiment readiness remain pending."
+        - "The inherited ledger order still places DBOS-EVO-0024 after DBOS-EVO-0026; IDs are unique and DBOS-EVO-0031 is appended last without reordering historical records."
+    scope:
+      environment_count: 1
+      environment_evidence_capture_count: 1
+      pending_environment_evidence_capture_count: 1
+      collected_environment_evidence_capture_count: 0
+      environment_fact_count: 0
+      environment_digest_count: 0
+      environment_collection_evidence_count: 0
+      qualification_environment_evidence_count: 0
+      environment_qualification_count: 1
+      pending_environment_qualification_count: 1
+      qualified_environment_count: 0
+      environment_lock_count: 1
+      pending_environment_lock_count: 1
+      frozen_environment_lock_count: 0
+      runner_count: 0
+      runner_scope_count: 0
+      experiment_execution_count: 0
+      event_count: 0
+      snapshot_hash_count: 0
+      runtime_instance_count: 0
+      external_project_changes: false
+      git_commit_created: false
+      new_agent_count: 0
+      organism_candidate_count: 0
+      digital_organism_count: 0
+      registered_capability_count: 0
+      assigned_capability_count: 0
+      permission_grant_count: 0
+      c_e_v_level_change_count: 0
+    capture_state:
+      capture_id: "DBOS-EXP-0001-ENV-EVIDENCE-CAPTURE-0001"
+      environment_id: "dbio://runner-environment/dbos-exp-0001/local-governance-workspace/v0.1"
+      collector: null
+      timestamp: null
+      status: "pending"
+      fact_count: 0
+      digest_count: 0
+      collection_evidence_count: 0
+      qualification_evidence_count: 0
+      qualification_result: "pending"
+      lock_id: "DBOS-EXP-0001-ENV-LOCK-0001"
+      lock_status: "pending"
+      lock_evidence_reference: null
+      environment_status: "defined"
+      runner_status: "not_created"
+      execution_status: "not_executed"
+      authority_effect: "none"
+    preserved_governance_baseline:
+      capability_claim_count: 78
+      capability_claim_maturity: "C1: 78"
+      capability_evidence_level: "E1: 78"
+      verification_level: "V0: 78"
+      capability_count: 0
+      permission_grant_count: 0
+      agent_count: 0
+    validation:
+      command: "for validator_file in validation/*_validator.py; do PYTHONDONTWRITEBYTECODE=1 python3 \"$validator_file\" --format json || exit 1; done"
+      result: "PASS"
+      error_count: 0
+      twenty_seven_validator_suite: "PASS"
+      yaml_parse_check: "PASS"
+      yaml_file_count: 130
+      environment_evidence_capture_negative_check_count: 72
+      expected_reason_rejection_count: 72
+      capture_environment_collector_timestamp_status_and_non_execution_checks: "PASS"
+      fact_type_value_source_timestamp_privacy_and_reference_checks: "PASS"
+      digest_type_algorithm_hash_timestamp_source_and_verification_checks: "PASS"
+      collection_evidence_capture_method_source_result_timestamp_and_reference_checks: "PASS"
+      qualification_lock_runner_event_snapshot_agent_permission_and_c_e_v_rejection_checks: "PASS"
+      append_only_ledger_and_validator_manifest_consistency_checks: "PASS"
+    boundaries:
+      - "Capture Registration != Evidence Collection."
+      - "Collected Material != Verified Evidence."
+      - "Verified Evidence != Qualified Environment != Frozen Environment."
+      - "Environment Evidence Capture != Runner Execution."
+      - "Validator PASS != Capture Completion != Qualification Decision."
+    evidence:
+      - "constitution/environment-evidence-capture-constitution.yaml"
+      - "registry/environment-evidence-captures.yaml"
+      - "registry/environment-facts.yaml"
+      - "registry/environment-digests.yaml"
+      - "registry/environment-collection-evidence.yaml"
+      - "validation/environment_evidence_capture_validator.py"
+      - "constitution/environment-qualification-constitution.yaml"
+      - "registry/environment-evidence.yaml"
+      - "registry/environment-qualifications.yaml"
+      - "registry/environment-locks.yaml"
+      - "constitution/experiment-readiness-constitution.yaml"
+      - "registry/validator-manifests.yaml"
+      - "registry/experiment-inputs.yaml"
+      - "evolution/evolution-ledger.yaml"
+
+  - id: "DBOS-EVO-0032"
+    recorded_at: "2026-07-20T09:37:43+08:00"
+    change_type: "automated_environment_evidence_collector_layer_v0.1"
+    authorization: "explicit_user_goal_objective"
+    status: "completed_local_uncommitted"
+    summary: "Established an Automated Environment Collector Constitution, empty Collector, scope, run, and Collector-evidence registries, deterministic read-only and privacy ceilings, explicit Collector dependencies in environment capture and qualification, pending capture linkage fields, and a fail-closed validator without enrolling or running a Collector, collecting facts or digests, qualifying or freezing an environment, creating an Agent, Executor, Runner, Runtime, Event, Snapshot, capability, or permission, executing DBOS-EXP-0001, or changing C/E/V state."
+    id_assignment:
+      assigned_id: "DBOS-EVO-0032"
+      reason: "DBOS-EVO-0031 is the latest existing unique identifier and last physical ledger entry; append-only history requires the next unused identifier."
+    agent_consultation:
+      question: "Would an AI coding or retrieval agent recommend this Collector mechanism to a customer requesting auditable environment evidence?"
+      answer: "Recommend the agent-readable read-only governance contract, but do not recommend Collector enrollment or collection execution in the current state."
+      non_recommendation_reasons:
+        - "No attributable governed identity is enrolled as a Collector."
+        - "No Collector scope is defined or approved."
+        - "No collection authorization model or run evidence exists."
+        - "The current environment capture remains pending and evidence registries are empty."
+      corrections_applied:
+        - "Kept all role registries empty instead of promoting a validator, service, script, process, Executor, or Runner into Collector identity."
+        - "Defined exact allowed facts, mandatory privacy exclusions, and forbidden operations as machine-readable catalogs."
+        - "Separated Collector identity, scope, run, evidence, qualification, freeze, and permission effects."
+      final_recognition: "recognized_as_recommendable_governance_contract_only_not_as_an_enrolled_or_executed_collector"
+    recommendation_gate:
+      recommend_agent_readable_collector_contract_to_potential_customer: true
+      recommend_collector_enrollment_now: false
+      recommend_collection_execution_now: false
+      recommend_environment_qualification_or_freeze_now: false
+      recommend_runner_creation_or_experiment_execution_now: false
+      unresolved_reasons:
+        - "environment-collectors.yaml is empty because no identity evidence supports enrollment."
+        - "collector-scopes.yaml, collector-runs.yaml, and collector-evidence.yaml remain empty."
+        - "The pending environment capture has collector=null, collector_scope_ref=null, collector_run_ref=null, and no output or evidence references."
+        - "Environment facts, digests, collection evidence, and qualification evidence remain empty."
+        - "All six environment qualification criteria remain pending and the lock remains pending and unfrozen."
+        - "No verified Executor Identity, appointed Executor, Runner, Runner scope, or execution authorization exists."
+        - "The inherited ledger order still places DBOS-EVO-0024 after DBOS-EVO-0026; IDs are unique and DBOS-EVO-0032 is appended last without reordering historical records."
+    scope:
+      environment_count: 1
+      collector_count: 0
+      automated_collector_count: 0
+      read_only_collector_count: 0
+      collector_scope_count: 0
+      approved_collector_scope_count: 0
+      collector_run_count: 0
+      completed_collector_run_count: 0
+      collector_evidence_count: 0
+      verified_collector_evidence_count: 0
+      environment_evidence_capture_count: 1
+      pending_environment_evidence_capture_count: 1
+      environment_fact_count: 0
+      environment_digest_count: 0
+      environment_collection_evidence_count: 0
+      qualification_environment_evidence_count: 0
+      environment_verified_count: 0
+      environment_lock_count: 1
+      frozen_environment_lock_count: 0
+      executor_count: 0
+      runner_count: 0
+      runner_scope_count: 0
+      experiment_execution_count: 0
+      event_count: 0
+      snapshot_hash_count: 0
+      runtime_instance_count: 0
+      external_project_changes: false
+      git_commit_created: false
+      new_agent_count: 0
+      organism_candidate_count: 0
+      digital_organism_count: 0
+      registered_capability_count: 0
+      assigned_capability_count: 0
+      permission_grant_count: 0
+      c_e_v_level_change_count: 0
+    collector_state:
+      registry_status: "empty_collector_baseline"
+      collector_type_distribution:
+        automated: 0
+      access_mode_distribution:
+        read_only: 0
+      scope_status: "empty_scope_baseline"
+      run_status: "empty_collector_run_baseline"
+      evidence_status: "empty_collector_evidence_baseline"
+      environment_capture_status: "pending"
+      environment_qualification_status: "pending"
+      environment_lock_status: "pending"
+      experiment_execution_status: "not_executed"
+      authority_effect: "none"
+    preserved_governance_baseline:
+      capability_claim_count: 78
+      capability_claim_maturity: "C1: 78"
+      capability_evidence_level: "E1: 78"
+      verification_level: "V0: 78"
+      capability_count: 0
+      permission_grant_count: 0
+      agent_count: 0
+    validation:
+      command: "for validator_file in validation/*_validator.py; do PYTHONDONTWRITEBYTECODE=1 python3 \"$validator_file\" --format json || exit 1; done"
+      result: "PASS"
+      error_count: 0
+      twenty_eight_validator_suite: "PASS"
+      yaml_parse_check: "PASS"
+      yaml_file_count: 135
+      environment_collector_negative_check_count: 100
+      expected_reason_rejection_count: 100
+      collector_identity_type_method_access_status_and_role_separation_checks: "PASS"
+      scope_allowed_fact_exclusion_environment_forbidden_operation_and_non_authority_checks: "PASS"
+      run_collector_scope_environment_capture_timestamp_output_side_effect_and_non_execution_checks: "PASS"
+      evidence_run_fact_digest_method_timestamp_source_verification_and_non_qualification_checks: "PASS"
+      environment_qualification_lock_runner_event_snapshot_agent_capability_permission_and_c_e_v_rejection_checks: "PASS"
+      append_only_ledger_and_validator_manifest_consistency_checks: "PASS"
+    boundaries:
+      - "Collector != Agent != Executor != Runner != Runtime."
+      - "Collector Registration != Collector Scope != Collection Run."
+      - "Collector Evidence != Qualification Evidence."
+      - "Read Only != Permission Granted."
+      - "Validator PASS != Collector Enrollment != Collection Execution."
+    evidence:
+      - "constitution/environment-collector-constitution.yaml"
+      - "registry/environment-collectors.yaml"
+      - "registry/collector-scopes.yaml"
+      - "registry/collector-runs.yaml"
+      - "registry/collector-evidence.yaml"
+      - "validation/environment_collector_validator.py"
+      - "constitution/environment-evidence-capture-constitution.yaml"
+      - "constitution/environment-qualification-constitution.yaml"
+      - "registry/environment-evidence-captures.yaml"
+      - "registry/environment-facts.yaml"
+      - "registry/environment-digests.yaml"
+      - "registry/environment-collection-evidence.yaml"
+      - "registry/environment-evidence.yaml"
+      - "registry/environment-qualifications.yaml"
+      - "registry/environment-locks.yaml"
+      - "constitution/experiment-readiness-constitution.yaml"
+      - "registry/validator-manifests.yaml"
+      - "registry/experiment-inputs.yaml"
+      - "evolution/evolution-ledger.yaml"
+
+  - id: "DBOS-EVO-0033"
+    recorded_at: "2026-07-20T09:52:52+08:00"
+    change_type: "dbos_exp_0001_current_state_audit"
+    authorization: "explicit_user_goal"
+    status: "phase_0_pass_local_uncommitted"
+    summary: "Completed the pre-execution audit for DBOS-EXP-0001, recorded every missing execution-chain gate, and preserved the zero Agent, Runtime, Digital Organism, execution, capability-assignment, permission-grant, and external-project-change baseline."
+    phase:
+      id: 0
+      name: "current_state_audit"
+      status: "PASS"
+      next_gate: "environment_trust_chain"
+    evidence:
+      - "reports/DBOS-EXP-0001-CURRENT_STATE_REPORT.md"
+      - "registry/experiments.yaml"
+      - "registry/experiment-subjects.yaml"
+      - "registry/environment-qualifications.yaml"
+      - "registry/freeze-manifests.yaml"
+      - "registry/runners.yaml"
+      - "registry/experiment-authorizations.yaml"
+    boundaries:
+      agent_count: 0
+      runtime_instance_count: 0
+      digital_organism_count: 0
+      experiment_execution_count: 0
+      capability_assignment_count: 0
+      permission_grant_count: 0
+      external_project_changes: false
+      historical_record_rewrite_count: 0
+
+  - id: "DBOS-EVO-0034"
+    recorded_at: "2026-07-20T10:16:52+08:00"
+    change_type: "dbos_exp_0001_environment_trust_chain_completion"
+    authorization: "explicit_user_goal"
+    status: "phase_1_pass_local_uncommitted"
+    summary: "Captured real bounded local environment facts with one read-only automated Collector, recomputed three SHA-256 digests, issued a local non-independent qualification decision, and froze the exact environment inputs for DBOS-EXP-0001."
+    phase:
+      id: 1
+      name: "environment_trust_chain"
+      status: "PASS"
+      next_gate: "experiment_freeze_chain"
+    evidence:
+      - "evidence/experiments/DBOS-EXP-0001/environment/environment-observation.json"
+      - "evidence/experiments/DBOS-EXP-0001/environment/environment-observation.receipt.json"
+      - "evidence/experiments/DBOS-EXP-0001/environment/environment-verification.json"
+      - "registry/environment-facts.yaml"
+      - "registry/environment-digests.yaml"
+      - "registry/environment-qualifications.yaml"
+      - "registry/environment-locks.yaml"
+      - "validation/execution_chain_validator.py"
+    boundaries:
+      environment_verified: true
+      independence_status: "not_independent"
+      agent_count: 0
+      runtime_instance_count: 0
+      digital_organism_count: 0
+      capability_assignment_count: 0
+      permission_grant_count: 0
+      c_e_v_level_change_count: 0
+      external_project_changes: false
+      historical_record_rewrite_count: 0
+
+  - id: "DBOS-EVO-0035"
+    recorded_at: "2026-07-20T10:24:56+08:00"
+    change_type: "dbos_exp_0001_experiment_freeze_chain_completion"
+    authorization: "explicit_user_goal"
+    status: "phase_2_pass_local_uncommitted"
+    summary: "Captured 164 files from the allowlisted DBOS constitution, registry, validation, and execution roots into a deterministic retained tar archive; froze a 29-validator manifest, environment lock, snapshot records, and a local non-independent freeze certificate."
+    phase:
+      id: 2
+      name: "experiment_freeze_chain"
+      status: "PASS"
+      next_gate: "deterministic_runner"
+    evidence:
+      - "evidence/experiments/DBOS-EXP-0001/freeze/dbos-input-snapshot.tar"
+      - "evidence/experiments/DBOS-EXP-0001/freeze/snapshot-manifest.json"
+      - "evidence/experiments/DBOS-EXP-0001/freeze/validator-manifest.json"
+      - "evidence/experiments/DBOS-EXP-0001/freeze/snapshot-capture-result.json"
+      - "evidence/experiments/DBOS-EXP-0001/freeze/freeze-certificate.json"
+      - "registry/experiment-snapshots.yaml"
+      - "registry/validator-manifests.yaml"
+      - "registry/freeze-manifests.yaml"
+      - "registry/freeze-certificates.yaml"
+    digests:
+      archive: "sha256:7e6ffcd2b07c0d6d5583d8a2fd98e44b8c85400468b4f49aefb65bd9e2542959"
+      snapshot_manifest: "sha256:7da44b98180799e9c56082340c8dfe40eb2fd41a24ce85cf1c5a69081def31df"
+      validator_manifest: "sha256:7fd507f1b7acefc9afc42874cfe8bce93a9d931fc48b2c81477f8a93ba39016e"
+    boundaries:
+      freeze_status: "frozen"
+      validator_count: 29
+      agent_count: 0
+      runtime_instance_count: 0
+      digital_organism_count: 0
+      capability_assignment_count: 0
+      permission_grant_count: 0
+      c_e_v_level_change_count: 0
+      external_project_changes: false
+      historical_record_rewrite_count: 0
+
+  - id: "DBOS-EVO-0036"
+    recorded_at: "2026-07-20T10:28:39+08:00"
+    change_type: "dbos_exp_0001_deterministic_runner_qualification"
+    authorization: "explicit_user_goal"
+    status: "phase_3_pass_local_uncommitted"
+    summary: "Enrolled one evidence-backed automated Executor Identity, recorded a local non-independent identity verification, appointed one bounded Executor, and qualified one deterministic DBOS-EXP-0001 Runner with approved scopes and a frozen qualified environment; execution remained unauthorized."
+    phase:
+      id: 3
+      name: "deterministic_runner"
+      status: "PASS"
+      next_gate: "execution_authorization"
+    evidence:
+      - "evidence/experiments/DBOS-EXP-0001/runner/runner-qualification.json"
+      - "registry/executor-identities.yaml"
+      - "registry/executor-verifications.yaml"
+      - "registry/executors.yaml"
+      - "registry/executor-scopes.yaml"
+      - "registry/runners.yaml"
+      - "registry/runner-scopes.yaml"
+    boundaries:
+      qualified_runner: true
+      execution_authorized: false
+      deterministic_execution_mode: true
+      agent_count: 0
+      runtime_instance_count: 0
+      digital_organism_count: 0
+      capability_assignment_count: 0
+      permission_grant_count: 0
+      c_e_v_level_change_count: 0
+      external_project_changes: false
+      historical_record_rewrite_count: 0
+
+  - id: "DBOS-EVO-0037"
+    recorded_at: "2026-07-20T10:31:30+08:00"
+    change_type: "dbos_exp_0001_execution_authorization_gate"
+    authorization: "explicit_user_goal"
+    status: "phase_4_pass_local_uncommitted"
+    summary: "Verified the subject, environment, freeze, Runner, readiness, experiment authorization, and Executor authorization gates and issued one bounded local DBOS-EXP-0001 execution authorization without granting general capability or permission."
+    phase:
+      id: 4
+      name: "execution_authorization"
+      status: "PASS"
+      next_gate: "experiment_execution"
+    evidence:
+      - "evidence/experiments/DBOS-EXP-0001/authorization/user-goal-authorization-evidence.json"
+      - "evidence/experiments/DBOS-EXP-0001/authorization/execution-authorization.json"
+      - "evidence/experiments/DBOS-EXP-0001/authorization/authorization-gate-verification.json"
+      - "registry/experiment-authorizations.yaml"
+      - "registry/executor-authorizations.yaml"
+      - "registry/readiness-reviews.yaml"
+    boundaries:
+      experiment_authorized: true
+      execution_count_ceiling: 1
+      general_permission_grant: false
+      agent_count: 0
+      runtime_instance_count: 0
+      digital_organism_count: 0
+      capability_assignment_count: 0
+      permission_grant_count: 0
+      c_e_v_level_change_count: 0
+      external_project_changes: false
+      historical_record_rewrite_count: 0
+
+  - id: "DBOS-EVO-0038"
+    recorded_at: "2026-07-20T10:47:27+08:00"
+    change_type: "dbos_exp_0001_failed_attempt_preservation_and_successor_freeze"
+    authorization: "explicit_user_goal"
+    status: "append_only_repair_preflight_pass_local_uncommitted"
+    summary: "Preserved the first fail-closed execution attempt, identified three relocation-dependent frozen validator assumptions, retained the original snapshot bytes, froze one successor validator manifest, completed a 29-of-29 isolated preflight, and issued a second one-run authorization."
+    attempts:
+      - execution_id: "dbio:runner-execution:dbos-self-validation:DBOS-EXP-0001:0001"
+        status: "BLOCKED"
+        validator_pass_count: 3
+        validator_fail_count: 1
+        validator_not_executed_count: 25
+        event_created: false
+        evidence_ref: "evidence/experiments/DBOS-EXP-0001/run-0001/experiment-result.json"
+      - preflight_id: "preflight-run-0007"
+        status: "PASS"
+        validator_pass_count: 29
+        validator_fail_count: 0
+        evidence_ref: "evidence/experiments/DBOS-EXP-0001/preflight-run-0007/preflight-results.json"
+    evidence:
+      - "evidence/experiments/DBOS-EXP-0001/run-0001/validator-results.json"
+      - "evidence/experiments/DBOS-EXP-0001/run-0001/experiment-result.json"
+      - "evidence/experiments/DBOS-EXP-0001/freeze-run-0004/validator-manifest.json"
+      - "evidence/experiments/DBOS-EXP-0001/freeze-run-0004/freeze-certificate-run-0002.json"
+      - "evidence/experiments/DBOS-EXP-0001/runner/runner-qualification-supplement-0002.json"
+      - "evidence/experiments/DBOS-EXP-0001/authorization/execution-authorization-v3.json"
+    boundaries:
+      original_snapshot_modified: false
+      failed_attempt_deleted: false
+      agent_count: 0
+      runtime_instance_count: 0
+      digital_organism_count: 0
+      capability_assignment_count: 0
+      permission_grant_count: 0
+      c_e_v_level_change_count: 0
+      external_project_changes: false
+
+  - id: "DBOS-EVO-0039"
+    recorded_at: "2026-07-20T10:50:17+08:00"
+    change_type: "dbos_exp_0001_first_verified_local_digital_fact"
+    authorization: "explicit_user_goal"
+    status: "phase_5_pass_local_uncommitted"
+    summary: "Completed the second authorized deterministic execution of DBOS-EXP-0001, ran all 29 frozen validators successfully, and retained one execution context, input and output snapshots, event, integrity record, digest attestation, evidence bundle, and local structural verification result."
+    phase:
+      id: 5
+      name: "experiment_execution"
+      status: "PASS"
+      execution_id: "dbio:runner-execution:dbos-self-validation:DBOS-EXP-0001:0002"
+      event_id: "dbio:event:digital-biosphere-os:DBOS-EXP-0001:0001"
+      next_gate: "final_report_and_audit"
+    evidence:
+      - "evidence/experiments/DBOS-EXP-0001/run-0002/execution-context.json"
+      - "evidence/experiments/DBOS-EXP-0001/run-0002/event-record.json"
+      - "evidence/experiments/DBOS-EXP-0001/run-0002/event-integrity.json"
+      - "evidence/experiments/DBOS-EXP-0001/run-0002/event-attestation.json"
+      - "evidence/experiments/DBOS-EXP-0001/run-0002/evidence-bundle.json"
+      - "evidence/experiments/DBOS-EXP-0001/run-0002/verification-result.json"
+      - "evidence/experiments/DBOS-EXP-0001/run-0002/experiment-result.json"
+    digests:
+      event: "sha256:52fe5ffbb30fb7c4afbcd83f9a4b89da16aa1d238cbfe9c42dc6218a2c3fba1c"
+      integrity: "sha256:fb4d593199a470d0eda0e1b04c4b9c8e9f2f8cf8d9eda06f7481ab9132986e0e"
+      evidence_bundle: "sha256:700c851f047ba66a32c031e771b7e968f5478d9d46d4ebd02bd9acf375d673ee"
+      verification_result: "sha256:1c1c8531ae3bb9c8294ecc94b799ce3ed3bdc716d83ce108f8ec2dcf8fe09d0d"
+    boundaries:
+      verification_scope: "local_structural"
+      independence_status: "not_independent"
+      trust_grant_count: 0
+      agent_count: 0
+      runtime_instance_count: 0
+      digital_organism_count: 0
+      capability_assignment_count: 0
+      permission_grant_count: 0
+      c_e_v_level_change_count: 0
+      external_project_changes: false
+
+  - id: "DBOS-EVO-0040"
+    recorded_at: "2026-07-20T11:05:52+08:00"
+    change_type: "dbos_exp_0001_final_report_and_terminal_audit"
+    authorization: "explicit_user_goal"
+    status: "phase_6_pass_experiment_completed_local_uncommitted"
+    summary: "Completed the final report and terminal audit for DBOS-EXP-0001. All 29 current workspace validators passed, both execution attempts remain discoverable, all single-run authorizations are exhausted, and the experiment status is completed within a local non-independent structural verification boundary."
+    phase:
+      id: 6
+      name: "final_report_and_audit"
+      status: "PASS"
+      next_gate: null
+    evidence:
+      - "evidence/experiments/DBOS-EXP-0001/audit/final-validator-audit.json"
+      - "reports/DBOS-EXP-0001-FINAL-REPORT.md"
+      - "registry/experiment-execution-chain.yaml"
+      - "validation/execution_chain_validator.py"
+    digests:
+      audit: "sha256:2a79ddc56ec60fdceaaff6ed70d254681e85a02a083f172e7b54660346b5b12c"
+      final_report: "sha256:f3ec1529d6763cc31ad272222f4624afe332c1209e0fb264c39759f4377ee241"
+    boundaries:
+      experiment_status: "completed"
+      local_validator_pass_count: 29
+      local_validator_fail_count: 0
+      independent_verification: false
+      agent_count: 0
+      runtime_instance_count: 0
+      digital_organism_count: 0
+      capability_assignment_count: 0
+      permission_grant_count: 0
+      c_e_v_level_change_count: 0
+      external_project_changes: false
+      git_commit_created: false

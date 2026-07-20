@@ -1,0 +1,52 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereExperimentExecutorRegistry",
+  "metadata": {
+    "title": "Experiment Executors v0.1",
+    "status": "one_active_bounded_automated_executor",
+    "constitution": "../constitution/executor-constitution.yaml",
+    "identity_sources": ["executor-identities.yaml"],
+    "identity_enrollment_constitution": "../constitution/executor-identity-constitution.yaml",
+    "generated_at": "2026-07-20T02:11:57+08:00",
+    "executor_count": 1,
+    "executor_type_distribution": {"automated_runner": 1, "human_operator": 0},
+    "verified_executor_count": 1,
+    "active_executor_count": 1,
+    "agent_created_count": 0,
+    "runtime_created_count": 0,
+    "organism_created_count": 0,
+    "capability_effect_count": 0,
+    "permission_grant_count": 0,
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "The registry is empty because no attributable governed identity has been explicitly appointed and verified as an experiment executor.",
+      "An existing verifier, collector, governance system, service, process, user, or tool cannot become an executor automatically.",
+      "Executor registration is a bounded role record and cannot create an Agent, runtime, organism, capability, permission, experiment authorization, or execution."
+    ]
+  },
+  "executor_schema": {
+    "required_fields": ["executor_id", "executor_type", "identity_ref", "scope", "version", "status"],
+    "valid_executor_types": ["automated_runner", "human_operator"],
+    "valid_statuses": ["proposed", "verified", "active", "suspended", "revoked", "retired"],
+    "default_status": "proposed",
+    "identity_boundary": "identity_ref must resolve to a verified executor_identity_id with lifecycle_state=verified; an executor record cannot create or convert an identity into an Agent, runtime, or organism.",
+    "scope_boundary": "scope contains only references to existing executor-scope records and creates no authority without a separate active executor authorization.",
+    "authorization_boundary": "verified or active executor status is necessary but never sufficient for experiment execution."
+  },
+  "executors": [
+    {
+      "executor_id": "dbio:executor:automated-runner:dbos-self-validation:v0.1",
+      "executor_type": "automated_runner",
+      "identity_ref": "dbio:executor-identity:automated:dbos-self-validation:v0.1",
+      "scope": ["DBOS-EXP-0001-EXECUTOR-SCOPE-0001"],
+      "version": "v0.1",
+      "status": "active",
+      "agent_status": "not_an_agent",
+      "runtime_status": "not_a_runtime",
+      "organism_status": "not_an_organism",
+      "capability_status": "not_assigned",
+      "permission_status": "not_granted",
+      "authority_effect": "none"
+    }
+  ]
+}

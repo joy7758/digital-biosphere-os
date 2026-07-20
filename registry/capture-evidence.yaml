@@ -1,0 +1,44 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereSnapshotCaptureEvidenceRegistry",
+  "metadata": {
+    "title": "Snapshot Capture Evidence v0.1",
+    "status": "one_successful_validated_capture_evidence",
+    "constitution": "../constitution/snapshot-capture-constitution.yaml",
+    "capture_source_of_truth": "snapshot-captures.yaml",
+    "generated_at": "2026-07-20T01:44:35+08:00",
+    "capture_evidence_count": 1,
+    "successful_capture_evidence_count": 1,
+    "verified_capture_evidence_count": 1,
+    "event_created_count": 0,
+    "trust_grant_count": 0,
+    "permission_grant_count": 0,
+    "c_e_v_level_change_count": 0,
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "The registry is empty because no capture method has run.",
+      "Capture evidence is experiment-snapshot evidence only and cannot become an event, capability evidence, verification decision, trust grant, or execution authorization automatically."
+    ]
+  },
+  "capture_evidence_schema": {
+    "required_fields": ["evidence_id", "capture_id", "method", "collector", "result", "timestamp"],
+    "additional_governance_fields": ["scope", "limitations", "artifact_refs", "revocation_ref", "authority_effect"],
+    "result_required_fields": ["status", "captured_count", "failed_count", "excluded_count", "errors"],
+    "evidence_boundary": "Non-empty attributable method result and timezone-aware timestamp are required; evidence does not authorize execution or upgrade C/E/V."
+  },
+  "capture_evidence": [
+    {
+      "evidence_id": "DBOS-EXP-0001-CAPTURE-EVIDENCE-0001",
+      "capture_id": "DBOS-EXP-0001-CAPTURE-0001",
+      "method": "deterministic sorted file enumeration, per-file SHA-256, normalized tar metadata",
+      "collector": "dbio:capture-collector:automated:dbos-snapshot:v0.1",
+      "result": {"status":"PASS","captured_count":164,"failed_count":0,"excluded_count":0,"errors":[]},
+      "timestamp": "2026-07-20T10:20:17+08:00",
+      "scope": "DBOS-EXP-0001-CAPTURE-SCOPE-0001",
+      "limitations": ["four local DBOS roots", "no member repository", "no independent witness"],
+      "artifact_refs": ["evidence/experiments/DBOS-EXP-0001/freeze/snapshot-manifest.json", "evidence/experiments/DBOS-EXP-0001/freeze/validator-manifest.json", "evidence/experiments/DBOS-EXP-0001/freeze/dbos-input-snapshot.tar", "evidence/experiments/DBOS-EXP-0001/freeze/snapshot-capture-result.json"],
+      "revocation_ref": null,
+      "authority_effect": "none"
+    }
+  ]
+}

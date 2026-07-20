@@ -1,0 +1,33 @@
+{
+  "schema_version": "0.1",
+  "kind": "DBOSBoundedUserInstructionEvidence",
+  "authorization_evidence_id": "DBOS-EXP-0001-USER-GOAL-AUTH-EVIDENCE-0001",
+  "authority_source_type": "explicit_user_instruction",
+  "authority_identity_status": "session_attributed_not_cryptographically_verified",
+  "instruction_title": "Digital Biosphere OS v0.1 Complete Execution Chain Completion",
+  "instruction_attachment_sha256": "dba6398a625b8b3eb123f27966c79ba1d96b4cd36a63bc8b22cad01f62b4b730",
+  "recorded_at": "2026-07-20T09:52:52+08:00",
+  "allowed_scope": [
+    "read the local digital-biosphere-os governance workspace",
+    "collect bounded non-sensitive local environment facts",
+    "create an immutable local DBOS snapshot and digests",
+    "enroll and authorize one deterministic DBOS-EXP-0001 Runner",
+    "execute DBOS-EXP-0001 once",
+    "write experiment-scoped context, event, integrity, attestation, evidence, verification, and report artifacts"
+  ],
+  "forbidden_scope": [
+    "modify any external or member repository",
+    "create an Agent, Runtime instance, Digital Organism, or organism candidate",
+    "grant a general capability or permission",
+    "upgrade capability, evidence, or verification maturity",
+    "delete or rewrite historical evidence",
+    "claim independent verification, production fitness, autonomy, or digital life"
+  ],
+  "authority_effect": "bounded_experiment_and_evidence_write_only",
+  "general_permission_grant": false,
+  "limitations": [
+    "This is a local task instruction, not cryptographic identity evidence.",
+    "Authorization remains conditional on every registered readiness gate.",
+    "Any missing gate requires fail-closed termination."
+  ]
+}

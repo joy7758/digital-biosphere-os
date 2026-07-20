@@ -1,0 +1,62 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereAutomatedRunnerScopeRegistry",
+  "metadata": {
+    "title": "Automated Runner Scopes v0.1",
+    "status": "one_approved_deterministic_runner_scope",
+    "constitution": "../constitution/automated-runner-constitution.yaml",
+    "runner_source_of_truth": "runners.yaml",
+    "experiment_source_of_truth": "experiments.yaml",
+    "procedure_source_of_truth": "experiment-procedures.yaml",
+    "generated_at": "2026-07-20T08:50:38+08:00",
+    "scope_count": 1,
+    "approved_scope_count": 1,
+    "execution_authority_count": 0,
+    "permission_grant_count": 0,
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "The registry is empty because no Runner exists; a scope cannot bind a nonexistent Runner.",
+      "The experiment and step catalogs below are reference vocabularies, not scope assignments or execution authorization.",
+      "A future scope is deny-by-default and can only reduce the registered experiment and procedure surface."
+    ]
+  },
+  "runner_scope_schema": {
+    "required_fields": ["scope_id", "runner_id", "allowed_experiments", "allowed_steps", "forbidden_operations"],
+    "additional_governance_fields": ["status", "limitations", "supersedes", "revocation_ref", "authority_effect"],
+    "valid_statuses": ["proposed", "defined", "approved", "suspended", "revoked", "superseded"],
+    "default_status": "proposed",
+    "mandatory_forbidden_operations": ["modify_constitution", "modify_history", "create_agent", "grant_permission"],
+    "scope_boundary": "allowed_experiments and allowed_steps must reference registered records, preserve procedure order, and cannot create authority."
+  },
+  "registered_experiment_catalog": ["DBOS-EXP-0001"],
+  "registered_step_catalog": [
+    "DBOS-EXP-0001-STEP-01",
+    "DBOS-EXP-0001-STEP-02",
+    "DBOS-EXP-0001-STEP-03",
+    "DBOS-EXP-0001-STEP-04",
+    "DBOS-EXP-0001-STEP-05",
+    "DBOS-EXP-0001-STEP-06",
+    "DBOS-EXP-0001-STEP-07",
+    "DBOS-EXP-0001-STEP-08"
+  ],
+  "mandatory_forbidden_operations": [
+    "modify_constitution",
+    "modify_history",
+    "create_agent",
+    "grant_permission"
+  ],
+  "runner_scopes": [
+    {
+      "scope_id": "DBOS-EXP-0001-RUNNER-SCOPE-0001",
+      "runner_id": "dbio:runner:automated:dbos-self-validation:v0.1",
+      "allowed_experiments": ["DBOS-EXP-0001"],
+      "allowed_steps": ["DBOS-EXP-0001-STEP-01", "DBOS-EXP-0001-STEP-02", "DBOS-EXP-0001-STEP-03", "DBOS-EXP-0001-STEP-04", "DBOS-EXP-0001-STEP-05", "DBOS-EXP-0001-STEP-06", "DBOS-EXP-0001-STEP-07", "DBOS-EXP-0001-STEP-08"],
+      "forbidden_operations": ["modify_constitution", "modify_history", "create_agent", "grant_permission", "create_runtime", "modify_member_repository", "modify_external_project", "execute_unregistered_experiment", "execute_unapproved_step", "alter_frozen_input_or_environment", "self_authorize", "upgrade_c_e_v"],
+      "status": "approved",
+      "limitations": ["one deterministic ordered procedure", "scope creates no execution authorization"],
+      "supersedes": null,
+      "revocation_ref": null,
+      "authority_effect": "none"
+    }
+  ]
+}

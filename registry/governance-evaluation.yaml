@@ -1,0 +1,52 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereGovernanceEvaluationModel",
+  "metadata": {
+    "title": "Governance Archetype Evaluation Model v0.1",
+    "status": "model_defined_scores_unknown",
+    "constitution": "../constitution/governance-archetype-constitution.yaml",
+    "generated_at": "2026-07-19T23:13:05+08:00",
+    "evaluation_dimension_count": 5,
+    "non_null_score_count": 0,
+    "evaluation_record_count": 0,
+    "selection_result_count": 0,
+    "fitness_effect": "none",
+    "capability_effect": "none",
+    "permission_effect": "none",
+    "authority_effect": "none",
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "Null means not evaluated, not zero and not unlimited.",
+      "A future score cannot select an archetype, bind an entity, execute a transition, calculate ecological fitness, grant capability, or grant permission automatically."
+    ]
+  },
+  "evaluation_dimensions": [
+    {
+      "dimension_id": "coordination_efficiency",
+      "description": "Bounded cost, latency, and clarity of multi-entity coordination under a declared method and observation window.",
+      "score": null
+    },
+    {
+      "dimension_id": "autonomy",
+      "description": "Degree to which members retain independent identity, versioning, decision scope, and evolution under explicit constraints.",
+      "score": null
+    },
+    {
+      "dimension_id": "stability",
+      "description": "Ability of the governed ecosystem to preserve bounded function, evidence, recovery, and relationship continuity under change.",
+      "score": null
+    },
+    {
+      "dimension_id": "adaptability",
+      "description": "Evidence-backed ability of the governance arrangement to change without identity loss, history rewrite, or uncontrolled authority expansion.",
+      "score": null
+    },
+    {
+      "dimension_id": "centralization_risk",
+      "description": "Risk that decision, dependency, verification, or resource concentration creates unreviewed control or ecosystem fragility.",
+      "score": null
+    }
+  ],
+  "aggregate_score": null,
+  "evaluations": []
+}

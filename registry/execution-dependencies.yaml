@@ -1,0 +1,39 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereExecutionDependencyRegistry",
+  "metadata": {
+    "title": "Execution Dependencies v0.1",
+    "status": "one_declared_standard_library_dependency",
+    "constitution": "../constitution/execution-context-constitution.yaml",
+    "context_source_of_truth": "execution-contexts.yaml",
+    "generated_at": "2026-07-20T00:24:33+08:00",
+    "execution_dependency_count": 1,
+    "resolved_artifact_count": 1,
+    "transitive_dependency_coverage_count": 0,
+    "installation_authority_count": 0,
+    "permission_grant_count": 0,
+    "capability_effect_count": 0,
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "The registry contains no execution dependency in the v0.1 baseline.",
+      "A dependency name, version, or source does not install, execute, authorize, resolve, or verify an artifact."
+    ]
+  },
+  "execution_dependency_record_schema": {
+    "required_fields": ["context_id", "dependency", "version", "source"],
+    "record_identity": "composite(context_id, dependency)",
+    "dependency_ref_semantics": "The context dependency_refs list contains dependency names scoped to its context_id.",
+    "version_boundary": "A version string is not an immutable artifact identity; source digest, lock material, platform resolution, and transitive closure remain separate future evidence.",
+    "source_boundary": "source is an attributable non-empty locator and grants no access, installation, network, or execution authority."
+  },
+  "execution_dependencies": [
+    {
+      "context_id": "dbio:execution-context:digital-biosphere-os:0001",
+      "dependency": "python_standard_library",
+      "version": "CPython 3.14.5",
+      "source": "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "dependency_digest": "sha256:9508f8fe16370ac86859476c13f350ed995b73feac430b5e8ae88a4c8c1191e2",
+      "evidence_ref": "evidence/experiments/DBOS-EXP-0001/environment/environment-observation.json"
+    }
+  ]
+}

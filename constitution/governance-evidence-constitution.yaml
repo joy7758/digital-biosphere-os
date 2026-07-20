@@ -1,0 +1,135 @@
+schema_version: "0.1"
+kind: "DigitalBiosphereGovernanceEvidenceConstitution"
+metadata:
+  title: "Governance Evidence Constitution v0.1"
+  chinese_title: "数字生物圈治理证据宪法 v0.1"
+  status: "empty_claim_and_evidence_baseline"
+  parent_constitution: "constitution.yaml"
+  governance_parent: "governance-archetype-constitution.yaml"
+  ecological_reference: "saee-constitution.yaml"
+  federation_reference: "federation-constitution.yaml"
+  authority: "evidence_registration_and_validation_only"
+  effective_scope:
+    - "/Users/zhangbin/GitHub/digital-biosphere-os"
+  adopted_at: "2026-07-19T23:31:39+08:00"
+  non_claims:
+    - "This constitution does not bind a governance archetype or grant governance authority."
+    - "A governance claim is not an approved governance mode, entity relationship, capability, permission, runtime, Agent, or organism."
+    - "A governance evidence record is not a governance decision, binding, transition, or maturity promotion."
+    - "This constitution does not modify any member repository or upgrade any C, E, or V level."
+
+governance_claim:
+  definition: "An attributable, bounded, pending statement that one canonical entity may exhibit or request evaluation of one declared governance archetype within a named scope."
+  source_of_truth: "../registry/governance-claims.yaml"
+  required_properties:
+    - "unique claim_id"
+    - "existing canonical entity_id"
+    - "existing claimed_archetype"
+    - "bounded scope"
+    - "explicit status"
+    - "governance maturity level"
+    - "claim-bound evidence references"
+  default_status: "pending"
+  default_maturity: "G1"
+  boundaries:
+    - "Claim registration does not approve, activate, select, or bind an archetype."
+    - "Missing or disputed scope, attribution, evidence, or independence remains pending or unknown."
+    - "No governance claim exists in the v0.1 baseline."
+
+governance_evidence:
+  definition: "A claim-bound record whose source, evidence type, verification state, timestamp, limitations, and independence properties are attributable and inspectable."
+  source_of_truth: "../registry/governance-evidence.yaml"
+  governance_evidence_types:
+    GE0:
+      name: "Unknown"
+      definition: "No registered governance evidence exists."
+    GE1:
+      name: "Declaration"
+      definition: "A source declares a governance claim; implementation, interaction, authority, and effectiveness are not established."
+    GE2:
+      name: "Artifact Evidence"
+      definition: "An inspectable governance artifact is bound to identity, scope, version, provenance, and integrity assessment."
+    GE3:
+      name: "Observed Coordination Evidence"
+      definition: "A bounded observation records actual coordination behavior, environment, participants, result, timestamp, and limitations."
+    GE4:
+      name: "Independent Governance Verification"
+      definition: "An independently identified verifier evaluates the bounded governance evidence with method, conflict disclosure, decision, and limitations."
+    GE5:
+      name: "Continuous Ecological Observation"
+      definition: "Repeated ecosystem observations over a declared window record coverage, drift, stability, adaptation, incidents, and revocation conditions."
+  boundaries:
+    - "GE0-GE5 is a governance-evidence namespace and does not modify the capability Evidence E0-E5 axis."
+    - "Evidence existence does not grant authority, create a binding, execute a transition, or change entity state."
+    - "No governance evidence record exists in the v0.1 baseline."
+
+evidence_independence:
+  principle: "The claimant, evidence producer, verifier, decision authority, and governed subject must be separately attributable; independence is claimed only when identity and conflict evidence support it."
+  requirements:
+    - "GE4 requires verifier identity evidence, method, scope, conflict-of-interest disclosure, and limitations."
+    - "Self-declaration may support GE1 only and cannot independently establish G3 or above."
+    - "Automated structural validation may check schema and references but cannot claim institutional independence or governance effectiveness."
+    - "A federation member, maintainer, repository owner, or local validator is not independent merely because it has a different label."
+
+governance_maturity:
+  source_of_truth: "../registry/governance-maturity.yaml"
+  levels:
+    - "G0 Unknown"
+    - "G1 Declared"
+    - "G2 Evidenced"
+    - "G3 Verified"
+    - "G4 Adaptive"
+    - "G5 Ecological"
+  principles:
+    - "Governance maturity is sequential and cannot skip a predecessor level."
+    - "G0 is the default absence-of-claim baseline and is not a maturity assignment or governance judgment."
+    - "A higher governance evidence type is eligible support only and never promotes maturity automatically."
+    - "Governance maturity does not bind an archetype, grant authority, capability, permission, trust, or organism status."
+
+revocation:
+  principle: "Governance claims, evidence, verification, maturity support, bindings, and transitions are revocable through additive records without deleting history."
+  requirements:
+    - "A revoked or invalid evidence record provides no current maturity support."
+    - "Revocation records identify subject, basis, authority, effective time, affected scope, and replacement or recovery path."
+    - "Revocation of evidence does not rewrite the original claim, evidence artifact, decision, or evolution history."
+    - "Revocation cannot create an alternative binding, capability, or permission automatically."
+
+observation_entry_model:
+  source_of_truth: "../registry/governance-observations.yaml"
+  definition: "One unobserved intake entry per canonical entity reserves a stable evidence-routing surface without asserting a governance fact."
+  baseline_rules:
+    - "governance_dimension=unknown"
+    - "value=null"
+    - "timestamp=null"
+    - "status=unobserved"
+    - "An intake entry is not a claim, evidence record, binding, evaluation, or observation result."
+
+separation_invariants:
+  - "Governance Claim != Governance Binding"
+  - "Governance Evidence != Governance Authority"
+  - "Governance Maturity != Entity Identity"
+  - "Governance Maturity != Capability != Permission"
+  - "Governance Observation Entry != Observed Fact"
+  - "G-level != C-level != E-level != V-level"
+
+current_baseline:
+  canonical_entity_count: 23
+  governance_claim_count: 0
+  governance_evidence_count: 0
+  governance_observation_entry_count: 23
+  observed_value_count: 0
+  governance_binding_count: 0
+  governance_maturity_distribution:
+    G0: 23
+    G1: 0
+    G2: 0
+    G3: 0
+    G4: 0
+    G5: 0
+  governance_authority_grant_count: 0
+  capability_count: 0
+  permission_grant_count: 0
+  runtime_instance_count: 0
+  agent_created_count: 0
+  digital_organism_count: 0
+  c_e_v_level_change_count: 0

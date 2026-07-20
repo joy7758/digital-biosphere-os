@@ -1,0 +1,45 @@
+{
+  "schema_version": "0.1",
+  "kind": "DBOSExperimentExecutionAuthorization",
+  "experiment_id": "DBOS-EXP-0001",
+  "experiment_authorization_id": "DBOS-EXP-0001-AUTH-0001",
+  "executor_authorization_id": "DBOS-EXP-0001-EXECUTOR-AUTH-0001",
+  "runner_id": "dbio:runner:automated:dbos-self-validation:v0.1",
+  "authorized_by": "explicit_user_goal:DBOS-EXP-0001-COMPLETE-EXECUTION-CHAIN",
+  "authorized_at": "2026-07-20T10:29:46+08:00",
+  "status": "authorized",
+  "scope": {
+    "execution_count": 1,
+    "experiment": "DBOS-EXP-0001",
+    "steps": ["DBOS-EXP-0001-STEP-01", "DBOS-EXP-0001-STEP-02", "DBOS-EXP-0001-STEP-03", "DBOS-EXP-0001-STEP-04", "DBOS-EXP-0001-STEP-05", "DBOS-EXP-0001-STEP-06", "DBOS-EXP-0001-STEP-07", "DBOS-EXP-0001-STEP-08"],
+    "environment": "dbio://runner-environment/dbos-exp-0001/local-governance-workspace/v0.1",
+    "frozen_snapshot": "DBOS-EXP-0001-SNAPSHOT-0001",
+    "output_boundary": "evidence/experiments/DBOS-EXP-0001/run-0001"
+  },
+  "authorization_evidence": [
+    "evidence/experiments/DBOS-EXP-0001/authorization/user-goal-authorization-evidence.json",
+    "evidence/experiments/DBOS-EXP-0001/identity/subject-identity-evidence.json",
+    "evidence/experiments/DBOS-EXP-0001/environment/environment-verification.json",
+    "evidence/experiments/DBOS-EXP-0001/freeze/freeze-certificate.json",
+    "evidence/experiments/DBOS-EXP-0001/runner/runner-qualification.json"
+  ],
+  "preconditions": {
+    "subject_verified": true,
+    "environment_verified": true,
+    "freeze_completed": true,
+    "runner_verified": true
+  },
+  "agent_creation": false,
+  "runtime_creation": false,
+  "digital_organism_creation": false,
+  "capability_upgrade": false,
+  "permission_grant": false,
+  "historical_evidence_modification": false,
+  "external_project_change": false,
+  "limitations": [
+    "One local deterministic execution only.",
+    "The user instruction is session-attributed and not cryptographically signed.",
+    "Authorization is not a general capability or permission grant.",
+    "Any failed validator, missing evidence, integrity failure, or reproducibility failure stops the experiment."
+  ]
+}

@@ -1,0 +1,143 @@
+schema_version: "0.1"
+kind: "DigitalBiosphereEventConstitution"
+metadata:
+  title: "Digital Biosphere Event Constitution v0.1"
+  chinese_title: "数字生物圈事实事件宪法 v0.1"
+  status: "defined_stream_empty_event_baseline"
+  parent_constitution: "constitution.yaml"
+  ecological_reference: "saee-constitution.yaml"
+  governance_reference: "governance-evidence-constitution.yaml"
+  event_integrity_constitution: "event-integrity-constitution.yaml"
+  authority: "event_structure_and_validation_only"
+  effective_scope:
+    - "/Users/zhangbin/GitHub/digital-biosphere-os"
+  adopted_at: "2026-07-19T23:41:50+08:00"
+  non_claims:
+    - "This constitution defines event records and streams but does not execute, monitor, infer, or fabricate an event."
+    - "A defined event stream is not an Agent, runtime, observer, active subscription, service, or Digital Organism."
+    - "An event record cannot grant capability, permission, governance authority, trust, fitness, or C/E/V promotion."
+    - "This constitution does not modify any member repository or external project."
+
+event_definition:
+  definition: "An immutable, attributable, timestamped fact record stating that one bounded occurrence concerning one canonical entity was reported by a named source and linked to inspectable evidence."
+  source_of_truth:
+    event_types: "../registry/event-types.yaml"
+    events: "../registry/events.yaml"
+    streams: "../registry/event-streams.yaml"
+    observations: "../registry/event-observations.yaml"
+  minimum_properties:
+    - "unique event_id"
+    - "existing canonical entity_id"
+    - "registered event_type"
+    - "occurrence timestamp"
+    - "attributable source"
+    - "bounded references"
+    - "evidence linkage"
+    - "explicit lifecycle status"
+  boundaries:
+    - "Event registration describes a reported fact and does not cause the fact."
+    - "Directory discovery, file modification time, stream definition, claim, or naming cannot fabricate an event."
+    - "The v0.1 baseline contains no event records."
+
+event_immutability:
+  principle: "A recorded event is append-only; corrections, invalidations, supersession, and revocation create attributable additive records rather than editing historical meaning."
+  requirements:
+    - "event_id, entity_id, event_type, original timestamp, source, and original references are immutable after recording"
+    - "a correction references the prior event and states the corrected fields and reason"
+    - "an invalidated, superseded, or revoked event remains discoverable"
+    - "retention policy cannot authorize silent deletion or history rewrite"
+  invariant: "Correction != Historical Rewrite"
+
+event_provenance:
+  principle: "Every event must identify how the occurrence became knowable without treating source availability as proof of truth."
+  requirements:
+    - "source identifies origin kind and stable locator"
+    - "timestamp distinguishes occurrence time from collection or validation time"
+    - "input, output, resource, and evidence references remain scoped and nullable when not applicable"
+    - "evidence reference identifies the material supporting the event claim"
+    - "source authenticity, completeness, integrity, and independence remain explicit verification questions"
+  non_inference: "A valid event structure does not prove provider origin, completeness, successful execution, causal effect, or production truth."
+
+event_lifecycle:
+  states:
+    recorded: "The event is registered with required identity, type, timestamp, source, references, and evidence linkage."
+    validated: "A bounded validator has confirmed declared structural or evidentiary requirements without granting authority."
+    invalidated: "Evidence shows that current reliance is not valid; history is retained."
+    superseded: "A later additive event provides a replacement interpretation or state transition."
+    revoked: "An attributable authority withdraws current reliance within a declared scope while retaining history."
+  transitions:
+    - "recorded -> validated"
+    - "recorded -> invalidated"
+    - "validated -> invalidated"
+    - "recorded -> superseded"
+    - "validated -> superseded"
+    - "recorded -> revoked"
+    - "validated -> revoked"
+  fail_closed_rule: "Unknown, missing, contradictory, or unauthenticated provenance prevents validation and cannot be replaced with simulated data."
+
+event_evidence_linkage:
+  principle: "An event points to evidence but is not itself sufficient proof of the occurrence, its cause, or its effect."
+  requirements:
+    - "Every recorded event has a non-empty evidence_ref."
+    - "Evidence linkage preserves claim scope, subject identity, source, integrity state, version, environment, and limitations."
+    - "Invalid or revoked evidence prevents current reliance and requires an additive event lifecycle record."
+    - "Event observations reference existing events and cannot become evidence without a separate evidence record and verification path."
+  separation:
+    - "Event != Evidence"
+    - "Event != Verification"
+    - "Event != Permission"
+    - "Event Observation != Fitness"
+
+event_stream_model:
+  definition: "A declarative per-entity routing contract listing eligible event types and retention policy; it performs no collection or execution."
+  baseline:
+    canonical_entity_count: 23
+    defined_stream_count: 23
+    active_stream_count: 0
+    event_count: 0
+  boundaries:
+    - "status=defined means schema routing exists, not active monitoring."
+    - "A stream cannot create an event, observer, Agent, runtime, capability, permission, or organism."
+
+integrity_reference:
+  constitution_ref: "event-integrity-constitution.yaml"
+  integrity_registry: "../registry/event-integrity.yaml"
+  witness_registry: "../registry/event-witnesses.yaml"
+  ordering_registry: "../registry/event-ordering.yaml"
+  check_registry: "../registry/event-integrity-checks.yaml"
+  requirements:
+    - "Event identity remains distinct from integrity identity."
+    - "Every future event integrity record references an existing event and stream."
+    - "Per-stream ordering uses sequence, hash chaining, and duplicate detection."
+    - "Missing hash, ordering, provenance, timestamp, or required witness material fails closed."
+    - "Integrity and witness status cannot grant trust, capability, permission, or C/E/V promotion."
+  current_integrity_record_count: 0
+  current_witness_count: 0
+
+saee_mapping:
+  relation: "Event -> Observation -> Evolution"
+  interpretation: "Events may become an attributable observation substrate for future evolutionary analysis only after evidence and verification requirements are satisfied."
+  current_status: "defined_event_model_no_events_or_observations"
+  automatic_evolution: false
+  authority_effect: "none"
+  fitness_effect: "none"
+
+current_baseline:
+  event_type_count: 8
+  event_count: 0
+  event_stream_count: 23
+  defined_stream_count: 23
+  active_stream_count: 0
+  event_observation_count: 0
+  event_integrity_schema_count: 1
+  event_integrity_record_count: 0
+  event_witness_count: 0
+  event_ordering_rule_count: 23
+  event_integrity_check_definition_count: 5
+  evidence_created_count: 0
+  capability_count: 0
+  permission_grant_count: 0
+  runtime_instance_count: 0
+  agent_created_count: 0
+  digital_organism_count: 0
+  c_e_v_level_change_count: 0

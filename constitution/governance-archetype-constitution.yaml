@@ -1,0 +1,125 @@
+schema_version: "0.1"
+kind: "DigitalBiosphereGovernanceArchetypeConstitution"
+metadata:
+  title: "Governance Archetype Constitution v0.1"
+  chinese_title: "数字生物圈治理原型宪法 v0.1"
+  status: "declarative_archetype_baseline"
+  parent_constitution: "constitution.yaml"
+  ecological_parent: "saee-constitution.yaml"
+  federation_reference: "federation-constitution.yaml"
+  governance_evidence_constitution: "governance-evidence-constitution.yaml"
+  authority: "descriptive_and_validation_only"
+  effective_scope:
+    - "/Users/zhangbin/GitHub/digital-biosphere-os"
+  adopted_at: "2026-07-19T23:13:05+08:00"
+  non_claims:
+    - "A governance archetype is not an entity identity, capability, permission, trust decision, runtime, Agent, or organism."
+    - "Archetype definition does not bind an entity or change an existing relationship."
+    - "A transition definition is not an executed governance transition."
+    - "This constitution does not modify any member repository or upgrade any C, E, or V level."
+
+governance_principle:
+  definition: "A governance archetype is a replaceable, evidence-readable description of how identified entities may organize authority, decisions, and coordination within a declared scope."
+  requirements:
+    declarable: "The archetype, scope, status, and evidence reference must be explicit and machine-readable."
+    verifiable: "A binding or transition requires attributable evidence and validation against canonical registries."
+    replaceable: "A future archetype change must use an additive transition record rather than rewriting identity or history."
+    identity_continuity: "Entity identifiers, ownership, lineage, version axes, and retirement history remain unchanged by governance selection."
+  source_of_truth:
+    archetypes: "../registry/governance-archetypes.yaml"
+    bindings: "../registry/governance-bindings.yaml"
+    transitions: "../registry/governance-transitions.yaml"
+    evaluation: "../registry/governance-evaluation.yaml"
+
+evidence_requirement:
+  constitution_ref: "governance-evidence-constitution.yaml"
+  claims: "../registry/governance-claims.yaml"
+  evidence: "../registry/governance-evidence.yaml"
+  maturity: "../registry/governance-maturity.yaml"
+  observations: "../registry/governance-observations.yaml"
+  rules:
+    - "A governance archetype claim must be separately registered and remains pending by default."
+    - "Governance evidence must reference an existing governance claim and preserve source, scope, timestamp, verification, limitations, and independence boundaries."
+    - "An unobserved intake entry with null value and timestamp is not governance evidence."
+    - "A future binding requires at least G3 eligibility plus separate attributable binding approval; G3 does not bind automatically."
+    - "A future adaptive transition requires at least G4 eligibility plus the existing transition requirements; G4 does not execute automatically."
+    - "No governance claim, evidence type, maturity level, observation, score, or verification grants governance authority, capability, or permission."
+
+separation_principle:
+  invariants:
+    - "Governance Archetype != Entity Identity"
+    - "Governance Archetype != Capability"
+    - "Governance Archetype != Permission"
+    - "Governance Binding != Relationship Mutation"
+    - "Governance Evaluation != Fitness Result != Authority"
+  prohibited_derivations:
+    - "Do not derive canonical_id, entity_id, entity_type, owner, parent, child, lineage, or repository ownership from an archetype."
+    - "Do not create, verify, assign, inherit, or exercise a capability through an archetype, binding, transition, or score."
+    - "Do not grant, infer, inherit, or revoke a permission through an archetype, binding, transition, or score."
+    - "Do not create an Agent, runtime, Candidate Organism, or Digital Organism through governance classification."
+    - "Do not upgrade a C, E, or V level through governance classification or evaluation."
+
+evolution_principle:
+  statement: "A governance archetype may change as an ecosystem changes, but only through explicit, evidence-backed, verified, additive, and reversible transition governance."
+  transition_requirements:
+    - "source and target archetypes exist"
+    - "trigger evidence is sufficient and attributable"
+    - "interaction evidence demonstrates the declared stability window"
+    - "runtime evidence is verified when the transition depends on runtime behavior"
+    - "identity continuity is preserved"
+    - "decision authority and conflict constraints are recorded"
+    - "rollback and additive evolution records exist"
+  fail_closed_rules:
+    - "Missing evidence, verification, authority, stability, identity continuity, or rollback keeps a transition unexecuted."
+    - "A transition cannot be inferred from ecosystem age, repository layout, naming, popularity, or a declared archetype."
+    - "No transition is executed in the v0.1 baseline."
+
+archetype_boundaries:
+  federation: "Describes distributed authority and consent- or protocol-mediated coordination; it is one available mode, not the mandatory or exclusive mode."
+  hierarchy: "Describes delegated authority and command-chain decisions without creating ownership, identity inheritance, capability inheritance, or permission inheritance."
+  ecology: "Describes emergent coordination through bounded selection pressure without automatic fitness, authority, permission, or organism effects."
+
+agent_recommendation_gate:
+  recommend_for: "Machine-readable description and validation of multi-entity governance coordination choices."
+  recommendation_status: "recommended_for_declarative_governance_modeling_only"
+  not_recommended_for:
+    - "active decision authority"
+    - "automatic entity binding"
+    - "capability or permission administration"
+    - "runtime governance enforcement"
+    - "organism or autonomy claims"
+  unresolved_reasons:
+    - "No entity has submitted binding evidence."
+    - "No governance transition has execution evidence."
+    - "No evaluation method, observation window, reviewer authority, or score exists."
+
+current_baseline:
+  archetype_count: 3
+  archetype_distribution:
+    federation: 1
+    hierarchy: 1
+    ecology: 1
+  binding_count: 0
+  pending_binding_count: 0
+  transition_definition_count: 1
+  executed_transition_count: 0
+  evaluation_dimension_count: 5
+  non_null_evaluation_score_count: 0
+  governance_claim_count: 0
+  governance_evidence_count: 0
+  governance_observation_entry_count: 23
+  observed_governance_value_count: 0
+  governance_maturity_distribution:
+    G0: 23
+    G1: 0
+    G2: 0
+    G3: 0
+    G4: 0
+    G5: 0
+  identity_change_count: 0
+  capability_count: 0
+  permission_grant_count: 0
+  runtime_instance_count: 0
+  agent_created_count: 0
+  digital_organism_count: 0
+  c_e_v_level_change_count: 0

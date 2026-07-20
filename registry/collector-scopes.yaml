@@ -1,0 +1,105 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereEnvironmentCollectorScopeRegistry",
+  "metadata": {
+    "title": "Environment Collector Scopes v0.1",
+    "status": "one_approved_read_only_scope",
+    "constitution": "../constitution/environment-collector-constitution.yaml",
+    "collector_source_of_truth": "environment-collectors.yaml",
+    "environment_source_of_truth": "environment-identities.yaml",
+    "generated_at": "2026-07-20T09:37:43+08:00",
+    "scope_count": 1,
+    "approved_scope_count": 1,
+    "execution_authority_count": 0,
+    "capability_effect_count": 0,
+    "permission_grant_count": 0,
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "No scope record exists because no Collector exists; catalogs define future ceilings and do not bind an identity.",
+      "Scope Definition != Scope Approval != Collection Authorization != Collection Run."
+    ]
+  },
+  "allowed_fact_catalog": [
+    "operating_system",
+    "python_version",
+    "dependency_information",
+    "configuration_information",
+    "hardware_information"
+  ],
+  "mandatory_excluded_data": [
+    "credential",
+    "secret",
+    "private_key",
+    "personal_data",
+    "external_storage_content"
+  ],
+  "mandatory_forbidden_operations": [
+    "write_outside_experiment_evidence_boundary",
+    "modify_or_delete_existing_evidence",
+    "modify_constitution",
+    "modify_registry_history",
+    "modify_member_repository",
+    "modify_external_project",
+    "access_external_storage_content",
+    "read_credential_or_secret",
+    "create_agent",
+    "create_runtime",
+    "execute_experiment",
+    "generate_event",
+    "generate_snapshot",
+    "qualify_environment",
+    "freeze_environment",
+    "grant_capability",
+    "grant_permission",
+    "upgrade_c_e_v"
+  ],
+  "collector_scope_schema": {
+    "required_fields": ["scope_id", "collector_id", "allowed_facts", "excluded_data"],
+    "additional_governance_fields": ["environment_refs", "allowed_sources", "forbidden_operations", "status", "evidence_requirements", "supersedes", "revocation_ref", "authority_effect"],
+    "valid_statuses": ["proposed", "defined", "approved", "suspended", "revoked", "superseded"],
+    "default_status": "proposed",
+    "scope_boundary": "allowed_facts must be a non-empty catalog subset and excluded_data must contain every mandatory exclusion before approval."
+  },
+  "collector_scopes": [
+    {
+      "scope_id": "DBOS-EXP-0001-ENV-COLLECTOR-SCOPE-0001",
+      "collector_id": "dbio:collector:automated:dbos-environment-read-only:v0.1",
+      "allowed_facts": [
+        "operating_system",
+        "python_version",
+        "dependency_information",
+        "configuration_information",
+        "hardware_information"
+      ],
+      "excluded_data": ["credential", "secret", "private_key", "personal_data", "external_storage_content"],
+      "environment_refs": ["dbio://runner-environment/dbos-exp-0001/local-governance-workspace/v0.1"],
+      "allowed_sources": ["python standard library", "/usr/bin/sw_vers", "/usr/sbin/sysctl hw.memsize", "/Users/zhangbin/GitHub/digital-biosphere-os"],
+      "forbidden_operations": [
+        "write_outside_experiment_evidence_boundary",
+        "modify_or_delete_existing_evidence",
+        "modify_constitution",
+        "modify_registry_history",
+        "modify_member_repository",
+        "modify_external_project",
+        "access_external_storage_content",
+        "read_credential_or_secret",
+        "create_agent",
+        "create_runtime",
+        "execute_experiment",
+        "generate_event",
+        "generate_snapshot",
+        "qualify_environment",
+        "freeze_environment",
+        "grant_capability",
+        "grant_permission",
+        "upgrade_c_e_v"
+      ],
+      "status": "approved",
+      "evidence_requirements": ["retained raw observation", "fact source", "timezone-aware timestamp", "SHA-256 digests", "zero sensitive fields"],
+      "authorization_evidence_ref": "evidence/experiments/DBOS-EXP-0001/authorization/user-goal-authorization-evidence.json",
+      "supersedes": null,
+      "revocation_ref": null,
+      "authority_effect": "none"
+    }
+  ]
+}

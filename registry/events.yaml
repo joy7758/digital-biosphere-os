@@ -1,0 +1,58 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereEventRegistry",
+  "metadata": {
+    "title": "Digital Biosphere Events v0.1",
+    "status": "one_validated_bounded_execution_event",
+    "constitution": "../constitution/event-constitution.yaml",
+    "entity_source_of_truth": "entities.yaml",
+    "event_type_source_of_truth": "event-types.yaml",
+    "stream_source_of_truth": "event-streams.yaml",
+    "generated_at": "2026-07-19T23:41:50+08:00",
+    "event_count": 1,
+    "validated_event_count": 1,
+    "event_created_evidence_count": 1,
+    "permission_grant_count": 0,
+    "capability_effect_count": 0,
+    "c_e_v_level_change_count": 0,
+    "agent_created_count": 0,
+    "runtime_created_count": 0,
+    "organism_created_count": 0,
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "The v0.1 registry is empty because no factual event has been submitted with attributable provenance and evidence.",
+      "Event registration cannot cause the reported occurrence or grant authority."
+    ]
+  },
+  "event_record_schema": {
+    "required_fields": ["event_id", "entity_id", "event_type", "timestamp", "source", "input_ref", "output_ref", "resource_ref", "evidence_ref", "status"],
+    "event_id_format": "dbio:event:<entity_id>:<sequence>",
+    "valid_statuses": ["recorded", "validated", "invalidated", "superseded", "revoked"],
+    "nullable_reference_fields": ["input_ref", "output_ref", "resource_ref"],
+    "source_required_fields": ["kind", "locator", "collected_at"],
+    "timestamp_semantics": "timestamp is occurrence time; source.collected_at is collection time; both require ISO 8601 timezone-aware values.",
+    "evidence_ref_required": true,
+    "immutability_rule": "Corrections and lifecycle changes are additive events; existing event content is never rewritten."
+  },
+  "events": [
+    {
+      "event_id": "dbio:event:digital-biosphere-os:DBOS-EXP-0001:0001",
+      "entity_id": "digital-biosphere-os",
+      "event_type": "execution_event",
+      "timestamp": "2026-07-20T10:50:17+08:00",
+      "source": {
+        "kind": "authorized_deterministic_runner",
+        "locator": "dbio:runner-execution:dbos-self-validation:DBOS-EXP-0001:0002",
+        "collected_at": "2026-07-20T10:50:17+08:00"
+      },
+      "input_ref": "dbio:snapshot:input:dbio:execution-context:digital-biosphere-os:0001:0001",
+      "output_ref": "dbio:snapshot:output:dbio:execution-context:digital-biosphere-os:0001:0001",
+      "resource_ref": "dbio://runner-environment/dbos-exp-0001/local-governance-workspace/v0.1",
+      "evidence_ref": "evidence/experiments/DBOS-EXP-0001/run-0002/validator-results.json#sha256:472ddeee4d7caf6fcba281829d2b3624fbba3cc334f963ae3e4839e21a564d2d",
+      "status": "validated",
+      "claim": "The retained frozen DBOS validator suite completed with every declared validator returning exit status 0.",
+      "claim_boundary": "local structural validator result only",
+      "event_artifact_ref": "evidence/experiments/DBOS-EXP-0001/run-0002/event-record.json#sha256:52fe5ffbb30fb7c4afbcd83f9a4b89da16aa1d238cbfe9c42dc6218a2c3fba1c"
+    }
+  ]
+}

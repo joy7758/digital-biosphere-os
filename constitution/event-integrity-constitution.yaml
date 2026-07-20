@@ -1,0 +1,163 @@
+schema_version: "0.1"
+kind: "DigitalBiosphereEventIntegrityConstitution"
+metadata:
+  title: "Event Integrity Constitution v0.1"
+  chinese_title: "数字生物圈事件完整性宪法 v0.1"
+  status: "defined_integrity_empty_record_baseline"
+  parent_constitution: "constitution.yaml"
+  event_parent: "event-constitution.yaml"
+  evidence_reference: "evidence-constitution.yaml"
+  verification_reference: "verification-constitution.yaml"
+  ecological_reference: "saee-constitution.yaml"
+  event_attestation_constitution: "event-attestation-constitution.yaml"
+  authority: "integrity_structure_and_validation_only"
+  effective_scope:
+    - "/Users/zhangbin/GitHub/digital-biosphere-os"
+  adopted_at: "2026-07-19T23:54:21+08:00"
+  non_claims:
+    - "This constitution does not create, replay, observe, execute, or validate a factual event."
+    - "An integrity schema, ordering rule, check definition, or witness type is not a runtime, Agent, observer, verifier decision, or Digital Organism."
+    - "Hash shape and chain consistency do not prove event occurrence, provider origin, source completeness, causal effect, or production truth."
+    - "Integrity and witness records cannot grant trust, capability, permission, governance authority, fitness, or C/E/V promotion."
+
+event_identity:
+  definition: "Event integrity identity binds one existing immutable event_id to exactly one existing stream_id and one positive per-stream sequence position."
+  source_of_truth: "../registry/event-integrity.yaml"
+  requirements:
+    - "event_id exists in the canonical event registry"
+    - "stream_id exists in the canonical event-stream registry"
+    - "event entity and stream entity are identical"
+    - "stream_id plus sequence is unique"
+    - "one event_id has at most one current integrity identity"
+  boundaries:
+    - "Integrity identity does not replace event identity or entity identity."
+    - "An integrity record cannot create the event it references."
+    - "The v0.1 baseline contains no integrity record because the event registry is empty."
+
+immutability:
+  principle: "Integrity history is append-only; event content, sequence, hash links, timestamps, witness references, and check results are never silently rewritten."
+  hash_model:
+    algorithm: "sha256"
+    format: "sha256:<64 lowercase hexadecimal characters>"
+    current_hash_input_contract:
+      - "event schema version and canonical event content"
+      - "event_id"
+      - "stream_id"
+      - "sequence"
+      - "previous_hash"
+      - "integrity timestamp"
+      - "clock_source"
+    canonicalization_status: "contract_defined_implementation_absent"
+  correction_rule: "A correction, invalidation, chain break, supersession, or revocation is additive and preserves the original integrity record."
+  non_claim: "A well-formed hash is not proof that canonicalization, hashing, storage, or signing actually occurred."
+
+ordering:
+  source_of_truth: "../registry/event-ordering.yaml"
+  model:
+    sequence_ordering: "Each stream starts at sequence 1 and increases by exactly one without duplicate or reused positions."
+    hash_chaining: "Sequence 1 uses previous_hash=null; each later record references the immediately prior current_hash in the same stream."
+    duplicate_detection: "Duplicate event_id, current_hash, or stream_id plus sequence is rejected and recorded without deleting history."
+  clock_boundary: "Source occurrence time and integrity-record time are recorded, but clocks do not create a global total order across streams."
+  baseline: "Twenty-three ordering rules exist, one for each defined event stream; no event occupies a sequence position."
+
+provenance:
+  principle: "Integrity provenance identifies the event source, integrity clock, hash method, ordering rule, check method, and witness path without converting local validation into independent truth."
+  requirements:
+    - "clock_source is explicit and attributable"
+    - "event timestamp and integrity timestamp remain distinct"
+    - "source authenticity, collection completeness, clock synchronization, canonicalization, and storage integrity remain separately verifiable"
+    - "all check and witness references preserve method, scope, result, limitations, and lifecycle"
+
+witness:
+  source_of_truth: "../registry/event-witnesses.yaml"
+  types:
+    self: "The event subject or source attests to its own event; independence effect is none."
+    automated: "A bounded automated process checks declared inputs and method; institutional independence is not implied."
+    external: "A separately identified external subject may witness within an explicit method and scope after identity and independence evidence exist."
+  rules:
+    - "Witness type does not determine trust level automatically."
+    - "A witness identity reference must exist before any result can be relied upon."
+    - "Self witness cannot establish independence."
+    - "Automated structural validation cannot certify event occurrence or production truth."
+    - "The v0.1 baseline contains no witness record."
+
+integrity_lifecycle:
+  states:
+    pending: "The integrity record is incomplete or has not passed all required checks."
+    structurally_valid: "Required fields, formats, references, and ordering are locally consistent; occurrence truth is not established."
+    verified: "Hash, sequence, source, timestamp, and witness requirements have attributable completed checks within a declared scope."
+    invalid: "One or more integrity requirements fail or current reliance is unsupported."
+    chain_broken: "The per-stream predecessor relation is missing, duplicated, conflicting, or mismatched."
+    revoked: "Current reliance is withdrawn by an attributable additive record while history remains."
+  transition_rules:
+    - "pending -> structurally_valid"
+    - "structurally_valid -> verified"
+    - "pending -> invalid"
+    - "structurally_valid -> invalid"
+    - "verified -> invalid"
+    - "pending -> chain_broken"
+    - "structurally_valid -> chain_broken"
+    - "verified -> chain_broken"
+    - "pending -> revoked"
+    - "structurally_valid -> revoked"
+    - "verified -> revoked"
+  fail_closed_rules:
+    - "Missing current_hash prevents structurally_valid and verified status."
+    - "Missing required previous_hash prevents verified status for sequence greater than 1."
+    - "Missing source, timestamp, clock source, check result, or required witness prevents verified status."
+    - "Integrity status never upgrades C/E/V or grants capability, permission, trust, or authority."
+
+integrity_checks:
+  source_of_truth: "../registry/event-integrity-checks.yaml"
+  required_checks:
+    - "hash_validation"
+    - "sequence_validation"
+    - "source_validation"
+    - "timestamp_validation"
+    - "witness_validation"
+  baseline: "Five check definitions exist and zero check runs exist."
+
+saee_mapping:
+  relation: "Event Integrity -> Evidence Reliability"
+  interpretation: "Integrity structure may constrain future reliance on event-derived evidence but cannot create evidence maturity or ecological selection outcomes."
+  status: "defined_integrity_model_no_records"
+  authority_effect: "none"
+  evidence_level_effect: "none"
+  fitness_effect: "none"
+
+attestation_reference:
+  constitution_ref: "event-attestation-constitution.yaml"
+  producer_registry: "../registry/event-producers.yaml"
+  attestation_registry: "../registry/event-attestations.yaml"
+  trust_anchor_registry: "../registry/trust-anchors.yaml"
+  method_registry: "../registry/attestation-methods.yaml"
+  requirements:
+    - "An attestation references an existing event and an identified producer."
+    - "A signature reference binds a producer to a bounded claim but cannot replace the event source, integrity checks, evidence, or factual verification."
+    - "Trust anchors require separate identity, evidence, scope, independence, lifecycle, and revocation material; registration creates no trust."
+    - "Attestation and trust-anchor states cannot grant capability, permission, authority, fitness, or C/E/V promotion."
+  current_producer_count: 0
+  current_attestation_count: 0
+  current_trust_anchor_count: 0
+  authority_effect: "none"
+
+current_baseline:
+  integrity_schema_count: 1
+  integrity_record_count: 0
+  witness_type_count: 3
+  witness_count: 0
+  ordering_rule_count: 23
+  integrity_check_definition_count: 5
+  integrity_check_run_count: 0
+  event_count: 0
+  event_observation_count: 0
+  event_producer_count: 0
+  event_attestation_count: 0
+  trust_anchor_count: 0
+  attestation_method_count: 3
+  capability_count: 0
+  permission_grant_count: 0
+  runtime_instance_count: 0
+  agent_created_count: 0
+  digital_organism_count: 0
+  c_e_v_level_change_count: 0

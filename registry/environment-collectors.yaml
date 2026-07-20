@@ -1,0 +1,56 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereAutomatedEnvironmentCollectorRegistry",
+  "metadata": {
+    "title": "Automated Environment Collectors v0.1",
+    "status": "one_active_read_only_collector",
+    "constitution": "../constitution/environment-collector-constitution.yaml",
+    "identity_source_of_truth": "entities.yaml",
+    "scope_source_of_truth": "collector-scopes.yaml",
+    "generated_at": "2026-07-20T09:37:43+08:00",
+    "collector_count": 1,
+    "collector_type_distribution": {"automated": 1},
+    "access_mode_distribution": {"read_only": 1},
+    "active_collector_count": 1,
+    "agent_created_count": 0,
+    "executor_created_count": 0,
+    "runtime_created_count": 0,
+    "capability_effect_count": 0,
+    "permission_grant_count": 0,
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "The registry is empty because no attributable governed identity has been explicitly enrolled as an Automated Environment Collector.",
+      "A local validator, script, process, service, verifier, Executor, Runner, repository, or tool name cannot become a Collector automatically.",
+      "Collector registration would not create capability, permission, governance authority, Agent, Executor, Runtime, or collection authorization."
+    ]
+  },
+  "environment_collector_schema": {
+    "required_fields": ["collector_id", "collector_type", "identity_ref", "method", "access_mode", "status"],
+    "additional_governance_fields": ["version", "implementation_digest", "scope_refs", "lifecycle", "agent_status", "executor_status", "runtime_status", "capability_status", "permission_status", "authority_effect"],
+    "valid_collector_types": ["automated"],
+    "valid_access_modes": ["read_only"],
+    "valid_statuses": ["proposed", "identity_verified", "registered", "active", "suspended", "revoked", "retired"],
+    "default_status": "proposed",
+    "identity_boundary": "Collector Identity must exist before enrollment; enrollment creates no Agent, Executor, Runtime, capability, permission, or authority."
+  },
+  "environment_collectors": [
+    {
+      "collector_id": "dbio:collector:automated:dbos-environment-read-only:v0.1",
+      "collector_type": "automated",
+      "identity_ref": "DBOS-SUBJECT-0001",
+      "method": "execution/dbos_exp_0001.py collect-environment",
+      "access_mode": "read_only",
+      "status": "active",
+      "version": "v0.1",
+      "implementation_digest": "sha256:3ece45ca3bba89e2628d0351cb8bd2032e2f709e88db3566a57897e9a68da6ed",
+      "scope_refs": ["DBOS-EXP-0001-ENV-COLLECTOR-SCOPE-0001"],
+      "lifecycle": {"state": "active", "activated_at": "2026-07-20T10:05:25+08:00"},
+      "agent_status": "not_an_agent",
+      "executor_status": "not_an_executor",
+      "runtime_status": "not_a_runtime",
+      "capability_status": "not_assigned",
+      "permission_status": "not_granted",
+      "authority_effect": "none"
+    }
+  ]
+}

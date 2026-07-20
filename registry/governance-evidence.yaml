@@ -1,0 +1,35 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereGovernanceEvidenceRegistry",
+  "metadata": {
+    "title": "Governance Evidence v0.1",
+    "status": "empty_pending_evidence_baseline",
+    "constitution": "../constitution/governance-evidence-constitution.yaml",
+    "claim_source_of_truth": "governance-claims.yaml",
+    "generated_at": "2026-07-19T23:31:39+08:00",
+    "evidence_count": 0,
+    "pending_evidence_count": 0,
+    "verified_evidence_count": 0,
+    "independent_evidence_count": 0,
+    "binding_effect_count": 0,
+    "governance_authority_grant_count": 0,
+    "capability_effect_count": 0,
+    "permission_effect_count": 0,
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "The v0.1 registry contains no governance evidence because no governance claim exists.",
+      "A governance evidence record supports only its claim and scope; it cannot bind an archetype, grant authority, or modify an entity."
+    ]
+  },
+  "evidence_record_schema": {
+    "required_fields": ["evidence_id", "claim_id", "evidence_type", "source", "verification", "timestamp", "status"],
+    "evidence_id_format": "dbio:governance-evidence:<entity_id>:<sequence>",
+    "valid_evidence_types": ["GE1", "GE2", "GE3", "GE4", "GE5"],
+    "valid_statuses": ["pending", "assessed", "verified", "independently_verified", "continuously_observed", "invalid", "revoked"],
+    "default_status": "pending",
+    "pending_timestamp": null,
+    "independence_boundary": "GE4 requires independent verifier identity, method, scope, conflict disclosure, decision, and limitations.",
+    "authority_boundary": "Evidence cannot create governance authority, a governance binding, capability, permission, runtime, or organism status."
+  },
+  "governance_evidence": []
+}

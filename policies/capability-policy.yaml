@@ -1,0 +1,94 @@
+schema_version: "0.1"
+kind: "DigitalBiosphereCapabilityPolicy"
+metadata:
+  title: "Capability Policy v0.1"
+  status: "declarative_only"
+  enforcement: "validation_only"
+  constitution: "../constitution/capability-constitution.yaml"
+  capability_registry: "../registry/capabilities.yaml"
+  relationship_registry: "../registry/entity-capabilities.yaml"
+  claim_registry: "../registry/capability-claims.yaml"
+  review_registry: "../registry/capability-reviews.yaml"
+  maturity_registry: "../registry/capability-maturity.yaml"
+  evidence_registry: "../registry/capability-evidence.yaml"
+  evidence_type_registry: "../registry/evidence-types.yaml"
+  capability_profile_registry: "../registry/capability-profiles.yaml"
+  verifier_registry: "../registry/verifiers.yaml"
+  verification_level_registry: "../registry/verification-level.yaml"
+  verification_record_registry: "../registry/verification-records.yaml"
+  verification_constitution: "../constitution/verification-constitution.yaml"
+  verification_network_constitution: "../constitution/verification-network-constitution.yaml"
+  verifier_type_registry: "../registry/verifier-types.yaml"
+  verification_run_registry: "../registry/verification-runs.yaml"
+  trust_graph_registry: "../registry/trust-graph.yaml"
+
+principles:
+  evidence_not_permission:
+    statement: "Evidence != Permission"
+    effect: "No E-level, artifact, execution trace, independent verification, or continuous observation grants authority to exercise a capability."
+  claim_not_capability:
+    statement: "Claim != Capability"
+    effect: "A pending or evidenced claim cannot be treated as verified, governed, autonomous, assigned, or permissioned."
+  capability_not_permission:
+    statement: "Capability != Permission"
+    effect: "The existence, implementation, documentation, verification, registration, or inheritance of a capability does not authorize its use."
+  verification_not_approval_or_permission:
+    statement: "Verification != Review Approval != Capability != Permission"
+    effect: "No verifier registration, V level, structural validator PASS, independent verification, or continuous observation approves a capability claim, assigns a capability, or grants permission automatically."
+  trust_graph_not_authority:
+    statement: "Graph Adjacency != Trust != Independence != Permission"
+    effect: "A node, relationship, verifier type, or pending run records provenance only and cannot establish authority, approve a claim, assign a capability, or grant permission."
+  fail_closed:
+    statement: "Unknown is not allowed."
+    effect: "Unknown capability relationships remain unassigned and cannot support execution."
+  no_implicit_inheritance:
+    statement: "Capabilities and permissions do not inherit through parent, child, successor, repository, dependency, package, protocol, or service relationships."
+  evidence_bounded:
+    statement: "Capability claims cannot exceed the environment, version, input, output, and side-effect scope proven by evidence."
+
+allowed:
+  current_assignments: []
+  conditions:
+    - "A confirmed capability_id exists in registry/capabilities.yaml."
+    - "The entity-capability relationship is verified explicitly."
+    - "A separate permission record grants the bounded operation."
+    - "Risk controls, approval, expiry, and evidence requirements are satisfied."
+  note: "No existing entity satisfies an allowed assignment in the v0.1 baseline."
+
+restricted:
+  capability_types:
+    - "modification"
+    - "external_action"
+    - "self_evolution"
+  risk_levels:
+    - "high"
+    - "critical"
+  conditions:
+    - "unknown or incomplete evidence"
+    - "sensitive information or credential access"
+    - "production, financial, medical, legal, safety, identity, or irreversible impact"
+    - "schema, protocol, release, deployment, account, provider, or external communication changes"
+  required_controls:
+    - "explicit human approval"
+    - "separate permission evidence"
+    - "pre-execution policy decision"
+    - "post-execution evidence"
+    - "rollback or containment where possible"
+
+forbidden:
+  - id: "DBIO-CAP-FORBID-001"
+    action: "derive permission automatically from capability existence"
+  - id: "DBIO-CAP-FORBID-002"
+    action: "derive capability automatically from repository, package, schema, protocol, service, artifact, demo, or documentation"
+  - id: "DBIO-CAP-FORBID-003"
+    action: "inherit capability or permission implicitly through identity lineage or dependencies"
+  - id: "DBIO-CAP-FORBID-004"
+    action: "exercise self_evolution without explicit constitutional approval"
+  - id: "DBIO-CAP-FORBID-005"
+    action: "delete historical evidence or perform an unrecorded external action"
+  - id: "DBIO-CAP-FORBID-006"
+    action: "treat local, synthetic, demo, validation, release, deployment, adoption, or production states as interchangeable"
+  - id: "DBIO-CAP-FORBID-007"
+    action: "derive review approval, capability assignment, or permission from a verifier registration, V level, or verification decision"
+  - id: "DBIO-CAP-FORBID-008"
+    action: "derive trust, independence, capability, permission, execution, certification, or production readiness from trust-graph adjacency or a pending verification run"

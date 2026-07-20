@@ -1,0 +1,53 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereFederationRoleMap",
+  "metadata": {
+    "title": "SAEE Federation Role Map v0.1",
+    "status": "evidence_derived_non_authorizing",
+    "constitution": "../constitution/federation-constitution.yaml",
+    "entity_source_of_truth": "entities.yaml",
+    "generated_at": "2026-07-19T22:49:34+08:00",
+    "entity_count": 23,
+    "role_distribution": {
+      "foundation": 3,
+      "protocol": 6,
+      "governance": 3,
+      "evidence": 3,
+      "verification": 4,
+      "experimental": 3,
+      "unknown": 1
+    },
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "Federation role is a non-exclusive ecological routing label derived from existing purpose and type evidence.",
+      "Role does not change canonical entity_type, ownership, capability, permission, trust, fitness, runtime, or organism status.",
+      "Ambiguous CellCaps role remains unknown rather than being inferred."
+    ]
+  },
+  "valid_roles": ["foundation", "protocol", "governance", "evidence", "verification", "experimental", "unknown"],
+  "federation_map": [
+    {"entity_id":"digital-biosphere-architecture","federation_role":"foundation","role_status":"evidence_derived","basis":"Canonical purpose defines shared Digital Biosphere vocabulary, conceptual boundaries, and citation context."},
+    {"entity_id":"pop-persona-object-protocol","federation_role":"protocol","role_status":"evidence_derived","basis":"Canonical entity_type is protocol and purpose defines a portable persona object layer."},
+    {"entity_id":"aip-agent-intent-protocol","federation_role":"protocol","role_status":"evidence_derived","basis":"Canonical entity_type is protocol and README identifies AIP as the interaction layer."},
+    {"entity_id":"token-governor-reference","federation_role":"governance","role_status":"evidence_derived","basis":"Purpose and README define budget-window, constraint, policy, and governance interface shapes."},
+    {"entity_id":"fdo-kernel-mvk","federation_role":"foundation","role_status":"evidence_derived","basis":"Purpose defines deterministic execution-integrity and checksum-oriented validation kernel examples."},
+    {"entity_id":"agent-evidence-eeoap","federation_role":"evidence","role_status":"evidence_derived","basis":"Purpose defines auditable and verifiable evidence objects through EEOAP schema and validation surfaces."},
+    {"entity_id":"aro-audit-reference","federation_role":"verification","role_status":"evidence_derived","basis":"Purpose defines audit artifacts and independent toy verification."},
+    {"entity_id":"verifiable-agent-demo","federation_role":"experimental","role_status":"evidence_derived","basis":"Purpose and README explicitly describe a minimal runnable toy walkthrough demo."},
+    {"entity_id":"execution-integrity-core","federation_role":"foundation","role_status":"evidence_derived","basis":"Purpose defines an execution-integrity reference kernel and manifest-first execution layer."},
+    {"entity_id":"agent-evidence-receipt-layer","federation_role":"evidence","role_status":"evidence_derived","basis":"Purpose defines transferable offline-verifiable evidence packages for one run."},
+    {"entity_id":"saee-agent-readiness","federation_role":"verification","role_status":"evidence_derived","basis":"Purpose defines evidence-based readiness evaluation before real-world deployment."},
+    {"entity_id":"agent-governance-toolkit-external","federation_role":"governance","role_status":"evidence_derived","basis":"Purpose defines policy enforcement, identity, sandboxing, and audit logging governance surfaces."},
+    {"entity_id":"agent-governance-benchmark","federation_role":"verification","role_status":"evidence_derived","basis":"Purpose defines deterministic offline comparison of baseline and governed-agent metrics."},
+    {"entity_id":"agent-receipt-validator-mcp","federation_role":"verification","role_status":"evidence_derived","basis":"Purpose defines validation of signed execution receipts against evidence bundles."},
+    {"entity_id":"agent-accountability-evidence-layer","federation_role":"evidence","role_status":"evidence_derived","basis":"Purpose defines the ASIEP evidence-profile shape for auditable self-improvement claims."},
+    {"entity_id":"agent-object-protocol","federation_role":"protocol","role_status":"evidence_derived","basis":"Canonical entity_type is protocol and purpose defines portable executable object contracts."},
+    {"entity_id":"ecl-execution-compact-layer","federation_role":"protocol","role_status":"evidence_derived","basis":"Canonical entity_type is protocol and purpose defines a deterministic execution intermediate representation."},
+    {"entity_id":"cellcaps","federation_role":"unknown","role_status":"unresolved","basis":"Purpose spans semantic cells, capsule graphs, validation, replay, and evidence; one federation role is not established."},
+    {"entity_id":"pra-server","federation_role":"experimental","role_status":"evidence_derived","basis":"Purpose describes a minimal personal research-agent runtime and approval workflow rather than a federation foundation."},
+    {"entity_id":"standalone-agent-object-protocol-draft","federation_role":"protocol","role_status":"evidence_derived","basis":"Canonical entity_type is protocol and purpose defines a draft execution-evidence object model."},
+    {"entity_id":"sovereign-agent-local-gate","federation_role":"governance","role_status":"evidence_derived","basis":"Purpose defines local gating, redaction, and staged internal/cloud/public/release boundaries."},
+    {"entity_id":"mcp-agent-ei-external","federation_role":"experimental","role_status":"evidence_derived","basis":"Identity is an external repository checkout providing composable agent patterns and MCP lifecycle support."},
+    {"entity_id":"autonomous-cell-protocol","federation_role":"protocol","role_status":"evidence_derived","basis":"Canonical entity_type is proposed protocol and purpose defines the Autonomous Cell Protocol specification."}
+  ]
+}

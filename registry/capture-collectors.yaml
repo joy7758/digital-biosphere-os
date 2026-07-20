@@ -1,0 +1,41 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereCaptureCollectorRegistry",
+  "metadata": {
+    "title": "Snapshot Capture Collectors v0.1",
+    "status": "one_active_automated_snapshot_collector",
+    "constitution": "../constitution/snapshot-capture-readiness-constitution.yaml",
+    "identity_sources": ["entities.yaml", "experiment-subjects.yaml", "verifiers.yaml"],
+    "generated_at": "2026-07-20T02:00:37+08:00",
+    "collector_count": 1,
+    "collector_type_distribution": {"human": 0, "automated": 1},
+    "verified_collector_count": 1,
+    "active_collector_count": 1,
+    "agent_created_count": 0,
+    "capability_effect_count": 0,
+    "permission_grant_count": 0,
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "The registry is empty because no attributable human or automated identity has been approved as a capture collector.",
+      "An existing verifier, governance system, service, user, or local process cannot become a collector automatically."
+    ]
+  },
+  "collector_schema": {
+    "required_fields": ["collector_id", "collector_type", "identity_ref", "method", "status"],
+    "valid_collector_types": ["human", "automated"],
+    "valid_statuses": ["proposed", "verified", "active", "suspended", "revoked", "retired"],
+    "identity_boundary": "identity_ref must resolve to an existing governed identity; collector registration creates no Agent, capability, permission, or capture authorization."
+  },
+  "capture_collectors": [
+    {
+      "collector_id": "dbio:capture-collector:automated:dbos-snapshot:v0.1",
+      "collector_type": "automated",
+      "identity_ref": "DBOS-SUBJECT-0001",
+      "method": "execution/dbos_exp_0001.py capture-snapshot",
+      "implementation_digest": "sha256:3ece45ca3bba89e2628d0351cb8bd2032e2f709e88db3566a57897e9a68da6ed",
+      "status": "active",
+      "agent_status": "not_an_agent",
+      "authority_effect": "none"
+    }
+  ]
+}

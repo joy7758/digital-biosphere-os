@@ -1,0 +1,59 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereEventAttestationRegistry",
+  "metadata": {
+    "title": "Event Attestations v0.1",
+    "status": "one_signed_digest_attestation_without_trust_grant",
+    "constitution": "../constitution/event-attestation-constitution.yaml",
+    "event_source_of_truth": "events.yaml",
+    "producer_source_of_truth": "event-producers.yaml",
+    "method_source_of_truth": "attestation-methods.yaml",
+    "trust_anchor_source_of_truth": "trust-anchors.yaml",
+    "generated_at": "2026-07-20T00:09:24+08:00",
+    "attestation_count": 1,
+    "attestation_status_distribution": {"pending": 0, "signed": 1, "verified": 0, "invalid": 0, "revoked": 0, "superseded": 0},
+    "signature_count": 1,
+    "verified_attestation_count": 0,
+    "trust_grant_count": 0,
+    "capability_effect_count": 0,
+    "permission_grant_count": 0,
+    "c_e_v_level_change_count": 0,
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "The registry is empty because no factual event or identified event producer exists.",
+      "A signature binds a producer to a bounded claim but cannot replace the event source, event fact, evidence, integrity, or verification."
+    ]
+  },
+  "attestation_record_schema": {
+    "required_fields": ["attestation_id", "event_id", "producer_id", "attestation_method", "claim", "signature_ref", "status"],
+    "additional_governance_fields": ["trust_anchor_refs", "timestamp", "limitations", "revocation_ref", "supersedes"],
+    "attestation_id_format": "dbio://event-attestation/<event-id>/<producer-id>/<sequence>",
+    "valid_statuses": ["pending", "signed", "verified", "invalid", "revoked", "superseded"],
+    "default_status": "pending",
+    "claim_required_fields": ["event_id", "statement", "scope", "source_boundary"],
+    "signature_boundary": "signature_ref is null while pending and is a non-secret reference when signed; it never substitutes for event provenance or factual evidence.",
+    "verified_boundary": "verified requires attributable producer identity, signature, method, event-integrity checks, scoped non-revoked trust-anchor evidence, and explicit limitations; it grants no trust, capability, permission, or C/E/V level."
+  },
+  "event_attestations": [
+    {
+      "attestation_id": "dbio:attestation:DBOS-EXP-0001:0001",
+      "event_id": "dbio:event:digital-biosphere-os:DBOS-EXP-0001:0001",
+      "producer_id": "dbio:event-producer:dbos-self-validation-runner:v0.1",
+      "attestation_method": "automated_attestation",
+      "claim": {
+        "event_id": "dbio:event:digital-biosphere-os:DBOS-EXP-0001:0001",
+        "statement": "The retained frozen DBOS validator suite completed with every declared validator returning exit status 0.",
+        "scope": "retained frozen DBOS v0.1 local structural validation",
+        "source_boundary": "authorized deterministic Runner output"
+      },
+      "signature_ref": "digest-attestation:sha256:48149377065de750bc6bcb1f92f61c091ea5b66bebd124beb28701fff6aa49ce",
+      "status": "signed",
+      "trust_anchor_refs": [],
+      "timestamp": "2026-07-20T10:50:17+08:00",
+      "limitations": ["content-digest attestation, not a private-key digital signature", "producer is not independent", "signature does not replace source evidence", "no trust grant"],
+      "evidence_ref": "evidence/experiments/DBOS-EXP-0001/run-0002/event-attestation.json#sha256:10a7556520ba7b744d2f7297d540ff9d052a71d745a94f3134b63c9a29f4e784",
+      "revocation_ref": null,
+      "supersedes": null
+    }
+  ]
+}

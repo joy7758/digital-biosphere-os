@@ -1,0 +1,31 @@
+{
+  "schema_version": "0.1",
+  "kind": "DBOSEnvironmentQualificationVerification",
+  "experiment_id": "DBOS-EXP-0001",
+  "environment_id": "dbio://runner-environment/dbos-exp-0001/local-governance-workspace/v0.1",
+  "verification_id": "DBOS-EXP-0001-ENV-VERIFICATION-0001",
+  "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+  "method": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 python3 validation/execution_chain_validator.py --phase environment --format json",
+    "validator_digest": "sha256:7d42a0f56889cfc27960e97a1c5040ac1290c5d501c563270d67404b972da258",
+    "checks": [
+      "subject identity evidence path, size, and SHA-256",
+      "collector implementation digest and approved read-only scope",
+      "environment observation receipt",
+      "five fact types",
+      "three canonical environment digests",
+      "capture, run, evidence, qualification, and lock references",
+      "zero Agent, Runtime, Digital Organism, capability assignment, permission grant, and C/E/V change"
+    ]
+  },
+  "result": "PASS",
+  "verified_at": "2026-07-20T10:16:52+08:00",
+  "independence_status": "not_independent",
+  "environment_verified": true,
+  "authority_effect": "none",
+  "limitations": [
+    "Local automated structural verification only.",
+    "Qualification is bounded to DBOS-EXP-0001 and the retained local environment facts.",
+    "No capability, permission, Agent, Runtime, Digital Organism, or C/E/V promotion is produced."
+  ]
+}

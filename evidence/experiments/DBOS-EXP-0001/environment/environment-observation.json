@@ -1,0 +1,149 @@
+{
+  "access_mode": "read_only",
+  "agent_status": "not_an_agent",
+  "capability_effect": "none",
+  "collection_result": "completed",
+  "collector_id": "dbio:collector:automated:dbos-environment-read-only:v0.1",
+  "digests": {
+    "configuration": "sha256:7276c57d41cc26c7f770503d14a91a2236e477cc76e29b5ea82e5e2f693a446c",
+    "dependency": "sha256:9508f8fe16370ac86859476c13f350ed995b73feac430b5e8ae88a4c8c1191e2",
+    "environment": "sha256:898ee48c12e7c9c49323c49cff42795b13f4fe67d9f63341590d6b51f191f81e"
+  },
+  "environment_id": "dbio://runner-environment/dbos-exp-0001/local-governance-workspace/v0.1",
+  "experiment_id": "DBOS-EXP-0001",
+  "facts": [
+    {
+      "authority_effect": "none",
+      "capture_id": "DBOS-EXP-0001-ENV-EVIDENCE-CAPTURE-0001",
+      "environment_id": "dbio://runner-environment/dbos-exp-0001/local-governance-workspace/v0.1",
+      "fact_id": "DBOS-EXP-0001-ENV-FACT-OS-0001",
+      "fact_type": "os",
+      "source": {
+        "kind": "local_read_only",
+        "methods": [
+          "python.platform",
+          "/usr/bin/sw_vers"
+        ]
+      },
+      "status": "captured",
+      "timestamp": "2026-07-20T10:07:49+08:00",
+      "value": {
+        "mac_version": "26.5.2",
+        "platform": "macOS-26.5.2-arm64-arm-64bit-Mach-O",
+        "release": "25.5.0",
+        "sw_vers": "ProductName:\t\tmacOS\nProductVersion:\t\t26.5.2\nBuildVersion:\t\t25F84",
+        "system": "Darwin"
+      }
+    },
+    {
+      "authority_effect": "none",
+      "capture_id": "DBOS-EXP-0001-ENV-EVIDENCE-CAPTURE-0001",
+      "environment_id": "dbio://runner-environment/dbos-exp-0001/local-governance-workspace/v0.1",
+      "fact_id": "DBOS-EXP-0001-ENV-FACT-PYTHON-0001",
+      "fact_type": "python",
+      "source": {
+        "kind": "local_read_only",
+        "methods": [
+          "python.sys",
+          "python.platform"
+        ]
+      },
+      "status": "captured",
+      "timestamp": "2026-07-20T10:07:49+08:00",
+      "value": {
+        "executable": "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "implementation": "CPython",
+        "version": "3.14.5"
+      }
+    },
+    {
+      "authority_effect": "none",
+      "capture_id": "DBOS-EXP-0001-ENV-EVIDENCE-CAPTURE-0001",
+      "environment_id": "dbio://runner-environment/dbos-exp-0001/local-governance-workspace/v0.1",
+      "fact_id": "DBOS-EXP-0001-ENV-FACT-DEPENDENCY-0001",
+      "fact_type": "dependency",
+      "source": {
+        "kind": "declared_execution_dependency_closure",
+        "methods": [
+          "runner source inspection",
+          "python runtime"
+        ]
+      },
+      "status": "captured",
+      "timestamp": "2026-07-20T10:07:49+08:00",
+      "value": {
+        "dependency_model": "python_standard_library_only",
+        "execution_language": "python",
+        "python_implementation": "CPython",
+        "python_version": "3.14.5",
+        "third_party_runtime_dependencies": []
+      }
+    },
+    {
+      "authority_effect": "none",
+      "capture_id": "DBOS-EXP-0001-ENV-EVIDENCE-CAPTURE-0001",
+      "environment_id": "dbio://runner-environment/dbos-exp-0001/local-governance-workspace/v0.1",
+      "fact_id": "DBOS-EXP-0001-ENV-FACT-CONFIGURATION-0001",
+      "fact_type": "configuration",
+      "source": {
+        "kind": "explicit_collector_configuration",
+        "methods": [
+          "collector constants"
+        ]
+      },
+      "status": "captured",
+      "timestamp": "2026-07-20T10:07:49+08:00",
+      "value": {
+        "access_mode": "read_only",
+        "allowed_fact_types": [
+          "os",
+          "python",
+          "dependency",
+          "configuration",
+          "hardware"
+        ],
+        "environment_variables_collected": false,
+        "experiment_id": "DBOS-EXP-0001",
+        "external_repositories_read": false,
+        "network_access": "not_used",
+        "sensitive_data_collected": false,
+        "workspace_root": "/Users/zhangbin/GitHub/digital-biosphere-os"
+      }
+    },
+    {
+      "authority_effect": "none",
+      "capture_id": "DBOS-EXP-0001-ENV-EVIDENCE-CAPTURE-0001",
+      "environment_id": "dbio://runner-environment/dbos-exp-0001/local-governance-workspace/v0.1",
+      "fact_id": "DBOS-EXP-0001-ENV-FACT-HARDWARE-0001",
+      "fact_type": "hardware",
+      "source": {
+        "kind": "local_read_only",
+        "methods": [
+          "python.platform",
+          "python.os.cpu_count",
+          "/usr/sbin/sysctl hw.memsize"
+        ]
+      },
+      "status": "captured",
+      "timestamp": "2026-07-20T10:07:49+08:00",
+      "value": {
+        "logical_cpu_count": 10,
+        "machine": "arm64",
+        "memory_bytes": 17179869184,
+        "processor": "arm"
+      }
+    }
+  ],
+  "kind": "DBOSExperimentEnvironmentObservation",
+  "limitations": [
+    "local host observation only",
+    "no environment variable values collected",
+    "no credential, secret, private key, personal data, or external storage content collected",
+    "hardware inventory is intentionally minimal",
+    "collection does not qualify or authorize the environment"
+  ],
+  "observed_at": "2026-07-20T10:07:49+08:00",
+  "permission_effect": "none",
+  "runtime_status": "not_a_runtime",
+  "schema_version": "0.1"
+}

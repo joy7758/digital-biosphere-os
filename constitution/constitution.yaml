@@ -1,0 +1,279 @@
+schema_version: "0.1"
+kind: "DigitalBiosphereConstitution"
+metadata:
+  name: "Digital Biosphere OS Constitution"
+  status: "federation_layer_v0.1"
+  scanned_at: "2026-07-19T18:23:07+08:00"
+  identity_constitution: "identity-constitution.yaml"
+  capability_constitution: "capability-constitution.yaml"
+  capability_verification_constitution: "capability-verification-constitution.yaml"
+  evidence_constitution: "evidence-constitution.yaml"
+  verification_constitution: "verification-constitution.yaml"
+  verification_network_constitution: "verification-network-constitution.yaml"
+  saee_constitution: "saee-constitution.yaml"
+  organism_genesis_constitution: "organism-genesis-constitution.yaml"
+  environment_constitution: "environment-constitution.yaml"
+  federation_constitution: "federation-constitution.yaml"
+  response_language_policy_version: "1.0"
+  authority_scope:
+    - "/Users/zhangbin/GitHub/digital-biosphere-os"
+  non_claims:
+    - "This file does not authorize changes in discovered repositories."
+    - "This file is not an enforced runtime policy."
+    - "This file is not a release, standard, certification, or production-readiness claim."
+
+definitions:
+  digital_life_object:
+    description: "A machine-discoverable agent, protocol, runtime, service, governance component, or evidence-bearing code system with an identifiable repository or local evidence source."
+    minimum_identity_fields:
+      - "id"
+      - "entity_id"
+      - "canonical_id"
+      - "entity_type"
+      - "name"
+      - "repository"
+      - "purpose"
+      - "capabilities"
+      - "permissions"
+      - "risk_level"
+      - "lifecycle"
+      - "owner"
+      - "parent_entity"
+      - "child_entities"
+      - "version"
+      - "status"
+      - "verification"
+      - "evidence_source"
+    identity_source_of_truth: "../registry/entities.yaml"
+    identity_rules: "../registry/identity-rules.yaml"
+    identity_boundary: "Repository, protocol, service, artifact, and runtime agent identities remain distinct."
+  digital_capability:
+    description: "An evidence-backed, bounded technical ability of one identified entity; capability existence is separate from permission to exercise it."
+    source_of_truth: "../registry/capabilities.yaml"
+    relationship_registry: "../registry/entity-capabilities.yaml"
+    policy: "../policies/capability-policy.yaml"
+    default_relationship: "unknown"
+    invariant: "Capability != Permission"
+  capability_claim:
+    description: "A pending, evidence-linked assertion about one entity and one bounded capability candidate; a claim is not a confirmed capability, assignment, permission, or successful execution."
+    source_of_truth: "../registry/capability-claims.yaml"
+    review_registry: "../registry/capability-reviews.yaml"
+    maturity_registry: "../registry/capability-maturity.yaml"
+    verification_constitution: "capability-verification-constitution.yaml"
+    default_status: "pending"
+    default_maturity: "C1"
+    invariant: "Claim != Capability != Permission"
+  capability_evidence:
+    description: "A claim-bound evidence record with an explicit E-level, source, artifact state, verification state, and status."
+    source_of_truth: "../registry/capability-evidence.yaml"
+    type_registry: "../registry/evidence-types.yaml"
+    profile_registry: "../registry/capability-profiles.yaml"
+    evidence_constitution: "evidence-constitution.yaml"
+    default_type: "E1"
+    default_status: "pending"
+    invariant: "Evidence != Claim != Capability != Permission"
+  verifier:
+    description: "An attributable human, organization, service, or automated process with a bounded method, scope, trust level, evidence requirement, lifecycle, and authority boundary; verifier identity is not Agent identity."
+    source_of_truth: "../registry/verifiers.yaml"
+    level_registry: "../registry/verification-level.yaml"
+    verification_constitution: "verification-constitution.yaml"
+    invariant: "Verifier != Agent != Reviewer != Certification Authority"
+  verification_record:
+    description: "A claim-bound request or result that names its subject, verifier, evidence, decision, timestamp, V level, status, and governance boundaries."
+    source_of_truth: "../registry/verification-records.yaml"
+    default_level: "V0"
+    default_status: "pending"
+    default_decision: "pending"
+    invariant: "Verification != Review Approval != Capability != Permission"
+  verification_run:
+    description: "An append-only request or execution-attempt record binding one verification record to one verifier, environment, input digest, method, result, and timestamp."
+    source_of_truth: "../registry/verification-runs.yaml"
+    verifier_type_registry: "../registry/verifier-types.yaml"
+    default_status: "pending"
+    default_result: "pending"
+    invariant: "Run Registration != Method Execution != Verification Result"
+  verification_trust_graph:
+    description: "A provenance graph linking entity, claim, evidence, verifier, and verification run without inferring trust or authority."
+    source_of_truth: "../registry/trust-graph.yaml"
+    default_trust_effect: "none"
+    invariant: "Graph Adjacency != Trust != Independence != Permission"
+  saee_ecological_interpretation:
+    description: "The highest ecological interpretation layer for entity formation, interaction, resource flow, adaptation, evolution, selection, and ecosystem stability."
+    constitution: "saee-constitution.yaml"
+    ecological_entity_registry: "../registry/ecological-entities.yaml"
+    evolution_principle_registry: "../registry/evolution-principles.yaml"
+    fitness_model: "../registry/fitness-model.yaml"
+    evolution_mapping: "../registry/evolution-mapping.yaml"
+    operational_authority_effect: "unchanged"
+    invariant: "SAEE != Project != Agent != Capability != Permission"
+  runtime_instance:
+    description: "An attributable active-process registration bound to one entity and environment; runtime identity is not Agent or organism identity."
+    source_of_truth: "../registry/runtime-instances.yaml"
+    resource_flow_registry: "../registry/resource-flows.yaml"
+    behavior_trace_registry: "../registry/behavior-traces.yaml"
+    default_count: 0
+    invariant: "Runtime != Agent != Candidate Organism != Digital Organism"
+  organism_candidate:
+    description: "A separately reviewed qualification application that satisfies all Genesis criteria; it remains distinct from Digital Organism status."
+    source_of_truth: "../registry/organism-candidates.yaml"
+    genesis_constitution: "organism-genesis-constitution.yaml"
+    default_count: 0
+    invariant: "Candidate Qualification != Agent != Digital Organism != Permission"
+  ecological_environment:
+    description: "A bounded resource, task, constraint, and selection-pressure model for future runtime evaluation; definition does not imply activation or participation."
+    source_of_truth: "../registry/environments.yaml"
+    environment_constitution: "environment-constitution.yaml"
+    default_status: "defined"
+    invariant: "Environment Definition != Runtime Participation != Selection Result"
+  ecological_resource_model:
+    description: "An entity-unbound measurement vocabulary for token, compute, storage, data access, or human attention; null limit means undefined rather than unlimited."
+    source_of_truth: "../registry/resource-models.yaml"
+    default_entity_binding: null
+    default_limit: null
+    invariant: "Resource Model != Resource Allocation != Permission"
+  ecological_selection_pressure:
+    description: "A non-applied reliability, evidence, efficiency, adaptability, or stability pressure definition with no direct fitness effect."
+    source_of_truth: "../registry/selection-pressures.yaml"
+    default_threshold: null
+    invariant: "Pressure Definition != Applied Pressure != Fitness != Selection Result"
+  ecological_interaction:
+    description: "An attributable future relationship between one canonical entity and one defined environment; the v0.1 registry is empty."
+    source_of_truth: "../registry/ecological-interactions.yaml"
+    default_count: 0
+    invariant: "Environment Membership != Trust != Permission != Organism Status"
+  federation_member:
+    description: "A proposed, registered, or verified relationship between one canonical entity and the Digital Biosphere Federation; membership does not transfer identity or repository ownership."
+    source_of_truth: "../registry/federation-members.yaml"
+    default_status: "proposed"
+    invariant: "Federation Member != Repository Ownership != Agent != Runtime != Organism"
+  federation_project_manifest:
+    description: "A versioned project ecology identity record for role, constitution reference, dependencies, evidence, capability-claim references, and evolution tracking."
+    source_of_truth: "../registry/project-manifests.yaml"
+    schema: "../schemas/project-manifest.schema.yaml"
+    default_status: "pending"
+    invariant: "Central Manifest Placeholder != Project Adoption != Capability != Permission"
+  federation_dependency_relation:
+    description: "An evidence-bound depends_on, implements, verifies, extends, or references edge between two canonical entities."
+    source_of_truth: "../registry/dependency-graph.yaml"
+    default_interoperability_status: "unverified"
+    invariant: "Graph Relation != Compatibility != Trust != Authority"
+
+communication_policy:
+  name: "用户回复语言与翻译规则"
+  authority: "mandatory"
+  scope:
+    - "面向用户的过程更新、计划、提问、解释、报告和最终回复"
+  requirements:
+    - "面向用户的自然语言回复默认使用中文。"
+    - "回复中出现任何英文单词、短语、句子、标题或英文术语时，必须在紧邻位置提供准确的中文翻译或中文释义。"
+    - "不得使用只有英文而没有中文翻译的标题、段落、列表项、提示语或结论。"
+    - "文件路径、命令、分支名、提交哈希、任务编号、问题编号、拉取请求编号、状态常量和代码标识符为保证准确性应保持原样；在自然语言语境中出现时必须同时说明其中文含义。"
+    - "代码块中的源码和命令可以保持可执行原文；代码块前后必须用中文解释其用途、输入、输出和风险。"
+    - "引用英文证据时只保留必要原文，并紧邻提供中文翻译；翻译不得改变原始状态、范围、否定条件或证据等级。"
+    - "无法提供可靠中文翻译时，应删除非必要英文或明确说明无法可靠翻译，不得以纯英文回复代替。"
+  invariant: "任何面向用户的英文内容都必须伴随中文翻译或中文释义。"
+  failure_policy: "发现遗漏时必须在同一回复中补充翻译并纠正，不得把未翻译英文视为格式例外。"
+
+principles:
+  agent_identity:
+    statement: "Every governed object must have a stable identifier, a declared purpose, a canonical location, and evidence-backed capability boundaries."
+    requirements:
+      - "Do not infer autonomous-agent status from a repository name alone."
+      - "Distinguish canonical repositories from mirrors, worktrees, staging copies, vendor checkouts, and generated artifacts."
+      - "Apply the Digital Entity Identity Constitution before capability, permission, resource, behavior, evidence, or evolution policy."
+
+  least_privilege:
+    statement: "No permission is granted by discovery; permissions must be explicit, minimal, scoped, and revocable."
+    requirements:
+      - "Unassigned permission means not authorized."
+      - "Core protocol, schema, release, and external-action changes require human confirmation."
+
+  capability_separation:
+    statement: "Potential evidence, claim, evidence assessment, review, verified capability, governance, entity assignment, permission, execution, and evidence of execution are separate governance states."
+    requirements:
+      - "Do not derive a confirmed capability from a pending claim."
+      - "Do not promote a claim to verified without an attributable approved review."
+      - "Do not promote verified to governed without policy and revocation evidence."
+      - "Do not promote governed to autonomous without explicit authorization and runtime enforcement evidence."
+      - "Do not derive permission from capability."
+      - "Do not derive capability from repository, package, protocol, service, artifact, dependency, documentation, demo, or identity lineage."
+      - "Unknown capability relationships remain unassigned."
+      - "Modification, external_action, and self_evolution require explicit approval and fail-closed controls."
+
+  traceable_execution:
+    statement: "Governed actions must be attributable to an actor, intent, target, decision, result, and evidence record."
+    requirements:
+      - "Record material changes before claiming completion."
+      - "Keep local, review-ready, released, deployed, and externally approved states distinct."
+
+  evidence_first:
+    statement: "Claims about identity, capability, execution, validation, and lifecycle state must point to inspectable evidence."
+    requirements:
+      - "A README, AGENTS.md, manifest, test result, receipt, or ledger may support a bounded claim."
+      - "Absence of evidence must remain unknown, not be filled with simulated data."
+      - "A source path that exists is not automatically E2 Artifact Evidence."
+      - "Evidence levels E0-E5 are sequential and cannot be skipped."
+      - "E1 cannot support C3; E2 cannot support C4; E3 cannot automatically support C5."
+
+  verification_separation:
+    statement: "Verification is a separate, sequential, evidence-bounded governance axis and never grants capability or permission automatically."
+    requirements:
+      - "V0-V5 levels cannot be skipped."
+      - "E0-E5 defines the highest verification level evidence may support, not an automatic V-level promotion."
+      - "Local automated structural validation is not an independent review, certification, runtime result, deployment result, or production-readiness decision."
+      - "A pass decision is limited to the recorded verifier authority, method, evidence, subject, scope, environment, version, time, and limitations."
+      - "Verification history and revocation records remain append-only."
+      - "Pending verifier runs contain no fabricated digest, method, result timestamp, trust, capability assignment, permission, or Agent effect."
+
+  ecological_interpretation:
+    statement: "SAEE is the highest ecosystem-scale explanatory principle while existing Identity, Capability, Evidence, Verification, and permission rules retain operational authority."
+    requirements:
+      - "Entity != Organism."
+      - "Repository, protocol, service, Agent-related name, runtime, fitness, evidence, or verification cannot promote organism status automatically."
+      - "Evolution preserves identity, evidence, lineage, and append-only history."
+      - "Fitness scores remain null until a future evidence-backed method and review process exists."
+      - "Ecosystem stability, diversity, resilience, and resource balance take precedence over unbounded single-entity maximization."
+      - "SAEE interpretation cannot create capability, permission, runtime, Agent, Candidate Organism, Digital Organism, or C/E/V promotion."
+
+  organism_genesis:
+    statement: "Runtime and organism-candidate formation require independent, cumulative, evidence-backed qualification gates."
+    requirements:
+      - "identity_verified, runtime_exists, capability_verified, E3, V3, resource flow, behavior trace, and evolution record must all exist."
+      - "Missing or unknown qualification evidence fails closed."
+      - "Runtime registration does not create an Agent or organism candidate."
+      - "Candidate qualification does not create a Digital Organism."
+      - "Genesis cannot assign capability, grant permission, or upgrade C/E/V automatically."
+      - "The v0.1 runtime, resource-flow, behavior-trace, and candidate registries remain empty."
+
+  ecological_environment:
+    statement: "Ecological environments define bounded resource and task conditions plus non-applied selection pressure without creating runtime participation or selection outcomes."
+    requirements:
+      - "Environment types and resource types must use declared registries and stable identifiers."
+      - "Resource models remain unbound to entities and all v0.1 limits remain null."
+      - "Selection-pressure thresholds remain null and cannot write or calculate fitness."
+      - "Entity-environment interactions require attributable records; the v0.1 interaction registry remains empty."
+      - "Environment -> Evolution Pressure is interpretive only and cannot create Agent, Runtime, Candidate Organism, Digital Organism, capability, permission, or C/E/V promotion."
+
+  federation_independence:
+    statement: "Independent entities may share constitutional references, manifests, evidence, and evolution rules without merging repositories, identities, ownership, versions, or histories."
+    requirements:
+      - "Every current member remains proposed until explicit project-local adoption evidence and review exist."
+      - "Every current central project manifest remains pending and cannot impersonate a manifest supplied by the project."
+      - "Dependencies require explicit evidence and cannot be inferred from directory structure, naming, shared owner, or path proximity."
+      - "Protocol, service, verifier, evidence, governance, foundation, and experimental roles do not change canonical entity_type."
+      - "Membership and graph paths cannot derive capability, permission, Agent identity, Runtime, organism status, trust, ownership, compatibility, or C/E/V promotion."
+      - "Cross-project changes require target-specific authorization and additive evolution evidence."
+
+  lifecycle_management:
+    statement: "Each governed object should move through explicit lifecycle states with an owner, review gate, evidence, and rollback or retirement path."
+    initial_states:
+      - "discovered"
+      - "identity_verified"
+      - "permissioned"
+      - "active"
+      - "suspended"
+      - "deprecated"
+      - "retired"
+    requirements:
+      - "Discovery is not activation."
+      - "Local validation is not release, deployment, adoption, or approval."

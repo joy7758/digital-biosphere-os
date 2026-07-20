@@ -1,0 +1,75 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereVerifierTypeRegistry",
+  "metadata": {
+    "title": "Verifier Type Registry v0.1",
+    "status": "defined_type_taxonomy",
+    "constitution": "../constitution/verification-network-constitution.yaml",
+    "generated_at": "2026-07-19T20:50:19+08:00",
+    "type_definition_count": 4,
+    "registered_verifier_count": 1,
+    "current_type_distribution": {
+      "automated": 1,
+      "maintainer": 0,
+      "external": 0,
+      "experimental": 0
+    },
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "The four type definitions are governance vocabulary, not four verifier instances.",
+      "Only the evidence-backed automated local structural suite is currently registered.",
+      "Type membership does not establish independence, trust, review authority, capability, or permission."
+    ]
+  },
+  "valid_statuses": [
+    "defined",
+    "deprecated",
+    "retired"
+  ],
+  "types": [
+    {
+      "type": "automated",
+      "name": "Automated Verifier",
+      "definition": "A bounded automated process with inspectable implementation, method, input, environment, output, and authority evidence.",
+      "status": "defined",
+      "identity_evidence_required": true,
+      "identity_evidence_kind": "implementation_and_process_identity",
+      "independence_default": "not_independent",
+      "trust_effect": "none_by_type_alone",
+      "authority_boundary": "May act only inside declared machine-checkable scope; cannot approve capabilities or grant permissions."
+    },
+    {
+      "type": "maintainer",
+      "name": "Maintainer Verifier",
+      "definition": "An attributable person or organization with a recorded maintenance relationship to the subject or governed registry.",
+      "status": "defined",
+      "identity_evidence_required": true,
+      "identity_evidence_kind": "maintainer_identity_and_relationship",
+      "independence_default": "not_independent",
+      "trust_effect": "none_by_type_alone",
+      "authority_boundary": "May self-check or review only within separately recorded maintenance authority; maintainer status is not independent verification."
+    },
+    {
+      "type": "external",
+      "name": "External Verifier",
+      "definition": "A separately attributable person, organization, or service outside the subject's controlling boundary.",
+      "status": "defined",
+      "identity_evidence_required": true,
+      "identity_evidence_kind": "external_identity_and_separation_basis",
+      "independence_default": "not_assessed",
+      "trust_effect": "none_by_type_alone",
+      "authority_boundary": "Cannot operate without inspectable identity evidence; external type alone does not establish V4 independence or certification authority."
+    },
+    {
+      "type": "experimental",
+      "name": "Experimental Verifier",
+      "definition": "A trial verifier whose identity, method, stability, or authority has not reached an operational reliance threshold.",
+      "status": "defined",
+      "identity_evidence_required": true,
+      "identity_evidence_kind": "experimental_implementation_or_operator_identity",
+      "independence_default": "not_assessed",
+      "trust_effect": "none_by_type_alone",
+      "authority_boundary": "Cannot claim independent, governed, continuous, certification, production, capability-assignment, or permission authority."
+    }
+  ]
+}

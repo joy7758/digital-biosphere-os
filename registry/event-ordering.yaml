@@ -1,0 +1,57 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereEventOrderingRegistry",
+  "metadata": {
+    "title": "Event Ordering Rules v0.1",
+    "status": "defined_rule_no_ordered_event_baseline",
+    "constitution": "../constitution/event-integrity-constitution.yaml",
+    "stream_source_of_truth": "event-streams.yaml",
+    "generated_at": "2026-07-19T23:54:21+08:00",
+    "ordering_rule_count": 24,
+    "covered_stream_count": 24,
+    "ordered_event_count": 1,
+    "duplicate_event_count": 0,
+    "chain_break_count": 0,
+    "global_total_order_defined": false,
+    "authority_effect": "none",
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "Each defined event stream has one ordering rule and zero ordered events.",
+      "Per-stream sequence and hash chaining do not establish a total order across streams."
+    ]
+  },
+  "ordering_record_schema": {
+    "required_fields": ["stream_id", "ordering_method", "clock_model", "deduplication_rule"],
+    "ordering_method": "sequence_ordering_with_hash_chaining",
+    "clock_model": "event_occurrence_time_plus_integrity_record_time_no_global_total_order",
+    "deduplication_rule": "reject_duplicate_event_id_current_hash_or_stream_sequence",
+    "sequence_rule": "start_at_1_and_increment_by_1",
+    "hash_chain_rule": "sequence_1_previous_hash_null_then_match_prior_current_hash"
+  },
+  "event_ordering_rules": [
+    {"stream_id":"dbio://event-stream/digital-biosphere-architecture/v0.1","ordering_method":"sequence_ordering_with_hash_chaining","clock_model":"event_occurrence_time_plus_integrity_record_time_no_global_total_order","deduplication_rule":"reject_duplicate_event_id_current_hash_or_stream_sequence"},
+    {"stream_id":"dbio://event-stream/pop-persona-object-protocol/v0.1","ordering_method":"sequence_ordering_with_hash_chaining","clock_model":"event_occurrence_time_plus_integrity_record_time_no_global_total_order","deduplication_rule":"reject_duplicate_event_id_current_hash_or_stream_sequence"},
+    {"stream_id":"dbio://event-stream/aip-agent-intent-protocol/v0.1","ordering_method":"sequence_ordering_with_hash_chaining","clock_model":"event_occurrence_time_plus_integrity_record_time_no_global_total_order","deduplication_rule":"reject_duplicate_event_id_current_hash_or_stream_sequence"},
+    {"stream_id":"dbio://event-stream/token-governor-reference/v0.1","ordering_method":"sequence_ordering_with_hash_chaining","clock_model":"event_occurrence_time_plus_integrity_record_time_no_global_total_order","deduplication_rule":"reject_duplicate_event_id_current_hash_or_stream_sequence"},
+    {"stream_id":"dbio://event-stream/fdo-kernel-mvk/v0.1","ordering_method":"sequence_ordering_with_hash_chaining","clock_model":"event_occurrence_time_plus_integrity_record_time_no_global_total_order","deduplication_rule":"reject_duplicate_event_id_current_hash_or_stream_sequence"},
+    {"stream_id":"dbio://event-stream/agent-evidence-eeoap/v0.1","ordering_method":"sequence_ordering_with_hash_chaining","clock_model":"event_occurrence_time_plus_integrity_record_time_no_global_total_order","deduplication_rule":"reject_duplicate_event_id_current_hash_or_stream_sequence"},
+    {"stream_id":"dbio://event-stream/aro-audit-reference/v0.1","ordering_method":"sequence_ordering_with_hash_chaining","clock_model":"event_occurrence_time_plus_integrity_record_time_no_global_total_order","deduplication_rule":"reject_duplicate_event_id_current_hash_or_stream_sequence"},
+    {"stream_id":"dbio://event-stream/verifiable-agent-demo/v0.1","ordering_method":"sequence_ordering_with_hash_chaining","clock_model":"event_occurrence_time_plus_integrity_record_time_no_global_total_order","deduplication_rule":"reject_duplicate_event_id_current_hash_or_stream_sequence"},
+    {"stream_id":"dbio://event-stream/execution-integrity-core/v0.1","ordering_method":"sequence_ordering_with_hash_chaining","clock_model":"event_occurrence_time_plus_integrity_record_time_no_global_total_order","deduplication_rule":"reject_duplicate_event_id_current_hash_or_stream_sequence"},
+    {"stream_id":"dbio://event-stream/agent-evidence-receipt-layer/v0.1","ordering_method":"sequence_ordering_with_hash_chaining","clock_model":"event_occurrence_time_plus_integrity_record_time_no_global_total_order","deduplication_rule":"reject_duplicate_event_id_current_hash_or_stream_sequence"},
+    {"stream_id":"dbio://event-stream/saee-agent-readiness/v0.1","ordering_method":"sequence_ordering_with_hash_chaining","clock_model":"event_occurrence_time_plus_integrity_record_time_no_global_total_order","deduplication_rule":"reject_duplicate_event_id_current_hash_or_stream_sequence"},
+    {"stream_id":"dbio://event-stream/agent-governance-toolkit-external/v0.1","ordering_method":"sequence_ordering_with_hash_chaining","clock_model":"event_occurrence_time_plus_integrity_record_time_no_global_total_order","deduplication_rule":"reject_duplicate_event_id_current_hash_or_stream_sequence"},
+    {"stream_id":"dbio://event-stream/agent-governance-benchmark/v0.1","ordering_method":"sequence_ordering_with_hash_chaining","clock_model":"event_occurrence_time_plus_integrity_record_time_no_global_total_order","deduplication_rule":"reject_duplicate_event_id_current_hash_or_stream_sequence"},
+    {"stream_id":"dbio://event-stream/agent-receipt-validator-mcp/v0.1","ordering_method":"sequence_ordering_with_hash_chaining","clock_model":"event_occurrence_time_plus_integrity_record_time_no_global_total_order","deduplication_rule":"reject_duplicate_event_id_current_hash_or_stream_sequence"},
+    {"stream_id":"dbio://event-stream/agent-accountability-evidence-layer/v0.1","ordering_method":"sequence_ordering_with_hash_chaining","clock_model":"event_occurrence_time_plus_integrity_record_time_no_global_total_order","deduplication_rule":"reject_duplicate_event_id_current_hash_or_stream_sequence"},
+    {"stream_id":"dbio://event-stream/agent-object-protocol/v0.1","ordering_method":"sequence_ordering_with_hash_chaining","clock_model":"event_occurrence_time_plus_integrity_record_time_no_global_total_order","deduplication_rule":"reject_duplicate_event_id_current_hash_or_stream_sequence"},
+    {"stream_id":"dbio://event-stream/ecl-execution-compact-layer/v0.1","ordering_method":"sequence_ordering_with_hash_chaining","clock_model":"event_occurrence_time_plus_integrity_record_time_no_global_total_order","deduplication_rule":"reject_duplicate_event_id_current_hash_or_stream_sequence"},
+    {"stream_id":"dbio://event-stream/cellcaps/v0.1","ordering_method":"sequence_ordering_with_hash_chaining","clock_model":"event_occurrence_time_plus_integrity_record_time_no_global_total_order","deduplication_rule":"reject_duplicate_event_id_current_hash_or_stream_sequence"},
+    {"stream_id":"dbio://event-stream/pra-server/v0.1","ordering_method":"sequence_ordering_with_hash_chaining","clock_model":"event_occurrence_time_plus_integrity_record_time_no_global_total_order","deduplication_rule":"reject_duplicate_event_id_current_hash_or_stream_sequence"},
+    {"stream_id":"dbio://event-stream/standalone-agent-object-protocol-draft/v0.1","ordering_method":"sequence_ordering_with_hash_chaining","clock_model":"event_occurrence_time_plus_integrity_record_time_no_global_total_order","deduplication_rule":"reject_duplicate_event_id_current_hash_or_stream_sequence"},
+    {"stream_id":"dbio://event-stream/sovereign-agent-local-gate/v0.1","ordering_method":"sequence_ordering_with_hash_chaining","clock_model":"event_occurrence_time_plus_integrity_record_time_no_global_total_order","deduplication_rule":"reject_duplicate_event_id_current_hash_or_stream_sequence"},
+    {"stream_id":"dbio://event-stream/mcp-agent-ei-external/v0.1","ordering_method":"sequence_ordering_with_hash_chaining","clock_model":"event_occurrence_time_plus_integrity_record_time_no_global_total_order","deduplication_rule":"reject_duplicate_event_id_current_hash_or_stream_sequence"},
+    {"stream_id":"dbio://event-stream/autonomous-cell-protocol/v0.1","ordering_method":"sequence_ordering_with_hash_chaining","clock_model":"event_occurrence_time_plus_integrity_record_time_no_global_total_order","deduplication_rule":"reject_duplicate_event_id_current_hash_or_stream_sequence"},
+    {"stream_id":"dbio://event-stream/digital-biosphere-os/DBOS-EXP-0001/v0.1","ordering_method":"sequence_ordering_with_hash_chaining","clock_model":"event_occurrence_time_plus_integrity_record_time_no_global_total_order","deduplication_rule":"reject_duplicate_event_id_current_hash_or_stream_sequence"}
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "artifact_count": 5,
+  "artifacts": [
+    {
+      "digest": "sha256:52867a5e1e2cfd32f98eec4a59f3c05e9887166ba45fba43c10461fb8cd68929",
+      "path": "README.md",
+      "size": 26446
+    },
+    {
+      "digest": "sha256:a8c459e0345c15fae62074310e3d8f5adcbc55a68c325e7f728ce6053fcf6749",
+      "path": "reports/DBOS-EXP-0001-CURRENT_STATE_REPORT.md",
+      "size": 5617
+    },
+    {
+      "digest": "sha256:91f5d1e6842fa0a8e5abbdc19ed2ac4560f8bac93f6a04292d295c7211c7b1f5",
+      "path": "evidence/experiments/DBOS-EXP-0001/identity/subject-identity-evidence.json",
+      "size": 1385
+    },
+    {
+      "digest": "sha256:61a158347002b0dae542203f5260309ad8783fb8b898d14788a8eec887a5e3f9",
+      "path": "evidence/experiments/DBOS-EXP-0001/environment/environment-observation.json",
+      "size": 5178
+    },
+    {
+      "digest": "sha256:b1da5cea86fd68f9e84639f6af69eb3910e84879b374e23b0ddea134fa6c4cef",
+      "path": "evidence/experiments/DBOS-EXP-0001/environment/environment-observation.receipt.json",
+      "size": 198
+    }
+  ],
+  "authority_effect": "none",
+  "experiment_id": "DBOS-EXP-0001",
+  "external_repository_access": false,
+  "frozen_archive_modified": false,
+  "kind": "DBOSExperimentAuxiliaryInputManifest",
+  "mount_mode": "temporary_read_only_validation_input",
+  "schema_version": "0.1",
+  "sensitive_data_access": false,
+  "validator_override_count": 2,
+  "validator_overrides": [
+    {
+      "digest": "sha256:6e8cf110403ce35fc235254922ddbf49619c26e94d6f2d7905318a73450dd19d",
+      "path": "validation/capture_readiness_validator.py",
+      "reason": "relocation-safe successor for frozen absolute-root baseline check",
+      "size": 32834
+    },
+    {
+      "digest": "sha256:4d65e311e498bbb97a947c3761a4bfec61d891adaa49fbd87c03deafc227062a",
+      "path": "validation/environment_validator.py",
+      "reason": "relocation-safe successor for frozen absolute-root baseline check",
+      "size": 26657
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereExperimentReproducibilityRequirementRegistry",
+  "metadata": {
+    "title": "Experiment Reproducibility Requirements v0.1",
+    "status": "defined_requirement_taxonomy_only",
+    "constitution": "../constitution/experimental-protocol-constitution.yaml",
+    "generated_at": "2026-07-20T00:41:57+08:00",
+    "reproducibility_requirement_count": 5,
+    "satisfied_requirement_count": 0,
+    "verified_requirement_count": 0,
+    "automatic_reproducibility_count": 0,
+    "automatic_authority_effect": "none",
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "Five requirement definitions exist, but no experiment or requirement satisfaction record exists.",
+      "Requirement definition, declared material, or local structural validation cannot create a reproducibility result."
+    ]
+  },
+  "requirement_record_schema": {
+    "required_fields": ["requirement_id", "name", "description", "required_material", "validation_boundary", "authority_effect"],
+    "valid_requirement_ids": ["version_lock", "dependency_lock", "input_consistency", "environment_consistency", "execution_method"],
+    "satisfaction_boundary": "Satisfaction requires future experiment-scoped retained material, attributable results, evidence, and verification; taxonomy membership is insufficient."
+  },
+  "reproducibility_requirements": [
+    {
+      "requirement_id": "version_lock",
+      "name": "Version Lock",
+      "description": "Bind subject software, protocol, configuration, schemas, and tools to immutable version identities.",
+      "required_material": ["canonical subject identity", "source revision or immutable package identity", "protocol version", "schema versions", "configuration digest", "tool versions"],
+      "validation_boundary": "A version label without immutable source identity and digest does not satisfy version lock.",
+      "authority_effect": "none"
+    },
+    {
+      "requirement_id": "dependency_lock",
+      "name": "Dependency Lock",
+      "description": "Bind direct and transitive dependencies to versions, sources, artifact digests, platform resolution, and retained lock material.",
+      "required_material": ["direct dependency closure", "transitive dependency closure", "versions", "source locators", "artifact digests", "lock artifact", "platform resolution"],
+      "validation_boundary": "Dependency names and version strings alone do not satisfy dependency lock or authorize installation.",
+      "authority_effect": "none"
+    },
+    {
+      "requirement_id": "input_consistency",
+      "name": "Input Consistency",
+      "description": "Bind every experiment input to canonicalization rules, immutable snapshots, hashes, provenance, access boundaries, and retention state.",
+      "required_material": ["input specification", "canonicalization contract", "input snapshot references", "input hashes", "provenance", "retention and access limitations"],
+      "validation_boundary": "Matching hashes without retained canonical input material do not establish input availability or completeness.",
+      "authority_effect": "none"
+    },
+    {
+      "requirement_id": "environment_consistency",
+      "name": "Environment Consistency",
+      "description": "Bind the declared environment, platform, resource envelope, locale, time, variables, external services, and nondeterminism controls.",
+      "required_material": ["environment identity", "operating system and architecture", "runtime and toolchain versions", "resource envelope", "locale and clock", "environment variables without secrets", "external-service versions", "nondeterminism controls"],
+      "validation_boundary": "An environment name or defined registry record does not prove an active, complete, or equivalent environment.",
+      "authority_effect": "none"
+    },
+    {
+      "requirement_id": "execution_method",
+      "name": "Execution Method",
+      "description": "Preserve ordered steps, commands or tool calls, parameters, seeds, stop conditions, error handling, outputs, exit status, resource use, and evidence capture method.",
+      "required_material": ["ordered procedure", "exact method and parameters", "random seeds where applicable", "stop conditions", "error handling", "exit status", "resource record", "output snapshots", "evidence capture method"],
+      "validation_boundary": "A declared procedure is not an executed or reproduced method and cannot create a result.",
+      "authority_effect": "none"
+    }
+  ]
+}

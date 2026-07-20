@@ -1,0 +1,73 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereEcologicalResourceModelRegistry",
+  "metadata": {
+    "title": "Ecological Resource Models v0.1",
+    "status": "measurement_vocabulary_only",
+    "constitution": "../constitution/environment-constitution.yaml",
+    "generated_at": "2026-07-19T22:27:22+08:00",
+    "resource_model_count": 5,
+    "entity_binding_count": 0,
+    "non_null_limit_count": 0,
+    "resource_allocation_count": 0,
+    "permission_grant_count": 0,
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "A resource model defines how a future observation could be measured; it does not allocate, reserve, expose, or grant access to a resource.",
+      "A null limit means undefined, not unlimited."
+    ]
+  },
+  "resource_record_schema": {
+    "required_fields": [
+      "resource_id",
+      "resource_type",
+      "measurement",
+      "limit"
+    ],
+    "resource_id_format": "dbio://resource-model/<resource-type>/<version>",
+    "entity_binding_default": null,
+    "limit_default": null
+  },
+  "resource_models": [
+    {
+      "resource_id": "dbio://resource-model/token/v0.1",
+      "resource_type": "token",
+      "measurement": "input_token_count_and_output_token_count",
+      "limit": null,
+      "entity_binding": null,
+      "allocation_status": "not_allocated"
+    },
+    {
+      "resource_id": "dbio://resource-model/compute/v0.1",
+      "resource_type": "compute",
+      "measurement": "cpu_or_accelerator_time_seconds_and_memory_byte_seconds",
+      "limit": null,
+      "entity_binding": null,
+      "allocation_status": "not_allocated"
+    },
+    {
+      "resource_id": "dbio://resource-model/storage/v0.1",
+      "resource_type": "storage",
+      "measurement": "stored_bytes_and_retention_seconds",
+      "limit": null,
+      "entity_binding": null,
+      "allocation_status": "not_allocated"
+    },
+    {
+      "resource_id": "dbio://resource-model/data-access/v0.1",
+      "resource_type": "data_access",
+      "measurement": "authorized_access_event_count_and_transferred_bytes",
+      "limit": null,
+      "entity_binding": null,
+      "allocation_status": "not_allocated"
+    },
+    {
+      "resource_id": "dbio://resource-model/human-attention/v0.1",
+      "resource_type": "human_attention",
+      "measurement": "review_approval_supervision_or_intervention_minutes",
+      "limit": null,
+      "entity_binding": null,
+      "allocation_status": "not_allocated"
+    }
+  ]
+}

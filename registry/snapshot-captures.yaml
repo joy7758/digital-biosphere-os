@@ -1,0 +1,59 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereExperimentSnapshotCaptureRegistry",
+  "metadata": {
+    "title": "Experiment Snapshot Captures v0.1",
+    "status": "one_validated_snapshot_capture",
+    "constitution": "../constitution/snapshot-capture-constitution.yaml",
+    "experiment_source_of_truth": "experiments.yaml",
+    "snapshot_source_of_truth": "experiment-snapshots.yaml",
+    "source_type_source_of_truth": "snapshot-sources.yaml",
+    "digest_source_of_truth": "artifact-digests.yaml",
+    "evidence_source_of_truth": "capture-evidence.yaml",
+    "generated_at": "2026-07-20T01:44:35+08:00",
+    "capture_count": 1,
+    "capture_status_distribution": {"pending": 0, "captured": 0, "validated": 1, "partial": 0, "invalid": 0, "revoked": 0, "superseded": 0},
+    "source_type_usage_distribution": {"filesystem": 1, "git": 0, "artifact_registry": 0, "external_storage": 0},
+    "captured_material_count": 164,
+    "artifact_digest_count": 3,
+    "capture_evidence_count": 1,
+    "execution_authority_count": 0,
+    "event_created_count": 0,
+    "runtime_created_count": 0,
+    "agent_created_count": 0,
+    "organism_created_count": 0,
+    "capability_effect_count": 0,
+    "permission_grant_count": 0,
+    "c_e_v_level_change_count": 0,
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "The sole record is a pending filesystem capture request; collector=null and captured_at=null mean no capture has occurred.",
+      "The requested source is limited to digital-biosphere-os and grants no access to member repositories or external storage."
+    ]
+  },
+  "snapshot_capture_schema": {
+    "required_fields": ["capture_id", "experiment_id", "snapshot_id", "collector", "source_type", "captured_at", "status"],
+    "additional_governance_fields": ["source_ref", "artifact_digest_refs", "evidence_refs", "limitations", "supersedes", "revocation_ref", "authority_effect"],
+    "valid_statuses": ["pending", "captured", "validated", "partial", "invalid", "revoked", "superseded"],
+    "default_status": "pending",
+    "captured_boundary": "captured requires attributable collector, timezone-aware captured_at, at least one valid digest, capture evidence, and accounted-for scope."
+  },
+  "snapshot_captures": [
+    {
+      "capture_id": "DBOS-EXP-0001-CAPTURE-0001",
+      "experiment_id": "DBOS-EXP-0001",
+      "snapshot_id": "DBOS-EXP-0001-SNAPSHOT-0001",
+      "collector": "dbio:capture-collector:automated:dbos-snapshot:v0.1",
+      "source_type": "filesystem",
+      "captured_at": "2026-07-20T10:20:17+08:00",
+      "status": "validated",
+      "source_ref": "/Users/zhangbin/GitHub/digital-biosphere-os",
+      "artifact_digest_refs": ["DBOS-EXP-0001-ARTIFACT-DIGEST-ARCHIVE-0001", "DBOS-EXP-0001-ARTIFACT-DIGEST-SNAPSHOT-MANIFEST-0001", "DBOS-EXP-0001-ARTIFACT-DIGEST-VALIDATOR-MANIFEST-0001"],
+      "evidence_refs": ["DBOS-EXP-0001-CAPTURE-EVIDENCE-0001"],
+      "limitations": ["canonicalized local DBOS input roots only", "member repositories and evidence output directory excluded", "local automated capture is not independent verification"],
+      "supersedes": null,
+      "revocation_ref": null,
+      "authority_effect": "none"
+    }
+  ]
+}

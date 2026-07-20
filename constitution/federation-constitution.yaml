@@ -1,0 +1,132 @@
+schema_version: "0.1"
+kind: "DigitalBiosphereFederationConstitution"
+metadata:
+  title: "Digital Biosphere Federation Constitution v0.1"
+  chinese_title: "数字生物圈联邦宪法 v0.1"
+  status: "proposed_member_federation_baseline"
+  parent_constitution: "constitution.yaml"
+  ecological_parent: "saee-constitution.yaml"
+  governance_archetype_constitution: "governance-archetype-constitution.yaml"
+  authority: "declarative_registry_and_validation_only"
+  effective_scope:
+    - "/Users/zhangbin/GitHub/digital-biosphere-os"
+  adopted_at: "2026-07-19T22:49:34+08:00"
+  non_claims:
+    - "This constitution does not merge, move, fork, vendor, rewrite, or take ownership of any member repository."
+    - "A proposed member is not registered, verified, adopted, interoperable, compatible, trusted, or authorized."
+    - "Central manifest placeholders are not project-local manifest adoption evidence."
+    - "Dependency and role mappings do not create capability, permission, Agent, runtime, Candidate Organism, Digital Organism, or C/E/V promotion."
+    - "This constitution does not modify an external project or its code, version, release, schema, protocol, governance, or history."
+
+federation_principle:
+  definition: "Multiple independently identified digital entities may participate in a governed ecological alliance through explicit membership, shared constitutional references, evidence-bound relationships, and additive evolution records."
+  source_of_truth:
+    members: "../registry/federation-members.yaml"
+    manifests: "../registry/project-manifests.yaml"
+    dependency_graph: "../registry/dependency-graph.yaml"
+    federation_map: "../registry/federation-map.yaml"
+  rules:
+    - "Federation membership is an attributable governance relationship, not a new entity identity or ownership transfer."
+    - "Every current entity starts as proposed; registration and verification require future explicit evidence and review."
+    - "Discovery, reference, shared authorship, path proximity, repository naming, or inclusion in a diagram cannot automatically register a member."
+    - "Federation Member != Agent != Runtime != Organism."
+
+independence_principle:
+  invariant: "Repository != Federation Member Ownership"
+  member_rights:
+    independent_code: "Member source remains in its existing repository unless that repository separately authorizes change."
+    independent_version: "Package, schema, protocol, repository, release, DOI, and checkout version axes remain distinct and member-controlled."
+    independent_evolution: "Member history, branch, release, deprecation, succession, and retirement remain independent and append-only."
+  constraints:
+    - "The federation cannot rewrite a canonical_id, entity_id, repository history, release, tag, DOI, license, owner, or project-local constitution."
+    - "One repository cannot absorb another member identity through a federation manifest or dependency edge."
+    - "Mirror, worktree, staging, vendor, generated, and temporary paths cannot become members without separate canonical identity evidence."
+    - "Member withdrawal or retirement preserves historical identity, manifests, relations, evidence, and evolution records."
+
+shared_constitution_principle:
+  required_reference: "constitution/constitution.yaml"
+  inheritance_model: "reference_and_explicit_adoption"
+  rules:
+    - "Every proposed member record names the Digital Biosphere Constitution as the offered shared governance reference."
+    - "A member becomes registered or verified only after attributable project-local or owner-approved adoption evidence exists."
+    - "Federation inheritance cannot override stricter project-local law or existing Identity, Capability, Evidence, Verification, permission, history, public/private, or release boundaries."
+    - "Constitution reference is not permission, ownership, certification, standards approval, or runtime enforcement."
+
+interoperability_principle:
+  rules_registry: "../registry/interoperability-rules.yaml"
+  connection_surfaces:
+    manifest: "Declares identity, role, constitution reference, evidence references, dependencies, and evolution tracking."
+    protocol: "Defines a versioned contract without controlling an implementing service identity."
+    evidence: "Supports bounded relationship and interoperability claims without automatic compatibility promotion."
+  rules:
+    - "Members communicate governance context through manifests and stable entity identifiers."
+    - "Cross-project relations must name source, target, relation type, evidence source, status, and governance effect."
+    - "A references edge proves documented awareness only; it does not prove dependency, implementation, compatibility, or successful execution."
+    - "An implements edge requires explicit implementation evidence but still does not prove conformance or verification."
+    - "Verified interoperability requires future version-bound inputs, outputs, schemas, environment, execution evidence, limitations, and independent review."
+
+non_merge_principle:
+  prohibited:
+    - "automatic repository consolidation"
+    - "automatic canonical identity merge"
+    - "automatic ownership or version inheritance"
+    - "automatic capability or permission inheritance"
+    - "automatic dependency inference from directories, names, remotes, authors, or co-location"
+    - "automatic constitution adoption from a central placeholder manifest"
+  invariant: "Federation != Monorepo != Ownership Transfer != Identity Merge"
+
+governance_archetype_relationship:
+  constitution_ref: "governance-archetype-constitution.yaml"
+  described_archetype: "federation"
+  exclusive_governance_mode: false
+  binding_effect: "none"
+  authority_effect: "none"
+  statement: "Federation is one available governance archetype for distributed coordination; it is not the only valid governance mode and this constitution does not bind any entity to it automatically."
+  alternative_archetypes:
+    - "hierarchy"
+    - "ecology"
+  constraints:
+    - "Federation membership does not create a governance-archetype binding."
+    - "A future governance choice requires a separate evidence-backed binding record."
+    - "A future archetype change requires a verified additive transition record and preserves identity continuity."
+    - "Archetype selection cannot grant capability, permission, trust, runtime authority, organism status, or C/E/V promotion."
+
+membership_lifecycle:
+  states:
+    proposed: "Central evidence identifies a possible member, but the project has not completed federation adoption."
+    registered: "Identity and project-local manifest adoption have been explicitly reviewed and recorded."
+    verified: "Membership, manifest integrity, constitutional reference, and bounded interoperability evidence have been independently verified."
+  transitions:
+    - "proposed -> registered"
+    - "registered -> verified"
+  fail_closed_rules:
+    - "Missing adoption evidence, manifest, owner authority, or review keeps the member proposed."
+    - "No lifecycle state grants capability, permission, trust, runtime authority, or organism status."
+    - "Suspension, withdrawal, revocation, and retirement are future additive records and never delete history."
+
+cross_project_change_governance:
+  requirements:
+    - "Name every target repository and canonical entity."
+    - "Declare allowed operations, prohibited operations, compatibility impact, rollback, evidence, and approval authority."
+    - "Respect every target repository's AGENTS.md, local constitution, privacy, security, licensing, branch, release, and human-gate rules."
+    - "Append a federation evolution record before claiming a material cross-project change complete."
+  boundary: "A federation plan is not authorization to write, commit, push, merge, release, publish, deploy, or contact an external party."
+
+current_baseline:
+  entity_count: 23
+  proposed_member_count: 23
+  registered_member_count: 0
+  verified_member_count: 0
+  central_manifest_placeholder_count: 23
+  project_local_manifest_adoption_count: 0
+  dependency_graph_node_count: 23
+  evidence_bound_relationship_count: 29
+  governance_archetype_binding_count: 0
+  executed_governance_transition_count: 0
+  new_agent_count: 0
+  runtime_instance_count: 0
+  organism_candidate_count: 0
+  digital_organism_count: 0
+  capability_count: 0
+  permission_grant_count: 0
+  c_e_v_level_change_count: 0

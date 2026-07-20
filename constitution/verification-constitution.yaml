@@ -1,0 +1,153 @@
+schema_version: "0.1"
+kind: "DigitalBiosphereVerificationConstitution"
+metadata:
+  title: "Digital Biosphere Verification Constitution v0.1"
+  chinese_title: "数字主体验证宪法 v0.1"
+  status: "local_verification_governance_baseline"
+  verification_network_constitution: "verification-network-constitution.yaml"
+  effective_scope:
+    - "/Users/zhangbin/GitHub/digital-biosphere-os"
+  authority: "declarative_and_validation_only"
+  adopted_at: "2026-07-19T20:28:44+08:00"
+  non_claims:
+    - "This constitution does not create an Agent."
+    - "A verifier registration does not create legal, certification, regulatory, deployment, or production authority."
+    - "A verification record does not approve, assign, permission, execute, govern, or autonomize a capability."
+    - "Local structural validation is not independent verification."
+
+verifier_definition:
+  verifier: "An attributable human, organization, service, or automated process with an explicit method, bounded scope, trust level, evidence requirement, lifecycle, and authority boundary."
+  source_of_truth: "../registry/verifiers.yaml"
+  verifier_type_source_of_truth: "../registry/verifier-types.yaml"
+  valid_types:
+    - "automated"
+    - "maintainer"
+    - "external"
+    - "experimental"
+  identity_boundary:
+    - "Verifier identity is separate from digital entity identity."
+    - "A verifier is not an Agent unless registry/entities.yaml separately establishes runtime-principal identity."
+    - "A validator script may be registered as an automated verifier only within the structural checks it actually performs."
+    - "An external verifier must provide inspectable identity evidence; external type alone does not establish independence."
+    - "A verifier record cannot infer ownership, permission, independence, or certification authority."
+
+verification_authority:
+  definition: "Authority states which verification decisions a verifier may issue, for which subjects, evidence, methods, environments, and validity periods."
+  requirements:
+    - "Authority must be explicit, bounded, attributable, evidence-backed, and revocable."
+    - "A method can reject malformed records without authority to approve capability truth."
+    - "A pass decision means only that the recorded method passed within its declared scope."
+    - "Verification authority does not inherit through entity, repository, dependency, parent, child, successor, package, protocol, service, or verifier relationships."
+  local_structural_suite_boundary:
+    allowed:
+      - "registry schema and required-field consistency"
+      - "identifier uniqueness and reference resolution"
+      - "identity, capability, claim, evidence, verification-level, and permission-separation invariants"
+      - "fail-closed rejection of structurally invalid records"
+    prohibited:
+      - "capability approval or assignment"
+      - "permission grant"
+      - "reviewer or independent-verifier impersonation"
+      - "external project certification"
+      - "runtime, deployment, production, safety, compliance, adoption, or customer-readiness conclusion"
+
+verification_independence:
+  definition: "Independence is an evidence-backed separation between verifier and subject sufficient for the claimed method and decision."
+  requirements:
+    - "V1 Self Check is explicitly non-independent."
+    - "V2 Automated Validation may be local and does not imply independence."
+    - "V3 Reproducible Verification requires preserved inputs, method, environment, outputs, and reproduction instructions."
+    - "V4 Independent Verification requires a separately attributable verifier, independence basis, conflict-of-interest disclosure, reproducible method, decision, and limitations."
+    - "V5 Continuous Verification requires V4 plus repeated observation over a defined window, coverage, drift, incident, expiry, and revocation controls."
+  invalid_independence_claims:
+    - "The subject or converter is presented as an independent verifier."
+    - "An automated local validator is presented as an independent reviewer."
+    - "Repository namespace, process isolation, a separate terminal, or a new execution run is treated as organizational independence."
+    - "Conflict-of-interest status, method, scope, or limitations are absent."
+
+verification_levels:
+  source_of_truth: "../registry/verification-level.yaml"
+  ordered_levels:
+    - "V0 Unknown"
+    - "V1 Self Check"
+    - "V2 Automated Validation"
+    - "V3 Reproducible Verification"
+    - "V4 Independent Verification"
+    - "V5 Continuous Verification"
+  evidence_support_ceiling:
+    E0: "V0"
+    E1: "V1"
+    E2: "V2"
+    E3: "V3"
+    E4: "V4"
+    E5: "V5"
+  invariants:
+    - "Verification levels are sequential and cannot be skipped."
+    - "Evidence support is a ceiling, not an automatic promotion."
+    - "Verification level != evidence level != capability maturity."
+    - "No V level grants permission or capability assignment."
+
+verification_lifecycle:
+  verifier_states:
+    proposed: "The verifier identity and authority boundary await activation."
+    active: "The verifier may operate only within its recorded scope and method."
+    suspended: "New decisions are disabled while historical records remain addressable."
+    revoked: "Authority has been withdrawn; prior records remain preserved and subject to reassessment."
+    retired: "The verifier no longer operates; identity and history remain preserved."
+  record_statuses:
+    pending: "The verification request exists but no verification decision has been made."
+    in_progress: "The recorded verifier has begun the declared method; no final decision exists."
+    completed: "A decision, timestamp, method evidence, scope, and limitations are recorded."
+    invalid: "The record is malformed, unsupported, contradicted, or outside authority."
+    revoked: "Reliance on a prior decision has been withdrawn without deleting history."
+  decisions:
+    - "pending"
+    - "pass"
+    - "fail"
+    - "inconclusive"
+    - "revoked"
+  transition_rules:
+    - "Pending records use verification_level=V0 and timestamp=null in the v0.1 baseline."
+    - "A completed decision requires an attributable verifier, ISO 8601 timestamp, evidence, method output, scope, and limitations."
+    - "Pass does not change claim status, capability maturity, evidence level, assignment, permission, deployment, or release state automatically."
+    - "Invalid, suspended, revoked, or retired verifier authority cannot issue a new pass decision."
+
+revocation:
+  effect: "Revocation removes current reliance on verifier authority or a verification decision while retaining every historical identity, input, evidence reference, method, output, decision, timestamp, and limitation."
+  triggers:
+    - "Verifier authority, identity, independence, method, implementation, or trust evidence is invalidated."
+    - "Evidence is missing, revoked, contradicted, stale, out of scope, or bound to a different version or environment."
+    - "A conflict of interest, method defect, reproduction failure, drift, incident, or monitoring gap changes reliance."
+  requirements:
+    - "Record revoking authority, reason, timestamp, affected scope, prior decision, and remediation or successor when known."
+    - "Preserve the original verifier and verification records append-only."
+    - "Recalculate supported V and C ceilings and fail closed."
+    - "Revocation never deletes historical evidence."
+
+current_baseline:
+  verifier_type_definition_count: 4
+  verifier_count: 1
+  verifier_type_distribution:
+    automated: 1
+    maintainer: 0
+    external: 0
+    experimental: 0
+  verifier_trust_distribution:
+    local_automated: 1
+  verification_record_count: 78
+  verification_level_distribution:
+    V0: 78
+    V1: 0
+    V2: 0
+    V3: 0
+    V4: 0
+    V5: 0
+  pending_count: 78
+  verification_run_count: 78
+  pending_verification_run_count: 78
+  trust_graph_node_count: 257
+  pass_count: 0
+  approved_capability_count: 0
+  assigned_capability_count: 0
+  permission_grant_count: 0
+  agent_created_count: 0

@@ -1,0 +1,8 @@
+{
+  "execution_id": "dbio:runner-execution:dbos-self-validation:DBOS-EXP-0001:0001",
+  "experiment_id": "DBOS-EXP-0001",
+  "status": "failed",
+  "stop_reason": "validator_failure_or_incomplete_suite",
+  "timestamp": "2026-07-20T10:36:49+08:00",
+  "validator_results_ref": "evidence/experiments/DBOS-EXP-0001/run-0001/validator-results.json"
+}

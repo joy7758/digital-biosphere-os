@@ -1,0 +1,54 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereAutomatedRunnerEnvironmentRegistry",
+  "metadata": {
+    "title": "Automated Runner Environments v0.1",
+    "status": "one_frozen_qualified_environment",
+    "constitution": "../constitution/automated-runner-constitution.yaml",
+    "environment_source_of_truth": "environments.yaml",
+    "environment_lock_source_of_truth": "environment-locks.yaml",
+    "environment_identity_source_of_truth": "environment-identities.yaml",
+    "environment_qualification_source_of_truth": "environment-qualifications.yaml",
+    "generated_at": "2026-07-20T08:50:38+08:00",
+    "environment_count": 1,
+    "environment_status_distribution": {"defined": 0, "qualified": 0, "frozen": 1, "invalid": 0, "revoked": 0, "superseded": 0},
+    "qualified_environment_count": 1,
+    "frozen_environment_count": 1,
+    "runtime_created_count": 0,
+    "execution_authority_count": 0,
+    "permission_grant_count": 0,
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "The sole record is an unqualified environment slot with null OS and Python versions and no dependency material.",
+      "status=defined means only that the slot and references exist; it does not mean active, frozen, reproducible, authorized, or executable.",
+      "An environment definition cannot create a Runtime, Runner, execution, capability, permission, Event, Snapshot, or evidence."
+    ]
+  },
+  "runner_environment_schema": {
+    "required_fields": ["environment_id", "os", "python_version", "dependencies", "status"],
+    "additional_governance_fields": ["source_environment_ref", "environment_lock_ref", "qualification_reference", "configuration_digest", "locked_at", "evidence_refs", "qualification_status", "runtime_status", "authority_effect"],
+    "environment_id_format": "dbio://runner-environment/<experiment>/<name>/<version>",
+    "valid_statuses": ["defined", "qualified", "frozen", "invalid", "revoked", "superseded"],
+    "default_status": "defined",
+    "qualification_boundary": "qualified or frozen requires explicit OS and Python versions, dependency identities and digests, configuration digest, environment-lock evidence, and attributable timestamp.",
+    "runtime_boundary": "Runner Environment != Runtime Instance."
+  },
+  "runner_environments": [
+    {
+      "environment_id": "dbio://runner-environment/dbos-exp-0001/local-governance-workspace/v0.1",
+      "os": "macOS 26.5.2 (25F84; Darwin 25.5.0)",
+      "python_version": "CPython 3.14.5",
+      "dependencies": [{"name": "python_standard_library", "version": "3.14.5", "digest": "sha256:9508f8fe16370ac86859476c13f350ed995b73feac430b5e8ae88a4c8c1191e2"}],
+      "status": "frozen",
+      "source_environment_ref": "dbio://environment/local-governance-workspace/v0.1",
+      "environment_lock_ref": "DBOS-EXP-0001-ENV-LOCK-0001",
+      "qualification_reference": "DBOS-EXP-0001-RUNNER-ENV-QUAL-0001",
+      "configuration_digest": "sha256:7276c57d41cc26c7f770503d14a91a2236e477cc76e29b5ea82e5e2f693a446c",
+      "locked_at": "2026-07-20T10:07:49+08:00",
+      "evidence_refs": ["DBOS-EXP-0001-ENV-COLLECTOR-EVIDENCE-0001", "DBOS-EXP-0001-ENV-COLLECTION-EVIDENCE-0001"],
+      "qualification_status": "verified_local_structural",
+      "runtime_status": "not_a_runtime",
+      "authority_effect": "none"
+    }
+  ]
+}

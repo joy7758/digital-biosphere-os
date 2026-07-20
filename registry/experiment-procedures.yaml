@@ -1,0 +1,139 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereExperimentProcedureRegistry",
+  "metadata": {
+    "title": "Controlled Experiment Procedures v0.1",
+    "status": "genesis_procedure_completed_on_second_attempt",
+    "constitution": "../constitution/experimental-protocol-constitution.yaml",
+    "experiment_source_of_truth": "experiments.yaml",
+    "environment_source_of_truth": "environments.yaml",
+    "generated_at": "2026-07-20T00:54:29+08:00",
+    "procedure_count": 1,
+    "procedure_step_count": 8,
+    "procedure_status_distribution": {"procedure_defined": 0, "authorized": 0, "executing": 0, "completed": 1, "invalid": 0, "revoked": 0},
+    "executed_procedure_count": 1,
+    "execution_result_count": 2,
+    "event_created_count": 1,
+    "runtime_created_count": 0,
+    "agent_created_count": 0,
+    "permission_grant_count": 0,
+    "capability_effect_count": 0,
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "One eight-step procedure is defined for DBOS-EXP-0001, but no step has executed.",
+      "Procedure steps are declarative specifications and cannot execute tools, commands, models, writes, network calls, or external actions."
+    ]
+  },
+  "procedure_record_schema": {
+    "required_fields": ["procedure_id", "experiment_id", "steps", "environment", "inputs", "expected_outputs", "status"],
+    "procedure_id_format": "dbio:experiment-procedure:<experiment-id>:<sequence>",
+    "step_required_fields": ["step_id", "action", "input_refs", "expected_output_refs", "side_effect", "authority_required", "stop_conditions", "evidence_requirement"],
+    "environment_boundary": "environment references an existing declared environment and does not activate it or create a runtime.",
+    "output_boundary": "Expected outputs are specifications, not fabricated outputs, observations, evidence, or results.",
+    "valid_statuses": ["procedure_defined", "authorized", "executing", "completed", "invalid", "revoked"],
+    "default_status": "procedure_defined"
+  },
+  "experiment_procedures": [
+    {
+      "procedure_id": "dbio:experiment-procedure:DBOS-EXP-0001:1",
+      "experiment_id": "DBOS-EXP-0001",
+      "steps": [
+        {
+          "step_id": "DBOS-EXP-0001-STEP-01",
+          "action": "Load DBOS constitution",
+          "chinese_action": "加载 DBOS 总章程",
+          "input_refs": ["DBOS-EXP-0001-IN-0001"],
+          "expected_output_refs": [],
+          "side_effect": "none",
+          "authority_required": "separate_authorization",
+          "stop_conditions": ["DBOS-EXP-0001-STOP-FAIL-0002"],
+          "evidence_requirement": "future attributable constitution load record"
+        },
+        {
+          "step_id": "DBOS-EXP-0001-STEP-02",
+          "action": "Run validators",
+          "chinese_action": "运行全部验证器",
+          "input_refs": ["DBOS-EXP-0001-IN-0002", "DBOS-EXP-0001-IN-0003"],
+          "expected_output_refs": ["DBOS-EXP-0001-OUT-0005"],
+          "side_effect": "future_local_computation_only",
+          "authority_required": "separate_authorization",
+          "stop_conditions": ["DBOS-EXP-0001-STOP-SUCCESS-0001", "DBOS-EXP-0001-STOP-FAIL-0001", "DBOS-EXP-0001-STOP-FAIL-0002", "DBOS-EXP-0001-STOP-FAIL-0003"],
+          "evidence_requirement": "future complete validator commands, environment, stdout, stderr, and exit statuses"
+        },
+        {
+          "step_id": "DBOS-EXP-0001-STEP-03",
+          "action": "Collect validation outputs",
+          "chinese_action": "收集验证输出",
+          "input_refs": ["DBOS-EXP-0001-IN-0002", "DBOS-EXP-0001-IN-0003"],
+          "expected_output_refs": ["DBOS-EXP-0001-OUT-0005"],
+          "side_effect": "future_evidence_artifact_write_if_authorized",
+          "authority_required": "separate_authorization",
+          "stop_conditions": ["DBOS-EXP-0001-STOP-FAIL-0002", "DBOS-EXP-0001-STOP-FAIL-0003"],
+          "evidence_requirement": "future immutable validation-output bundle with digests and limitations"
+        },
+        {
+          "step_id": "DBOS-EXP-0001-STEP-04",
+          "action": "Create execution context",
+          "chinese_action": "创建执行上下文记录",
+          "input_refs": ["DBOS-EXP-0001-IN-0001", "DBOS-EXP-0001-IN-0002", "DBOS-EXP-0001-IN-0003"],
+          "expected_output_refs": ["DBOS-EXP-0001-OUT-0001"],
+          "side_effect": "future_governed_registry_write_if_authorized",
+          "authority_required": "separate_authorization",
+          "stop_conditions": ["DBOS-EXP-0001-STOP-FAIL-0002", "DBOS-EXP-0001-STOP-FAIL-0003"],
+          "evidence_requirement": "future context identity, environment binding, configuration digest, snapshots, and dependencies"
+        },
+        {
+          "step_id": "DBOS-EXP-0001-STEP-05",
+          "action": "Generate event record",
+          "chinese_action": "生成事件记录",
+          "input_refs": ["DBOS-EXP-0001-OUT-0001", "DBOS-EXP-0001-OUT-0005"],
+          "expected_output_refs": ["DBOS-EXP-0001-OUT-0002"],
+          "side_effect": "future_governed_registry_write_if_authorized",
+          "authority_required": "separate_authorization",
+          "stop_conditions": ["DBOS-EXP-0001-STOP-FAIL-0002", "DBOS-EXP-0001-STOP-FAIL-0003"],
+          "evidence_requirement": "future attributable event source, timestamp, references, and evidence linkage"
+        },
+        {
+          "step_id": "DBOS-EXP-0001-STEP-06",
+          "action": "Generate integrity record",
+          "chinese_action": "生成完整性记录",
+          "input_refs": ["DBOS-EXP-0001-OUT-0002", "DBOS-EXP-0001-OUT-0005"],
+          "expected_output_refs": ["DBOS-EXP-0001-OUT-0003"],
+          "side_effect": "future_governed_registry_write_if_authorized",
+          "authority_required": "separate_authorization",
+          "stop_conditions": ["DBOS-EXP-0001-STOP-FAIL-0001", "DBOS-EXP-0001-STOP-FAIL-0002"],
+          "evidence_requirement": "future hash, ordering, provenance, timestamp, source, and witness check results"
+        },
+        {
+          "step_id": "DBOS-EXP-0001-STEP-07",
+          "action": "Generate attestation record",
+          "chinese_action": "生成证明记录",
+          "input_refs": ["DBOS-EXP-0001-OUT-0002", "DBOS-EXP-0001-OUT-0003", "DBOS-EXP-0001-OUT-0005"],
+          "expected_output_refs": ["DBOS-EXP-0001-OUT-0004"],
+          "side_effect": "future_governed_registry_write_if_authorized",
+          "authority_required": "separate_authorization",
+          "stop_conditions": ["DBOS-EXP-0001-STOP-FAIL-0001", "DBOS-EXP-0001-STOP-FAIL-0002"],
+          "evidence_requirement": "future producer identity, bounded claim, method, signature reference, limitations, and trust-anchor evidence"
+        },
+        {
+          "step_id": "DBOS-EXP-0001-STEP-08",
+          "action": "Verify evidence",
+          "chinese_action": "验证证据",
+          "input_refs": ["DBOS-EXP-0001-OUT-0003", "DBOS-EXP-0001-OUT-0004", "DBOS-EXP-0001-OUT-0005"],
+          "expected_output_refs": ["DBOS-EXP-0001-OUT-0006"],
+          "side_effect": "future_governed_registry_write_if_authorized",
+          "authority_required": "separate_authorization",
+          "stop_conditions": ["DBOS-EXP-0001-STOP-FAIL-0001", "DBOS-EXP-0001-STOP-FAIL-0002", "DBOS-EXP-0001-STOP-FAIL-0003"],
+          "evidence_requirement": "future bounded verification method, result, scope, limitations, and non-promotion statement"
+        }
+      ],
+      "environment": "dbio://environment/local-governance-workspace/v0.1",
+      "inputs": ["DBOS-EXP-0001-IN-0001", "DBOS-EXP-0001-IN-0002", "DBOS-EXP-0001-IN-0003"],
+      "expected_outputs": ["DBOS-EXP-0001-OUT-0001", "DBOS-EXP-0001-OUT-0002", "DBOS-EXP-0001-OUT-0003", "DBOS-EXP-0001-OUT-0004", "DBOS-EXP-0001-OUT-0005", "DBOS-EXP-0001-OUT-0006"],
+      "status": "completed",
+      "completed_execution_ref": "dbio:runner-execution:dbos-self-validation:DBOS-EXP-0001:0002",
+      "failed_execution_refs": ["dbio:runner-execution:dbos-self-validation:DBOS-EXP-0001:0001"],
+      "completion_evidence_ref": "evidence/experiments/DBOS-EXP-0001/run-0002/experiment-result.json"
+    }
+  ]
+}

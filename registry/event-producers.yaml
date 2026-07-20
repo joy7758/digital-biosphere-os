@@ -1,0 +1,55 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereEventProducerRegistry",
+  "metadata": {
+    "title": "Event Producers v0.1",
+    "status": "one_retired_bounded_automated_producer",
+    "constitution": "../constitution/event-attestation-constitution.yaml",
+    "entity_source_of_truth": "entities.yaml",
+    "runtime_source_of_truth": "runtime-instances.yaml",
+    "verifier_source_of_truth": "verifiers.yaml",
+    "generated_at": "2026-07-20T00:09:24+08:00",
+    "producer_type_count": 4,
+    "producer_count": 1,
+    "producer_type_distribution": {"runtime": 0, "service": 0, "human": 0, "automated": 1},
+    "capability_assignment_count": 0,
+    "permission_grant_count": 0,
+    "agent_created_count": 0,
+    "runtime_created_count": 0,
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "Producer types are taxonomy definitions and do not instantiate a producer, runtime, service, human identity, automated process, or Agent.",
+      "capability_scope describes an attestation boundary and never assigns capability or grants permission."
+    ]
+  },
+  "producer_record_schema": {
+    "required_fields": ["producer_id", "producer_type", "identity_ref", "capability_scope", "status"],
+    "producer_id_format": "dbio://event-producer/<type>/<name>/v<version>",
+    "valid_producer_types": ["runtime", "service", "human", "automated"],
+    "valid_statuses": ["proposed", "active", "suspended", "revoked", "retired"],
+    "default_status": "proposed",
+    "identity_boundary": "identity_ref must resolve to an identity source appropriate to producer_type before any attestation can rely on it.",
+    "capability_boundary": "capability_scope is an explicit bounded list of already-confirmed capability references; it is not an assignment, permission, or autonomy claim."
+  },
+  "producer_type_definitions": [
+    {"producer_type":"runtime","identity_source":"runtime-instances.yaml","definition":"An existing registered runtime instance; type definition alone creates no runtime.","automatic_authority_effect":"none"},
+    {"producer_type":"service","identity_source":"entities.yaml service entities","definition":"An existing canonical service entity; service identity alone proves no live execution.","automatic_authority_effect":"none"},
+    {"producer_type":"human","identity_source":"separately evidenced human-linked verifier identity","definition":"An attributable human identity represented through a governed identity record; a display name is insufficient.","automatic_authority_effect":"none"},
+    {"producer_type":"automated","identity_source":"entities.yaml or verifiers.yaml","definition":"An identified automated entity or verifier constrained by declared scope and method.","automatic_authority_effect":"none"}
+  ],
+  "event_producers": [
+    {
+      "producer_id": "dbio:event-producer:dbos-self-validation-runner:v0.1",
+      "producer_type": "automated",
+      "identity_ref": "dbio:runner:automated:dbos-self-validation:v0.1",
+      "capability_scope": "authorized DBOS-EXP-0001 evidence output only; descriptive boundary, not assigned capability",
+      "status": "retired",
+      "execution_ref": "dbio:runner-execution:dbos-self-validation:DBOS-EXP-0001:0002",
+      "evidence_ref": "evidence/experiments/DBOS-EXP-0001/run-0002/event-producer.json#sha256:5f7a368c6bcb09b5ecb041a6391793b6f8e03baac71a2b1c664f71cbe7149d10",
+      "agent_status": "not_an_agent",
+      "runtime_status": "not_a_runtime",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereExecutorIdentityVerificationRegistry",
+  "metadata": {
+    "title": "Executor Identity Verifications v0.1",
+    "status": "one_verified_local_automated_identity_result",
+    "constitution": "../constitution/executor-identity-constitution.yaml",
+    "executor_identity_source_of_truth": "executor-identities.yaml",
+    "verifier_source_of_truth": "verifiers.yaml",
+    "generated_at": "2026-07-20T08:33:25+08:00",
+    "executor_verification_count": 1,
+    "result_distribution": {"pending": 0, "verified": 1, "failed": 0, "inconclusive": 0, "revoked": 0},
+    "verified_result_count": 1,
+    "automatic_pass_count": 0,
+    "appointed_executor_count": 0,
+    "execution_authority_count": 0,
+    "capability_effect_count": 0,
+    "permission_grant_count": 0,
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "The registry is empty because no executor identity exists to verify.",
+      "Default result=pending applies to future records and does not justify a null-subject placeholder or simulated method.",
+      "Identity verification cannot appoint an Executor, authorize execution, grant permission, create an Agent or Runtime, or claim independent verification automatically."
+    ]
+  },
+  "executor_verification_schema": {
+    "required_fields": ["verification_id", "executor_identity_id", "method", "result", "timestamp"],
+    "additional_governance_fields": ["verifier_ref", "evidence_refs", "limitations", "revocation_ref", "authority_effect"],
+    "verification_id_format": "dbio:executor-identity-verification:<executor-identity-id>:<sequence>",
+    "valid_results": ["pending", "verified", "failed", "inconclusive", "revoked"],
+    "default_result": "pending",
+    "pending_boundary": "pending requires timestamp=null, empty terminal evidence, and authority_effect=none.",
+    "terminal_boundary": "verified, failed, inconclusive, or revoked requires existing identity, explicit method, attributable verifier_ref, non-empty evidence_refs, and timezone-aware timestamp.",
+    "automatic_pass_prohibited": true
+  },
+  "executor_verifications": [
+    {
+      "verification_id": "dbio:executor-identity-verification:automated:dbos-self-validation:v0.1:0001",
+      "executor_identity_id": "dbio:executor-identity:automated:dbos-self-validation:v0.1",
+      "method": "retained implementation SHA-256, bounded subject identity, boundary, and source-reference consistency",
+      "result": "verified",
+      "timestamp": "2026-07-20T10:24:56+08:00",
+      "verifier_ref": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence_refs": ["evidence/experiments/DBOS-EXP-0001/identity/subject-identity-evidence.json", "evidence/experiments/DBOS-EXP-0001/freeze/snapshot-manifest.json#execution/dbos_exp_0001.py", "registry/executor-boundaries.yaml#dbio:executor-boundary:automated:v0.1"],
+      "limitations": ["local automated verification", "not independent", "does not appoint or authorize an Executor"],
+      "revocation_ref": null,
+      "authority_effect": "none"
+    }
+  ]
+}

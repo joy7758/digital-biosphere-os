@@ -1,0 +1,93 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereFederationDependencyGraph",
+  "metadata": {
+    "title": "Evidence-Bound Federation Dependency Graph v0.1",
+    "status": "documented_relations_unverified_interoperability",
+    "constitution": "../constitution/federation-constitution.yaml",
+    "entity_source_of_truth": "entities.yaml",
+    "generated_at": "2026-07-19T22:49:34+08:00",
+    "node_count": 23,
+    "relationship_count": 29,
+    "relationship_type_distribution": {
+      "depends_on": 6,
+      "implements": 2,
+      "verifies": 0,
+      "extends": 1,
+      "references": 20
+    },
+    "verified_interoperability_count": 0,
+    "identity_merge_count": 0,
+    "capability_effect_count": 0,
+    "permission_effect_count": 0,
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "Relations are recorded only where current project documentation explicitly names the other project or architectural role.",
+      "No relation is inferred from directory layout, shared owner, remote namespace, naming similarity, or path proximity.",
+      "Documented dependency, implementation, extension, and reference are not federation verification, conformance, compatibility, trust, capability, or permission."
+    ]
+  },
+  "valid_relationship_types": ["depends_on", "implements", "verifies", "extends", "references"],
+  "nodes": [
+    {"entity_id":"digital-biosphere-architecture"},
+    {"entity_id":"pop-persona-object-protocol"},
+    {"entity_id":"aip-agent-intent-protocol"},
+    {"entity_id":"token-governor-reference"},
+    {"entity_id":"fdo-kernel-mvk"},
+    {"entity_id":"agent-evidence-eeoap"},
+    {"entity_id":"aro-audit-reference"},
+    {"entity_id":"verifiable-agent-demo"},
+    {"entity_id":"execution-integrity-core"},
+    {"entity_id":"agent-evidence-receipt-layer"},
+    {"entity_id":"saee-agent-readiness"},
+    {"entity_id":"agent-governance-toolkit-external"},
+    {"entity_id":"agent-governance-benchmark"},
+    {"entity_id":"agent-receipt-validator-mcp"},
+    {"entity_id":"agent-accountability-evidence-layer"},
+    {"entity_id":"agent-object-protocol"},
+    {"entity_id":"ecl-execution-compact-layer"},
+    {"entity_id":"cellcaps"},
+    {"entity_id":"pra-server"},
+    {"entity_id":"standalone-agent-object-protocol-draft"},
+    {"entity_id":"sovereign-agent-local-gate"},
+    {"entity_id":"mcp-agent-ei-external"},
+    {"entity_id":"autonomous-cell-protocol"}
+  ],
+  "relationships": [
+    {"relationship_id":"fedrel-aip-references-architecture","source_entity":"aip-agent-intent-protocol","target_entity":"digital-biosphere-architecture","relation_type":"references","evidence_source":{"path":"/Users/zhangbin/GitHub/agent-intent-protocol/README.md","locator":"lines 9-17"},"status":"documented_unverified","governance_effect":"none"},
+    {"relationship_id":"fedrel-aip-depends-pop","source_entity":"aip-agent-intent-protocol","target_entity":"pop-persona-object-protocol","relation_type":"depends_on","evidence_source":{"path":"/Users/zhangbin/GitHub/agent-intent-protocol/README.md","locator":"line 43"},"status":"documented_unverified","governance_effect":"none"},
+    {"relationship_id":"fedrel-aip-depends-token-governor","source_entity":"aip-agent-intent-protocol","target_entity":"token-governor-reference","relation_type":"depends_on","evidence_source":{"path":"/Users/zhangbin/GitHub/agent-intent-protocol/README.md","locator":"line 44"},"status":"documented_unverified","governance_effect":"none"},
+    {"relationship_id":"fedrel-aip-depends-fdo-kernel","source_entity":"aip-agent-intent-protocol","target_entity":"fdo-kernel-mvk","relation_type":"depends_on","evidence_source":{"path":"/Users/zhangbin/GitHub/agent-intent-protocol/README.md","locator":"line 45"},"status":"documented_unverified","governance_effect":"none"},
+    {"relationship_id":"fedrel-aip-depends-aro","source_entity":"aip-agent-intent-protocol","target_entity":"aro-audit-reference","relation_type":"depends_on","evidence_source":{"path":"/Users/zhangbin/GitHub/agent-intent-protocol/README.md","locator":"line 46"},"status":"documented_unverified","governance_effect":"none"},
+
+    {"relationship_id":"fedrel-pop-references-architecture","source_entity":"pop-persona-object-protocol","target_entity":"digital-biosphere-architecture","relation_type":"references","evidence_source":{"path":"/Users/zhangbin/GitHub/persona-object-protocol/README.zh-CN.md","locator":"line 76"},"status":"documented_unverified","governance_effect":"none"},
+    {"relationship_id":"fedrel-pop-references-demo","source_entity":"pop-persona-object-protocol","target_entity":"verifiable-agent-demo","relation_type":"references","evidence_source":{"path":"/Users/zhangbin/GitHub/persona-object-protocol/README.zh-CN.md","locator":"line 76"},"status":"documented_unverified","governance_effect":"none"},
+    {"relationship_id":"fedrel-pop-references-agent-object-protocol","source_entity":"pop-persona-object-protocol","target_entity":"agent-object-protocol","relation_type":"references","evidence_source":{"path":"/Users/zhangbin/GitHub/persona-object-protocol/README.zh-CN.md","locator":"line 76"},"status":"documented_unverified","governance_effect":"none"},
+
+    {"relationship_id":"fedrel-token-references-pop","source_entity":"token-governor-reference","target_entity":"pop-persona-object-protocol","relation_type":"references","evidence_source":{"path":"/Users/zhangbin/GitHub/token-governor/README.md","locator":"line 159"},"status":"documented_unverified","governance_effect":"none"},
+    {"relationship_id":"fedrel-token-references-aip","source_entity":"token-governor-reference","target_entity":"aip-agent-intent-protocol","relation_type":"references","evidence_source":{"path":"/Users/zhangbin/GitHub/token-governor/README.md","locator":"line 160"},"status":"documented_unverified","governance_effect":"none"},
+    {"relationship_id":"fedrel-token-references-agent-evidence","source_entity":"token-governor-reference","target_entity":"agent-evidence-eeoap","relation_type":"references","evidence_source":{"path":"/Users/zhangbin/GitHub/token-governor/README.md","locator":"line 161"},"status":"documented_unverified","governance_effect":"none"},
+    {"relationship_id":"fedrel-token-references-aro","source_entity":"token-governor-reference","target_entity":"aro-audit-reference","relation_type":"references","evidence_source":{"path":"/Users/zhangbin/GitHub/token-governor/README.md","locator":"line 162"},"status":"documented_unverified","governance_effect":"none"},
+    {"relationship_id":"fedrel-token-references-demo","source_entity":"token-governor-reference","target_entity":"verifiable-agent-demo","relation_type":"references","evidence_source":{"path":"/Users/zhangbin/GitHub/token-governor/README.md","locator":"line 165"},"status":"documented_unverified","governance_effect":"none"},
+
+    {"relationship_id":"fedrel-aro-references-architecture","source_entity":"aro-audit-reference","target_entity":"digital-biosphere-architecture","relation_type":"references","evidence_source":{"path":"/Users/zhangbin/GitHub/aro-audit/README.md","locator":"lines 36-40"},"status":"documented_unverified","governance_effect":"none"},
+    {"relationship_id":"fedrel-aro-references-pop","source_entity":"aro-audit-reference","target_entity":"pop-persona-object-protocol","relation_type":"references","evidence_source":{"path":"/Users/zhangbin/GitHub/aro-audit/README.md","locator":"line 38"},"status":"documented_unverified","governance_effect":"none"},
+    {"relationship_id":"fedrel-aro-references-demo","source_entity":"aro-audit-reference","target_entity":"verifiable-agent-demo","relation_type":"references","evidence_source":{"path":"/Users/zhangbin/GitHub/aro-audit/README.md","locator":"line 38"},"status":"documented_unverified","governance_effect":"none"},
+
+    {"relationship_id":"fedrel-agent-evidence-references-architecture","source_entity":"agent-evidence-eeoap","target_entity":"digital-biosphere-architecture","relation_type":"references","evidence_source":{"path":"/Users/zhangbin/GitHub/agent-evidence/README.md","locator":"line 330"},"status":"documented_unverified","governance_effect":"none"},
+    {"relationship_id":"fedrel-agent-evidence-references-demo","source_entity":"agent-evidence-eeoap","target_entity":"verifiable-agent-demo","relation_type":"references","evidence_source":{"path":"/Users/zhangbin/GitHub/agent-evidence/README.md","locator":"line 331"},"status":"documented_unverified","governance_effect":"none"},
+    {"relationship_id":"fedrel-agent-evidence-references-aro","source_entity":"agent-evidence-eeoap","target_entity":"aro-audit-reference","relation_type":"references","evidence_source":{"path":"/Users/zhangbin/GitHub/agent-evidence/README.md","locator":"line 332"},"status":"documented_unverified","governance_effect":"none"},
+    {"relationship_id":"fedrel-fdo-implements-agent-evidence-bridge","source_entity":"fdo-kernel-mvk","target_entity":"agent-evidence-eeoap","relation_type":"implements","evidence_source":{"path":"/Users/zhangbin/GitHub/agent-evidence/README.md","locator":"lines 333-338"},"status":"implementation_claim_unverified_by_federation","governance_effect":"none"},
+
+    {"relationship_id":"fedrel-demo-references-agent-evidence","source_entity":"verifiable-agent-demo","target_entity":"agent-evidence-eeoap","relation_type":"references","evidence_source":{"path":"/Users/zhangbin/GitHub/verifiable-agent-demo/README.md","locator":"line 137"},"status":"documented_unverified","governance_effect":"none"},
+    {"relationship_id":"fedrel-demo-references-architecture","source_entity":"verifiable-agent-demo","target_entity":"digital-biosphere-architecture","relation_type":"references","evidence_source":{"path":"/Users/zhangbin/GitHub/verifiable-agent-demo/README.md","locator":"line 137"},"status":"documented_unverified","governance_effect":"none"},
+    {"relationship_id":"fedrel-demo-references-pop","source_entity":"verifiable-agent-demo","target_entity":"pop-persona-object-protocol","relation_type":"references","evidence_source":{"path":"/Users/zhangbin/GitHub/verifiable-agent-demo/README.md","locator":"line 149"},"status":"documented_unverified","governance_effect":"none"},
+    {"relationship_id":"fedrel-demo-references-aip","source_entity":"verifiable-agent-demo","target_entity":"aip-agent-intent-protocol","relation_type":"references","evidence_source":{"path":"/Users/zhangbin/GitHub/verifiable-agent-demo/README.md","locator":"line 149"},"status":"documented_unverified","governance_effect":"none"},
+    {"relationship_id":"fedrel-demo-references-aro","source_entity":"verifiable-agent-demo","target_entity":"aro-audit-reference","relation_type":"references","evidence_source":{"path":"/Users/zhangbin/GitHub/verifiable-agent-demo/README.md","locator":"line 152"},"status":"documented_unverified","governance_effect":"none"},
+
+    {"relationship_id":"fedrel-execution-integrity-implements-pop-binding","source_entity":"execution-integrity-core","target_entity":"pop-persona-object-protocol","relation_type":"implements","evidence_source":{"path":"/Users/zhangbin/GitHub/execution-integrity-core/README.md","locator":"line 15"},"status":"implementation_claim_unverified_by_federation","governance_effect":"none"},
+    {"relationship_id":"fedrel-benchmark-depends-token-governor","source_entity":"agent-governance-benchmark","target_entity":"token-governor-reference","relation_type":"depends_on","evidence_source":{"path":"/Users/zhangbin/GitHub/agent-governance-benchmark/README.md","locator":"line 70"},"status":"documented_unverified","governance_effect":"none"},
+    {"relationship_id":"fedrel-benchmark-depends-aro","source_entity":"agent-governance-benchmark","target_entity":"aro-audit-reference","relation_type":"depends_on","evidence_source":{"path":"/Users/zhangbin/GitHub/agent-governance-benchmark/README.md","locator":"line 71"},"status":"documented_unverified","governance_effect":"none"},
+    {"relationship_id":"fedrel-saee-extends-agent-evidence-subsystem","source_entity":"saee-agent-readiness","target_entity":"agent-evidence-receipt-layer","relation_type":"extends","evidence_source":{"path":"/Users/zhangbin/GitHub/SAEE/README.md","locator":"line 13; architecture affiliation only, explicitly no source or runtime migration"},"status":"architectural_affiliation_documented_no_code_merge","governance_effect":"none"}
+  ]
+}

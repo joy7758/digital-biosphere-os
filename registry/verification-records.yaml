@@ -1,0 +1,2121 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereVerificationRecordRegistry",
+  "metadata": {
+    "title": "Verification Record Registry v0.1",
+    "status": "pending_v0_baseline",
+    "constitution": "../constitution/verification-constitution.yaml",
+    "verifier_source_of_truth": "verifiers.yaml",
+    "verification_level_source_of_truth": "verification-level.yaml",
+    "entity_source_of_truth": "entities.yaml",
+    "claim_source_of_truth": "capability-claims.yaml",
+    "evidence_source_of_truth": "capability-evidence.yaml",
+    "verification_run_registry": "verification-runs.yaml",
+    "trust_graph_registry": "trust-graph.yaml",
+    "generated_at": "2026-07-19T20:28:44+08:00",
+    "verification_record_count": 78,
+    "claim_count": 78,
+    "one_to_one_claim_baseline": true,
+    "pending_count": 78,
+    "decision_counts": {
+      "pending": 78,
+      "pass": 0,
+      "fail": 0,
+      "inconclusive": 0,
+      "revoked": 0
+    },
+    "verification_level_distribution": {
+      "V0": 78,
+      "V1": 0,
+      "V2": 0,
+      "V3": 0,
+      "V4": 0,
+      "V5": 0
+    },
+    "assigned_capability_count": 0,
+    "permission_grant_count": 0,
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "Every v0.1 record is a pending V0 verification request linked to one existing claim and its E1 evidence record.",
+      "No verification method or decision is simulated.",
+      "The local structural validation suite is not an Agent, reviewer, independent verifier, certifier, or permission authority.",
+      "Verification records do not change claim, evidence, capability maturity, assignment, permission, deployment, or release state."
+    ]
+  },
+  "verification_record_schema": {
+    "required_fields": [
+      "verification_id",
+      "subject",
+      "claim_id",
+      "verifier",
+      "evidence",
+      "decision",
+      "timestamp"
+    ],
+    "additional_governance_fields": [
+      "verification_level",
+      "status",
+      "method_evidence",
+      "independence",
+      "limitations",
+      "capability_assignment_status",
+      "permission_status"
+    ],
+    "verification_id_format": "dbio:verification:<entity_id>:<sequence>",
+    "valid_decisions": [
+      "pending",
+      "pass",
+      "fail",
+      "inconclusive",
+      "revoked"
+    ],
+    "valid_statuses": [
+      "pending",
+      "in_progress",
+      "completed",
+      "invalid",
+      "revoked"
+    ],
+    "valid_verification_levels": [
+      "V0",
+      "V1",
+      "V2",
+      "V3",
+      "V4",
+      "V5"
+    ],
+    "default_decision": "pending",
+    "default_verification_level": "V0",
+    "pending_boundary": "Pending records require timestamp=null and contain no completed method evidence, pass decision, independence claim, capability assignment, or permission grant."
+  },
+  "verification_records": [
+    {
+      "verification_id": "dbio:verification:digital-biosphere-architecture:001",
+      "subject": "digital-biosphere-architecture",
+      "claim_id": "dbio:claim:digital-biosphere-architecture:001",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence": [
+        "dbio:evidence:digital-biosphere-architecture:001"
+      ],
+      "decision": "pending",
+      "timestamp": null,
+      "verification_level": "V0",
+      "status": "pending",
+      "method_evidence": [],
+      "independence": {
+        "status": "not_assessed",
+        "basis": null,
+        "conflict_of_interest": null
+      },
+      "limitations": [
+        "No verification method has been completed for this capability claim.",
+        "The assigned verifier is a local structural validation suite and is not an independent reviewer.",
+        "The linked E1 declaration does not establish capability truth, execution, approval, assignment, or permission."
+      ],
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "verification_id": "dbio:verification:digital-biosphere-architecture:002",
+      "subject": "digital-biosphere-architecture",
+      "claim_id": "dbio:claim:digital-biosphere-architecture:002",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence": [
+        "dbio:evidence:digital-biosphere-architecture:002"
+      ],
+      "decision": "pending",
+      "timestamp": null,
+      "verification_level": "V0",
+      "status": "pending",
+      "method_evidence": [],
+      "independence": {
+        "status": "not_assessed",
+        "basis": null,
+        "conflict_of_interest": null
+      },
+      "limitations": [
+        "No verification method has been completed for this capability claim.",
+        "The assigned verifier is a local structural validation suite and is not an independent reviewer.",
+        "The linked E1 declaration does not establish capability truth, execution, approval, assignment, or permission."
+      ],
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "verification_id": "dbio:verification:digital-biosphere-architecture:003",
+      "subject": "digital-biosphere-architecture",
+      "claim_id": "dbio:claim:digital-biosphere-architecture:003",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence": [
+        "dbio:evidence:digital-biosphere-architecture:003"
+      ],
+      "decision": "pending",
+      "timestamp": null,
+      "verification_level": "V0",
+      "status": "pending",
+      "method_evidence": [],
+      "independence": {
+        "status": "not_assessed",
+        "basis": null,
+        "conflict_of_interest": null
+      },
+      "limitations": [
+        "No verification method has been completed for this capability claim.",
+        "The assigned verifier is a local structural validation suite and is not an independent reviewer.",
+        "The linked E1 declaration does not establish capability truth, execution, approval, assignment, or permission."
+      ],
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "verification_id": "dbio:verification:pop-persona-object-protocol:001",
+      "subject": "pop-persona-object-protocol",
+      "claim_id": "dbio:claim:pop-persona-object-protocol:001",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence": [
+        "dbio:evidence:pop-persona-object-protocol:001"
+      ],
+      "decision": "pending",
+      "timestamp": null,
+      "verification_level": "V0",
+      "status": "pending",
+      "method_evidence": [],
+      "independence": {
+        "status": "not_assessed",
+        "basis": null,
+        "conflict_of_interest": null
+      },
+      "limitations": [
+        "No verification method has been completed for this capability claim.",
+        "The assigned verifier is a local structural validation suite and is not an independent reviewer.",
+        "The linked E1 declaration does not establish capability truth, execution, approval, assignment, or permission."
+      ],
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "verification_id": "dbio:verification:pop-persona-object-protocol:002",
+      "subject": "pop-persona-object-protocol",
+      "claim_id": "dbio:claim:pop-persona-object-protocol:002",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence": [
+        "dbio:evidence:pop-persona-object-protocol:002"
+      ],
+      "decision": "pending",
+      "timestamp": null,
+      "verification_level": "V0",
+      "status": "pending",
+      "method_evidence": [],
+      "independence": {
+        "status": "not_assessed",
+        "basis": null,
+        "conflict_of_interest": null
+      },
+      "limitations": [
+        "No verification method has been completed for this capability claim.",
+        "The assigned verifier is a local structural validation suite and is not an independent reviewer.",
+        "The linked E1 declaration does not establish capability truth, execution, approval, assignment, or permission."
+      ],
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "verification_id": "dbio:verification:pop-persona-object-protocol:003",
+      "subject": "pop-persona-object-protocol",
+      "claim_id": "dbio:claim:pop-persona-object-protocol:003",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence": [
+        "dbio:evidence:pop-persona-object-protocol:003"
+      ],
+      "decision": "pending",
+      "timestamp": null,
+      "verification_level": "V0",
+      "status": "pending",
+      "method_evidence": [],
+      "independence": {
+        "status": "not_assessed",
+        "basis": null,
+        "conflict_of_interest": null
+      },
+      "limitations": [
+        "No verification method has been completed for this capability claim.",
+        "The assigned verifier is a local structural validation suite and is not an independent reviewer.",
+        "The linked E1 declaration does not establish capability truth, execution, approval, assignment, or permission."
+      ],
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "verification_id": "dbio:verification:aip-agent-intent-protocol:001",
+      "subject": "aip-agent-intent-protocol",
+      "claim_id": "dbio:claim:aip-agent-intent-protocol:001",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence": [
+        "dbio:evidence:aip-agent-intent-protocol:001"
+      ],
+      "decision": "pending",
+      "timestamp": null,
+      "verification_level": "V0",
+      "status": "pending",
+      "method_evidence": [],
+      "independence": {
+        "status": "not_assessed",
+        "basis": null,
+        "conflict_of_interest": null
+      },
+      "limitations": [
+        "No verification method has been completed for this capability claim.",
+        "The assigned verifier is a local structural validation suite and is not an independent reviewer.",
+        "The linked E1 declaration does not establish capability truth, execution, approval, assignment, or permission."
+      ],
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "verification_id": "dbio:verification:aip-agent-intent-protocol:002",
+      "subject": "aip-agent-intent-protocol",
+      "claim_id": "dbio:claim:aip-agent-intent-protocol:002",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence": [
+        "dbio:evidence:aip-agent-intent-protocol:002"
+      ],
+      "decision": "pending",
+      "timestamp": null,
+      "verification_level": "V0",
+      "status": "pending",
+      "method_evidence": [],
+      "independence": {
+        "status": "not_assessed",
+        "basis": null,
+        "conflict_of_interest": null
+      },
+      "limitations": [
+        "No verification method has been completed for this capability claim.",
+        "The assigned verifier is a local structural validation suite and is not an independent reviewer.",
+        "The linked E1 declaration does not establish capability truth, execution, approval, assignment, or permission."
+      ],
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "verification_id": "dbio:verification:aip-agent-intent-protocol:003",
+      "subject": "aip-agent-intent-protocol",
+      "claim_id": "dbio:claim:aip-agent-intent-protocol:003",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence": [
+        "dbio:evidence:aip-agent-intent-protocol:003"
+      ],
+      "decision": "pending",
+      "timestamp": null,
+      "verification_level": "V0",
+      "status": "pending",
+      "method_evidence": [],
+      "independence": {
+        "status": "not_assessed",
+        "basis": null,
+        "conflict_of_interest": null
+      },
+      "limitations": [
+        "No verification method has been completed for this capability claim.",
+        "The assigned verifier is a local structural validation suite and is not an independent reviewer.",
+        "The linked E1 declaration does not establish capability truth, execution, approval, assignment, or permission."
+      ],
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "verification_id": "dbio:verification:aip-agent-intent-protocol:004",
+      "subject": "aip-agent-intent-protocol",
+      "claim_id": "dbio:claim:aip-agent-intent-protocol:004",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence": [
+        "dbio:evidence:aip-agent-intent-protocol:004"
+      ],
+      "decision": "pending",
+      "timestamp": null,
+      "verification_level": "V0",
+      "status": "pending",
+      "method_evidence": [],
+      "independence": {
+        "status": "not_assessed",
+        "basis": null,
+        "conflict_of_interest": null
+      },
+      "limitations": [
+        "No verification method has been completed for this capability claim.",
+        "The assigned verifier is a local structural validation suite and is not an independent reviewer.",
+        "The linked E1 declaration does not establish capability truth, execution, approval, assignment, or permission."
+      ],
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "verification_id": "dbio:verification:token-governor-reference:001",
+      "subject": "token-governor-reference",
+      "claim_id": "dbio:claim:token-governor-reference:001",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence": [
+        "dbio:evidence:token-governor-reference:001"
+      ],
+      "decision": "pending",
+      "timestamp": null,
+      "verification_level": "V0",
+      "status": "pending",
+      "method_evidence": [],
+      "independence": {
+        "status": "not_assessed",
+        "basis": null,
+        "conflict_of_interest": null
+      },
+      "limitations": [
+        "No verification method has been completed for this capability claim.",
+        "The assigned verifier is a local structural validation suite and is not an independent reviewer.",
+        "The linked E1 declaration does not establish capability truth, execution, approval, assignment, or permission."
+      ],
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "verification_id": "dbio:verification:token-governor-reference:002",
+      "subject": "token-governor-reference",
+      "claim_id": "dbio:claim:token-governor-reference:002",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence": [
+        "dbio:evidence:token-governor-reference:002"
+      ],
+      "decision": "pending",
+      "timestamp": null,
+      "verification_level": "V0",
+      "status": "pending",
+      "method_evidence": [],
+      "independence": {
+        "status": "not_assessed",
+        "basis": null,
+        "conflict_of_interest": null
+      },
+      "limitations": [
+        "No verification method has been completed for this capability claim.",
+        "The assigned verifier is a local structural validation suite and is not an independent reviewer.",
+        "The linked E1 declaration does not establish capability truth, execution, approval, assignment, or permission."
+      ],
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "verification_id": "dbio:verification:token-governor-reference:003",
+      "subject": "token-governor-reference",
+      "claim_id": "dbio:claim:token-governor-reference:003",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence": [
+        "dbio:evidence:token-governor-reference:003"
+      ],
+      "decision": "pending",
+      "timestamp": null,
+      "verification_level": "V0",
+      "status": "pending",
+      "method_evidence": [],
+      "independence": {
+        "status": "not_assessed",
+        "basis": null,
+        "conflict_of_interest": null
+      },
+      "limitations": [
+        "No verification method has been completed for this capability claim.",
+        "The assigned verifier is a local structural validation suite and is not an independent reviewer.",
+        "The linked E1 declaration does not establish capability truth, execution, approval, assignment, or permission."
+      ],
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "verification_id": "dbio:verification:fdo-kernel-mvk:001",
+      "subject": "fdo-kernel-mvk",
+      "claim_id": "dbio:claim:fdo-kernel-mvk:001",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence": [
+        "dbio:evidence:fdo-kernel-mvk:001"
+      ],
+      "decision": "pending",
+      "timestamp": null,
+      "verification_level": "V0",
+      "status": "pending",
+      "method_evidence": [],
+      "independence": {
+        "status": "not_assessed",
+        "basis": null,
+        "conflict_of_interest": null
+      },
+      "limitations": [
+        "No verification method has been completed for this capability claim.",
+        "The assigned verifier is a local structural validation suite and is not an independent reviewer.",
+        "The linked E1 declaration does not establish capability truth, execution, approval, assignment, or permission."
+      ],
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "verification_id": "dbio:verification:fdo-kernel-mvk:002",
+      "subject": "fdo-kernel-mvk",
+      "claim_id": "dbio:claim:fdo-kernel-mvk:002",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence": [
+        "dbio:evidence:fdo-kernel-mvk:002"
+      ],
+      "decision": "pending",
+      "timestamp": null,
+      "verification_level": "V0",
+      "status": "pending",
+      "method_evidence": [],
+      "independence": {
+        "status": "not_assessed",
+        "basis": null,
+        "conflict_of_interest": null
+      },
+      "limitations": [
+        "No verification method has been completed for this capability claim.",
+        "The assigned verifier is a local structural validation suite and is not an independent reviewer.",
+        "The linked E1 declaration does not establish capability truth, execution, approval, assignment, or permission."
+      ],
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "verification_id": "dbio:verification:fdo-kernel-mvk:003",
+      "subject": "fdo-kernel-mvk",
+      "claim_id": "dbio:claim:fdo-kernel-mvk:003",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence": [
+        "dbio:evidence:fdo-kernel-mvk:003"
+      ],
+      "decision": "pending",
+      "timestamp": null,
+      "verification_level": "V0",
+      "status": "pending",
+      "method_evidence": [],
+      "independence": {
+        "status": "not_assessed",
+        "basis": null,
+        "conflict_of_interest": null
+      },
+      "limitations": [
+        "No verification method has been completed for this capability claim.",
+        "The assigned verifier is a local structural validation suite and is not an independent reviewer.",
+        "The linked E1 declaration does not establish capability truth, execution, approval, assignment, or permission."
+      ],
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "verification_id": "dbio:verification:agent-evidence-eeoap:001",
+      "subject": "agent-evidence-eeoap",
+      "claim_id": "dbio:claim:agent-evidence-eeoap:001",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence": [
+        "dbio:evidence:agent-evidence-eeoap:001"
+      ],
+      "decision": "pending",
+      "timestamp": null,
+      "verification_level": "V0",
+      "status": "pending",
+      "method_evidence": [],
+      "independence": {
+        "status": "not_assessed",
+        "basis": null,
+        "conflict_of_interest": null
+      },
+      "limitations": [
+        "No verification method has been completed for this capability claim.",
+        "The assigned verifier is a local structural validation suite and is not an independent reviewer.",
+        "The linked E1 declaration does not establish capability truth, execution, approval, assignment, or permission."
+      ],
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "verification_id": "dbio:verification:agent-evidence-eeoap:002",
+      "subject": "agent-evidence-eeoap",
+      "claim_id": "dbio:claim:agent-evidence-eeoap:002",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence": [
+        "dbio:evidence:agent-evidence-eeoap:002"
+      ],
+      "decision": "pending",
+      "timestamp": null,
+      "verification_level": "V0",
+      "status": "pending",
+      "method_evidence": [],
+      "independence": {
+        "status": "not_assessed",
+        "basis": null,
+        "conflict_of_interest": null
+      },
+      "limitations": [
+        "No verification method has been completed for this capability claim.",
+        "The assigned verifier is a local structural validation suite and is not an independent reviewer.",
+        "The linked E1 declaration does not establish capability truth, execution, approval, assignment, or permission."
+      ],
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "verification_id": "dbio:verification:agent-evidence-eeoap:003",
+      "subject": "agent-evidence-eeoap",
+      "claim_id": "dbio:claim:agent-evidence-eeoap:003",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence": [
+        "dbio:evidence:agent-evidence-eeoap:003"
+      ],
+      "decision": "pending",
+      "timestamp": null,
+      "verification_level": "V0",
+      "status": "pending",
+      "method_evidence": [],
+      "independence": {
+        "status": "not_assessed",
+        "basis": null,
+        "conflict_of_interest": null
+      },
+      "limitations": [
+        "No verification method has been completed for this capability claim.",
+        "The assigned verifier is a local structural validation suite and is not an independent reviewer.",
+        "The linked E1 declaration does not establish capability truth, execution, approval, assignment, or permission."
+      ],
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "verification_id": "dbio:verification:agent-evidence-eeoap:004",
+      "subject": "agent-evidence-eeoap",
+      "claim_id": "dbio:claim:agent-evidence-eeoap:004",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence": [
+        "dbio:evidence:agent-evidence-eeoap:004"
+      ],
+      "decision": "pending",
+      "timestamp": null,
+      "verification_level": "V0",
+      "status": "pending",
+      "method_evidence": [],
+      "independence": {
+        "status": "not_assessed",
+        "basis": null,
+        "conflict_of_interest": null
+      },
+      "limitations": [
+        "No verification method has been completed for this capability claim.",
+        "The assigned verifier is a local structural validation suite and is not an independent reviewer.",
+        "The linked E1 declaration does not establish capability truth, execution, approval, assignment, or permission."
+      ],
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "verification_id": "dbio:verification:aro-audit-reference:001",
+      "subject": "aro-audit-reference",
+      "claim_id": "dbio:claim:aro-audit-reference:001",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence": [
+        "dbio:evidence:aro-audit-reference:001"
+      ],
+      "decision": "pending",
+      "timestamp": null,
+      "verification_level": "V0",
+      "status": "pending",
+      "method_evidence": [],
+      "independence": {
+        "status": "not_assessed",
+        "basis": null,
+        "conflict_of_interest": null
+      },
+      "limitations": [
+        "No verification method has been completed for this capability claim.",
+        "The assigned verifier is a local structural validation suite and is not an independent reviewer.",
+        "The linked E1 declaration does not establish capability truth, execution, approval, assignment, or permission."
+      ],
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "verification_id": "dbio:verification:aro-audit-reference:002",
+      "subject": "aro-audit-reference",
+      "claim_id": "dbio:claim:aro-audit-reference:002",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence": [
+        "dbio:evidence:aro-audit-reference:002"
+      ],
+      "decision": "pending",
+      "timestamp": null,
+      "verification_level": "V0",
+      "status": "pending",
+      "method_evidence": [],
+      "independence": {
+        "status": "not_assessed",
+        "basis": null,
+        "conflict_of_interest": null
+      },
+      "limitations": [
+        "No verification method has been completed for this capability claim.",
+        "The assigned verifier is a local structural validation suite and is not an independent reviewer.",
+        "The linked E1 declaration does not establish capability truth, execution, approval, assignment, or permission."
+      ],
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "verification_id": "dbio:verification:aro-audit-reference:003",
+      "subject": "aro-audit-reference",
+      "claim_id": "dbio:claim:aro-audit-reference:003",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence": [
+        "dbio:evidence:aro-audit-reference:003"
+      ],
+      "decision": "pending",
+      "timestamp": null,
+      "verification_level": "V0",
+      "status": "pending",
+      "method_evidence": [],
+      "independence": {
+        "status": "not_assessed",
+        "basis": null,
+        "conflict_of_interest": null
+      },
+      "limitations": [
+        "No verification method has been completed for this capability claim.",
+        "The assigned verifier is a local structural validation suite and is not an independent reviewer.",
+        "The linked E1 declaration does not establish capability truth, execution, approval, assignment, or permission."
+      ],
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "verification_id": "dbio:verification:verifiable-agent-demo:001",
+      "subject": "verifiable-agent-demo",
+      "claim_id": "dbio:claim:verifiable-agent-demo:001",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence": [
+        "dbio:evidence:verifiable-agent-demo:001"
+      ],
+      "decision": "pending",
+      "timestamp": null,
+      "verification_level": "V0",
+      "status": "pending",
+      "method_evidence": [],
+      "independence": {
+        "status": "not_assessed",
+        "basis": null,
+        "conflict_of_interest": null
+      },
+      "limitations": [
+        "No verification method has been completed for this capability claim.",
+        "The assigned verifier is a local structural validation suite and is not an independent reviewer.",
+        "The linked E1 declaration does not establish capability truth, execution, approval, assignment, or permission."
+      ],
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "verification_id": "dbio:verification:verifiable-agent-demo:002",
+      "subject": "verifiable-agent-demo",
+      "claim_id": "dbio:claim:verifiable-agent-demo:002",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence": [
+        "dbio:evidence:verifiable-agent-demo:002"
+      ],
+      "decision": "pending",
+      "timestamp": null,
+      "verification_level": "V0",
+      "status": "pending",
+      "method_evidence": [],
+      "independence": {
+        "status": "not_assessed",
+        "basis": null,
+        "conflict_of_interest": null
+      },
+      "limitations": [
+        "No verification method has been completed for this capability claim.",
+        "The assigned verifier is a local structural validation suite and is not an independent reviewer.",
+        "The linked E1 declaration does not establish capability truth, execution, approval, assignment, or permission."
+      ],
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "verification_id": "dbio:verification:verifiable-agent-demo:003",
+      "subject": "verifiable-agent-demo",
+      "claim_id": "dbio:claim:verifiable-agent-demo:003",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence": [
+        "dbio:evidence:verifiable-agent-demo:003"
+      ],
+      "decision": "pending",
+      "timestamp": null,
+      "verification_level": "V0",
+      "status": "pending",
+      "method_evidence": [],
+      "independence": {
+        "status": "not_assessed",
+        "basis": null,
+        "conflict_of_interest": null
+      },
+      "limitations": [
+        "No verification method has been completed for this capability claim.",
+        "The assigned verifier is a local structural validation suite and is not an independent reviewer.",
+        "The linked E1 declaration does not establish capability truth, execution, approval, assignment, or permission."
+      ],
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "verification_id": "dbio:verification:execution-integrity-core:001",
+      "subject": "execution-integrity-core",
+      "claim_id": "dbio:claim:execution-integrity-core:001",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence": [
+        "dbio:evidence:execution-integrity-core:001"
+      ],
+      "decision": "pending",
+      "timestamp": null,
+      "verification_level": "V0",
+      "status": "pending",
+      "method_evidence": [],
+      "independence": {
+        "status": "not_assessed",
+        "basis": null,
+        "conflict_of_interest": null
+      },
+      "limitations": [
+        "No verification method has been completed for this capability claim.",
+        "The assigned verifier is a local structural validation suite and is not an independent reviewer.",
+        "The linked E1 declaration does not establish capability truth, execution, approval, assignment, or permission."
+      ],
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "verification_id": "dbio:verification:execution-integrity-core:002",
+      "subject": "execution-integrity-core",
+      "claim_id": "dbio:claim:execution-integrity-core:002",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence": [
+        "dbio:evidence:execution-integrity-core:002"
+      ],
+      "decision": "pending",
+      "timestamp": null,
+      "verification_level": "V0",
+      "status": "pending",
+      "method_evidence": [],
+      "independence": {
+        "status": "not_assessed",
+        "basis": null,
+        "conflict_of_interest": null
+      },
+      "limitations": [
+        "No verification method has been completed for this capability claim.",
+        "The assigned verifier is a local structural validation suite and is not an independent reviewer.",
+        "The linked E1 declaration does not establish capability truth, execution, approval, assignment, or permission."
+      ],
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "verification_id": "dbio:verification:execution-integrity-core:003",
+      "subject": "execution-integrity-core",
+      "claim_id": "dbio:claim:execution-integrity-core:003",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence": [
+        "dbio:evidence:execution-integrity-core:003"
+      ],
+      "decision": "pending",
+      "timestamp": null,
+      "verification_level": "V0",
+      "status": "pending",
+      "method_evidence": [],
+      "independence": {
+        "status": "not_assessed",
+        "basis": null,
+        "conflict_of_interest": null
+      },
+      "limitations": [
+        "No verification method has been completed for this capability claim.",
+        "The assigned verifier is a local structural validation suite and is not an independent reviewer.",
+        "The linked E1 declaration does not establish capability truth, execution, approval, assignment, or permission."
+      ],
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "verification_id": "dbio:verification:execution-integrity-core:004",
+      "subject": "execution-integrity-core",
+      "claim_id": "dbio:claim:execution-integrity-core:004",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence": [
+        "dbio:evidence:execution-integrity-core:004"
+      ],
+      "decision": "pending",
+      "timestamp": null,
+      "verification_level": "V0",
+      "status": "pending",
+      "method_evidence": [],
+      "independence": {
+        "status": "not_assessed",
+        "basis": null,
+        "conflict_of_interest": null
+      },
+      "limitations": [
+        "No verification method has been completed for this capability claim.",
+        "The assigned verifier is a local structural validation suite and is not an independent reviewer.",
+        "The linked E1 declaration does not establish capability truth, execution, approval, assignment, or permission."
+      ],
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "verification_id": "dbio:verification:agent-evidence-receipt-layer:001",
+      "subject": "agent-evidence-receipt-layer",
+      "claim_id": "dbio:claim:agent-evidence-receipt-layer:001",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence": [
+        "dbio:evidence:agent-evidence-receipt-layer:001"
+      ],
+      "decision": "pending",
+      "timestamp": null,
+      "verification_level": "V0",
+      "status": "pending",
+      "method_evidence": [],
+      "independence": {
+        "status": "not_assessed",
+        "basis": null,
+        "conflict_of_interest": null
+      },
+      "limitations": [
+        "No verification method has been completed for this capability claim.",
+        "The assigned verifier is a local structural validation suite and is not an independent reviewer.",
+        "The linked E1 declaration does not establish capability truth, execution, approval, assignment, or permission."
+      ],
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "verification_id": "dbio:verification:agent-evidence-receipt-layer:002",
+      "subject": "agent-evidence-receipt-layer",
+      "claim_id": "dbio:claim:agent-evidence-receipt-layer:002",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence": [
+        "dbio:evidence:agent-evidence-receipt-layer:002"
+      ],
+      "decision": "pending",
+      "timestamp": null,
+      "verification_level": "V0",
+      "status": "pending",
+      "method_evidence": [],
+      "independence": {
+        "status": "not_assessed",
+        "basis": null,
+        "conflict_of_interest": null
+      },
+      "limitations": [
+        "No verification method has been completed for this capability claim.",
+        "The assigned verifier is a local structural validation suite and is not an independent reviewer.",
+        "The linked E1 declaration does not establish capability truth, execution, approval, assignment, or permission."
+      ],
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "verification_id": "dbio:verification:agent-evidence-receipt-layer:003",
+      "subject": "agent-evidence-receipt-layer",
+      "claim_id": "dbio:claim:agent-evidence-receipt-layer:003",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence": [
+        "dbio:evidence:agent-evidence-receipt-layer:003"
+      ],
+      "decision": "pending",
+      "timestamp": null,
+      "verification_level": "V0",
+      "status": "pending",
+      "method_evidence": [],
+      "independence": {
+        "status": "not_assessed",
+        "basis": null,
+        "conflict_of_interest": null
+      },
+      "limitations": [
+        "No verification method has been completed for this capability claim.",
+        "The assigned verifier is a local structural validation suite and is not an independent reviewer.",
+        "The linked E1 declaration does not establish capability truth, execution, approval, assignment, or permission."
+      ],
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "verification_id": "dbio:verification:agent-evidence-receipt-layer:004",
+      "subject": "agent-evidence-receipt-layer",
+      "claim_id": "dbio:claim:agent-evidence-receipt-layer:004",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence": [
+        "dbio:evidence:agent-evidence-receipt-layer:004"
+      ],
+      "decision": "pending",
+      "timestamp": null,
+      "verification_level": "V0",
+      "status": "pending",
+      "method_evidence": [],
+      "independence": {
+        "status": "not_assessed",
+        "basis": null,
+        "conflict_of_interest": null
+      },
+      "limitations": [
+        "No verification method has been completed for this capability claim.",
+        "The assigned verifier is a local structural validation suite and is not an independent reviewer.",
+        "The linked E1 declaration does not establish capability truth, execution, approval, assignment, or permission."
+      ],
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "verification_id": "dbio:verification:saee-agent-readiness:001",
+      "subject": "saee-agent-readiness",
+      "claim_id": "dbio:claim:saee-agent-readiness:001",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence": [
+        "dbio:evidence:saee-agent-readiness:001"
+      ],
+      "decision": "pending",
+      "timestamp": null,
+      "verification_level": "V0",
+      "status": "pending",
+      "method_evidence": [],
+      "independence": {
+        "status": "not_assessed",
+        "basis": null,
+        "conflict_of_interest": null
+      },
+      "limitations": [
+        "No verification method has been completed for this capability claim.",
+        "The assigned verifier is a local structural validation suite and is not an independent reviewer.",
+        "The linked E1 declaration does not establish capability truth, execution, approval, assignment, or permission."
+      ],
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "verification_id": "dbio:verification:saee-agent-readiness:002",
+      "subject": "saee-agent-readiness",
+      "claim_id": "dbio:claim:saee-agent-readiness:002",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence": [
+        "dbio:evidence:saee-agent-readiness:002"
+      ],
+      "decision": "pending",
+      "timestamp": null,
+      "verification_level": "V0",
+      "status": "pending",
+      "method_evidence": [],
+      "independence": {
+        "status": "not_assessed",
+        "basis": null,
+        "conflict_of_interest": null
+      },
+      "limitations": [
+        "No verification method has been completed for this capability claim.",
+        "The assigned verifier is a local structural validation suite and is not an independent reviewer.",
+        "The linked E1 declaration does not establish capability truth, execution, approval, assignment, or permission."
+      ],
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "verification_id": "dbio:verification:saee-agent-readiness:003",
+      "subject": "saee-agent-readiness",
+      "claim_id": "dbio:claim:saee-agent-readiness:003",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence": [
+        "dbio:evidence:saee-agent-readiness:003"
+      ],
+      "decision": "pending",
+      "timestamp": null,
+      "verification_level": "V0",
+      "status": "pending",
+      "method_evidence": [],
+      "independence": {
+        "status": "not_assessed",
+        "basis": null,
+        "conflict_of_interest": null
+      },
+      "limitations": [
+        "No verification method has been completed for this capability claim.",
+        "The assigned verifier is a local structural validation suite and is not an independent reviewer.",
+        "The linked E1 declaration does not establish capability truth, execution, approval, assignment, or permission."
+      ],
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "verification_id": "dbio:verification:saee-agent-readiness:004",
+      "subject": "saee-agent-readiness",
+      "claim_id": "dbio:claim:saee-agent-readiness:004",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence": [
+        "dbio:evidence:saee-agent-readiness:004"
+      ],
+      "decision": "pending",
+      "timestamp": null,
+      "verification_level": "V0",
+      "status": "pending",
+      "method_evidence": [],
+      "independence": {
+        "status": "not_assessed",
+        "basis": null,
+        "conflict_of_interest": null
+      },
+      "limitations": [
+        "No verification method has been completed for this capability claim.",
+        "The assigned verifier is a local structural validation suite and is not an independent reviewer.",
+        "The linked E1 declaration does not establish capability truth, execution, approval, assignment, or permission."
+      ],
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "verification_id": "dbio:verification:agent-governance-toolkit-external:001",
+      "subject": "agent-governance-toolkit-external",
+      "claim_id": "dbio:claim:agent-governance-toolkit-external:001",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence": [
+        "dbio:evidence:agent-governance-toolkit-external:001"
+      ],
+      "decision": "pending",
+      "timestamp": null,
+      "verification_level": "V0",
+      "status": "pending",
+      "method_evidence": [],
+      "independence": {
+        "status": "not_assessed",
+        "basis": null,
+        "conflict_of_interest": null
+      },
+      "limitations": [
+        "No verification method has been completed for this capability claim.",
+        "The assigned verifier is a local structural validation suite and is not an independent reviewer.",
+        "The linked E1 declaration does not establish capability truth, execution, approval, assignment, or permission."
+      ],
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "verification_id": "dbio:verification:agent-governance-toolkit-external:002",
+      "subject": "agent-governance-toolkit-external",
+      "claim_id": "dbio:claim:agent-governance-toolkit-external:002",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence": [
+        "dbio:evidence:agent-governance-toolkit-external:002"
+      ],
+      "decision": "pending",
+      "timestamp": null,
+      "verification_level": "V0",
+      "status": "pending",
+      "method_evidence": [],
+      "independence": {
+        "status": "not_assessed",
+        "basis": null,
+        "conflict_of_interest": null
+      },
+      "limitations": [
+        "No verification method has been completed for this capability claim.",
+        "The assigned verifier is a local structural validation suite and is not an independent reviewer.",
+        "The linked E1 declaration does not establish capability truth, execution, approval, assignment, or permission."
+      ],
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "verification_id": "dbio:verification:agent-governance-toolkit-external:003",
+      "subject": "agent-governance-toolkit-external",
+      "claim_id": "dbio:claim:agent-governance-toolkit-external:003",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence": [
+        "dbio:evidence:agent-governance-toolkit-external:003"
+      ],
+      "decision": "pending",
+      "timestamp": null,
+      "verification_level": "V0",
+      "status": "pending",
+      "method_evidence": [],
+      "independence": {
+        "status": "not_assessed",
+        "basis": null,
+        "conflict_of_interest": null
+      },
+      "limitations": [
+        "No verification method has been completed for this capability claim.",
+        "The assigned verifier is a local structural validation suite and is not an independent reviewer.",
+        "The linked E1 declaration does not establish capability truth, execution, approval, assignment, or permission."
+      ],
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "verification_id": "dbio:verification:agent-governance-toolkit-external:004",
+      "subject": "agent-governance-toolkit-external",
+      "claim_id": "dbio:claim:agent-governance-toolkit-external:004",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence": [
+        "dbio:evidence:agent-governance-toolkit-external:004"
+      ],
+      "decision": "pending",
+      "timestamp": null,
+      "verification_level": "V0",
+      "status": "pending",
+      "method_evidence": [],
+      "independence": {
+        "status": "not_assessed",
+        "basis": null,
+        "conflict_of_interest": null
+      },
+      "limitations": [
+        "No verification method has been completed for this capability claim.",
+        "The assigned verifier is a local structural validation suite and is not an independent reviewer.",
+        "The linked E1 declaration does not establish capability truth, execution, approval, assignment, or permission."
+      ],
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "verification_id": "dbio:verification:agent-governance-benchmark:001",
+      "subject": "agent-governance-benchmark",
+      "claim_id": "dbio:claim:agent-governance-benchmark:001",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence": [
+        "dbio:evidence:agent-governance-benchmark:001"
+      ],
+      "decision": "pending",
+      "timestamp": null,
+      "verification_level": "V0",
+      "status": "pending",
+      "method_evidence": [],
+      "independence": {
+        "status": "not_assessed",
+        "basis": null,
+        "conflict_of_interest": null
+      },
+      "limitations": [
+        "No verification method has been completed for this capability claim.",
+        "The assigned verifier is a local structural validation suite and is not an independent reviewer.",
+        "The linked E1 declaration does not establish capability truth, execution, approval, assignment, or permission."
+      ],
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "verification_id": "dbio:verification:agent-governance-benchmark:002",
+      "subject": "agent-governance-benchmark",
+      "claim_id": "dbio:claim:agent-governance-benchmark:002",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence": [
+        "dbio:evidence:agent-governance-benchmark:002"
+      ],
+      "decision": "pending",
+      "timestamp": null,
+      "verification_level": "V0",
+      "status": "pending",
+      "method_evidence": [],
+      "independence": {
+        "status": "not_assessed",
+        "basis": null,
+        "conflict_of_interest": null
+      },
+      "limitations": [
+        "No verification method has been completed for this capability claim.",
+        "The assigned verifier is a local structural validation suite and is not an independent reviewer.",
+        "The linked E1 declaration does not establish capability truth, execution, approval, assignment, or permission."
+      ],
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "verification_id": "dbio:verification:agent-governance-benchmark:003",
+      "subject": "agent-governance-benchmark",
+      "claim_id": "dbio:claim:agent-governance-benchmark:003",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence": [
+        "dbio:evidence:agent-governance-benchmark:003"
+      ],
+      "decision": "pending",
+      "timestamp": null,
+      "verification_level": "V0",
+      "status": "pending",
+      "method_evidence": [],
+      "independence": {
+        "status": "not_assessed",
+        "basis": null,
+        "conflict_of_interest": null
+      },
+      "limitations": [
+        "No verification method has been completed for this capability claim.",
+        "The assigned verifier is a local structural validation suite and is not an independent reviewer.",
+        "The linked E1 declaration does not establish capability truth, execution, approval, assignment, or permission."
+      ],
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "verification_id": "dbio:verification:agent-governance-benchmark:004",
+      "subject": "agent-governance-benchmark",
+      "claim_id": "dbio:claim:agent-governance-benchmark:004",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence": [
+        "dbio:evidence:agent-governance-benchmark:004"
+      ],
+      "decision": "pending",
+      "timestamp": null,
+      "verification_level": "V0",
+      "status": "pending",
+      "method_evidence": [],
+      "independence": {
+        "status": "not_assessed",
+        "basis": null,
+        "conflict_of_interest": null
+      },
+      "limitations": [
+        "No verification method has been completed for this capability claim.",
+        "The assigned verifier is a local structural validation suite and is not an independent reviewer.",
+        "The linked E1 declaration does not establish capability truth, execution, approval, assignment, or permission."
+      ],
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "verification_id": "dbio:verification:agent-receipt-validator-mcp:001",
+      "subject": "agent-receipt-validator-mcp",
+      "claim_id": "dbio:claim:agent-receipt-validator-mcp:001",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence": [
+        "dbio:evidence:agent-receipt-validator-mcp:001"
+      ],
+      "decision": "pending",
+      "timestamp": null,
+      "verification_level": "V0",
+      "status": "pending",
+      "method_evidence": [],
+      "independence": {
+        "status": "not_assessed",
+        "basis": null,
+        "conflict_of_interest": null
+      },
+      "limitations": [
+        "No verification method has been completed for this capability claim.",
+        "The assigned verifier is a local structural validation suite and is not an independent reviewer.",
+        "The linked E1 declaration does not establish capability truth, execution, approval, assignment, or permission."
+      ],
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "verification_id": "dbio:verification:agent-receipt-validator-mcp:002",
+      "subject": "agent-receipt-validator-mcp",
+      "claim_id": "dbio:claim:agent-receipt-validator-mcp:002",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence": [
+        "dbio:evidence:agent-receipt-validator-mcp:002"
+      ],
+      "decision": "pending",
+      "timestamp": null,
+      "verification_level": "V0",
+      "status": "pending",
+      "method_evidence": [],
+      "independence": {
+        "status": "not_assessed",
+        "basis": null,
+        "conflict_of_interest": null
+      },
+      "limitations": [
+        "No verification method has been completed for this capability claim.",
+        "The assigned verifier is a local structural validation suite and is not an independent reviewer.",
+        "The linked E1 declaration does not establish capability truth, execution, approval, assignment, or permission."
+      ],
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "verification_id": "dbio:verification:agent-receipt-validator-mcp:003",
+      "subject": "agent-receipt-validator-mcp",
+      "claim_id": "dbio:claim:agent-receipt-validator-mcp:003",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence": [
+        "dbio:evidence:agent-receipt-validator-mcp:003"
+      ],
+      "decision": "pending",
+      "timestamp": null,
+      "verification_level": "V0",
+      "status": "pending",
+      "method_evidence": [],
+      "independence": {
+        "status": "not_assessed",
+        "basis": null,
+        "conflict_of_interest": null
+      },
+      "limitations": [
+        "No verification method has been completed for this capability claim.",
+        "The assigned verifier is a local structural validation suite and is not an independent reviewer.",
+        "The linked E1 declaration does not establish capability truth, execution, approval, assignment, or permission."
+      ],
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "verification_id": "dbio:verification:agent-receipt-validator-mcp:004",
+      "subject": "agent-receipt-validator-mcp",
+      "claim_id": "dbio:claim:agent-receipt-validator-mcp:004",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence": [
+        "dbio:evidence:agent-receipt-validator-mcp:004"
+      ],
+      "decision": "pending",
+      "timestamp": null,
+      "verification_level": "V0",
+      "status": "pending",
+      "method_evidence": [],
+      "independence": {
+        "status": "not_assessed",
+        "basis": null,
+        "conflict_of_interest": null
+      },
+      "limitations": [
+        "No verification method has been completed for this capability claim.",
+        "The assigned verifier is a local structural validation suite and is not an independent reviewer.",
+        "The linked E1 declaration does not establish capability truth, execution, approval, assignment, or permission."
+      ],
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "verification_id": "dbio:verification:agent-accountability-evidence-layer:001",
+      "subject": "agent-accountability-evidence-layer",
+      "claim_id": "dbio:claim:agent-accountability-evidence-layer:001",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence": [
+        "dbio:evidence:agent-accountability-evidence-layer:001"
+      ],
+      "decision": "pending",
+      "timestamp": null,
+      "verification_level": "V0",
+      "status": "pending",
+      "method_evidence": [],
+      "independence": {
+        "status": "not_assessed",
+        "basis": null,
+        "conflict_of_interest": null
+      },
+      "limitations": [
+        "No verification method has been completed for this capability claim.",
+        "The assigned verifier is a local structural validation suite and is not an independent reviewer.",
+        "The linked E1 declaration does not establish capability truth, execution, approval, assignment, or permission."
+      ],
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "verification_id": "dbio:verification:agent-accountability-evidence-layer:002",
+      "subject": "agent-accountability-evidence-layer",
+      "claim_id": "dbio:claim:agent-accountability-evidence-layer:002",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence": [
+        "dbio:evidence:agent-accountability-evidence-layer:002"
+      ],
+      "decision": "pending",
+      "timestamp": null,
+      "verification_level": "V0",
+      "status": "pending",
+      "method_evidence": [],
+      "independence": {
+        "status": "not_assessed",
+        "basis": null,
+        "conflict_of_interest": null
+      },
+      "limitations": [
+        "No verification method has been completed for this capability claim.",
+        "The assigned verifier is a local structural validation suite and is not an independent reviewer.",
+        "The linked E1 declaration does not establish capability truth, execution, approval, assignment, or permission."
+      ],
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "verification_id": "dbio:verification:agent-accountability-evidence-layer:003",
+      "subject": "agent-accountability-evidence-layer",
+      "claim_id": "dbio:claim:agent-accountability-evidence-layer:003",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence": [
+        "dbio:evidence:agent-accountability-evidence-layer:003"
+      ],
+      "decision": "pending",
+      "timestamp": null,
+      "verification_level": "V0",
+      "status": "pending",
+      "method_evidence": [],
+      "independence": {
+        "status": "not_assessed",
+        "basis": null,
+        "conflict_of_interest": null
+      },
+      "limitations": [
+        "No verification method has been completed for this capability claim.",
+        "The assigned verifier is a local structural validation suite and is not an independent reviewer.",
+        "The linked E1 declaration does not establish capability truth, execution, approval, assignment, or permission."
+      ],
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "verification_id": "dbio:verification:agent-accountability-evidence-layer:004",
+      "subject": "agent-accountability-evidence-layer",
+      "claim_id": "dbio:claim:agent-accountability-evidence-layer:004",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence": [
+        "dbio:evidence:agent-accountability-evidence-layer:004"
+      ],
+      "decision": "pending",
+      "timestamp": null,
+      "verification_level": "V0",
+      "status": "pending",
+      "method_evidence": [],
+      "independence": {
+        "status": "not_assessed",
+        "basis": null,
+        "conflict_of_interest": null
+      },
+      "limitations": [
+        "No verification method has been completed for this capability claim.",
+        "The assigned verifier is a local structural validation suite and is not an independent reviewer.",
+        "The linked E1 declaration does not establish capability truth, execution, approval, assignment, or permission."
+      ],
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "verification_id": "dbio:verification:agent-object-protocol:001",
+      "subject": "agent-object-protocol",
+      "claim_id": "dbio:claim:agent-object-protocol:001",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence": [
+        "dbio:evidence:agent-object-protocol:001"
+      ],
+      "decision": "pending",
+      "timestamp": null,
+      "verification_level": "V0",
+      "status": "pending",
+      "method_evidence": [],
+      "independence": {
+        "status": "not_assessed",
+        "basis": null,
+        "conflict_of_interest": null
+      },
+      "limitations": [
+        "No verification method has been completed for this capability claim.",
+        "The assigned verifier is a local structural validation suite and is not an independent reviewer.",
+        "The linked E1 declaration does not establish capability truth, execution, approval, assignment, or permission."
+      ],
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "verification_id": "dbio:verification:agent-object-protocol:002",
+      "subject": "agent-object-protocol",
+      "claim_id": "dbio:claim:agent-object-protocol:002",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence": [
+        "dbio:evidence:agent-object-protocol:002"
+      ],
+      "decision": "pending",
+      "timestamp": null,
+      "verification_level": "V0",
+      "status": "pending",
+      "method_evidence": [],
+      "independence": {
+        "status": "not_assessed",
+        "basis": null,
+        "conflict_of_interest": null
+      },
+      "limitations": [
+        "No verification method has been completed for this capability claim.",
+        "The assigned verifier is a local structural validation suite and is not an independent reviewer.",
+        "The linked E1 declaration does not establish capability truth, execution, approval, assignment, or permission."
+      ],
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "verification_id": "dbio:verification:agent-object-protocol:003",
+      "subject": "agent-object-protocol",
+      "claim_id": "dbio:claim:agent-object-protocol:003",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence": [
+        "dbio:evidence:agent-object-protocol:003"
+      ],
+      "decision": "pending",
+      "timestamp": null,
+      "verification_level": "V0",
+      "status": "pending",
+      "method_evidence": [],
+      "independence": {
+        "status": "not_assessed",
+        "basis": null,
+        "conflict_of_interest": null
+      },
+      "limitations": [
+        "No verification method has been completed for this capability claim.",
+        "The assigned verifier is a local structural validation suite and is not an independent reviewer.",
+        "The linked E1 declaration does not establish capability truth, execution, approval, assignment, or permission."
+      ],
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "verification_id": "dbio:verification:ecl-execution-compact-layer:001",
+      "subject": "ecl-execution-compact-layer",
+      "claim_id": "dbio:claim:ecl-execution-compact-layer:001",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence": [
+        "dbio:evidence:ecl-execution-compact-layer:001"
+      ],
+      "decision": "pending",
+      "timestamp": null,
+      "verification_level": "V0",
+      "status": "pending",
+      "method_evidence": [],
+      "independence": {
+        "status": "not_assessed",
+        "basis": null,
+        "conflict_of_interest": null
+      },
+      "limitations": [
+        "No verification method has been completed for this capability claim.",
+        "The assigned verifier is a local structural validation suite and is not an independent reviewer.",
+        "The linked E1 declaration does not establish capability truth, execution, approval, assignment, or permission."
+      ],
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "verification_id": "dbio:verification:ecl-execution-compact-layer:002",
+      "subject": "ecl-execution-compact-layer",
+      "claim_id": "dbio:claim:ecl-execution-compact-layer:002",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence": [
+        "dbio:evidence:ecl-execution-compact-layer:002"
+      ],
+      "decision": "pending",
+      "timestamp": null,
+      "verification_level": "V0",
+      "status": "pending",
+      "method_evidence": [],
+      "independence": {
+        "status": "not_assessed",
+        "basis": null,
+        "conflict_of_interest": null
+      },
+      "limitations": [
+        "No verification method has been completed for this capability claim.",
+        "The assigned verifier is a local structural validation suite and is not an independent reviewer.",
+        "The linked E1 declaration does not establish capability truth, execution, approval, assignment, or permission."
+      ],
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "verification_id": "dbio:verification:ecl-execution-compact-layer:003",
+      "subject": "ecl-execution-compact-layer",
+      "claim_id": "dbio:claim:ecl-execution-compact-layer:003",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence": [
+        "dbio:evidence:ecl-execution-compact-layer:003"
+      ],
+      "decision": "pending",
+      "timestamp": null,
+      "verification_level": "V0",
+      "status": "pending",
+      "method_evidence": [],
+      "independence": {
+        "status": "not_assessed",
+        "basis": null,
+        "conflict_of_interest": null
+      },
+      "limitations": [
+        "No verification method has been completed for this capability claim.",
+        "The assigned verifier is a local structural validation suite and is not an independent reviewer.",
+        "The linked E1 declaration does not establish capability truth, execution, approval, assignment, or permission."
+      ],
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "verification_id": "dbio:verification:ecl-execution-compact-layer:004",
+      "subject": "ecl-execution-compact-layer",
+      "claim_id": "dbio:claim:ecl-execution-compact-layer:004",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence": [
+        "dbio:evidence:ecl-execution-compact-layer:004"
+      ],
+      "decision": "pending",
+      "timestamp": null,
+      "verification_level": "V0",
+      "status": "pending",
+      "method_evidence": [],
+      "independence": {
+        "status": "not_assessed",
+        "basis": null,
+        "conflict_of_interest": null
+      },
+      "limitations": [
+        "No verification method has been completed for this capability claim.",
+        "The assigned verifier is a local structural validation suite and is not an independent reviewer.",
+        "The linked E1 declaration does not establish capability truth, execution, approval, assignment, or permission."
+      ],
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "verification_id": "dbio:verification:cellcaps:001",
+      "subject": "cellcaps",
+      "claim_id": "dbio:claim:cellcaps:001",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence": [
+        "dbio:evidence:cellcaps:001"
+      ],
+      "decision": "pending",
+      "timestamp": null,
+      "verification_level": "V0",
+      "status": "pending",
+      "method_evidence": [],
+      "independence": {
+        "status": "not_assessed",
+        "basis": null,
+        "conflict_of_interest": null
+      },
+      "limitations": [
+        "No verification method has been completed for this capability claim.",
+        "The assigned verifier is a local structural validation suite and is not an independent reviewer.",
+        "The linked E1 declaration does not establish capability truth, execution, approval, assignment, or permission."
+      ],
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "verification_id": "dbio:verification:cellcaps:002",
+      "subject": "cellcaps",
+      "claim_id": "dbio:claim:cellcaps:002",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence": [
+        "dbio:evidence:cellcaps:002"
+      ],
+      "decision": "pending",
+      "timestamp": null,
+      "verification_level": "V0",
+      "status": "pending",
+      "method_evidence": [],
+      "independence": {
+        "status": "not_assessed",
+        "basis": null,
+        "conflict_of_interest": null
+      },
+      "limitations": [
+        "No verification method has been completed for this capability claim.",
+        "The assigned verifier is a local structural validation suite and is not an independent reviewer.",
+        "The linked E1 declaration does not establish capability truth, execution, approval, assignment, or permission."
+      ],
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "verification_id": "dbio:verification:cellcaps:003",
+      "subject": "cellcaps",
+      "claim_id": "dbio:claim:cellcaps:003",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence": [
+        "dbio:evidence:cellcaps:003"
+      ],
+      "decision": "pending",
+      "timestamp": null,
+      "verification_level": "V0",
+      "status": "pending",
+      "method_evidence": [],
+      "independence": {
+        "status": "not_assessed",
+        "basis": null,
+        "conflict_of_interest": null
+      },
+      "limitations": [
+        "No verification method has been completed for this capability claim.",
+        "The assigned verifier is a local structural validation suite and is not an independent reviewer.",
+        "The linked E1 declaration does not establish capability truth, execution, approval, assignment, or permission."
+      ],
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "verification_id": "dbio:verification:cellcaps:004",
+      "subject": "cellcaps",
+      "claim_id": "dbio:claim:cellcaps:004",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence": [
+        "dbio:evidence:cellcaps:004"
+      ],
+      "decision": "pending",
+      "timestamp": null,
+      "verification_level": "V0",
+      "status": "pending",
+      "method_evidence": [],
+      "independence": {
+        "status": "not_assessed",
+        "basis": null,
+        "conflict_of_interest": null
+      },
+      "limitations": [
+        "No verification method has been completed for this capability claim.",
+        "The assigned verifier is a local structural validation suite and is not an independent reviewer.",
+        "The linked E1 declaration does not establish capability truth, execution, approval, assignment, or permission."
+      ],
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "verification_id": "dbio:verification:pra-server:001",
+      "subject": "pra-server",
+      "claim_id": "dbio:claim:pra-server:001",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence": [
+        "dbio:evidence:pra-server:001"
+      ],
+      "decision": "pending",
+      "timestamp": null,
+      "verification_level": "V0",
+      "status": "pending",
+      "method_evidence": [],
+      "independence": {
+        "status": "not_assessed",
+        "basis": null,
+        "conflict_of_interest": null
+      },
+      "limitations": [
+        "No verification method has been completed for this capability claim.",
+        "The assigned verifier is a local structural validation suite and is not an independent reviewer.",
+        "The linked E1 declaration does not establish capability truth, execution, approval, assignment, or permission."
+      ],
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "verification_id": "dbio:verification:pra-server:002",
+      "subject": "pra-server",
+      "claim_id": "dbio:claim:pra-server:002",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence": [
+        "dbio:evidence:pra-server:002"
+      ],
+      "decision": "pending",
+      "timestamp": null,
+      "verification_level": "V0",
+      "status": "pending",
+      "method_evidence": [],
+      "independence": {
+        "status": "not_assessed",
+        "basis": null,
+        "conflict_of_interest": null
+      },
+      "limitations": [
+        "No verification method has been completed for this capability claim.",
+        "The assigned verifier is a local structural validation suite and is not an independent reviewer.",
+        "The linked E1 declaration does not establish capability truth, execution, approval, assignment, or permission."
+      ],
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "verification_id": "dbio:verification:pra-server:003",
+      "subject": "pra-server",
+      "claim_id": "dbio:claim:pra-server:003",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence": [
+        "dbio:evidence:pra-server:003"
+      ],
+      "decision": "pending",
+      "timestamp": null,
+      "verification_level": "V0",
+      "status": "pending",
+      "method_evidence": [],
+      "independence": {
+        "status": "not_assessed",
+        "basis": null,
+        "conflict_of_interest": null
+      },
+      "limitations": [
+        "No verification method has been completed for this capability claim.",
+        "The assigned verifier is a local structural validation suite and is not an independent reviewer.",
+        "The linked E1 declaration does not establish capability truth, execution, approval, assignment, or permission."
+      ],
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "verification_id": "dbio:verification:pra-server:004",
+      "subject": "pra-server",
+      "claim_id": "dbio:claim:pra-server:004",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence": [
+        "dbio:evidence:pra-server:004"
+      ],
+      "decision": "pending",
+      "timestamp": null,
+      "verification_level": "V0",
+      "status": "pending",
+      "method_evidence": [],
+      "independence": {
+        "status": "not_assessed",
+        "basis": null,
+        "conflict_of_interest": null
+      },
+      "limitations": [
+        "No verification method has been completed for this capability claim.",
+        "The assigned verifier is a local structural validation suite and is not an independent reviewer.",
+        "The linked E1 declaration does not establish capability truth, execution, approval, assignment, or permission."
+      ],
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "verification_id": "dbio:verification:standalone-agent-object-protocol-draft:001",
+      "subject": "standalone-agent-object-protocol-draft",
+      "claim_id": "dbio:claim:standalone-agent-object-protocol-draft:001",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence": [
+        "dbio:evidence:standalone-agent-object-protocol-draft:001"
+      ],
+      "decision": "pending",
+      "timestamp": null,
+      "verification_level": "V0",
+      "status": "pending",
+      "method_evidence": [],
+      "independence": {
+        "status": "not_assessed",
+        "basis": null,
+        "conflict_of_interest": null
+      },
+      "limitations": [
+        "No verification method has been completed for this capability claim.",
+        "The assigned verifier is a local structural validation suite and is not an independent reviewer.",
+        "The linked E1 declaration does not establish capability truth, execution, approval, assignment, or permission."
+      ],
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "verification_id": "dbio:verification:standalone-agent-object-protocol-draft:002",
+      "subject": "standalone-agent-object-protocol-draft",
+      "claim_id": "dbio:claim:standalone-agent-object-protocol-draft:002",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence": [
+        "dbio:evidence:standalone-agent-object-protocol-draft:002"
+      ],
+      "decision": "pending",
+      "timestamp": null,
+      "verification_level": "V0",
+      "status": "pending",
+      "method_evidence": [],
+      "independence": {
+        "status": "not_assessed",
+        "basis": null,
+        "conflict_of_interest": null
+      },
+      "limitations": [
+        "No verification method has been completed for this capability claim.",
+        "The assigned verifier is a local structural validation suite and is not an independent reviewer.",
+        "The linked E1 declaration does not establish capability truth, execution, approval, assignment, or permission."
+      ],
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "verification_id": "dbio:verification:standalone-agent-object-protocol-draft:003",
+      "subject": "standalone-agent-object-protocol-draft",
+      "claim_id": "dbio:claim:standalone-agent-object-protocol-draft:003",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence": [
+        "dbio:evidence:standalone-agent-object-protocol-draft:003"
+      ],
+      "decision": "pending",
+      "timestamp": null,
+      "verification_level": "V0",
+      "status": "pending",
+      "method_evidence": [],
+      "independence": {
+        "status": "not_assessed",
+        "basis": null,
+        "conflict_of_interest": null
+      },
+      "limitations": [
+        "No verification method has been completed for this capability claim.",
+        "The assigned verifier is a local structural validation suite and is not an independent reviewer.",
+        "The linked E1 declaration does not establish capability truth, execution, approval, assignment, or permission."
+      ],
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "verification_id": "dbio:verification:sovereign-agent-local-gate:001",
+      "subject": "sovereign-agent-local-gate",
+      "claim_id": "dbio:claim:sovereign-agent-local-gate:001",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence": [
+        "dbio:evidence:sovereign-agent-local-gate:001"
+      ],
+      "decision": "pending",
+      "timestamp": null,
+      "verification_level": "V0",
+      "status": "pending",
+      "method_evidence": [],
+      "independence": {
+        "status": "not_assessed",
+        "basis": null,
+        "conflict_of_interest": null
+      },
+      "limitations": [
+        "No verification method has been completed for this capability claim.",
+        "The assigned verifier is a local structural validation suite and is not an independent reviewer.",
+        "The linked E1 declaration does not establish capability truth, execution, approval, assignment, or permission."
+      ],
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "verification_id": "dbio:verification:sovereign-agent-local-gate:002",
+      "subject": "sovereign-agent-local-gate",
+      "claim_id": "dbio:claim:sovereign-agent-local-gate:002",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence": [
+        "dbio:evidence:sovereign-agent-local-gate:002"
+      ],
+      "decision": "pending",
+      "timestamp": null,
+      "verification_level": "V0",
+      "status": "pending",
+      "method_evidence": [],
+      "independence": {
+        "status": "not_assessed",
+        "basis": null,
+        "conflict_of_interest": null
+      },
+      "limitations": [
+        "No verification method has been completed for this capability claim.",
+        "The assigned verifier is a local structural validation suite and is not an independent reviewer.",
+        "The linked E1 declaration does not establish capability truth, execution, approval, assignment, or permission."
+      ],
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "verification_id": "dbio:verification:sovereign-agent-local-gate:003",
+      "subject": "sovereign-agent-local-gate",
+      "claim_id": "dbio:claim:sovereign-agent-local-gate:003",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence": [
+        "dbio:evidence:sovereign-agent-local-gate:003"
+      ],
+      "decision": "pending",
+      "timestamp": null,
+      "verification_level": "V0",
+      "status": "pending",
+      "method_evidence": [],
+      "independence": {
+        "status": "not_assessed",
+        "basis": null,
+        "conflict_of_interest": null
+      },
+      "limitations": [
+        "No verification method has been completed for this capability claim.",
+        "The assigned verifier is a local structural validation suite and is not an independent reviewer.",
+        "The linked E1 declaration does not establish capability truth, execution, approval, assignment, or permission."
+      ],
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "verification_id": "dbio:verification:mcp-agent-ei-external:001",
+      "subject": "mcp-agent-ei-external",
+      "claim_id": "dbio:claim:mcp-agent-ei-external:001",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence": [
+        "dbio:evidence:mcp-agent-ei-external:001"
+      ],
+      "decision": "pending",
+      "timestamp": null,
+      "verification_level": "V0",
+      "status": "pending",
+      "method_evidence": [],
+      "independence": {
+        "status": "not_assessed",
+        "basis": null,
+        "conflict_of_interest": null
+      },
+      "limitations": [
+        "No verification method has been completed for this capability claim.",
+        "The assigned verifier is a local structural validation suite and is not an independent reviewer.",
+        "The linked E1 declaration does not establish capability truth, execution, approval, assignment, or permission."
+      ],
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "verification_id": "dbio:verification:mcp-agent-ei-external:002",
+      "subject": "mcp-agent-ei-external",
+      "claim_id": "dbio:claim:mcp-agent-ei-external:002",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence": [
+        "dbio:evidence:mcp-agent-ei-external:002"
+      ],
+      "decision": "pending",
+      "timestamp": null,
+      "verification_level": "V0",
+      "status": "pending",
+      "method_evidence": [],
+      "independence": {
+        "status": "not_assessed",
+        "basis": null,
+        "conflict_of_interest": null
+      },
+      "limitations": [
+        "No verification method has been completed for this capability claim.",
+        "The assigned verifier is a local structural validation suite and is not an independent reviewer.",
+        "The linked E1 declaration does not establish capability truth, execution, approval, assignment, or permission."
+      ],
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "verification_id": "dbio:verification:mcp-agent-ei-external:003",
+      "subject": "mcp-agent-ei-external",
+      "claim_id": "dbio:claim:mcp-agent-ei-external:003",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "evidence": [
+        "dbio:evidence:mcp-agent-ei-external:003"
+      ],
+      "decision": "pending",
+      "timestamp": null,
+      "verification_level": "V0",
+      "status": "pending",
+      "method_evidence": [],
+      "independence": {
+        "status": "not_assessed",
+        "basis": null,
+        "conflict_of_interest": null
+      },
+      "limitations": [
+        "No verification method has been completed for this capability claim.",
+        "The assigned verifier is a local structural validation suite and is not an independent reviewer.",
+        "The linked E1 declaration does not establish capability truth, execution, approval, assignment, or permission."
+      ],
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    }
+  ]
+}

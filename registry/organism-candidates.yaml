@@ -1,0 +1,76 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereOrganismCandidateRegistry",
+  "metadata": {
+    "title": "Digital Organism Candidate Registry v0.1",
+    "status": "empty_candidate_baseline",
+    "constitution": "../constitution/organism-genesis-constitution.yaml",
+    "entity_source_of_truth": "entities.yaml",
+    "runtime_source_of_truth": "runtime-instances.yaml",
+    "generated_at": "2026-07-19T22:26:53+08:00",
+    "candidate_count": 0,
+    "qualified_candidate_count": 0,
+    "digital_organism_count": 0,
+    "evaluated_entity_count": 23,
+    "baseline_missing_requirement_counts": {
+      "identity_verified": 23,
+      "runtime_exists": 23,
+      "capability_verified": 23,
+      "evidence_level_at_least_E3": 23,
+      "verification_level_at_least_V3": 23,
+      "resource_flow_recorded": 23,
+      "behavior_trace_available": 23,
+      "evolution_record_available": 23
+    },
+    "agent_created_count": 0,
+    "assigned_capability_count": 0,
+    "permission_grant_count": 0,
+    "c_e_v_level_change_count": 0,
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "There are no candidate records in the v0.1 baseline.",
+      "Missing-requirement counts are an aggregate eligibility audit, not 23 candidate applications.",
+      "A candidate record cannot be generated from entity naming, repository discovery, ecological mapping, fitness, capability claims, evidence, verification, or runtime alone.",
+      "Candidate qualification does not create a Digital Organism, Agent, capability, or permission."
+    ]
+  },
+  "candidate_record_schema": {
+    "required_fields": [
+      "candidate_id",
+      "entity_id",
+      "qualification_status",
+      "missing_requirements"
+    ],
+    "candidate_id_format": "dbio://organism-candidate/<entity_id>/<version>",
+    "valid_qualification_statuses": [
+      "proposed",
+      "qualifying",
+      "qualified",
+      "disqualified",
+      "withdrawn",
+      "retired"
+    ],
+    "required_qualification_evidence": [
+      "runtime_id",
+      "capability_ids",
+      "evidence_refs",
+      "verification_refs",
+      "resource_flow_refs",
+      "trace_refs",
+      "evolution_ref",
+      "qualification_review"
+    ],
+    "qualification_boundary": "qualified requires all eight criteria, missing_requirements=[], and an explicit approved qualification review; it remains Candidate Organism only."
+  },
+  "qualification_requirements": [
+    "identity_verified",
+    "runtime_exists",
+    "capability_verified",
+    "evidence_level_at_least_E3",
+    "verification_level_at_least_V3",
+    "resource_flow_recorded",
+    "behavior_trace_available",
+    "evolution_record_available"
+  ],
+  "organism_candidates": []
+}

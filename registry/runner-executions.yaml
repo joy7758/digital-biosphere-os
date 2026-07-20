@@ -1,0 +1,87 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereAutomatedRunnerExecutionRegistry",
+  "metadata": {
+    "title": "Automated Runner Executions v0.1",
+    "status": "one_failed_attempt_and_one_succeeded_execution",
+    "constitution": "../constitution/automated-runner-constitution.yaml",
+    "runner_source_of_truth": "runners.yaml",
+    "experiment_source_of_truth": "experiments.yaml",
+    "evidence_source_of_truth": "runner-evidence.yaml",
+    "generated_at": "2026-07-20T08:50:38+08:00",
+    "execution_count": 2,
+    "execution_status_distribution": {"pending": 0, "authorized": 0, "running": 0, "stopped": 0, "succeeded": 1, "failed": 1, "invalid": 0, "revoked": 0},
+    "completed_execution_count": 2,
+    "event_created_count": 1,
+    "snapshot_created_count": 2,
+    "runtime_created_count": 0,
+    "agent_created_count": 0,
+    "capability_effect_count": 0,
+    "permission_grant_count": 0,
+    "c_e_v_level_change_count": 0,
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "The registry is empty because no Runner exists and DBOS-EXP-0001 is not authorized or ready for execution.",
+      "A future execution record reports bounded lifecycle facts only; it cannot create the underlying execution or prove correctness by itself.",
+      "Execution status cannot automatically generate an Event, Snapshot, Runtime, Agent, capability, permission, evidence maturity, or C/E/V promotion."
+    ]
+  },
+  "runner_execution_schema": {
+    "required_fields": ["execution_id", "runner_id", "experiment_id", "started_at", "ended_at", "status", "output_refs"],
+    "additional_governance_fields": ["scope_ref", "environment_ref", "authorization_refs", "procedure_ref", "executed_steps", "stop_reason", "evidence_refs", "limitations", "revocation_ref"],
+    "execution_id_format": "dbio:runner-execution:<runner-id>:<experiment-id>:<sequence>",
+    "valid_statuses": ["pending", "authorized", "running", "stopped", "succeeded", "failed", "invalid", "revoked"],
+    "default_status": "pending",
+    "empty_boundary": "No record may be created before Runner identity, scope, environment, readiness, freeze, and authorization references all exist.",
+    "time_boundary": "pending or authorized requires started_at=null and ended_at=null; running requires started_at; terminal states require started_at and ended_at."
+  },
+  "runner_executions": [
+    {
+      "execution_id": "dbio:runner-execution:dbos-self-validation:DBOS-EXP-0001:0001",
+      "runner_id": "dbio:runner:automated:dbos-self-validation:v0.1",
+      "experiment_id": "DBOS-EXP-0001",
+      "started_at": "2026-07-20T10:36:48+08:00",
+      "ended_at": "2026-07-20T10:36:49+08:00",
+      "status": "failed",
+      "output_refs": [
+        "evidence/experiments/DBOS-EXP-0001/run-0001/validator-results.json",
+        "evidence/experiments/DBOS-EXP-0001/run-0001/experiment-result.json"
+      ],
+      "scope_ref": "DBOS-EXP-0001-RUNNER-SCOPE-0001",
+      "environment_ref": "dbio://runner-environment/dbos-exp-0001/local-governance-workspace/v0.1",
+      "authorization_refs": ["DBOS-EXP-0001-AUTH-0001", "DBOS-EXP-0001-EXECUTOR-AUTH-0001"],
+      "procedure_ref": "dbio:experiment-procedure:DBOS-EXP-0001:1",
+      "executed_steps": ["DBOS-EXP-0001-STEP-01", "DBOS-EXP-0001-STEP-02"],
+      "stop_reason": "validator_failure_or_incomplete_suite",
+      "evidence_refs": ["dbio:runner-evidence:DBOS-EXP-0001:attempt-0001:result", "dbio:runner-evidence:DBOS-EXP-0001:attempt-0001:validators"],
+      "limitations": ["fail-closed before Event creation", "3 PASS and 1 FAIL of 29 expected validators", "failure evidence retained append-only"],
+      "revocation_ref": null
+    },
+    {
+      "execution_id": "dbio:runner-execution:dbos-self-validation:DBOS-EXP-0001:0002",
+      "runner_id": "dbio:runner:automated:dbos-self-validation:v0.1",
+      "experiment_id": "DBOS-EXP-0001",
+      "started_at": "2026-07-20T10:50:16+08:00",
+      "ended_at": "2026-07-20T10:50:17+08:00",
+      "status": "succeeded",
+      "output_refs": [
+        "evidence/experiments/DBOS-EXP-0001/run-0002/execution-context.json",
+        "evidence/experiments/DBOS-EXP-0001/run-0002/event-record.json",
+        "evidence/experiments/DBOS-EXP-0001/run-0002/event-integrity.json",
+        "evidence/experiments/DBOS-EXP-0001/run-0002/event-attestation.json",
+        "evidence/experiments/DBOS-EXP-0001/run-0002/evidence-bundle.json",
+        "evidence/experiments/DBOS-EXP-0001/run-0002/verification-result.json",
+        "evidence/experiments/DBOS-EXP-0001/run-0002/experiment-result.json"
+      ],
+      "scope_ref": "DBOS-EXP-0001-RUNNER-SCOPE-0001",
+      "environment_ref": "dbio://runner-environment/dbos-exp-0001/local-governance-workspace/v0.1",
+      "authorization_refs": ["DBOS-EXP-0001-AUTH-0002", "DBOS-EXP-0001-EXECUTOR-AUTH-0002"],
+      "procedure_ref": "dbio:experiment-procedure:DBOS-EXP-0001:1",
+      "executed_steps": ["DBOS-EXP-0001-STEP-01", "DBOS-EXP-0001-STEP-02", "DBOS-EXP-0001-STEP-03", "DBOS-EXP-0001-STEP-04", "DBOS-EXP-0001-STEP-05", "DBOS-EXP-0001-STEP-06", "DBOS-EXP-0001-STEP-07", "DBOS-EXP-0001-STEP-08"],
+      "stop_reason": null,
+      "evidence_refs": ["dbio:runner-evidence:DBOS-EXP-0001:attempt-0002:validators", "dbio:runner-evidence:DBOS-EXP-0001:attempt-0002:bundle", "dbio:runner-evidence:DBOS-EXP-0001:attempt-0002:verification", "dbio:runner-evidence:DBOS-EXP-0001:attempt-0002:result"],
+      "limitations": ["local deterministic execution", "not independent verification", "no Runtime, Agent, Digital Organism, capability, permission, or C/E/V effect"],
+      "revocation_ref": null
+    }
+  ]
+}

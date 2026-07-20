@@ -1,0 +1,204 @@
+schema_version: "0.1"
+kind: "DigitalBiosphereEventExecutionContextConstitution"
+metadata:
+  title: "Event Execution Context Constitution v0.1"
+  chinese_title: "数字生物圈事件执行上下文宪法 v0.1"
+  status: "defined_execution_context_empty_record_baseline"
+  parent_constitution: "constitution.yaml"
+  event_reference: "event-constitution.yaml"
+  integrity_reference: "event-integrity-constitution.yaml"
+  attestation_reference: "event-attestation-constitution.yaml"
+  evidence_reference: "evidence-constitution.yaml"
+  environment_reference: "environment-constitution.yaml"
+  ecological_reference: "saee-constitution.yaml"
+  experimental_protocol_reference: "experimental-protocol-constitution.yaml"
+  automated_runner_reference: "automated-runner-constitution.yaml"
+  environment_qualification_reference: "environment-qualification-constitution.yaml"
+  authority: "execution_context_structure_and_validation_only"
+  effective_scope:
+    - "/Users/zhangbin/GitHub/digital-biosphere-os"
+  adopted_at: "2026-07-20T00:24:33+08:00"
+  non_claims:
+    - "This constitution does not execute, replay, observe, attest, or verify an event."
+    - "An execution-context schema, environment reference, software version, digest, snapshot, or dependency record is not a runtime, Agent, event, evidence result, or Digital Organism."
+    - "Digest validity can support content-consistency checks but cannot prove execution occurrence, environment completeness, provider origin, causal effect, or business truth."
+    - "Execution context cannot grant capability, permission, governance authority, fitness, trust, or C/E/V promotion."
+
+context_identity:
+  definition: "A unique append-only identity for the bounded entity, environment, software, configuration, inputs, outputs, and dependency conditions declared around one possible event-producing execution."
+  source_of_truth: "../registry/execution-contexts.yaml"
+  requirements:
+    - "unique context_id"
+    - "existing canonical entity_id"
+    - "existing environment_ref"
+    - "explicit software_version"
+    - "valid configuration_digest"
+    - "complete dependency_refs for recorded dependencies"
+    - "explicit lifecycle status"
+  boundaries:
+    - "Context Identity != Event Identity != Runtime Identity."
+    - "One context may be referenced by future events, but context registration cannot create or prove an event."
+    - "A repository, process name, environment definition, or software version cannot substitute for an attributable context record."
+    - "The v0.1 baseline contains no execution context."
+
+environment_binding:
+  principle: "Every context binds to one existing declared environment without activating that environment or creating a runtime."
+  environment_source: "../registry/environments.yaml"
+  requirements:
+    - "environment_ref resolves to one canonical environment_id"
+    - "environment type, status, constraints, resource model, and task model remain inspectable"
+    - "context limitations record unknown or unavailable environment properties"
+  fail_closed_rules:
+    - "Missing or unknown environment_ref invalidates the context."
+    - "status=defined on an environment does not imply active, executed, observed, authorized, or production-bound."
+    - "Environment binding has no capability, permission, runtime, organism, or authority effect."
+
+qualified_environment_requirement:
+  constitution_ref: "environment-qualification-constitution.yaml"
+  environment_identity_registry: "../registry/environment-identities.yaml"
+  environment_evidence_registry: "../registry/environment-evidence.yaml"
+  environment_qualification_registry: "../registry/environment-qualifications.yaml"
+  environment_lock_registry: "../registry/environment-locks.yaml"
+  requirements:
+    - "A future Runner-derived execution context must reference an existing Runner environment identity."
+    - "The matching environment qualification result is verified by an attributable in-scope verifier."
+    - "OS and Python versions, dependency and configuration digests, timestamp, and retained environment evidence are complete."
+    - "The shared environment lock is frozen and its aliases remain consistent with the Runner environment record."
+    - "Qualification, context registration, execution authorization, and execution occurrence remain separate decisions."
+  current_environment_identity_count: 1
+  current_environment_qualification_count: 1
+  current_qualified_environment_count: 0
+  current_lock_status: "pending"
+  current_status: "pending"
+  blocking_reason: "The Runner environment identity is defined, but its qualification review and shared lock remain pending and no environment evidence or digest material exists."
+  automatic_context_creation: false
+  automatic_authorization: false
+  authority_effect: "none"
+
+input_snapshot:
+  source_of_truth: "../registry/input-snapshots.yaml"
+  definition: "An immutable reference, hash, and attributable timestamp for input content associated with one existing context."
+  requirements:
+    - "unique snapshot_id across input and output snapshots"
+    - "existing context_id"
+    - "non-empty input_ref"
+    - "sha256 content hash"
+    - "timezone-aware timestamp"
+  boundaries:
+    - "Input Snapshot != Input Availability != Input Completeness."
+    - "A hash without retained canonical bytes and canonicalization rules cannot reproduce the input."
+    - "Sensitive input remains subject to access, privacy, and retention policy; a snapshot reference grants no access."
+
+output_snapshot:
+  source_of_truth: "../registry/output-snapshots.yaml"
+  definition: "An immutable reference, hash, and attributable timestamp for output content associated with one existing context."
+  requirements:
+    - "unique snapshot_id across input and output snapshots"
+    - "existing context_id"
+    - "non-empty output_ref"
+    - "sha256 content hash"
+    - "timezone-aware timestamp"
+  boundaries:
+    - "Output Snapshot != Successful Execution != Correct Result."
+    - "Output existence, hash validity, or repeatability cannot prove business truth, causal effect, safety, or production fitness."
+    - "Corrections, invalidations, revocations, and supersession are additive."
+
+dependency_context:
+  source_of_truth: "../registry/execution-dependencies.yaml"
+  identity_rule: "One dependency record is identified by the composite of context_id and dependency; dependency_refs contain dependency names scoped to that context."
+  requirements:
+    - "existing context_id"
+    - "unique dependency within the context"
+    - "explicit dependency name"
+    - "explicit version"
+    - "attributable source"
+    - "context dependency_refs exactly match its dependency records"
+  boundaries:
+    - "Version String != Resolved Artifact != Dependency Integrity."
+    - "A dependency record grants no installation, network, data-access, execution, capability, or permission authority."
+    - "Transitive dependencies and platform components remain unresolved unless explicitly recorded."
+
+reproducibility:
+  principle: "Reproducibility is a separately evidenced ability to recreate bounded inputs, method, environment, dependencies, and outputs under declared limitations; structural completeness alone is insufficient."
+  minimum_material:
+    - "context identity and entity identity"
+    - "environment identity and constraints"
+    - "software version and immutable source identity"
+    - "configuration digest and canonicalization contract"
+    - "input and output snapshots with retained canonical material"
+    - "complete direct and transitive dependency identities, versions, sources, and digests"
+    - "execution method, platform, clock, resource bounds, and nondeterminism controls"
+    - "reproduction attempt, result, evidence, limitations, and verifier scope"
+  status_boundary: "A context may be structurally valid without being reproducible; reproducibility requires a separate attributable reproduction record and evidence."
+  non_inference:
+    - "Same Digest != Same Environment."
+    - "Same Output != Correct Output."
+    - "Reproducible != Independently Verified."
+    - "Reproducible != Authorized."
+
+experiment_reference:
+  constitution_ref: "experimental-protocol-constitution.yaml"
+  experiment_registry: "../registry/experiments.yaml"
+  procedure_registry: "../registry/experiment-procedures.yaml"
+  reproducibility_requirement_registry: "../registry/reproducibility-requirements.yaml"
+  observation_registry: "../registry/experiment-observations.yaml"
+  relationship: "Experiment -> Observation -> Evolution"
+  requirements:
+    - "A future experiment procedure may reference only an existing execution context whose entity and environment match the experiment subject and declared procedure environment."
+    - "Experiment definition and procedure validation do not create a runtime, execution, event, output, observation, evidence, or result."
+    - "All five reproducibility requirements must be declared before execution eligibility and separately satisfied after a real attributable run."
+    - "Experiment observations require an independently established run and cannot calculate fitness, trigger evolution, or promote C/E/V automatically."
+  current_experiment_count: 0
+  current_procedure_count: 0
+  current_observation_count: 0
+  authority_effect: "none"
+
+runner_reference:
+  constitution_ref: "automated-runner-constitution.yaml"
+  runner_registry: "../registry/runners.yaml"
+  runner_environment_registry: "../registry/runner-environments.yaml"
+  runner_execution_registry: "../registry/runner-executions.yaml"
+  runner_evidence_registry: "../registry/runner-evidence.yaml"
+  relationship: "Runner Execution -> Execution Context -> Event"
+  requirements:
+    - "A future context may reference only an existing attributable Runner execution whose experiment, environment, input, output, dependency, and time boundaries match."
+    - "Runner Execution != Execution Context != Event."
+    - "Runner definition, environment definition, or execution-record identity cannot create a context, Runtime, Event, evidence result, capability, or permission."
+    - "A deterministic Runner claim requires separately retained inputs, implementation, configuration, dependencies, environment, outputs, and evidence."
+  current_runner_count: 0
+  current_runner_execution_count: 0
+  current_runner_evidence_count: 0
+  authority_effect: "none"
+
+saee_mapping:
+  relation: "Execution Context -> Event Reliability"
+  interpretation: "Bounded environmental, software, configuration, snapshot, and dependency context may constrain future reliance on event-derived evidence without creating an event, execution result, evidence maturity, fitness, or selection outcome."
+  status: "defined_execution_context_model_no_records"
+  authority_effect: "none"
+  evidence_level_effect: "none"
+  fitness_effect: "none"
+
+current_baseline:
+  execution_context_count: 0
+  input_snapshot_count: 0
+  output_snapshot_count: 0
+  dependency_count: 0
+  experiment_count: 0
+  experiment_procedure_count: 0
+  experiment_observation_count: 0
+  reproducibility_requirement_definition_count: 5
+  reproducibility_record_count: 0
+  automated_runner_count: 0
+  runner_environment_count: 1
+  runner_environment_identity_count: 1
+  runner_environment_qualification_count: 1
+  qualified_runner_environment_count: 0
+  runner_execution_count: 0
+  runner_evidence_count: 0
+  event_count: 0
+  runtime_instance_count: 0
+  capability_count: 0
+  permission_grant_count: 0
+  agent_created_count: 0
+  digital_organism_count: 0
+  c_e_v_level_change_count: 0

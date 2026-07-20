@@ -1,0 +1,45 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereCaptureScopeRegistry",
+  "metadata": {
+    "title": "Snapshot Capture Scopes v0.1",
+    "status": "one_approved_bounded_scope",
+    "constitution": "../constitution/snapshot-capture-readiness-constitution.yaml",
+    "experiment_source_of_truth": "experiments.yaml",
+    "generated_at": "2026-07-20T02:00:37+08:00",
+    "scope_count": 1,
+    "scope_status_distribution": {"proposed": 0, "defined": 0, "approved": 1, "invalid": 0, "revoked": 0, "superseded": 0},
+    "defined_scope_count": 0,
+    "approved_scope_count": 1,
+    "capture_authority_count": 0,
+    "external_project_path_count": 0,
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "The scope is a deny-by-default local allowlist definition and is not capture authorization.",
+      "Member repositories, sibling paths, credentials, secrets, Git metadata, caches, and unapproved external storage remain excluded."
+    ]
+  },
+  "capture_scope_schema": {
+    "required_fields": ["scope_id", "experiment_id", "included_paths", "excluded_paths", "status"],
+    "additional_governance_fields": ["root_ref", "exclusion_precedence", "privacy_status", "limitations", "supersedes", "revocation_ref", "authority_effect"],
+    "valid_statuses": ["proposed", "defined", "approved", "invalid", "revoked", "superseded"],
+    "default_status": "defined",
+    "scope_boundary": "included paths must resolve inside root_ref; exclusion rules override inclusion; approved still does not grant capture authority."
+  },
+  "capture_scopes": [
+    {
+      "scope_id": "DBOS-EXP-0001-CAPTURE-SCOPE-0001",
+      "experiment_id": "DBOS-EXP-0001",
+      "included_paths": ["constitution/", "registry/", "validation/", "execution/"],
+      "excluded_paths": ["../", ".git/", "**/.env*", "**/*secret*", "**/*credential*", "**/*token*", "**/*key*", "**/__pycache__/", "**/*.pyc", "**/.DS_Store", "member-repositories-outside-root", "unapproved-external-storage", "dataless-or-non-materialized-files"],
+      "status": "approved",
+      "root_ref": "/Users/zhangbin/GitHub/digital-biosphere-os",
+      "exclusion_precedence": "deny_overrides_allow",
+      "privacy_status": "passed_bounded_allowlist",
+      "limitations": ["local DBOS roots only", "no evidence output recursion", "member repositories excluded", "symlinks and non-materialized files excluded"],
+      "supersedes": null,
+      "revocation_ref": null,
+      "authority_effect": "none"
+    }
+  ]
+}

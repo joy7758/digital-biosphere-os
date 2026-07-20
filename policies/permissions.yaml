@@ -1,0 +1,64 @@
+schema_version: "0.1"
+kind: "DigitalBiospherePermissionPolicy"
+metadata:
+  status: "declarative_only"
+  enforcement: "not_implemented"
+  default_decision: "deny_if_unspecified"
+  note: "This policy does not modify operating-system, Git, repository, cloud, or account permissions."
+
+allowed:
+  - id: "read_repository"
+    action: "read repository"
+    constraints:
+      - "read-only inspection"
+      - "respect repository-local AGENTS.md and explicit confidentiality boundaries"
+      - "do not treat discovery as permission to publish or transmit content"
+
+  - id: "run_tests"
+    action: "run tests"
+    constraints:
+      - "tests must be local and within the authorized task scope"
+      - "generated artifacts must be identified and must not silently modify existing repositories"
+      - "external services, paid resources, and production data require separate confirmation"
+
+  - id: "create_evidence"
+    action: "create evidence"
+    constraints:
+      - "evidence must identify its source and collection time"
+      - "synthetic fixtures must be labeled synthetic and may not support real-world claims"
+      - "historical evidence is append-only"
+
+confirmation_required:
+  - id: "modify_core_protocol"
+    action: "modify core protocol"
+    confirmation: "explicit human confirmation"
+    evidence_required:
+      - "target protocol and exact scope"
+      - "compatibility impact"
+      - "rollback plan"
+
+  - id: "publish_release"
+    action: "publish release"
+    confirmation: "explicit human confirmation"
+    evidence_required:
+      - "release candidate identity"
+      - "verification results"
+      - "public claim review"
+
+  - id: "modify_schema"
+    action: "modify schema"
+    confirmation: "explicit human confirmation"
+    evidence_required:
+      - "schema diff"
+      - "migration and compatibility analysis"
+      - "validator or conformance results"
+
+prohibited:
+  - id: "delete_historical_evidence"
+    action: "delete historical evidence"
+    rationale: "Historical evidence must remain available for traceability; corrections must be additive."
+
+  - id: "unrecorded_modification"
+    action: "make an unrecorded modification"
+    rationale: "Material changes require an attributable record and evidence source."
+

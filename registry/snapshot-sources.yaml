@@ -1,0 +1,46 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereSnapshotSourceTypeRegistry",
+  "metadata": {
+    "title": "Snapshot Source Types v0.1",
+    "status": "four_source_types_defined",
+    "constitution": "../constitution/snapshot-capture-constitution.yaml",
+    "generated_at": "2026-07-20T01:44:35+08:00",
+    "source_type_count": 4,
+    "source_type_distribution": {"filesystem": 1, "git": 1, "artifact_registry": 1, "external_storage": 1},
+    "source_instance_count": 0,
+    "access_authority_count": 0,
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "Source types are method vocabularies, not source instances, credentials, access grants, captured material, or evidence.",
+      "git is defined as a type but is unavailable for the current DBOS root because no .git identity exists."
+    ]
+  },
+  "source_type_schema": {
+    "required_fields": ["source_type", "description", "verification_method"],
+    "valid_source_types": ["filesystem", "git", "artifact_registry", "external_storage"],
+    "authority_boundary": "A source type definition grants no filesystem, repository, network, registry, storage, credential, or execution access."
+  },
+  "snapshot_sources": [
+    {
+      "source_type": "filesystem",
+      "description": "Bounded local filesystem material selected through deterministic path enumeration.",
+      "verification_method": "Normalize included relative paths, record type and size, hash exact bytes with sha256, and verify deterministic aggregate ordering."
+    },
+    {
+      "source_type": "git",
+      "description": "Repository state identified through valid Git commit, tree, index, and worktree metadata.",
+      "verification_method": "Resolve repository identity, commit and tree objects, record index and worktree state, and verify referenced objects and path hashes."
+    },
+    {
+      "source_type": "artifact_registry",
+      "description": "Versioned immutable artifact material obtained from a governed artifact registry.",
+      "verification_method": "Verify canonical registry locator, immutable version, provider digest, downloaded bytes, provenance metadata, and retention reference."
+    },
+    {
+      "source_type": "external_storage",
+      "description": "Object material held outside the local workspace under a separately governed storage identity.",
+      "verification_method": "Verify authorized immutable locator, provider object version, metadata, retrieved byte digest, access evidence, and retention boundary."
+    }
+  ]
+}

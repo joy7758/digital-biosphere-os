@@ -1,0 +1,48 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereAttestationMethodRegistry",
+  "metadata": {
+    "title": "Event Attestation Methods v0.1",
+    "status": "defined_method_taxonomy_only",
+    "constitution": "../constitution/event-attestation-constitution.yaml",
+    "generated_at": "2026-07-20T00:09:24+08:00",
+    "attestation_method_count": 3,
+    "method_instance_count": 0,
+    "automatic_trust_count": 0,
+    "automatic_authority_effect": "none",
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "Method definitions do not execute signing, instantiate a producer, or produce an attestation.",
+      "Method choice alone proves neither independence nor factual truth."
+    ]
+  },
+  "method_record_schema": {
+    "required_fields": ["method_id", "requirements", "independence"],
+    "valid_method_ids": ["self_attestation", "automated_attestation", "external_attestation"],
+    "common_requirements": ["existing event", "identified producer", "bounded claim", "non-secret signature reference when signed", "explicit scope and limitations", "append-only lifecycle"],
+    "signature_boundary": "A verified signature supports signer-to-claim binding only; event provenance, occurrence, completeness, cause, and effect require separate evidence and verification."
+  },
+  "attestation_methods": [
+    {
+      "method_id": "self_attestation",
+      "requirements": ["producer identity matches the event subject or declared source", "claim scope and limitations are explicit", "signature method and canonicalization are attributable when signed"],
+      "independence": "none",
+      "trust_effect": "none",
+      "fact_effect": "none"
+    },
+    {
+      "method_id": "automated_attestation",
+      "requirements": ["automated producer identity and execution scope are registered", "method version, input binding, output, and signature verification are reproducible", "separate evidence records method limitations and revocation state"],
+      "independence": "none_without_separate_identity_method_and_conflict_evidence",
+      "trust_effect": "none",
+      "fact_effect": "none"
+    },
+    {
+      "method_id": "external_attestation",
+      "requirements": ["producer identity is separate from the event subject and source", "independence and conflict-of-interest evidence are recorded", "method, scope, signature verification, limitations, and revocation path are attributable"],
+      "independence": "requires_separate_identity_and_conflict_evidence",
+      "trust_effect": "none",
+      "fact_effect": "none"
+    }
+  ]
+}

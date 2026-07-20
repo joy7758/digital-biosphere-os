@@ -1,0 +1,162 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereVerifierRegistry",
+  "metadata": {
+    "title": "Verifier Registry v0.1",
+    "status": "bounded_local_verification_network_baseline",
+    "constitution": "../constitution/verification-constitution.yaml",
+    "network_constitution": "../constitution/verification-network-constitution.yaml",
+    "verifier_type_source_of_truth": "verifier-types.yaml",
+    "generated_at": "2026-07-19T20:28:44+08:00",
+    "verifier_count": 1,
+    "type_distribution": {
+      "automated": 1,
+      "maintainer": 0,
+      "external": 0,
+      "experimental": 0
+    },
+    "trust_level_distribution": {
+      "unknown": 0,
+      "self_asserted": 0,
+      "local_automated": 1,
+      "reproducible": 0,
+      "independent": 0,
+      "continuous": 0
+    },
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "The registered suite is an automated validation process, not an Agent, human reviewer, independent verifier, certifier, or permission authority.",
+      "Registration records bounded structural authority only; it does not record a capability or successful verification run."
+    ]
+  },
+  "verifier_record_schema": {
+    "required_fields": [
+      "verifier_id",
+      "type",
+      "status",
+      "scope",
+      "method",
+      "trust_level",
+      "evidence_required"
+    ],
+    "valid_types": [
+      "automated",
+      "maintainer",
+      "external",
+      "experimental"
+    ],
+    "valid_trust_levels": [
+      "unknown",
+      "self_asserted",
+      "local_automated",
+      "reproducible",
+      "independent",
+      "continuous"
+    ],
+    "valid_lifecycle_states": [
+      "proposed",
+      "active",
+      "suspended",
+      "revoked",
+      "retired"
+    ],
+    "authority_boundary": "A verifier may issue decisions only within its explicit scope, method, trust level, evidence, lifecycle, and independence boundary."
+  },
+  "verifiers": [
+    {
+      "verifier_id": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "type": "automated",
+      "status": "active",
+      "scope": {
+        "root": "/Users/zhangbin/GitHub/digital-biosphere-os",
+        "environments": [
+          "local_registry_only"
+        ],
+        "registry_authority": [
+          "registry/entities.yaml",
+          "registry/capability-claims.yaml",
+          "registry/capability-evidence.yaml",
+          "registry/verification-records.yaml",
+          "registry/verification-runs.yaml",
+          "registry/trust-graph.yaml",
+          "registry/executor-identities.yaml",
+          "registry/executor-verifications.yaml",
+          "registry/executors.yaml",
+          "registry/runners.yaml",
+          "registry/runner-scopes.yaml"
+        ],
+        "subject_rule": "registered_verification_records_only",
+        "external_project_execution": false,
+        "included": [
+          "registry schema and required-field consistency",
+          "identifier uniqueness",
+          "local reference resolution",
+          "identity, capability, claim, evidence, verification-level, and permission-separation invariants",
+          "DBOS-EXP-0001 automated Executor Identity source, implementation digest, boundary, and reference consistency",
+          "DBOS-EXP-0001 deterministic Runner identity, implementation digest, scope, environment, and non-Agent boundary consistency"
+        ],
+        "excluded": [
+          "capability truth or approval",
+          "independent review",
+          "permission or capability assignment",
+          "external project certification",
+          "runtime, deployment, production, compliance, safety, adoption, or customer-readiness conclusions"
+        ]
+      },
+      "method": {
+        "kind": "deterministic_local_standard_library_validation",
+        "commands": [
+          "python3 validation/identity_validator.py --format json",
+          "python3 validation/capability_validator.py --format json",
+          "python3 validation/capability_claim_validator.py --format json",
+          "python3 validation/evidence_validator.py --format json",
+          "python3 validation/verification_validator.py --format json",
+          "python3 validation/verification_network_validator.py --format json"
+        ],
+        "decision_boundary": "May return structural PASS or FAIL; cannot approve a capability claim or represent independent verification."
+      },
+      "trust_level": "local_automated",
+      "evidence_required": [
+        "exact validator source paths and versions",
+        "input registry identities and hashes",
+        "deterministic command and environment",
+        "complete validator output and exit status",
+        "recorded scope and limitations"
+      ],
+      "implementation_evidence": [
+        "validation/identity_validator.py",
+        "validation/capability_validator.py",
+        "validation/capability_claim_validator.py",
+        "validation/evidence_validator.py",
+        "validation/verification_validator.py",
+        "validation/verification_network_validator.py"
+      ],
+      "identity_evidence": [
+        "registry/verifiers.yaml",
+        "validation/identity_validator.py",
+        "validation/capability_validator.py",
+        "validation/capability_claim_validator.py",
+        "validation/evidence_validator.py",
+        "validation/verification_validator.py",
+        "validation/verification_network_validator.py"
+      ],
+      "lifecycle": {
+        "state": "active",
+        "activated_at": "2026-07-19T20:28:44+08:00",
+        "suspended_at": null,
+        "revoked_at": null,
+        "retired_at": null
+      },
+      "independence_status": "not_independent",
+      "agent_status": "not_an_agent",
+      "reviewer_status": "not_a_reviewer",
+      "authority": {
+        "may_reject_structural_inconsistency": true,
+        "may_approve_capability": false,
+        "may_assign_capability": false,
+        "may_grant_permission": false,
+        "may_claim_independent_verification": false
+      }
+    }
+  ]
+}

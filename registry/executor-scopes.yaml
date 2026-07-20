@@ -1,0 +1,59 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereExperimentExecutorScopeRegistry",
+  "metadata": {
+    "title": "Experiment Executor Scopes v0.1",
+    "status": "one_approved_bounded_executor_scope",
+    "constitution": "../constitution/executor-constitution.yaml",
+    "executor_source_of_truth": "executors.yaml",
+    "experiment_source_of_truth": "experiments.yaml",
+    "generated_at": "2026-07-20T02:11:57+08:00",
+    "scope_count": 1,
+    "active_scope_count": 1,
+    "execution_authority_count": 0,
+    "capability_effect_count": 0,
+    "permission_grant_count": 0,
+    "historical_evidence_change_count": 0,
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "The registry is empty because no executor exists; a scope cannot be created for a nonexistent executor.",
+      "A future scope is deny-by-default, experiment-specific, action-specific, and subordinate to separate executor and experiment authorizations.",
+      "Allowed actions describe a ceiling only; they do not grant capability, permission, authorization, or execution authority."
+    ]
+  },
+  "executor_scope_schema": {
+    "required_fields": ["scope_id", "executor_id", "allowed_experiments", "allowed_actions", "forbidden_actions"],
+    "additional_governance_fields": ["status", "limitations", "supersedes", "revocation_ref", "authority_effect"],
+    "valid_statuses": ["proposed", "defined", "approved", "suspended", "revoked", "superseded"],
+    "default_status": "proposed",
+    "mandatory_forbidden_actions": ["modify constitution", "create agent", "grant permission", "alter evidence"],
+    "scope_boundary": "Every scope references an existing executor and registered experiment; forbidden actions override allowed actions and authority_effect remains none until separate authorization."
+  },
+  "allowed_action_vocabulary": [
+    "load registered experiment definition",
+    "check frozen preconditions",
+    "invoke explicitly authorized procedure step",
+    "collect bounded execution outputs",
+    "stop under registered stop rule"
+  ],
+  "mandatory_forbidden_actions": [
+    "modify constitution",
+    "create agent",
+    "grant permission",
+    "alter evidence"
+  ],
+  "executor_scopes": [
+    {
+      "scope_id": "DBOS-EXP-0001-EXECUTOR-SCOPE-0001",
+      "executor_id": "dbio:executor:automated-runner:dbos-self-validation:v0.1",
+      "allowed_experiments": ["DBOS-EXP-0001"],
+      "allowed_actions": ["load registered experiment definition", "check frozen preconditions", "invoke explicitly authorized procedure step", "collect bounded execution outputs", "stop under registered stop rule"],
+      "forbidden_actions": ["modify constitution", "create agent", "grant permission", "alter evidence", "create runtime", "modify historical evidence", "modify member repository", "modify external project", "execute unregistered experiment", "invoke unregistered step", "self authorize", "upgrade C/E/V"],
+      "status": "approved",
+      "limitations": ["DBOS-EXP-0001 only", "scope is a ceiling and is not execution authorization"],
+      "supersedes": null,
+      "revocation_ref": null,
+      "authority_effect": "none"
+    }
+  ]
+}

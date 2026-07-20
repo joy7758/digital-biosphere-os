@@ -1,0 +1,61 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereGovernanceObservationRegistry",
+  "metadata": {
+    "title": "Governance Observation Intake v0.1",
+    "status": "unobserved_entry_baseline",
+    "constitution": "../constitution/governance-evidence-constitution.yaml",
+    "entity_source_of_truth": "entities.yaml",
+    "generated_at": "2026-07-19T23:31:39+08:00",
+    "observation_entry_count": 23,
+    "unobserved_entry_count": 23,
+    "observed_value_count": 0,
+    "non_null_timestamp_count": 0,
+    "claim_effect_count": 0,
+    "binding_effect_count": 0,
+    "governance_authority_grant_count": 0,
+    "capability_effect_count": 0,
+    "permission_effect_count": 0,
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "Each current entity has one empty intake entry, not one observed governance fact.",
+      "Unknown dimension plus null value and timestamp cannot support a claim, evidence level, maturity, binding, evaluation, or authority decision."
+    ]
+  },
+  "observation_record_schema": {
+    "required_fields": ["observation_id", "entity_id", "governance_dimension", "value", "timestamp", "status"],
+    "observation_id_format": "dbio://governance-observation/<entity-id>/intake/v<version>",
+    "valid_governance_dimensions": ["unknown", "coordination_efficiency", "autonomy", "stability", "adaptability", "centralization_risk"],
+    "valid_statuses": ["unobserved", "observed", "invalid", "revoked"],
+    "default_governance_dimension": "unknown",
+    "default_value": null,
+    "default_timestamp": null,
+    "default_status": "unobserved",
+    "entry_boundary": "An unobserved intake entry is a routing placeholder and not governance evidence."
+  },
+  "governance_observations": [
+    {"observation_id":"dbio://governance-observation/digital-biosphere-architecture/intake/v0.1","entity_id":"digital-biosphere-architecture","governance_dimension":"unknown","value":null,"timestamp":null,"status":"unobserved"},
+    {"observation_id":"dbio://governance-observation/pop-persona-object-protocol/intake/v0.1","entity_id":"pop-persona-object-protocol","governance_dimension":"unknown","value":null,"timestamp":null,"status":"unobserved"},
+    {"observation_id":"dbio://governance-observation/aip-agent-intent-protocol/intake/v0.1","entity_id":"aip-agent-intent-protocol","governance_dimension":"unknown","value":null,"timestamp":null,"status":"unobserved"},
+    {"observation_id":"dbio://governance-observation/token-governor-reference/intake/v0.1","entity_id":"token-governor-reference","governance_dimension":"unknown","value":null,"timestamp":null,"status":"unobserved"},
+    {"observation_id":"dbio://governance-observation/fdo-kernel-mvk/intake/v0.1","entity_id":"fdo-kernel-mvk","governance_dimension":"unknown","value":null,"timestamp":null,"status":"unobserved"},
+    {"observation_id":"dbio://governance-observation/agent-evidence-eeoap/intake/v0.1","entity_id":"agent-evidence-eeoap","governance_dimension":"unknown","value":null,"timestamp":null,"status":"unobserved"},
+    {"observation_id":"dbio://governance-observation/aro-audit-reference/intake/v0.1","entity_id":"aro-audit-reference","governance_dimension":"unknown","value":null,"timestamp":null,"status":"unobserved"},
+    {"observation_id":"dbio://governance-observation/verifiable-agent-demo/intake/v0.1","entity_id":"verifiable-agent-demo","governance_dimension":"unknown","value":null,"timestamp":null,"status":"unobserved"},
+    {"observation_id":"dbio://governance-observation/execution-integrity-core/intake/v0.1","entity_id":"execution-integrity-core","governance_dimension":"unknown","value":null,"timestamp":null,"status":"unobserved"},
+    {"observation_id":"dbio://governance-observation/agent-evidence-receipt-layer/intake/v0.1","entity_id":"agent-evidence-receipt-layer","governance_dimension":"unknown","value":null,"timestamp":null,"status":"unobserved"},
+    {"observation_id":"dbio://governance-observation/saee-agent-readiness/intake/v0.1","entity_id":"saee-agent-readiness","governance_dimension":"unknown","value":null,"timestamp":null,"status":"unobserved"},
+    {"observation_id":"dbio://governance-observation/agent-governance-toolkit-external/intake/v0.1","entity_id":"agent-governance-toolkit-external","governance_dimension":"unknown","value":null,"timestamp":null,"status":"unobserved"},
+    {"observation_id":"dbio://governance-observation/agent-governance-benchmark/intake/v0.1","entity_id":"agent-governance-benchmark","governance_dimension":"unknown","value":null,"timestamp":null,"status":"unobserved"},
+    {"observation_id":"dbio://governance-observation/agent-receipt-validator-mcp/intake/v0.1","entity_id":"agent-receipt-validator-mcp","governance_dimension":"unknown","value":null,"timestamp":null,"status":"unobserved"},
+    {"observation_id":"dbio://governance-observation/agent-accountability-evidence-layer/intake/v0.1","entity_id":"agent-accountability-evidence-layer","governance_dimension":"unknown","value":null,"timestamp":null,"status":"unobserved"},
+    {"observation_id":"dbio://governance-observation/agent-object-protocol/intake/v0.1","entity_id":"agent-object-protocol","governance_dimension":"unknown","value":null,"timestamp":null,"status":"unobserved"},
+    {"observation_id":"dbio://governance-observation/ecl-execution-compact-layer/intake/v0.1","entity_id":"ecl-execution-compact-layer","governance_dimension":"unknown","value":null,"timestamp":null,"status":"unobserved"},
+    {"observation_id":"dbio://governance-observation/cellcaps/intake/v0.1","entity_id":"cellcaps","governance_dimension":"unknown","value":null,"timestamp":null,"status":"unobserved"},
+    {"observation_id":"dbio://governance-observation/pra-server/intake/v0.1","entity_id":"pra-server","governance_dimension":"unknown","value":null,"timestamp":null,"status":"unobserved"},
+    {"observation_id":"dbio://governance-observation/standalone-agent-object-protocol-draft/intake/v0.1","entity_id":"standalone-agent-object-protocol-draft","governance_dimension":"unknown","value":null,"timestamp":null,"status":"unobserved"},
+    {"observation_id":"dbio://governance-observation/sovereign-agent-local-gate/intake/v0.1","entity_id":"sovereign-agent-local-gate","governance_dimension":"unknown","value":null,"timestamp":null,"status":"unobserved"},
+    {"observation_id":"dbio://governance-observation/mcp-agent-ei-external/intake/v0.1","entity_id":"mcp-agent-ei-external","governance_dimension":"unknown","value":null,"timestamp":null,"status":"unobserved"},
+    {"observation_id":"dbio://governance-observation/autonomous-cell-protocol/intake/v0.1","entity_id":"autonomous-cell-protocol","governance_dimension":"unknown","value":null,"timestamp":null,"status":"unobserved"}
+  ]
+}

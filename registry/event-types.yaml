@@ -1,0 +1,34 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereEventTypeRegistry",
+  "metadata": {
+    "title": "Digital Biosphere Event Types v0.1",
+    "status": "defined_non_executing_taxonomy",
+    "constitution": "../constitution/event-constitution.yaml",
+    "generated_at": "2026-07-19T23:41:50+08:00",
+    "event_type_count": 8,
+    "authority_effect": "none",
+    "capability_effect": "none",
+    "permission_effect": "none",
+    "automatic_level_effect": "none",
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "Event types are vocabulary definitions, not event occurrences or executable handlers.",
+      "No event type creates an Agent, runtime, organism, capability, permission, evidence, verification, or maturity promotion."
+    ]
+  },
+  "event_type_schema": {
+    "required_fields": ["event_type", "description", "minimum_linkage", "state_effect", "authority_effect"],
+    "valid_event_types": ["identity_event", "capability_event", "evidence_event", "verification_event", "resource_event", "execution_event", "evolution_event", "governance_event"]
+  },
+  "event_types": [
+    {"event_type":"identity_event","description":"Reports an attributable identity lifecycle, classification, lineage, or ownership-state occurrence without changing canonical identity by itself.","minimum_linkage":["entity_id","source","evidence_ref"],"state_effect":"none_without_separate_identity_process","authority_effect":"none"},
+    {"event_type":"capability_event","description":"Reports a capability claim, review, assignment, revocation, or bounded exercise occurrence without creating or promoting capability state.","minimum_linkage":["entity_id","source","evidence_ref"],"state_effect":"none_without_capability_governance","authority_effect":"none"},
+    {"event_type":"evidence_event","description":"Reports creation, assessment, invalidation, supersession, or revocation of evidence without changing evidence maturity automatically.","minimum_linkage":["entity_id","source","evidence_ref"],"state_effect":"none_without_evidence_governance","authority_effect":"none"},
+    {"event_type":"verification_event","description":"Reports a verification request, run, decision, limitation, or revocation occurrence without upgrading V level automatically.","minimum_linkage":["entity_id","source","evidence_ref"],"state_effect":"none_without_verification_governance","authority_effect":"none"},
+    {"event_type":"resource_event","description":"Reports attributable resource input, output, allocation, use, constraint, or release without granting resource access or permission.","minimum_linkage":["entity_id","source","resource_ref","evidence_ref"],"state_effect":"none_without_resource_governance","authority_effect":"none"},
+    {"event_type":"execution_event","description":"Reports a bounded execution occurrence with input, output, environment, result, and evidence references without creating a runtime or proving successful execution by structure alone.","minimum_linkage":["entity_id","source","input_ref","output_ref","evidence_ref"],"state_effect":"none_without_runtime_and_execution_evidence","authority_effect":"none"},
+    {"event_type":"evolution_event","description":"Reports an attributable additive mutation, succession, deprecation, retirement, or adaptation occurrence without rewriting history or triggering evolution automatically.","minimum_linkage":["entity_id","source","output_ref","evidence_ref"],"state_effect":"none_without_evolution_governance","authority_effect":"none"},
+    {"event_type":"governance_event","description":"Reports a governance claim, evidence, decision, binding, transition, invalidation, or revocation occurrence without granting governance authority.","minimum_linkage":["entity_id","source","evidence_ref"],"state_effect":"none_without_governance_process","authority_effect":"none"}
+  ]
+}

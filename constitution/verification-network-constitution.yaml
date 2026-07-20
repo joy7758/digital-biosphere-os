@@ -1,0 +1,127 @@
+schema_version: "0.1"
+kind: "DigitalBiosphereVerificationNetworkConstitution"
+metadata:
+  title: "Digital Biosphere Verification Network Constitution v0.1"
+  chinese_title: "数字生物圈验证网络宪法 v0.1"
+  status: "local_pending_verification_network_baseline"
+  parent_constitution: "verification-constitution.yaml"
+  effective_scope:
+    - "/Users/zhangbin/GitHub/digital-biosphere-os"
+  authority: "declarative_and_validation_only"
+  adopted_at: "2026-07-19T20:50:19+08:00"
+  non_claims:
+    - "This constitution does not create an Agent."
+    - "Defining a verifier type does not register a verifier instance."
+    - "A pending verification run does not prove that a method executed or produced a result."
+    - "A trust-graph relationship records provenance and scope only; it does not establish trust, independence, capability, permission, certification, or production readiness."
+
+verifier_types:
+  source_of_truth: "../registry/verifier-types.yaml"
+  types:
+    automated:
+      definition: "A bounded automated process whose implementation, inputs, environment, method, outputs, and authority scope can be inspected."
+      independence_default: "not_independent"
+    maintainer:
+      definition: "A person or organization with an attributable maintenance relationship to the subject or governed registry."
+      independence_default: "not_independent"
+    external:
+      definition: "A separately attributable person, organization, or service outside the subject's controlling boundary."
+      independence_default: "not_assessed"
+    experimental:
+      definition: "A trial verifier whose method, identity, stability, or authority is not mature enough for operational reliance."
+      independence_default: "not_assessed"
+  invariants:
+    - "Verifier type != verifier instance."
+    - "Verifier type != Agent identity."
+    - "Type alone does not establish trust, independence, review authority, capability, or permission."
+    - "Unknown or unsupported verifier types fail closed."
+
+verifier_independence:
+  definition: "An evidence-backed separation between verifier and subject, including identity, control, funding, method, data, conflict-of-interest, and decision boundaries."
+  rules:
+    - "Automated and maintainer verifiers are not independent by default."
+    - "External verifiers must provide inspectable identity evidence before registration or use."
+    - "External type alone does not establish V4 independence."
+    - "Experimental verifiers cannot claim independent, governed, continuous, certification, or production authority."
+    - "Independence evidence must be attributable, scoped, reviewable, time-bounded, and revocable."
+  required_for_independent_claim:
+    - "verifier identity evidence"
+    - "separation and control basis"
+    - "conflict-of-interest disclosure"
+    - "method and input independence"
+    - "limitations and validity period"
+
+verification_run:
+  definition: "An append-only request or execution-attempt record binding one verification record to one registered verifier, target environment, input digest, method, result, and timestamp."
+  source_of_truth: "../registry/verification-runs.yaml"
+  required_fields:
+    - "verification_run_id"
+    - "verification_id"
+    - "verifier_id"
+    - "environment"
+    - "input_digest"
+    - "method"
+    - "result"
+    - "timestamp"
+  lifecycle:
+    pending: "The run is registered but has not started; input_digest, method, and timestamp remain null."
+    in_progress: "Execution has started under an attributable environment, but no final result exists."
+    completed: "The run records attributable inputs, method, environment, result, output evidence, timestamp, scope, and limitations."
+    invalid: "The run is malformed, out of scope, unsupported, contradicted, or otherwise unusable."
+    revoked: "Reliance is withdrawn while the historical run remains preserved."
+  pending_baseline:
+    result: "pending"
+    timestamp: null
+    input_digest: null
+    method: null
+    verification_level_effect: "none"
+  invariants:
+    - "Run registration != method execution."
+    - "Run completion != capability review approval."
+    - "A run cannot exceed the verifier's registered scope or active status."
+    - "A run cannot upgrade V, E, or C levels automatically."
+    - "A run cannot create an Agent, capability, capability assignment, or permission grant."
+
+trust_relationship:
+  source_of_truth: "../registry/trust-graph.yaml"
+  node_types:
+    - "entity"
+    - "claim"
+    - "evidence"
+    - "verifier"
+    - "verification_run"
+  relationship_definition: "A provenance tuple linking the governed entity, claim, evidence, assigned verifier, and verification run."
+  rules:
+    - "Every node resolves to its authoritative registry."
+    - "Every relationship is attributable, directional, scoped, and status-bearing."
+    - "Pending relationships use trust_effect=none."
+    - "Graph adjacency does not imply endorsement, authority inheritance, independence, transitive trust, capability, or permission."
+    - "Invalid or revoked nodes fail closed without deleting graph history."
+  prohibited_inference:
+    - "entity relationship -> Agent identity"
+    - "evidence relationship -> verified capability"
+    - "verifier relationship -> reviewer or certification authority"
+    - "verification run relationship -> completed execution or pass"
+    - "trust path -> permission"
+
+current_baseline:
+  verifier_type_definition_count: 4
+  verifier_count: 1
+  verifier_type_distribution:
+    automated: 1
+    maintainer: 0
+    external: 0
+    experimental: 0
+  verification_record_count: 78
+  verification_run_count: 78
+  pending_verification_run_count: 78
+  verification_level_distribution:
+    V0: 78
+    V1: 0
+    V2: 0
+    V3: 0
+    V4: 0
+    V5: 0
+  capability_assignment_count: 0
+  permission_grant_count: 0
+  agent_created_count: 0

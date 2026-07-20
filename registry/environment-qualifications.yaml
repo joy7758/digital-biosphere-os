@@ -1,0 +1,64 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereRunnerEnvironmentQualificationRegistry",
+  "metadata": {
+    "title": "Runner Environment Qualifications v0.1",
+    "status": "one_locally_verified_environment_qualification",
+    "constitution": "../constitution/environment-qualification-constitution.yaml",
+    "environment_identity_source_of_truth": "environment-identities.yaml",
+    "environment_evidence_source_of_truth": "environment-evidence.yaml",
+    "environment_lock_source_of_truth": "environment-locks.yaml",
+    "verifier_source_of_truth": "verifiers.yaml",
+    "generated_at": "2026-07-20T09:07:42+08:00",
+    "qualification_count": 1,
+    "result_distribution": {"pending": 0, "verified": 1, "failed": 0, "inconclusive": 0, "revoked": 0},
+    "qualified_environment_count": 1,
+    "automatic_pass_count": 0,
+    "execution_authority_count": 0,
+    "capability_effect_count": 0,
+    "permission_grant_count": 0,
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "The record is a pending review slot, not a qualification result.",
+      "Criteria declarations and validator PASS cannot automatically set result=verified.",
+      "Qualification does not create a Runner, Runtime, Agent, execution, Event, Snapshot, capability, or permission."
+    ]
+  },
+  "environment_qualification_schema": {
+    "required_fields": ["qualification_id", "environment_id", "criteria", "result", "verified_by", "timestamp"],
+    "additional_governance_fields": ["lock_ref", "evidence_refs", "limitations", "supersedes", "revocation_ref", "authority_effect"],
+    "required_criteria": ["identity_attributed", "os_captured", "python_captured", "dependencies_digested", "configuration_digested", "environment_lock_complete"],
+    "valid_criterion_statuses": ["pending", "passed", "failed", "inconclusive"],
+    "valid_results": ["pending", "verified", "failed", "inconclusive", "revoked"],
+    "default_result": "pending",
+    "automatic_pass": false
+  },
+  "environment_qualifications": [
+    {
+      "qualification_id": "DBOS-EXP-0001-RUNNER-ENV-QUAL-0001",
+      "environment_id": "dbio://runner-environment/dbos-exp-0001/local-governance-workspace/v0.1",
+      "criteria": [
+        {"criterion_id": "identity_attributed", "status": "passed", "evidence_refs": ["DBOS-EXP-0001-ENV-QUALIFICATION-EVIDENCE-0001"]},
+        {"criterion_id": "os_captured", "status": "passed", "evidence_refs": ["DBOS-EXP-0001-ENV-QUALIFICATION-EVIDENCE-0002"]},
+        {"criterion_id": "python_captured", "status": "passed", "evidence_refs": ["DBOS-EXP-0001-ENV-QUALIFICATION-EVIDENCE-0003"]},
+        {"criterion_id": "dependencies_digested", "status": "passed", "evidence_refs": ["DBOS-EXP-0001-ENV-QUALIFICATION-EVIDENCE-0004"]},
+        {"criterion_id": "configuration_digested", "status": "passed", "evidence_refs": ["DBOS-EXP-0001-ENV-QUALIFICATION-EVIDENCE-0005"]},
+        {"criterion_id": "environment_lock_complete", "status": "passed", "evidence_refs": ["DBOS-EXP-0001-ENV-QUALIFICATION-EVIDENCE-0006"]}
+      ],
+      "result": "verified",
+      "verified_by": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "timestamp": "2026-07-20T10:07:49+08:00",
+      "lock_ref": "DBOS-EXP-0001-ENV-LOCK-0001",
+      "evidence_refs": ["DBOS-EXP-0001-ENV-QUALIFICATION-EVIDENCE-0001", "DBOS-EXP-0001-ENV-QUALIFICATION-EVIDENCE-0002", "DBOS-EXP-0001-ENV-QUALIFICATION-EVIDENCE-0003", "DBOS-EXP-0001-ENV-QUALIFICATION-EVIDENCE-0004", "DBOS-EXP-0001-ENV-QUALIFICATION-EVIDENCE-0005", "DBOS-EXP-0001-ENV-QUALIFICATION-EVIDENCE-0006"],
+      "limitations": [
+        "local host and local automated verifier only",
+        "not independent verification",
+        "qualification is limited to DBOS-EXP-0001 reproducibility inputs",
+        "qualification grants no capability, permission, runtime, or production suitability"
+      ],
+      "supersedes": null,
+      "revocation_ref": null,
+      "authority_effect": "none"
+    }
+  ]
+}

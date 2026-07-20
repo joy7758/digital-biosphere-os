@@ -1,0 +1,35 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereSnapshotArtifactDigestRegistry",
+  "metadata": {
+    "title": "Snapshot Artifact Digests v0.1",
+    "status": "three_retained_snapshot_artifact_digests",
+    "constitution": "../constitution/snapshot-capture-constitution.yaml",
+    "snapshot_source_of_truth": "experiment-snapshots.yaml",
+    "capture_source_of_truth": "snapshot-captures.yaml",
+    "generated_at": "2026-07-20T01:44:35+08:00",
+    "artifact_digest_count": 3,
+    "sha256_digest_count": 3,
+    "nonempty_hash_count": 3,
+    "retained_artifact_count": 3,
+    "event_created_count": 0,
+    "permission_grant_count": 0,
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "The registry is empty because no snapshot capture has occurred.",
+      "A future hash records byte identity under a declared method; it cannot prove completeness, origin, freeze, execution, correctness, or authorization."
+    ]
+  },
+  "artifact_digest_schema": {
+    "required_fields": ["digest_id", "snapshot_id", "artifact_path", "hash_algorithm", "hash_value", "size", "captured_at"],
+    "hash_algorithm": "sha256",
+    "hash_value_format": "sha256:<64 lowercase hexadecimal characters>",
+    "size_semantics": "non-negative byte size of the exact hashed artifact representation",
+    "capture_boundary": "A digest record requires existing snapshot identity, non-empty normalized artifact path, valid hash, non-negative size, and timezone-aware captured_at."
+  },
+  "artifact_digests": [
+    {"digest_id":"DBOS-EXP-0001-ARTIFACT-DIGEST-ARCHIVE-0001","snapshot_id":"DBOS-EXP-0001-SNAPSHOT-0001","artifact_path":"evidence/experiments/DBOS-EXP-0001/freeze/dbos-input-snapshot.tar","hash_algorithm":"sha256","hash_value":"sha256:7e6ffcd2b07c0d6d5583d8a2fd98e44b8c85400468b4f49aefb65bd9e2542959","size":2211840,"captured_at":"2026-07-20T10:20:17+08:00"},
+    {"digest_id":"DBOS-EXP-0001-ARTIFACT-DIGEST-SNAPSHOT-MANIFEST-0001","snapshot_id":"DBOS-EXP-0001-SNAPSHOT-0001","artifact_path":"evidence/experiments/DBOS-EXP-0001/freeze/snapshot-manifest.json","hash_algorithm":"sha256","hash_value":"sha256:7da44b98180799e9c56082340c8dfe40eb2fd41a24ce85cf1c5a69081def31df","size":29350,"captured_at":"2026-07-20T10:20:17+08:00"},
+    {"digest_id":"DBOS-EXP-0001-ARTIFACT-DIGEST-VALIDATOR-MANIFEST-0001","snapshot_id":"DBOS-EXP-0001-SNAPSHOT-0001","artifact_path":"evidence/experiments/DBOS-EXP-0001/freeze/validator-manifest.json","hash_algorithm":"sha256","hash_value":"sha256:7fd507f1b7acefc9afc42874cfe8bce93a9d931fc48b2c81477f8a93ba39016e","size":6755,"captured_at":"2026-07-20T10:20:17+08:00"}
+  ]
+}

@@ -1,0 +1,2645 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereCapabilityEvidenceRegistry",
+  "metadata": {
+    "title": "Capability Evidence Registry v0.1",
+    "status": "pending_e1_declaration_baseline",
+    "claim_source_of_truth": "capability-claims.yaml",
+    "evidence_type_source_of_truth": "evidence-types.yaml",
+    "constitution": "../constitution/evidence-constitution.yaml",
+    "generated_at": "2026-07-19T20:03:26+08:00",
+    "evidence_count": 78,
+    "pending_evidence_count": 78,
+    "claim_count": 78,
+    "one_to_one_claim_baseline": true,
+    "assigned_capability_count": 0,
+    "permission_grant_count": 0,
+    "evidence_distribution": {
+      "E0": 0,
+      "E1": 78,
+      "E2": 0,
+      "E3": 0,
+      "E4": 0,
+      "E5": 0
+    },
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "Each record is an E1 declaration derived one-to-one from an existing pending capability claim.",
+      "Referenced files are not promoted to E2 until integrity, relevance, version, scope, and environment are assessed.",
+      "All evidence records remain pending and unreviewed.",
+      "No evidence record approves, assigns, permissions, executes, governs, or autonomizes a capability."
+    ]
+  },
+  "evidence_record_schema": {
+    "required_fields": [
+      "evidence_id",
+      "claim_id",
+      "evidence_type",
+      "source",
+      "artifact",
+      "verification",
+      "status"
+    ],
+    "evidence_id_format": "dbio:evidence:<entity_id>:<sequence>",
+    "valid_evidence_types": [
+      "E0",
+      "E1",
+      "E2",
+      "E3",
+      "E4",
+      "E5"
+    ],
+    "valid_statuses": [
+      "pending",
+      "assessed",
+      "verified",
+      "independently_verified",
+      "observed",
+      "invalid",
+      "revoked"
+    ],
+    "default_status": "pending",
+    "default_evidence_type": "E1",
+    "promotion_boundary": "Evidence promotion requires sequential predecessor evidence and the substantive requirements of the target level."
+  },
+  "evidence": [
+    {
+      "evidence_id": "dbio:evidence:digital-biosphere-architecture:001",
+      "claim_id": "dbio:claim:digital-biosphere-architecture:001",
+      "evidence_type": "E1",
+      "source": {
+        "kind": "capability_claim_declaration",
+        "registry": "registry/capability-claims.yaml",
+        "claim_id": "dbio:claim:digital-biosphere-architecture:001",
+        "source_evidence_id": "potential:digital-biosphere-architecture:001"
+      },
+      "artifact": {
+        "status": "referenced_not_assessed",
+        "paths": [
+          "/Users/zhangbin/GitHub/digital-biosphere-architecture/AGENTS.md",
+          "/Users/zhangbin/GitHub/digital-biosphere-architecture/README.md",
+          "/Users/zhangbin/GitHub/digital-biosphere-architecture/docs/ai-discovery-index.md"
+        ],
+        "integrity_status": "not_assessed",
+        "content_relevance": "not_assessed",
+        "version_binding": "unknown"
+      },
+      "verification": {
+        "status": "not_reviewed",
+        "reviewer": null,
+        "review_id": null,
+        "verified_at": null,
+        "method": null,
+        "limitation": "Path existence is checked; content sufficiency, integrity, version, scope, environment, and side effects are not reviewed."
+      },
+      "status": "pending",
+      "supported_capability_maturity": "C1",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "evidence_id": "dbio:evidence:digital-biosphere-architecture:002",
+      "claim_id": "dbio:claim:digital-biosphere-architecture:002",
+      "evidence_type": "E1",
+      "source": {
+        "kind": "capability_claim_declaration",
+        "registry": "registry/capability-claims.yaml",
+        "claim_id": "dbio:claim:digital-biosphere-architecture:002",
+        "source_evidence_id": "potential:digital-biosphere-architecture:002"
+      },
+      "artifact": {
+        "status": "referenced_not_assessed",
+        "paths": [
+          "/Users/zhangbin/GitHub/digital-biosphere-architecture/AGENTS.md",
+          "/Users/zhangbin/GitHub/digital-biosphere-architecture/README.md",
+          "/Users/zhangbin/GitHub/digital-biosphere-architecture/docs/ai-discovery-index.md"
+        ],
+        "integrity_status": "not_assessed",
+        "content_relevance": "not_assessed",
+        "version_binding": "unknown"
+      },
+      "verification": {
+        "status": "not_reviewed",
+        "reviewer": null,
+        "review_id": null,
+        "verified_at": null,
+        "method": null,
+        "limitation": "Path existence is checked; content sufficiency, integrity, version, scope, environment, and side effects are not reviewed."
+      },
+      "status": "pending",
+      "supported_capability_maturity": "C1",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "evidence_id": "dbio:evidence:digital-biosphere-architecture:003",
+      "claim_id": "dbio:claim:digital-biosphere-architecture:003",
+      "evidence_type": "E1",
+      "source": {
+        "kind": "capability_claim_declaration",
+        "registry": "registry/capability-claims.yaml",
+        "claim_id": "dbio:claim:digital-biosphere-architecture:003",
+        "source_evidence_id": "potential:digital-biosphere-architecture:003"
+      },
+      "artifact": {
+        "status": "referenced_not_assessed",
+        "paths": [
+          "/Users/zhangbin/GitHub/digital-biosphere-architecture/AGENTS.md",
+          "/Users/zhangbin/GitHub/digital-biosphere-architecture/README.md",
+          "/Users/zhangbin/GitHub/digital-biosphere-architecture/docs/ai-discovery-index.md"
+        ],
+        "integrity_status": "not_assessed",
+        "content_relevance": "not_assessed",
+        "version_binding": "unknown"
+      },
+      "verification": {
+        "status": "not_reviewed",
+        "reviewer": null,
+        "review_id": null,
+        "verified_at": null,
+        "method": null,
+        "limitation": "Path existence is checked; content sufficiency, integrity, version, scope, environment, and side effects are not reviewed."
+      },
+      "status": "pending",
+      "supported_capability_maturity": "C1",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "evidence_id": "dbio:evidence:pop-persona-object-protocol:001",
+      "claim_id": "dbio:claim:pop-persona-object-protocol:001",
+      "evidence_type": "E1",
+      "source": {
+        "kind": "capability_claim_declaration",
+        "registry": "registry/capability-claims.yaml",
+        "claim_id": "dbio:claim:pop-persona-object-protocol:001",
+        "source_evidence_id": "potential:pop-persona-object-protocol:001"
+      },
+      "artifact": {
+        "status": "referenced_not_assessed",
+        "paths": [
+          "/Users/zhangbin/GitHub/persona-object-protocol/README.md",
+          "/Users/zhangbin/GitHub/persona-object-protocol/llms.txt"
+        ],
+        "integrity_status": "not_assessed",
+        "content_relevance": "not_assessed",
+        "version_binding": "unknown"
+      },
+      "verification": {
+        "status": "not_reviewed",
+        "reviewer": null,
+        "review_id": null,
+        "verified_at": null,
+        "method": null,
+        "limitation": "Path existence is checked; content sufficiency, integrity, version, scope, environment, and side effects are not reviewed."
+      },
+      "status": "pending",
+      "supported_capability_maturity": "C1",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "evidence_id": "dbio:evidence:pop-persona-object-protocol:002",
+      "claim_id": "dbio:claim:pop-persona-object-protocol:002",
+      "evidence_type": "E1",
+      "source": {
+        "kind": "capability_claim_declaration",
+        "registry": "registry/capability-claims.yaml",
+        "claim_id": "dbio:claim:pop-persona-object-protocol:002",
+        "source_evidence_id": "potential:pop-persona-object-protocol:002"
+      },
+      "artifact": {
+        "status": "referenced_not_assessed",
+        "paths": [
+          "/Users/zhangbin/GitHub/persona-object-protocol/README.md",
+          "/Users/zhangbin/GitHub/persona-object-protocol/llms.txt"
+        ],
+        "integrity_status": "not_assessed",
+        "content_relevance": "not_assessed",
+        "version_binding": "unknown"
+      },
+      "verification": {
+        "status": "not_reviewed",
+        "reviewer": null,
+        "review_id": null,
+        "verified_at": null,
+        "method": null,
+        "limitation": "Path existence is checked; content sufficiency, integrity, version, scope, environment, and side effects are not reviewed."
+      },
+      "status": "pending",
+      "supported_capability_maturity": "C1",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "evidence_id": "dbio:evidence:pop-persona-object-protocol:003",
+      "claim_id": "dbio:claim:pop-persona-object-protocol:003",
+      "evidence_type": "E1",
+      "source": {
+        "kind": "capability_claim_declaration",
+        "registry": "registry/capability-claims.yaml",
+        "claim_id": "dbio:claim:pop-persona-object-protocol:003",
+        "source_evidence_id": "potential:pop-persona-object-protocol:003"
+      },
+      "artifact": {
+        "status": "referenced_not_assessed",
+        "paths": [
+          "/Users/zhangbin/GitHub/persona-object-protocol/README.md",
+          "/Users/zhangbin/GitHub/persona-object-protocol/llms.txt"
+        ],
+        "integrity_status": "not_assessed",
+        "content_relevance": "not_assessed",
+        "version_binding": "unknown"
+      },
+      "verification": {
+        "status": "not_reviewed",
+        "reviewer": null,
+        "review_id": null,
+        "verified_at": null,
+        "method": null,
+        "limitation": "Path existence is checked; content sufficiency, integrity, version, scope, environment, and side effects are not reviewed."
+      },
+      "status": "pending",
+      "supported_capability_maturity": "C1",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "evidence_id": "dbio:evidence:aip-agent-intent-protocol:001",
+      "claim_id": "dbio:claim:aip-agent-intent-protocol:001",
+      "evidence_type": "E1",
+      "source": {
+        "kind": "capability_claim_declaration",
+        "registry": "registry/capability-claims.yaml",
+        "claim_id": "dbio:claim:aip-agent-intent-protocol:001",
+        "source_evidence_id": "potential:aip-agent-intent-protocol:001"
+      },
+      "artifact": {
+        "status": "referenced_not_assessed",
+        "paths": [
+          "/Users/zhangbin/GitHub/agent-intent-protocol/README.md"
+        ],
+        "integrity_status": "not_assessed",
+        "content_relevance": "not_assessed",
+        "version_binding": "unknown"
+      },
+      "verification": {
+        "status": "not_reviewed",
+        "reviewer": null,
+        "review_id": null,
+        "verified_at": null,
+        "method": null,
+        "limitation": "Path existence is checked; content sufficiency, integrity, version, scope, environment, and side effects are not reviewed."
+      },
+      "status": "pending",
+      "supported_capability_maturity": "C1",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "evidence_id": "dbio:evidence:aip-agent-intent-protocol:002",
+      "claim_id": "dbio:claim:aip-agent-intent-protocol:002",
+      "evidence_type": "E1",
+      "source": {
+        "kind": "capability_claim_declaration",
+        "registry": "registry/capability-claims.yaml",
+        "claim_id": "dbio:claim:aip-agent-intent-protocol:002",
+        "source_evidence_id": "potential:aip-agent-intent-protocol:002"
+      },
+      "artifact": {
+        "status": "referenced_not_assessed",
+        "paths": [
+          "/Users/zhangbin/GitHub/agent-intent-protocol/README.md"
+        ],
+        "integrity_status": "not_assessed",
+        "content_relevance": "not_assessed",
+        "version_binding": "unknown"
+      },
+      "verification": {
+        "status": "not_reviewed",
+        "reviewer": null,
+        "review_id": null,
+        "verified_at": null,
+        "method": null,
+        "limitation": "Path existence is checked; content sufficiency, integrity, version, scope, environment, and side effects are not reviewed."
+      },
+      "status": "pending",
+      "supported_capability_maturity": "C1",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "evidence_id": "dbio:evidence:aip-agent-intent-protocol:003",
+      "claim_id": "dbio:claim:aip-agent-intent-protocol:003",
+      "evidence_type": "E1",
+      "source": {
+        "kind": "capability_claim_declaration",
+        "registry": "registry/capability-claims.yaml",
+        "claim_id": "dbio:claim:aip-agent-intent-protocol:003",
+        "source_evidence_id": "potential:aip-agent-intent-protocol:003"
+      },
+      "artifact": {
+        "status": "referenced_not_assessed",
+        "paths": [
+          "/Users/zhangbin/GitHub/agent-intent-protocol/README.md"
+        ],
+        "integrity_status": "not_assessed",
+        "content_relevance": "not_assessed",
+        "version_binding": "unknown"
+      },
+      "verification": {
+        "status": "not_reviewed",
+        "reviewer": null,
+        "review_id": null,
+        "verified_at": null,
+        "method": null,
+        "limitation": "Path existence is checked; content sufficiency, integrity, version, scope, environment, and side effects are not reviewed."
+      },
+      "status": "pending",
+      "supported_capability_maturity": "C1",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "evidence_id": "dbio:evidence:aip-agent-intent-protocol:004",
+      "claim_id": "dbio:claim:aip-agent-intent-protocol:004",
+      "evidence_type": "E1",
+      "source": {
+        "kind": "capability_claim_declaration",
+        "registry": "registry/capability-claims.yaml",
+        "claim_id": "dbio:claim:aip-agent-intent-protocol:004",
+        "source_evidence_id": "potential:aip-agent-intent-protocol:004"
+      },
+      "artifact": {
+        "status": "referenced_not_assessed",
+        "paths": [
+          "/Users/zhangbin/GitHub/agent-intent-protocol/README.md"
+        ],
+        "integrity_status": "not_assessed",
+        "content_relevance": "not_assessed",
+        "version_binding": "unknown"
+      },
+      "verification": {
+        "status": "not_reviewed",
+        "reviewer": null,
+        "review_id": null,
+        "verified_at": null,
+        "method": null,
+        "limitation": "Path existence is checked; content sufficiency, integrity, version, scope, environment, and side effects are not reviewed."
+      },
+      "status": "pending",
+      "supported_capability_maturity": "C1",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "evidence_id": "dbio:evidence:token-governor-reference:001",
+      "claim_id": "dbio:claim:token-governor-reference:001",
+      "evidence_type": "E1",
+      "source": {
+        "kind": "capability_claim_declaration",
+        "registry": "registry/capability-claims.yaml",
+        "claim_id": "dbio:claim:token-governor-reference:001",
+        "source_evidence_id": "potential:token-governor-reference:001"
+      },
+      "artifact": {
+        "status": "referenced_not_assessed",
+        "paths": [
+          "/Users/zhangbin/GitHub/token-governor/README.md"
+        ],
+        "integrity_status": "not_assessed",
+        "content_relevance": "not_assessed",
+        "version_binding": "unknown"
+      },
+      "verification": {
+        "status": "not_reviewed",
+        "reviewer": null,
+        "review_id": null,
+        "verified_at": null,
+        "method": null,
+        "limitation": "Path existence is checked; content sufficiency, integrity, version, scope, environment, and side effects are not reviewed."
+      },
+      "status": "pending",
+      "supported_capability_maturity": "C1",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "evidence_id": "dbio:evidence:token-governor-reference:002",
+      "claim_id": "dbio:claim:token-governor-reference:002",
+      "evidence_type": "E1",
+      "source": {
+        "kind": "capability_claim_declaration",
+        "registry": "registry/capability-claims.yaml",
+        "claim_id": "dbio:claim:token-governor-reference:002",
+        "source_evidence_id": "potential:token-governor-reference:002"
+      },
+      "artifact": {
+        "status": "referenced_not_assessed",
+        "paths": [
+          "/Users/zhangbin/GitHub/token-governor/README.md"
+        ],
+        "integrity_status": "not_assessed",
+        "content_relevance": "not_assessed",
+        "version_binding": "unknown"
+      },
+      "verification": {
+        "status": "not_reviewed",
+        "reviewer": null,
+        "review_id": null,
+        "verified_at": null,
+        "method": null,
+        "limitation": "Path existence is checked; content sufficiency, integrity, version, scope, environment, and side effects are not reviewed."
+      },
+      "status": "pending",
+      "supported_capability_maturity": "C1",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "evidence_id": "dbio:evidence:token-governor-reference:003",
+      "claim_id": "dbio:claim:token-governor-reference:003",
+      "evidence_type": "E1",
+      "source": {
+        "kind": "capability_claim_declaration",
+        "registry": "registry/capability-claims.yaml",
+        "claim_id": "dbio:claim:token-governor-reference:003",
+        "source_evidence_id": "potential:token-governor-reference:003"
+      },
+      "artifact": {
+        "status": "referenced_not_assessed",
+        "paths": [
+          "/Users/zhangbin/GitHub/token-governor/README.md"
+        ],
+        "integrity_status": "not_assessed",
+        "content_relevance": "not_assessed",
+        "version_binding": "unknown"
+      },
+      "verification": {
+        "status": "not_reviewed",
+        "reviewer": null,
+        "review_id": null,
+        "verified_at": null,
+        "method": null,
+        "limitation": "Path existence is checked; content sufficiency, integrity, version, scope, environment, and side effects are not reviewed."
+      },
+      "status": "pending",
+      "supported_capability_maturity": "C1",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "evidence_id": "dbio:evidence:fdo-kernel-mvk:001",
+      "claim_id": "dbio:claim:fdo-kernel-mvk:001",
+      "evidence_type": "E1",
+      "source": {
+        "kind": "capability_claim_declaration",
+        "registry": "registry/capability-claims.yaml",
+        "claim_id": "dbio:claim:fdo-kernel-mvk:001",
+        "source_evidence_id": "potential:fdo-kernel-mvk:001"
+      },
+      "artifact": {
+        "status": "referenced_not_assessed",
+        "paths": [
+          "/Users/zhangbin/GitHub/fdo-kernel-mvk/README.md",
+          "/Users/zhangbin/GitHub/fdo-kernel-mvk/AGENTS.md"
+        ],
+        "integrity_status": "not_assessed",
+        "content_relevance": "not_assessed",
+        "version_binding": "unknown"
+      },
+      "verification": {
+        "status": "not_reviewed",
+        "reviewer": null,
+        "review_id": null,
+        "verified_at": null,
+        "method": null,
+        "limitation": "Path existence is checked; content sufficiency, integrity, version, scope, environment, and side effects are not reviewed."
+      },
+      "status": "pending",
+      "supported_capability_maturity": "C1",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "evidence_id": "dbio:evidence:fdo-kernel-mvk:002",
+      "claim_id": "dbio:claim:fdo-kernel-mvk:002",
+      "evidence_type": "E1",
+      "source": {
+        "kind": "capability_claim_declaration",
+        "registry": "registry/capability-claims.yaml",
+        "claim_id": "dbio:claim:fdo-kernel-mvk:002",
+        "source_evidence_id": "potential:fdo-kernel-mvk:002"
+      },
+      "artifact": {
+        "status": "referenced_not_assessed",
+        "paths": [
+          "/Users/zhangbin/GitHub/fdo-kernel-mvk/README.md",
+          "/Users/zhangbin/GitHub/fdo-kernel-mvk/AGENTS.md"
+        ],
+        "integrity_status": "not_assessed",
+        "content_relevance": "not_assessed",
+        "version_binding": "unknown"
+      },
+      "verification": {
+        "status": "not_reviewed",
+        "reviewer": null,
+        "review_id": null,
+        "verified_at": null,
+        "method": null,
+        "limitation": "Path existence is checked; content sufficiency, integrity, version, scope, environment, and side effects are not reviewed."
+      },
+      "status": "pending",
+      "supported_capability_maturity": "C1",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "evidence_id": "dbio:evidence:fdo-kernel-mvk:003",
+      "claim_id": "dbio:claim:fdo-kernel-mvk:003",
+      "evidence_type": "E1",
+      "source": {
+        "kind": "capability_claim_declaration",
+        "registry": "registry/capability-claims.yaml",
+        "claim_id": "dbio:claim:fdo-kernel-mvk:003",
+        "source_evidence_id": "potential:fdo-kernel-mvk:003"
+      },
+      "artifact": {
+        "status": "referenced_not_assessed",
+        "paths": [
+          "/Users/zhangbin/GitHub/fdo-kernel-mvk/README.md",
+          "/Users/zhangbin/GitHub/fdo-kernel-mvk/AGENTS.md"
+        ],
+        "integrity_status": "not_assessed",
+        "content_relevance": "not_assessed",
+        "version_binding": "unknown"
+      },
+      "verification": {
+        "status": "not_reviewed",
+        "reviewer": null,
+        "review_id": null,
+        "verified_at": null,
+        "method": null,
+        "limitation": "Path existence is checked; content sufficiency, integrity, version, scope, environment, and side effects are not reviewed."
+      },
+      "status": "pending",
+      "supported_capability_maturity": "C1",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "evidence_id": "dbio:evidence:agent-evidence-eeoap:001",
+      "claim_id": "dbio:claim:agent-evidence-eeoap:001",
+      "evidence_type": "E1",
+      "source": {
+        "kind": "capability_claim_declaration",
+        "registry": "registry/capability-claims.yaml",
+        "claim_id": "dbio:claim:agent-evidence-eeoap:001",
+        "source_evidence_id": "potential:agent-evidence-eeoap:001"
+      },
+      "artifact": {
+        "status": "referenced_not_assessed",
+        "paths": [
+          "/Users/zhangbin/GitHub/agent-evidence/README.md",
+          "/Users/zhangbin/GitHub/agent-evidence/AGENTS.md",
+          "/Users/zhangbin/GitHub/agent-evidence/llms.txt"
+        ],
+        "integrity_status": "not_assessed",
+        "content_relevance": "not_assessed",
+        "version_binding": "unknown"
+      },
+      "verification": {
+        "status": "not_reviewed",
+        "reviewer": null,
+        "review_id": null,
+        "verified_at": null,
+        "method": null,
+        "limitation": "Path existence is checked; content sufficiency, integrity, version, scope, environment, and side effects are not reviewed."
+      },
+      "status": "pending",
+      "supported_capability_maturity": "C1",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "evidence_id": "dbio:evidence:agent-evidence-eeoap:002",
+      "claim_id": "dbio:claim:agent-evidence-eeoap:002",
+      "evidence_type": "E1",
+      "source": {
+        "kind": "capability_claim_declaration",
+        "registry": "registry/capability-claims.yaml",
+        "claim_id": "dbio:claim:agent-evidence-eeoap:002",
+        "source_evidence_id": "potential:agent-evidence-eeoap:002"
+      },
+      "artifact": {
+        "status": "referenced_not_assessed",
+        "paths": [
+          "/Users/zhangbin/GitHub/agent-evidence/README.md",
+          "/Users/zhangbin/GitHub/agent-evidence/AGENTS.md",
+          "/Users/zhangbin/GitHub/agent-evidence/llms.txt"
+        ],
+        "integrity_status": "not_assessed",
+        "content_relevance": "not_assessed",
+        "version_binding": "unknown"
+      },
+      "verification": {
+        "status": "not_reviewed",
+        "reviewer": null,
+        "review_id": null,
+        "verified_at": null,
+        "method": null,
+        "limitation": "Path existence is checked; content sufficiency, integrity, version, scope, environment, and side effects are not reviewed."
+      },
+      "status": "pending",
+      "supported_capability_maturity": "C1",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "evidence_id": "dbio:evidence:agent-evidence-eeoap:003",
+      "claim_id": "dbio:claim:agent-evidence-eeoap:003",
+      "evidence_type": "E1",
+      "source": {
+        "kind": "capability_claim_declaration",
+        "registry": "registry/capability-claims.yaml",
+        "claim_id": "dbio:claim:agent-evidence-eeoap:003",
+        "source_evidence_id": "potential:agent-evidence-eeoap:003"
+      },
+      "artifact": {
+        "status": "referenced_not_assessed",
+        "paths": [
+          "/Users/zhangbin/GitHub/agent-evidence/README.md",
+          "/Users/zhangbin/GitHub/agent-evidence/AGENTS.md",
+          "/Users/zhangbin/GitHub/agent-evidence/llms.txt"
+        ],
+        "integrity_status": "not_assessed",
+        "content_relevance": "not_assessed",
+        "version_binding": "unknown"
+      },
+      "verification": {
+        "status": "not_reviewed",
+        "reviewer": null,
+        "review_id": null,
+        "verified_at": null,
+        "method": null,
+        "limitation": "Path existence is checked; content sufficiency, integrity, version, scope, environment, and side effects are not reviewed."
+      },
+      "status": "pending",
+      "supported_capability_maturity": "C1",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "evidence_id": "dbio:evidence:agent-evidence-eeoap:004",
+      "claim_id": "dbio:claim:agent-evidence-eeoap:004",
+      "evidence_type": "E1",
+      "source": {
+        "kind": "capability_claim_declaration",
+        "registry": "registry/capability-claims.yaml",
+        "claim_id": "dbio:claim:agent-evidence-eeoap:004",
+        "source_evidence_id": "potential:agent-evidence-eeoap:004"
+      },
+      "artifact": {
+        "status": "referenced_not_assessed",
+        "paths": [
+          "/Users/zhangbin/GitHub/agent-evidence/README.md",
+          "/Users/zhangbin/GitHub/agent-evidence/AGENTS.md",
+          "/Users/zhangbin/GitHub/agent-evidence/llms.txt"
+        ],
+        "integrity_status": "not_assessed",
+        "content_relevance": "not_assessed",
+        "version_binding": "unknown"
+      },
+      "verification": {
+        "status": "not_reviewed",
+        "reviewer": null,
+        "review_id": null,
+        "verified_at": null,
+        "method": null,
+        "limitation": "Path existence is checked; content sufficiency, integrity, version, scope, environment, and side effects are not reviewed."
+      },
+      "status": "pending",
+      "supported_capability_maturity": "C1",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "evidence_id": "dbio:evidence:aro-audit-reference:001",
+      "claim_id": "dbio:claim:aro-audit-reference:001",
+      "evidence_type": "E1",
+      "source": {
+        "kind": "capability_claim_declaration",
+        "registry": "registry/capability-claims.yaml",
+        "claim_id": "dbio:claim:aro-audit-reference:001",
+        "source_evidence_id": "potential:aro-audit-reference:001"
+      },
+      "artifact": {
+        "status": "referenced_not_assessed",
+        "paths": [
+          "/Users/zhangbin/GitHub/aro-audit/README.md",
+          "/Users/zhangbin/GitHub/aro-audit/llms.txt"
+        ],
+        "integrity_status": "not_assessed",
+        "content_relevance": "not_assessed",
+        "version_binding": "unknown"
+      },
+      "verification": {
+        "status": "not_reviewed",
+        "reviewer": null,
+        "review_id": null,
+        "verified_at": null,
+        "method": null,
+        "limitation": "Path existence is checked; content sufficiency, integrity, version, scope, environment, and side effects are not reviewed."
+      },
+      "status": "pending",
+      "supported_capability_maturity": "C1",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "evidence_id": "dbio:evidence:aro-audit-reference:002",
+      "claim_id": "dbio:claim:aro-audit-reference:002",
+      "evidence_type": "E1",
+      "source": {
+        "kind": "capability_claim_declaration",
+        "registry": "registry/capability-claims.yaml",
+        "claim_id": "dbio:claim:aro-audit-reference:002",
+        "source_evidence_id": "potential:aro-audit-reference:002"
+      },
+      "artifact": {
+        "status": "referenced_not_assessed",
+        "paths": [
+          "/Users/zhangbin/GitHub/aro-audit/README.md",
+          "/Users/zhangbin/GitHub/aro-audit/llms.txt"
+        ],
+        "integrity_status": "not_assessed",
+        "content_relevance": "not_assessed",
+        "version_binding": "unknown"
+      },
+      "verification": {
+        "status": "not_reviewed",
+        "reviewer": null,
+        "review_id": null,
+        "verified_at": null,
+        "method": null,
+        "limitation": "Path existence is checked; content sufficiency, integrity, version, scope, environment, and side effects are not reviewed."
+      },
+      "status": "pending",
+      "supported_capability_maturity": "C1",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "evidence_id": "dbio:evidence:aro-audit-reference:003",
+      "claim_id": "dbio:claim:aro-audit-reference:003",
+      "evidence_type": "E1",
+      "source": {
+        "kind": "capability_claim_declaration",
+        "registry": "registry/capability-claims.yaml",
+        "claim_id": "dbio:claim:aro-audit-reference:003",
+        "source_evidence_id": "potential:aro-audit-reference:003"
+      },
+      "artifact": {
+        "status": "referenced_not_assessed",
+        "paths": [
+          "/Users/zhangbin/GitHub/aro-audit/README.md",
+          "/Users/zhangbin/GitHub/aro-audit/llms.txt"
+        ],
+        "integrity_status": "not_assessed",
+        "content_relevance": "not_assessed",
+        "version_binding": "unknown"
+      },
+      "verification": {
+        "status": "not_reviewed",
+        "reviewer": null,
+        "review_id": null,
+        "verified_at": null,
+        "method": null,
+        "limitation": "Path existence is checked; content sufficiency, integrity, version, scope, environment, and side effects are not reviewed."
+      },
+      "status": "pending",
+      "supported_capability_maturity": "C1",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "evidence_id": "dbio:evidence:verifiable-agent-demo:001",
+      "claim_id": "dbio:claim:verifiable-agent-demo:001",
+      "evidence_type": "E1",
+      "source": {
+        "kind": "capability_claim_declaration",
+        "registry": "registry/capability-claims.yaml",
+        "claim_id": "dbio:claim:verifiable-agent-demo:001",
+        "source_evidence_id": "potential:verifiable-agent-demo:001"
+      },
+      "artifact": {
+        "status": "referenced_not_assessed",
+        "paths": [
+          "/Users/zhangbin/GitHub/verifiable-agent-demo/README.md",
+          "/Users/zhangbin/GitHub/verifiable-agent-demo/llms.txt"
+        ],
+        "integrity_status": "not_assessed",
+        "content_relevance": "not_assessed",
+        "version_binding": "unknown"
+      },
+      "verification": {
+        "status": "not_reviewed",
+        "reviewer": null,
+        "review_id": null,
+        "verified_at": null,
+        "method": null,
+        "limitation": "Path existence is checked; content sufficiency, integrity, version, scope, environment, and side effects are not reviewed."
+      },
+      "status": "pending",
+      "supported_capability_maturity": "C1",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "evidence_id": "dbio:evidence:verifiable-agent-demo:002",
+      "claim_id": "dbio:claim:verifiable-agent-demo:002",
+      "evidence_type": "E1",
+      "source": {
+        "kind": "capability_claim_declaration",
+        "registry": "registry/capability-claims.yaml",
+        "claim_id": "dbio:claim:verifiable-agent-demo:002",
+        "source_evidence_id": "potential:verifiable-agent-demo:002"
+      },
+      "artifact": {
+        "status": "referenced_not_assessed",
+        "paths": [
+          "/Users/zhangbin/GitHub/verifiable-agent-demo/README.md",
+          "/Users/zhangbin/GitHub/verifiable-agent-demo/llms.txt"
+        ],
+        "integrity_status": "not_assessed",
+        "content_relevance": "not_assessed",
+        "version_binding": "unknown"
+      },
+      "verification": {
+        "status": "not_reviewed",
+        "reviewer": null,
+        "review_id": null,
+        "verified_at": null,
+        "method": null,
+        "limitation": "Path existence is checked; content sufficiency, integrity, version, scope, environment, and side effects are not reviewed."
+      },
+      "status": "pending",
+      "supported_capability_maturity": "C1",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "evidence_id": "dbio:evidence:verifiable-agent-demo:003",
+      "claim_id": "dbio:claim:verifiable-agent-demo:003",
+      "evidence_type": "E1",
+      "source": {
+        "kind": "capability_claim_declaration",
+        "registry": "registry/capability-claims.yaml",
+        "claim_id": "dbio:claim:verifiable-agent-demo:003",
+        "source_evidence_id": "potential:verifiable-agent-demo:003"
+      },
+      "artifact": {
+        "status": "referenced_not_assessed",
+        "paths": [
+          "/Users/zhangbin/GitHub/verifiable-agent-demo/README.md",
+          "/Users/zhangbin/GitHub/verifiable-agent-demo/llms.txt"
+        ],
+        "integrity_status": "not_assessed",
+        "content_relevance": "not_assessed",
+        "version_binding": "unknown"
+      },
+      "verification": {
+        "status": "not_reviewed",
+        "reviewer": null,
+        "review_id": null,
+        "verified_at": null,
+        "method": null,
+        "limitation": "Path existence is checked; content sufficiency, integrity, version, scope, environment, and side effects are not reviewed."
+      },
+      "status": "pending",
+      "supported_capability_maturity": "C1",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "evidence_id": "dbio:evidence:execution-integrity-core:001",
+      "claim_id": "dbio:claim:execution-integrity-core:001",
+      "evidence_type": "E1",
+      "source": {
+        "kind": "capability_claim_declaration",
+        "registry": "registry/capability-claims.yaml",
+        "claim_id": "dbio:claim:execution-integrity-core:001",
+        "source_evidence_id": "potential:execution-integrity-core:001"
+      },
+      "artifact": {
+        "status": "referenced_not_assessed",
+        "paths": [
+          "/Users/zhangbin/GitHub/execution-integrity-core/README.md",
+          "/Users/zhangbin/GitHub/execution-integrity-core/AGENTS.md",
+          "/Users/zhangbin/GitHub/execution-integrity-core/agent-index.json"
+        ],
+        "integrity_status": "not_assessed",
+        "content_relevance": "not_assessed",
+        "version_binding": "unknown"
+      },
+      "verification": {
+        "status": "not_reviewed",
+        "reviewer": null,
+        "review_id": null,
+        "verified_at": null,
+        "method": null,
+        "limitation": "Path existence is checked; content sufficiency, integrity, version, scope, environment, and side effects are not reviewed."
+      },
+      "status": "pending",
+      "supported_capability_maturity": "C1",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "evidence_id": "dbio:evidence:execution-integrity-core:002",
+      "claim_id": "dbio:claim:execution-integrity-core:002",
+      "evidence_type": "E1",
+      "source": {
+        "kind": "capability_claim_declaration",
+        "registry": "registry/capability-claims.yaml",
+        "claim_id": "dbio:claim:execution-integrity-core:002",
+        "source_evidence_id": "potential:execution-integrity-core:002"
+      },
+      "artifact": {
+        "status": "referenced_not_assessed",
+        "paths": [
+          "/Users/zhangbin/GitHub/execution-integrity-core/README.md",
+          "/Users/zhangbin/GitHub/execution-integrity-core/AGENTS.md",
+          "/Users/zhangbin/GitHub/execution-integrity-core/agent-index.json"
+        ],
+        "integrity_status": "not_assessed",
+        "content_relevance": "not_assessed",
+        "version_binding": "unknown"
+      },
+      "verification": {
+        "status": "not_reviewed",
+        "reviewer": null,
+        "review_id": null,
+        "verified_at": null,
+        "method": null,
+        "limitation": "Path existence is checked; content sufficiency, integrity, version, scope, environment, and side effects are not reviewed."
+      },
+      "status": "pending",
+      "supported_capability_maturity": "C1",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "evidence_id": "dbio:evidence:execution-integrity-core:003",
+      "claim_id": "dbio:claim:execution-integrity-core:003",
+      "evidence_type": "E1",
+      "source": {
+        "kind": "capability_claim_declaration",
+        "registry": "registry/capability-claims.yaml",
+        "claim_id": "dbio:claim:execution-integrity-core:003",
+        "source_evidence_id": "potential:execution-integrity-core:003"
+      },
+      "artifact": {
+        "status": "referenced_not_assessed",
+        "paths": [
+          "/Users/zhangbin/GitHub/execution-integrity-core/README.md",
+          "/Users/zhangbin/GitHub/execution-integrity-core/AGENTS.md",
+          "/Users/zhangbin/GitHub/execution-integrity-core/agent-index.json"
+        ],
+        "integrity_status": "not_assessed",
+        "content_relevance": "not_assessed",
+        "version_binding": "unknown"
+      },
+      "verification": {
+        "status": "not_reviewed",
+        "reviewer": null,
+        "review_id": null,
+        "verified_at": null,
+        "method": null,
+        "limitation": "Path existence is checked; content sufficiency, integrity, version, scope, environment, and side effects are not reviewed."
+      },
+      "status": "pending",
+      "supported_capability_maturity": "C1",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "evidence_id": "dbio:evidence:execution-integrity-core:004",
+      "claim_id": "dbio:claim:execution-integrity-core:004",
+      "evidence_type": "E1",
+      "source": {
+        "kind": "capability_claim_declaration",
+        "registry": "registry/capability-claims.yaml",
+        "claim_id": "dbio:claim:execution-integrity-core:004",
+        "source_evidence_id": "potential:execution-integrity-core:004"
+      },
+      "artifact": {
+        "status": "referenced_not_assessed",
+        "paths": [
+          "/Users/zhangbin/GitHub/execution-integrity-core/README.md",
+          "/Users/zhangbin/GitHub/execution-integrity-core/AGENTS.md",
+          "/Users/zhangbin/GitHub/execution-integrity-core/agent-index.json"
+        ],
+        "integrity_status": "not_assessed",
+        "content_relevance": "not_assessed",
+        "version_binding": "unknown"
+      },
+      "verification": {
+        "status": "not_reviewed",
+        "reviewer": null,
+        "review_id": null,
+        "verified_at": null,
+        "method": null,
+        "limitation": "Path existence is checked; content sufficiency, integrity, version, scope, environment, and side effects are not reviewed."
+      },
+      "status": "pending",
+      "supported_capability_maturity": "C1",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "evidence_id": "dbio:evidence:agent-evidence-receipt-layer:001",
+      "claim_id": "dbio:claim:agent-evidence-receipt-layer:001",
+      "evidence_type": "E1",
+      "source": {
+        "kind": "capability_claim_declaration",
+        "registry": "registry/capability-claims.yaml",
+        "claim_id": "dbio:claim:agent-evidence-receipt-layer:001",
+        "source_evidence_id": "potential:agent-evidence-receipt-layer:001"
+      },
+      "artifact": {
+        "status": "referenced_not_assessed",
+        "paths": [
+          "/Users/zhangbin/GitHub/agent-evidence-layer/README.md",
+          "/Users/zhangbin/GitHub/agent-evidence-layer/AGENTS.md",
+          "/Users/zhangbin/GitHub/agent-evidence-layer/PROJECT_LEDGER.md"
+        ],
+        "integrity_status": "not_assessed",
+        "content_relevance": "not_assessed",
+        "version_binding": "unknown"
+      },
+      "verification": {
+        "status": "not_reviewed",
+        "reviewer": null,
+        "review_id": null,
+        "verified_at": null,
+        "method": null,
+        "limitation": "Path existence is checked; content sufficiency, integrity, version, scope, environment, and side effects are not reviewed."
+      },
+      "status": "pending",
+      "supported_capability_maturity": "C1",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "evidence_id": "dbio:evidence:agent-evidence-receipt-layer:002",
+      "claim_id": "dbio:claim:agent-evidence-receipt-layer:002",
+      "evidence_type": "E1",
+      "source": {
+        "kind": "capability_claim_declaration",
+        "registry": "registry/capability-claims.yaml",
+        "claim_id": "dbio:claim:agent-evidence-receipt-layer:002",
+        "source_evidence_id": "potential:agent-evidence-receipt-layer:002"
+      },
+      "artifact": {
+        "status": "referenced_not_assessed",
+        "paths": [
+          "/Users/zhangbin/GitHub/agent-evidence-layer/README.md",
+          "/Users/zhangbin/GitHub/agent-evidence-layer/AGENTS.md",
+          "/Users/zhangbin/GitHub/agent-evidence-layer/PROJECT_LEDGER.md"
+        ],
+        "integrity_status": "not_assessed",
+        "content_relevance": "not_assessed",
+        "version_binding": "unknown"
+      },
+      "verification": {
+        "status": "not_reviewed",
+        "reviewer": null,
+        "review_id": null,
+        "verified_at": null,
+        "method": null,
+        "limitation": "Path existence is checked; content sufficiency, integrity, version, scope, environment, and side effects are not reviewed."
+      },
+      "status": "pending",
+      "supported_capability_maturity": "C1",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "evidence_id": "dbio:evidence:agent-evidence-receipt-layer:003",
+      "claim_id": "dbio:claim:agent-evidence-receipt-layer:003",
+      "evidence_type": "E1",
+      "source": {
+        "kind": "capability_claim_declaration",
+        "registry": "registry/capability-claims.yaml",
+        "claim_id": "dbio:claim:agent-evidence-receipt-layer:003",
+        "source_evidence_id": "potential:agent-evidence-receipt-layer:003"
+      },
+      "artifact": {
+        "status": "referenced_not_assessed",
+        "paths": [
+          "/Users/zhangbin/GitHub/agent-evidence-layer/README.md",
+          "/Users/zhangbin/GitHub/agent-evidence-layer/AGENTS.md",
+          "/Users/zhangbin/GitHub/agent-evidence-layer/PROJECT_LEDGER.md"
+        ],
+        "integrity_status": "not_assessed",
+        "content_relevance": "not_assessed",
+        "version_binding": "unknown"
+      },
+      "verification": {
+        "status": "not_reviewed",
+        "reviewer": null,
+        "review_id": null,
+        "verified_at": null,
+        "method": null,
+        "limitation": "Path existence is checked; content sufficiency, integrity, version, scope, environment, and side effects are not reviewed."
+      },
+      "status": "pending",
+      "supported_capability_maturity": "C1",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "evidence_id": "dbio:evidence:agent-evidence-receipt-layer:004",
+      "claim_id": "dbio:claim:agent-evidence-receipt-layer:004",
+      "evidence_type": "E1",
+      "source": {
+        "kind": "capability_claim_declaration",
+        "registry": "registry/capability-claims.yaml",
+        "claim_id": "dbio:claim:agent-evidence-receipt-layer:004",
+        "source_evidence_id": "potential:agent-evidence-receipt-layer:004"
+      },
+      "artifact": {
+        "status": "referenced_not_assessed",
+        "paths": [
+          "/Users/zhangbin/GitHub/agent-evidence-layer/README.md",
+          "/Users/zhangbin/GitHub/agent-evidence-layer/AGENTS.md",
+          "/Users/zhangbin/GitHub/agent-evidence-layer/PROJECT_LEDGER.md"
+        ],
+        "integrity_status": "not_assessed",
+        "content_relevance": "not_assessed",
+        "version_binding": "unknown"
+      },
+      "verification": {
+        "status": "not_reviewed",
+        "reviewer": null,
+        "review_id": null,
+        "verified_at": null,
+        "method": null,
+        "limitation": "Path existence is checked; content sufficiency, integrity, version, scope, environment, and side effects are not reviewed."
+      },
+      "status": "pending",
+      "supported_capability_maturity": "C1",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "evidence_id": "dbio:evidence:saee-agent-readiness:001",
+      "claim_id": "dbio:claim:saee-agent-readiness:001",
+      "evidence_type": "E1",
+      "source": {
+        "kind": "capability_claim_declaration",
+        "registry": "registry/capability-claims.yaml",
+        "claim_id": "dbio:claim:saee-agent-readiness:001",
+        "source_evidence_id": "potential:saee-agent-readiness:001"
+      },
+      "artifact": {
+        "status": "referenced_not_assessed",
+        "paths": [
+          "/Users/zhangbin/GitHub/SAEE/README.md",
+          "/Users/zhangbin/GitHub/SAEE/AGENTS.md",
+          "/Users/zhangbin/GitHub/SAEE/capability-package/manifest.json",
+          "/Users/zhangbin/GitHub/SAEE/governance/README.md"
+        ],
+        "integrity_status": "not_assessed",
+        "content_relevance": "not_assessed",
+        "version_binding": "unknown"
+      },
+      "verification": {
+        "status": "not_reviewed",
+        "reviewer": null,
+        "review_id": null,
+        "verified_at": null,
+        "method": null,
+        "limitation": "Path existence is checked; content sufficiency, integrity, version, scope, environment, and side effects are not reviewed."
+      },
+      "status": "pending",
+      "supported_capability_maturity": "C1",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "evidence_id": "dbio:evidence:saee-agent-readiness:002",
+      "claim_id": "dbio:claim:saee-agent-readiness:002",
+      "evidence_type": "E1",
+      "source": {
+        "kind": "capability_claim_declaration",
+        "registry": "registry/capability-claims.yaml",
+        "claim_id": "dbio:claim:saee-agent-readiness:002",
+        "source_evidence_id": "potential:saee-agent-readiness:002"
+      },
+      "artifact": {
+        "status": "referenced_not_assessed",
+        "paths": [
+          "/Users/zhangbin/GitHub/SAEE/README.md",
+          "/Users/zhangbin/GitHub/SAEE/AGENTS.md",
+          "/Users/zhangbin/GitHub/SAEE/capability-package/manifest.json",
+          "/Users/zhangbin/GitHub/SAEE/governance/README.md"
+        ],
+        "integrity_status": "not_assessed",
+        "content_relevance": "not_assessed",
+        "version_binding": "unknown"
+      },
+      "verification": {
+        "status": "not_reviewed",
+        "reviewer": null,
+        "review_id": null,
+        "verified_at": null,
+        "method": null,
+        "limitation": "Path existence is checked; content sufficiency, integrity, version, scope, environment, and side effects are not reviewed."
+      },
+      "status": "pending",
+      "supported_capability_maturity": "C1",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "evidence_id": "dbio:evidence:saee-agent-readiness:003",
+      "claim_id": "dbio:claim:saee-agent-readiness:003",
+      "evidence_type": "E1",
+      "source": {
+        "kind": "capability_claim_declaration",
+        "registry": "registry/capability-claims.yaml",
+        "claim_id": "dbio:claim:saee-agent-readiness:003",
+        "source_evidence_id": "potential:saee-agent-readiness:003"
+      },
+      "artifact": {
+        "status": "referenced_not_assessed",
+        "paths": [
+          "/Users/zhangbin/GitHub/SAEE/README.md",
+          "/Users/zhangbin/GitHub/SAEE/AGENTS.md",
+          "/Users/zhangbin/GitHub/SAEE/capability-package/manifest.json",
+          "/Users/zhangbin/GitHub/SAEE/governance/README.md"
+        ],
+        "integrity_status": "not_assessed",
+        "content_relevance": "not_assessed",
+        "version_binding": "unknown"
+      },
+      "verification": {
+        "status": "not_reviewed",
+        "reviewer": null,
+        "review_id": null,
+        "verified_at": null,
+        "method": null,
+        "limitation": "Path existence is checked; content sufficiency, integrity, version, scope, environment, and side effects are not reviewed."
+      },
+      "status": "pending",
+      "supported_capability_maturity": "C1",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "evidence_id": "dbio:evidence:saee-agent-readiness:004",
+      "claim_id": "dbio:claim:saee-agent-readiness:004",
+      "evidence_type": "E1",
+      "source": {
+        "kind": "capability_claim_declaration",
+        "registry": "registry/capability-claims.yaml",
+        "claim_id": "dbio:claim:saee-agent-readiness:004",
+        "source_evidence_id": "potential:saee-agent-readiness:004"
+      },
+      "artifact": {
+        "status": "referenced_not_assessed",
+        "paths": [
+          "/Users/zhangbin/GitHub/SAEE/README.md",
+          "/Users/zhangbin/GitHub/SAEE/AGENTS.md",
+          "/Users/zhangbin/GitHub/SAEE/capability-package/manifest.json",
+          "/Users/zhangbin/GitHub/SAEE/governance/README.md"
+        ],
+        "integrity_status": "not_assessed",
+        "content_relevance": "not_assessed",
+        "version_binding": "unknown"
+      },
+      "verification": {
+        "status": "not_reviewed",
+        "reviewer": null,
+        "review_id": null,
+        "verified_at": null,
+        "method": null,
+        "limitation": "Path existence is checked; content sufficiency, integrity, version, scope, environment, and side effects are not reviewed."
+      },
+      "status": "pending",
+      "supported_capability_maturity": "C1",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "evidence_id": "dbio:evidence:agent-governance-toolkit-external:001",
+      "claim_id": "dbio:claim:agent-governance-toolkit-external:001",
+      "evidence_type": "E1",
+      "source": {
+        "kind": "capability_claim_declaration",
+        "registry": "registry/capability-claims.yaml",
+        "claim_id": "dbio:claim:agent-governance-toolkit-external:001",
+        "source_evidence_id": "potential:agent-governance-toolkit-external:001"
+      },
+      "artifact": {
+        "status": "referenced_not_assessed",
+        "paths": [
+          "/Users/zhangbin/GitHub/agent-governance-toolkit/README.md",
+          "/Users/zhangbin/GitHub/agent-governance-toolkit/AGENTS.md"
+        ],
+        "integrity_status": "not_assessed",
+        "content_relevance": "not_assessed",
+        "version_binding": "unknown"
+      },
+      "verification": {
+        "status": "not_reviewed",
+        "reviewer": null,
+        "review_id": null,
+        "verified_at": null,
+        "method": null,
+        "limitation": "Path existence is checked; content sufficiency, integrity, version, scope, environment, and side effects are not reviewed."
+      },
+      "status": "pending",
+      "supported_capability_maturity": "C1",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "evidence_id": "dbio:evidence:agent-governance-toolkit-external:002",
+      "claim_id": "dbio:claim:agent-governance-toolkit-external:002",
+      "evidence_type": "E1",
+      "source": {
+        "kind": "capability_claim_declaration",
+        "registry": "registry/capability-claims.yaml",
+        "claim_id": "dbio:claim:agent-governance-toolkit-external:002",
+        "source_evidence_id": "potential:agent-governance-toolkit-external:002"
+      },
+      "artifact": {
+        "status": "referenced_not_assessed",
+        "paths": [
+          "/Users/zhangbin/GitHub/agent-governance-toolkit/README.md",
+          "/Users/zhangbin/GitHub/agent-governance-toolkit/AGENTS.md"
+        ],
+        "integrity_status": "not_assessed",
+        "content_relevance": "not_assessed",
+        "version_binding": "unknown"
+      },
+      "verification": {
+        "status": "not_reviewed",
+        "reviewer": null,
+        "review_id": null,
+        "verified_at": null,
+        "method": null,
+        "limitation": "Path existence is checked; content sufficiency, integrity, version, scope, environment, and side effects are not reviewed."
+      },
+      "status": "pending",
+      "supported_capability_maturity": "C1",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "evidence_id": "dbio:evidence:agent-governance-toolkit-external:003",
+      "claim_id": "dbio:claim:agent-governance-toolkit-external:003",
+      "evidence_type": "E1",
+      "source": {
+        "kind": "capability_claim_declaration",
+        "registry": "registry/capability-claims.yaml",
+        "claim_id": "dbio:claim:agent-governance-toolkit-external:003",
+        "source_evidence_id": "potential:agent-governance-toolkit-external:003"
+      },
+      "artifact": {
+        "status": "referenced_not_assessed",
+        "paths": [
+          "/Users/zhangbin/GitHub/agent-governance-toolkit/README.md",
+          "/Users/zhangbin/GitHub/agent-governance-toolkit/AGENTS.md"
+        ],
+        "integrity_status": "not_assessed",
+        "content_relevance": "not_assessed",
+        "version_binding": "unknown"
+      },
+      "verification": {
+        "status": "not_reviewed",
+        "reviewer": null,
+        "review_id": null,
+        "verified_at": null,
+        "method": null,
+        "limitation": "Path existence is checked; content sufficiency, integrity, version, scope, environment, and side effects are not reviewed."
+      },
+      "status": "pending",
+      "supported_capability_maturity": "C1",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "evidence_id": "dbio:evidence:agent-governance-toolkit-external:004",
+      "claim_id": "dbio:claim:agent-governance-toolkit-external:004",
+      "evidence_type": "E1",
+      "source": {
+        "kind": "capability_claim_declaration",
+        "registry": "registry/capability-claims.yaml",
+        "claim_id": "dbio:claim:agent-governance-toolkit-external:004",
+        "source_evidence_id": "potential:agent-governance-toolkit-external:004"
+      },
+      "artifact": {
+        "status": "referenced_not_assessed",
+        "paths": [
+          "/Users/zhangbin/GitHub/agent-governance-toolkit/README.md",
+          "/Users/zhangbin/GitHub/agent-governance-toolkit/AGENTS.md"
+        ],
+        "integrity_status": "not_assessed",
+        "content_relevance": "not_assessed",
+        "version_binding": "unknown"
+      },
+      "verification": {
+        "status": "not_reviewed",
+        "reviewer": null,
+        "review_id": null,
+        "verified_at": null,
+        "method": null,
+        "limitation": "Path existence is checked; content sufficiency, integrity, version, scope, environment, and side effects are not reviewed."
+      },
+      "status": "pending",
+      "supported_capability_maturity": "C1",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "evidence_id": "dbio:evidence:agent-governance-benchmark:001",
+      "claim_id": "dbio:claim:agent-governance-benchmark:001",
+      "evidence_type": "E1",
+      "source": {
+        "kind": "capability_claim_declaration",
+        "registry": "registry/capability-claims.yaml",
+        "claim_id": "dbio:claim:agent-governance-benchmark:001",
+        "source_evidence_id": "potential:agent-governance-benchmark:001"
+      },
+      "artifact": {
+        "status": "referenced_not_assessed",
+        "paths": [
+          "/Users/zhangbin/GitHub/agent-governance-benchmark/README.md"
+        ],
+        "integrity_status": "not_assessed",
+        "content_relevance": "not_assessed",
+        "version_binding": "unknown"
+      },
+      "verification": {
+        "status": "not_reviewed",
+        "reviewer": null,
+        "review_id": null,
+        "verified_at": null,
+        "method": null,
+        "limitation": "Path existence is checked; content sufficiency, integrity, version, scope, environment, and side effects are not reviewed."
+      },
+      "status": "pending",
+      "supported_capability_maturity": "C1",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "evidence_id": "dbio:evidence:agent-governance-benchmark:002",
+      "claim_id": "dbio:claim:agent-governance-benchmark:002",
+      "evidence_type": "E1",
+      "source": {
+        "kind": "capability_claim_declaration",
+        "registry": "registry/capability-claims.yaml",
+        "claim_id": "dbio:claim:agent-governance-benchmark:002",
+        "source_evidence_id": "potential:agent-governance-benchmark:002"
+      },
+      "artifact": {
+        "status": "referenced_not_assessed",
+        "paths": [
+          "/Users/zhangbin/GitHub/agent-governance-benchmark/README.md"
+        ],
+        "integrity_status": "not_assessed",
+        "content_relevance": "not_assessed",
+        "version_binding": "unknown"
+      },
+      "verification": {
+        "status": "not_reviewed",
+        "reviewer": null,
+        "review_id": null,
+        "verified_at": null,
+        "method": null,
+        "limitation": "Path existence is checked; content sufficiency, integrity, version, scope, environment, and side effects are not reviewed."
+      },
+      "status": "pending",
+      "supported_capability_maturity": "C1",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "evidence_id": "dbio:evidence:agent-governance-benchmark:003",
+      "claim_id": "dbio:claim:agent-governance-benchmark:003",
+      "evidence_type": "E1",
+      "source": {
+        "kind": "capability_claim_declaration",
+        "registry": "registry/capability-claims.yaml",
+        "claim_id": "dbio:claim:agent-governance-benchmark:003",
+        "source_evidence_id": "potential:agent-governance-benchmark:003"
+      },
+      "artifact": {
+        "status": "referenced_not_assessed",
+        "paths": [
+          "/Users/zhangbin/GitHub/agent-governance-benchmark/README.md"
+        ],
+        "integrity_status": "not_assessed",
+        "content_relevance": "not_assessed",
+        "version_binding": "unknown"
+      },
+      "verification": {
+        "status": "not_reviewed",
+        "reviewer": null,
+        "review_id": null,
+        "verified_at": null,
+        "method": null,
+        "limitation": "Path existence is checked; content sufficiency, integrity, version, scope, environment, and side effects are not reviewed."
+      },
+      "status": "pending",
+      "supported_capability_maturity": "C1",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "evidence_id": "dbio:evidence:agent-governance-benchmark:004",
+      "claim_id": "dbio:claim:agent-governance-benchmark:004",
+      "evidence_type": "E1",
+      "source": {
+        "kind": "capability_claim_declaration",
+        "registry": "registry/capability-claims.yaml",
+        "claim_id": "dbio:claim:agent-governance-benchmark:004",
+        "source_evidence_id": "potential:agent-governance-benchmark:004"
+      },
+      "artifact": {
+        "status": "referenced_not_assessed",
+        "paths": [
+          "/Users/zhangbin/GitHub/agent-governance-benchmark/README.md"
+        ],
+        "integrity_status": "not_assessed",
+        "content_relevance": "not_assessed",
+        "version_binding": "unknown"
+      },
+      "verification": {
+        "status": "not_reviewed",
+        "reviewer": null,
+        "review_id": null,
+        "verified_at": null,
+        "method": null,
+        "limitation": "Path existence is checked; content sufficiency, integrity, version, scope, environment, and side effects are not reviewed."
+      },
+      "status": "pending",
+      "supported_capability_maturity": "C1",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "evidence_id": "dbio:evidence:agent-receipt-validator-mcp:001",
+      "claim_id": "dbio:claim:agent-receipt-validator-mcp:001",
+      "evidence_type": "E1",
+      "source": {
+        "kind": "capability_claim_declaration",
+        "registry": "registry/capability-claims.yaml",
+        "claim_id": "dbio:claim:agent-receipt-validator-mcp:001",
+        "source_evidence_id": "potential:agent-receipt-validator-mcp:001"
+      },
+      "artifact": {
+        "status": "referenced_not_assessed",
+        "paths": [
+          "/Users/zhangbin/GitHub/agent-receipt-validator-mcp/README.md",
+          "/Users/zhangbin/GitHub/agent-receipt-validator-mcp/llms.txt"
+        ],
+        "integrity_status": "not_assessed",
+        "content_relevance": "not_assessed",
+        "version_binding": "unknown"
+      },
+      "verification": {
+        "status": "not_reviewed",
+        "reviewer": null,
+        "review_id": null,
+        "verified_at": null,
+        "method": null,
+        "limitation": "Path existence is checked; content sufficiency, integrity, version, scope, environment, and side effects are not reviewed."
+      },
+      "status": "pending",
+      "supported_capability_maturity": "C1",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "evidence_id": "dbio:evidence:agent-receipt-validator-mcp:002",
+      "claim_id": "dbio:claim:agent-receipt-validator-mcp:002",
+      "evidence_type": "E1",
+      "source": {
+        "kind": "capability_claim_declaration",
+        "registry": "registry/capability-claims.yaml",
+        "claim_id": "dbio:claim:agent-receipt-validator-mcp:002",
+        "source_evidence_id": "potential:agent-receipt-validator-mcp:002"
+      },
+      "artifact": {
+        "status": "referenced_not_assessed",
+        "paths": [
+          "/Users/zhangbin/GitHub/agent-receipt-validator-mcp/README.md",
+          "/Users/zhangbin/GitHub/agent-receipt-validator-mcp/llms.txt"
+        ],
+        "integrity_status": "not_assessed",
+        "content_relevance": "not_assessed",
+        "version_binding": "unknown"
+      },
+      "verification": {
+        "status": "not_reviewed",
+        "reviewer": null,
+        "review_id": null,
+        "verified_at": null,
+        "method": null,
+        "limitation": "Path existence is checked; content sufficiency, integrity, version, scope, environment, and side effects are not reviewed."
+      },
+      "status": "pending",
+      "supported_capability_maturity": "C1",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "evidence_id": "dbio:evidence:agent-receipt-validator-mcp:003",
+      "claim_id": "dbio:claim:agent-receipt-validator-mcp:003",
+      "evidence_type": "E1",
+      "source": {
+        "kind": "capability_claim_declaration",
+        "registry": "registry/capability-claims.yaml",
+        "claim_id": "dbio:claim:agent-receipt-validator-mcp:003",
+        "source_evidence_id": "potential:agent-receipt-validator-mcp:003"
+      },
+      "artifact": {
+        "status": "referenced_not_assessed",
+        "paths": [
+          "/Users/zhangbin/GitHub/agent-receipt-validator-mcp/README.md",
+          "/Users/zhangbin/GitHub/agent-receipt-validator-mcp/llms.txt"
+        ],
+        "integrity_status": "not_assessed",
+        "content_relevance": "not_assessed",
+        "version_binding": "unknown"
+      },
+      "verification": {
+        "status": "not_reviewed",
+        "reviewer": null,
+        "review_id": null,
+        "verified_at": null,
+        "method": null,
+        "limitation": "Path existence is checked; content sufficiency, integrity, version, scope, environment, and side effects are not reviewed."
+      },
+      "status": "pending",
+      "supported_capability_maturity": "C1",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "evidence_id": "dbio:evidence:agent-receipt-validator-mcp:004",
+      "claim_id": "dbio:claim:agent-receipt-validator-mcp:004",
+      "evidence_type": "E1",
+      "source": {
+        "kind": "capability_claim_declaration",
+        "registry": "registry/capability-claims.yaml",
+        "claim_id": "dbio:claim:agent-receipt-validator-mcp:004",
+        "source_evidence_id": "potential:agent-receipt-validator-mcp:004"
+      },
+      "artifact": {
+        "status": "referenced_not_assessed",
+        "paths": [
+          "/Users/zhangbin/GitHub/agent-receipt-validator-mcp/README.md",
+          "/Users/zhangbin/GitHub/agent-receipt-validator-mcp/llms.txt"
+        ],
+        "integrity_status": "not_assessed",
+        "content_relevance": "not_assessed",
+        "version_binding": "unknown"
+      },
+      "verification": {
+        "status": "not_reviewed",
+        "reviewer": null,
+        "review_id": null,
+        "verified_at": null,
+        "method": null,
+        "limitation": "Path existence is checked; content sufficiency, integrity, version, scope, environment, and side effects are not reviewed."
+      },
+      "status": "pending",
+      "supported_capability_maturity": "C1",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "evidence_id": "dbio:evidence:agent-accountability-evidence-layer:001",
+      "claim_id": "dbio:claim:agent-accountability-evidence-layer:001",
+      "evidence_type": "E1",
+      "source": {
+        "kind": "capability_claim_declaration",
+        "registry": "registry/capability-claims.yaml",
+        "claim_id": "dbio:claim:agent-accountability-evidence-layer:001",
+        "source_evidence_id": "potential:agent-accountability-evidence-layer:001"
+      },
+      "artifact": {
+        "status": "referenced_not_assessed",
+        "paths": [
+          "/Users/zhangbin/GitHub/agent-accountability-evidence-layer/README.md",
+          "/Users/zhangbin/GitHub/agent-accountability-evidence-layer/AGENTS.md"
+        ],
+        "integrity_status": "not_assessed",
+        "content_relevance": "not_assessed",
+        "version_binding": "unknown"
+      },
+      "verification": {
+        "status": "not_reviewed",
+        "reviewer": null,
+        "review_id": null,
+        "verified_at": null,
+        "method": null,
+        "limitation": "Path existence is checked; content sufficiency, integrity, version, scope, environment, and side effects are not reviewed."
+      },
+      "status": "pending",
+      "supported_capability_maturity": "C1",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "evidence_id": "dbio:evidence:agent-accountability-evidence-layer:002",
+      "claim_id": "dbio:claim:agent-accountability-evidence-layer:002",
+      "evidence_type": "E1",
+      "source": {
+        "kind": "capability_claim_declaration",
+        "registry": "registry/capability-claims.yaml",
+        "claim_id": "dbio:claim:agent-accountability-evidence-layer:002",
+        "source_evidence_id": "potential:agent-accountability-evidence-layer:002"
+      },
+      "artifact": {
+        "status": "referenced_not_assessed",
+        "paths": [
+          "/Users/zhangbin/GitHub/agent-accountability-evidence-layer/README.md",
+          "/Users/zhangbin/GitHub/agent-accountability-evidence-layer/AGENTS.md"
+        ],
+        "integrity_status": "not_assessed",
+        "content_relevance": "not_assessed",
+        "version_binding": "unknown"
+      },
+      "verification": {
+        "status": "not_reviewed",
+        "reviewer": null,
+        "review_id": null,
+        "verified_at": null,
+        "method": null,
+        "limitation": "Path existence is checked; content sufficiency, integrity, version, scope, environment, and side effects are not reviewed."
+      },
+      "status": "pending",
+      "supported_capability_maturity": "C1",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "evidence_id": "dbio:evidence:agent-accountability-evidence-layer:003",
+      "claim_id": "dbio:claim:agent-accountability-evidence-layer:003",
+      "evidence_type": "E1",
+      "source": {
+        "kind": "capability_claim_declaration",
+        "registry": "registry/capability-claims.yaml",
+        "claim_id": "dbio:claim:agent-accountability-evidence-layer:003",
+        "source_evidence_id": "potential:agent-accountability-evidence-layer:003"
+      },
+      "artifact": {
+        "status": "referenced_not_assessed",
+        "paths": [
+          "/Users/zhangbin/GitHub/agent-accountability-evidence-layer/README.md",
+          "/Users/zhangbin/GitHub/agent-accountability-evidence-layer/AGENTS.md"
+        ],
+        "integrity_status": "not_assessed",
+        "content_relevance": "not_assessed",
+        "version_binding": "unknown"
+      },
+      "verification": {
+        "status": "not_reviewed",
+        "reviewer": null,
+        "review_id": null,
+        "verified_at": null,
+        "method": null,
+        "limitation": "Path existence is checked; content sufficiency, integrity, version, scope, environment, and side effects are not reviewed."
+      },
+      "status": "pending",
+      "supported_capability_maturity": "C1",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "evidence_id": "dbio:evidence:agent-accountability-evidence-layer:004",
+      "claim_id": "dbio:claim:agent-accountability-evidence-layer:004",
+      "evidence_type": "E1",
+      "source": {
+        "kind": "capability_claim_declaration",
+        "registry": "registry/capability-claims.yaml",
+        "claim_id": "dbio:claim:agent-accountability-evidence-layer:004",
+        "source_evidence_id": "potential:agent-accountability-evidence-layer:004"
+      },
+      "artifact": {
+        "status": "referenced_not_assessed",
+        "paths": [
+          "/Users/zhangbin/GitHub/agent-accountability-evidence-layer/README.md",
+          "/Users/zhangbin/GitHub/agent-accountability-evidence-layer/AGENTS.md"
+        ],
+        "integrity_status": "not_assessed",
+        "content_relevance": "not_assessed",
+        "version_binding": "unknown"
+      },
+      "verification": {
+        "status": "not_reviewed",
+        "reviewer": null,
+        "review_id": null,
+        "verified_at": null,
+        "method": null,
+        "limitation": "Path existence is checked; content sufficiency, integrity, version, scope, environment, and side effects are not reviewed."
+      },
+      "status": "pending",
+      "supported_capability_maturity": "C1",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "evidence_id": "dbio:evidence:agent-object-protocol:001",
+      "claim_id": "dbio:claim:agent-object-protocol:001",
+      "evidence_type": "E1",
+      "source": {
+        "kind": "capability_claim_declaration",
+        "registry": "registry/capability-claims.yaml",
+        "claim_id": "dbio:claim:agent-object-protocol:001",
+        "source_evidence_id": "potential:agent-object-protocol:001"
+      },
+      "artifact": {
+        "status": "referenced_not_assessed",
+        "paths": [
+          "/Users/zhangbin/GitHub/agent-object-protocol/README.md"
+        ],
+        "integrity_status": "not_assessed",
+        "content_relevance": "not_assessed",
+        "version_binding": "unknown"
+      },
+      "verification": {
+        "status": "not_reviewed",
+        "reviewer": null,
+        "review_id": null,
+        "verified_at": null,
+        "method": null,
+        "limitation": "Path existence is checked; content sufficiency, integrity, version, scope, environment, and side effects are not reviewed."
+      },
+      "status": "pending",
+      "supported_capability_maturity": "C1",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "evidence_id": "dbio:evidence:agent-object-protocol:002",
+      "claim_id": "dbio:claim:agent-object-protocol:002",
+      "evidence_type": "E1",
+      "source": {
+        "kind": "capability_claim_declaration",
+        "registry": "registry/capability-claims.yaml",
+        "claim_id": "dbio:claim:agent-object-protocol:002",
+        "source_evidence_id": "potential:agent-object-protocol:002"
+      },
+      "artifact": {
+        "status": "referenced_not_assessed",
+        "paths": [
+          "/Users/zhangbin/GitHub/agent-object-protocol/README.md"
+        ],
+        "integrity_status": "not_assessed",
+        "content_relevance": "not_assessed",
+        "version_binding": "unknown"
+      },
+      "verification": {
+        "status": "not_reviewed",
+        "reviewer": null,
+        "review_id": null,
+        "verified_at": null,
+        "method": null,
+        "limitation": "Path existence is checked; content sufficiency, integrity, version, scope, environment, and side effects are not reviewed."
+      },
+      "status": "pending",
+      "supported_capability_maturity": "C1",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "evidence_id": "dbio:evidence:agent-object-protocol:003",
+      "claim_id": "dbio:claim:agent-object-protocol:003",
+      "evidence_type": "E1",
+      "source": {
+        "kind": "capability_claim_declaration",
+        "registry": "registry/capability-claims.yaml",
+        "claim_id": "dbio:claim:agent-object-protocol:003",
+        "source_evidence_id": "potential:agent-object-protocol:003"
+      },
+      "artifact": {
+        "status": "referenced_not_assessed",
+        "paths": [
+          "/Users/zhangbin/GitHub/agent-object-protocol/README.md"
+        ],
+        "integrity_status": "not_assessed",
+        "content_relevance": "not_assessed",
+        "version_binding": "unknown"
+      },
+      "verification": {
+        "status": "not_reviewed",
+        "reviewer": null,
+        "review_id": null,
+        "verified_at": null,
+        "method": null,
+        "limitation": "Path existence is checked; content sufficiency, integrity, version, scope, environment, and side effects are not reviewed."
+      },
+      "status": "pending",
+      "supported_capability_maturity": "C1",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "evidence_id": "dbio:evidence:ecl-execution-compact-layer:001",
+      "claim_id": "dbio:claim:ecl-execution-compact-layer:001",
+      "evidence_type": "E1",
+      "source": {
+        "kind": "capability_claim_declaration",
+        "registry": "registry/capability-claims.yaml",
+        "claim_id": "dbio:claim:ecl-execution-compact-layer:001",
+        "source_evidence_id": "potential:ecl-execution-compact-layer:001"
+      },
+      "artifact": {
+        "status": "referenced_not_assessed",
+        "paths": [
+          "/Users/zhangbin/GitHub/ecl-execution-compact-layer/README.md",
+          "/Users/zhangbin/GitHub/ecl-execution-compact-layer/AGENTS.md"
+        ],
+        "integrity_status": "not_assessed",
+        "content_relevance": "not_assessed",
+        "version_binding": "unknown"
+      },
+      "verification": {
+        "status": "not_reviewed",
+        "reviewer": null,
+        "review_id": null,
+        "verified_at": null,
+        "method": null,
+        "limitation": "Path existence is checked; content sufficiency, integrity, version, scope, environment, and side effects are not reviewed."
+      },
+      "status": "pending",
+      "supported_capability_maturity": "C1",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "evidence_id": "dbio:evidence:ecl-execution-compact-layer:002",
+      "claim_id": "dbio:claim:ecl-execution-compact-layer:002",
+      "evidence_type": "E1",
+      "source": {
+        "kind": "capability_claim_declaration",
+        "registry": "registry/capability-claims.yaml",
+        "claim_id": "dbio:claim:ecl-execution-compact-layer:002",
+        "source_evidence_id": "potential:ecl-execution-compact-layer:002"
+      },
+      "artifact": {
+        "status": "referenced_not_assessed",
+        "paths": [
+          "/Users/zhangbin/GitHub/ecl-execution-compact-layer/README.md",
+          "/Users/zhangbin/GitHub/ecl-execution-compact-layer/AGENTS.md"
+        ],
+        "integrity_status": "not_assessed",
+        "content_relevance": "not_assessed",
+        "version_binding": "unknown"
+      },
+      "verification": {
+        "status": "not_reviewed",
+        "reviewer": null,
+        "review_id": null,
+        "verified_at": null,
+        "method": null,
+        "limitation": "Path existence is checked; content sufficiency, integrity, version, scope, environment, and side effects are not reviewed."
+      },
+      "status": "pending",
+      "supported_capability_maturity": "C1",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "evidence_id": "dbio:evidence:ecl-execution-compact-layer:003",
+      "claim_id": "dbio:claim:ecl-execution-compact-layer:003",
+      "evidence_type": "E1",
+      "source": {
+        "kind": "capability_claim_declaration",
+        "registry": "registry/capability-claims.yaml",
+        "claim_id": "dbio:claim:ecl-execution-compact-layer:003",
+        "source_evidence_id": "potential:ecl-execution-compact-layer:003"
+      },
+      "artifact": {
+        "status": "referenced_not_assessed",
+        "paths": [
+          "/Users/zhangbin/GitHub/ecl-execution-compact-layer/README.md",
+          "/Users/zhangbin/GitHub/ecl-execution-compact-layer/AGENTS.md"
+        ],
+        "integrity_status": "not_assessed",
+        "content_relevance": "not_assessed",
+        "version_binding": "unknown"
+      },
+      "verification": {
+        "status": "not_reviewed",
+        "reviewer": null,
+        "review_id": null,
+        "verified_at": null,
+        "method": null,
+        "limitation": "Path existence is checked; content sufficiency, integrity, version, scope, environment, and side effects are not reviewed."
+      },
+      "status": "pending",
+      "supported_capability_maturity": "C1",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "evidence_id": "dbio:evidence:ecl-execution-compact-layer:004",
+      "claim_id": "dbio:claim:ecl-execution-compact-layer:004",
+      "evidence_type": "E1",
+      "source": {
+        "kind": "capability_claim_declaration",
+        "registry": "registry/capability-claims.yaml",
+        "claim_id": "dbio:claim:ecl-execution-compact-layer:004",
+        "source_evidence_id": "potential:ecl-execution-compact-layer:004"
+      },
+      "artifact": {
+        "status": "referenced_not_assessed",
+        "paths": [
+          "/Users/zhangbin/GitHub/ecl-execution-compact-layer/README.md",
+          "/Users/zhangbin/GitHub/ecl-execution-compact-layer/AGENTS.md"
+        ],
+        "integrity_status": "not_assessed",
+        "content_relevance": "not_assessed",
+        "version_binding": "unknown"
+      },
+      "verification": {
+        "status": "not_reviewed",
+        "reviewer": null,
+        "review_id": null,
+        "verified_at": null,
+        "method": null,
+        "limitation": "Path existence is checked; content sufficiency, integrity, version, scope, environment, and side effects are not reviewed."
+      },
+      "status": "pending",
+      "supported_capability_maturity": "C1",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "evidence_id": "dbio:evidence:cellcaps:001",
+      "claim_id": "dbio:claim:cellcaps:001",
+      "evidence_type": "E1",
+      "source": {
+        "kind": "capability_claim_declaration",
+        "registry": "registry/capability-claims.yaml",
+        "claim_id": "dbio:claim:cellcaps:001",
+        "source_evidence_id": "potential:cellcaps:001"
+      },
+      "artifact": {
+        "status": "referenced_not_assessed",
+        "paths": [
+          "/Users/zhangbin/GitHub/cellcaps/README.md",
+          "/Users/zhangbin/GitHub/cellcaps/AGENTS.md"
+        ],
+        "integrity_status": "not_assessed",
+        "content_relevance": "not_assessed",
+        "version_binding": "unknown"
+      },
+      "verification": {
+        "status": "not_reviewed",
+        "reviewer": null,
+        "review_id": null,
+        "verified_at": null,
+        "method": null,
+        "limitation": "Path existence is checked; content sufficiency, integrity, version, scope, environment, and side effects are not reviewed."
+      },
+      "status": "pending",
+      "supported_capability_maturity": "C1",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "evidence_id": "dbio:evidence:cellcaps:002",
+      "claim_id": "dbio:claim:cellcaps:002",
+      "evidence_type": "E1",
+      "source": {
+        "kind": "capability_claim_declaration",
+        "registry": "registry/capability-claims.yaml",
+        "claim_id": "dbio:claim:cellcaps:002",
+        "source_evidence_id": "potential:cellcaps:002"
+      },
+      "artifact": {
+        "status": "referenced_not_assessed",
+        "paths": [
+          "/Users/zhangbin/GitHub/cellcaps/README.md",
+          "/Users/zhangbin/GitHub/cellcaps/AGENTS.md"
+        ],
+        "integrity_status": "not_assessed",
+        "content_relevance": "not_assessed",
+        "version_binding": "unknown"
+      },
+      "verification": {
+        "status": "not_reviewed",
+        "reviewer": null,
+        "review_id": null,
+        "verified_at": null,
+        "method": null,
+        "limitation": "Path existence is checked; content sufficiency, integrity, version, scope, environment, and side effects are not reviewed."
+      },
+      "status": "pending",
+      "supported_capability_maturity": "C1",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "evidence_id": "dbio:evidence:cellcaps:003",
+      "claim_id": "dbio:claim:cellcaps:003",
+      "evidence_type": "E1",
+      "source": {
+        "kind": "capability_claim_declaration",
+        "registry": "registry/capability-claims.yaml",
+        "claim_id": "dbio:claim:cellcaps:003",
+        "source_evidence_id": "potential:cellcaps:003"
+      },
+      "artifact": {
+        "status": "referenced_not_assessed",
+        "paths": [
+          "/Users/zhangbin/GitHub/cellcaps/README.md",
+          "/Users/zhangbin/GitHub/cellcaps/AGENTS.md"
+        ],
+        "integrity_status": "not_assessed",
+        "content_relevance": "not_assessed",
+        "version_binding": "unknown"
+      },
+      "verification": {
+        "status": "not_reviewed",
+        "reviewer": null,
+        "review_id": null,
+        "verified_at": null,
+        "method": null,
+        "limitation": "Path existence is checked; content sufficiency, integrity, version, scope, environment, and side effects are not reviewed."
+      },
+      "status": "pending",
+      "supported_capability_maturity": "C1",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "evidence_id": "dbio:evidence:cellcaps:004",
+      "claim_id": "dbio:claim:cellcaps:004",
+      "evidence_type": "E1",
+      "source": {
+        "kind": "capability_claim_declaration",
+        "registry": "registry/capability-claims.yaml",
+        "claim_id": "dbio:claim:cellcaps:004",
+        "source_evidence_id": "potential:cellcaps:004"
+      },
+      "artifact": {
+        "status": "referenced_not_assessed",
+        "paths": [
+          "/Users/zhangbin/GitHub/cellcaps/README.md",
+          "/Users/zhangbin/GitHub/cellcaps/AGENTS.md"
+        ],
+        "integrity_status": "not_assessed",
+        "content_relevance": "not_assessed",
+        "version_binding": "unknown"
+      },
+      "verification": {
+        "status": "not_reviewed",
+        "reviewer": null,
+        "review_id": null,
+        "verified_at": null,
+        "method": null,
+        "limitation": "Path existence is checked; content sufficiency, integrity, version, scope, environment, and side effects are not reviewed."
+      },
+      "status": "pending",
+      "supported_capability_maturity": "C1",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "evidence_id": "dbio:evidence:pra-server:001",
+      "claim_id": "dbio:claim:pra-server:001",
+      "evidence_type": "E1",
+      "source": {
+        "kind": "capability_claim_declaration",
+        "registry": "registry/capability-claims.yaml",
+        "claim_id": "dbio:claim:pra-server:001",
+        "source_evidence_id": "potential:pra-server:001"
+      },
+      "artifact": {
+        "status": "referenced_not_assessed",
+        "paths": [
+          "/Users/zhangbin/pra-server/README.md",
+          "/Users/zhangbin/pra-server/AGENTS.md",
+          "/Users/zhangbin/pra-server/policy/runtime-policy.yaml"
+        ],
+        "integrity_status": "not_assessed",
+        "content_relevance": "not_assessed",
+        "version_binding": "unknown"
+      },
+      "verification": {
+        "status": "not_reviewed",
+        "reviewer": null,
+        "review_id": null,
+        "verified_at": null,
+        "method": null,
+        "limitation": "Path existence is checked; content sufficiency, integrity, version, scope, environment, and side effects are not reviewed."
+      },
+      "status": "pending",
+      "supported_capability_maturity": "C1",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "evidence_id": "dbio:evidence:pra-server:002",
+      "claim_id": "dbio:claim:pra-server:002",
+      "evidence_type": "E1",
+      "source": {
+        "kind": "capability_claim_declaration",
+        "registry": "registry/capability-claims.yaml",
+        "claim_id": "dbio:claim:pra-server:002",
+        "source_evidence_id": "potential:pra-server:002"
+      },
+      "artifact": {
+        "status": "referenced_not_assessed",
+        "paths": [
+          "/Users/zhangbin/pra-server/README.md",
+          "/Users/zhangbin/pra-server/AGENTS.md",
+          "/Users/zhangbin/pra-server/policy/runtime-policy.yaml"
+        ],
+        "integrity_status": "not_assessed",
+        "content_relevance": "not_assessed",
+        "version_binding": "unknown"
+      },
+      "verification": {
+        "status": "not_reviewed",
+        "reviewer": null,
+        "review_id": null,
+        "verified_at": null,
+        "method": null,
+        "limitation": "Path existence is checked; content sufficiency, integrity, version, scope, environment, and side effects are not reviewed."
+      },
+      "status": "pending",
+      "supported_capability_maturity": "C1",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "evidence_id": "dbio:evidence:pra-server:003",
+      "claim_id": "dbio:claim:pra-server:003",
+      "evidence_type": "E1",
+      "source": {
+        "kind": "capability_claim_declaration",
+        "registry": "registry/capability-claims.yaml",
+        "claim_id": "dbio:claim:pra-server:003",
+        "source_evidence_id": "potential:pra-server:003"
+      },
+      "artifact": {
+        "status": "referenced_not_assessed",
+        "paths": [
+          "/Users/zhangbin/pra-server/README.md",
+          "/Users/zhangbin/pra-server/AGENTS.md",
+          "/Users/zhangbin/pra-server/policy/runtime-policy.yaml"
+        ],
+        "integrity_status": "not_assessed",
+        "content_relevance": "not_assessed",
+        "version_binding": "unknown"
+      },
+      "verification": {
+        "status": "not_reviewed",
+        "reviewer": null,
+        "review_id": null,
+        "verified_at": null,
+        "method": null,
+        "limitation": "Path existence is checked; content sufficiency, integrity, version, scope, environment, and side effects are not reviewed."
+      },
+      "status": "pending",
+      "supported_capability_maturity": "C1",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "evidence_id": "dbio:evidence:pra-server:004",
+      "claim_id": "dbio:claim:pra-server:004",
+      "evidence_type": "E1",
+      "source": {
+        "kind": "capability_claim_declaration",
+        "registry": "registry/capability-claims.yaml",
+        "claim_id": "dbio:claim:pra-server:004",
+        "source_evidence_id": "potential:pra-server:004"
+      },
+      "artifact": {
+        "status": "referenced_not_assessed",
+        "paths": [
+          "/Users/zhangbin/pra-server/README.md",
+          "/Users/zhangbin/pra-server/AGENTS.md",
+          "/Users/zhangbin/pra-server/policy/runtime-policy.yaml"
+        ],
+        "integrity_status": "not_assessed",
+        "content_relevance": "not_assessed",
+        "version_binding": "unknown"
+      },
+      "verification": {
+        "status": "not_reviewed",
+        "reviewer": null,
+        "review_id": null,
+        "verified_at": null,
+        "method": null,
+        "limitation": "Path existence is checked; content sufficiency, integrity, version, scope, environment, and side effects are not reviewed."
+      },
+      "status": "pending",
+      "supported_capability_maturity": "C1",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "evidence_id": "dbio:evidence:standalone-agent-object-protocol-draft:001",
+      "claim_id": "dbio:claim:standalone-agent-object-protocol-draft:001",
+      "evidence_type": "E1",
+      "source": {
+        "kind": "capability_claim_declaration",
+        "registry": "registry/capability-claims.yaml",
+        "claim_id": "dbio:claim:standalone-agent-object-protocol-draft:001",
+        "source_evidence_id": "potential:standalone-agent-object-protocol-draft:001"
+      },
+      "artifact": {
+        "status": "referenced_not_assessed",
+        "paths": [
+          "/Users/zhangbin/agent/README.md"
+        ],
+        "integrity_status": "not_assessed",
+        "content_relevance": "not_assessed",
+        "version_binding": "unknown"
+      },
+      "verification": {
+        "status": "not_reviewed",
+        "reviewer": null,
+        "review_id": null,
+        "verified_at": null,
+        "method": null,
+        "limitation": "Path existence is checked; content sufficiency, integrity, version, scope, environment, and side effects are not reviewed."
+      },
+      "status": "pending",
+      "supported_capability_maturity": "C1",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "evidence_id": "dbio:evidence:standalone-agent-object-protocol-draft:002",
+      "claim_id": "dbio:claim:standalone-agent-object-protocol-draft:002",
+      "evidence_type": "E1",
+      "source": {
+        "kind": "capability_claim_declaration",
+        "registry": "registry/capability-claims.yaml",
+        "claim_id": "dbio:claim:standalone-agent-object-protocol-draft:002",
+        "source_evidence_id": "potential:standalone-agent-object-protocol-draft:002"
+      },
+      "artifact": {
+        "status": "referenced_not_assessed",
+        "paths": [
+          "/Users/zhangbin/agent/README.md"
+        ],
+        "integrity_status": "not_assessed",
+        "content_relevance": "not_assessed",
+        "version_binding": "unknown"
+      },
+      "verification": {
+        "status": "not_reviewed",
+        "reviewer": null,
+        "review_id": null,
+        "verified_at": null,
+        "method": null,
+        "limitation": "Path existence is checked; content sufficiency, integrity, version, scope, environment, and side effects are not reviewed."
+      },
+      "status": "pending",
+      "supported_capability_maturity": "C1",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "evidence_id": "dbio:evidence:standalone-agent-object-protocol-draft:003",
+      "claim_id": "dbio:claim:standalone-agent-object-protocol-draft:003",
+      "evidence_type": "E1",
+      "source": {
+        "kind": "capability_claim_declaration",
+        "registry": "registry/capability-claims.yaml",
+        "claim_id": "dbio:claim:standalone-agent-object-protocol-draft:003",
+        "source_evidence_id": "potential:standalone-agent-object-protocol-draft:003"
+      },
+      "artifact": {
+        "status": "referenced_not_assessed",
+        "paths": [
+          "/Users/zhangbin/agent/README.md"
+        ],
+        "integrity_status": "not_assessed",
+        "content_relevance": "not_assessed",
+        "version_binding": "unknown"
+      },
+      "verification": {
+        "status": "not_reviewed",
+        "reviewer": null,
+        "review_id": null,
+        "verified_at": null,
+        "method": null,
+        "limitation": "Path existence is checked; content sufficiency, integrity, version, scope, environment, and side effects are not reviewed."
+      },
+      "status": "pending",
+      "supported_capability_maturity": "C1",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "evidence_id": "dbio:evidence:sovereign-agent-local-gate:001",
+      "claim_id": "dbio:claim:sovereign-agent-local-gate:001",
+      "evidence_type": "E1",
+      "source": {
+        "kind": "capability_claim_declaration",
+        "registry": "registry/capability-claims.yaml",
+        "claim_id": "dbio:claim:sovereign-agent-local-gate:001",
+        "source_evidence_id": "potential:sovereign-agent-local-gate:001"
+      },
+      "artifact": {
+        "status": "referenced_not_assessed",
+        "paths": [
+          "/Users/zhangbin/sovereign-agent/BOUNDARY.md"
+        ],
+        "integrity_status": "not_assessed",
+        "content_relevance": "not_assessed",
+        "version_binding": "unknown"
+      },
+      "verification": {
+        "status": "not_reviewed",
+        "reviewer": null,
+        "review_id": null,
+        "verified_at": null,
+        "method": null,
+        "limitation": "Path existence is checked; content sufficiency, integrity, version, scope, environment, and side effects are not reviewed."
+      },
+      "status": "pending",
+      "supported_capability_maturity": "C1",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "evidence_id": "dbio:evidence:sovereign-agent-local-gate:002",
+      "claim_id": "dbio:claim:sovereign-agent-local-gate:002",
+      "evidence_type": "E1",
+      "source": {
+        "kind": "capability_claim_declaration",
+        "registry": "registry/capability-claims.yaml",
+        "claim_id": "dbio:claim:sovereign-agent-local-gate:002",
+        "source_evidence_id": "potential:sovereign-agent-local-gate:002"
+      },
+      "artifact": {
+        "status": "referenced_not_assessed",
+        "paths": [
+          "/Users/zhangbin/sovereign-agent/BOUNDARY.md"
+        ],
+        "integrity_status": "not_assessed",
+        "content_relevance": "not_assessed",
+        "version_binding": "unknown"
+      },
+      "verification": {
+        "status": "not_reviewed",
+        "reviewer": null,
+        "review_id": null,
+        "verified_at": null,
+        "method": null,
+        "limitation": "Path existence is checked; content sufficiency, integrity, version, scope, environment, and side effects are not reviewed."
+      },
+      "status": "pending",
+      "supported_capability_maturity": "C1",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "evidence_id": "dbio:evidence:sovereign-agent-local-gate:003",
+      "claim_id": "dbio:claim:sovereign-agent-local-gate:003",
+      "evidence_type": "E1",
+      "source": {
+        "kind": "capability_claim_declaration",
+        "registry": "registry/capability-claims.yaml",
+        "claim_id": "dbio:claim:sovereign-agent-local-gate:003",
+        "source_evidence_id": "potential:sovereign-agent-local-gate:003"
+      },
+      "artifact": {
+        "status": "referenced_not_assessed",
+        "paths": [
+          "/Users/zhangbin/sovereign-agent/BOUNDARY.md"
+        ],
+        "integrity_status": "not_assessed",
+        "content_relevance": "not_assessed",
+        "version_binding": "unknown"
+      },
+      "verification": {
+        "status": "not_reviewed",
+        "reviewer": null,
+        "review_id": null,
+        "verified_at": null,
+        "method": null,
+        "limitation": "Path existence is checked; content sufficiency, integrity, version, scope, environment, and side effects are not reviewed."
+      },
+      "status": "pending",
+      "supported_capability_maturity": "C1",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "evidence_id": "dbio:evidence:mcp-agent-ei-external:001",
+      "claim_id": "dbio:claim:mcp-agent-ei-external:001",
+      "evidence_type": "E1",
+      "source": {
+        "kind": "capability_claim_declaration",
+        "registry": "registry/capability-claims.yaml",
+        "claim_id": "dbio:claim:mcp-agent-ei-external:001",
+        "source_evidence_id": "potential:mcp-agent-ei-external:001"
+      },
+      "artifact": {
+        "status": "referenced_not_assessed",
+        "paths": [
+          "/Users/zhangbin/GitHub/mcp-agent-ei/README.md"
+        ],
+        "integrity_status": "not_assessed",
+        "content_relevance": "not_assessed",
+        "version_binding": "unknown"
+      },
+      "verification": {
+        "status": "not_reviewed",
+        "reviewer": null,
+        "review_id": null,
+        "verified_at": null,
+        "method": null,
+        "limitation": "Path existence is checked; content sufficiency, integrity, version, scope, environment, and side effects are not reviewed."
+      },
+      "status": "pending",
+      "supported_capability_maturity": "C1",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "evidence_id": "dbio:evidence:mcp-agent-ei-external:002",
+      "claim_id": "dbio:claim:mcp-agent-ei-external:002",
+      "evidence_type": "E1",
+      "source": {
+        "kind": "capability_claim_declaration",
+        "registry": "registry/capability-claims.yaml",
+        "claim_id": "dbio:claim:mcp-agent-ei-external:002",
+        "source_evidence_id": "potential:mcp-agent-ei-external:002"
+      },
+      "artifact": {
+        "status": "referenced_not_assessed",
+        "paths": [
+          "/Users/zhangbin/GitHub/mcp-agent-ei/README.md"
+        ],
+        "integrity_status": "not_assessed",
+        "content_relevance": "not_assessed",
+        "version_binding": "unknown"
+      },
+      "verification": {
+        "status": "not_reviewed",
+        "reviewer": null,
+        "review_id": null,
+        "verified_at": null,
+        "method": null,
+        "limitation": "Path existence is checked; content sufficiency, integrity, version, scope, environment, and side effects are not reviewed."
+      },
+      "status": "pending",
+      "supported_capability_maturity": "C1",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    },
+    {
+      "evidence_id": "dbio:evidence:mcp-agent-ei-external:003",
+      "claim_id": "dbio:claim:mcp-agent-ei-external:003",
+      "evidence_type": "E1",
+      "source": {
+        "kind": "capability_claim_declaration",
+        "registry": "registry/capability-claims.yaml",
+        "claim_id": "dbio:claim:mcp-agent-ei-external:003",
+        "source_evidence_id": "potential:mcp-agent-ei-external:003"
+      },
+      "artifact": {
+        "status": "referenced_not_assessed",
+        "paths": [
+          "/Users/zhangbin/GitHub/mcp-agent-ei/README.md"
+        ],
+        "integrity_status": "not_assessed",
+        "content_relevance": "not_assessed",
+        "version_binding": "unknown"
+      },
+      "verification": {
+        "status": "not_reviewed",
+        "reviewer": null,
+        "review_id": null,
+        "verified_at": null,
+        "method": null,
+        "limitation": "Path existence is checked; content sufficiency, integrity, version, scope, environment, and side effects are not reviewed."
+      },
+      "status": "pending",
+      "supported_capability_maturity": "C1",
+      "capability_assignment_status": "not_assigned",
+      "permission_status": "not_granted"
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereEvidenceTypeRegistry",
+  "metadata": {
+    "title": "Evidence Type and Maturity Registry v0.1",
+    "status": "local_evidence_taxonomy_baseline",
+    "constitution": "../constitution/evidence-constitution.yaml",
+    "generated_at": "2026-07-19T20:03:26+08:00",
+    "serialization": "JSON-compatible YAML 1.2",
+    "invariants": [
+      "Evidence levels are sequential.",
+      "Evidence level does not grant capability, assignment, permission, or autonomy.",
+      "Invalid or revoked evidence contributes no current maturity support."
+    ]
+  },
+  "levels": [
+    {
+      "evidence_type": "E0",
+      "name": "Unknown",
+      "definition": "No attributable evidence declaration is registered, or evidence state cannot be determined.",
+      "required_predecessors": [],
+      "maximum_supported_capability_maturity": "C0"
+    },
+    {
+      "evidence_type": "E1",
+      "name": "Declaration",
+      "definition": "An attributable source declares or describes a capability candidate; implementation, execution, and sufficiency are not established.",
+      "required_predecessors": [],
+      "maximum_supported_capability_maturity": "C1"
+    },
+    {
+      "evidence_type": "E2",
+      "name": "Artifact Evidence",
+      "definition": "An inspectable artifact has assessed provenance, integrity, relevance, version, scope, and environment binding.",
+      "required_predecessors": ["E1"],
+      "maximum_supported_capability_maturity": "C3",
+      "qualification": "C3 additionally requires an approved capability review."
+    },
+    {
+      "evidence_type": "E3",
+      "name": "Execution Evidence",
+      "definition": "A bounded execution record identifies inputs, outputs, result, timestamp, environment, side effects, and artifact linkage.",
+      "required_predecessors": ["E1", "E2"],
+      "maximum_supported_capability_maturity": "C4",
+      "qualification": "C4 additionally requires verification, governance, monitoring, and revocation evidence."
+    },
+    {
+      "evidence_type": "E4",
+      "name": "Independent Verification",
+      "definition": "A reviewer independent under recorded criteria reproduces or evaluates the bounded execution evidence and records method, decision, and limitations.",
+      "required_predecessors": ["E1", "E2", "E3"],
+      "maximum_supported_capability_maturity": "C4"
+    },
+    {
+      "evidence_type": "E5",
+      "name": "Continuous Observation",
+      "definition": "Repeated observations over a defined window record coverage, drift, incidents, monitoring, expiry, and revocation controls.",
+      "required_predecessors": ["E1", "E2", "E3", "E4"],
+      "maximum_supported_capability_maturity": "C5",
+      "qualification": "C5 additionally requires prior C4 governance, explicit autonomy authorization, runtime enforcement, expiry, and containment evidence."
+    }
+  ],
+  "capability_support_rules": {
+    "minimum_evidence_by_capability_maturity": {
+      "C0": "E0",
+      "C1": "E1",
+      "C2": "E2",
+      "C3": "E2",
+      "C4": "E3",
+      "C5": "E5"
+    },
+    "explicit_prohibitions": [
+      "E1 cannot support C3.",
+      "E2 cannot support C4.",
+      "E3 cannot automatically support C5."
+    ]
+  },
+  "current_distribution": {
+    "E0": 0,
+    "E1": 78,
+    "E2": 0,
+    "E3": 0,
+    "E4": 0,
+    "E5": 0
+  }
+}

@@ -1,0 +1,1271 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereEntityCapabilityRelationships",
+  "metadata": {
+    "title": "Entity Capability Relationship Registry v0.1",
+    "status": "unknown_relationship_baseline",
+    "entity_source_of_truth": "entities.yaml",
+    "capability_source_of_truth": "capabilities.yaml",
+    "generated_at": "2026-07-19T22:26:53+08:00",
+    "entity_count": 23,
+    "assigned_relationship_count": 0,
+    "potential_capability_evidence_count": 78,
+    "default_relationship_status": "unknown",
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "No capability is assigned.",
+      "No permission is inferred or derived.",
+      "Potential evidence does not create a capability record.",
+      "Repository, protocol, service, package, schema, demo, and documentation statements do not prove autonomous capability."
+    ]
+  },
+  "entity_capability_relationships": [
+    {
+      "entity_id": "digital-biosphere-architecture",
+      "entity_type": "repository",
+      "relationship_status": "unknown",
+      "assigned_capabilities": [],
+      "permission_status": "not_derived",
+      "permission_evidence": [],
+      "potential_capability_evidence": [
+        {
+          "evidence_id": "potential:digital-biosphere-architecture:001",
+          "statement": "agent-readable architecture discovery",
+          "source_registry": "registry/agents.yaml",
+          "source_paths": [
+            "/Users/zhangbin/GitHub/digital-biosphere-architecture/AGENTS.md",
+            "/Users/zhangbin/GitHub/digital-biosphere-architecture/README.md",
+            "/Users/zhangbin/GitHub/digital-biosphere-architecture/docs/ai-discovery-index.md"
+          ],
+          "potential_type": "unknown",
+          "risk_level": "unknown",
+          "status": "potential_evidence_only",
+          "review_requirement": "manual capability definition, scope, risk, and evidence review"
+        },
+        {
+          "evidence_id": "potential:digital-biosphere-architecture:002",
+          "statement": "canonical naming and citation context",
+          "source_registry": "registry/agents.yaml",
+          "source_paths": [
+            "/Users/zhangbin/GitHub/digital-biosphere-architecture/AGENTS.md",
+            "/Users/zhangbin/GitHub/digital-biosphere-architecture/README.md",
+            "/Users/zhangbin/GitHub/digital-biosphere-architecture/docs/ai-discovery-index.md"
+          ],
+          "potential_type": "unknown",
+          "risk_level": "unknown",
+          "status": "potential_evidence_only",
+          "review_requirement": "manual capability definition, scope, risk, and evidence review"
+        },
+        {
+          "evidence_id": "potential:digital-biosphere-architecture:003",
+          "statement": "public conceptual layer mapping",
+          "source_registry": "registry/agents.yaml",
+          "source_paths": [
+            "/Users/zhangbin/GitHub/digital-biosphere-architecture/AGENTS.md",
+            "/Users/zhangbin/GitHub/digital-biosphere-architecture/README.md",
+            "/Users/zhangbin/GitHub/digital-biosphere-architecture/docs/ai-discovery-index.md"
+          ],
+          "potential_type": "unknown",
+          "risk_level": "unknown",
+          "status": "potential_evidence_only",
+          "review_requirement": "manual capability definition, scope, risk, and evidence review"
+        }
+      ]
+    },
+    {
+      "entity_id": "pop-persona-object-protocol",
+      "entity_type": "protocol",
+      "relationship_status": "unknown",
+      "assigned_capabilities": [],
+      "permission_status": "not_derived",
+      "permission_evidence": [],
+      "potential_capability_evidence": [
+        {
+          "evidence_id": "potential:pop-persona-object-protocol:001",
+          "statement": "portable persona objects",
+          "source_registry": "registry/agents.yaml",
+          "source_paths": [
+            "/Users/zhangbin/GitHub/persona-object-protocol/README.md",
+            "/Users/zhangbin/GitHub/persona-object-protocol/llms.txt"
+          ],
+          "potential_type": "unknown",
+          "risk_level": "unknown",
+          "status": "potential_evidence_only",
+          "review_requirement": "manual capability definition, scope, risk, and evidence review"
+        },
+        {
+          "evidence_id": "potential:pop-persona-object-protocol:002",
+          "statement": "persona projection to runtime configuration shapes",
+          "source_registry": "registry/agents.yaml",
+          "source_paths": [
+            "/Users/zhangbin/GitHub/persona-object-protocol/README.md",
+            "/Users/zhangbin/GitHub/persona-object-protocol/llms.txt"
+          ],
+          "potential_type": "unknown",
+          "risk_level": "unknown",
+          "status": "potential_evidence_only",
+          "review_requirement": "manual capability definition, scope, risk, and evidence review"
+        },
+        {
+          "evidence_id": "potential:pop-persona-object-protocol:003",
+          "statement": "agent-readable discovery and citation entry points",
+          "source_registry": "registry/agents.yaml",
+          "source_paths": [
+            "/Users/zhangbin/GitHub/persona-object-protocol/README.md",
+            "/Users/zhangbin/GitHub/persona-object-protocol/llms.txt"
+          ],
+          "potential_type": "unknown",
+          "risk_level": "unknown",
+          "status": "potential_evidence_only",
+          "review_requirement": "manual capability definition, scope, risk, and evidence review"
+        }
+      ]
+    },
+    {
+      "entity_id": "aip-agent-intent-protocol",
+      "entity_type": "protocol",
+      "relationship_status": "unknown",
+      "assigned_capabilities": [],
+      "permission_status": "not_derived",
+      "permission_evidence": [],
+      "potential_capability_evidence": [
+        {
+          "evidence_id": "potential:aip-agent-intent-protocol:001",
+          "statement": "intent object definitions",
+          "source_registry": "registry/agents.yaml",
+          "source_paths": [
+            "/Users/zhangbin/GitHub/agent-intent-protocol/README.md"
+          ],
+          "potential_type": "unknown",
+          "risk_level": "unknown",
+          "status": "potential_evidence_only",
+          "review_requirement": "manual capability definition, scope, risk, and evidence review"
+        },
+        {
+          "evidence_id": "potential:aip-agent-intent-protocol:002",
+          "statement": "action object definitions",
+          "source_registry": "registry/agents.yaml",
+          "source_paths": [
+            "/Users/zhangbin/GitHub/agent-intent-protocol/README.md"
+          ],
+          "potential_type": "unknown",
+          "risk_level": "unknown",
+          "status": "potential_evidence_only",
+          "review_requirement": "manual capability definition, scope, risk, and evidence review"
+        },
+        {
+          "evidence_id": "potential:aip-agent-intent-protocol:003",
+          "statement": "result object definitions",
+          "source_registry": "registry/agents.yaml",
+          "source_paths": [
+            "/Users/zhangbin/GitHub/agent-intent-protocol/README.md"
+          ],
+          "potential_type": "unknown",
+          "risk_level": "unknown",
+          "status": "potential_evidence_only",
+          "review_requirement": "manual capability definition, scope, risk, and evidence review"
+        },
+        {
+          "evidence_id": "potential:aip-agent-intent-protocol:004",
+          "statement": "conformance-oriented schemas and examples",
+          "source_registry": "registry/agents.yaml",
+          "source_paths": [
+            "/Users/zhangbin/GitHub/agent-intent-protocol/README.md"
+          ],
+          "potential_type": "unknown",
+          "risk_level": "unknown",
+          "status": "potential_evidence_only",
+          "review_requirement": "manual capability definition, scope, risk, and evidence review"
+        }
+      ]
+    },
+    {
+      "entity_id": "token-governor-reference",
+      "entity_type": "protocol",
+      "relationship_status": "unknown",
+      "assigned_capabilities": [],
+      "permission_status": "not_derived",
+      "permission_evidence": [],
+      "potential_capability_evidence": [
+        {
+          "evidence_id": "potential:token-governor-reference:001",
+          "statement": "budget-window interface examples",
+          "source_registry": "registry/agents.yaml",
+          "source_paths": [
+            "/Users/zhangbin/GitHub/token-governor/README.md"
+          ],
+          "potential_type": "unknown",
+          "risk_level": "unknown",
+          "status": "potential_evidence_only",
+          "review_requirement": "manual capability definition, scope, risk, and evidence review"
+        },
+        {
+          "evidence_id": "potential:token-governor-reference:002",
+          "statement": "toy policy examples",
+          "source_registry": "registry/agents.yaml",
+          "source_paths": [
+            "/Users/zhangbin/GitHub/token-governor/README.md"
+          ],
+          "potential_type": "unknown",
+          "risk_level": "unknown",
+          "status": "potential_evidence_only",
+          "review_requirement": "manual capability definition, scope, risk, and evidence review"
+        },
+        {
+          "evidence_id": "potential:token-governor-reference:003",
+          "statement": "example budget reports",
+          "source_registry": "registry/agents.yaml",
+          "source_paths": [
+            "/Users/zhangbin/GitHub/token-governor/README.md"
+          ],
+          "potential_type": "unknown",
+          "risk_level": "unknown",
+          "status": "potential_evidence_only",
+          "review_requirement": "manual capability definition, scope, risk, and evidence review"
+        }
+      ]
+    },
+    {
+      "entity_id": "fdo-kernel-mvk",
+      "entity_type": "service",
+      "relationship_status": "unknown",
+      "assigned_capabilities": [],
+      "permission_status": "not_derived",
+      "permission_evidence": [],
+      "potential_capability_evidence": [
+        {
+          "evidence_id": "potential:fdo-kernel-mvk:001",
+          "statement": "deterministic state evolution examples",
+          "source_registry": "registry/agents.yaml",
+          "source_paths": [
+            "/Users/zhangbin/GitHub/fdo-kernel-mvk/README.md",
+            "/Users/zhangbin/GitHub/fdo-kernel-mvk/AGENTS.md"
+          ],
+          "potential_type": "unknown",
+          "risk_level": "unknown",
+          "status": "potential_evidence_only",
+          "review_requirement": "manual capability definition, scope, risk, and evidence review"
+        },
+        {
+          "evidence_id": "potential:fdo-kernel-mvk:002",
+          "statement": "canonical object checksum verification",
+          "source_registry": "registry/agents.yaml",
+          "source_paths": [
+            "/Users/zhangbin/GitHub/fdo-kernel-mvk/README.md",
+            "/Users/zhangbin/GitHub/fdo-kernel-mvk/AGENTS.md"
+          ],
+          "potential_type": "unknown",
+          "risk_level": "unknown",
+          "status": "potential_evidence_only",
+          "review_requirement": "manual capability definition, scope, risk, and evidence review"
+        },
+        {
+          "evidence_id": "potential:fdo-kernel-mvk:003",
+          "statement": "trace-bound replay validation",
+          "source_registry": "registry/agents.yaml",
+          "source_paths": [
+            "/Users/zhangbin/GitHub/fdo-kernel-mvk/README.md",
+            "/Users/zhangbin/GitHub/fdo-kernel-mvk/AGENTS.md"
+          ],
+          "potential_type": "unknown",
+          "risk_level": "unknown",
+          "status": "potential_evidence_only",
+          "review_requirement": "manual capability definition, scope, risk, and evidence review"
+        }
+      ]
+    },
+    {
+      "entity_id": "agent-evidence-eeoap",
+      "entity_type": "protocol",
+      "relationship_status": "unknown",
+      "assigned_capabilities": [],
+      "permission_status": "not_derived",
+      "permission_evidence": [],
+      "potential_capability_evidence": [
+        {
+          "evidence_id": "potential:agent-evidence-eeoap:001",
+          "statement": "EEOAP schema",
+          "source_registry": "registry/agents.yaml",
+          "source_paths": [
+            "/Users/zhangbin/GitHub/agent-evidence/README.md",
+            "/Users/zhangbin/GitHub/agent-evidence/AGENTS.md",
+            "/Users/zhangbin/GitHub/agent-evidence/llms.txt"
+          ],
+          "potential_type": "unknown",
+          "risk_level": "unknown",
+          "status": "potential_evidence_only",
+          "review_requirement": "manual capability definition, scope, risk, and evidence review"
+        },
+        {
+          "evidence_id": "potential:agent-evidence-eeoap:002",
+          "statement": "profile-aware validation",
+          "source_registry": "registry/agents.yaml",
+          "source_paths": [
+            "/Users/zhangbin/GitHub/agent-evidence/README.md",
+            "/Users/zhangbin/GitHub/agent-evidence/AGENTS.md",
+            "/Users/zhangbin/GitHub/agent-evidence/llms.txt"
+          ],
+          "potential_type": "unknown",
+          "risk_level": "unknown",
+          "status": "potential_evidence_only",
+          "review_requirement": "manual capability definition, scope, risk, and evidence review"
+        },
+        {
+          "evidence_id": "potential:agent-evidence-eeoap:003",
+          "statement": "agent-readable discovery metadata",
+          "source_registry": "registry/agents.yaml",
+          "source_paths": [
+            "/Users/zhangbin/GitHub/agent-evidence/README.md",
+            "/Users/zhangbin/GitHub/agent-evidence/AGENTS.md",
+            "/Users/zhangbin/GitHub/agent-evidence/llms.txt"
+          ],
+          "potential_type": "unknown",
+          "risk_level": "unknown",
+          "status": "potential_evidence_only",
+          "review_requirement": "manual capability definition, scope, risk, and evidence review"
+        },
+        {
+          "evidence_id": "potential:agent-evidence-eeoap:004",
+          "statement": "offline review-pack support",
+          "source_registry": "registry/agents.yaml",
+          "source_paths": [
+            "/Users/zhangbin/GitHub/agent-evidence/README.md",
+            "/Users/zhangbin/GitHub/agent-evidence/AGENTS.md",
+            "/Users/zhangbin/GitHub/agent-evidence/llms.txt"
+          ],
+          "potential_type": "unknown",
+          "risk_level": "unknown",
+          "status": "potential_evidence_only",
+          "review_requirement": "manual capability definition, scope, risk, and evidence review"
+        }
+      ]
+    },
+    {
+      "entity_id": "aro-audit-reference",
+      "entity_type": "protocol",
+      "relationship_status": "unknown",
+      "assigned_capabilities": [],
+      "permission_status": "not_derived",
+      "permission_evidence": [],
+      "potential_capability_evidence": [
+        {
+          "evidence_id": "potential:aro-audit-reference:001",
+          "statement": "receipt format examples",
+          "source_registry": "registry/agents.yaml",
+          "source_paths": [
+            "/Users/zhangbin/GitHub/aro-audit/README.md",
+            "/Users/zhangbin/GitHub/aro-audit/llms.txt"
+          ],
+          "potential_type": "unknown",
+          "risk_level": "unknown",
+          "status": "potential_evidence_only",
+          "review_requirement": "manual capability definition, scope, risk, and evidence review"
+        },
+        {
+          "evidence_id": "potential:aro-audit-reference:002",
+          "statement": "single-receipt verification",
+          "source_registry": "registry/agents.yaml",
+          "source_paths": [
+            "/Users/zhangbin/GitHub/aro-audit/README.md",
+            "/Users/zhangbin/GitHub/aro-audit/llms.txt"
+          ],
+          "potential_type": "unknown",
+          "risk_level": "unknown",
+          "status": "potential_evidence_only",
+          "review_requirement": "manual capability definition, scope, risk, and evidence review"
+        },
+        {
+          "evidence_id": "potential:aro-audit-reference:003",
+          "statement": "tamper-rejection demonstration",
+          "source_registry": "registry/agents.yaml",
+          "source_paths": [
+            "/Users/zhangbin/GitHub/aro-audit/README.md",
+            "/Users/zhangbin/GitHub/aro-audit/llms.txt"
+          ],
+          "potential_type": "unknown",
+          "risk_level": "unknown",
+          "status": "potential_evidence_only",
+          "review_requirement": "manual capability definition, scope, risk, and evidence review"
+        }
+      ]
+    },
+    {
+      "entity_id": "verifiable-agent-demo",
+      "entity_type": "repository",
+      "relationship_status": "unknown",
+      "assigned_capabilities": [],
+      "permission_status": "not_derived",
+      "permission_evidence": [],
+      "potential_capability_evidence": [
+        {
+          "evidence_id": "potential:verifiable-agent-demo:001",
+          "statement": "generate toy agent artifacts",
+          "source_registry": "registry/agents.yaml",
+          "source_paths": [
+            "/Users/zhangbin/GitHub/verifiable-agent-demo/README.md",
+            "/Users/zhangbin/GitHub/verifiable-agent-demo/llms.txt"
+          ],
+          "potential_type": "unknown",
+          "risk_level": "unknown",
+          "status": "potential_evidence_only",
+          "review_requirement": "manual capability definition, scope, risk, and evidence review"
+        },
+        {
+          "evidence_id": "potential:verifiable-agent-demo:002",
+          "statement": "validate bounded receipt-shaped examples",
+          "source_registry": "registry/agents.yaml",
+          "source_paths": [
+            "/Users/zhangbin/GitHub/verifiable-agent-demo/README.md",
+            "/Users/zhangbin/GitHub/verifiable-agent-demo/llms.txt"
+          ],
+          "potential_type": "unknown",
+          "risk_level": "unknown",
+          "status": "potential_evidence_only",
+          "review_requirement": "manual capability definition, scope, risk, and evidence review"
+        },
+        {
+          "evidence_id": "potential:verifiable-agent-demo:003",
+          "statement": "local smoke-test path",
+          "source_registry": "registry/agents.yaml",
+          "source_paths": [
+            "/Users/zhangbin/GitHub/verifiable-agent-demo/README.md",
+            "/Users/zhangbin/GitHub/verifiable-agent-demo/llms.txt"
+          ],
+          "potential_type": "unknown",
+          "risk_level": "unknown",
+          "status": "potential_evidence_only",
+          "review_requirement": "manual capability definition, scope, risk, and evidence review"
+        }
+      ]
+    },
+    {
+      "entity_id": "execution-integrity-core",
+      "entity_type": "service",
+      "relationship_status": "unknown",
+      "assigned_capabilities": [],
+      "permission_status": "not_derived",
+      "permission_evidence": [],
+      "potential_capability_evidence": [
+        {
+          "evidence_id": "potential:execution-integrity-core:001",
+          "statement": "identity-bound tool-call execution",
+          "source_registry": "registry/agents.yaml",
+          "source_paths": [
+            "/Users/zhangbin/GitHub/execution-integrity-core/README.md",
+            "/Users/zhangbin/GitHub/execution-integrity-core/AGENTS.md",
+            "/Users/zhangbin/GitHub/execution-integrity-core/agent-index.json"
+          ],
+          "potential_type": "unknown",
+          "risk_level": "unknown",
+          "status": "potential_evidence_only",
+          "review_requirement": "manual capability definition, scope, risk, and evidence review"
+        },
+        {
+          "evidence_id": "potential:execution-integrity-core:002",
+          "statement": "policy and proof gating",
+          "source_registry": "registry/agents.yaml",
+          "source_paths": [
+            "/Users/zhangbin/GitHub/execution-integrity-core/README.md",
+            "/Users/zhangbin/GitHub/execution-integrity-core/AGENTS.md",
+            "/Users/zhangbin/GitHub/execution-integrity-core/agent-index.json"
+          ],
+          "potential_type": "unknown",
+          "risk_level": "unknown",
+          "status": "potential_evidence_only",
+          "review_requirement": "manual capability definition, scope, risk, and evidence review"
+        },
+        {
+          "evidence_id": "potential:execution-integrity-core:003",
+          "statement": "capability-token issuance",
+          "source_registry": "registry/agents.yaml",
+          "source_paths": [
+            "/Users/zhangbin/GitHub/execution-integrity-core/README.md",
+            "/Users/zhangbin/GitHub/execution-integrity-core/AGENTS.md",
+            "/Users/zhangbin/GitHub/execution-integrity-core/agent-index.json"
+          ],
+          "potential_type": "unknown",
+          "risk_level": "unknown",
+          "status": "potential_evidence_only",
+          "review_requirement": "manual capability definition, scope, risk, and evidence review"
+        },
+        {
+          "evidence_id": "potential:execution-integrity-core:004",
+          "statement": "tamper-detectable evidence export and verification",
+          "source_registry": "registry/agents.yaml",
+          "source_paths": [
+            "/Users/zhangbin/GitHub/execution-integrity-core/README.md",
+            "/Users/zhangbin/GitHub/execution-integrity-core/AGENTS.md",
+            "/Users/zhangbin/GitHub/execution-integrity-core/agent-index.json"
+          ],
+          "potential_type": "unknown",
+          "risk_level": "unknown",
+          "status": "potential_evidence_only",
+          "review_requirement": "manual capability definition, scope, risk, and evidence review"
+        }
+      ]
+    },
+    {
+      "entity_id": "agent-evidence-receipt-layer",
+      "entity_type": "service",
+      "relationship_status": "unknown",
+      "assigned_capabilities": [],
+      "permission_status": "not_derived",
+      "permission_evidence": [],
+      "potential_capability_evidence": [
+        {
+          "evidence_id": "potential:agent-evidence-receipt-layer:001",
+          "statement": "evidence bundle packaging",
+          "source_registry": "registry/agents.yaml",
+          "source_paths": [
+            "/Users/zhangbin/GitHub/agent-evidence-layer/README.md",
+            "/Users/zhangbin/GitHub/agent-evidence-layer/AGENTS.md",
+            "/Users/zhangbin/GitHub/agent-evidence-layer/PROJECT_LEDGER.md"
+          ],
+          "potential_type": "unknown",
+          "risk_level": "unknown",
+          "status": "potential_evidence_only",
+          "review_requirement": "manual capability definition, scope, risk, and evidence review"
+        },
+        {
+          "evidence_id": "potential:agent-evidence-receipt-layer:002",
+          "statement": "hash, Merkle-root, and signature verification",
+          "source_registry": "registry/agents.yaml",
+          "source_paths": [
+            "/Users/zhangbin/GitHub/agent-evidence-layer/README.md",
+            "/Users/zhangbin/GitHub/agent-evidence-layer/AGENTS.md",
+            "/Users/zhangbin/GitHub/agent-evidence-layer/PROJECT_LEDGER.md"
+          ],
+          "potential_type": "unknown",
+          "risk_level": "unknown",
+          "status": "potential_evidence_only",
+          "review_requirement": "manual capability definition, scope, risk, and evidence review"
+        },
+        {
+          "evidence_id": "potential:agent-evidence-receipt-layer:003",
+          "statement": "reviewer handoff generation",
+          "source_registry": "registry/agents.yaml",
+          "source_paths": [
+            "/Users/zhangbin/GitHub/agent-evidence-layer/README.md",
+            "/Users/zhangbin/GitHub/agent-evidence-layer/AGENTS.md",
+            "/Users/zhangbin/GitHub/agent-evidence-layer/PROJECT_LEDGER.md"
+          ],
+          "potential_type": "unknown",
+          "risk_level": "unknown",
+          "status": "potential_evidence_only",
+          "review_requirement": "manual capability definition, scope, risk, and evidence review"
+        },
+        {
+          "evidence_id": "potential:agent-evidence-receipt-layer:004",
+          "statement": "local CLI and async service surfaces",
+          "source_registry": "registry/agents.yaml",
+          "source_paths": [
+            "/Users/zhangbin/GitHub/agent-evidence-layer/README.md",
+            "/Users/zhangbin/GitHub/agent-evidence-layer/AGENTS.md",
+            "/Users/zhangbin/GitHub/agent-evidence-layer/PROJECT_LEDGER.md"
+          ],
+          "potential_type": "unknown",
+          "risk_level": "unknown",
+          "status": "potential_evidence_only",
+          "review_requirement": "manual capability definition, scope, risk, and evidence review"
+        }
+      ]
+    },
+    {
+      "entity_id": "saee-agent-readiness",
+      "entity_type": "service",
+      "relationship_status": "unknown",
+      "assigned_capabilities": [],
+      "permission_status": "not_derived",
+      "permission_evidence": [],
+      "potential_capability_evidence": [
+        {
+          "evidence_id": "potential:saee-agent-readiness:001",
+          "statement": "evaluate an agent run",
+          "source_registry": "registry/agents.yaml",
+          "source_paths": [
+            "/Users/zhangbin/GitHub/SAEE/README.md",
+            "/Users/zhangbin/GitHub/SAEE/AGENTS.md",
+            "/Users/zhangbin/GitHub/SAEE/capability-package/manifest.json",
+            "/Users/zhangbin/GitHub/SAEE/governance/README.md"
+          ],
+          "potential_type": "unknown",
+          "risk_level": "unknown",
+          "status": "potential_evidence_only",
+          "review_requirement": "manual capability definition, scope, risk, and evidence review"
+        },
+        {
+          "evidence_id": "potential:saee-agent-readiness:002",
+          "statement": "evaluate submitted evidence",
+          "source_registry": "registry/agents.yaml",
+          "source_paths": [
+            "/Users/zhangbin/GitHub/SAEE/README.md",
+            "/Users/zhangbin/GitHub/SAEE/AGENTS.md",
+            "/Users/zhangbin/GitHub/SAEE/capability-package/manifest.json",
+            "/Users/zhangbin/GitHub/SAEE/governance/README.md"
+          ],
+          "potential_type": "unknown",
+          "risk_level": "unknown",
+          "status": "potential_evidence_only",
+          "review_requirement": "manual capability definition, scope, risk, and evidence review"
+        },
+        {
+          "evidence_id": "potential:saee-agent-readiness:003",
+          "statement": "local MCP capability surfaces",
+          "source_registry": "registry/agents.yaml",
+          "source_paths": [
+            "/Users/zhangbin/GitHub/SAEE/README.md",
+            "/Users/zhangbin/GitHub/SAEE/AGENTS.md",
+            "/Users/zhangbin/GitHub/SAEE/capability-package/manifest.json",
+            "/Users/zhangbin/GitHub/SAEE/governance/README.md"
+          ],
+          "potential_type": "unknown",
+          "risk_level": "unknown",
+          "status": "potential_evidence_only",
+          "review_requirement": "manual capability definition, scope, risk, and evidence review"
+        },
+        {
+          "evidence_id": "potential:saee-agent-readiness:004",
+          "statement": "governance registry and capability inventory",
+          "source_registry": "registry/agents.yaml",
+          "source_paths": [
+            "/Users/zhangbin/GitHub/SAEE/README.md",
+            "/Users/zhangbin/GitHub/SAEE/AGENTS.md",
+            "/Users/zhangbin/GitHub/SAEE/capability-package/manifest.json",
+            "/Users/zhangbin/GitHub/SAEE/governance/README.md"
+          ],
+          "potential_type": "unknown",
+          "risk_level": "unknown",
+          "status": "potential_evidence_only",
+          "review_requirement": "manual capability definition, scope, risk, and evidence review"
+        }
+      ]
+    },
+    {
+      "entity_id": "agent-governance-toolkit-external",
+      "entity_type": "repository",
+      "relationship_status": "unknown",
+      "assigned_capabilities": [],
+      "permission_status": "not_derived",
+      "permission_evidence": [],
+      "potential_capability_evidence": [
+        {
+          "evidence_id": "potential:agent-governance-toolkit-external:001",
+          "statement": "pre-execution policy evaluation",
+          "source_registry": "registry/agents.yaml",
+          "source_paths": [
+            "/Users/zhangbin/GitHub/agent-governance-toolkit/README.md",
+            "/Users/zhangbin/GitHub/agent-governance-toolkit/AGENTS.md"
+          ],
+          "potential_type": "unknown",
+          "risk_level": "unknown",
+          "status": "potential_evidence_only",
+          "review_requirement": "manual capability definition, scope, risk, and evidence review"
+        },
+        {
+          "evidence_id": "potential:agent-governance-toolkit-external:002",
+          "statement": "agent identity and policy controls",
+          "source_registry": "registry/agents.yaml",
+          "source_paths": [
+            "/Users/zhangbin/GitHub/agent-governance-toolkit/README.md",
+            "/Users/zhangbin/GitHub/agent-governance-toolkit/AGENTS.md"
+          ],
+          "potential_type": "unknown",
+          "risk_level": "unknown",
+          "status": "potential_evidence_only",
+          "review_requirement": "manual capability definition, scope, risk, and evidence review"
+        },
+        {
+          "evidence_id": "potential:agent-governance-toolkit-external:003",
+          "statement": "audit logging",
+          "source_registry": "registry/agents.yaml",
+          "source_paths": [
+            "/Users/zhangbin/GitHub/agent-governance-toolkit/README.md",
+            "/Users/zhangbin/GitHub/agent-governance-toolkit/AGENTS.md"
+          ],
+          "potential_type": "unknown",
+          "risk_level": "unknown",
+          "status": "potential_evidence_only",
+          "review_requirement": "manual capability definition, scope, risk, and evidence review"
+        },
+        {
+          "evidence_id": "potential:agent-governance-toolkit-external:004",
+          "statement": "multi-language SDK surfaces",
+          "source_registry": "registry/agents.yaml",
+          "source_paths": [
+            "/Users/zhangbin/GitHub/agent-governance-toolkit/README.md",
+            "/Users/zhangbin/GitHub/agent-governance-toolkit/AGENTS.md"
+          ],
+          "potential_type": "unknown",
+          "risk_level": "unknown",
+          "status": "potential_evidence_only",
+          "review_requirement": "manual capability definition, scope, risk, and evidence review"
+        }
+      ]
+    },
+    {
+      "entity_id": "agent-governance-benchmark",
+      "entity_type": "repository",
+      "relationship_status": "unknown",
+      "assigned_capabilities": [],
+      "permission_status": "not_derived",
+      "permission_evidence": [],
+      "potential_capability_evidence": [
+        {
+          "evidence_id": "potential:agent-governance-benchmark:001",
+          "statement": "policy violation benchmarking",
+          "source_registry": "registry/agents.yaml",
+          "source_paths": [
+            "/Users/zhangbin/GitHub/agent-governance-benchmark/README.md"
+          ],
+          "potential_type": "unknown",
+          "risk_level": "unknown",
+          "status": "potential_evidence_only",
+          "review_requirement": "manual capability definition, scope, risk, and evidence review"
+        },
+        {
+          "evidence_id": "potential:agent-governance-benchmark:002",
+          "statement": "token overspend benchmarking",
+          "source_registry": "registry/agents.yaml",
+          "source_paths": [
+            "/Users/zhangbin/GitHub/agent-governance-benchmark/README.md"
+          ],
+          "potential_type": "unknown",
+          "risk_level": "unknown",
+          "status": "potential_evidence_only",
+          "review_requirement": "manual capability definition, scope, risk, and evidence review"
+        },
+        {
+          "evidence_id": "potential:agent-governance-benchmark:003",
+          "statement": "persona drift benchmarking",
+          "source_registry": "registry/agents.yaml",
+          "source_paths": [
+            "/Users/zhangbin/GitHub/agent-governance-benchmark/README.md"
+          ],
+          "potential_type": "unknown",
+          "risk_level": "unknown",
+          "status": "potential_evidence_only",
+          "review_requirement": "manual capability definition, scope, risk, and evidence review"
+        },
+        {
+          "evidence_id": "potential:agent-governance-benchmark:004",
+          "statement": "audit reconstruction timing",
+          "source_registry": "registry/agents.yaml",
+          "source_paths": [
+            "/Users/zhangbin/GitHub/agent-governance-benchmark/README.md"
+          ],
+          "potential_type": "unknown",
+          "risk_level": "unknown",
+          "status": "potential_evidence_only",
+          "review_requirement": "manual capability definition, scope, risk, and evidence review"
+        }
+      ]
+    },
+    {
+      "entity_id": "agent-receipt-validator-mcp",
+      "entity_type": "service",
+      "relationship_status": "unknown",
+      "assigned_capabilities": [],
+      "permission_status": "not_derived",
+      "permission_evidence": [],
+      "potential_capability_evidence": [
+        {
+          "evidence_id": "potential:agent-receipt-validator-mcp:001",
+          "statement": "validate receipt JSON",
+          "source_registry": "registry/agents.yaml",
+          "source_paths": [
+            "/Users/zhangbin/GitHub/agent-receipt-validator-mcp/README.md",
+            "/Users/zhangbin/GitHub/agent-receipt-validator-mcp/llms.txt"
+          ],
+          "potential_type": "unknown",
+          "risk_level": "unknown",
+          "status": "potential_evidence_only",
+          "review_requirement": "manual capability definition, scope, risk, and evidence review"
+        },
+        {
+          "evidence_id": "potential:agent-receipt-validator-mcp:002",
+          "statement": "generate deterministic demo artifacts",
+          "source_registry": "registry/agents.yaml",
+          "source_paths": [
+            "/Users/zhangbin/GitHub/agent-receipt-validator-mcp/README.md",
+            "/Users/zhangbin/GitHub/agent-receipt-validator-mcp/llms.txt"
+          ],
+          "potential_type": "unknown",
+          "risk_level": "unknown",
+          "status": "potential_evidence_only",
+          "review_requirement": "manual capability definition, scope, risk, and evidence review"
+        },
+        {
+          "evidence_id": "potential:agent-receipt-validator-mcp:003",
+          "statement": "summarize verification reports",
+          "source_registry": "registry/agents.yaml",
+          "source_paths": [
+            "/Users/zhangbin/GitHub/agent-receipt-validator-mcp/README.md",
+            "/Users/zhangbin/GitHub/agent-receipt-validator-mcp/llms.txt"
+          ],
+          "potential_type": "unknown",
+          "risk_level": "unknown",
+          "status": "potential_evidence_only",
+          "review_requirement": "manual capability definition, scope, risk, and evidence review"
+        },
+        {
+          "evidence_id": "potential:agent-receipt-validator-mcp:004",
+          "statement": "describe an agent-readable validator contract",
+          "source_registry": "registry/agents.yaml",
+          "source_paths": [
+            "/Users/zhangbin/GitHub/agent-receipt-validator-mcp/README.md",
+            "/Users/zhangbin/GitHub/agent-receipt-validator-mcp/llms.txt"
+          ],
+          "potential_type": "unknown",
+          "risk_level": "unknown",
+          "status": "potential_evidence_only",
+          "review_requirement": "manual capability definition, scope, risk, and evidence review"
+        }
+      ]
+    },
+    {
+      "entity_id": "agent-accountability-evidence-layer",
+      "entity_type": "protocol",
+      "relationship_status": "unknown",
+      "assigned_capabilities": [],
+      "permission_status": "not_derived",
+      "permission_evidence": [],
+      "potential_capability_evidence": [
+        {
+          "evidence_id": "potential:agent-accountability-evidence-layer:001",
+          "statement": "ASIEP schema and JSON-LD context",
+          "source_registry": "registry/agents.yaml",
+          "source_paths": [
+            "/Users/zhangbin/GitHub/agent-accountability-evidence-layer/README.md",
+            "/Users/zhangbin/GitHub/agent-accountability-evidence-layer/AGENTS.md"
+          ],
+          "potential_type": "unknown",
+          "risk_level": "unknown",
+          "status": "potential_evidence_only",
+          "review_requirement": "manual capability definition, scope, risk, and evidence review"
+        },
+        {
+          "evidence_id": "potential:agent-accountability-evidence-layer:002",
+          "statement": "lifecycle state validation",
+          "source_registry": "registry/agents.yaml",
+          "source_paths": [
+            "/Users/zhangbin/GitHub/agent-accountability-evidence-layer/README.md",
+            "/Users/zhangbin/GitHub/agent-accountability-evidence-layer/AGENTS.md"
+          ],
+          "potential_type": "unknown",
+          "risk_level": "unknown",
+          "status": "potential_evidence_only",
+          "review_requirement": "manual capability definition, scope, risk, and evidence review"
+        },
+        {
+          "evidence_id": "potential:agent-accountability-evidence-layer:003",
+          "statement": "evidence-preserving repair planning",
+          "source_registry": "registry/agents.yaml",
+          "source_paths": [
+            "/Users/zhangbin/GitHub/agent-accountability-evidence-layer/README.md",
+            "/Users/zhangbin/GitHub/agent-accountability-evidence-layer/AGENTS.md"
+          ],
+          "potential_type": "unknown",
+          "risk_level": "unknown",
+          "status": "potential_evidence_only",
+          "review_requirement": "manual capability definition, scope, risk, and evidence review"
+        },
+        {
+          "evidence_id": "potential:agent-accountability-evidence-layer:004",
+          "statement": "agent-readable profile discovery",
+          "source_registry": "registry/agents.yaml",
+          "source_paths": [
+            "/Users/zhangbin/GitHub/agent-accountability-evidence-layer/README.md",
+            "/Users/zhangbin/GitHub/agent-accountability-evidence-layer/AGENTS.md"
+          ],
+          "potential_type": "unknown",
+          "risk_level": "unknown",
+          "status": "potential_evidence_only",
+          "review_requirement": "manual capability definition, scope, risk, and evidence review"
+        }
+      ]
+    },
+    {
+      "entity_id": "agent-object-protocol",
+      "entity_type": "protocol",
+      "relationship_status": "unknown",
+      "assigned_capabilities": [],
+      "permission_status": "not_derived",
+      "permission_evidence": [],
+      "potential_capability_evidence": [
+        {
+          "evidence_id": "potential:agent-object-protocol:001",
+          "statement": "machine-readable JSON Schemas",
+          "source_registry": "registry/agents.yaml",
+          "source_paths": [
+            "/Users/zhangbin/GitHub/agent-object-protocol/README.md"
+          ],
+          "potential_type": "unknown",
+          "risk_level": "unknown",
+          "status": "potential_evidence_only",
+          "review_requirement": "manual capability definition, scope, risk, and evidence review"
+        },
+        {
+          "evidence_id": "potential:agent-object-protocol:002",
+          "statement": "positive and negative conformance fixtures",
+          "source_registry": "registry/agents.yaml",
+          "source_paths": [
+            "/Users/zhangbin/GitHub/agent-object-protocol/README.md"
+          ],
+          "potential_type": "unknown",
+          "risk_level": "unknown",
+          "status": "potential_evidence_only",
+          "review_requirement": "manual capability definition, scope, risk, and evidence review"
+        },
+        {
+          "evidence_id": "potential:agent-object-protocol:003",
+          "statement": "CI conformance gates",
+          "source_registry": "registry/agents.yaml",
+          "source_paths": [
+            "/Users/zhangbin/GitHub/agent-object-protocol/README.md"
+          ],
+          "potential_type": "unknown",
+          "risk_level": "unknown",
+          "status": "potential_evidence_only",
+          "review_requirement": "manual capability definition, scope, risk, and evidence review"
+        }
+      ]
+    },
+    {
+      "entity_id": "ecl-execution-compact-layer",
+      "entity_type": "protocol",
+      "relationship_status": "unknown",
+      "assigned_capabilities": [],
+      "permission_status": "not_derived",
+      "permission_evidence": [],
+      "potential_capability_evidence": [
+        {
+          "evidence_id": "potential:ecl-execution-compact-layer:001",
+          "statement": "execution record validation",
+          "source_registry": "registry/agents.yaml",
+          "source_paths": [
+            "/Users/zhangbin/GitHub/ecl-execution-compact-layer/README.md",
+            "/Users/zhangbin/GitHub/ecl-execution-compact-layer/AGENTS.md"
+          ],
+          "potential_type": "unknown",
+          "risk_level": "unknown",
+          "status": "potential_evidence_only",
+          "review_requirement": "manual capability definition, scope, risk, and evidence review"
+        },
+        {
+          "evidence_id": "potential:ecl-execution-compact-layer:002",
+          "statement": "deterministic replay",
+          "source_registry": "registry/agents.yaml",
+          "source_paths": [
+            "/Users/zhangbin/GitHub/ecl-execution-compact-layer/README.md",
+            "/Users/zhangbin/GitHub/ecl-execution-compact-layer/AGENTS.md"
+          ],
+          "potential_type": "unknown",
+          "risk_level": "unknown",
+          "status": "potential_evidence_only",
+          "review_requirement": "manual capability definition, scope, risk, and evidence review"
+        },
+        {
+          "evidence_id": "potential:ecl-execution-compact-layer:003",
+          "statement": "execution trace and evidence bundle export",
+          "source_registry": "registry/agents.yaml",
+          "source_paths": [
+            "/Users/zhangbin/GitHub/ecl-execution-compact-layer/README.md",
+            "/Users/zhangbin/GitHub/ecl-execution-compact-layer/AGENTS.md"
+          ],
+          "potential_type": "unknown",
+          "risk_level": "unknown",
+          "status": "potential_evidence_only",
+          "review_requirement": "manual capability definition, scope, risk, and evidence review"
+        },
+        {
+          "evidence_id": "potential:ecl-execution-compact-layer:004",
+          "statement": "local MCP demo surface",
+          "source_registry": "registry/agents.yaml",
+          "source_paths": [
+            "/Users/zhangbin/GitHub/ecl-execution-compact-layer/README.md",
+            "/Users/zhangbin/GitHub/ecl-execution-compact-layer/AGENTS.md"
+          ],
+          "potential_type": "unknown",
+          "risk_level": "unknown",
+          "status": "potential_evidence_only",
+          "review_requirement": "manual capability definition, scope, risk, and evidence review"
+        }
+      ]
+    },
+    {
+      "entity_id": "cellcaps",
+      "entity_type": "service",
+      "relationship_status": "unknown",
+      "assigned_capabilities": [],
+      "permission_status": "not_derived",
+      "permission_evidence": [],
+      "potential_capability_evidence": [
+        {
+          "evidence_id": "potential:cellcaps:001",
+          "statement": "semantic cell and trusted capsule validation",
+          "source_registry": "registry/agents.yaml",
+          "source_paths": [
+            "/Users/zhangbin/GitHub/cellcaps/README.md",
+            "/Users/zhangbin/GitHub/cellcaps/AGENTS.md"
+          ],
+          "potential_type": "unknown",
+          "risk_level": "unknown",
+          "status": "potential_evidence_only",
+          "review_requirement": "manual capability definition, scope, risk, and evidence review"
+        },
+        {
+          "evidence_id": "potential:cellcaps:002",
+          "statement": "support mapping and source tracing",
+          "source_registry": "registry/agents.yaml",
+          "source_paths": [
+            "/Users/zhangbin/GitHub/cellcaps/README.md",
+            "/Users/zhangbin/GitHub/cellcaps/AGENTS.md"
+          ],
+          "potential_type": "unknown",
+          "risk_level": "unknown",
+          "status": "potential_evidence_only",
+          "review_requirement": "manual capability definition, scope, risk, and evidence review"
+        },
+        {
+          "evidence_id": "potential:cellcaps:003",
+          "statement": "deterministic runtime planning and replay",
+          "source_registry": "registry/agents.yaml",
+          "source_paths": [
+            "/Users/zhangbin/GitHub/cellcaps/README.md",
+            "/Users/zhangbin/GitHub/cellcaps/AGENTS.md"
+          ],
+          "potential_type": "unknown",
+          "risk_level": "unknown",
+          "status": "potential_evidence_only",
+          "review_requirement": "manual capability definition, scope, risk, and evidence review"
+        },
+        {
+          "evidence_id": "potential:cellcaps:004",
+          "statement": "local MCP tools",
+          "source_registry": "registry/agents.yaml",
+          "source_paths": [
+            "/Users/zhangbin/GitHub/cellcaps/README.md",
+            "/Users/zhangbin/GitHub/cellcaps/AGENTS.md"
+          ],
+          "potential_type": "unknown",
+          "risk_level": "unknown",
+          "status": "potential_evidence_only",
+          "review_requirement": "manual capability definition, scope, risk, and evidence review"
+        }
+      ]
+    },
+    {
+      "entity_id": "pra-server",
+      "entity_type": "service",
+      "relationship_status": "unknown",
+      "assigned_capabilities": [],
+      "permission_status": "not_derived",
+      "permission_evidence": [],
+      "potential_capability_evidence": [
+        {
+          "evidence_id": "potential:pra-server:001",
+          "statement": "research project initialization and status",
+          "source_registry": "registry/agents.yaml",
+          "source_paths": [
+            "/Users/zhangbin/pra-server/README.md",
+            "/Users/zhangbin/pra-server/AGENTS.md",
+            "/Users/zhangbin/pra-server/policy/runtime-policy.yaml"
+          ],
+          "potential_type": "unknown",
+          "risk_level": "unknown",
+          "status": "potential_evidence_only",
+          "review_requirement": "manual capability definition, scope, risk, and evidence review"
+        },
+        {
+          "evidence_id": "potential:pra-server:002",
+          "statement": "evidence event recording",
+          "source_registry": "registry/agents.yaml",
+          "source_paths": [
+            "/Users/zhangbin/pra-server/README.md",
+            "/Users/zhangbin/pra-server/AGENTS.md",
+            "/Users/zhangbin/pra-server/policy/runtime-policy.yaml"
+          ],
+          "potential_type": "unknown",
+          "risk_level": "unknown",
+          "status": "potential_evidence_only",
+          "review_requirement": "manual capability definition, scope, risk, and evidence review"
+        },
+        {
+          "evidence_id": "potential:pra-server:003",
+          "statement": "session artifact export and verification",
+          "source_registry": "registry/agents.yaml",
+          "source_paths": [
+            "/Users/zhangbin/pra-server/README.md",
+            "/Users/zhangbin/pra-server/AGENTS.md",
+            "/Users/zhangbin/pra-server/policy/runtime-policy.yaml"
+          ],
+          "potential_type": "unknown",
+          "risk_level": "unknown",
+          "status": "potential_evidence_only",
+          "review_requirement": "manual capability definition, scope, risk, and evidence review"
+        },
+        {
+          "evidence_id": "potential:pra-server:004",
+          "statement": "runtime policy and approval queue handling",
+          "source_registry": "registry/agents.yaml",
+          "source_paths": [
+            "/Users/zhangbin/pra-server/README.md",
+            "/Users/zhangbin/pra-server/AGENTS.md",
+            "/Users/zhangbin/pra-server/policy/runtime-policy.yaml"
+          ],
+          "potential_type": "unknown",
+          "risk_level": "unknown",
+          "status": "potential_evidence_only",
+          "review_requirement": "manual capability definition, scope, risk, and evidence review"
+        }
+      ]
+    },
+    {
+      "entity_id": "standalone-agent-object-protocol-draft",
+      "entity_type": "protocol",
+      "relationship_status": "unknown",
+      "assigned_capabilities": [],
+      "permission_status": "not_derived",
+      "permission_evidence": [],
+      "potential_capability_evidence": [
+        {
+          "evidence_id": "potential:standalone-agent-object-protocol-draft:001",
+          "statement": "protocol specification",
+          "source_registry": "registry/agents.yaml",
+          "source_paths": [
+            "/Users/zhangbin/agent/README.md"
+          ],
+          "potential_type": "unknown",
+          "risk_level": "unknown",
+          "status": "potential_evidence_only",
+          "review_requirement": "manual capability definition, scope, risk, and evidence review"
+        },
+        {
+          "evidence_id": "potential:standalone-agent-object-protocol-draft:002",
+          "statement": "minimal Python reference demo",
+          "source_registry": "registry/agents.yaml",
+          "source_paths": [
+            "/Users/zhangbin/agent/README.md"
+          ],
+          "potential_type": "unknown",
+          "risk_level": "unknown",
+          "status": "potential_evidence_only",
+          "review_requirement": "manual capability definition, scope, risk, and evidence review"
+        },
+        {
+          "evidence_id": "potential:standalone-agent-object-protocol-draft:003",
+          "statement": "conformance vector verification",
+          "source_registry": "registry/agents.yaml",
+          "source_paths": [
+            "/Users/zhangbin/agent/README.md"
+          ],
+          "potential_type": "unknown",
+          "risk_level": "unknown",
+          "status": "potential_evidence_only",
+          "review_requirement": "manual capability definition, scope, risk, and evidence review"
+        }
+      ]
+    },
+    {
+      "entity_id": "sovereign-agent-local-gate",
+      "entity_type": "service",
+      "relationship_status": "unknown",
+      "assigned_capabilities": [],
+      "permission_status": "not_derived",
+      "permission_evidence": [],
+      "potential_capability_evidence": [
+        {
+          "evidence_id": "potential:sovereign-agent-local-gate:001",
+          "statement": "local redaction and evidence gating",
+          "source_registry": "registry/agents.yaml",
+          "source_paths": [
+            "/Users/zhangbin/sovereign-agent/BOUNDARY.md"
+          ],
+          "potential_type": "unknown",
+          "risk_level": "unknown",
+          "status": "potential_evidence_only",
+          "review_requirement": "manual capability definition, scope, risk, and evidence review"
+        },
+        {
+          "evidence_id": "potential:sovereign-agent-local-gate:002",
+          "statement": "structured evidence state handling",
+          "source_registry": "registry/agents.yaml",
+          "source_paths": [
+            "/Users/zhangbin/sovereign-agent/BOUNDARY.md"
+          ],
+          "potential_type": "unknown",
+          "risk_level": "unknown",
+          "status": "potential_evidence_only",
+          "review_requirement": "manual capability definition, scope, risk, and evidence review"
+        },
+        {
+          "evidence_id": "potential:sovereign-agent-local-gate:003",
+          "statement": "release-packet preparation",
+          "source_registry": "registry/agents.yaml",
+          "source_paths": [
+            "/Users/zhangbin/sovereign-agent/BOUNDARY.md"
+          ],
+          "potential_type": "unknown",
+          "risk_level": "unknown",
+          "status": "potential_evidence_only",
+          "review_requirement": "manual capability definition, scope, risk, and evidence review"
+        }
+      ]
+    },
+    {
+      "entity_id": "mcp-agent-ei-external",
+      "entity_type": "repository",
+      "relationship_status": "unknown",
+      "assigned_capabilities": [],
+      "permission_status": "not_derived",
+      "permission_evidence": [],
+      "potential_capability_evidence": [
+        {
+          "evidence_id": "potential:mcp-agent-ei-external:001",
+          "statement": "MCP server connection lifecycle",
+          "source_registry": "registry/agents.yaml",
+          "source_paths": [
+            "/Users/zhangbin/GitHub/mcp-agent-ei/README.md"
+          ],
+          "potential_type": "unknown",
+          "risk_level": "unknown",
+          "status": "potential_evidence_only",
+          "review_requirement": "manual capability definition, scope, risk, and evidence review"
+        },
+        {
+          "evidence_id": "potential:mcp-agent-ei-external:002",
+          "statement": "composable agent workflows",
+          "source_registry": "registry/agents.yaml",
+          "source_paths": [
+            "/Users/zhangbin/GitHub/mcp-agent-ei/README.md"
+          ],
+          "potential_type": "unknown",
+          "risk_level": "unknown",
+          "status": "potential_evidence_only",
+          "review_requirement": "manual capability definition, scope, risk, and evidence review"
+        },
+        {
+          "evidence_id": "potential:mcp-agent-ei-external:003",
+          "statement": "durable workflow integration",
+          "source_registry": "registry/agents.yaml",
+          "source_paths": [
+            "/Users/zhangbin/GitHub/mcp-agent-ei/README.md"
+          ],
+          "potential_type": "unknown",
+          "risk_level": "unknown",
+          "status": "potential_evidence_only",
+          "review_requirement": "manual capability definition, scope, risk, and evidence review"
+        }
+      ]
+    },
+    {
+      "entity_id": "autonomous-cell-protocol",
+      "entity_type": "protocol",
+      "relationship_status": "unknown",
+      "assigned_capabilities": [],
+      "permission_status": "not_derived",
+      "permission_evidence": [],
+      "potential_capability_evidence": []
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereSelectionPressureRegistry",
+  "metadata": {
+    "title": "Ecological Selection Pressures v0.1",
+    "status": "defined_not_applied",
+    "constitution": "../constitution/environment-constitution.yaml",
+    "fitness_model": "fitness-model.yaml",
+    "generated_at": "2026-07-19T22:27:22+08:00",
+    "selection_pressure_count": 5,
+    "non_null_threshold_count": 0,
+    "applied_pressure_count": 0,
+    "fitness_modification_count": 0,
+    "selection_result_count": 0,
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "Definitions are not observations, applied pressure, fitness scores, rankings, or selection decisions.",
+      "Threshold null means no threshold has been established."
+    ]
+  },
+  "pressure_record_schema": {
+    "required_fields": [
+      "pressure_id",
+      "dimension",
+      "description",
+      "threshold"
+    ],
+    "pressure_id_format": "dbio://selection-pressure/<dimension>/<version>",
+    "threshold_default": null,
+    "fitness_effect_default": "none"
+  },
+  "selection_pressures": [
+    {
+      "pressure_id": "dbio://selection-pressure/reliability/v0.1",
+      "dimension": "reliability_pressure",
+      "description": "Favors evidence of repeatable bounded outcomes, failure disclosure, and recoverability under declared conditions.",
+      "threshold": null,
+      "application_status": "not_applied",
+      "fitness_effect": "none"
+    },
+    {
+      "pressure_id": "dbio://selection-pressure/evidence/v0.1",
+      "dimension": "evidence_pressure",
+      "description": "Favors attributable, relevant, intact, version-bound, and independently checkable ecological evidence.",
+      "threshold": null,
+      "application_status": "not_applied",
+      "fitness_effect": "none"
+    },
+    {
+      "pressure_id": "dbio://selection-pressure/efficiency/v0.1",
+      "dimension": "efficiency_pressure",
+      "description": "Favors accountable resource use relative to declared function while retaining externality and shared-resource costs.",
+      "threshold": null,
+      "application_status": "not_applied",
+      "fitness_effect": "none"
+    },
+    {
+      "pressure_id": "dbio://selection-pressure/adaptability/v0.1",
+      "dimension": "adaptability_pressure",
+      "description": "Favors evidence-backed improvement under declared environmental change without violating identity, history, capability, or permission boundaries.",
+      "threshold": null,
+      "application_status": "not_applied",
+      "fitness_effect": "none"
+    },
+    {
+      "pressure_id": "dbio://selection-pressure/stability/v0.1",
+      "dimension": "stability_pressure",
+      "description": "Favors ecosystem resilience, diversity, recovery, sustainable resource balance, and bounded failure propagation.",
+      "threshold": null,
+      "application_status": "not_applied",
+      "fitness_effect": "none"
+    }
+  ]
+}

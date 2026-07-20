@@ -1,0 +1,32 @@
+{
+  "schema_version": "0.1",
+  "kind": "DBOSExperimentFreezeCertificateEvidence",
+  "certificate_id": "DBOS-EXP-0001-FREEZE-CERT-0001",
+  "experiment_id": "DBOS-EXP-0001",
+  "freeze_id": "DBOS-EXP-0001-FREEZE-0001",
+  "issued_at": "2026-07-20T10:20:17+08:00",
+  "issuer": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+  "snapshot": {
+    "archive": "evidence/experiments/DBOS-EXP-0001/freeze/dbos-input-snapshot.tar",
+    "archive_digest": "sha256:7e6ffcd2b07c0d6d5583d8a2fd98e44b8c85400468b4f49aefb65bd9e2542959",
+    "archive_size": 2211840,
+    "manifest_digest": "sha256:7da44b98180799e9c56082340c8dfe40eb2fd41a24ce85cf1c5a69081def31df",
+    "file_count": 164
+  },
+  "validator_manifest": {
+    "digest": "sha256:7fd507f1b7acefc9afc42874cfe8bce93a9d931fc48b2c81477f8a93ba39016e",
+    "validator_count": 29
+  },
+  "environment_lock": {
+    "lock_id": "DBOS-EXP-0001-ENV-LOCK-0001",
+    "status": "frozen",
+    "environment_digest": "sha256:898ee48c12e7c9c49323c49cff42795b13f4fe67d9f63341590d6b51f191f81e"
+  },
+  "status": "issued",
+  "authority_effect": "none",
+  "limitations": [
+    "Local non-independent freeze attestation only.",
+    "The archive canonicalizes metadata and retains the exact captured file bytes.",
+    "The certificate does not authorize experiment execution or prove experimental success."
+  ]
+}

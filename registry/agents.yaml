@@ -1,0 +1,1014 @@
+schema_version: "0.2"
+kind: "DigitalBiosphereAgentRegistry"
+metadata:
+  status: "identity_layer_v0.1"
+  scanned_at: "2026-07-19T18:23:07+08:00"
+  identity_classified_at: "2026-07-19T22:26:53+08:00"
+  scan_roots:
+    - "/Users/zhangbin/GitHub"
+    - "/Users/zhangbin (non-hidden, non-system project directories)"
+  discovered_git_repository_paths: 266
+  keyword_or_content_verified_project_paths: 169
+  entity_count: 23
+  classification_counts:
+    protocol: 10
+    agent: 0
+    repository: 5
+    artifact: 0
+    service: 8
+  identity_source_of_truth: "registry/entities.yaml"
+  registry_boundary:
+    - "This is a compatibility view of 22 scanned objects plus one explicitly registered ACP protocol entity; registry/entities.yaml is the identity source of truth."
+    - "A repository is not an agent, and no runtime agent instance was established by the scan."
+    - "Discovery, classification, and canonical naming grant no permission or operational authority."
+    - "Mirrors, worktrees, vendor checkouts, and temporary paths remain observations and are not new entities."
+agents:
+  - id: "digital-biosphere-architecture"
+    entity_id: "digital-biosphere-architecture"
+    canonical_id: "dbio://repository/digital-biosphere-architecture/unversioned"
+    entity_type: "repository"
+    name: "Digital Biosphere Architecture"
+    version: "unversioned"
+    status: "proposed_identity"
+    lifecycle:
+      state: "proposed"
+      created: null
+      last_verified: "2026-07-19T18:41:01+08:00"
+      successor: null
+    owner:
+      status: "repository_namespace_only"
+      value: "joy7758"
+      evidence_source:
+        - "/Users/zhangbin/GitHub/digital-biosphere-architecture/.git/config"
+      limitation: "Repository namespace is not proof of legal ownership or governance authority."
+    parent_entity: null
+    child_entities: []
+    classification: "public_meaning_layer"
+    repository: "/Users/zhangbin/GitHub/digital-biosphere-architecture"
+    purpose: "Define vocabulary, conceptual boundaries, and citation context for the Digital Biosphere Architecture."
+    capabilities:
+      - "agent-readable architecture discovery"
+      - "canonical naming and citation context"
+      - "public conceptual layer mapping"
+    permissions: []
+    permission_status: "not_assigned"
+    risk_level: "unassessed"
+    verification:
+      status: "evidence_backed_provisional"
+      verified_at: "2026-07-19T18:41:01+08:00"
+      method: "local registry classification and evidence-source presence review"
+      evidence_source:
+        - "/Users/zhangbin/GitHub/digital-biosphere-architecture/AGENTS.md"
+        - "/Users/zhangbin/GitHub/digital-biosphere-architecture/README.md"
+        - "/Users/zhangbin/GitHub/digital-biosphere-architecture/docs/ai-discovery-index.md"
+      issues:
+        - "no evidence-backed entity version was found"
+    evidence_source:
+      - "/Users/zhangbin/GitHub/digital-biosphere-architecture/AGENTS.md"
+      - "/Users/zhangbin/GitHub/digital-biosphere-architecture/README.md"
+      - "/Users/zhangbin/GitHub/digital-biosphere-architecture/docs/ai-discovery-index.md"
+  - id: "pop-persona-object-protocol"
+    entity_id: "pop-persona-object-protocol"
+    canonical_id: "dbio://protocol/persona-object-protocol/unresolved"
+    entity_type: "protocol"
+    name: "Persona Object Protocol (POP)"
+    version: "unresolved"
+    status: "proposed_identity"
+    lifecycle:
+      state: "proposed"
+      created: null
+      last_verified: "2026-07-19T18:41:01+08:00"
+      successor: null
+    owner:
+      status: "repository_namespace_only"
+      value: "joy7758"
+      evidence_source:
+        - "/Users/zhangbin/GitHub/persona-object-protocol/.git/config"
+      limitation: "Repository namespace is not proof of legal ownership or governance authority."
+    parent_entity: null
+    child_entities: []
+    classification: "protocol"
+    repository: "/Users/zhangbin/GitHub/persona-object-protocol"
+    purpose: "Provide a portable persona object layer and projection model across agent runtimes."
+    capabilities:
+      - "portable persona objects"
+      - "persona projection to runtime configuration shapes"
+      - "agent-readable discovery and citation entry points"
+    permissions: []
+    permission_status: "not_assigned"
+    risk_level: "unassessed"
+    verification:
+      status: "evidence_backed_provisional"
+      verified_at: "2026-07-19T18:41:01+08:00"
+      method: "local registry classification and evidence-source presence review"
+      evidence_source:
+        - "/Users/zhangbin/GitHub/persona-object-protocol/README.md"
+        - "/Users/zhangbin/GitHub/persona-object-protocol/llms.txt"
+        - "/Users/zhangbin/GitHub/persona-object-protocol/pyproject.toml"
+      issues:
+        - "version_axis_conflict: canonical schema baseline v0.1.0 and package/repository release surface v0.1.7 are not one proven entity version"
+    evidence_source:
+      - "/Users/zhangbin/GitHub/persona-object-protocol/README.md"
+      - "/Users/zhangbin/GitHub/persona-object-protocol/llms.txt"
+  - id: "aip-agent-intent-protocol"
+    entity_id: "aip-agent-intent-protocol"
+    canonical_id: "dbio://protocol/agent-intent-protocol/unversioned"
+    entity_type: "protocol"
+    name: "Agent Intent Protocol (AIP)"
+    version: "unversioned"
+    status: "proposed_identity"
+    lifecycle:
+      state: "proposed"
+      created: null
+      last_verified: "2026-07-19T18:41:01+08:00"
+      successor: null
+    owner:
+      status: "repository_namespace_only"
+      value: "joy7758"
+      evidence_source:
+        - "/Users/zhangbin/GitHub/agent-intent-protocol/.git/config"
+      limitation: "Repository namespace is not proof of legal ownership or governance authority."
+    parent_entity: null
+    child_entities: []
+    classification: "protocol"
+    repository: "/Users/zhangbin/GitHub/agent-intent-protocol"
+    purpose: "Define machine-readable intent, action, and result objects for agent interactions."
+    capabilities:
+      - "intent object definitions"
+      - "action object definitions"
+      - "result object definitions"
+      - "conformance-oriented schemas and examples"
+    permissions: []
+    permission_status: "not_assigned"
+    risk_level: "unassessed"
+    verification:
+      status: "evidence_backed_provisional"
+      verified_at: "2026-07-19T18:41:01+08:00"
+      method: "local registry classification and evidence-source presence review"
+      evidence_source:
+        - "/Users/zhangbin/GitHub/agent-intent-protocol/README.md"
+      issues:
+        - "no evidence-backed entity version was found"
+    evidence_source:
+      - "/Users/zhangbin/GitHub/agent-intent-protocol/README.md"
+  - id: "token-governor-reference"
+    entity_id: "token-governor-reference"
+    canonical_id: "dbio://protocol/token-governor/unversioned"
+    entity_type: "protocol"
+    name: "Token Governor (TianJiang)"
+    version: "unversioned"
+    status: "proposed_identity"
+    lifecycle:
+      state: "proposed"
+      created: null
+      last_verified: "2026-07-19T18:41:01+08:00"
+      successor: null
+    owner:
+      status: "repository_namespace_only"
+      value: "joy7758"
+      evidence_source:
+        - "/Users/zhangbin/GitHub/token-governor/.git/config"
+      limitation: "Repository namespace is not proof of legal ownership or governance authority."
+    parent_entity: null
+    child_entities: []
+    classification: "governance_reference"
+    repository: "/Users/zhangbin/GitHub/token-governor"
+    purpose: "Document a public reference interface for budget-window inputs, toy policies, and example reports."
+    capabilities:
+      - "budget-window interface examples"
+      - "toy policy examples"
+      - "example budget reports"
+    permissions: []
+    permission_status: "not_assigned"
+    risk_level: "unassessed"
+    verification:
+      status: "evidence_backed_provisional"
+      verified_at: "2026-07-19T18:41:01+08:00"
+      method: "local registry classification and evidence-source presence review"
+      evidence_source:
+        - "/Users/zhangbin/GitHub/token-governor/README.md"
+      issues:
+        - "no evidence-backed entity version was found"
+    evidence_source:
+      - "/Users/zhangbin/GitHub/token-governor/README.md"
+  - id: "fdo-kernel-mvk"
+    entity_id: "fdo-kernel-mvk"
+    canonical_id: "dbio://service/fdo-kernel-mvk/unversioned"
+    entity_type: "service"
+    name: "FDO Kernel MVK"
+    version: "unversioned"
+    status: "proposed_identity"
+    lifecycle:
+      state: "proposed"
+      created: null
+      last_verified: "2026-07-19T18:41:01+08:00"
+      successor: null
+    owner:
+      status: "repository_namespace_only"
+      value: "joy7758"
+      evidence_source:
+        - "/Users/zhangbin/GitHub/fdo-kernel-mvk/.git/config"
+      limitation: "Repository namespace is not proof of legal ownership or governance authority."
+    parent_entity: null
+    child_entities: []
+    classification: "execution_integrity_reference"
+    repository: "/Users/zhangbin/GitHub/fdo-kernel-mvk"
+    purpose: "Provide deterministic execution-integrity examples and toy checksum-oriented validation."
+    capabilities:
+      - "deterministic state evolution examples"
+      - "canonical object checksum verification"
+      - "trace-bound replay validation"
+    permissions: []
+    permission_status: "not_assigned"
+    risk_level: "unassessed"
+    verification:
+      status: "evidence_backed_provisional"
+      verified_at: "2026-07-19T18:41:01+08:00"
+      method: "local registry classification and evidence-source presence review"
+      evidence_source:
+        - "/Users/zhangbin/GitHub/fdo-kernel-mvk/README.md"
+        - "/Users/zhangbin/GitHub/fdo-kernel-mvk/AGENTS.md"
+      issues:
+        - "no evidence-backed entity version was found"
+    evidence_source:
+      - "/Users/zhangbin/GitHub/fdo-kernel-mvk/README.md"
+      - "/Users/zhangbin/GitHub/fdo-kernel-mvk/AGENTS.md"
+  - id: "agent-evidence-eeoap"
+    entity_id: "agent-evidence-eeoap"
+    canonical_id: "dbio://protocol/agent-evidence/unresolved"
+    entity_type: "protocol"
+    name: "Agent Evidence"
+    version: "unresolved"
+    status: "proposed_identity"
+    lifecycle:
+      state: "proposed"
+      created: null
+      last_verified: "2026-07-19T18:41:01+08:00"
+      successor: null
+    owner:
+      status: "repository_namespace_only"
+      value: "joy7758"
+      evidence_source:
+        - "/Users/zhangbin/GitHub/agent-evidence/.git/config"
+      limitation: "Repository namespace is not proof of legal ownership or governance authority."
+    parent_entity: null
+    child_entities: []
+    classification: "evidence_profile_and_validator"
+    repository: "/Users/zhangbin/GitHub/agent-evidence"
+    purpose: "Turn agent or service operations into auditable and verifiable evidence objects through the public EEOAP schema and validator surface."
+    capabilities:
+      - "EEOAP schema"
+      - "profile-aware validation"
+      - "agent-readable discovery metadata"
+      - "offline review-pack support"
+    permissions: []
+    permission_status: "not_assigned"
+    risk_level: "unassessed"
+    verification:
+      status: "evidence_backed_provisional"
+      verified_at: "2026-07-19T18:41:01+08:00"
+      method: "local registry classification and evidence-source presence review"
+      evidence_source:
+        - "/Users/zhangbin/GitHub/agent-evidence/README.md"
+        - "/Users/zhangbin/GitHub/agent-evidence/AGENTS.md"
+        - "/Users/zhangbin/GitHub/agent-evidence/llms.txt"
+        - "/Users/zhangbin/GitHub/agent-evidence/pyproject.toml"
+      issues:
+        - "version_conflict: pyproject.toml=0.1.0rc3; README.md reports v0.6.0 release"
+    evidence_source:
+      - "/Users/zhangbin/GitHub/agent-evidence/README.md"
+      - "/Users/zhangbin/GitHub/agent-evidence/AGENTS.md"
+      - "/Users/zhangbin/GitHub/agent-evidence/llms.txt"
+  - id: "aro-audit-reference"
+    entity_id: "aro-audit-reference"
+    canonical_id: "dbio://protocol/aro-audit/v0.1.0"
+    entity_type: "protocol"
+    name: "ARO-Audit"
+    version: "v0.1.0"
+    status: "proposed_identity"
+    lifecycle:
+      state: "proposed"
+      created: null
+      last_verified: "2026-07-19T18:41:01+08:00"
+      successor: null
+    owner:
+      status: "repository_namespace_only"
+      value: "joy7758"
+      evidence_source:
+        - "/Users/zhangbin/GitHub/aro-audit/.git/config"
+      limitation: "Repository namespace is not proof of legal ownership or governance authority."
+    parent_entity: null
+    child_entities: []
+    classification: "audit_reference"
+    repository: "/Users/zhangbin/GitHub/aro-audit"
+    purpose: "Provide public receipt-shaped artifacts, audit-format examples, and independent toy verification."
+    capabilities:
+      - "receipt format examples"
+      - "single-receipt verification"
+      - "tamper-rejection demonstration"
+    permissions: []
+    permission_status: "not_assigned"
+    risk_level: "unassessed"
+    verification:
+      status: "evidence_backed_provisional"
+      verified_at: "2026-07-19T18:41:01+08:00"
+      method: "local registry classification and evidence-source presence review"
+      evidence_source:
+        - "/Users/zhangbin/GitHub/aro-audit/README.md"
+        - "/Users/zhangbin/GitHub/aro-audit/llms.txt"
+        - "/Users/zhangbin/GitHub/aro-audit/pyproject.toml"
+      issues: []
+    evidence_source:
+      - "/Users/zhangbin/GitHub/aro-audit/README.md"
+      - "/Users/zhangbin/GitHub/aro-audit/llms.txt"
+  - id: "verifiable-agent-demo"
+    entity_id: "verifiable-agent-demo"
+    canonical_id: "dbio://repository/verifiable-agent-demo/unversioned"
+    entity_type: "repository"
+    name: "Verifiable Agent Demo"
+    version: "unversioned"
+    status: "proposed_identity"
+    lifecycle:
+      state: "proposed"
+      created: null
+      last_verified: "2026-07-19T18:41:01+08:00"
+      successor: null
+    owner:
+      status: "repository_namespace_only"
+      value: "joy7758"
+      evidence_source:
+        - "/Users/zhangbin/GitHub/verifiable-agent-demo/.git/config"
+      limitation: "Repository namespace is not proof of legal ownership or governance authority."
+    parent_entity: null
+    child_entities: []
+    classification: "bounded_demo"
+    repository: "/Users/zhangbin/GitHub/verifiable-agent-demo"
+    purpose: "Demonstrate a minimal runnable single-path toy receipt validation flow."
+    capabilities:
+      - "generate toy agent artifacts"
+      - "validate bounded receipt-shaped examples"
+      - "local smoke-test path"
+    permissions: []
+    permission_status: "not_assigned"
+    risk_level: "unassessed"
+    verification:
+      status: "evidence_backed_provisional"
+      verified_at: "2026-07-19T18:41:01+08:00"
+      method: "local registry classification and evidence-source presence review"
+      evidence_source:
+        - "/Users/zhangbin/GitHub/verifiable-agent-demo/README.md"
+        - "/Users/zhangbin/GitHub/verifiable-agent-demo/llms.txt"
+        - "/Users/zhangbin/GitHub/verifiable-agent-demo/pyproject.toml"
+      issues:
+        - "repository checkout has no exact tag; pyproject.toml package version is not treated as repository identity version"
+        - "no evidence-backed repository identity version was found"
+    evidence_source:
+      - "/Users/zhangbin/GitHub/verifiable-agent-demo/README.md"
+      - "/Users/zhangbin/GitHub/verifiable-agent-demo/llms.txt"
+  - id: "execution-integrity-core"
+    entity_id: "execution-integrity-core"
+    canonical_id: "dbio://service/execution-integrity-core/v0.8.0"
+    entity_type: "service"
+    name: "Execution Integrity Core"
+    version: "v0.8.0"
+    status: "proposed_identity"
+    lifecycle:
+      state: "proposed"
+      created: null
+      last_verified: "2026-07-19T18:41:01+08:00"
+      successor: null
+    owner:
+      status: "repository_namespace_only"
+      value: "joy7758"
+      evidence_source:
+        - "/Users/zhangbin/GitHub/execution-integrity-core/.git/config"
+      limitation: "Repository namespace is not proof of legal ownership or governance authority."
+    parent_entity: null
+    child_entities: []
+    classification: "runnable_reference_kernel"
+    repository: "/Users/zhangbin/GitHub/execution-integrity-core"
+    purpose: "Provide the VAES/ARO v0.8 reference kernel and VES v0.1 local manifest-first execution layer."
+    capabilities:
+      - "identity-bound tool-call execution"
+      - "policy and proof gating"
+      - "capability-token issuance"
+      - "tamper-detectable evidence export and verification"
+    permissions: []
+    permission_status: "not_assigned"
+    risk_level: "unassessed"
+    verification:
+      status: "evidence_backed_provisional"
+      verified_at: "2026-07-19T18:41:01+08:00"
+      method: "local registry classification and evidence-source presence review"
+      evidence_source:
+        - "/Users/zhangbin/GitHub/execution-integrity-core/README.md"
+        - "/Users/zhangbin/GitHub/execution-integrity-core/AGENTS.md"
+        - "/Users/zhangbin/GitHub/execution-integrity-core/agent-index.json"
+        - "/Users/zhangbin/GitHub/execution-integrity-core/pyproject.toml"
+      issues: []
+    evidence_source:
+      - "/Users/zhangbin/GitHub/execution-integrity-core/README.md"
+      - "/Users/zhangbin/GitHub/execution-integrity-core/AGENTS.md"
+      - "/Users/zhangbin/GitHub/execution-integrity-core/agent-index.json"
+  - id: "agent-evidence-receipt-layer"
+    entity_id: "agent-evidence-receipt-layer"
+    canonical_id: "dbio://service/agent-evidence-receipt/v0.2.0"
+    entity_type: "service"
+    name: "Agent Evidence Receipt"
+    version: "v0.2.0"
+    status: "proposed_identity"
+    lifecycle:
+      state: "proposed"
+      created: null
+      last_verified: "2026-07-19T18:41:01+08:00"
+      successor: null
+    owner:
+      status: "unknown"
+      value: null
+      evidence_source: []
+      limitation: "No explicit entity owner was established by the scan."
+    parent_entity: null
+    child_entities: []
+    classification: "evidence_packaging_layer"
+    repository: "/Users/zhangbin/GitHub/agent-evidence-layer"
+    purpose: "Package one agent run into a transferable and offline-verifiable evidence package."
+    capabilities:
+      - "evidence bundle packaging"
+      - "hash, Merkle-root, and signature verification"
+      - "reviewer handoff generation"
+      - "local CLI and async service surfaces"
+    permissions: []
+    permission_status: "not_assigned"
+    risk_level: "unassessed"
+    verification:
+      status: "evidence_backed_provisional"
+      verified_at: "2026-07-19T18:41:01+08:00"
+      method: "local registry classification and evidence-source presence review"
+      evidence_source:
+        - "/Users/zhangbin/GitHub/agent-evidence-layer/README.md"
+        - "/Users/zhangbin/GitHub/agent-evidence-layer/AGENTS.md"
+        - "/Users/zhangbin/GitHub/agent-evidence-layer/PROJECT_LEDGER.md"
+        - "/Users/zhangbin/GitHub/agent-evidence-layer/pyproject.toml"
+      issues:
+        - "entity owner is unknown"
+    evidence_source:
+      - "/Users/zhangbin/GitHub/agent-evidence-layer/README.md"
+      - "/Users/zhangbin/GitHub/agent-evidence-layer/AGENTS.md"
+      - "/Users/zhangbin/GitHub/agent-evidence-layer/PROJECT_LEDGER.md"
+  - id: "saee-agent-readiness"
+    entity_id: "saee-agent-readiness"
+    canonical_id: "dbio://service/saee-agent-readiness/v2"
+    entity_type: "service"
+    name: "SAEE Agent Readiness Capability"
+    version: "v2"
+    status: "proposed_identity"
+    lifecycle:
+      state: "proposed"
+      created: null
+      last_verified: "2026-07-19T18:41:01+08:00"
+      successor: null
+    owner:
+      status: "unknown"
+      value: null
+      evidence_source: []
+      limitation: "No explicit entity owner was established by the scan."
+    parent_entity: null
+    child_entities: []
+    classification: "agent_readiness_infrastructure"
+    repository: "/Users/zhangbin/GitHub/SAEE"
+    purpose: "Evaluate whether AI agents have sufficient execution evidence before real-world deployment."
+    capabilities:
+      - "evaluate an agent run"
+      - "evaluate submitted evidence"
+      - "local MCP capability surfaces"
+      - "governance registry and capability inventory"
+    permissions: []
+    permission_status: "not_assigned"
+    risk_level: "unassessed"
+    verification:
+      status: "evidence_backed_provisional"
+      verified_at: "2026-07-19T18:41:01+08:00"
+      method: "local registry classification and evidence-source presence review"
+      evidence_source:
+        - "/Users/zhangbin/GitHub/SAEE/README.md"
+        - "/Users/zhangbin/GitHub/SAEE/AGENTS.md"
+        - "/Users/zhangbin/GitHub/SAEE/capability-package/manifest.json"
+        - "/Users/zhangbin/GitHub/SAEE/governance/README.md"
+      issues:
+        - "entity owner is unknown"
+    evidence_source:
+      - "/Users/zhangbin/GitHub/SAEE/README.md"
+      - "/Users/zhangbin/GitHub/SAEE/AGENTS.md"
+      - "/Users/zhangbin/GitHub/SAEE/capability-package/manifest.json"
+      - "/Users/zhangbin/GitHub/SAEE/governance/README.md"
+  - id: "agent-governance-toolkit-external"
+    entity_id: "agent-governance-toolkit-external"
+    canonical_id: "dbio://repository/agent-governance-toolkit/unversioned"
+    entity_type: "repository"
+    name: "Agent Governance Toolkit"
+    version: "unversioned"
+    status: "proposed_identity"
+    lifecycle:
+      state: "proposed"
+      created: null
+      last_verified: "2026-07-19T18:41:01+08:00"
+      successor: null
+    owner:
+      status: "repository_namespace_only"
+      value: "microsoft"
+      evidence_source:
+        - "/Users/zhangbin/GitHub/agent-governance-toolkit/.git/config"
+      limitation: "Repository namespace is not proof of legal ownership or governance authority."
+    parent_entity: null
+    child_entities: []
+    classification: "external_dependency_checkout"
+    repository: "/Users/zhangbin/GitHub/agent-governance-toolkit"
+    purpose: "Provide deterministic runtime governance, policy enforcement, identity, sandboxing, and audit logging for agent actions."
+    capabilities:
+      - "pre-execution policy evaluation"
+      - "agent identity and policy controls"
+      - "audit logging"
+      - "multi-language SDK surfaces"
+    permissions: []
+    permission_status: "not_assigned"
+    risk_level: "unassessed"
+    verification:
+      status: "evidence_backed_provisional"
+      verified_at: "2026-07-19T18:41:01+08:00"
+      method: "local registry classification and evidence-source presence review"
+      evidence_source:
+        - "/Users/zhangbin/GitHub/agent-governance-toolkit/README.md"
+        - "/Users/zhangbin/GitHub/agent-governance-toolkit/AGENTS.md"
+      issues:
+        - "repository checkout has no exact tag; README package release text is not treated as checkout identity version"
+        - "no evidence-backed repository identity version was found"
+    evidence_source:
+      - "/Users/zhangbin/GitHub/agent-governance-toolkit/README.md"
+      - "/Users/zhangbin/GitHub/agent-governance-toolkit/AGENTS.md"
+  - id: "agent-governance-benchmark"
+    entity_id: "agent-governance-benchmark"
+    canonical_id: "dbio://repository/agent-governance-benchmark/unversioned"
+    entity_type: "repository"
+    name: "Agent Governance Benchmark"
+    version: "unversioned"
+    status: "proposed_identity"
+    lifecycle:
+      state: "proposed"
+      created: null
+      last_verified: "2026-07-19T18:41:01+08:00"
+      successor: null
+    owner:
+      status: "repository_namespace_only"
+      value: "joy7758"
+      evidence_source:
+        - "/Users/zhangbin/GitHub/agent-governance-benchmark/.git/config"
+      limitation: "Repository namespace is not proof of legal ownership or governance authority."
+    parent_entity: null
+    child_entities: []
+    classification: "offline_benchmark"
+    repository: "/Users/zhangbin/GitHub/agent-governance-benchmark"
+    purpose: "Compare a baseline agent and governed agent on policy, token, persona, and audit metrics using deterministic offline scenarios."
+    capabilities:
+      - "policy violation benchmarking"
+      - "token overspend benchmarking"
+      - "persona drift benchmarking"
+      - "audit reconstruction timing"
+    permissions: []
+    permission_status: "not_assigned"
+    risk_level: "unassessed"
+    verification:
+      status: "evidence_backed_provisional"
+      verified_at: "2026-07-19T18:41:01+08:00"
+      method: "local registry classification and evidence-source presence review"
+      evidence_source:
+        - "/Users/zhangbin/GitHub/agent-governance-benchmark/README.md"
+      issues:
+        - "no evidence-backed entity version was found"
+    evidence_source:
+      - "/Users/zhangbin/GitHub/agent-governance-benchmark/README.md"
+  - id: "agent-receipt-validator-mcp"
+    entity_id: "agent-receipt-validator-mcp"
+    canonical_id: "dbio://service/agent-receipt-validator-mcp/v0.1.1"
+    entity_type: "service"
+    name: "Agent Receipt Validator MCP"
+    version: "v0.1.1"
+    status: "proposed_identity"
+    lifecycle:
+      state: "proposed"
+      created: null
+      last_verified: "2026-07-19T18:41:01+08:00"
+      successor: null
+    owner:
+      status: "repository_namespace_only"
+      value: "joy7758"
+      evidence_source:
+        - "/Users/zhangbin/GitHub/agent-receipt-validator-mcp/.git/config"
+      limitation: "Repository namespace is not proof of legal ownership or governance authority."
+    parent_entity: null
+    child_entities: []
+    classification: "local_mcp_server"
+    repository: "/Users/zhangbin/GitHub/agent-receipt-validator-mcp"
+    purpose: "Validate signed agent execution receipts against evidence bundles through a local stdio MCP server."
+    capabilities:
+      - "validate receipt JSON"
+      - "generate deterministic demo artifacts"
+      - "summarize verification reports"
+      - "describe an agent-readable validator contract"
+    permissions: []
+    permission_status: "not_assigned"
+    risk_level: "unassessed"
+    verification:
+      status: "evidence_backed_provisional"
+      verified_at: "2026-07-19T18:41:01+08:00"
+      method: "local registry classification and evidence-source presence review"
+      evidence_source:
+        - "/Users/zhangbin/GitHub/agent-receipt-validator-mcp/README.md"
+        - "/Users/zhangbin/GitHub/agent-receipt-validator-mcp/llms.txt"
+        - "/Users/zhangbin/GitHub/agent-receipt-validator-mcp/pyproject.toml"
+      issues: []
+    evidence_source:
+      - "/Users/zhangbin/GitHub/agent-receipt-validator-mcp/README.md"
+      - "/Users/zhangbin/GitHub/agent-receipt-validator-mcp/llms.txt"
+  - id: "agent-accountability-evidence-layer"
+    entity_id: "agent-accountability-evidence-layer"
+    canonical_id: "dbio://protocol/agent-accountability-evidence-layer/v0.1.0"
+    entity_type: "protocol"
+    name: "Agent Accountability Evidence Layer"
+    version: "v0.1.0"
+    status: "proposed_identity"
+    lifecycle:
+      state: "proposed"
+      created: null
+      last_verified: "2026-07-19T18:41:01+08:00"
+      successor: null
+    owner:
+      status: "repository_namespace_only"
+      value: "joy7758"
+      evidence_source:
+        - "/Users/zhangbin/GitHub/agent-accountability-evidence-layer/.git/config"
+      limitation: "Repository namespace is not proof of legal ownership or governance authority."
+    parent_entity: null
+    child_entities: []
+    classification: "evidence_profile_and_validator"
+    repository: "/Users/zhangbin/GitHub/agent-accountability-evidence-layer"
+    purpose: "Define the ASIEP public evidence-profile shape for auditable agent self-improvement."
+    capabilities:
+      - "ASIEP schema and JSON-LD context"
+      - "lifecycle state validation"
+      - "evidence-preserving repair planning"
+      - "agent-readable profile discovery"
+    permissions: []
+    permission_status: "not_assigned"
+    risk_level: "unassessed"
+    verification:
+      status: "evidence_backed_provisional"
+      verified_at: "2026-07-19T18:41:01+08:00"
+      method: "local registry classification and evidence-source presence review"
+      evidence_source:
+        - "/Users/zhangbin/GitHub/agent-accountability-evidence-layer/README.md"
+        - "/Users/zhangbin/GitHub/agent-accountability-evidence-layer/AGENTS.md"
+        - "/Users/zhangbin/GitHub/agent-accountability-evidence-layer/pyproject.toml"
+      issues: []
+    evidence_source:
+      - "/Users/zhangbin/GitHub/agent-accountability-evidence-layer/README.md"
+      - "/Users/zhangbin/GitHub/agent-accountability-evidence-layer/AGENTS.md"
+  - id: "agent-object-protocol"
+    entity_id: "agent-object-protocol"
+    canonical_id: "dbio://protocol/agent-object-protocol/v1.1.2"
+    entity_type: "protocol"
+    name: "Agent Object Protocol"
+    version: "v1.1.2"
+    status: "proposed_identity"
+    lifecycle:
+      state: "proposed"
+      created: null
+      last_verified: "2026-07-19T18:41:01+08:00"
+      successor: null
+    owner:
+      status: "repository_namespace_only"
+      value: "joy7758"
+      evidence_source:
+        - "/Users/zhangbin/GitHub/agent-object-protocol/.git/config"
+      limitation: "Repository namespace is not proof of legal ownership or governance authority."
+    parent_entity: null
+    child_entities: []
+    classification: "protocol"
+    repository: "/Users/zhangbin/GitHub/agent-object-protocol"
+    purpose: "Define portable executable object contracts and conformance artifacts for AI agent ecosystems."
+    capabilities:
+      - "machine-readable JSON Schemas"
+      - "positive and negative conformance fixtures"
+      - "CI conformance gates"
+    permissions: []
+    permission_status: "not_assigned"
+    risk_level: "unassessed"
+    verification:
+      status: "evidence_backed_provisional"
+      verified_at: "2026-07-19T18:41:01+08:00"
+      method: "local registry classification and evidence-source presence review"
+      evidence_source:
+        - "/Users/zhangbin/GitHub/agent-object-protocol/README.md"
+      issues: []
+    evidence_source:
+      - "/Users/zhangbin/GitHub/agent-object-protocol/README.md"
+  - id: "ecl-execution-compact-layer"
+    entity_id: "ecl-execution-compact-layer"
+    canonical_id: "dbio://protocol/execution-compact-layer/v0.1.0"
+    entity_type: "protocol"
+    name: "Execution Compact Layer (ECL)"
+    version: "v0.1.0"
+    status: "proposed_identity"
+    lifecycle:
+      state: "proposed"
+      created: null
+      last_verified: "2026-07-19T18:41:01+08:00"
+      successor: null
+    owner:
+      status: "repository_namespace_only"
+      value: "joy7758"
+      evidence_source:
+        - "/Users/zhangbin/GitHub/ecl-execution-compact-layer/.git/config"
+      limitation: "Repository namespace is not proof of legal ownership or governance authority."
+    parent_entity: null
+    child_entities: []
+    classification: "execution_intermediate_representation"
+    repository: "/Users/zhangbin/GitHub/ecl-execution-compact-layer"
+    purpose: "Represent agent execution as a deterministic intermediate representation of state, intent, action, and evidence."
+    capabilities:
+      - "execution record validation"
+      - "deterministic replay"
+      - "execution trace and evidence bundle export"
+      - "local MCP demo surface"
+    permissions: []
+    permission_status: "not_assigned"
+    risk_level: "unassessed"
+    verification:
+      status: "evidence_backed_provisional"
+      verified_at: "2026-07-19T18:41:01+08:00"
+      method: "local registry classification and evidence-source presence review"
+      evidence_source:
+        - "/Users/zhangbin/GitHub/ecl-execution-compact-layer/README.md"
+        - "/Users/zhangbin/GitHub/ecl-execution-compact-layer/AGENTS.md"
+        - "/Users/zhangbin/GitHub/ecl-execution-compact-layer/pyproject.toml"
+      issues: []
+    evidence_source:
+      - "/Users/zhangbin/GitHub/ecl-execution-compact-layer/README.md"
+      - "/Users/zhangbin/GitHub/ecl-execution-compact-layer/AGENTS.md"
+  - id: "cellcaps"
+    entity_id: "cellcaps"
+    canonical_id: "dbio://service/cellcaps/v0.1.0"
+    entity_type: "service"
+    name: "CellCaps"
+    version: "v0.1.0"
+    status: "proposed_identity"
+    lifecycle:
+      state: "proposed"
+      created: null
+      last_verified: "2026-07-19T18:41:01+08:00"
+      successor: null
+    owner:
+      status: "unknown"
+      value: null
+      evidence_source: []
+      limitation: "No explicit entity owner was established by the scan."
+    parent_entity: null
+    child_entities: []
+    classification: "agent_readable_runtime_prototype"
+    repository: "/Users/zhangbin/GitHub/cellcaps"
+    purpose: "Provide semantic cells, trusted recursive capsule graphs, deterministic validation, replay, and evidence tracing."
+    capabilities:
+      - "semantic cell and trusted capsule validation"
+      - "support mapping and source tracing"
+      - "deterministic runtime planning and replay"
+      - "local MCP tools"
+    permissions: []
+    permission_status: "not_assigned"
+    risk_level: "unassessed"
+    verification:
+      status: "evidence_backed_provisional"
+      verified_at: "2026-07-19T18:41:01+08:00"
+      method: "local registry classification and evidence-source presence review"
+      evidence_source:
+        - "/Users/zhangbin/GitHub/cellcaps/README.md"
+        - "/Users/zhangbin/GitHub/cellcaps/AGENTS.md"
+        - "/Users/zhangbin/GitHub/cellcaps/pyproject.toml"
+      issues:
+        - "entity owner is unknown"
+    evidence_source:
+      - "/Users/zhangbin/GitHub/cellcaps/README.md"
+      - "/Users/zhangbin/GitHub/cellcaps/AGENTS.md"
+  - id: "pra-server"
+    entity_id: "pra-server"
+    canonical_id: "dbio://service/pra-server/v0.1.0"
+    entity_type: "service"
+    name: "PRA-Server"
+    version: "v0.1.0"
+    status: "proposed_identity"
+    lifecycle:
+      state: "proposed"
+      created: null
+      last_verified: "2026-07-19T18:41:01+08:00"
+      successor: null
+    owner:
+      status: "unknown"
+      value: null
+      evidence_source: []
+      limitation: "No explicit entity owner was established by the scan."
+    parent_entity: null
+    child_entities: []
+    classification: "personal_research_agent_runtime"
+    repository: "/Users/zhangbin/pra-server"
+    purpose: "Operate a minimal personal research agent runtime with project state, evidence events, runtime policy, and approval queues."
+    capabilities:
+      - "research project initialization and status"
+      - "evidence event recording"
+      - "session artifact export and verification"
+      - "runtime policy and approval queue handling"
+    permissions: []
+    permission_status: "not_assigned"
+    risk_level: "unassessed"
+    verification:
+      status: "evidence_backed_provisional"
+      verified_at: "2026-07-19T18:41:01+08:00"
+      method: "local registry classification and evidence-source presence review"
+      evidence_source:
+        - "/Users/zhangbin/pra-server/README.md"
+        - "/Users/zhangbin/pra-server/AGENTS.md"
+        - "/Users/zhangbin/pra-server/policy/runtime-policy.yaml"
+        - "/Users/zhangbin/pra-server/pyproject.toml"
+      issues:
+        - "entity owner is unknown"
+    evidence_source:
+      - "/Users/zhangbin/pra-server/README.md"
+      - "/Users/zhangbin/pra-server/AGENTS.md"
+      - "/Users/zhangbin/pra-server/policy/runtime-policy.yaml"
+  - id: "standalone-agent-object-protocol-draft"
+    entity_id: "standalone-agent-object-protocol-draft"
+    canonical_id: "dbio://protocol/agent-object-protocol-standalone-draft/v0.1-draft"
+    entity_type: "protocol"
+    name: "Agent Object Protocol v0.1 Draft (standalone)"
+    version: "v0.1-draft"
+    status: "proposed_identity"
+    lifecycle:
+      state: "proposed"
+      created: null
+      last_verified: "2026-07-19T18:41:01+08:00"
+      successor: null
+    owner:
+      status: "unknown"
+      value: null
+      evidence_source: []
+      limitation: "No explicit entity owner was established by the scan."
+    parent_entity: null
+    child_entities: []
+    classification: "protocol_draft"
+    repository: "/Users/zhangbin/agent"
+    purpose: "Specify a verifiable AI agent execution-evidence object model with a minimal reference implementation and conformance vectors."
+    capabilities:
+      - "protocol specification"
+      - "minimal Python reference demo"
+      - "conformance vector verification"
+    permissions: []
+    permission_status: "not_assigned"
+    risk_level: "unassessed"
+    verification:
+      status: "evidence_backed_provisional"
+      verified_at: "2026-07-19T18:41:01+08:00"
+      method: "local registry classification and evidence-source presence review"
+      evidence_source:
+        - "/Users/zhangbin/agent/README.md"
+      issues:
+        - "entity owner is unknown"
+    evidence_source:
+      - "/Users/zhangbin/agent/README.md"
+  - id: "sovereign-agent-local-gate"
+    entity_id: "sovereign-agent-local-gate"
+    canonical_id: "dbio://service/sovereign-agent-local-gate/unversioned"
+    entity_type: "service"
+    name: "Sovereign Agent Local Gate Workflow"
+    version: "unversioned"
+    status: "proposed_identity"
+    lifecycle:
+      state: "proposed"
+      created: null
+      last_verified: "2026-07-19T18:41:01+08:00"
+      successor: null
+    owner:
+      status: "unknown"
+      value: null
+      evidence_source: []
+      limitation: "No explicit entity owner was established by the scan."
+    parent_entity: null
+    child_entities: []
+    classification: "unversioned_local_workflow"
+    repository: "/Users/zhangbin/sovereign-agent"
+    purpose: "Gate sensitive raw material locally, produce redacted structured packets, and separate internal, cloud-safe, public, and release stages."
+    capabilities:
+      - "local redaction and evidence gating"
+      - "structured evidence state handling"
+      - "release-packet preparation"
+    permissions: []
+    permission_status: "not_assigned"
+    risk_level: "unassessed"
+    verification:
+      status: "evidence_backed_provisional"
+      verified_at: "2026-07-19T18:41:01+08:00"
+      method: "local registry classification and evidence-source presence review"
+      evidence_source:
+        - "/Users/zhangbin/sovereign-agent/BOUNDARY.md"
+      issues:
+        - "no evidence-backed entity version was found"
+        - "entity owner is unknown"
+    evidence_source:
+      - "/Users/zhangbin/sovereign-agent/BOUNDARY.md"
+  - id: "mcp-agent-ei-external"
+    entity_id: "mcp-agent-ei-external"
+    canonical_id: "dbio://repository/mcp-agent-external-checkout/unversioned"
+    entity_type: "repository"
+    name: "mcp-agent"
+    version: "unversioned"
+    status: "proposed_identity"
+    lifecycle:
+      state: "proposed"
+      created: null
+      last_verified: "2026-07-19T18:41:01+08:00"
+      successor: null
+    owner:
+      status: "repository_namespace_only"
+      value: "joy7758"
+      evidence_source:
+        - "/Users/zhangbin/GitHub/mcp-agent-ei/.git/config"
+      limitation: "Repository namespace is not proof of legal ownership or governance authority."
+    parent_entity: null
+    child_entities: []
+    classification: "external_framework_checkout"
+    repository: "/Users/zhangbin/GitHub/mcp-agent-ei"
+    purpose: "Provide composable agent patterns and MCP server lifecycle support."
+    capabilities:
+      - "MCP server connection lifecycle"
+      - "composable agent workflows"
+      - "durable workflow integration"
+    permissions: []
+    permission_status: "not_assigned"
+    risk_level: "unassessed"
+    verification:
+      status: "evidence_backed_provisional"
+      verified_at: "2026-07-19T18:41:01+08:00"
+      method: "local registry classification and evidence-source presence review"
+      evidence_source:
+        - "/Users/zhangbin/GitHub/mcp-agent-ei/README.md"
+        - "/Users/zhangbin/GitHub/mcp-agent-ei/pyproject.toml"
+      issues:
+        - "repository checkout has no exact tag; pyproject.toml package version is not treated as repository identity version"
+        - "no evidence-backed repository identity version was found"
+    evidence_source:
+      - "/Users/zhangbin/GitHub/mcp-agent-ei/README.md"
+  - id: "autonomous-cell-protocol"
+    entity_id: "autonomous-cell-protocol"
+    canonical_id: "dbio://protocol/autonomous-cell-protocol/v0.1.0-alpha"
+    entity_type: "protocol"
+    name: "Autonomous Cell Protocol (ACP)"
+    version: "v0.1.0-alpha"
+    status: "proposed_identity"
+    lifecycle:
+      state: "proposed"
+      created: null
+      last_verified: "2026-07-19T22:26:53+08:00"
+      successor: null
+    owner:
+      status: "repository_namespace_only"
+      value: "joy7758"
+      evidence_source:
+        - "/Users/zhangbin/GitHub/海洋/autonomous-cell-protocol/.git/config"
+      limitation: "Repository namespace is not proof of legal ownership or governance authority."
+    parent_entity: null
+    child_entities: []
+    classification: "experimental_protocol_specification"
+    repository: "/Users/zhangbin/GitHub/海洋/autonomous-cell-protocol"
+    purpose: "Define an open protocol specification for autonomous physical cells; Ocean Cell is the first application Profile and does not limit ACP Core."
+    capabilities: []
+    permissions: []
+    permission_status: "not_assigned"
+    risk_level: "unassessed"
+    verification:
+      status: "evidence_backed_provisional"
+      verified_at: "2026-07-19T22:26:53+08:00"
+      method: "local identity registration and release-surface presence review"
+      evidence_source:
+        - "/Users/zhangbin/GitHub/海洋/autonomous-cell-protocol/README.md"
+        - "/Users/zhangbin/GitHub/海洋/autonomous-cell-protocol/VERSION"
+        - "/Users/zhangbin/GitHub/海洋/autonomous-cell-protocol/CITATION.cff"
+        - "/Users/zhangbin/GitHub/海洋/autonomous-cell-protocol/constitution/acp-principles.md"
+        - "/Users/zhangbin/GitHub/海洋/autonomous-cell-protocol/schema/cell.schema.json"
+        - "/Users/zhangbin/GitHub/海洋/autonomous-cell-protocol/specification/ACP-0001-identity.md"
+      issues:
+        - "ACP-0001 remains Draft — Pending Human Approval."
+        - "ACP-0002 through ACP-0005 remain placeholder drafts."
+        - "No runtime Agent identity, assigned capability, permission, production interoperability, industrial certification, evidence-level promotion, or verification result is established by this registration."
+    evidence_source:
+      - "/Users/zhangbin/GitHub/海洋/autonomous-cell-protocol/README.md"
+      - "/Users/zhangbin/GitHub/海洋/autonomous-cell-protocol/VERSION"
+      - "/Users/zhangbin/GitHub/海洋/autonomous-cell-protocol/CITATION.cff"
+      - "/Users/zhangbin/GitHub/海洋/autonomous-cell-protocol/constitution/acp-principles.md"
+      - "/Users/zhangbin/GitHub/海洋/autonomous-cell-protocol/schema/cell.schema.json"
+      - "/Users/zhangbin/GitHub/海洋/autonomous-cell-protocol/specification/ACP-0001-identity.md"

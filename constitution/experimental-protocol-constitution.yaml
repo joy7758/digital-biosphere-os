@@ -1,0 +1,236 @@
+schema_version: "0.1"
+kind: "DigitalBiosphereExperimentalProtocolConstitution"
+metadata:
+  title: "Experimental Protocol Constitution v0.1"
+  chinese_title: "数字生物圈受控实验协议宪法 v0.1"
+  status: "genesis_experiment_registered_pending_authorization"
+  parent_constitution: "constitution.yaml"
+  event_reference: "event-constitution.yaml"
+  execution_context_reference: "execution-context-constitution.yaml"
+  attestation_reference: "event-attestation-constitution.yaml"
+  evidence_reference: "evidence-constitution.yaml"
+  verification_reference: "verification-constitution.yaml"
+  ecological_reference: "saee-constitution.yaml"
+  readiness_reference: "experiment-readiness-constitution.yaml"
+  authority: "experimental_protocol_structure_and_validation_only"
+  effective_scope:
+    - "/Users/zhangbin/GitHub/digital-biosphere-os"
+  adopted_at: "2026-07-20T00:41:57+08:00"
+  non_claims:
+    - "This constitution defines controlled-experiment contracts but does not create, authorize, execute, observe, reproduce, attest, or verify an experiment."
+    - "A protocol, procedure, expected output, reproducibility requirement, or defined status is not an experiment run, runtime, Agent, event, observation result, evidence result, or Digital Organism."
+    - "Protocol completeness cannot prove execution occurrence, reproducibility, hypothesis support, causal effect, external validity, production fitness, or business truth."
+    - "An experiment definition cannot grant capability, permission, governance authority, fitness, trust, or C/E/V promotion."
+
+experiment_definition:
+  definition: "A preregistered, identity-bound, versioned, non-executing specification of one objective, one canonical subject, one procedure set, declared environment and inputs, expected outputs, observations, reproducibility requirements, limitations, and lifecycle state."
+  source_of_truth: "../registry/experiments.yaml"
+  requirements:
+    - "unique experiment_id"
+    - "non-empty objective"
+    - "existing canonical subject identity"
+    - "versioned protocol mapping"
+    - "at least one declared procedure reference"
+    - "all five reproducibility requirement references"
+    - "explicit execution-authority state"
+    - "a separate pre-execution readiness review covering subject, snapshot, validator freeze, environment, and authorization"
+    - "timezone-aware creation time"
+    - "explicit lifecycle status"
+  boundaries:
+    - "Experiment Definition != Experiment Run."
+    - "Subject Identity != Agent Identity != Runtime Identity."
+    - "Expected Output != Observed Output != Correct Result."
+    - "DBOS-EXP-0001 is registered as one bounded governed-system self-validation experiment; registration is not authorization, execution, observation, evidence, verification, or fact formation."
+  subject_resolution:
+    canonical_entity: "A subject normally resolves to registry/entities.yaml."
+    governed_system_subject_exception: "DBOS-EXP-0001 uses subject=digital-biosphere-os with subject_ref=constitution/constitution.yaml because the current governance root is not a canonical entity record and this task does not authorize expanding the identity registry."
+    exception_effect: "none; the bounded subject reference does not create an entity, Agent, runtime, organism, capability, permission, or personhood claim."
+
+execution_procedure:
+  source_of_truth: "../registry/experiment-procedures.yaml"
+  principle: "A procedure is an ordered declarative method for a future controlled run and has no execution authority."
+  requirements:
+    - "unique procedure_id"
+    - "existing experiment_id"
+    - "non-empty ordered steps"
+    - "existing declared environment"
+    - "explicit input specifications"
+    - "explicit expected-output specifications"
+    - "step-level side-effect, authority, stop, and evidence boundaries"
+  rules:
+    - "Every step declares action, inputs, expected outputs, side effects, required authority, stop conditions, and evidence requirements."
+    - "Environment reference does not activate an environment or create a runtime."
+    - "Procedure validation checks structure only and cannot execute commands, tools, models, network calls, writes, or external actions."
+    - "A procedure cannot record fabricated output, timestamp, observation, event, or completion state."
+
+observation_requirement:
+  source_of_truth: "../registry/experiment-observations.yaml"
+  principle: "An observation is an attributable timestamped measurement of a separately established experiment run; a protocol cannot generate it automatically."
+  requirements:
+    - "unique observation_id"
+    - "existing experiment_id"
+    - "declared metric"
+    - "non-null value"
+    - "timezone-aware timestamp"
+    - "separate event, context, provenance, integrity, attestation, evidence, and verification path when relied upon"
+  boundaries:
+    - "Experiment Observation != Event Observation != Evidence != Verification."
+    - "Observation cannot calculate fitness, trigger evolution, approve a capability, grant permission, or promote C/E/V."
+    - "No observation exists in the v0.1 baseline."
+
+reproducibility_requirement:
+  source_of_truth: "../registry/reproducibility-requirements.yaml"
+  required_rules:
+    - "version_lock"
+    - "dependency_lock"
+    - "input_consistency"
+    - "environment_consistency"
+    - "execution_method"
+  principle: "All five requirements must be declared before execution eligibility, then separately satisfied with retained artifacts, run records, evidence, and verification before any reproducibility claim."
+  boundaries:
+    - "Requirement Definition != Requirement Satisfaction."
+    - "One successful repetition does not establish general reproducibility, correctness, causality, safety, external validity, or production readiness."
+    - "Reproducibility evidence cannot be inferred from matching version strings, hashes, outputs, or local structural validation alone."
+    - "The v0.1 baseline defines five rules and records zero satisfied rules."
+
+first_verifiable_fact_experiment_gate:
+  purpose: "Define the minimum future route to one attributable experiment fact without authorizing or performing it."
+  ordered_gates:
+    - "G0: experiment identity, objective, canonical subject, protocol version, limitations, and created_at are preregistered"
+    - "G1: at least one procedure declares ordered steps, environment, inputs, expected outputs, stop conditions, side effects, evidence requirements, and required authority"
+    - "G2: all five reproducibility requirements are bound to inspectable version, dependency, input, environment, and method material"
+    - "G3: separate human or governed authority explicitly authorizes the bounded run; definition alone cannot authorize"
+    - "G4: a separately governed execution context, runtime identity, inputs, outputs, dependencies, resource use, and behavior trace are recorded during an actual run"
+    - "G5: the run produces attributable event, integrity, attestation, and observation records without automatic C/E/V promotion"
+    - "G6: evidence and verification layers review bounded claims; failed, null, contradictory, and revoked results remain in append-only history"
+  current_gate: "G0_not_started"
+  automatic_transition: false
+  execution_authority: "none"
+
+readiness_requirement:
+  constitution: "experiment-readiness-constitution.yaml"
+  subject_registry: "../registry/experiment-subjects.yaml"
+  snapshot_registry: "../registry/experiment-snapshots.yaml"
+  validator_manifest_registry: "../registry/validator-manifests.yaml"
+  readiness_review_registry: "../registry/readiness-reviews.yaml"
+  required_criteria:
+    - "subject_readiness"
+    - "snapshot_readiness"
+    - "validator_freeze"
+    - "environment_readiness"
+    - "authorization_readiness"
+  current_status: "pending"
+  ready_criterion_count: 0
+  pending_criterion_count: 5
+  automatic_authorization: false
+  execution_authority: "none"
+  boundary: "Readiness review is a pre-execution gate. It cannot authorize, execute, create a runtime or event, form a fact, or upgrade C/E/V."
+
+experiment_lifecycle:
+  states:
+    proposed: "An incomplete draft with no execution eligibility."
+    defined: "Objective, subject, protocol, procedure references, reproducibility requirements, limitations, and creation time are structurally complete; execution is not authorized."
+    registered: "A defined experiment identity, bounded subject reference, procedure, inputs, expected outputs, stop rules, and pending authorization record are entered in the registries; execution is not authorized."
+    authorized: "A separate attributable authority has approved one bounded future run; no run is implied."
+    running: "A separately governed runtime and execution context identify an active bounded run."
+    observed: "At least one attributable observation is linked to the run; evidence and verification remain separate."
+    completed: "Declared procedure termination and required records exist; correctness, reproducibility, and verification are not implied."
+    invalid: "Definition, execution, provenance, observation, evidence, or verification requirements fail."
+    revoked: "Current authorization or reliance is withdrawn additively while history remains."
+    retired: "No new runs may begin; historical definitions, runs, observations, failures, and lineage remain."
+  transitions:
+    - "proposed -> defined"
+    - "defined -> registered"
+    - "registered -> authorized"
+    - "authorized -> running"
+    - "running -> observed"
+    - "observed -> completed"
+    - "proposed/defined/registered/authorized/running/observed/completed -> invalid"
+    - "defined/registered/authorized/running/observed/completed -> revoked"
+    - "defined/registered/completed/invalid/revoked -> retired"
+  fail_closed_rules:
+    - "defined or registered status never implies authorization or execution."
+    - "authorized status requires a separate authorization reference."
+    - "running status requires separately registered runtime and execution-context identities."
+    - "observed and completed states require attributable run and observation records."
+    - "Corrections, failed runs, invalidations, revocations, retirement, and succession are append-only."
+
+saee_mapping:
+  relation: "Experiment -> Observation -> Evolution"
+  interpretation: "Controlled experiments may provide future attributable observations for evolutionary interpretation only after execution, provenance, evidence, and verification requirements are satisfied."
+  status: "registered_experimental_protocol_one_experiment_unexecuted"
+  authority_effect: "none"
+  evidence_level_effect: "none"
+  fitness_effect: "none"
+  automatic_evolution: false
+
+genesis_experiment_reference:
+  experiment_id: "DBOS-EXP-0001"
+  name: "Digital Biosphere Self Validation Experiment"
+  chinese_name: "数字生物圈自验证实验"
+  subject: "digital-biosphere-os"
+  subject_kind: "governed_system_subject"
+  subject_ref: "constitution/constitution.yaml"
+  experiment_registry: "../registry/experiments.yaml"
+  procedure_registry: "../registry/experiment-procedures.yaml"
+  input_registry: "../registry/experiment-inputs.yaml"
+  output_registry: "../registry/experiment-outputs.yaml"
+  stop_rule_registry: "../registry/experiment-stop-rules.yaml"
+  authorization_registry: "../registry/experiment-authorizations.yaml"
+  readiness_review_registry: "../registry/readiness-reviews.yaml"
+  experiment_status: "registered"
+  procedure_status: "procedure_defined"
+  authorization_status: "pending"
+  readiness_status: "pending"
+  execution_status: "not_executed"
+  current_gate: "G1_registered_procedure_defined_G2_blocked_inputs_pending"
+  fact_formation_status: "not_formed"
+  authority_effect: "none"
+  rules:
+    - "Registration records identity and protocol only; it does not execute any of the eight procedure steps."
+    - "All three declared inputs remain pending until canonical material, digests, timestamps, and evidence are frozen."
+    - "All six outputs remain expected with null artifact and evidence references."
+    - "All four stop rules remain defined and unevaluated."
+    - "The pending authorization has authorized_by=null and grants no permission, runtime, write, event, evidence, or verification authority."
+    - "All five readiness criteria remain pending; the snapshot and validator manifest are not frozen, the environment is not active, and authorization is not granted."
+
+fact_formation_mapping:
+  relation: "Experiment -> Fact Formation"
+  interpretation: "DBOS-EXP-0001 defines a future route to fact formation through authorization, execution context, event provenance, integrity, attestation, evidence, and verification; registration alone forms no fact."
+  status: "registered_genesis_experiment_not_authorized"
+  authority_effect: "none"
+  automatic_fact_formation: false
+
+current_baseline:
+  experiment_count: 1
+  registered_experiment_count: 1
+  procedure_count: 1
+  procedure_step_count: 8
+  reproducibility_requirement_definition_count: 5
+  reproducibility_requirement_satisfied_count: 0
+  observation_count: 0
+  declared_input_count: 3
+  frozen_input_count: 0
+  expected_output_count: 6
+  generated_output_count: 0
+  stop_rule_count: 4
+  evaluated_stop_rule_count: 0
+  authorization_count: 1
+  active_authorization_count: 0
+  experiment_subject_count: 1
+  snapshot_count: 1
+  frozen_snapshot_count: 0
+  validator_manifest_count: 1
+  frozen_validator_manifest_count: 0
+  readiness_review_count: 5
+  ready_criterion_count: 0
+  pending_criterion_count: 5
+  execution_count: 0
+  event_count: 0
+  execution_context_count: 0
+  runtime_instance_count: 0
+  capability_count: 0
+  permission_grant_count: 0
+  agent_created_count: 0
+  digital_organism_count: 0
+  c_e_v_level_change_count: 0

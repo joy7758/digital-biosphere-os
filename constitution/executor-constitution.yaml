@@ -1,0 +1,170 @@
+schema_version: "0.1"
+kind: "DigitalBiosphereExperimentExecutorConstitution"
+metadata:
+  title: "Experiment Executor Constitution v0.1"
+  chinese_title: "实验执行者宪法 v0.1"
+  status: "executor_model_defined_empty_and_unauthorized"
+  parent_constitution: "constitution.yaml"
+  experimental_protocol_reference: "experimental-protocol-constitution.yaml"
+  experiment_readiness_reference: "experiment-readiness-constitution.yaml"
+  capture_readiness_reference: "snapshot-capture-readiness-constitution.yaml"
+  identity_reference: "identity-constitution.yaml"
+  executor_identity_reference: "executor-identity-constitution.yaml"
+  automated_runner_reference: "automated-runner-constitution.yaml"
+  evidence_reference: "evidence-constitution.yaml"
+  permission_policy_reference: "../policies/permissions.yaml"
+  authority: "executor_structure_and_pre_execution_validation_only"
+  effective_scope:
+    - "/Users/zhangbin/GitHub/digital-biosphere-os"
+  adopted_at: "2026-07-20T02:11:57+08:00"
+  non_claims:
+    - "This constitution does not appoint an executor, authorize execution, execute DBOS-EXP-0001, create a runtime, capture a snapshot, or generate an event."
+    - "Executor registration does not create identity, capability, permission, runtime, Agent, Candidate Organism, or Digital Organism status."
+    - "Executor != Agent; Executor != Runtime; Executor != Digital Organism; Executor != Capability; Executor != Permission."
+
+executor_definition:
+  definition: "An Executor is an attributable, bounded, and accountable human operator or automated runner role that may perform only explicitly authorized steps of one registered experiment within one separately approved scope."
+  valid_types:
+    automated_runner: "A governed automated process with an existing identity, fixed version, reproducible method, and no autonomous authority."
+    human_operator: "An attributable human identity acting under a separately recorded, experiment-scoped authorization."
+  identity_requirements:
+    - "executor_id is unique"
+    - "identity_ref resolves to one verified executor_identity_id in executor-identities.yaml"
+    - "the referenced Executor Identity has verification_status=verified and lifecycle_state=verified"
+    - "executor_type is automated_runner or human_operator"
+    - "version is explicit and immutable for one authorization"
+    - "status is verified or active before execution authorization can become effective"
+  current_executor_count: 0
+  current_status: "missing"
+
+executor_boundary:
+  separation_rules:
+    - "Executor != Agent."
+    - "Executor != Runtime."
+    - "Executor != Candidate Organism."
+    - "Executor != Digital Organism."
+    - "Executor Identity != Executor Scope != Executor Authorization."
+    - "Executor Capability != Executor Permission."
+    - "Verifier Registration != Executor Appointment."
+    - "Collector Registration != Executor Appointment."
+  deny_by_default: true
+  forbidden_effects:
+    - "modify constitution"
+    - "create agent"
+    - "grant permission"
+    - "alter evidence"
+    - "create runtime"
+    - "access or modify member repositories"
+    - "bypass experiment stop rules"
+    - "upgrade C/E/V"
+  authority_rule: "An executor may perform only the intersection of an existing identity, an explicit scope, a separate active executor authorization, an active experiment authorization, and satisfied readiness gates."
+  current_authority: "none"
+
+identity_enrollment_requirement:
+  constitution: "executor-identity-constitution.yaml"
+  identity_registry: "../registry/executor-identities.yaml"
+  boundary_registry: "../registry/executor-boundaries.yaml"
+  verification_registry: "../registry/executor-verifications.yaml"
+  requirements:
+    - "An Executor record can reference only an existing verified Executor Identity enrollment record."
+    - "Executor Identity Verification != Executor Appointment."
+    - "The identity type maps explicitly: human -> human_operator and automated -> automated_runner."
+    - "Identity evidence, verification method, verifier, result, and timestamp are attributable before appointment consideration."
+    - "Revoked, suspended, retired, failed, inconclusive, or pending identities cannot support Executor appointment."
+    - "Enrollment, verification, or boundary definition cannot create an Executor scope or authorization."
+  current_executor_identity_count: 0
+  current_verified_identity_count: 0
+  current_enrollment_status: "not_started_no_identity"
+  current_effect: "none"
+
+automated_runner_implementation:
+  constitution: "automated-runner-constitution.yaml"
+  runner_registry: "../registry/runners.yaml"
+  runner_scope_registry: "../registry/runner-scopes.yaml"
+  runner_environment_registry: "../registry/runner-environments.yaml"
+  runner_execution_registry: "../registry/runner-executions.yaml"
+  runner_evidence_registry: "../registry/runner-evidence.yaml"
+  implementation_rule: "An Automated Runner is a deterministic implementation of a separately enrolled and appointed automated_runner Executor; it is not itself an appointment, authorization, Runtime, Agent, or Organism."
+  requirements:
+    - "Runner identity_ref resolves to a verified automated Executor Identity."
+    - "Runner executor_ref resolves to a separately appointed automated_runner Executor with the same identity."
+    - "Runner version, implementation digest, deterministic mode, scope, and environment are explicit before readiness."
+    - "Runner Registration != Executor Appointment."
+    - "Runner readiness and execution authorization remain separate from Executor identity, appointment, and authorization."
+    - "A Runner can execute only registered experiments and approved ordered procedure steps."
+  current_runner_count: 0
+  current_runner_scope_count: 0
+  current_runner_environment_status: "defined_not_qualified"
+  current_runner_execution_count: 0
+  current_effect: "none"
+
+executor_lifecycle:
+  states:
+    - "proposed"
+    - "verified"
+    - "active"
+    - "suspended"
+    - "revoked"
+    - "retired"
+  allowed_transitions:
+    - "proposed -> verified"
+    - "verified -> active"
+    - "active -> suspended"
+    - "verified -> revoked"
+    - "active -> revoked"
+    - "suspended -> revoked"
+    - "proposed -> retired"
+    - "verified -> retired"
+    - "suspended -> retired"
+    - "revoked -> retired"
+  transition_requirements:
+    - "identity, reason, evidence, decision maker, and timezone-aware timestamp are attributable"
+    - "authorization lifecycle is recorded separately from executor identity lifecycle"
+    - "suspension, revocation, retirement, and succession preserve prior records append-only"
+  automatic_transition: false
+
+executor_accountability:
+  source_of_truth:
+    executor_registry: "../registry/executors.yaml"
+    scope_registry: "../registry/executor-scopes.yaml"
+    authorization_registry: "../registry/executor-authorizations.yaml"
+  requirements:
+    - "Every future action is attributable to executor_id, identity_ref, experiment_id, scope_id, authorization_id, procedure step, environment, and time."
+    - "The executor obeys experiment stop rules and records failures without rewriting prior evidence."
+    - "Inputs, outputs, side effects, and limitations are captured as append-only evidence under their own constitutions."
+    - "A human authorizer remains separately attributable; self-authorization is prohibited."
+    - "Revocation stops future authority but does not delete prior accountability records."
+  non_inference:
+    - "Validator PASS != Executor Verified."
+    - "Executor Verified != Executor Authorized."
+    - "Executor Authorized != Experiment Authorized."
+    - "Authorization != Execution != Event != Verified Fact."
+
+current_baseline:
+  experiment_id: "DBOS-EXP-0001"
+  executor_identity_count: 0
+  verified_executor_identity_count: 0
+  executor_identity_verification_count: 0
+  executor_identity_boundary_count: 2
+  automated_runner_count: 0
+  automated_runner_scope_count: 0
+  automated_runner_environment_count: 1
+  automated_runner_execution_count: 0
+  automated_runner_evidence_count: 0
+  executor_count: 0
+  automated_runner_count: 0
+  human_operator_count: 0
+  executor_scope_count: 0
+  executor_authorization_count: 1
+  pending_executor_authorization_count: 1
+  active_executor_authorization_count: 0
+  experiment_execution_count: 0
+  snapshot_hash_count: 0
+  event_count: 0
+  runtime_instance_count: 0
+  agent_created_count: 0
+  digital_organism_count: 0
+  capability_count: 0
+  permission_grant_count: 0
+  historical_evidence_change_count: 0
+  c_e_v_level_change_count: 0

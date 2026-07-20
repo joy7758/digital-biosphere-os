@@ -1,0 +1,154 @@
+schema_version: "0.1"
+kind: "DigitalBiosphereEventAttestationConstitution"
+metadata:
+  title: "Event Attestation Constitution v0.1"
+  chinese_title: "数字生物圈事件证明宪法 v0.1"
+  status: "defined_attestation_empty_record_baseline"
+  parent_constitution: "constitution.yaml"
+  event_reference: "event-constitution.yaml"
+  integrity_reference: "event-integrity-constitution.yaml"
+  evidence_reference: "evidence-constitution.yaml"
+  verification_reference: "verification-constitution.yaml"
+  ecological_reference: "saee-constitution.yaml"
+  execution_context_reference: "execution-context-constitution.yaml"
+  authority: "attestation_structure_and_validation_only"
+  effective_scope:
+    - "/Users/zhangbin/GitHub/digital-biosphere-os"
+  adopted_at: "2026-07-20T00:09:24+08:00"
+  non_claims:
+    - "This constitution does not create, observe, replay, sign, attest, or verify a factual event."
+    - "A producer type, attestation method, or trust-anchor schema is not a producer instance, runtime, Agent, verifier decision, trust grant, or Digital Organism."
+    - "A valid signature can bind an identified signer to a bounded statement, but cannot prove event occurrence, provider origin, source completeness, causal effect, or execution completeness."
+    - "Attestation cannot grant trust, capability, permission, governance authority, fitness, or C/E/V promotion."
+
+attestation_definition:
+  definition: "An append-only, attributable statement in which one identified event producer uses one declared method to bind itself to one bounded claim about one existing event."
+  source_of_truth:
+    producers: "../registry/event-producers.yaml"
+    attestations: "../registry/event-attestations.yaml"
+    methods: "../registry/attestation-methods.yaml"
+    trust_anchors: "../registry/trust-anchors.yaml"
+  minimum_properties:
+    - "unique attestation_id"
+    - "existing event_id"
+    - "existing identified producer_id"
+    - "declared attestation_method"
+    - "claim explicitly bounded to the referenced event"
+    - "signature reference when signed"
+    - "explicit lifecycle status"
+  separations:
+    - "Attestation != Event"
+    - "Attestation != Evidence"
+    - "Attestation != Verification"
+    - "Attestation != Trust"
+    - "Attestation != Capability != Permission"
+
+producer_identity:
+  principle: "Every event producer must have a separately resolvable identity appropriate to its declared producer type before an attestation can be relied upon."
+  types:
+    runtime: "An existing registered runtime instance; a runtime type definition does not create an instance."
+    service: "An existing canonical entity whose entity_type is service; service identity does not prove a live runtime."
+    human: "A separately identified human-linked verifier identity with attributable identity evidence; a name alone is insufficient."
+    automated: "An existing canonical entity or registered automated verifier operating only within declared scope."
+  rules:
+    - "Producer identity must resolve to the canonical identity, runtime, or verifier registry appropriate to the producer type."
+    - "Producer identity does not create an Agent identity or confer legal personhood."
+    - "capability_scope is a bounded declaration and never a capability assignment or permission grant."
+    - "No producer exists in the v0.1 baseline because no factual event or runtime producer has been registered."
+
+trust_anchor:
+  principle: "A trust anchor is an identified and scoped reference point whose current reliance must be supported by separate evidence; registration alone creates no trust."
+  source_of_truth: "../registry/trust-anchors.yaml"
+  requirements:
+    - "unique anchor_id"
+    - "resolvable identity_ref"
+    - "explicit scope"
+    - "evidence_ref for any trust level above unknown"
+    - "declared trust_level and revocation path"
+  boundaries:
+    - "Trust Anchor != Trust Grant."
+    - "Identity evidence does not prove event truth."
+    - "A revoked anchor remains in append-only history and cannot support new verified attestations."
+    - "The v0.1 baseline contains no trust anchor."
+
+signing_boundary:
+  principle: "Signing binds bytes or a canonicalized claim to a signer and method within a declared scope; it does not replace the event source or the evidence needed to establish the factual claim."
+  requirements:
+    - "signature_ref points to signature material or a verification receipt and never stores a private key"
+    - "the signed claim identifies the same event_id as the attestation record"
+    - "canonicalization, algorithm, key identity, time, scope, and revocation state remain independently inspectable"
+    - "signed and verified states require a non-empty signature_ref"
+  fail_closed_rules:
+    - "Missing producer identity, event, method, claim boundary, or required signature prevents reliance."
+    - "A signature cannot substitute for missing event provenance, source, evidence, integrity, or verification."
+    - "Cryptographic validity alone cannot establish event occurrence, source completeness, or provider origin."
+    - "Private keys, credentials, and signing secrets must never be embedded in an attestation registry."
+
+attestation_lifecycle:
+  states:
+    pending: "A proposed attestation has not produced attributable signature material."
+    signed: "Signature material exists for the bounded claim; factual truth and independent verification remain unresolved."
+    verified: "Declared signature, identity, method, integrity, trust-anchor, scope, and revocation checks completed within an explicit boundary."
+    invalid: "One or more current attestation requirements fail."
+    revoked: "Current reliance is withdrawn by an attributable additive record while history remains."
+    superseded: "A later additive attestation replaces current reliance without rewriting the original."
+  transitions:
+    - "pending -> signed"
+    - "pending -> invalid"
+    - "signed -> verified"
+    - "signed -> invalid"
+    - "signed -> revoked"
+    - "verified -> invalid"
+    - "verified -> revoked"
+    - "pending -> superseded"
+    - "signed -> superseded"
+    - "verified -> superseded"
+  immutability: "Claims, signatures, identities, methods, timestamps, limitations, invalidations, revocations, and supersession records are append-only."
+  authority_effect: "none"
+  c_e_v_level_effect: "none"
+
+execution_context_reference:
+  constitution_ref: "execution-context-constitution.yaml"
+  context_registry: "../registry/execution-contexts.yaml"
+  input_snapshot_registry: "../registry/input-snapshots.yaml"
+  output_snapshot_registry: "../registry/output-snapshots.yaml"
+  dependency_registry: "../registry/execution-dependencies.yaml"
+  relationship: "Execution Context -> Event Reliability"
+  requirements:
+    - "A future attestation may reference only an existing context whose entity and environment bindings are structurally valid."
+    - "Input and output snapshots must belong to the referenced context and retain separate hashes, references, and timestamps."
+    - "Dependency context must preserve name, version, source, and unresolved integrity limitations."
+    - "Context, digest, snapshot, dependency, and reproducibility status cannot replace event provenance, occurrence evidence, integrity, or verification."
+  current_context_count: 0
+  current_input_snapshot_count: 0
+  current_output_snapshot_count: 0
+  current_dependency_count: 0
+  authority_effect: "none"
+
+saee_mapping:
+  relation: "Attestation -> Evidence Reliability"
+  interpretation: "Attributable bounded statements and signature verification may constrain future reliance on event-derived evidence but do not create evidence maturity, trust, fitness, or selection outcomes."
+  status: "defined_attestation_model_no_records"
+  authority_effect: "none"
+  evidence_level_effect: "none"
+  fitness_effect: "none"
+
+current_baseline:
+  event_count: 0
+  producer_type_count: 4
+  producer_count: 0
+  attestation_method_count: 3
+  attestation_count: 0
+  trust_anchor_count: 0
+  signature_count: 0
+  execution_context_count: 0
+  input_snapshot_count: 0
+  output_snapshot_count: 0
+  execution_dependency_count: 0
+  trust_grant_count: 0
+  capability_count: 0
+  permission_grant_count: 0
+  runtime_instance_count: 0
+  agent_created_count: 0
+  digital_organism_count: 0
+  c_e_v_level_change_count: 0

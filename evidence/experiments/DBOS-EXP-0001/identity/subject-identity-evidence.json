@@ -1,0 +1,37 @@
+{
+  "schema_version": "0.1",
+  "kind": "DBOSExperimentSubjectIdentityEvidence",
+  "subject_id": "DBOS-SUBJECT-0001",
+  "entity_id": "digital-biosphere-os",
+  "entity_type": "governance_system",
+  "observed_at": "2026-07-20T10:05:25+08:00",
+  "workspace_root": "/Users/zhangbin/GitHub/digital-biosphere-os",
+  "evidence": [
+    {
+      "path": "constitution/constitution.yaml",
+      "sha256": "ae521772016d3fc9d377c2553bbddaff47fc21210dab4f52e17990cce3d0fe9d",
+      "size": 18315
+    },
+    {
+      "path": "README.md",
+      "sha256": "52867a5e1e2cfd32f98eec4a59f3c05e9887166ba45fba43c10461fb8cd68929",
+      "size": 26446
+    },
+    {
+      "path": "reports/DBOS-EXP-0001-CURRENT_STATE_REPORT.md",
+      "sha256": "a8c459e0345c15fae62074310e3d8f5adcbc55a68c325e7f728ce6053fcf6749",
+      "size": 5617
+    }
+  ],
+  "verification": {
+    "method": "local path existence, exact byte size, and SHA-256 comparison",
+    "result": "verified_bounded_subject_identity",
+    "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+    "independence_status": "not_independent"
+  },
+  "limitations": [
+    "This verifies the bounded local governance-system subject, not a legal person or external ownership claim.",
+    "The subject is not an Agent, Runtime, or Digital Organism.",
+    "Identity verification grants no capability, permission, or execution authority."
+  ]
+}

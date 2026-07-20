@@ -1,0 +1,53 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereEventWitnessRegistry",
+  "metadata": {
+    "title": "Event Witnesses v0.1",
+    "status": "one_local_nonindependent_automated_witness",
+    "constitution": "../constitution/event-integrity-constitution.yaml",
+    "generated_at": "2026-07-19T23:54:21+08:00",
+    "witness_type_definition_count": 3,
+    "witness_count": 1,
+    "witness_type_distribution": {
+      "self": 0,
+      "automated": 1,
+      "external": 0
+    },
+    "trusted_witness_count": 1,
+    "independent_witness_count": 0,
+    "trust_grant_count": 0,
+    "permission_grant_count": 0,
+    "capability_effect_count": 0,
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "Witness types are taxonomy definitions and do not instantiate a witness.",
+      "Witness identity, type, or method never grants trust automatically."
+    ]
+  },
+  "witness_record_schema": {
+    "required_fields": ["witness_id", "witness_type", "identity_ref", "verification_method", "trust_level"],
+    "witness_id_format": "dbio://event-witness/<name>/v<version>",
+    "valid_witness_types": ["self", "automated", "external"],
+    "valid_trust_levels": ["unknown", "local_structural", "identity_verified", "independent_verified", "revoked"],
+    "default_trust_level": "unknown",
+    "trust_boundary": "Trust requires separate identity, method, scope, independence, conflict, result, and revocation evidence; witness type alone has no trust effect."
+  },
+  "witness_type_definitions": [
+    {"witness_type":"self","description":"The event subject or source attests to its own event.","independence_effect":"none","automatic_trust_effect":"none"},
+    {"witness_type":"automated","description":"A bounded automated process checks declared inputs under a recorded method.","independence_effect":"none_without_separate_evidence","automatic_trust_effect":"none"},
+    {"witness_type":"external","description":"A separately identified external subject may witness within an explicit method and scope.","independence_effect":"requires_identity_and_conflict_evidence","automatic_trust_effect":"none"}
+  ],
+  "event_witnesses": [
+    {
+      "witness_id": "dbio://event-witness/dbos-self-validation-runner/v0.1",
+      "witness_type": "automated",
+      "identity_ref": "dbio:runner:automated:dbos-self-validation:v0.1",
+      "verification_method": "local digest, sequence, source, timestamp, and retained-output checks",
+      "trust_level": "local_structural",
+      "scope": "DBOS-EXP-0001 event integrity only",
+      "independence_status": "not_independent",
+      "evidence_ref": "evidence/experiments/DBOS-EXP-0001/run-0002/event-integrity.json",
+      "authority_effect": "none"
+    }
+  ]
+}

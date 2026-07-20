@@ -1,0 +1,80 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereExperimentExecutorAuthorizationRegistry",
+  "metadata": {
+    "title": "Experiment Executor Authorizations v0.1",
+    "status": "two_consumed_bounded_executor_authorizations",
+    "constitution": "../constitution/executor-constitution.yaml",
+    "executor_source_of_truth": "executors.yaml",
+    "scope_source_of_truth": "executor-scopes.yaml",
+    "experiment_source_of_truth": "experiments.yaml",
+    "generated_at": "2026-07-20T02:11:57+08:00",
+    "executor_authorization_count": 2,
+    "authorization_status_distribution": {"pending": 0, "authorized": 0, "denied": 0, "expired": 2, "revoked": 0},
+    "active_executor_authorization_count": 0,
+    "experiment_execution_authority_count": 0,
+    "capability_effect_count": 0,
+    "permission_grant_count": 0,
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "The pending record has executor_id=null, authorized_by=null, scope_ref=null, timestamp=null, and current_effect=none.",
+      "A pending slot is not an authorization, identity appointment, capability, permission, runtime, event, or execution.",
+      "A future executor authorization remains subordinate to experiment authorization, readiness, freeze, stop rules, and evidence-preservation constraints."
+    ]
+  },
+  "executor_authorization_schema": {
+    "required_fields": ["authorization_id", "executor_id", "authorized_by", "scope_ref", "status", "timestamp"],
+    "additional_governance_fields": ["experiment_id", "expires_at", "limitations", "revocation_ref", "current_effect"],
+    "valid_statuses": ["pending", "authorized", "denied", "expired", "revoked"],
+    "default_status": "pending",
+    "pending_boundary": "pending requires executor_id=null, authorized_by=null, scope_ref=null, timestamp=null, and current_effect=none.",
+    "authorization_boundary": "authorized requires a verified or active executor, an approved matching scope, a distinct attributable authorizer, a timezone-aware timestamp, and a separately active experiment authorization."
+  },
+  "executor_authorizations": [
+    {
+      "authorization_id": "DBOS-EXP-0001-EXECUTOR-AUTH-0001",
+      "experiment_id": "DBOS-EXP-0001",
+      "executor_id": "dbio:executor:automated-runner:dbos-self-validation:v0.1",
+      "authorized_by": "explicit_user_goal:DBOS-EXP-0001-COMPLETE-EXECUTION-CHAIN",
+      "scope_ref": "DBOS-EXP-0001-EXECUTOR-SCOPE-0001",
+      "status": "expired",
+      "timestamp": "2026-07-20T10:29:46+08:00",
+      "amendment_refs": ["evidence/experiments/DBOS-EXP-0001/authorization/execution-authorization-v2.json"],
+      "expires_at": "2026-07-20T10:36:49+08:00",
+      "limitations": [
+        "one DBOS-EXP-0001 deterministic execution only",
+        "output only inside the experiment evidence boundary",
+        "no runtime, Agent, or Digital Organism",
+        "no capability or permission grant",
+        "no historical evidence alteration",
+        "no C/E/V promotion"
+      ],
+      "revocation_ref": null,
+      "current_effect": "none_consumed_by_failed_attempt",
+      "terminal_evidence_ref": "evidence/experiments/DBOS-EXP-0001/run-0001/experiment-result.json"
+    },
+    {
+      "authorization_id": "DBOS-EXP-0001-EXECUTOR-AUTH-0002",
+      "experiment_id": "DBOS-EXP-0001",
+      "executor_id": "dbio:executor:automated-runner:dbos-self-validation:v0.1",
+      "authorized_by": "explicit_user_goal:DBOS-EXP-0001-COMPLETE-EXECUTION-CHAIN",
+      "scope_ref": "DBOS-EXP-0001-EXECUTOR-SCOPE-0001",
+      "status": "expired",
+      "timestamp": "2026-07-20T10:47:27+08:00",
+      "amendment_refs": ["evidence/experiments/DBOS-EXP-0001/authorization/execution-authorization-v3.json"],
+      "expires_at": "2026-07-20T10:50:17+08:00",
+      "limitations": [
+        "one DBOS-EXP-0001 deterministic retry only",
+        "successor frozen validator manifest required",
+        "output only inside evidence/experiments/DBOS-EXP-0001/run-0002",
+        "no Runtime, Agent, or Digital Organism",
+        "no capability or permission grant",
+        "no historical evidence alteration",
+        "no C/E/V promotion"
+      ],
+      "revocation_ref": null,
+      "current_effect": "none_consumed_by_successful_execution",
+      "terminal_evidence_ref": "evidence/experiments/DBOS-EXP-0001/run-0002/experiment-result.json"
+    }
+  ]
+}

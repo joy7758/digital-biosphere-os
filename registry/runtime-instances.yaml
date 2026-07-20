@@ -1,0 +1,45 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereRuntimeInstanceRegistry",
+  "metadata": {
+    "title": "Runtime Instance Registry v0.1",
+    "status": "empty_runtime_baseline",
+    "constitution": "../constitution/organism-genesis-constitution.yaml",
+    "entity_source_of_truth": "entities.yaml",
+    "generated_at": "2026-07-19T22:10:23+08:00",
+    "runtime_instance_count": 0,
+    "active_runtime_count": 0,
+    "agent_created_count": 0,
+    "assigned_capability_count": 0,
+    "permission_grant_count": 0,
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "The registry contains no runtime instance in the v0.1 baseline.",
+      "Runtime registration does not create an Agent, Candidate Organism, Digital Organism, capability, or permission.",
+      "Repository, protocol, service, process name, demo, or pending verification cannot substitute for an attributable runtime record."
+    ]
+  },
+  "runtime_record_schema": {
+    "required_fields": [
+      "runtime_id",
+      "entity_id",
+      "environment",
+      "lifecycle_state",
+      "resource_refs",
+      "trace_refs",
+      "evidence_refs"
+    ],
+    "runtime_id_format": "dbio://runtime/<entity_id>/<environment>/<instance-id>",
+    "valid_lifecycle_states": [
+      "proposed",
+      "active",
+      "suspended",
+      "stopped",
+      "revoked",
+      "retired"
+    ],
+    "qualification_runtime_state": "active",
+    "registration_boundary": "A runtime requires attributable instance identity and environment evidence; registration alone does not satisfy organism qualification."
+  },
+  "runtime_instances": []
+}

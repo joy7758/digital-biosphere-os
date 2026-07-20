@@ -1,0 +1,39 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereExperimentExpectedOutputRegistry",
+  "metadata": {
+    "title": "Genesis Experiment Expected Outputs v0.1",
+    "status": "six_validated_outputs_from_completed_experiment",
+    "constitution": "../constitution/experimental-protocol-constitution.yaml",
+    "experiment_source_of_truth": "experiments.yaml",
+    "generated_at": "2026-07-20T00:54:29+08:00",
+    "output_count": 6,
+    "output_status_distribution": {"expected": 0, "generated": 0, "validated": 6, "invalid": 0, "revoked": 0},
+    "generated_output_count": 6,
+    "event_created_count": 1,
+    "evidence_created_count": 1,
+    "verification_result_count": 1,
+    "permission_grant_count": 0,
+    "capability_effect_count": 0,
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "All six records are expected-output specifications; no artifact, context, event, integrity record, attestation, evidence bundle, or verification result exists.",
+      "Expected output identity cannot create, reserve, fabricate, validate, or authorize the output."
+    ]
+  },
+  "output_record_schema": {
+    "required_fields": ["output_id", "experiment_id", "output_type", "description", "artifact_ref", "evidence_ref", "status"],
+    "valid_output_types": ["execution_context", "event", "integrity_record", "attestation", "evidence_bundle", "verification_result"],
+    "valid_statuses": ["expected", "generated", "validated", "invalid", "revoked"],
+    "default_status": "expected",
+    "generation_boundary": "generated or validated states require a later authorized run plus attributable artifact, context, event, evidence, and verification records."
+  },
+  "experiment_outputs": [
+    {"output_id":"DBOS-EXP-0001-OUT-0001","experiment_id":"DBOS-EXP-0001","output_type":"execution_context","description":"Bounded execution-context record.","artifact_ref":"evidence/experiments/DBOS-EXP-0001/run-0002/execution-context.json","evidence_ref":"sha256:31d22b4a895f4b0967273fd132068c3f48dcae659afe7e4fc554f04c60dea2f4","status":"validated"},
+    {"output_id":"DBOS-EXP-0001-OUT-0002","experiment_id":"DBOS-EXP-0001","output_type":"event","description":"Attributable local validation event record.","artifact_ref":"evidence/experiments/DBOS-EXP-0001/run-0002/event-record.json","evidence_ref":"sha256:52fe5ffbb30fb7c4afbcd83f9a4b89da16aa1d238cbfe9c42dc6218a2c3fba1c","status":"validated"},
+    {"output_id":"DBOS-EXP-0001-OUT-0003","experiment_id":"DBOS-EXP-0001","output_type":"integrity_record","description":"Event-integrity record with ordering, digest, timestamp, and local witness checks.","artifact_ref":"evidence/experiments/DBOS-EXP-0001/run-0002/event-integrity.json","evidence_ref":"sha256:fb4d593199a470d0eda0e1b04c4b9c8e9f2f8cf8d9eda06f7481ab9132986e0e","status":"validated"},
+    {"output_id":"DBOS-EXP-0001-OUT-0004","experiment_id":"DBOS-EXP-0001","output_type":"attestation","description":"Bounded content-digest event attestation.","artifact_ref":"evidence/experiments/DBOS-EXP-0001/run-0002/event-attestation.json","evidence_ref":"sha256:10a7556520ba7b744d2f7297d540ff9d052a71d745a94f3134b63c9a29f4e784","status":"validated"},
+    {"output_id":"DBOS-EXP-0001-OUT-0005","experiment_id":"DBOS-EXP-0001","output_type":"evidence_bundle","description":"Digest-indexed experiment evidence bundle.","artifact_ref":"evidence/experiments/DBOS-EXP-0001/run-0002/evidence-bundle.json","evidence_ref":"sha256:700c851f047ba66a32c031e771b7e968f5478d9d46d4ebd02bd9acf375d673ee","status":"validated"},
+    {"output_id":"DBOS-EXP-0001-OUT-0006","experiment_id":"DBOS-EXP-0001","output_type":"verification_result","description":"Bounded local structural verification result without C/E/V promotion.","artifact_ref":"evidence/experiments/DBOS-EXP-0001/run-0002/verification-result.json","evidence_ref":"sha256:1c1c8531ae3bb9c8294ecc94b799ce3ed3bdc716d83ce108f8ec2dcf8fe09d0d","status":"validated"}
+  ]
+}

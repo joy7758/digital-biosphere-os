@@ -1,0 +1,146 @@
+schema_version: "0.1"
+kind: "DigitalBiosphereExperimentFreezeConstitution"
+metadata:
+  title: "Experiment Freeze Constitution v0.1"
+  chinese_title: "实验冻结宪法 v0.1"
+  status: "freeze_mechanism_defined_records_pending"
+  parent_constitution: "constitution.yaml"
+  readiness_reference: "experiment-readiness-constitution.yaml"
+  experimental_protocol_reference: "experimental-protocol-constitution.yaml"
+  execution_context_reference: "execution-context-constitution.yaml"
+  event_integrity_reference: "event-integrity-constitution.yaml"
+  attestation_reference: "event-attestation-constitution.yaml"
+  snapshot_capture_reference: "snapshot-capture-constitution.yaml"
+  authority: "pre_execution_freeze_structure_and_validation_only"
+  effective_scope:
+    - "/Users/zhangbin/GitHub/digital-biosphere-os"
+  adopted_at: "2026-07-20T01:35:20+08:00"
+  non_claims:
+    - "This constitution defines freeze contracts but does not freeze, authorize, execute, attest, or verify DBOS-EXP-0001."
+    - "A pending freeze manifest, environment lock, or certificate cannot create an event, runtime, Agent, Digital Organism, capability, permission, evidence result, verification result, or C/E/V promotion."
+    - "Freeze status cannot be inferred from matching paths, validator presence, local PASS, null placeholders, or a certificate identifier."
+
+freeze_definition:
+  definition: "An append-only binding of one registered experiment to immutable snapshot material, one locked validator manifest, one environment lock, and one attributable certificate after every required digest and provenance field is complete."
+  separation_rules:
+    - "Freeze Mechanism Defined != Experiment Frozen."
+    - "Freeze Manifest Pending != Freeze Certificate Issued."
+    - "Experiment Frozen != Experiment Ready."
+    - "Experiment Frozen != Experiment Authorized != Experiment Executed."
+  current_experiment: "DBOS-EXP-0001"
+  current_status: "pending"
+  execution_authority: "none"
+  automatic_transition: false
+
+freeze_scope:
+  source_of_truth: "../registry/freeze-manifests.yaml"
+  required_bindings:
+    - "exactly one experiment_id"
+    - "one or more immutable experiment snapshot references"
+    - "exactly one validator manifest reference"
+    - "exactly one environment reference and one environment lock reference"
+    - "explicit scope limitations and zero authority effect"
+  boundary: "A freeze applies only to the referenced experiment configuration. It does not freeze member repositories, external systems, credentials, or future successor records."
+  current_status: "pending"
+
+immutable_artifacts:
+  required_material:
+    snapshot:
+      registry: "../registry/experiment-snapshots.yaml"
+      required_fields:
+        - "file_tree_hash"
+        - "config_hash"
+        - "dependency_hash"
+        - "environment_hash"
+        - "captured_at"
+        - "retained_material_refs"
+        - "freeze_evidence_ref"
+    validator_manifest:
+      registry: "../registry/validator-manifests.yaml"
+      required_fields:
+        - "digest"
+        - "locked_digest"
+        - "frozen_at"
+        - "retained_manifest_ref"
+        - "freeze_evidence_ref"
+    environment_lock:
+      registry: "../registry/environment-locks.yaml"
+      required_fields:
+        - "os_version"
+        - "runtime_version"
+        - "dependency_hash"
+        - "locked_at"
+        - "evidence_refs"
+  digest_format: "sha256:<64 lowercase hexadecimal characters>"
+  immutability_rule: "After a record becomes frozen, content changes require a new identifier, supersession link, and append-only thaw or revocation record; historical bytes and digests remain preserved."
+  current_complete_artifact_count: 0
+
+snapshot_capture_requirement:
+  constitution: "snapshot-capture-constitution.yaml"
+  capture_registry: "../registry/snapshot-captures.yaml"
+  digest_registry: "../registry/artifact-digests.yaml"
+  evidence_registry: "../registry/capture-evidence.yaml"
+  source_registry: "../registry/snapshot-sources.yaml"
+  requirements:
+    - "The experiment snapshot references exactly one attributable capture record."
+    - "The capture references the same experiment and snapshot as the freeze manifest."
+    - "Capture status is captured or validated with non-null collector and capture time."
+    - "At least one valid artifact digest belongs to the snapshot and the complete declared scope is accounted for."
+    - "At least one attributable capture-evidence record describes method, result, exclusions, errors, and time."
+  current_status: "pending"
+  blocking_reason: "The capture record is pending with collector=null and captured_at=null; artifact-digest and capture-evidence registries are empty."
+  automatic_freeze: false
+  execution_authority: "none"
+
+freeze_certificate:
+  source_of_truth: "../registry/freeze-certificates.yaml"
+  issue_requirements:
+    - "The freeze manifest is frozen and all references resolve consistently."
+    - "Every referenced snapshot is frozen with complete digests and retained material."
+    - "The validator manifest is frozen and digest equals locked_digest."
+    - "The environment lock is frozen with attributable OS, runtime, dependency, timestamp, and evidence material."
+    - "issuer is an attributable human or governed authority and created_at is timezone-aware."
+  certificate_boundary: "A certificate attests only to the bounded freeze state. It does not authorize execution, prove experiment results, or replace event integrity, attestation, evidence, or verification."
+  current_status: "pending"
+  issued_certificate_count: 0
+
+thaw_procedure:
+  definition: "A controlled append-only process that ends reliance on a frozen configuration without rewriting or deleting its history."
+  required_steps:
+    - "record a thaw request and reason"
+    - "identify affected freeze, snapshot, validator manifest, environment lock, and certificate records"
+    - "obtain separate attributable thaw approval"
+    - "mark current reliance revoked or thawed while preserving historical records"
+    - "create new successor identifiers before any replacement freeze"
+  prohibited_actions:
+    - "edit historical digest values"
+    - "delete prior freeze evidence"
+    - "reuse an issued certificate for changed material"
+    - "treat thaw approval as experiment execution authorization"
+  automatic_thaw: false
+
+current_baseline:
+  experiment_count: 1
+  freeze_manifest_count: 1
+  frozen_manifest_count: 0
+  environment_lock_count: 1
+  frozen_environment_lock_count: 0
+  freeze_certificate_count: 1
+  issued_certificate_count: 0
+  snapshot_count: 1
+  frozen_snapshot_count: 0
+  validator_manifest_count: 1
+  locked_validator_manifest_count: 0
+  snapshot_capture_count: 1
+  completed_snapshot_capture_count: 0
+  artifact_digest_count: 0
+  capture_evidence_count: 0
+  active_authorization_count: 0
+  execution_count: 0
+  event_count: 0
+  runtime_instance_count: 0
+  agent_created_count: 0
+  digital_organism_count: 0
+  capability_count: 0
+  permission_grant_count: 0
+  c_e_v_level_change_count: 0

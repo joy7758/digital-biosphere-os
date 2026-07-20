@@ -1,0 +1,92 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereVerificationLevelRegistry",
+  "metadata": {
+    "title": "Verification Level Registry v0.1",
+    "status": "local_verification_level_baseline",
+    "constitution": "../constitution/verification-constitution.yaml",
+    "network_constitution": "../constitution/verification-network-constitution.yaml",
+    "evidence_type_registry": "evidence-types.yaml",
+    "generated_at": "2026-07-19T20:28:44+08:00",
+    "serialization": "JSON-compatible YAML 1.2",
+    "invariants": [
+      "Verification levels are sequential and cannot be skipped.",
+      "Evidence support is a ceiling, not an automatic verification promotion.",
+      "Verification level does not approve or assign capability and does not grant permission."
+    ]
+  },
+  "trust_levels": [
+    "unknown",
+    "self_asserted",
+    "local_automated",
+    "reproducible",
+    "independent",
+    "continuous"
+  ],
+  "levels": [
+    {
+      "verification_level": "V0",
+      "name": "Unknown",
+      "definition": "A pending verification request exists, but no self-check, automated validation, reproduction, independent verification, or continuous verification decision is established.",
+      "required_predecessors": [],
+      "minimum_trust_level": "unknown",
+      "minimum_required_evidence_level": "E0"
+    },
+    {
+      "verification_level": "V1",
+      "name": "Self Check",
+      "definition": "The subject or directly affiliated process performs and records a bounded check; independence is explicitly absent.",
+      "required_predecessors": ["V0"],
+      "minimum_trust_level": "self_asserted",
+      "minimum_required_evidence_level": "E1"
+    },
+    {
+      "verification_level": "V2",
+      "name": "Automated Validation",
+      "definition": "A bounded automated method validates declared structural or behavioral conditions with recorded inputs and outputs.",
+      "required_predecessors": ["V0", "V1"],
+      "minimum_trust_level": "local_automated",
+      "minimum_required_evidence_level": "E2"
+    },
+    {
+      "verification_level": "V3",
+      "name": "Reproducible Verification",
+      "definition": "Preserved inputs, environment, method, outputs, and instructions permit bounded reproduction of the verification result.",
+      "required_predecessors": ["V0", "V1", "V2"],
+      "minimum_trust_level": "reproducible",
+      "minimum_required_evidence_level": "E3"
+    },
+    {
+      "verification_level": "V4",
+      "name": "Independent Verification",
+      "definition": "A separately attributable verifier with recorded independence and conflict-of-interest basis reproduces or evaluates the bounded evidence and records limitations.",
+      "required_predecessors": ["V0", "V1", "V2", "V3"],
+      "minimum_trust_level": "independent",
+      "minimum_required_evidence_level": "E4"
+    },
+    {
+      "verification_level": "V5",
+      "name": "Continuous Verification",
+      "definition": "An independent verification basis is continuously or repeatedly evaluated over a defined window with coverage, drift, incident, expiry, and revocation controls.",
+      "required_predecessors": ["V0", "V1", "V2", "V3", "V4"],
+      "minimum_trust_level": "continuous",
+      "minimum_required_evidence_level": "E5"
+    }
+  ],
+  "evidence_support_ceiling": {
+    "E0": "V0",
+    "E1": "V1",
+    "E2": "V2",
+    "E3": "V3",
+    "E4": "V4",
+    "E5": "V5"
+  },
+  "current_distribution": {
+    "V0": 78,
+    "V1": 0,
+    "V2": 0,
+    "V3": 0,
+    "V4": 0,
+    "V5": 0
+  }
+}

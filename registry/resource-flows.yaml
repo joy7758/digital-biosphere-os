@@ -1,0 +1,42 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereResourceFlowRegistry",
+  "metadata": {
+    "title": "Digital Metabolism Resource Flow Registry v0.1",
+    "status": "empty_resource_flow_baseline",
+    "constitution": "../constitution/organism-genesis-constitution.yaml",
+    "runtime_source_of_truth": "runtime-instances.yaml",
+    "generated_at": "2026-07-19T22:10:23+08:00",
+    "resource_flow_count": 0,
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "Digital metabolism is a resource-accounting model, not a biological claim.",
+      "No resource input, output, efficiency, or fitness value is inferred in the v0.1 baseline.",
+      "Resource flow does not grant capability, permission, runtime authority, or organism status."
+    ]
+  },
+  "resource_flow_schema": {
+    "required_fields": [
+      "resource_flow_id",
+      "runtime_id",
+      "resource_type",
+      "input",
+      "output",
+      "timestamp"
+    ],
+    "resource_flow_id_format": "dbio://resource-flow/<runtime-id>/<sequence>",
+    "valid_resource_types": [
+      "compute",
+      "memory",
+      "storage",
+      "network",
+      "token",
+      "energy",
+      "time",
+      "data",
+      "external_service"
+    ],
+    "record_boundary": "Input and output require attributable units, measurement method, environment, time, and limitations."
+  },
+  "resource_flows": []
+}

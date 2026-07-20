@@ -1,0 +1,60 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereGovernanceArchetypeRegistry",
+  "metadata": {
+    "title": "Governance Archetypes v0.1",
+    "status": "defined_unbound_baseline",
+    "constitution": "../constitution/governance-archetype-constitution.yaml",
+    "generated_at": "2026-07-19T23:13:05+08:00",
+    "archetype_count": 3,
+    "archetype_distribution": {
+      "federation": 1,
+      "hierarchy": 1,
+      "ecology": 1
+    },
+    "binding_count": 0,
+    "authority_effect": "none",
+    "capability_effect": "none",
+    "permission_effect": "none",
+    "identity_effect": "none",
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "Archetypes describe organization and coordination only.",
+      "Definition does not select, bind, activate, enforce, rank, or authorize an archetype for any entity."
+    ]
+  },
+  "archetype_record_schema": {
+    "required_fields": ["archetype_id", "name", "description", "authority_model", "decision_model", "strength", "risk"],
+    "archetype_id_format": "dbio://governance-archetype/<name>/v<version>",
+    "valid_names": ["federation", "hierarchy", "ecology"]
+  },
+  "governance_archetypes": [
+    {
+      "archetype_id": "dbio://governance-archetype/federation/v0.1",
+      "name": "federation",
+      "description": "Independent entities coordinate through shared constitutions, manifests, protocols, evidence, and explicit consent while retaining separate identities and histories.",
+      "authority_model": "distributed",
+      "decision_model": "consent / protocol",
+      "strength": ["autonomy", "interoperability"],
+      "risk": ["coordination cost"]
+    },
+    {
+      "archetype_id": "dbio://governance-archetype/hierarchy/v0.1",
+      "name": "hierarchy",
+      "description": "Explicitly delegated authority coordinates identified entities through bounded responsibility and a declared command chain.",
+      "authority_model": "delegated",
+      "decision_model": "command chain",
+      "strength": ["efficiency"],
+      "risk": ["centralization"]
+    },
+    {
+      "archetype_id": "dbio://governance-archetype/ecology/v0.1",
+      "name": "ecology",
+      "description": "Coordination emerges through bounded interaction and evidence-governed selection pressure without assigning authority to an ecological label.",
+      "authority_model": "emergent",
+      "decision_model": "selection pressure",
+      "strength": ["adaptation"],
+      "risk": ["unpredictability"]
+    }
+  ]
+}

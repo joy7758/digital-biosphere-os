@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "dbio://schema/project-manifest/v0.1",
+  "title": "Digital Biosphere Federation Project Manifest v0.1",
+  "description": "Agent-readable project-local federation manifest contract. Validation does not register a member or grant authority.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "manifest_id",
+    "entity_id",
+    "repository",
+    "role",
+    "dependencies",
+    "constitution",
+    "capability_claims",
+    "evidence_refs",
+    "evolution_tracking",
+    "status"
+  ],
+  "properties": {
+    "manifest_id": {
+      "type": "string",
+      "pattern": "^dbio://project-manifest/[a-z0-9][a-z0-9.-]*/v[0-9][A-Za-z0-9._-]*$"
+    },
+    "entity_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Identity reference; must resolve to the canonical federation entity registry."
+    },
+    "repository": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Independent canonical repository or local workflow path; federation does not own it."
+    },
+    "role": {
+      "enum": [
+        "foundation",
+        "protocol",
+        "governance",
+        "evidence",
+        "verification",
+        "experimental",
+        "unknown"
+      ]
+    },
+    "dependencies": {
+      "type": "array",
+      "items": {"type": "string"},
+      "uniqueItems": true
+    },
+    "constitution": {
+      "type": "string",
+      "const": "constitution/constitution.yaml"
+    },
+    "capability_claims": {
+      "type": "array",
+      "items": {"type": "string"},
+      "uniqueItems": true,
+      "description": "References only; claims never become capability or permission through a manifest."
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {"type": "string"},
+      "uniqueItems": true,
+      "description": "Inspectible evidence references required for future registration and verification."
+    },
+    "evolution_tracking": {
+      "type": "array",
+      "items": {"type": "string"},
+      "uniqueItems": true
+    },
+    "status": {
+      "enum": ["pending", "submitted", "accepted", "rejected", "revoked"]
+    }
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"status": {"const": "accepted"}}},
+      "then": {
+        "properties": {
+          "evidence_refs": {"minItems": 1},
+          "evolution_tracking": {"minItems": 1}
+        }
+      }
+    }
+  ],
+  "x-dbios-boundaries": {
+    "default_status": "pending",
+    "required_future_project_information": ["identity", "role", "constitution", "evidence"],
+    "non_effects": ["ownership", "identity_merge", "capability", "permission", "Agent", "runtime", "organism", "C/E/V promotion"]
+  }
+}

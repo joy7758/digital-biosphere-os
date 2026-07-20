@@ -1,0 +1,83 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereEcologicalEnvironmentRegistry",
+  "metadata": {
+    "title": "Ecological Environment Registry v0.1",
+    "status": "defined_model_no_active_environment",
+    "constitution": "../constitution/environment-constitution.yaml",
+    "generated_at": "2026-07-19T22:27:22+08:00",
+    "environment_count": 1,
+    "defined_environment_count": 1,
+    "active_environment_count": 0,
+    "runtime_instance_count": 0,
+    "organism_candidate_count": 0,
+    "digital_organism_count": 0,
+    "agent_created_count": 0,
+    "permission_grant_count": 0,
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "The sole record defines the current governance workspace as a bounded model; it is not an active runtime environment.",
+      "Environment definition does not create entity participation, fitness, selection, capability, permission, Agent, runtime, Candidate Organism, or Digital Organism."
+    ]
+  },
+  "environment_types": [
+    "governance_workspace",
+    "development",
+    "test",
+    "simulation",
+    "production",
+    "external"
+  ],
+  "environment_record_schema": {
+    "required_fields": [
+      "environment_id",
+      "environment_type",
+      "resource_model",
+      "task_model",
+      "constraints",
+      "status"
+    ],
+    "default_status": "defined",
+    "environment_id_format": "dbio://environment/<name>/<version>",
+    "activation_boundary": "defined does not imply active, observed, authorized, or runtime-bound"
+  },
+  "environments": [
+    {
+      "environment_id": "dbio://environment/local-governance-workspace/v0.1",
+      "environment_type": "governance_workspace",
+      "resource_model": [
+        "dbio://resource-model/token/v0.1",
+        "dbio://resource-model/compute/v0.1",
+        "dbio://resource-model/storage/v0.1",
+        "dbio://resource-model/data-access/v0.1",
+        "dbio://resource-model/human-attention/v0.1"
+      ],
+      "task_model": {
+        "task_model_id": "dbio://task-model/structural-governance-validation/v0.1",
+        "description": "Structural registry, reference, uniqueness, level, boundary, and append-only governance validation within this directory.",
+        "model_status": "defined",
+        "runtime_execution_authority": "none",
+        "external_project_action_authority": "none"
+      },
+      "constraints": [
+        "scope is limited to /Users/zhangbin/GitHub/digital-biosphere-os",
+        "no external-project modification",
+        "no Agent or runtime creation",
+        "no capability assignment or permission grant",
+        "no fitness calculation, selection result, organism promotion, or C/E/V upgrade"
+      ],
+      "status": "defined",
+      "activation_status": "not_active",
+      "evidence_source": {
+        "path": "/Users/zhangbin/GitHub/digital-biosphere-os",
+        "basis": "current_governance_workspace_path",
+        "observation_claim": "path_exists_only"
+      },
+      "runtime_effect": "none",
+      "fitness_effect": "none",
+      "organism_effect": "none",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    }
+  ]
+}

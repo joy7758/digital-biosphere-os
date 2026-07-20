@@ -1,0 +1,63 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereExperimentFreezeCertificateRegistry",
+  "metadata": {
+    "title": "Experiment Freeze Certificates v0.1",
+    "status": "two_append_only_issued_local_freeze_certificates",
+    "constitution": "../constitution/experiment-freeze-constitution.yaml",
+    "freeze_manifest_source_of_truth": "freeze-manifests.yaml",
+    "generated_at": "2026-07-20T01:35:20+08:00",
+    "freeze_certificate_count": 2,
+    "certificate_status_distribution": {"pending": 0, "issued": 2, "invalid": 0, "revoked": 0, "superseded": 0},
+    "issued_certificate_count": 2,
+    "execution_authority_count": 0,
+    "event_created_count": 0,
+    "trust_grant_count": 0,
+    "permission_grant_count": 0,
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "The pending record reserves a certificate identity only; issuer=null and created_at=null mean no certificate has been issued.",
+      "An issued freeze certificate would attest only to bounded immutable inputs and would not authorize execution or prove an experimental fact."
+    ]
+  },
+  "freeze_certificate_schema": {
+    "required_fields": ["certificate_id", "experiment_id", "freeze_manifest", "created_at", "issuer", "status"],
+    "additional_governance_fields": ["scope", "limitations", "revocation_ref", "supersedes", "authority_effect"],
+    "valid_statuses": ["pending", "issued", "invalid", "revoked", "superseded"],
+    "default_status": "pending",
+    "issue_boundary": "issued requires a frozen manifest, complete frozen inputs, attributable issuer, timezone-aware created_at, and retained certificate evidence."
+  },
+  "freeze_certificates": [
+    {
+      "certificate_id": "DBOS-EXP-0001-FREEZE-CERT-0001",
+      "experiment_id": "DBOS-EXP-0001",
+      "freeze_manifest": "DBOS-EXP-0001-FREEZE-0001",
+      "created_at": "2026-07-20T10:20:17+08:00",
+      "issuer": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "status": "issued",
+      "scope": "DBOS-EXP-0001 freeze state only",
+      "limitations": ["local non-independent freeze certificate", "no execution authority", "no event or fact claim", "evidence/experiments/DBOS-EXP-0001/freeze/freeze-certificate.json"],
+      "revocation_ref": null,
+      "supersedes": null,
+      "authority_effect": "none"
+    },
+    {
+      "certificate_id": "DBOS-EXP-0001-FREEZE-CERT-0002",
+      "experiment_id": "DBOS-EXP-0001",
+      "freeze_manifest": "DBOS-EXP-0001-FREEZE-0002",
+      "created_at": "2026-07-20T10:47:27+08:00",
+      "issuer": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "status": "issued",
+      "scope": "DBOS-EXP-0001 second-attempt successor validator freeze only",
+      "limitations": [
+        "local non-independent freeze certificate",
+        "original snapshot archive and environment lock retained",
+        "no execution authority",
+        "evidence/experiments/DBOS-EXP-0001/freeze-run-0004/freeze-certificate-run-0002.json"
+      ],
+      "revocation_ref": null,
+      "supersedes": "DBOS-EXP-0001-FREEZE-CERT-0001",
+      "authority_effect": "none"
+    }
+  ]
+}

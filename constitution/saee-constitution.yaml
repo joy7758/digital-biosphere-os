@@ -1,0 +1,179 @@
+schema_version: "0.1"
+kind: "DigitalBiosphereSAEEEcologicalConstitution"
+metadata:
+  title: "SAEE Ecological Constitution v0.1"
+  chinese_title: "SAEE 硅基放大演化生态宪法 v0.1"
+  status: "ecological_interpretation_baseline"
+  ecological_role: "highest_ecological_principle_layer"
+  authority: "interpretive_and_validation_only"
+  effective_scope:
+    - "/Users/zhangbin/GitHub/digital-biosphere-os"
+  adopted_at: "2026-07-19T21:55:39+08:00"
+  theoretical_reference:
+    path: "../references/theory/数字生物圈宪法体系研究报告.txt"
+    status: "non_normative_local_reference"
+    bounded_use: "Supports the interpretation of the existing repository family as a layered ecosystem whose members retain separate identities, histories, citations, and boundaries."
+  non_claims:
+    - "SAEE is not a new project, Agent, capability module, runtime, verifier, or permission authority."
+    - "Ecological classification does not create biological personhood, legal personhood, consciousness, autonomy, or organism status."
+    - "This constitution does not modify any external project or upgrade any C, E, or V level."
+  organism_genesis_constitution: "organism-genesis-constitution.yaml"
+  environment_constitution: "environment-constitution.yaml"
+  governance_archetype_constitution: "governance-archetype-constitution.yaml"
+
+constitutional_position:
+  highest_ecological_interpretation: "SAEE explains how digital entities, interactions, resource flows, adaptation, evolution, selection, and stability relate at ecosystem scale."
+  operational_authority_unchanged:
+    Identity: "constitution/identity-constitution.yaml remains authoritative for entity identity."
+    Capability: "constitution/capability-constitution.yaml and capability-verification-constitution.yaml remain authoritative for capability and claims."
+    Evidence: "constitution/evidence-constitution.yaml remains authoritative for evidence."
+    Verification: "constitution/verification-constitution.yaml and verification-network-constitution.yaml remain authoritative for verification."
+    Environment: "constitution/environment-constitution.yaml defines ecological conditions without changing operational authority in any existing layer."
+    Governance: "constitution/governance-archetype-constitution.yaml describes replaceable ecological coordination strategies without creating operational authority."
+  conflict_rule: "SAEE may interpret cross-layer ecological meaning but cannot override a stricter identity, capability, evidence, verification, permission, or history-preservation rule."
+  invariant: "Highest Ecological Principle != Highest Operational Authority"
+
+ecological_principle:
+  definition: "The digital biosphere is modeled as an ecosystem of distinct governed entities and relationships, not as an undifferentiated collection of tools or a single organism."
+  ecological_dimensions:
+    identity: "Stable, evidence-bound subject identity and lineage."
+    interaction: "Scoped relationships and exchanges among identified entities."
+    resource_flow: "Attributable use, transfer, constraint, and replenishment of computational, informational, temporal, and governance resources."
+    adaptation: "Evidence-backed change in response to environment or selection conditions."
+    evolution: "Append-only lineage of mutations, selection outcomes, constraints, succession, deprecation, and retirement."
+  boundaries:
+    - "Ecological dimensions are theoretical axes and do not populate registry/capabilities.yaml."
+    - "Interaction does not imply trust, permission, runtime reachability, or successful execution."
+    - "Adaptation does not imply self_evolution capability or authorization."
+    - "Evolution does not permit identity loss, evidence deletion, or history rewrite."
+
+governance_as_ecological_adaptation_strategy:
+  constitution_ref: "governance-archetype-constitution.yaml"
+  definition: "Federation, hierarchy, and ecology are possible coordination strategies through which an ecosystem may adapt its governance arrangement over time."
+  authority_effect: "none"
+  fitness_effect: "none"
+  automatic_binding: false
+  automatic_transition: false
+  rules:
+    - "Governance strategy is an ecological interpretation and coordination description, not an entity identity."
+    - "Governance strategy does not create capability, permission, trust, runtime, Agent, Candidate Organism, or Digital Organism status."
+    - "Governance evaluation does not calculate fitness or select an archetype automatically."
+    - "Governance transition requires attributable evidence, verification, decision authority, identity continuity, rollback, and additive evolution history."
+
+digital_entity_classification:
+  source_of_truth: "../registry/ecological-entities.yaml"
+  classes:
+    Artifact:
+      definition: "A passive, inspectable repository, document, schema, package, dataset, build output, or other bounded digital object."
+      organism_effect: "none"
+    Protocol:
+      definition: "A governed contract, vocabulary, schema, rule set, or interoperability specification."
+      organism_effect: "none"
+    Service:
+      definition: "A service or operational surface with a declared function; service identity alone does not prove a live runtime."
+      organism_effect: "none"
+    Runtime:
+      definition: "An evidence-backed active runtime instance or process with bounded environment and execution identity; runtime status alone is not organism status."
+      organism_effect: "none"
+    Candidate Organism:
+      definition: "A separately reviewed proposal that may satisfy organism criteria but has not established Digital Organism status."
+      organism_effect: "candidate_only"
+    Digital Organism:
+      definition: "A future, explicitly qualified ecological subject with stable identity, persistent bounded runtime, interaction, resource accountability, adaptation lineage, evidence, verification, and stability constraints."
+      organism_effect: "requires_separate_constitutional_qualification"
+  baseline_mapping:
+    repository: "Artifact"
+    artifact: "Artifact"
+    protocol: "Protocol"
+    service: "Service"
+    agent: "Artifact"
+  rules:
+    - "Entity != Organism."
+    - "Repository != Runtime."
+    - "Service != Runtime."
+    - "Agent-related naming != Candidate Organism."
+    - "Runtime != Candidate Organism != Digital Organism."
+    - "Candidate Organism and Digital Organism require separate, attributable, evidence-backed, reviewed, and append-only promotion records."
+    - "The v0.1 baseline contains no Candidate Organism or Digital Organism."
+  genesis_transition:
+    path: "Runtime -> Candidate Organism"
+    authority: "organism-genesis-constitution.yaml"
+    automatic: false
+    current_transition_count: 0
+    boundary: "The transition is only a qualification model; no Runtime or Candidate Organism instance is created."
+
+evolution_principle:
+  source_of_truth: "../registry/evolution-principles.yaml"
+  mutation:
+    allowed:
+      - "version evolution"
+      - "schema evolution through existing confirmation gates"
+      - "capability proposal evolution without automatic capability assignment"
+    prohibited:
+      - "identity loss"
+      - "historical evidence deletion"
+      - "history rewrite"
+      - "silent lineage replacement"
+      - "automatic organism promotion"
+  requirements:
+    - "Every mutation preserves subject identity or records an explicit successor and lineage relationship."
+    - "Corrections, deprecations, retirements, selection outcomes, and reversals are additive."
+    - "Capability proposals remain claims until the existing capability governance process advances them."
+    - "Evolution cannot grant permission or authorize self_evolution."
+
+selection_principle:
+  fitness_model: "../registry/fitness-model.yaml"
+  environment_registry: "../registry/environments.yaml"
+  resource_model_registry: "../registry/resource-models.yaml"
+  selection_pressure_registry: "../registry/selection-pressures.yaml"
+  ecological_interaction_registry: "../registry/ecological-interactions.yaml"
+  selection_dimensions:
+    - "reliability"
+    - "evidence_quality"
+    - "efficiency"
+    - "adaptability"
+    - "stability"
+  rules:
+    - "Selection requires declared environment, observation window, evidence, method, limitations, and reviewer or verifier authority."
+    - "No fitness score is calculated in v0.1."
+    - "Fitness cannot approve a capability, assign a capability, grant permission, upgrade C/E/V, create a runtime, or establish organism status."
+    - "Unknown fitness remains unknown rather than being imputed from popularity, repository activity, naming, or documentation."
+    - "Environment -> Evolution Pressure is an interpretive relationship; defined environments and pressures do not automatically apply pressure, calculate fitness, or produce selection."
+
+ecological_stability_principle:
+  objective: "Optimize bounded ecosystem stability, diversity, resilience, accountability, and sustainable resource use rather than maximizing a single entity."
+  constraints:
+    - "Entity optimization cannot erase identity, evidence, lineage, diversity, or shared-resource limits."
+    - "Selection pressure must record externalities, dependencies, concentration risk, failure propagation, and recovery paths."
+    - "Retirement preserves history and ecological learning."
+    - "Resource allocation and adaptation remain subject to capability and permission governance."
+
+current_baseline:
+  entity_count: 23
+  ecological_classification:
+    Artifact: 5
+    Protocol: 10
+    Service: 8
+    Runtime: 0
+    Candidate Organism: 0
+    Digital Organism: 0
+  evolution_stage_distribution:
+    pre-organism: 23
+    candidate-organism: 0
+    digital-organism: 0
+    ecologically-retired: 0
+  known_fitness_score_count: 0
+  environment_count: 1
+  defined_environment_count: 1
+  active_environment_count: 0
+  resource_model_count: 5
+  selection_pressure_count: 5
+  non_null_pressure_threshold_count: 0
+  ecological_interaction_count: 0
+  runtime_registration_model_count: 1
+  runtime_instance_count: 0
+  organism_candidate_count: 0
+  capability_count: 0
+  permission_grant_count: 0
+  agent_created_count: 0
+  c_e_v_level_changes: 0

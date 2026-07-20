@@ -1,0 +1,150 @@
+schema_version: "0.1"
+kind: "DigitalBiosphereEvidenceConstitution"
+metadata:
+  title: "Digital Biosphere Evidence Constitution v0.1"
+  chinese_title: "数字主体证据宪法 v0.1"
+  status: "local_evidence_governance_baseline"
+  verification_constitution: "verification-constitution.yaml"
+  verification_level_registry: "../registry/verification-level.yaml"
+  effective_scope:
+    - "/Users/zhangbin/GitHub/digital-biosphere-os"
+  authority: "declarative_and_validation_only"
+  adopted_at: "2026-07-19T20:03:26+08:00"
+  non_claims:
+    - "This constitution does not create an Agent."
+    - "An evidence record does not approve, assign, permission, or execute a capability."
+    - "A source path that exists is not automatically Artifact Evidence."
+    - "Local validation is not independent verification, continuous observation, deployment, release, adoption, or production proof."
+
+evidence_definition:
+  evidence: "A traceable record that may support one bounded capability claim under an explicit subject, scope, environment, version, time, integrity, and verification boundary."
+  evidence_record: "A registry object linking one claim to its evidence type, source, artifact state, verification state, and current status."
+  source: "The attributable origin from which an evidence statement or artifact reference was obtained."
+  artifact: "A preserved, inspectable object whose integrity, relevance, version, and scope may be assessed; a path reference alone is not artifact evidence."
+  verification: "A recorded method and attributable decision evaluating whether evidence supports the bounded claim."
+  invariants:
+    - "Evidence != Claim."
+    - "Evidence != Capability."
+    - "Evidence != Permission."
+    - "Evidence level != Capability maturity."
+    - "Evidence cannot support a broader claim than its proven scope."
+
+evidence_hierarchy:
+  source_of_truth: "../registry/evidence-types.yaml"
+  ordered_levels:
+    - "E0 Unknown"
+    - "E1 Declaration"
+    - "E2 Artifact Evidence"
+    - "E3 Execution Evidence"
+    - "E4 Independent Verification"
+    - "E5 Continuous Observation"
+  transition_rules:
+    - "Evidence levels are sequential and cannot be skipped."
+    - "E1 records an attributable declaration; it does not prove implementation or execution."
+    - "E2 requires assessed artifact integrity, relevance, version, scope, and environment."
+    - "E3 requires E2 plus attributable execution inputs, outputs, result, timestamp, environment, and side effects."
+    - "E4 requires E3 plus a genuinely independent verification method, reviewer, result, and limitations."
+    - "E5 requires E4 plus repeated observations over a defined time window, monitoring coverage, drift handling, and revocation controls."
+    - "A higher evidence level does not automatically promote capability maturity."
+
+evidence_maturity:
+  type_axis: "E0-E5 describes the kind and maturity of claim-supporting evidence."
+  status_axis:
+    pending: "The record exists but has not completed the requirements of a higher evidence level."
+    assessed: "Artifact evidence has completed its bounded assessment."
+    verified: "Execution evidence has completed its bounded verification."
+    independently_verified: "Independent verification has been recorded and attributed."
+    observed: "Continuous observation requirements have been met for the recorded window."
+    invalid: "The evidence cannot currently support the claim."
+    revoked: "Reliance has been withdrawn while history remains preserved."
+  current_baseline: "All 78 evidence records are pending E1 declarations; none is E2, E3, E4, or E5."
+  capability_support:
+    C0: "E0 may support only an unknown state."
+    C1: "E1 may support a claim existing at C1."
+    C2: "C2 requires at least assessed E2."
+    C3: "C3 requires at least E2 plus an attributable approved capability review."
+    C4: "C4 requires at least E3 plus verification, governance, monitoring, and revocation evidence."
+    C5: "C5 requires E5 plus prior C4 governance, explicit autonomy authorization, runtime enforcement, expiry, and containment evidence."
+  explicit_boundaries:
+    - "E1 cannot support C3."
+    - "E2 cannot support C4."
+    - "E3 cannot automatically support C5."
+
+verification_requirement:
+  verification_registry: "../registry/verification-records.yaml"
+  verifier_registry: "../registry/verifiers.yaml"
+  evidence_support_ceiling:
+    E0: "V0"
+    E1: "V1"
+    E2: "V2"
+    E3: "V3"
+    E4: "V4"
+    E5: "V5"
+  level_boundary:
+    - "Evidence support is the maximum eligible V level, not an automatic promotion or decision."
+    - "A V level cannot exceed the highest current, non-invalid, non-revoked evidence level bound to the claim."
+    - "Verification != Review Approval != Capability != Permission."
+  structural_checks:
+    - "evidence_id is unique."
+    - "claim_id resolves to registry/capability-claims.yaml."
+    - "evidence_type is one of E0 through E5."
+    - "source and artifact references are attributable and inspectable."
+    - "evidence-level transitions contain every required preceding level."
+  substantive_checks:
+    - "The evidence content supports the capability candidate rather than merely mentioning it."
+    - "Subject, version, scope, environment, inputs, outputs, time, and side effects match the claim."
+    - "Artifact integrity and provenance are checked before E2."
+    - "Execution result and environment are checked before E3."
+    - "Reviewer independence and method reproducibility are checked before E4."
+    - "Observation window, coverage, drift, incidents, expiry, and revocation are checked before E5."
+  automation_boundary: "A validator may reject structural inconsistency but cannot approve evidence sufficiency or independence."
+
+invalid_evidence:
+  conditions:
+    - "Source or artifact is missing, inaccessible, corrupted, tampered, or not attributable."
+    - "Evidence refers to a different entity, capability candidate, version, scope, environment, or side-effect boundary."
+    - "A declaration or documentation statement is presented as execution evidence."
+    - "A demo, synthetic fixture, local smoke, release artifact, deployment signal, external validation, or production observation is mislabeled as another stage."
+    - "Self-review is presented as independent verification without an explicit independence basis."
+    - "Continuous-observation claims omit the observation window, coverage, drift, incident, or revocation record."
+    - "Evidence has expired or become stale without a documented validity boundary."
+    - "Historical evidence has been deleted, overwritten, or detached from its claim."
+  handling:
+    - "Set status to invalid or revoked through an attributable append-only record."
+    - "Preserve the evidence identity, source, prior verification, reason, timestamp, and affected scope."
+    - "Recalculate the maximum supported capability maturity and fail closed."
+    - "Never use invalid or revoked evidence to grant permission or support execution."
+
+current_baseline:
+  entity_count: 22
+  capability_claim_count: 78
+  capability_evidence_count: 78
+  evidence_distribution:
+    E0: 0
+    E1: 78
+    E2: 0
+    E3: 0
+    E4: 0
+    E5: 0
+  capability_maturity_distribution:
+    C0: 0
+    C1: 78
+    C2: 0
+    C3: 0
+    C4: 0
+    C5: 0
+  approved_capability_count: 0
+  verifier_count: 1
+  verification_record_count: 78
+  verification_level_distribution:
+    V0: 78
+    V1: 0
+    V2: 0
+    V3: 0
+    V4: 0
+    V5: 0
+  pending_verification_count: 78
+  verification_pass_count: 0
+  assigned_capability_count: 0
+  permission_grant_count: 0
+  agent_created_count: 0

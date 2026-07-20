@@ -1,0 +1,31 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereExperimentObservationRegistry",
+  "metadata": {
+    "title": "Experiment Observations v0.1",
+    "status": "empty_experiment_observation_baseline",
+    "constitution": "../constitution/experimental-protocol-constitution.yaml",
+    "experiment_source_of_truth": "experiments.yaml",
+    "generated_at": "2026-07-20T00:41:57+08:00",
+    "observation_count": 0,
+    "event_created_count": 0,
+    "evidence_created_count": 0,
+    "fitness_effect_count": 0,
+    "evolution_effect_count": 0,
+    "permission_grant_count": 0,
+    "capability_effect_count": 0,
+    "c_e_v_level_change_count": 0,
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "The registry contains no observation because no experiment has been executed.",
+      "An observation cannot create an event, evidence, fitness, evolution outcome, capability, permission, runtime, Agent, organism, or C/E/V promotion."
+    ]
+  },
+  "observation_record_schema": {
+    "required_fields": ["observation_id", "experiment_id", "metric", "value", "timestamp"],
+    "observation_id_format": "dbio:experiment-observation:<experiment-id>:<sequence>",
+    "timestamp_semantics": "timezone-aware measurement time distinct from protocol creation, execution, collection, evidence, and verification time",
+    "fact_boundary": "Observation requires a separately established experiment run and does not become evidence, fitness, or evolutionary selection automatically."
+  },
+  "experiment_observations": []
+}

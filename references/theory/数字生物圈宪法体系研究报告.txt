@@ -1,0 +1,322 @@
+# 数字生物圈宪法体系研究报告
+
+## 执行摘要
+
+这份报告把你所说的“Codex 体系”操作性地理解为你当前公开的 SAEE（Silicon-Amplified Evolutionary Ecology，硅基放大演化生态）/Digital Biosphere Architecture（数字生物圈架构）仓库群，因为公开入口、生态地图和五层架构已经把 `persona-object-protocol`、`agent-intent-protocol`、`token-governor`、`agent-evidence`、`aro-audit`、`verifiable-agent-demo` 等仓库组织成一个有分层关系的系统，而不是互不相干的单点实验。公开页面同时明确说明：这些仓库保留各自独立身份、历史、引用与边界，目前公开面并不宣称“生产就绪”“客户验证完成”或“官方云集成”。这意味着你真正缺的不是再加一层 README（自述文件），而是把“跨仓库共同约束、冲突裁决、运行时强制、修正流程”从隐含共识升级为显式制度。citeturn3view0turn5view0turn7search0
+
+结论很明确：你应该建立一个分层的数字生物圈宪法体系，而不是把所有规则都塞进单个项目文档里。最小可行落地形态应当包括：一份仓库外显的总宪法 `constitution.yaml`（宪法配置文件）、每个项目自己的 `LAW.md`（项目法说明文件）、一个统一的策略决策接口 `policy-decision.json`（策略决策对象）、一个统一的 `agent-receipt.json`（智能体回执对象）/`audit_receipt.json`（审计回执对象）、一个可执行的 Policy Engine（策略引擎）+ Runtime Gate（运行时闸门），以及一套将冲突提交给 Constitutional Court（宪法法院）代理的标准流程。没有运行时闸门和证据链，任何“宪法”都只会停留在文本；没有修宪流程与最高裁决者，跨项目冲突最终只能靠维护者临时拍板。citeturn5view2turn8view2turn8view3turn24view3turn26view0turn13view0
+
+更具体地说，现状并不是“完全没有治理”，而是“治理碎片化且层间断裂”。比如，架构总览已经定义了 Persona Layer（人格层）、Interaction Layer（交互层）、Governance Layer（治理层）、Execution Integrity Layer（执行完整性层）、Audit Evidence Layer（审计证据层）的顺序；`token-governor` 已经承担执行前治理，`agent-evidence` 已经承担证据打包与离线验证，`aro-audit` 已经承担执行后回执与复核，`verifiable-agent-demo` 已经给出了从 `intent.json`（意图对象）到 `audit_receipt.json`（审计回执）的最小闭环。但这些仓库目前公开可见的是“层角色”，还不是“共同宪制”：谁优先、何时覆盖、怎么上诉、何时可例外、修正后如何兼容，并没有统一外显。citeturn5view0turn24view1turn4view0turn8view2turn24view3
+
+因此，本报告的核心建议是：把总宪法建立为“高于项目法、低于物理/成本/风险边界”的上位规则；把项目二级宪法变成可校验对象；把跨项目协议独立成第三层；把运行时执行、证据、审计、仲裁设计为可机器执行的流程；把修宪过程制度化；并在三阶段路线图内先落一个公开可验证的 `Digital Biosphere Constitution v0.1`（数字生物圈宪法 v0.1）。这不是抽象政治隐喻，而是工程上为了降低集成成本、避免规则漂移、控制责任边界与提高复核效率所必需的治理基础设施。citeturn26view0turn16view0turn13view0turn15view1turn15view3
+
+## 问题陈述
+
+你指出的根问题可以准确表述为：**项目级规则存在，但系统级上位法不存在；因此规则不能跨项目传递，也不能在运行时被一致执行。** 这会导致三个直接后果。第一，身份、意图、治理、执行、审计各层虽然在架构图上有顺序，但在制度上没有统一优先级，最终谁说了算并不确定。第二，证据对象与项目边界存在，但冲突裁决机制没有公开统一表述，因此跨仓库接口一旦发生版本漂移、策略冲突或责任争议，只能回到人工协调。第三，虽然多个仓库已经提供 `AGENTS.md`（智能体说明文件）、`llms.txt`（大模型入口文件）、`agent-index.json`（智能体索引文件）、Schema（模式）与验证器，但这些入口更像“可发现性表面”，还不是“可强制的宪制表面”。citeturn3view0turn5view0turn4view0turn8view2turn24view3
+
+从人类法律体系看，这类问题本质上不是“文档不足”，而是“规范位阶不足”。国际 IDEA（International IDEA，国际民主与选举援助研究所）将宪法定义为一种高于普通法的基本规则集合，特点包括：对普通立法者有约束力、规定国家基本结构与权利、具有广泛合法性、并且比普通法律更难修改。中国《立法法》也强调立法应当符合宪法规定、依照法定权限和程序、维护法制统一，并要求法律规范明确、具体、具有可执行性。换成工程语言，就是：顶层规则必须能约束各项目维护者，必须定义权力边界，必须更改门槛更高，且必须能执行。citeturn26view0turn16view0
+
+还需要指出一个命名层面的断点。你在问题中提到 AOP（操作问责配置文件），但当前公开主线里，独立可见的“交互层仓库”是 `agent-intent-protocol`（智能体意图协议，AIP）；与此同时，“Operation Accountability Profile（操作问责配置文件）”这个概念更多出现在 `agent-evidence` 的 EEOAP（Execution Evidence and Operation Accountability Profile，执行证据与操作问责配置文件）叙述以及外部互操作议题中，而不是一个独立的主线仓库名称。也就是说，**当前系统中至少存在一处“概念命名”和“仓库命名”没有完全对齐的地方**，这正是总宪法需要收敛术语、注册标准名与别名的理由。citeturn9view0turn4view0turn6search0turn7search5
+
+从成本结构看，这个问题继续拖延的代价会越来越高。因为一旦项目数增加，跨项目协同数量不是线性增长，而更接近组合增长；每新增一个项目，都要重新解释身份字段、策略边界、异常处理、证据格式和冲突裁决口径。总宪法的价值，不是“让系统更宏大”，而是通过上位法把新增项目的接入成本从“全量重新对齐”变成“遵守既有接口与审查流程”。这属于典型的前期制度建设投入，换后期集成与审计成本下降。这个推断建立在现有公开仓库已经呈现明确层分工，但尚未公开统一宪法仓库或统一宪法文件面的事实之上。citeturn5view0turn3view0turn24view1turn8view2
+
+## 现状梳理
+
+截至 2026 年 7 月 19 日，公开可见的主线仓库群已经形成了相当清晰的分层：`digital-biosphere-architecture`（数字生物圈架构）作为架构总枢纽，`persona-object-protocol`（人格对象协议，POP）负责 Persona Layer（人格层），`agent-intent-protocol`（智能体意图协议，AIP）负责 Interaction Layer（交互层），`token-governor`（令牌治理器）负责 Governance Layer（治理层），`agent-evidence`（智能体证据）负责具体执行证据打包与离线验证入口，`aro-audit`（审计回执复核）负责执行后回执与合规复核，`verifiable-agent-demo`（可验证智能体演示）负责最短闭环演示。架构 README（自述文件）明确给出了层序关系，并强调 `agent-evidence` 是执行到审计交接处的具体证据入口。citeturn5view0
+
+这些仓库已经各有“局部治理表面”。例如，`agent-evidence` 明确声明自己提供最小 EEOAP 证据门、JSON Schema（JSON 模式）、验证器、示例、CI（持续集成）检查、`AGENTS.md`、`llms.txt`、`agent-index.json`、`openapi.yaml`（开放接口描述文件）等；`aro-audit` 已经具备 receipt generation and verification（回执生成与验证）、conformance workflows（一致性工作流）与 minimal receipt validation profile（最小回执验证配置）；`token-governor` 已明确承担执行前预算、策略、路由、回退与权衡控制，且公开了 `AGENTS.md`、`llms.txt` 与 `policy.yaml`（策略配置文件）；`verifiable-agent-demo` 则公开展示了从 `intent.json` 到 `audit_receipt.json` 的最小审计链。citeturn4view0turn8view2turn24view1turn24view3
+
+但断点也非常具体。第一，架构总览是“架构中枢”，不是“总宪法仓库”；它定义层序，却没有公开一份对所有项目都可机器约束的上位法对象。第二，POP（人格对象协议）公开页突出协议、Schema（模式）、投影规则与插件配置，但在当前公开文件索引的可见面中，并未像 `agent-evidence`、`token-governor`、`verifiable-agent-demo` 那样明显呈现 `AGENTS.md`（智能体说明文件）或 `llms.txt`（大模型入口文件），说明不同项目的“智能体可读治理表面”尚不完全一致。第三，AIP（智能体意图协议）已经定义 `agent_intent`、`agent_action`、`agent_result` 三类对象，但它作为交互层，与 POP、Token Governor（令牌治理器）、MVK（最小可验证内核）和 ARO 的关系仍是“邻接说明”，还不是被统一宪法约束的正式接口合同。第四，ARO 已有 conformance（符合性）与 receipt validator（回执验证器），却仍把自己明确定位为“不是主证据入口，也不是架构中枢”，这说明审计层功能强，但还没有获得“上位裁决层”的制度地位。citeturn27view1turn27view0turn9view0turn8view2turn8view4
+
+下表把当前项目现状与建议对应起来，便于直接作为治理改造台账使用。
+
+| 项目 | 当前公开定位 | 已见治理/宪法表面 | 关键断点 | 建议的二级宪法重点 |
+|---|---|---|---|---|
+| `digital-biosphere-architecture`（数字生物圈架构） | Canonical architecture hub（规范架构中枢），定义五层栈与仓库角色。citeturn5view0 | README（自述文件）与跨仓库导航，但未见独立总宪法对象。citeturn5view0 | 有架构，无上位法；有层序，无优先级裁决。citeturn5view0 | 升级为总宪法引用中心，只保留架构词汇、层级映射、合宪性入口。 |
+| `persona-object-protocol`（人格对象协议，POP） | Persona Layer（人格层），定义可移植人格对象、投影规则与附着面。citeturn27view1turn5view1 | README（自述文件）、Schema（模式）、插件配置模式、示例；当前公开可见索引未明显显示 `AGENTS.md` 或 `llms.txt`。citeturn27view1turn27view0 | 身份模型强，但与上位身份主权规则、跨项目身份继承、审计归责关系未统一外显。 | 明确身份稳定性、别名规则、版本兼容、人格投影边界、可撤销与冻结条件。 |
+| `agent-intent-protocol`（智能体意图协议，AIP） | Interaction Layer（交互层），定义 `intent`、`action`、`result` 三类对象。citeturn9view0 | `spec/`、`schema/`、`examples/`、`conformance/` 已具雏形。citeturn9view0 | 与 POP、治理层、审计层的合同仍是说明式，不是宪制式。 | 明确对象生命周期、相关标识、可否执行、谁能发起、谁能升级为审计对象。 |
+| `agent-evidence`（智能体证据） | 具体执行证据入口，提供 EEOAP（执行证据与操作问责配置）最小门、Schema（模式）与验证器。citeturn4view0 | `AGENTS.md`、`llms.txt`、`agent-index.json`、`openapi.yaml`、CI（持续集成）检查、验证器。citeturn4view0turn8view0 | 证据对象强，但缺少“哪些上位法条款必须被证据显式引用”的统一要求。 | 明确证据充分性、签名要求、哈希算法、验证失败的法律后果。 |
+| `aro-audit`（审计回执复核） | 执行后审计控制面，负责回执、复核与一致性工作流。citeturn8view2turn8view3 | receipt generation and verification（回执生成与验证）、conformance（符合性）、minimal receipt profile（最小回执配置）。citeturn8view2turn8view3 | 有审计，无最高裁决权；有回执，无宪法法院角色。 | 明确回执字段、复核时限、上诉入口、举证责任、回放与驳回标准。 |
+| `token-governor`（令牌治理器） | 执行前治理层，负责预算、策略、路由、回退与权衡控制。citeturn24view1turn5view2 | `AGENTS.md`、`llms.txt`、`policy.yaml`、演示与适配器。citeturn24view0turn24view2 | 有策略，无统一法源引用与跨项目冲突优先级。 | 明确授权来源、预算上限、拒绝原则、例外审批、策略决议对象格式。 |
+| `verifiable-agent-demo`（可验证智能体演示） | 最短闭环演示，展示意图、规则、轨迹、证据、回放、审计回执。citeturn24view3turn5view3 | 产出 `intent.json`、`policy.json`、`trace.jsonl`、`sep.bundle.json`、`replay_verdict.json`、`audit_receipt.json`。citeturn24view3 | 有样板链路，但不是制度中心；示范价值高，约束力低。 | 作为总宪法合规演示基线，固定“最小闭环必须产出什么”。 |
+
+这一现状说明，你已经有“法律部门”，但还没有“国家法秩序”。换句话说，项目并不缺规则，而是缺一套能把规则放进位阶、接口、证据、审计和修正流程里的统一制度。citeturn3view0turn5view0turn8view2
+
+## 对照人类法律体系的可借鉴原则
+
+第一条可借鉴原则是**法的位阶与上位法优先**。国际 IDEA（International IDEA，国际民主与选举援助研究所）把宪法视为高于普通法的规则集合，而且对普通立法机构本身具有约束力；中国《立法法》则要求立法符合宪法规定、维护法制统一。对应到你的系统里，总宪法不能只是“最佳实践手册”，而必须是所有项目法与运行时策略的上位依据。否则，一旦某仓库为了局部便利修改策略边界，系统就会重新回到“各项目各自为政”。citeturn26view0turn16view0
+
+第二条原则是**权限法定与不可转授权失控**。中国《立法法》第十三条至第十五条要求授权事项必须明确目的、范围、期限与原则，被授权机关不得再转授。这与多智能体系统极其贴合：谁可以发起动作、谁可以批准例外、谁可以覆写策略、谁可以签发回执，都必须法定。否则“工具调用代理”“中间件”“插件”会自然演化成事实上的隐性主权。对于你的体系，这意味着所有 Runtime Adapter（运行时适配器）、Plugin（插件）与 Middleware（中间层）都应携带授权来源字段，并接受统一审查。citeturn16view0
+
+第三条原则是**公开性、明确性与可执行性**。中国《立法法》明确强调立法公开，保障参与，并要求法律规范“明确、具体，具有针对性和可执行性”。这正好对应工程里的 Schema（模式）、显式字段、版本号、错误码和 Conformance（符合性）测试。一个只写“智能体应当可靠”而没有对象字段、校验器和失败后果的总宪法，不是宪法，只是口号。你的总宪法必须做到：人可读、机可读、可测试、可失败。citeturn16view0turn18search0turn22search1
+
+第四条原则是**正当程序与独立审查**。ICCPR（《公民权利和政治权利国际公约》）要求公平公开审理、由有资格、独立、公正的裁判机关处理；更新版 Venice Commission（威尼斯委员会）《Rule of Law Checklist（法治核对表）》进一步把 checks and balances（制衡）与 constitutional review（合宪审查）提升为明确基准，并强调立法权与行政权的行使应当能够被独立、无偏私的司法机关审查。套到你的系统里，就是：拒绝、允许、例外、冻结、回滚、封禁都不能只靠单一项目维护者口头解释，必须可以进入独立的 Constitutional Court（宪法法院）流程。citeturn15view1turn15view2turn13view0
+
+第五条原则是**非溯及既往与兼容性保护**。ICCPR 第十五条明确反对事后追责式的溯及既往；中国《立法法》也规定一般不溯及既往，但为更好保护权利和利益的特别规定除外。对智能体系统来说，这等价于：规则变化不能在没有声明的前提下追溯性地否定旧证据、旧回执与旧人格对象；新宪法可以要求旧对象补充兼容说明，但不能默默把历史都判作非法。修宪流程因此必须把 compatibility assessment（兼容性评估）制度化。citeturn15view3turn11search11
+
+第六条原则是**有效救济与上诉路径**。ICCPR 第二条要求权利受侵害者享有有效救济，并且由有权限的司法、行政或立法机关予以裁定。对应到你的系统里，应当存在标准化的 dispute object（争议对象）和 appeal path（上诉路径）：项目法冲突、证据不足、策略误拒绝、身份冻结争议，都必须可申诉、可复核、可留下裁决记录。否则，运行时强制会变成不可申辩的“黑箱行政”。citeturn14view0
+
+第七条原则是**权力分层与职责分离**。International IDEA（国际 IDEA）指出，宪法通常会分立立法、行政、司法，还会设置审计、监察、人权专员等 integrity branch（廉正分支）机构。你的公开架构已经天然具备类似分层：POP 定义“我是谁”，AIP 定义“我要做什么”，Token Governor（令牌治理器）定义“允不允许”，执行完整性层定义“事实上发生了什么”，ARO 定义“审计者看到了什么”。这说明你的架构本身已经贴近现代法治的分权形态，差的只是把“角色分层”升级成“制度分层”。citeturn26view0turn5view0
+
+第八条原则是**比普通规则更难修订的宪制门槛**。International IDEA（国际 IDEA）强调宪法应当比普通法律更难修改。对你来说，项目级 `LAW.md`（项目法说明文件）可以由项目维护者多数决定，但总宪法必须至少需要跨项目维护者审查、兼容性评估和标准化变更记录。否则“总宪法”会退化成普通配置文件，失去约束力。citeturn26view0
+
+## 建议的多层宪法框架与运行时强制机制
+
+建议把整个体系明确定义为五层：**总宪法层、项目宪法层、跨项目协议层、仓库实施层、运行时执行层**。其中，总宪法层只写不可轻易改变的根本规则；项目宪法层写本项目特有边界；跨项目协议层写项目间合同；仓库实施层写文档、代码和审查责任；运行时执行层把所有规则转成策略决策、闸门判断、证据链和审计对象。这样的分层，与现有五层架构并不冲突，反而是把架构图变成法秩序。其基本依据，一方面来自你已公开的层栈与仓库分工，另一方面来自法治体系中“上位法—普通法—执行—审查”的基本逻辑。citeturn5view0turn26view0turn13view0
+
+建议的层级如下表所示。
+
+| 层级名称 | 职责 | 主要接口 | 建议数据格式 |
+|---|---|---|---|
+| Digital Biosphere Constitution（数字生物圈总宪法） | 定义系统目的、主体资格、权力边界、证据义务、冲突优先级、修宪门槛 | `constitution.yaml`（宪法配置文件） | YAML（雅姆序列化语言）+ JSON Schema（JSON 模式）citeturn22search1turn18search0 |
+| Project Constitution（项目二级宪法） | 定义项目特有目标、禁止事项、依赖关系、兼容承诺、例外条件 | `/constitution/project.yaml`（项目宪法文件） | YAML（雅姆）+ Schema（模式）citeturn22search1turn18search0 |
+| Inter-Project Protocol（跨项目协议） | 规定 POP↔AIP、AIP↔Token Governor、Governor↔Execution、Execution↔ARO 等对象契约 | `/protocols/*.yaml`（协议文件） | YAML（雅姆）+ JSON Schema（JSON 模式）+ OpenAPI（开放接口规范）如需 HTTP（超文本传输协议）面citeturn18search1turn18search5 |
+| Repository Law（仓库实施法） | 规定谁能改、谁要审、如何披露安全问题、哪些文件必备 | `LAW.md`（项目法说明文件）、`CODEOWNERS`（代码负责人文件）、`SECURITY.md`（安全策略文件） | Markdown（标记文档）+ GitHub（代码托管平台）原生机制citeturn22search2turn22search3turn1search6 |
+| Runtime Enforcement（运行时执行） | 在每次动作前后输出可校验的允拒决策、执行轨迹、证据与回执 | `policy-decision.json`（策略决策对象）、`trace.jsonl`（轨迹）、`agent-receipt.json`（智能体回执）、`audit_receipt.json`（审计回执） | JSON（结构化对象）+ 签名封装citeturn5view2turn24view3turn8view3 |
+
+在这一框架里，最关键的不是“总宪法写什么漂亮语言”，而是**接口要能落到对象**。你当前公开仓库已经证明对象化是可行的：AIP 有 `agent_intent`、`agent_action`、`agent_result`；`agent-evidence` 明确列出了 `statement_id`、`operation`、`policy`、`provenance`、`evidence`、`validation`、`subject`、`actor` 等字段；`verifiable-agent-demo` 也已经把最小闭环压到 `intent.json`、`policy.json`、`trace.jsonl`、`replay_verdict.json`、`audit_receipt.json`。也就是说，宪法体系并不是从零起步，而是可以直接收编这些现有对象。citeturn9view0turn4view0turn24view3
+
+下面给出建议性的最小对象样例。它们不是对现有仓库的逐字复刻，而是基于当前公开对象面做的统一设计。
+
+### `constitution.yaml`（宪法配置文件）示例
+
+```yaml
+version: "0.1.0"
+constitution_id: "dbc-v0.1"
+title: "Digital Biosphere Constitution"
+status: "draft"
+effective_date: "2026-08-01"
+
+preamble:
+  mission: "在数字生物圈内，以可验证、可审计、可修正的方式协调智能体身份、治理、执行与审查。"
+  scope:
+    - "persona"
+    - "interaction"
+    - "governance"
+    - "execution"
+    - "audit"
+
+supreme_principles:
+  - id: "dbc.subjecthood"
+    title: "主体可识别"
+    rule: "所有运行中的智能体、人格对象、策略决议与回执都必须具有可追踪身份。"
+  - id: "dbc.evidence"
+    title: "无证据不成立"
+    rule: "影响外部状态或治理状态的动作，必须生成可验证证据或明确拒绝回执。"
+  - id: "dbc.precedence"
+    title: "上位法优先"
+    rule: "项目法不得与总宪法冲突；冲突时由宪法法院解释。"
+  - id: "dbc.nonretroactivity"
+    title: "非溯及既往"
+    rule: "新规则默认不否定生效前合法生成的历史证据。"
+
+authorities:
+  constitution_court: "court://constitutional"
+  amendment_body: "council://maintainers"
+  registry: "registry://digital-biosphere"
+
+required_artifacts:
+  pre_execution:
+    - "policy-decision.json"
+  post_execution:
+    - "trace.jsonl"
+    - "agent-receipt.json"
+    - "audit_receipt.json"
+
+compatibility:
+  schema_policy: "semver"
+  minimum_supported_project_constitution: "0.1.x"
+```
+
+### `LAW.md`（项目法说明文件）示例
+
+```md
+# POP 项目法
+
+## 上位依据
+- Digital Biosphere Constitution v0.1
+- POP Project Constitution v0.1
+
+## 项目使命
+维护可移植人格对象、投影规则与人格附着接口。
+
+## 禁止事项
+- 未经声明更改 persona_id 的语义
+- 未经兼容说明删除历史可解析字段
+- 以运行时投影替代 canonical persona object
+
+## 必备审查
+- Schema 变更审查
+- 兼容性说明
+- 示例对象回归验证
+
+## 合宪接口
+- output: pop persona object
+- handoff_to: AIP / Token Governor / Agent Evidence
+
+## 冲突升级
+若项目法与总宪法冲突，提交 Constitutional Court（宪法法院）代理审查。
+```
+
+### `agent-receipt.json`（智能体回执对象）示例
+
+```json
+{
+  "receipt_id": "rcpt_20260801_0001",
+  "constitution_ref": "dbc-v0.1",
+  "project_law_ref": "pop-law-v0.1",
+  "actor_ref": "pop://personas/travel-assistant",
+  "intent_ref": "intent://trip-search-001",
+  "policy_decision_ref": "decision://governor-20260801-0001",
+  "status": "allowed",
+  "action_summary": "query local flight adapter",
+  "evidence": {
+    "trace_digest": "sha256:...",
+    "bundle_ref": "bundle://eeoap-0001"
+  },
+  "validation": {
+    "validator": "aro_audit.receipt_validation",
+    "profile": "minimal",
+    "result": "pass"
+  },
+  "timestamps": {
+    "issued_at": "2026-08-01T09:30:00Z"
+  },
+  "signature": {
+    "envelope": "dsse",
+    "by": "sigstore-keyless"
+  }
+}
+```
+
+为了让这些文本真正生效，需要引入运行时强制链。下面这张流程图就是建议的“有宪法的执行路径”。它建立在你现有公开闭环——意图、治理、轨迹、证据包、回放判断、审计回执——之上，并增加了宪法审查与冲突上诉环。citeturn24view3turn5view2turn8view3turn13view0
+
+```mermaid
+flowchart TD
+    A[Intent Object 意图对象] --> B[Policy Engine 策略引擎]
+    B -->|拒绝 deny| C[Denied Receipt 拒绝回执]
+    B -->|允许 allow| D[Runtime Gate 运行时闸门]
+    D --> E[Execution Trace 执行轨迹]
+    E --> F[Evidence Bundle 证据包]
+    F --> G[Audit Receipt 审计回执]
+    G --> H[Conformance Audit 一致性审计]
+    H --> I{Conflict? 是否冲突}
+    I -->|否 No| J[Archive 归档]
+    I -->|是 Yes| K[Constitutional Court 宪法法院]
+    K --> L[Binding Decision 约束性裁决]
+    L --> M[Precedent or Amendment 先例或修宪]
+```
+
+在实现层面，Policy Engine（策略引擎）可以优先选择 OPA（Open Policy Agent，开放策略代理）或 Cedar（细粒度授权策略语言）这类成熟策略系统；它们都支持把规则与应用逻辑解耦并面向结构化输入做决策。身份层若要跨运行时与跨系统稳定引用，可参考 DID（Decentralized Identifier，去中心化标识符）数据模型；接口层可用 JSON Schema（JSON 模式）与 OpenAPI（开放接口规范）维持强约束；签名与可验证封装则建议使用 DSSE（Dead Simple Signing Envelope，简易签名封装）+ Sigstore（开源签名与透明日志体系）；供应链与证据链的流程证明可借鉴 in-toto（端到端供应链完整性框架）与 SLSA（软件供应链安全等级框架）。这些都是为了把“宪法条文”最终落成“可被机器拒绝或允许”的判断。citeturn21search0turn21search10turn19search3turn21search4turn18search0turn18search1turn19search9turn19search2turn20search1turn18search3
+
+Constitutional Court（宪法法院）的设计建议采用“代理 + 规则库 + 证据读取器”的组合，而不是单个大模型随意裁判。其最小决策流程应为：受理争议对象，检查争议是否引用明确条款，读取相关项目法和证据对象，形成 preliminary opinion（初步意见），再由裁决规则计算优先级：总宪法优先于项目法，明示例外优先于默示惯例，已生效回执优先受非溯及既往保护，涉及签名/证据完整性问题的争议优先按事实层处理，只有事实成立后才进入规范层解释。这个“先事实、后规范”的顺序，与 `agent-evidence` 和 `aro-audit` 当前把验证、回执、一致性作为核心的方向是对齐的。citeturn4view0turn8view2turn8view3turn15view1turn13view0
+
+## 宪法进化、实施路线图与风险评估
+
+总宪法一旦建立，就必须同时建立修宪流程。国际 IDEA（国际 IDEA）指出，宪法应当比普通法律更难修改；ICCPR（公民与政治权利国际公约）本身也采用正式提案、会议、批准与生效门槛的修改程序。对工程系统而言，这意味着：项目维护者可以快节奏修改项目法，但总宪法修改必须经过提案、影响评估、兼容性评估、审查、表决或仲裁、发布与迁移期。否则，所谓“总宪法”会因为修改过于容易而直接失去权威。citeturn26view0turn14view0
+
+我建议把修正流程固定为七步。第一步，Amendment Proposal（修宪提案）必须引用现行条款、痛点、拟修订文本与预期收益。第二步，Compatibility Review（兼容性评估）必须回答：会不会让历史证据失效，会不会改变项目接口，会不会导致二级宪法必须同步更新。第三步，Conformance Impact（符合性影响）要列出需要更新的 Schema（模式）、测试向量、回执验证器与演示样例。第四步，Public Comment（公开评议）至少针对跨项目维护者开放。第五步，Decision（决策）可采用维护者表决；若争议集中在上位法解释，则交由 Constitutional Court（宪法法院）仲裁。第六步，Release（发布）必须产出变更记录。第七步，Migration Window（迁移窗口）规定旧版支持时间与失效时间。这个流程同时吸收了《立法法》的程序观、Rule of Law Checklist（法治核对表）的审查观，以及你现有仓库中对 conformance（符合性）与 validator（验证器）的实际重视。citeturn16view0turn13view0turn8view2turn9view0
+
+建议使用统一的修宪记录对象，例如 `amendment-record.yaml`（修宪记录文件），关键字段至少应包括：`amendment_id`（修正案编号）、`based_on`（基于版本）、`changed_articles`（改动条款）、`compatibility`（兼容性结论）、`requires_project_updates`（是否要求项目同步）、`court_opinion`（宪法法院意见，可选）、`effective_date`（生效日期）、`migration_deadline`（迁移截止日期）。在证据逻辑上，修宪本身也应留下审计对象，否则系统会对业务动作做证据留存，却对规则自身变更不留证据，形成更大的治理黑洞。这个建议与现有证据/回执导向完全一致。citeturn4view0turn8view3
+
+实施路线图不宜一开始追求“大而全”，而应当像你已有项目一样，先做最短闭环。下面给出务实的三阶段路线图。
+
+| 阶段 | 时间尺度 | 核心里程碑 | 优先级 | 所需资源 | 主要风险 | 风险应对 |
+|---|---|---|---|---|---|---|
+| 短期 | 0–6 周 | 建立 `digital-biosphere-constitution`（数字生物圈宪法）总仓库；发布 `v0.1` 草案；统一术语表；给 POP、AIP、Token Governor、Agent Evidence、ARO、Demo 各补一个 `LAW.md`（项目法说明文件）；在 `verifiable-agent-demo` 中增加“合宪检查”步骤。 | 最高 | 1 名主维护者 + 1 名规则/Schema（模式）维护者 | 术语不统一，特别是 AOP/AIP/EEOAP 混用 | 先做 canonical terms（规范术语表）与 repository map（仓库映射表）。citeturn5view0turn9view0turn4view0 |
+| 中期 | 6–12 周 | 落地 Policy Engine（策略引擎）与 `policy-decision.json`（策略决策对象）；打通 POP→AIP→Governor→Evidence→ARO 链路；建立 Constitutional Court（宪法法院）最小争议对象。 | 高 | 1 名后端/验证器工程师 + 1 名策略工程师 | 规则有文本但无法执行；各项目对象字段不一致 | 以 JSON Schema（JSON 模式）为强制边界，并将 Demo（演示）作为唯一发布门。citeturn18search0turn24view3 |
+| 长期 | 3–6 个月 | 建修宪流程、先例库、兼容报告、跨项目协议注册表；引入签名、透明日志与供应链证明；形成对外互操作文档。 | 中高 | 1 名平台工程师 + 1 名安全/签名工程师 | 制度复杂化、维护成本抬升 | 只把高频争议上升为总宪法，低频差异留在项目法。citeturn19search2turn20search1turn18search3 |
+
+从资源与收益比看，短期阶段最值钱。因为它不依赖复杂基础设施，只需要你把“各项目已有原则”抽象成同一位阶的制度对象。短期一旦完成，后续 OPA（开放策略代理）/Cedar（策略语言）、DSSE（签名封装）、Sigstore（签名透明日志）、in-toto（供应链完整性）这些能力都可以渐进引入，而不是一开始全面铺开。citeturn21search0turn19search3turn19search9turn19search2turn20search1
+
+## 最小可行版本草案、跨项目协议示例与优先参考来源
+
+`Digital Biosphere Constitution v0.1`（数字生物圈宪法 v0.1）的最小可行内容，不应超过“一个总仓库 + 六类文件 + 一个演示门槛”。如果首版过大，维护者会迅速回到“写不动、审不动、执行不了”的老问题。可以直接采用下面这份文件清单。
+
+### 首版最小可行文件清单
+
+| 文件 | 作用 | 关键字段/内容 |
+|---|---|---|
+| `README.md`（总说明） | 说明体系目标、范围、边界、版本策略 | 架构总览、仓库映射、合宪入口 |
+| `constitution.yaml`（宪法配置文件） | 总宪法机器可读版本 | `version`、`supreme_principles`、`authorities`、`required_artifacts`、`compatibility` |
+| `constitution.schema.json`（宪法模式） | 校验 `constitution.yaml` | 必填字段、版本规则、枚举值 |
+| `terms.md`（规范术语表） | 统一 POP/AIP/EEOAP/ARO 等术语 | canonical name（规范名）、alias（别名）、deprecated（弃用名） |
+| `protocols/`（协议目录） | 管理跨项目协议 | `pop-aro.yaml`、`aip-governor.yaml` 等 |
+| `court/decision-template.yaml`（裁决模板） | 统一宪法法院输出 | `issue`、`facts`、`articles_applied`、`decision`、`precedent` |
+| `amendments/`（修正案目录） | 保存修宪记录 | `amendment-record.yaml` |
+| `examples/`（示例目录） | 示例对象与最小闭环 | `policy-decision.json`、`agent-receipt.json` |
+| `CONTRIBUTING.md`（贡献规则） | 修宪提案与评审流程 | 提案模板、审查门槛、发布要求 |
+| `.github/CODEOWNERS`（代码负责人） | 确立条款负责人 | 按目录分配负责人。citeturn22search3 |
+| `.github/SECURITY.md`（安全策略） | 规定漏洞披露路径 | 报告渠道、时效、保密处理。citeturn22search2 |
+
+### POP 与 ARO 跨项目协议草案
+
+这个协议草案的目标不是“让 POP 直接生成审计”，而是明确定义 POP 负责哪部分，ARO 又负责哪部分，避免人格层越俎代庖进入审计解释层。该分工与当前公开定位是一致的：POP 负责人格对象与投影，ARO 负责执行后回执、复核与符合性。citeturn27view1turn8view2
+
+| 协议条款 | POP（人格对象协议）责任 | ARO（审计回执复核）责任 | 交付对象 |
+|---|---|---|---|
+| 身份基线 | 提供稳定 `actor_ref`（行为者引用）、`persona_id`（人格标识）、版本号与投影来源。 | 校验回执中的 `actor_ref` 是否可追溯、是否与证据链一致。 | `actor_ref`、`persona_version` |
+| 语义边界 | 只声明“谁在行动”，不声明“动作是否合法”。 | 不重写人格定义，只对既有身份做审计归责。 | `identity-attachment.json`（身份附着对象） |
+| 版本兼容 | 发布人格对象破坏性变更时，提供兼容说明与迁移映射。 | 审计层在读取旧回执时遵循非溯及既往，除非总宪法另有明示。 | `compatibility-note.md`（兼容说明） |
+| 事件关联 | 在意图/动作链中提供可传播的 `correlation_id`（关联标识）。 | 在回执中保留该 `correlation_id`，实现审计链闭合。 | `correlation_id` |
+| 争议处理 | 若身份字段含义变化引发争议，提交宪法法院解释。 | 若回执归责失败或身份不一致，提交宪法法院解释。 | `dispute.json`（争议对象） |
+| 最低合规 | 人格对象必须可解析、可投影、可引用。 | 回执必须可验证、可回放、可归档。 | `agent-receipt.json`、`audit_receipt.json` |
+
+### 需要的技术组件清单
+
+下表只列优先投入的组件，不求一次全部实现；原则是先保证“总宪法可读、项目法可校验、策略可执行、证据可签名、回执可复核”。
+
+| 组件类别 | 推荐优先项 | 用途 | 依据 |
+|---|---|---|---|
+| 配置与模式 | YAML（雅姆）+ JSON Schema（JSON 模式） | 让规则既可人工编辑又可机器校验 | YAML 1.2.2 官方规范；JSON Schema 2020-12 官方规范。citeturn22search1turn18search0turn18search8 |
+| API（接口）合同 | OpenAPI（开放接口规范） 3.1 | 描述 HTTP（超文本传输协议）接口、验证输入输出 | OpenAPI 官方规范强调其为语言无关的标准接口描述。citeturn18search1turn18search5 |
+| 策略引擎 | OPA（开放策略代理）或 Cedar（细粒度授权策略语言） | 把宪法/项目法编译为可执行允许/拒绝决策 | OPA 与 Cedar 都面向授权与策略评估。citeturn21search0turn21search10turn19search3 |
+| 身份模型 | DID（去中心化标识符）或 POP 原生标识注册表 | 跨仓库、跨运行时保持身份稳定引用 | W3C DID Core（去中心化标识核心）规定 DID 语法与核心数据模型。citeturn21search4 |
+| 签名封装 | DSSE（简易签名封装）+ Sigstore（签名与透明日志） | 让回执、证据包与修宪记录可签名、可验证 | DSSE 官方仓库；Sigstore 官方站。citeturn19search9turn19search2turn19search10 |
+| 供应链/证据链 | in-toto（端到端供应链完整性）+ SLSA（供应链安全等级） | 证明步骤、责任人、顺序与产物未被篡改 | in-toto 官方文档；SLSA 官方站。citeturn20search1turn20search9turn18search3 |
+| 物料清单 | SPDX（软件包数据交换）或 CycloneDX（物料清单标准） | 给运行时依赖、验证器、签名工具建立可审计清单 | SPDX 官方站；CycloneDX 官方站。citeturn20search3turn20search6 |
+| 仓库治理 | README（自述文件）、`CODEOWNERS`（代码负责人）、`SECURITY.md`（安全策略）、`AGENTS.md`（智能体说明）、`llms.txt`（大模型入口） | 把规则落实到人读入口、责任归属与安全流程 | GitHub 对 README、CODEOWNERS、SECURITY 的官方说明；现有仓库已广泛采用 `AGENTS.md`、`llms.txt`。citeturn1search6turn22search2turn22search3turn4view0turn24view0turn24view3 |
+
+### 优先参考来源列表
+
+下面按“公开项目主线仓库 → 官方/原始法律与制度来源 → 官方技术规范”排序。你后续写总宪法时，建议优先从这些来源抽取术语、接口和制度骨架。相关来源在上文分析中已分别使用。citeturn3view0turn5view0turn16view0turn13view0turn18search0
+
+```text
+项目主线仓库
+https://github.com/joy7758
+https://github.com/joy7758/digital-biosphere-architecture
+https://github.com/joy7758/persona-object-protocol
+https://github.com/joy7758/agent-intent-protocol
+https://github.com/joy7758/token-governor
+https://github.com/joy7758/agent-evidence
+https://github.com/joy7758/aro-audit
+https://github.com/joy7758/verifiable-agent-demo
+
+法律与制度来源
+https://www.spp.gov.cn/spp/fl/202303/t20230314_608394.shtml
+https://www.venice.coe.int/webforms/documents/default.aspx?pdffile=CDL-AD(2025)002-e
+https://www.ohchr.org/en/instruments-mechanisms/instruments/international-covenant-civil-and-political-rights
+https://treaties.un.org/doc/treaties/1976/03/19760323%2006-17%20am/ch_iv_04.pdf
+https://constitutionnet.org/sites/default/files/what_is_a_constitution_0.pdf
+
+官方技术规范
+https://yaml.org/spec/1.2.2/
+https://json-schema.org/draft/2020-12
+https://json-schema.org/specification
+https://swagger.io/specification/
+https://openapis.org/
+https://openpolicyagent.org/docs
+https://docs.cedarpolicy.com/
+https://www.w3.org/TR/did-1.1/
+https://github.com/secure-systems-lab/dsse
+https://www.sigstore.dev/
+https://in-toto.io/
+https://slsa.dev/
+https://spdx.dev/
+https://cyclonedx.org/
+https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes
+https://docs.github.com/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+https://docs.github.com/code-security/getting-started/adding-a-security-policy-to-your-repository
+```
+
+综合判断，`Digital Biosphere Constitution v0.1`（数字生物圈宪法 v0.1）最应该先写的，不是抽象哲学，而是四件能立刻降低系统摩擦的东西：统一术语表、总宪法对象、跨项目协议模板、运行时决策/回执对象。你的现有仓库已经把身份、意图、治理、证据、审计、演示各自做到“能工作”；下一步要做的是把它们放进一个能裁决、能修正、能追责、能兼容的共同法秩序里。只要这一步完成，今后新增仓库就不再是“再造一个岛”，而是“加入同一法域”。citeturn5view0turn4view0turn8view2turn24view3turn26view0turn13view0

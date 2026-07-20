@@ -1,0 +1,33 @@
+{
+  "schema_version": "0.1",
+  "kind": "DBOSDeterministicRunnerQualificationSupplement",
+  "experiment_id": "DBOS-EXP-0001",
+  "runner_id": "dbio:runner:automated:dbos-self-validation:v0.1",
+  "supplements": "evidence/experiments/DBOS-EXP-0001/runner/runner-qualification.json",
+  "reason": "The frozen phase-aware validator requires separately retained subject and environment evidence referenced by the frozen registries.",
+  "implementation": "execution/dbos_exp_0001_runner.py",
+  "implementation_digest": "sha256:39728020dff98e0414fccb5fe6dae0c1938898bf02750f578db11394535547f9",
+  "base_implementation": "execution/dbos_exp_0001.py",
+  "base_implementation_digest": "sha256:3ece45ca3bba89e2628d0351cb8bd2032e2f709e88db3566a57897e9a68da6ed",
+  "auxiliary_input_policy": {
+    "allowlist_count": 5,
+    "digest_required": true,
+    "temporary_mount_only": true,
+    "frozen_archive_modified": false,
+    "external_repository_access": false,
+    "sensitive_data_access": false
+  },
+  "qualification_status": "qualified",
+  "verification": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 python3 validation/execution_chain_validator.py --phase runner --format json",
+    "validator_digest": "sha256:a5541ee36bda58b562509e835ccadbadef987d8f834e6c0844302d5fa34273a2",
+    "result": "PASS",
+    "verified_at": "2026-07-20T10:36:22+08:00",
+    "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+    "independence_status": "not_independent"
+  },
+  "agent_status": "not_an_agent",
+  "runtime_status": "not_a_runtime",
+  "capability_effect": "none",
+  "permission_effect": "none"
+}

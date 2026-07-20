@@ -1,0 +1,61 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereEnvironmentCollectorRunRegistry",
+  "metadata": {
+    "title": "Environment Collector Runs v0.1",
+    "status": "one_completed_read_only_collection_run",
+    "constitution": "../constitution/environment-collector-constitution.yaml",
+    "collector_source_of_truth": "environment-collectors.yaml",
+    "scope_source_of_truth": "collector-scopes.yaml",
+    "environment_source_of_truth": "environment-identities.yaml",
+    "generated_at": "2026-07-20T09:37:43+08:00",
+    "collector_run_count": 1,
+    "run_status_distribution": {"pending": 0, "running": 0, "completed": 1, "partial": 0, "failed": 0, "invalid": 0, "revoked": 0},
+    "completed_run_count": 1,
+    "write_side_effect_count": 0,
+    "experiment_execution_count": 0,
+    "event_created_count": 0,
+    "snapshot_created_count": 0,
+    "permission_grant_count": 0,
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "No run record exists because no Collector or approved scope exists and no collection occurred.",
+      "Run Schema != Run Authorization != Run Occurrence != Environment Qualification."
+    ]
+  },
+  "collector_run_schema": {
+    "required_fields": ["run_id", "collector_id", "environment_id", "started_at", "ended_at", "status", "output_refs"],
+    "additional_governance_fields": ["scope_ref", "capture_ref", "method_digest", "side_effects", "limitations", "supersedes", "revocation_ref", "authority_effect"],
+    "valid_statuses": ["pending", "running", "completed", "partial", "failed", "invalid", "revoked"],
+    "default_status": "pending",
+    "run_boundary": "running or terminal status requires an active Collector, approved matching scope, explicit capture, read-only method, attributable timestamps, and zero write side effects."
+  },
+  "collector_runs": [
+    {
+      "run_id": "DBOS-EXP-0001-ENV-COLLECTOR-RUN-0001",
+      "collector_id": "dbio:collector:automated:dbos-environment-read-only:v0.1",
+      "environment_id": "dbio://runner-environment/dbos-exp-0001/local-governance-workspace/v0.1",
+      "started_at": "2026-07-20T10:07:49+08:00",
+      "ended_at": "2026-07-20T10:07:49+08:00",
+      "status": "completed",
+      "output_refs": [
+        "DBOS-EXP-0001-ENV-FACT-OS-0001",
+        "DBOS-EXP-0001-ENV-FACT-PYTHON-0001",
+        "DBOS-EXP-0001-ENV-FACT-DEPENDENCY-0001",
+        "DBOS-EXP-0001-ENV-FACT-CONFIGURATION-0001",
+        "DBOS-EXP-0001-ENV-FACT-HARDWARE-0001",
+        "DBOS-EXP-0001-ENV-DIGEST-DEPENDENCY-0001",
+        "DBOS-EXP-0001-ENV-DIGEST-CONFIGURATION-0001",
+        "DBOS-EXP-0001-ENV-DIGEST-ENVIRONMENT-0001"
+      ],
+      "scope_ref": "DBOS-EXP-0001-ENV-COLLECTOR-SCOPE-0001",
+      "capture_ref": "DBOS-EXP-0001-ENV-EVIDENCE-CAPTURE-0001",
+      "method_digest": "sha256:3ece45ca3bba89e2628d0351cb8bd2032e2f709e88db3566a57897e9a68da6ed",
+      "side_effects": ["created_new_experiment_evidence_artifacts_only"],
+      "limitations": ["local host only", "timezone resolution one second", "no sensitive or external content read"],
+      "supersedes": null,
+      "revocation_ref": null,
+      "authority_effect": "none"
+    }
+  ]
+}

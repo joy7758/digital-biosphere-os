@@ -1,0 +1,7 @@
+{
+  "context_id": "dbio:execution-context:digital-biosphere-os:0001",
+  "hash": "sha256:7e6ffcd2b07c0d6d5583d8a2fd98e44b8c85400468b4f49aefb65bd9e2542959",
+  "input_ref": "evidence/experiments/DBOS-EXP-0001/freeze-run-0004/dbos-input-snapshot.tar",
+  "snapshot_id": "dbio:snapshot:input:dbio:execution-context:digital-biosphere-os:0001:0001",
+  "timestamp": "2026-07-20T10:20:17+08:00"
+}

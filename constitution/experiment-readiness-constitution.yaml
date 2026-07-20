@@ -1,0 +1,264 @@
+schema_version: "0.1"
+kind: "DigitalBiosphereExperimentReadinessConstitution"
+metadata:
+  title: "Experiment Readiness Constitution v0.1"
+  chinese_title: "实验就绪宪法 v0.1"
+  status: "readiness_review_defined_pending"
+  parent_constitution: "constitution.yaml"
+  identity_reference: "identity-constitution.yaml"
+  experimental_protocol_reference: "experimental-protocol-constitution.yaml"
+  execution_context_reference: "execution-context-constitution.yaml"
+  event_reference: "event-constitution.yaml"
+  attestation_reference: "event-attestation-constitution.yaml"
+  freeze_reference: "experiment-freeze-constitution.yaml"
+  capture_readiness_reference: "snapshot-capture-readiness-constitution.yaml"
+  executor_reference: "executor-constitution.yaml"
+  executor_identity_reference: "executor-identity-constitution.yaml"
+  automated_runner_reference: "automated-runner-constitution.yaml"
+  environment_qualification_reference: "environment-qualification-constitution.yaml"
+  authority: "pre_execution_readiness_structure_and_validation_only"
+  effective_scope:
+    - "/Users/zhangbin/GitHub/digital-biosphere-os"
+  adopted_at: "2026-07-20T01:21:56+08:00"
+  non_claims:
+    - "This constitution does not authorize or execute DBOS-EXP-0001."
+    - "Readiness review does not create an event, runtime, Agent, Digital Organism, capability, permission, evidence result, verification result, or C/E/V promotion."
+    - "Subject registration, a pending snapshot, a pending validator manifest, or a pending review is not readiness evidence or execution authority."
+
+readiness_definition:
+  definition: "A fail-closed pre-execution assessment of whether one registered experiment has an attributable subject, immutable input snapshot, frozen validator set, qualified environment, and separate attributable authorization."
+  separation_rules:
+    - "Registered Experiment != Ready Experiment."
+    - "Ready Experiment != Authorized Experiment."
+    - "Authorized Experiment != Executed Experiment."
+    - "Readiness Evidence != Event Evidence != Verification Decision."
+  current_experiment: "DBOS-EXP-0001"
+  current_status: "pending"
+  automatic_transition: false
+  execution_authority: "none"
+
+subject_readiness:
+  source_of_truth: "../registry/experiment-subjects.yaml"
+  requirements:
+    - "The experiment resolves to exactly one registered experiment subject."
+    - "The subject type is valid for experiment governance and is explicitly bounded."
+    - "The subject has an inspectable identity evidence reference."
+    - "A governance_system subject is not an Agent, runtime, organism, or automatic canonical entity registration."
+  current_status: "pending"
+  blocking_reason: "digital-biosphere-os is registered as a bounded governance_system subject, but identity_status remains registered_pending_verification and canonical_entity_status remains not_registered."
+
+snapshot_readiness:
+  source_of_truth: "../registry/experiment-snapshots.yaml"
+  required_hashes:
+    - "file_tree_hash"
+    - "config_hash"
+    - "dependency_hash"
+    - "environment_hash"
+  digest_format: "sha256:<64 lowercase hexadecimal characters>"
+  freeze_rule: "All required digests, captured_at, retained material references, and freeze evidence must exist before status may become frozen or ready."
+  immutability_rule: "A frozen snapshot is immutable; replacement requires a new snapshot_id and append-only succession record."
+  current_status: "pending"
+  blocking_reason: "All four aggregate digests are null and no snapshot has been frozen."
+
+validator_freeze:
+  source_of_truth: "../registry/validator-manifests.yaml"
+  requirements:
+    - "The manifest lists every validator path exactly once."
+    - "The validator set and bytes are bound by one digest."
+    - "The freeze time and retained manifest evidence are recorded."
+    - "Adding, removing, or changing a validator after freeze creates a new manifest version."
+  current_status: "pending"
+  blocking_reason: "The current twenty-eight-validator declaration has digest=null, locked_digest=null, and is not frozen."
+
+freeze_requirement:
+  constitution: "experiment-freeze-constitution.yaml"
+  freeze_manifest_registry: "../registry/freeze-manifests.yaml"
+  environment_lock_registry: "../registry/environment-locks.yaml"
+  freeze_certificate_registry: "../registry/freeze-certificates.yaml"
+  requirements:
+    - "The experiment snapshot is frozen and references the same freeze manifest."
+    - "The validator manifest is frozen and digest equals locked_digest."
+    - "The environment lock is frozen with attributable OS, runtime, dependency, timestamp, and evidence material."
+    - "The freeze manifest is frozen and an attributable certificate is issued."
+  current_status: "pending"
+  blocking_reason: "The freeze manifest, environment lock, and certificate all remain pending; no immutable freeze certificate has been issued."
+  automatic_readiness: false
+  automatic_authorization: false
+  execution_authority: "none"
+
+capture_readiness_dependency:
+  constitution: "snapshot-capture-readiness-constitution.yaml"
+  collector_registry: "../registry/capture-collectors.yaml"
+  scope_registry: "../registry/capture-scopes.yaml"
+  authorization_registry: "../registry/capture-authorizations.yaml"
+  review_registry: "../registry/capture-readiness-reviews.yaml"
+  required_status: "ready"
+  current_status: "pending"
+  blocking_reason: "No collector is registered, capture authorization is pending, privacy evidence is absent, and all four capture-readiness criteria remain pending."
+  automatic_experiment_readiness: false
+  automatic_capture: false
+  execution_authority: "none"
+
+executor_readiness_requirement:
+  constitution: "executor-constitution.yaml"
+  identity_constitution: "executor-identity-constitution.yaml"
+  identity_registry: "../registry/executor-identities.yaml"
+  identity_verification_registry: "../registry/executor-verifications.yaml"
+  executor_registry: "../registry/executors.yaml"
+  scope_registry: "../registry/executor-scopes.yaml"
+  authorization_registry: "../registry/executor-authorizations.yaml"
+  requirements:
+    - "An executor record references an existing verified Executor Identity and remains distinct from Agent, Runtime, Organism, Collector, and Verifier roles."
+    - "Executor status is verified or active and its fixed version is attributable."
+    - "A deny-by-default scope references DBOS-EXP-0001, lists only registered procedure actions, and preserves all mandatory forbidden actions."
+    - "A separate executor authorization is authorized by a distinct attributable identity with a timezone-aware timestamp."
+    - "Experiment authorization, snapshot capture readiness, freeze, environment, and all other readiness gates are independently satisfied."
+    - "Accountability and stop-rule bindings exist before any procedure step can run."
+  current_executor_count: 0
+  current_scope_count: 0
+  current_authorization_status: "pending"
+  current_status: "pending"
+  blocking_reason: "No executor identity is appointed, no executor scope exists, and DBOS-EXP-0001-EXECUTOR-AUTH-0001 has executor_id=null, scope_ref=null, authorized_by=null, timestamp=null, and current_effect=none."
+  automatic_executor_appointment: false
+  automatic_authorization: false
+  execution_authority: "none"
+
+verified_executor_requirement:
+  identity_registry: "../registry/executor-identities.yaml"
+  identity_verification_registry: "../registry/executor-verifications.yaml"
+  executor_registry: "../registry/executors.yaml"
+  requirements:
+    - "At least one Executor Identity has verification_status=verified and lifecycle_state=verified."
+    - "Exactly one attributable terminal verification record supports that identity within a matching human or automated boundary."
+    - "A separate Executor record explicitly appoints the verified identity; no automatic appointment is permitted."
+    - "The Executor record type matches the identity type and remains verified or active."
+    - "Identity verification, Executor appointment, Executor authorization, and experiment authorization remain separate gates."
+  current_executor_identity_count: 0
+  current_verified_identity_count: 0
+  current_executor_count: 0
+  current_status: "pending"
+  blocking_reason: "executor-identities.yaml and executor-verifications.yaml are empty, so no verified Executor Identity exists and no Executor may be appointed."
+  automatic_appointment: false
+  automatic_authorization: false
+  execution_authority: "none"
+
+runner_readiness_requirement:
+  constitution: "automated-runner-constitution.yaml"
+  environment_qualification_constitution: "environment-qualification-constitution.yaml"
+  runner_registry: "../registry/runners.yaml"
+  scope_registry: "../registry/runner-scopes.yaml"
+  environment_registry: "../registry/runner-environments.yaml"
+  environment_identity_registry: "../registry/environment-identities.yaml"
+  environment_evidence_registry: "../registry/environment-evidence.yaml"
+  environment_qualification_registry: "../registry/environment-qualifications.yaml"
+  execution_registry: "../registry/runner-executions.yaml"
+  evidence_registry: "../registry/runner-evidence.yaml"
+  requirements:
+    - "One Runner references a verified automated Executor Identity and separately appointed automated_runner Executor."
+    - "Runner execution_mode is deterministic, version and implementation digest are fixed, and status is ready."
+    - "One approved Runner scope permits only DBOS-EXP-0001 and an ordered subset of its eight registered steps."
+    - "Runner environment records OS, Python, dependencies, configuration digest, lock evidence, and qualified or frozen status through an explicit verified qualification record."
+    - "Snapshot, validator manifest, environment lock, freeze certificate, capture readiness, Executor authorization, and experiment authorization are complete."
+    - "No prior Runner execution or evidence record is required to define readiness, but readiness cannot create either record."
+  current_runner_count: 0
+  current_runner_scope_count: 0
+  current_runner_environment_count: 1
+  current_qualified_runner_environment_count: 0
+  current_runner_execution_count: 0
+  current_runner_evidence_count: 0
+  current_status: "pending"
+  blocking_reason: "No verified automated Executor Identity, appointed Executor, Runner, or Runner scope exists; the sole Runner environment has null OS and Python versions, no dependencies or digest, an empty evidence registry, a pending qualification, and qualification_status=not_qualified."
+  automatic_registration: false
+  automatic_authorization: false
+  automatic_execution: false
+  execution_authority: "none"
+
+environment_readiness:
+  environment_ref: "../registry/environments.yaml"
+  environment_id: "dbio://environment/local-governance-workspace/v0.1"
+  requirements:
+    - "The environment exists and its constraints are inspectable."
+    - "The environment is explicitly activated or qualified for the bounded experiment."
+    - "Environment configuration is included in the frozen snapshot."
+    - "Environment readiness does not create a runtime or grant data, compute, repository, or execution permission."
+  current_status: "pending"
+  blocking_reason: "The environment is defined with activation_status=not_active and has no experiment-scoped qualification record."
+
+authorization_readiness:
+  source_of_truth: "../registry/experiment-authorizations.yaml"
+  requirements:
+    - "A separate authorization record resolves to the experiment."
+    - "status is authorized, authorized_by identifies an attributable authority, decision_at is timezone-aware, and scope is bounded."
+    - "Authorization cannot be inferred from subject, snapshot, manifest, environment, procedure, validator pass, or readiness status."
+  current_status: "pending"
+  blocking_reason: "DBOS-EXP-0001-AUTH-0001 remains pending with authorized_by=null, decision_at=null, and current_effect=none."
+
+readiness_review:
+  source_of_truth: "../registry/readiness-reviews.yaml"
+  required_criteria:
+    - "subject_readiness"
+    - "snapshot_readiness"
+    - "validator_freeze"
+    - "environment_readiness"
+    - "authorization_readiness"
+  valid_statuses:
+    - "pending"
+    - "ready"
+    - "not_ready"
+    - "invalid"
+    - "revoked"
+  ready_gate: "Every criterion must have status=ready and sufficient evidence; no individual or aggregate status may authorize execution."
+  current_distribution:
+    pending: 5
+    ready: 0
+    not_ready: 0
+    invalid: 0
+    revoked: 0
+  execution_effect: "none"
+
+current_baseline:
+  experiment_subject_count: 1
+  governance_system_subject_count: 1
+  canonical_entity_count_change: 0
+  snapshot_count: 1
+  frozen_snapshot_count: 0
+  validator_manifest_count: 1
+  frozen_validator_manifest_count: 0
+  freeze_manifest_count: 1
+  frozen_freeze_manifest_count: 0
+  environment_lock_count: 1
+  frozen_environment_lock_count: 0
+  freeze_certificate_count: 1
+  issued_freeze_certificate_count: 0
+  capture_collector_count: 0
+  capture_scope_count: 1
+  capture_authorization_count: 1
+  active_capture_authorization_count: 0
+  capture_readiness_review_count: 4
+  pending_capture_readiness_review_count: 4
+  executor_count: 0
+  executor_identity_count: 0
+  verified_executor_identity_count: 0
+  executor_identity_verification_count: 0
+  executor_identity_boundary_count: 2
+  automated_runner_count: 0
+  automated_runner_scope_count: 0
+  automated_runner_environment_count: 1
+  qualified_automated_runner_environment_count: 0
+  automated_runner_execution_count: 0
+  automated_runner_evidence_count: 0
+  executor_scope_count: 0
+  executor_authorization_count: 1
+  active_executor_authorization_count: 0
+  readiness_review_count: 5
+  ready_criterion_count: 0
+  pending_criterion_count: 5
+  active_authorization_count: 0
+  execution_count: 0
+  event_count: 0
+  runtime_instance_count: 0
+  agent_created_count: 0
+  digital_organism_count: 0
+  capability_count: 0
+  permission_grant_count: 0
+  c_e_v_level_change_count: 0

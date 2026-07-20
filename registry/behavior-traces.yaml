@@ -1,0 +1,32 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereBehaviorTraceRegistry",
+  "metadata": {
+    "title": "Behavior Trace Registry v0.1",
+    "status": "empty_behavior_trace_baseline",
+    "constitution": "../constitution/organism-genesis-constitution.yaml",
+    "runtime_source_of_truth": "runtime-instances.yaml",
+    "evidence_source_of_truth": "capability-evidence.yaml",
+    "generated_at": "2026-07-19T22:10:23+08:00",
+    "behavior_trace_count": 0,
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "No behavior trace exists in the v0.1 baseline.",
+      "A trace records bounded action and result provenance; it does not prove intent, consciousness, autonomy, capability approval, permission, or organism status.",
+      "Synthetic, demo, local, released, deployed, and production traces must remain distinct."
+    ]
+  },
+  "behavior_trace_schema": {
+    "required_fields": [
+      "trace_id",
+      "runtime_id",
+      "action",
+      "result",
+      "evidence_ref",
+      "timestamp"
+    ],
+    "trace_id_format": "dbio://behavior-trace/<runtime-id>/<sequence>",
+    "record_boundary": "A trace requires an existing runtime, claim-bound evidence, attributable time, environment, action, result, side effects, and limitations."
+  },
+  "behavior_traces": []
+}

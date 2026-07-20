@@ -1,0 +1,23 @@
+{
+  "capability_effect": "none",
+  "decision": "pass",
+  "evidence_bundle_ref": "evidence-bundle.json#sha256:700c851f047ba66a32c031e771b7e968f5478d9d46d4ebd02bd9acf375d673ee",
+  "execution_id": "dbio:runner-execution:dbos-self-validation:DBOS-EXP-0001:0002",
+  "experiment_id": "DBOS-EXP-0001",
+  "independence_status": "not_independent",
+  "limitations": [
+    "local automated verification",
+    "does not upgrade C/E/V",
+    "does not approve capability",
+    "does not establish production fitness"
+  ],
+  "method": "digest_reference_and_frozen_validator_result_verification",
+  "permission_effect": "none",
+  "status": "verified_local_structural",
+  "timestamp": "2026-07-20T10:50:17+08:00",
+  "validator_fail_count": 0,
+  "validator_pass_count": 29,
+  "verification_level_effect": "none",
+  "verification_result_id": "dbio:experiment-verification:DBOS-EXP-0001:0001",
+  "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1"
+}

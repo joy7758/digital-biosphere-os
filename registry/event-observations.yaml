@@ -1,0 +1,30 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereEventObservationRegistry",
+  "metadata": {
+    "title": "Event to Observation Links v0.1",
+    "status": "empty_event_observation_baseline",
+    "constitution": "../constitution/event-constitution.yaml",
+    "event_source_of_truth": "events.yaml",
+    "generated_at": "2026-07-19T23:41:50+08:00",
+    "observation_count": 0,
+    "fitness_effect_count": 0,
+    "evolution_effect_count": 0,
+    "permission_grant_count": 0,
+    "capability_effect_count": 0,
+    "c_e_v_level_change_count": 0,
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "The v0.1 registry is empty because no event exists.",
+      "An event observation measures or describes an existing event; it cannot create the event, evidence, fitness, evolution, capability, permission, runtime, Agent, or organism status."
+    ]
+  },
+  "observation_record_schema": {
+    "required_fields": ["observation_id", "event_id", "metric", "value", "timestamp"],
+    "observation_id_format": "dbio:event-observation:<entity_id>:<sequence>",
+    "event_reference_required": true,
+    "timestamp_required": true,
+    "evidence_boundary": "Observation registration is not evidence promotion or verification."
+  },
+  "event_observations": []
+}

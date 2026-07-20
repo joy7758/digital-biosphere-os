@@ -1,0 +1,2889 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereTrustGraph",
+  "metadata": {
+    "title": "Verification Trust Graph v0.1",
+    "status": "pending_provenance_graph_baseline",
+    "constitution": "../constitution/verification-network-constitution.yaml",
+    "generated_at": "2026-07-19T22:26:53+08:00",
+    "node_count": 258,
+    "node_type_distribution": {
+      "entity": 23,
+      "claim": 78,
+      "evidence": 78,
+      "verifier": 1,
+      "verification_run": 78
+    },
+    "relationship_count": 78,
+    "pending_relationship_count": 78,
+    "trust_established_count": 0,
+    "capability_assignment_count": 0,
+    "permission_grant_count": 0,
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "Nodes and relationships are registry references, not endorsements or authority grants.",
+      "Every relationship is pending and has trust_effect=none.",
+      "The graph does not infer transitive trust, verifier independence, Agent identity, capability, or permission."
+    ]
+  },
+  "node_schema": {
+    "valid_node_types": [
+      "entity",
+      "claim",
+      "evidence",
+      "verifier",
+      "verification_run"
+    ],
+    "required_fields": [
+      "node_id",
+      "node_type",
+      "registry",
+      "record_id",
+      "reference_status"
+    ]
+  },
+  "relationship_schema": {
+    "required_fields": [
+      "relationship_id",
+      "entity",
+      "claim",
+      "evidence",
+      "verifier",
+      "verification_run",
+      "status",
+      "trust_effect"
+    ],
+    "valid_statuses": [
+      "pending",
+      "active",
+      "invalid",
+      "revoked"
+    ],
+    "default_status": "pending",
+    "default_trust_effect": "none"
+  },
+  "nodes": [
+    {
+      "node_id": "digital-biosphere-architecture",
+      "node_type": "entity",
+      "registry": "registry/entities.yaml",
+      "record_id": "digital-biosphere-architecture",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "pop-persona-object-protocol",
+      "node_type": "entity",
+      "registry": "registry/entities.yaml",
+      "record_id": "pop-persona-object-protocol",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "aip-agent-intent-protocol",
+      "node_type": "entity",
+      "registry": "registry/entities.yaml",
+      "record_id": "aip-agent-intent-protocol",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "token-governor-reference",
+      "node_type": "entity",
+      "registry": "registry/entities.yaml",
+      "record_id": "token-governor-reference",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "fdo-kernel-mvk",
+      "node_type": "entity",
+      "registry": "registry/entities.yaml",
+      "record_id": "fdo-kernel-mvk",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "agent-evidence-eeoap",
+      "node_type": "entity",
+      "registry": "registry/entities.yaml",
+      "record_id": "agent-evidence-eeoap",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "aro-audit-reference",
+      "node_type": "entity",
+      "registry": "registry/entities.yaml",
+      "record_id": "aro-audit-reference",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "verifiable-agent-demo",
+      "node_type": "entity",
+      "registry": "registry/entities.yaml",
+      "record_id": "verifiable-agent-demo",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "execution-integrity-core",
+      "node_type": "entity",
+      "registry": "registry/entities.yaml",
+      "record_id": "execution-integrity-core",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "agent-evidence-receipt-layer",
+      "node_type": "entity",
+      "registry": "registry/entities.yaml",
+      "record_id": "agent-evidence-receipt-layer",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "saee-agent-readiness",
+      "node_type": "entity",
+      "registry": "registry/entities.yaml",
+      "record_id": "saee-agent-readiness",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "agent-governance-toolkit-external",
+      "node_type": "entity",
+      "registry": "registry/entities.yaml",
+      "record_id": "agent-governance-toolkit-external",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "agent-governance-benchmark",
+      "node_type": "entity",
+      "registry": "registry/entities.yaml",
+      "record_id": "agent-governance-benchmark",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "agent-receipt-validator-mcp",
+      "node_type": "entity",
+      "registry": "registry/entities.yaml",
+      "record_id": "agent-receipt-validator-mcp",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "agent-accountability-evidence-layer",
+      "node_type": "entity",
+      "registry": "registry/entities.yaml",
+      "record_id": "agent-accountability-evidence-layer",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "agent-object-protocol",
+      "node_type": "entity",
+      "registry": "registry/entities.yaml",
+      "record_id": "agent-object-protocol",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "ecl-execution-compact-layer",
+      "node_type": "entity",
+      "registry": "registry/entities.yaml",
+      "record_id": "ecl-execution-compact-layer",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "cellcaps",
+      "node_type": "entity",
+      "registry": "registry/entities.yaml",
+      "record_id": "cellcaps",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "pra-server",
+      "node_type": "entity",
+      "registry": "registry/entities.yaml",
+      "record_id": "pra-server",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "standalone-agent-object-protocol-draft",
+      "node_type": "entity",
+      "registry": "registry/entities.yaml",
+      "record_id": "standalone-agent-object-protocol-draft",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "sovereign-agent-local-gate",
+      "node_type": "entity",
+      "registry": "registry/entities.yaml",
+      "record_id": "sovereign-agent-local-gate",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "mcp-agent-ei-external",
+      "node_type": "entity",
+      "registry": "registry/entities.yaml",
+      "record_id": "mcp-agent-ei-external",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "autonomous-cell-protocol",
+      "node_type": "entity",
+      "registry": "registry/entities.yaml",
+      "record_id": "autonomous-cell-protocol",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:claim:digital-biosphere-architecture:001",
+      "node_type": "claim",
+      "registry": "registry/capability-claims.yaml",
+      "record_id": "dbio:claim:digital-biosphere-architecture:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:claim:digital-biosphere-architecture:002",
+      "node_type": "claim",
+      "registry": "registry/capability-claims.yaml",
+      "record_id": "dbio:claim:digital-biosphere-architecture:002",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:claim:digital-biosphere-architecture:003",
+      "node_type": "claim",
+      "registry": "registry/capability-claims.yaml",
+      "record_id": "dbio:claim:digital-biosphere-architecture:003",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:claim:pop-persona-object-protocol:001",
+      "node_type": "claim",
+      "registry": "registry/capability-claims.yaml",
+      "record_id": "dbio:claim:pop-persona-object-protocol:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:claim:pop-persona-object-protocol:002",
+      "node_type": "claim",
+      "registry": "registry/capability-claims.yaml",
+      "record_id": "dbio:claim:pop-persona-object-protocol:002",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:claim:pop-persona-object-protocol:003",
+      "node_type": "claim",
+      "registry": "registry/capability-claims.yaml",
+      "record_id": "dbio:claim:pop-persona-object-protocol:003",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:claim:aip-agent-intent-protocol:001",
+      "node_type": "claim",
+      "registry": "registry/capability-claims.yaml",
+      "record_id": "dbio:claim:aip-agent-intent-protocol:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:claim:aip-agent-intent-protocol:002",
+      "node_type": "claim",
+      "registry": "registry/capability-claims.yaml",
+      "record_id": "dbio:claim:aip-agent-intent-protocol:002",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:claim:aip-agent-intent-protocol:003",
+      "node_type": "claim",
+      "registry": "registry/capability-claims.yaml",
+      "record_id": "dbio:claim:aip-agent-intent-protocol:003",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:claim:aip-agent-intent-protocol:004",
+      "node_type": "claim",
+      "registry": "registry/capability-claims.yaml",
+      "record_id": "dbio:claim:aip-agent-intent-protocol:004",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:claim:token-governor-reference:001",
+      "node_type": "claim",
+      "registry": "registry/capability-claims.yaml",
+      "record_id": "dbio:claim:token-governor-reference:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:claim:token-governor-reference:002",
+      "node_type": "claim",
+      "registry": "registry/capability-claims.yaml",
+      "record_id": "dbio:claim:token-governor-reference:002",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:claim:token-governor-reference:003",
+      "node_type": "claim",
+      "registry": "registry/capability-claims.yaml",
+      "record_id": "dbio:claim:token-governor-reference:003",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:claim:fdo-kernel-mvk:001",
+      "node_type": "claim",
+      "registry": "registry/capability-claims.yaml",
+      "record_id": "dbio:claim:fdo-kernel-mvk:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:claim:fdo-kernel-mvk:002",
+      "node_type": "claim",
+      "registry": "registry/capability-claims.yaml",
+      "record_id": "dbio:claim:fdo-kernel-mvk:002",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:claim:fdo-kernel-mvk:003",
+      "node_type": "claim",
+      "registry": "registry/capability-claims.yaml",
+      "record_id": "dbio:claim:fdo-kernel-mvk:003",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:claim:agent-evidence-eeoap:001",
+      "node_type": "claim",
+      "registry": "registry/capability-claims.yaml",
+      "record_id": "dbio:claim:agent-evidence-eeoap:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:claim:agent-evidence-eeoap:002",
+      "node_type": "claim",
+      "registry": "registry/capability-claims.yaml",
+      "record_id": "dbio:claim:agent-evidence-eeoap:002",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:claim:agent-evidence-eeoap:003",
+      "node_type": "claim",
+      "registry": "registry/capability-claims.yaml",
+      "record_id": "dbio:claim:agent-evidence-eeoap:003",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:claim:agent-evidence-eeoap:004",
+      "node_type": "claim",
+      "registry": "registry/capability-claims.yaml",
+      "record_id": "dbio:claim:agent-evidence-eeoap:004",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:claim:aro-audit-reference:001",
+      "node_type": "claim",
+      "registry": "registry/capability-claims.yaml",
+      "record_id": "dbio:claim:aro-audit-reference:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:claim:aro-audit-reference:002",
+      "node_type": "claim",
+      "registry": "registry/capability-claims.yaml",
+      "record_id": "dbio:claim:aro-audit-reference:002",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:claim:aro-audit-reference:003",
+      "node_type": "claim",
+      "registry": "registry/capability-claims.yaml",
+      "record_id": "dbio:claim:aro-audit-reference:003",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:claim:verifiable-agent-demo:001",
+      "node_type": "claim",
+      "registry": "registry/capability-claims.yaml",
+      "record_id": "dbio:claim:verifiable-agent-demo:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:claim:verifiable-agent-demo:002",
+      "node_type": "claim",
+      "registry": "registry/capability-claims.yaml",
+      "record_id": "dbio:claim:verifiable-agent-demo:002",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:claim:verifiable-agent-demo:003",
+      "node_type": "claim",
+      "registry": "registry/capability-claims.yaml",
+      "record_id": "dbio:claim:verifiable-agent-demo:003",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:claim:execution-integrity-core:001",
+      "node_type": "claim",
+      "registry": "registry/capability-claims.yaml",
+      "record_id": "dbio:claim:execution-integrity-core:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:claim:execution-integrity-core:002",
+      "node_type": "claim",
+      "registry": "registry/capability-claims.yaml",
+      "record_id": "dbio:claim:execution-integrity-core:002",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:claim:execution-integrity-core:003",
+      "node_type": "claim",
+      "registry": "registry/capability-claims.yaml",
+      "record_id": "dbio:claim:execution-integrity-core:003",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:claim:execution-integrity-core:004",
+      "node_type": "claim",
+      "registry": "registry/capability-claims.yaml",
+      "record_id": "dbio:claim:execution-integrity-core:004",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:claim:agent-evidence-receipt-layer:001",
+      "node_type": "claim",
+      "registry": "registry/capability-claims.yaml",
+      "record_id": "dbio:claim:agent-evidence-receipt-layer:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:claim:agent-evidence-receipt-layer:002",
+      "node_type": "claim",
+      "registry": "registry/capability-claims.yaml",
+      "record_id": "dbio:claim:agent-evidence-receipt-layer:002",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:claim:agent-evidence-receipt-layer:003",
+      "node_type": "claim",
+      "registry": "registry/capability-claims.yaml",
+      "record_id": "dbio:claim:agent-evidence-receipt-layer:003",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:claim:agent-evidence-receipt-layer:004",
+      "node_type": "claim",
+      "registry": "registry/capability-claims.yaml",
+      "record_id": "dbio:claim:agent-evidence-receipt-layer:004",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:claim:saee-agent-readiness:001",
+      "node_type": "claim",
+      "registry": "registry/capability-claims.yaml",
+      "record_id": "dbio:claim:saee-agent-readiness:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:claim:saee-agent-readiness:002",
+      "node_type": "claim",
+      "registry": "registry/capability-claims.yaml",
+      "record_id": "dbio:claim:saee-agent-readiness:002",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:claim:saee-agent-readiness:003",
+      "node_type": "claim",
+      "registry": "registry/capability-claims.yaml",
+      "record_id": "dbio:claim:saee-agent-readiness:003",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:claim:saee-agent-readiness:004",
+      "node_type": "claim",
+      "registry": "registry/capability-claims.yaml",
+      "record_id": "dbio:claim:saee-agent-readiness:004",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:claim:agent-governance-toolkit-external:001",
+      "node_type": "claim",
+      "registry": "registry/capability-claims.yaml",
+      "record_id": "dbio:claim:agent-governance-toolkit-external:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:claim:agent-governance-toolkit-external:002",
+      "node_type": "claim",
+      "registry": "registry/capability-claims.yaml",
+      "record_id": "dbio:claim:agent-governance-toolkit-external:002",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:claim:agent-governance-toolkit-external:003",
+      "node_type": "claim",
+      "registry": "registry/capability-claims.yaml",
+      "record_id": "dbio:claim:agent-governance-toolkit-external:003",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:claim:agent-governance-toolkit-external:004",
+      "node_type": "claim",
+      "registry": "registry/capability-claims.yaml",
+      "record_id": "dbio:claim:agent-governance-toolkit-external:004",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:claim:agent-governance-benchmark:001",
+      "node_type": "claim",
+      "registry": "registry/capability-claims.yaml",
+      "record_id": "dbio:claim:agent-governance-benchmark:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:claim:agent-governance-benchmark:002",
+      "node_type": "claim",
+      "registry": "registry/capability-claims.yaml",
+      "record_id": "dbio:claim:agent-governance-benchmark:002",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:claim:agent-governance-benchmark:003",
+      "node_type": "claim",
+      "registry": "registry/capability-claims.yaml",
+      "record_id": "dbio:claim:agent-governance-benchmark:003",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:claim:agent-governance-benchmark:004",
+      "node_type": "claim",
+      "registry": "registry/capability-claims.yaml",
+      "record_id": "dbio:claim:agent-governance-benchmark:004",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:claim:agent-receipt-validator-mcp:001",
+      "node_type": "claim",
+      "registry": "registry/capability-claims.yaml",
+      "record_id": "dbio:claim:agent-receipt-validator-mcp:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:claim:agent-receipt-validator-mcp:002",
+      "node_type": "claim",
+      "registry": "registry/capability-claims.yaml",
+      "record_id": "dbio:claim:agent-receipt-validator-mcp:002",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:claim:agent-receipt-validator-mcp:003",
+      "node_type": "claim",
+      "registry": "registry/capability-claims.yaml",
+      "record_id": "dbio:claim:agent-receipt-validator-mcp:003",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:claim:agent-receipt-validator-mcp:004",
+      "node_type": "claim",
+      "registry": "registry/capability-claims.yaml",
+      "record_id": "dbio:claim:agent-receipt-validator-mcp:004",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:claim:agent-accountability-evidence-layer:001",
+      "node_type": "claim",
+      "registry": "registry/capability-claims.yaml",
+      "record_id": "dbio:claim:agent-accountability-evidence-layer:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:claim:agent-accountability-evidence-layer:002",
+      "node_type": "claim",
+      "registry": "registry/capability-claims.yaml",
+      "record_id": "dbio:claim:agent-accountability-evidence-layer:002",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:claim:agent-accountability-evidence-layer:003",
+      "node_type": "claim",
+      "registry": "registry/capability-claims.yaml",
+      "record_id": "dbio:claim:agent-accountability-evidence-layer:003",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:claim:agent-accountability-evidence-layer:004",
+      "node_type": "claim",
+      "registry": "registry/capability-claims.yaml",
+      "record_id": "dbio:claim:agent-accountability-evidence-layer:004",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:claim:agent-object-protocol:001",
+      "node_type": "claim",
+      "registry": "registry/capability-claims.yaml",
+      "record_id": "dbio:claim:agent-object-protocol:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:claim:agent-object-protocol:002",
+      "node_type": "claim",
+      "registry": "registry/capability-claims.yaml",
+      "record_id": "dbio:claim:agent-object-protocol:002",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:claim:agent-object-protocol:003",
+      "node_type": "claim",
+      "registry": "registry/capability-claims.yaml",
+      "record_id": "dbio:claim:agent-object-protocol:003",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:claim:ecl-execution-compact-layer:001",
+      "node_type": "claim",
+      "registry": "registry/capability-claims.yaml",
+      "record_id": "dbio:claim:ecl-execution-compact-layer:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:claim:ecl-execution-compact-layer:002",
+      "node_type": "claim",
+      "registry": "registry/capability-claims.yaml",
+      "record_id": "dbio:claim:ecl-execution-compact-layer:002",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:claim:ecl-execution-compact-layer:003",
+      "node_type": "claim",
+      "registry": "registry/capability-claims.yaml",
+      "record_id": "dbio:claim:ecl-execution-compact-layer:003",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:claim:ecl-execution-compact-layer:004",
+      "node_type": "claim",
+      "registry": "registry/capability-claims.yaml",
+      "record_id": "dbio:claim:ecl-execution-compact-layer:004",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:claim:cellcaps:001",
+      "node_type": "claim",
+      "registry": "registry/capability-claims.yaml",
+      "record_id": "dbio:claim:cellcaps:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:claim:cellcaps:002",
+      "node_type": "claim",
+      "registry": "registry/capability-claims.yaml",
+      "record_id": "dbio:claim:cellcaps:002",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:claim:cellcaps:003",
+      "node_type": "claim",
+      "registry": "registry/capability-claims.yaml",
+      "record_id": "dbio:claim:cellcaps:003",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:claim:cellcaps:004",
+      "node_type": "claim",
+      "registry": "registry/capability-claims.yaml",
+      "record_id": "dbio:claim:cellcaps:004",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:claim:pra-server:001",
+      "node_type": "claim",
+      "registry": "registry/capability-claims.yaml",
+      "record_id": "dbio:claim:pra-server:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:claim:pra-server:002",
+      "node_type": "claim",
+      "registry": "registry/capability-claims.yaml",
+      "record_id": "dbio:claim:pra-server:002",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:claim:pra-server:003",
+      "node_type": "claim",
+      "registry": "registry/capability-claims.yaml",
+      "record_id": "dbio:claim:pra-server:003",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:claim:pra-server:004",
+      "node_type": "claim",
+      "registry": "registry/capability-claims.yaml",
+      "record_id": "dbio:claim:pra-server:004",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:claim:standalone-agent-object-protocol-draft:001",
+      "node_type": "claim",
+      "registry": "registry/capability-claims.yaml",
+      "record_id": "dbio:claim:standalone-agent-object-protocol-draft:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:claim:standalone-agent-object-protocol-draft:002",
+      "node_type": "claim",
+      "registry": "registry/capability-claims.yaml",
+      "record_id": "dbio:claim:standalone-agent-object-protocol-draft:002",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:claim:standalone-agent-object-protocol-draft:003",
+      "node_type": "claim",
+      "registry": "registry/capability-claims.yaml",
+      "record_id": "dbio:claim:standalone-agent-object-protocol-draft:003",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:claim:sovereign-agent-local-gate:001",
+      "node_type": "claim",
+      "registry": "registry/capability-claims.yaml",
+      "record_id": "dbio:claim:sovereign-agent-local-gate:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:claim:sovereign-agent-local-gate:002",
+      "node_type": "claim",
+      "registry": "registry/capability-claims.yaml",
+      "record_id": "dbio:claim:sovereign-agent-local-gate:002",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:claim:sovereign-agent-local-gate:003",
+      "node_type": "claim",
+      "registry": "registry/capability-claims.yaml",
+      "record_id": "dbio:claim:sovereign-agent-local-gate:003",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:claim:mcp-agent-ei-external:001",
+      "node_type": "claim",
+      "registry": "registry/capability-claims.yaml",
+      "record_id": "dbio:claim:mcp-agent-ei-external:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:claim:mcp-agent-ei-external:002",
+      "node_type": "claim",
+      "registry": "registry/capability-claims.yaml",
+      "record_id": "dbio:claim:mcp-agent-ei-external:002",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:claim:mcp-agent-ei-external:003",
+      "node_type": "claim",
+      "registry": "registry/capability-claims.yaml",
+      "record_id": "dbio:claim:mcp-agent-ei-external:003",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:evidence:digital-biosphere-architecture:001",
+      "node_type": "evidence",
+      "registry": "registry/capability-evidence.yaml",
+      "record_id": "dbio:evidence:digital-biosphere-architecture:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:evidence:digital-biosphere-architecture:002",
+      "node_type": "evidence",
+      "registry": "registry/capability-evidence.yaml",
+      "record_id": "dbio:evidence:digital-biosphere-architecture:002",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:evidence:digital-biosphere-architecture:003",
+      "node_type": "evidence",
+      "registry": "registry/capability-evidence.yaml",
+      "record_id": "dbio:evidence:digital-biosphere-architecture:003",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:evidence:pop-persona-object-protocol:001",
+      "node_type": "evidence",
+      "registry": "registry/capability-evidence.yaml",
+      "record_id": "dbio:evidence:pop-persona-object-protocol:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:evidence:pop-persona-object-protocol:002",
+      "node_type": "evidence",
+      "registry": "registry/capability-evidence.yaml",
+      "record_id": "dbio:evidence:pop-persona-object-protocol:002",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:evidence:pop-persona-object-protocol:003",
+      "node_type": "evidence",
+      "registry": "registry/capability-evidence.yaml",
+      "record_id": "dbio:evidence:pop-persona-object-protocol:003",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:evidence:aip-agent-intent-protocol:001",
+      "node_type": "evidence",
+      "registry": "registry/capability-evidence.yaml",
+      "record_id": "dbio:evidence:aip-agent-intent-protocol:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:evidence:aip-agent-intent-protocol:002",
+      "node_type": "evidence",
+      "registry": "registry/capability-evidence.yaml",
+      "record_id": "dbio:evidence:aip-agent-intent-protocol:002",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:evidence:aip-agent-intent-protocol:003",
+      "node_type": "evidence",
+      "registry": "registry/capability-evidence.yaml",
+      "record_id": "dbio:evidence:aip-agent-intent-protocol:003",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:evidence:aip-agent-intent-protocol:004",
+      "node_type": "evidence",
+      "registry": "registry/capability-evidence.yaml",
+      "record_id": "dbio:evidence:aip-agent-intent-protocol:004",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:evidence:token-governor-reference:001",
+      "node_type": "evidence",
+      "registry": "registry/capability-evidence.yaml",
+      "record_id": "dbio:evidence:token-governor-reference:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:evidence:token-governor-reference:002",
+      "node_type": "evidence",
+      "registry": "registry/capability-evidence.yaml",
+      "record_id": "dbio:evidence:token-governor-reference:002",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:evidence:token-governor-reference:003",
+      "node_type": "evidence",
+      "registry": "registry/capability-evidence.yaml",
+      "record_id": "dbio:evidence:token-governor-reference:003",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:evidence:fdo-kernel-mvk:001",
+      "node_type": "evidence",
+      "registry": "registry/capability-evidence.yaml",
+      "record_id": "dbio:evidence:fdo-kernel-mvk:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:evidence:fdo-kernel-mvk:002",
+      "node_type": "evidence",
+      "registry": "registry/capability-evidence.yaml",
+      "record_id": "dbio:evidence:fdo-kernel-mvk:002",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:evidence:fdo-kernel-mvk:003",
+      "node_type": "evidence",
+      "registry": "registry/capability-evidence.yaml",
+      "record_id": "dbio:evidence:fdo-kernel-mvk:003",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:evidence:agent-evidence-eeoap:001",
+      "node_type": "evidence",
+      "registry": "registry/capability-evidence.yaml",
+      "record_id": "dbio:evidence:agent-evidence-eeoap:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:evidence:agent-evidence-eeoap:002",
+      "node_type": "evidence",
+      "registry": "registry/capability-evidence.yaml",
+      "record_id": "dbio:evidence:agent-evidence-eeoap:002",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:evidence:agent-evidence-eeoap:003",
+      "node_type": "evidence",
+      "registry": "registry/capability-evidence.yaml",
+      "record_id": "dbio:evidence:agent-evidence-eeoap:003",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:evidence:agent-evidence-eeoap:004",
+      "node_type": "evidence",
+      "registry": "registry/capability-evidence.yaml",
+      "record_id": "dbio:evidence:agent-evidence-eeoap:004",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:evidence:aro-audit-reference:001",
+      "node_type": "evidence",
+      "registry": "registry/capability-evidence.yaml",
+      "record_id": "dbio:evidence:aro-audit-reference:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:evidence:aro-audit-reference:002",
+      "node_type": "evidence",
+      "registry": "registry/capability-evidence.yaml",
+      "record_id": "dbio:evidence:aro-audit-reference:002",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:evidence:aro-audit-reference:003",
+      "node_type": "evidence",
+      "registry": "registry/capability-evidence.yaml",
+      "record_id": "dbio:evidence:aro-audit-reference:003",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:evidence:verifiable-agent-demo:001",
+      "node_type": "evidence",
+      "registry": "registry/capability-evidence.yaml",
+      "record_id": "dbio:evidence:verifiable-agent-demo:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:evidence:verifiable-agent-demo:002",
+      "node_type": "evidence",
+      "registry": "registry/capability-evidence.yaml",
+      "record_id": "dbio:evidence:verifiable-agent-demo:002",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:evidence:verifiable-agent-demo:003",
+      "node_type": "evidence",
+      "registry": "registry/capability-evidence.yaml",
+      "record_id": "dbio:evidence:verifiable-agent-demo:003",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:evidence:execution-integrity-core:001",
+      "node_type": "evidence",
+      "registry": "registry/capability-evidence.yaml",
+      "record_id": "dbio:evidence:execution-integrity-core:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:evidence:execution-integrity-core:002",
+      "node_type": "evidence",
+      "registry": "registry/capability-evidence.yaml",
+      "record_id": "dbio:evidence:execution-integrity-core:002",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:evidence:execution-integrity-core:003",
+      "node_type": "evidence",
+      "registry": "registry/capability-evidence.yaml",
+      "record_id": "dbio:evidence:execution-integrity-core:003",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:evidence:execution-integrity-core:004",
+      "node_type": "evidence",
+      "registry": "registry/capability-evidence.yaml",
+      "record_id": "dbio:evidence:execution-integrity-core:004",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:evidence:agent-evidence-receipt-layer:001",
+      "node_type": "evidence",
+      "registry": "registry/capability-evidence.yaml",
+      "record_id": "dbio:evidence:agent-evidence-receipt-layer:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:evidence:agent-evidence-receipt-layer:002",
+      "node_type": "evidence",
+      "registry": "registry/capability-evidence.yaml",
+      "record_id": "dbio:evidence:agent-evidence-receipt-layer:002",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:evidence:agent-evidence-receipt-layer:003",
+      "node_type": "evidence",
+      "registry": "registry/capability-evidence.yaml",
+      "record_id": "dbio:evidence:agent-evidence-receipt-layer:003",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:evidence:agent-evidence-receipt-layer:004",
+      "node_type": "evidence",
+      "registry": "registry/capability-evidence.yaml",
+      "record_id": "dbio:evidence:agent-evidence-receipt-layer:004",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:evidence:saee-agent-readiness:001",
+      "node_type": "evidence",
+      "registry": "registry/capability-evidence.yaml",
+      "record_id": "dbio:evidence:saee-agent-readiness:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:evidence:saee-agent-readiness:002",
+      "node_type": "evidence",
+      "registry": "registry/capability-evidence.yaml",
+      "record_id": "dbio:evidence:saee-agent-readiness:002",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:evidence:saee-agent-readiness:003",
+      "node_type": "evidence",
+      "registry": "registry/capability-evidence.yaml",
+      "record_id": "dbio:evidence:saee-agent-readiness:003",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:evidence:saee-agent-readiness:004",
+      "node_type": "evidence",
+      "registry": "registry/capability-evidence.yaml",
+      "record_id": "dbio:evidence:saee-agent-readiness:004",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:evidence:agent-governance-toolkit-external:001",
+      "node_type": "evidence",
+      "registry": "registry/capability-evidence.yaml",
+      "record_id": "dbio:evidence:agent-governance-toolkit-external:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:evidence:agent-governance-toolkit-external:002",
+      "node_type": "evidence",
+      "registry": "registry/capability-evidence.yaml",
+      "record_id": "dbio:evidence:agent-governance-toolkit-external:002",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:evidence:agent-governance-toolkit-external:003",
+      "node_type": "evidence",
+      "registry": "registry/capability-evidence.yaml",
+      "record_id": "dbio:evidence:agent-governance-toolkit-external:003",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:evidence:agent-governance-toolkit-external:004",
+      "node_type": "evidence",
+      "registry": "registry/capability-evidence.yaml",
+      "record_id": "dbio:evidence:agent-governance-toolkit-external:004",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:evidence:agent-governance-benchmark:001",
+      "node_type": "evidence",
+      "registry": "registry/capability-evidence.yaml",
+      "record_id": "dbio:evidence:agent-governance-benchmark:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:evidence:agent-governance-benchmark:002",
+      "node_type": "evidence",
+      "registry": "registry/capability-evidence.yaml",
+      "record_id": "dbio:evidence:agent-governance-benchmark:002",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:evidence:agent-governance-benchmark:003",
+      "node_type": "evidence",
+      "registry": "registry/capability-evidence.yaml",
+      "record_id": "dbio:evidence:agent-governance-benchmark:003",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:evidence:agent-governance-benchmark:004",
+      "node_type": "evidence",
+      "registry": "registry/capability-evidence.yaml",
+      "record_id": "dbio:evidence:agent-governance-benchmark:004",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:evidence:agent-receipt-validator-mcp:001",
+      "node_type": "evidence",
+      "registry": "registry/capability-evidence.yaml",
+      "record_id": "dbio:evidence:agent-receipt-validator-mcp:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:evidence:agent-receipt-validator-mcp:002",
+      "node_type": "evidence",
+      "registry": "registry/capability-evidence.yaml",
+      "record_id": "dbio:evidence:agent-receipt-validator-mcp:002",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:evidence:agent-receipt-validator-mcp:003",
+      "node_type": "evidence",
+      "registry": "registry/capability-evidence.yaml",
+      "record_id": "dbio:evidence:agent-receipt-validator-mcp:003",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:evidence:agent-receipt-validator-mcp:004",
+      "node_type": "evidence",
+      "registry": "registry/capability-evidence.yaml",
+      "record_id": "dbio:evidence:agent-receipt-validator-mcp:004",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:evidence:agent-accountability-evidence-layer:001",
+      "node_type": "evidence",
+      "registry": "registry/capability-evidence.yaml",
+      "record_id": "dbio:evidence:agent-accountability-evidence-layer:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:evidence:agent-accountability-evidence-layer:002",
+      "node_type": "evidence",
+      "registry": "registry/capability-evidence.yaml",
+      "record_id": "dbio:evidence:agent-accountability-evidence-layer:002",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:evidence:agent-accountability-evidence-layer:003",
+      "node_type": "evidence",
+      "registry": "registry/capability-evidence.yaml",
+      "record_id": "dbio:evidence:agent-accountability-evidence-layer:003",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:evidence:agent-accountability-evidence-layer:004",
+      "node_type": "evidence",
+      "registry": "registry/capability-evidence.yaml",
+      "record_id": "dbio:evidence:agent-accountability-evidence-layer:004",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:evidence:agent-object-protocol:001",
+      "node_type": "evidence",
+      "registry": "registry/capability-evidence.yaml",
+      "record_id": "dbio:evidence:agent-object-protocol:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:evidence:agent-object-protocol:002",
+      "node_type": "evidence",
+      "registry": "registry/capability-evidence.yaml",
+      "record_id": "dbio:evidence:agent-object-protocol:002",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:evidence:agent-object-protocol:003",
+      "node_type": "evidence",
+      "registry": "registry/capability-evidence.yaml",
+      "record_id": "dbio:evidence:agent-object-protocol:003",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:evidence:ecl-execution-compact-layer:001",
+      "node_type": "evidence",
+      "registry": "registry/capability-evidence.yaml",
+      "record_id": "dbio:evidence:ecl-execution-compact-layer:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:evidence:ecl-execution-compact-layer:002",
+      "node_type": "evidence",
+      "registry": "registry/capability-evidence.yaml",
+      "record_id": "dbio:evidence:ecl-execution-compact-layer:002",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:evidence:ecl-execution-compact-layer:003",
+      "node_type": "evidence",
+      "registry": "registry/capability-evidence.yaml",
+      "record_id": "dbio:evidence:ecl-execution-compact-layer:003",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:evidence:ecl-execution-compact-layer:004",
+      "node_type": "evidence",
+      "registry": "registry/capability-evidence.yaml",
+      "record_id": "dbio:evidence:ecl-execution-compact-layer:004",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:evidence:cellcaps:001",
+      "node_type": "evidence",
+      "registry": "registry/capability-evidence.yaml",
+      "record_id": "dbio:evidence:cellcaps:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:evidence:cellcaps:002",
+      "node_type": "evidence",
+      "registry": "registry/capability-evidence.yaml",
+      "record_id": "dbio:evidence:cellcaps:002",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:evidence:cellcaps:003",
+      "node_type": "evidence",
+      "registry": "registry/capability-evidence.yaml",
+      "record_id": "dbio:evidence:cellcaps:003",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:evidence:cellcaps:004",
+      "node_type": "evidence",
+      "registry": "registry/capability-evidence.yaml",
+      "record_id": "dbio:evidence:cellcaps:004",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:evidence:pra-server:001",
+      "node_type": "evidence",
+      "registry": "registry/capability-evidence.yaml",
+      "record_id": "dbio:evidence:pra-server:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:evidence:pra-server:002",
+      "node_type": "evidence",
+      "registry": "registry/capability-evidence.yaml",
+      "record_id": "dbio:evidence:pra-server:002",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:evidence:pra-server:003",
+      "node_type": "evidence",
+      "registry": "registry/capability-evidence.yaml",
+      "record_id": "dbio:evidence:pra-server:003",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:evidence:pra-server:004",
+      "node_type": "evidence",
+      "registry": "registry/capability-evidence.yaml",
+      "record_id": "dbio:evidence:pra-server:004",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:evidence:standalone-agent-object-protocol-draft:001",
+      "node_type": "evidence",
+      "registry": "registry/capability-evidence.yaml",
+      "record_id": "dbio:evidence:standalone-agent-object-protocol-draft:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:evidence:standalone-agent-object-protocol-draft:002",
+      "node_type": "evidence",
+      "registry": "registry/capability-evidence.yaml",
+      "record_id": "dbio:evidence:standalone-agent-object-protocol-draft:002",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:evidence:standalone-agent-object-protocol-draft:003",
+      "node_type": "evidence",
+      "registry": "registry/capability-evidence.yaml",
+      "record_id": "dbio:evidence:standalone-agent-object-protocol-draft:003",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:evidence:sovereign-agent-local-gate:001",
+      "node_type": "evidence",
+      "registry": "registry/capability-evidence.yaml",
+      "record_id": "dbio:evidence:sovereign-agent-local-gate:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:evidence:sovereign-agent-local-gate:002",
+      "node_type": "evidence",
+      "registry": "registry/capability-evidence.yaml",
+      "record_id": "dbio:evidence:sovereign-agent-local-gate:002",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:evidence:sovereign-agent-local-gate:003",
+      "node_type": "evidence",
+      "registry": "registry/capability-evidence.yaml",
+      "record_id": "dbio:evidence:sovereign-agent-local-gate:003",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:evidence:mcp-agent-ei-external:001",
+      "node_type": "evidence",
+      "registry": "registry/capability-evidence.yaml",
+      "record_id": "dbio:evidence:mcp-agent-ei-external:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:evidence:mcp-agent-ei-external:002",
+      "node_type": "evidence",
+      "registry": "registry/capability-evidence.yaml",
+      "record_id": "dbio:evidence:mcp-agent-ei-external:002",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:evidence:mcp-agent-ei-external:003",
+      "node_type": "evidence",
+      "registry": "registry/capability-evidence.yaml",
+      "record_id": "dbio:evidence:mcp-agent-ei-external:003",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "node_type": "verifier",
+      "registry": "registry/verifiers.yaml",
+      "record_id": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verification-run:digital-biosphere-architecture:001:001",
+      "node_type": "verification_run",
+      "registry": "registry/verification-runs.yaml",
+      "record_id": "dbio:verification-run:digital-biosphere-architecture:001:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verification-run:digital-biosphere-architecture:002:001",
+      "node_type": "verification_run",
+      "registry": "registry/verification-runs.yaml",
+      "record_id": "dbio:verification-run:digital-biosphere-architecture:002:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verification-run:digital-biosphere-architecture:003:001",
+      "node_type": "verification_run",
+      "registry": "registry/verification-runs.yaml",
+      "record_id": "dbio:verification-run:digital-biosphere-architecture:003:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verification-run:pop-persona-object-protocol:001:001",
+      "node_type": "verification_run",
+      "registry": "registry/verification-runs.yaml",
+      "record_id": "dbio:verification-run:pop-persona-object-protocol:001:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verification-run:pop-persona-object-protocol:002:001",
+      "node_type": "verification_run",
+      "registry": "registry/verification-runs.yaml",
+      "record_id": "dbio:verification-run:pop-persona-object-protocol:002:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verification-run:pop-persona-object-protocol:003:001",
+      "node_type": "verification_run",
+      "registry": "registry/verification-runs.yaml",
+      "record_id": "dbio:verification-run:pop-persona-object-protocol:003:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verification-run:aip-agent-intent-protocol:001:001",
+      "node_type": "verification_run",
+      "registry": "registry/verification-runs.yaml",
+      "record_id": "dbio:verification-run:aip-agent-intent-protocol:001:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verification-run:aip-agent-intent-protocol:002:001",
+      "node_type": "verification_run",
+      "registry": "registry/verification-runs.yaml",
+      "record_id": "dbio:verification-run:aip-agent-intent-protocol:002:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verification-run:aip-agent-intent-protocol:003:001",
+      "node_type": "verification_run",
+      "registry": "registry/verification-runs.yaml",
+      "record_id": "dbio:verification-run:aip-agent-intent-protocol:003:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verification-run:aip-agent-intent-protocol:004:001",
+      "node_type": "verification_run",
+      "registry": "registry/verification-runs.yaml",
+      "record_id": "dbio:verification-run:aip-agent-intent-protocol:004:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verification-run:token-governor-reference:001:001",
+      "node_type": "verification_run",
+      "registry": "registry/verification-runs.yaml",
+      "record_id": "dbio:verification-run:token-governor-reference:001:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verification-run:token-governor-reference:002:001",
+      "node_type": "verification_run",
+      "registry": "registry/verification-runs.yaml",
+      "record_id": "dbio:verification-run:token-governor-reference:002:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verification-run:token-governor-reference:003:001",
+      "node_type": "verification_run",
+      "registry": "registry/verification-runs.yaml",
+      "record_id": "dbio:verification-run:token-governor-reference:003:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verification-run:fdo-kernel-mvk:001:001",
+      "node_type": "verification_run",
+      "registry": "registry/verification-runs.yaml",
+      "record_id": "dbio:verification-run:fdo-kernel-mvk:001:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verification-run:fdo-kernel-mvk:002:001",
+      "node_type": "verification_run",
+      "registry": "registry/verification-runs.yaml",
+      "record_id": "dbio:verification-run:fdo-kernel-mvk:002:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verification-run:fdo-kernel-mvk:003:001",
+      "node_type": "verification_run",
+      "registry": "registry/verification-runs.yaml",
+      "record_id": "dbio:verification-run:fdo-kernel-mvk:003:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verification-run:agent-evidence-eeoap:001:001",
+      "node_type": "verification_run",
+      "registry": "registry/verification-runs.yaml",
+      "record_id": "dbio:verification-run:agent-evidence-eeoap:001:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verification-run:agent-evidence-eeoap:002:001",
+      "node_type": "verification_run",
+      "registry": "registry/verification-runs.yaml",
+      "record_id": "dbio:verification-run:agent-evidence-eeoap:002:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verification-run:agent-evidence-eeoap:003:001",
+      "node_type": "verification_run",
+      "registry": "registry/verification-runs.yaml",
+      "record_id": "dbio:verification-run:agent-evidence-eeoap:003:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verification-run:agent-evidence-eeoap:004:001",
+      "node_type": "verification_run",
+      "registry": "registry/verification-runs.yaml",
+      "record_id": "dbio:verification-run:agent-evidence-eeoap:004:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verification-run:aro-audit-reference:001:001",
+      "node_type": "verification_run",
+      "registry": "registry/verification-runs.yaml",
+      "record_id": "dbio:verification-run:aro-audit-reference:001:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verification-run:aro-audit-reference:002:001",
+      "node_type": "verification_run",
+      "registry": "registry/verification-runs.yaml",
+      "record_id": "dbio:verification-run:aro-audit-reference:002:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verification-run:aro-audit-reference:003:001",
+      "node_type": "verification_run",
+      "registry": "registry/verification-runs.yaml",
+      "record_id": "dbio:verification-run:aro-audit-reference:003:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verification-run:verifiable-agent-demo:001:001",
+      "node_type": "verification_run",
+      "registry": "registry/verification-runs.yaml",
+      "record_id": "dbio:verification-run:verifiable-agent-demo:001:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verification-run:verifiable-agent-demo:002:001",
+      "node_type": "verification_run",
+      "registry": "registry/verification-runs.yaml",
+      "record_id": "dbio:verification-run:verifiable-agent-demo:002:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verification-run:verifiable-agent-demo:003:001",
+      "node_type": "verification_run",
+      "registry": "registry/verification-runs.yaml",
+      "record_id": "dbio:verification-run:verifiable-agent-demo:003:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verification-run:execution-integrity-core:001:001",
+      "node_type": "verification_run",
+      "registry": "registry/verification-runs.yaml",
+      "record_id": "dbio:verification-run:execution-integrity-core:001:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verification-run:execution-integrity-core:002:001",
+      "node_type": "verification_run",
+      "registry": "registry/verification-runs.yaml",
+      "record_id": "dbio:verification-run:execution-integrity-core:002:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verification-run:execution-integrity-core:003:001",
+      "node_type": "verification_run",
+      "registry": "registry/verification-runs.yaml",
+      "record_id": "dbio:verification-run:execution-integrity-core:003:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verification-run:execution-integrity-core:004:001",
+      "node_type": "verification_run",
+      "registry": "registry/verification-runs.yaml",
+      "record_id": "dbio:verification-run:execution-integrity-core:004:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verification-run:agent-evidence-receipt-layer:001:001",
+      "node_type": "verification_run",
+      "registry": "registry/verification-runs.yaml",
+      "record_id": "dbio:verification-run:agent-evidence-receipt-layer:001:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verification-run:agent-evidence-receipt-layer:002:001",
+      "node_type": "verification_run",
+      "registry": "registry/verification-runs.yaml",
+      "record_id": "dbio:verification-run:agent-evidence-receipt-layer:002:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verification-run:agent-evidence-receipt-layer:003:001",
+      "node_type": "verification_run",
+      "registry": "registry/verification-runs.yaml",
+      "record_id": "dbio:verification-run:agent-evidence-receipt-layer:003:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verification-run:agent-evidence-receipt-layer:004:001",
+      "node_type": "verification_run",
+      "registry": "registry/verification-runs.yaml",
+      "record_id": "dbio:verification-run:agent-evidence-receipt-layer:004:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verification-run:saee-agent-readiness:001:001",
+      "node_type": "verification_run",
+      "registry": "registry/verification-runs.yaml",
+      "record_id": "dbio:verification-run:saee-agent-readiness:001:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verification-run:saee-agent-readiness:002:001",
+      "node_type": "verification_run",
+      "registry": "registry/verification-runs.yaml",
+      "record_id": "dbio:verification-run:saee-agent-readiness:002:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verification-run:saee-agent-readiness:003:001",
+      "node_type": "verification_run",
+      "registry": "registry/verification-runs.yaml",
+      "record_id": "dbio:verification-run:saee-agent-readiness:003:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verification-run:saee-agent-readiness:004:001",
+      "node_type": "verification_run",
+      "registry": "registry/verification-runs.yaml",
+      "record_id": "dbio:verification-run:saee-agent-readiness:004:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verification-run:agent-governance-toolkit-external:001:001",
+      "node_type": "verification_run",
+      "registry": "registry/verification-runs.yaml",
+      "record_id": "dbio:verification-run:agent-governance-toolkit-external:001:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verification-run:agent-governance-toolkit-external:002:001",
+      "node_type": "verification_run",
+      "registry": "registry/verification-runs.yaml",
+      "record_id": "dbio:verification-run:agent-governance-toolkit-external:002:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verification-run:agent-governance-toolkit-external:003:001",
+      "node_type": "verification_run",
+      "registry": "registry/verification-runs.yaml",
+      "record_id": "dbio:verification-run:agent-governance-toolkit-external:003:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verification-run:agent-governance-toolkit-external:004:001",
+      "node_type": "verification_run",
+      "registry": "registry/verification-runs.yaml",
+      "record_id": "dbio:verification-run:agent-governance-toolkit-external:004:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verification-run:agent-governance-benchmark:001:001",
+      "node_type": "verification_run",
+      "registry": "registry/verification-runs.yaml",
+      "record_id": "dbio:verification-run:agent-governance-benchmark:001:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verification-run:agent-governance-benchmark:002:001",
+      "node_type": "verification_run",
+      "registry": "registry/verification-runs.yaml",
+      "record_id": "dbio:verification-run:agent-governance-benchmark:002:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verification-run:agent-governance-benchmark:003:001",
+      "node_type": "verification_run",
+      "registry": "registry/verification-runs.yaml",
+      "record_id": "dbio:verification-run:agent-governance-benchmark:003:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verification-run:agent-governance-benchmark:004:001",
+      "node_type": "verification_run",
+      "registry": "registry/verification-runs.yaml",
+      "record_id": "dbio:verification-run:agent-governance-benchmark:004:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verification-run:agent-receipt-validator-mcp:001:001",
+      "node_type": "verification_run",
+      "registry": "registry/verification-runs.yaml",
+      "record_id": "dbio:verification-run:agent-receipt-validator-mcp:001:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verification-run:agent-receipt-validator-mcp:002:001",
+      "node_type": "verification_run",
+      "registry": "registry/verification-runs.yaml",
+      "record_id": "dbio:verification-run:agent-receipt-validator-mcp:002:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verification-run:agent-receipt-validator-mcp:003:001",
+      "node_type": "verification_run",
+      "registry": "registry/verification-runs.yaml",
+      "record_id": "dbio:verification-run:agent-receipt-validator-mcp:003:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verification-run:agent-receipt-validator-mcp:004:001",
+      "node_type": "verification_run",
+      "registry": "registry/verification-runs.yaml",
+      "record_id": "dbio:verification-run:agent-receipt-validator-mcp:004:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verification-run:agent-accountability-evidence-layer:001:001",
+      "node_type": "verification_run",
+      "registry": "registry/verification-runs.yaml",
+      "record_id": "dbio:verification-run:agent-accountability-evidence-layer:001:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verification-run:agent-accountability-evidence-layer:002:001",
+      "node_type": "verification_run",
+      "registry": "registry/verification-runs.yaml",
+      "record_id": "dbio:verification-run:agent-accountability-evidence-layer:002:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verification-run:agent-accountability-evidence-layer:003:001",
+      "node_type": "verification_run",
+      "registry": "registry/verification-runs.yaml",
+      "record_id": "dbio:verification-run:agent-accountability-evidence-layer:003:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verification-run:agent-accountability-evidence-layer:004:001",
+      "node_type": "verification_run",
+      "registry": "registry/verification-runs.yaml",
+      "record_id": "dbio:verification-run:agent-accountability-evidence-layer:004:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verification-run:agent-object-protocol:001:001",
+      "node_type": "verification_run",
+      "registry": "registry/verification-runs.yaml",
+      "record_id": "dbio:verification-run:agent-object-protocol:001:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verification-run:agent-object-protocol:002:001",
+      "node_type": "verification_run",
+      "registry": "registry/verification-runs.yaml",
+      "record_id": "dbio:verification-run:agent-object-protocol:002:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verification-run:agent-object-protocol:003:001",
+      "node_type": "verification_run",
+      "registry": "registry/verification-runs.yaml",
+      "record_id": "dbio:verification-run:agent-object-protocol:003:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verification-run:ecl-execution-compact-layer:001:001",
+      "node_type": "verification_run",
+      "registry": "registry/verification-runs.yaml",
+      "record_id": "dbio:verification-run:ecl-execution-compact-layer:001:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verification-run:ecl-execution-compact-layer:002:001",
+      "node_type": "verification_run",
+      "registry": "registry/verification-runs.yaml",
+      "record_id": "dbio:verification-run:ecl-execution-compact-layer:002:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verification-run:ecl-execution-compact-layer:003:001",
+      "node_type": "verification_run",
+      "registry": "registry/verification-runs.yaml",
+      "record_id": "dbio:verification-run:ecl-execution-compact-layer:003:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verification-run:ecl-execution-compact-layer:004:001",
+      "node_type": "verification_run",
+      "registry": "registry/verification-runs.yaml",
+      "record_id": "dbio:verification-run:ecl-execution-compact-layer:004:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verification-run:cellcaps:001:001",
+      "node_type": "verification_run",
+      "registry": "registry/verification-runs.yaml",
+      "record_id": "dbio:verification-run:cellcaps:001:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verification-run:cellcaps:002:001",
+      "node_type": "verification_run",
+      "registry": "registry/verification-runs.yaml",
+      "record_id": "dbio:verification-run:cellcaps:002:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verification-run:cellcaps:003:001",
+      "node_type": "verification_run",
+      "registry": "registry/verification-runs.yaml",
+      "record_id": "dbio:verification-run:cellcaps:003:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verification-run:cellcaps:004:001",
+      "node_type": "verification_run",
+      "registry": "registry/verification-runs.yaml",
+      "record_id": "dbio:verification-run:cellcaps:004:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verification-run:pra-server:001:001",
+      "node_type": "verification_run",
+      "registry": "registry/verification-runs.yaml",
+      "record_id": "dbio:verification-run:pra-server:001:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verification-run:pra-server:002:001",
+      "node_type": "verification_run",
+      "registry": "registry/verification-runs.yaml",
+      "record_id": "dbio:verification-run:pra-server:002:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verification-run:pra-server:003:001",
+      "node_type": "verification_run",
+      "registry": "registry/verification-runs.yaml",
+      "record_id": "dbio:verification-run:pra-server:003:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verification-run:pra-server:004:001",
+      "node_type": "verification_run",
+      "registry": "registry/verification-runs.yaml",
+      "record_id": "dbio:verification-run:pra-server:004:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verification-run:standalone-agent-object-protocol-draft:001:001",
+      "node_type": "verification_run",
+      "registry": "registry/verification-runs.yaml",
+      "record_id": "dbio:verification-run:standalone-agent-object-protocol-draft:001:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verification-run:standalone-agent-object-protocol-draft:002:001",
+      "node_type": "verification_run",
+      "registry": "registry/verification-runs.yaml",
+      "record_id": "dbio:verification-run:standalone-agent-object-protocol-draft:002:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verification-run:standalone-agent-object-protocol-draft:003:001",
+      "node_type": "verification_run",
+      "registry": "registry/verification-runs.yaml",
+      "record_id": "dbio:verification-run:standalone-agent-object-protocol-draft:003:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verification-run:sovereign-agent-local-gate:001:001",
+      "node_type": "verification_run",
+      "registry": "registry/verification-runs.yaml",
+      "record_id": "dbio:verification-run:sovereign-agent-local-gate:001:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verification-run:sovereign-agent-local-gate:002:001",
+      "node_type": "verification_run",
+      "registry": "registry/verification-runs.yaml",
+      "record_id": "dbio:verification-run:sovereign-agent-local-gate:002:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verification-run:sovereign-agent-local-gate:003:001",
+      "node_type": "verification_run",
+      "registry": "registry/verification-runs.yaml",
+      "record_id": "dbio:verification-run:sovereign-agent-local-gate:003:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verification-run:mcp-agent-ei-external:001:001",
+      "node_type": "verification_run",
+      "registry": "registry/verification-runs.yaml",
+      "record_id": "dbio:verification-run:mcp-agent-ei-external:001:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verification-run:mcp-agent-ei-external:002:001",
+      "node_type": "verification_run",
+      "registry": "registry/verification-runs.yaml",
+      "record_id": "dbio:verification-run:mcp-agent-ei-external:002:001",
+      "reference_status": "registered"
+    },
+    {
+      "node_id": "dbio:verification-run:mcp-agent-ei-external:003:001",
+      "node_type": "verification_run",
+      "registry": "registry/verification-runs.yaml",
+      "record_id": "dbio:verification-run:mcp-agent-ei-external:003:001",
+      "reference_status": "registered"
+    }
+  ],
+  "relationships": [
+    {
+      "relationship_id": "dbio:trust-relation:digital-biosphere-architecture:001:001",
+      "entity": "digital-biosphere-architecture",
+      "claim": "dbio:claim:digital-biosphere-architecture:001",
+      "evidence": "dbio:evidence:digital-biosphere-architecture:001",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_run": "dbio:verification-run:digital-biosphere-architecture:001:001",
+      "status": "pending",
+      "trust_effect": "none",
+      "independence_effect": "not_assessed",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    },
+    {
+      "relationship_id": "dbio:trust-relation:digital-biosphere-architecture:002:001",
+      "entity": "digital-biosphere-architecture",
+      "claim": "dbio:claim:digital-biosphere-architecture:002",
+      "evidence": "dbio:evidence:digital-biosphere-architecture:002",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_run": "dbio:verification-run:digital-biosphere-architecture:002:001",
+      "status": "pending",
+      "trust_effect": "none",
+      "independence_effect": "not_assessed",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    },
+    {
+      "relationship_id": "dbio:trust-relation:digital-biosphere-architecture:003:001",
+      "entity": "digital-biosphere-architecture",
+      "claim": "dbio:claim:digital-biosphere-architecture:003",
+      "evidence": "dbio:evidence:digital-biosphere-architecture:003",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_run": "dbio:verification-run:digital-biosphere-architecture:003:001",
+      "status": "pending",
+      "trust_effect": "none",
+      "independence_effect": "not_assessed",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    },
+    {
+      "relationship_id": "dbio:trust-relation:pop-persona-object-protocol:001:001",
+      "entity": "pop-persona-object-protocol",
+      "claim": "dbio:claim:pop-persona-object-protocol:001",
+      "evidence": "dbio:evidence:pop-persona-object-protocol:001",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_run": "dbio:verification-run:pop-persona-object-protocol:001:001",
+      "status": "pending",
+      "trust_effect": "none",
+      "independence_effect": "not_assessed",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    },
+    {
+      "relationship_id": "dbio:trust-relation:pop-persona-object-protocol:002:001",
+      "entity": "pop-persona-object-protocol",
+      "claim": "dbio:claim:pop-persona-object-protocol:002",
+      "evidence": "dbio:evidence:pop-persona-object-protocol:002",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_run": "dbio:verification-run:pop-persona-object-protocol:002:001",
+      "status": "pending",
+      "trust_effect": "none",
+      "independence_effect": "not_assessed",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    },
+    {
+      "relationship_id": "dbio:trust-relation:pop-persona-object-protocol:003:001",
+      "entity": "pop-persona-object-protocol",
+      "claim": "dbio:claim:pop-persona-object-protocol:003",
+      "evidence": "dbio:evidence:pop-persona-object-protocol:003",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_run": "dbio:verification-run:pop-persona-object-protocol:003:001",
+      "status": "pending",
+      "trust_effect": "none",
+      "independence_effect": "not_assessed",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    },
+    {
+      "relationship_id": "dbio:trust-relation:aip-agent-intent-protocol:001:001",
+      "entity": "aip-agent-intent-protocol",
+      "claim": "dbio:claim:aip-agent-intent-protocol:001",
+      "evidence": "dbio:evidence:aip-agent-intent-protocol:001",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_run": "dbio:verification-run:aip-agent-intent-protocol:001:001",
+      "status": "pending",
+      "trust_effect": "none",
+      "independence_effect": "not_assessed",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    },
+    {
+      "relationship_id": "dbio:trust-relation:aip-agent-intent-protocol:002:001",
+      "entity": "aip-agent-intent-protocol",
+      "claim": "dbio:claim:aip-agent-intent-protocol:002",
+      "evidence": "dbio:evidence:aip-agent-intent-protocol:002",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_run": "dbio:verification-run:aip-agent-intent-protocol:002:001",
+      "status": "pending",
+      "trust_effect": "none",
+      "independence_effect": "not_assessed",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    },
+    {
+      "relationship_id": "dbio:trust-relation:aip-agent-intent-protocol:003:001",
+      "entity": "aip-agent-intent-protocol",
+      "claim": "dbio:claim:aip-agent-intent-protocol:003",
+      "evidence": "dbio:evidence:aip-agent-intent-protocol:003",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_run": "dbio:verification-run:aip-agent-intent-protocol:003:001",
+      "status": "pending",
+      "trust_effect": "none",
+      "independence_effect": "not_assessed",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    },
+    {
+      "relationship_id": "dbio:trust-relation:aip-agent-intent-protocol:004:001",
+      "entity": "aip-agent-intent-protocol",
+      "claim": "dbio:claim:aip-agent-intent-protocol:004",
+      "evidence": "dbio:evidence:aip-agent-intent-protocol:004",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_run": "dbio:verification-run:aip-agent-intent-protocol:004:001",
+      "status": "pending",
+      "trust_effect": "none",
+      "independence_effect": "not_assessed",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    },
+    {
+      "relationship_id": "dbio:trust-relation:token-governor-reference:001:001",
+      "entity": "token-governor-reference",
+      "claim": "dbio:claim:token-governor-reference:001",
+      "evidence": "dbio:evidence:token-governor-reference:001",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_run": "dbio:verification-run:token-governor-reference:001:001",
+      "status": "pending",
+      "trust_effect": "none",
+      "independence_effect": "not_assessed",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    },
+    {
+      "relationship_id": "dbio:trust-relation:token-governor-reference:002:001",
+      "entity": "token-governor-reference",
+      "claim": "dbio:claim:token-governor-reference:002",
+      "evidence": "dbio:evidence:token-governor-reference:002",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_run": "dbio:verification-run:token-governor-reference:002:001",
+      "status": "pending",
+      "trust_effect": "none",
+      "independence_effect": "not_assessed",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    },
+    {
+      "relationship_id": "dbio:trust-relation:token-governor-reference:003:001",
+      "entity": "token-governor-reference",
+      "claim": "dbio:claim:token-governor-reference:003",
+      "evidence": "dbio:evidence:token-governor-reference:003",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_run": "dbio:verification-run:token-governor-reference:003:001",
+      "status": "pending",
+      "trust_effect": "none",
+      "independence_effect": "not_assessed",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    },
+    {
+      "relationship_id": "dbio:trust-relation:fdo-kernel-mvk:001:001",
+      "entity": "fdo-kernel-mvk",
+      "claim": "dbio:claim:fdo-kernel-mvk:001",
+      "evidence": "dbio:evidence:fdo-kernel-mvk:001",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_run": "dbio:verification-run:fdo-kernel-mvk:001:001",
+      "status": "pending",
+      "trust_effect": "none",
+      "independence_effect": "not_assessed",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    },
+    {
+      "relationship_id": "dbio:trust-relation:fdo-kernel-mvk:002:001",
+      "entity": "fdo-kernel-mvk",
+      "claim": "dbio:claim:fdo-kernel-mvk:002",
+      "evidence": "dbio:evidence:fdo-kernel-mvk:002",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_run": "dbio:verification-run:fdo-kernel-mvk:002:001",
+      "status": "pending",
+      "trust_effect": "none",
+      "independence_effect": "not_assessed",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    },
+    {
+      "relationship_id": "dbio:trust-relation:fdo-kernel-mvk:003:001",
+      "entity": "fdo-kernel-mvk",
+      "claim": "dbio:claim:fdo-kernel-mvk:003",
+      "evidence": "dbio:evidence:fdo-kernel-mvk:003",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_run": "dbio:verification-run:fdo-kernel-mvk:003:001",
+      "status": "pending",
+      "trust_effect": "none",
+      "independence_effect": "not_assessed",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    },
+    {
+      "relationship_id": "dbio:trust-relation:agent-evidence-eeoap:001:001",
+      "entity": "agent-evidence-eeoap",
+      "claim": "dbio:claim:agent-evidence-eeoap:001",
+      "evidence": "dbio:evidence:agent-evidence-eeoap:001",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_run": "dbio:verification-run:agent-evidence-eeoap:001:001",
+      "status": "pending",
+      "trust_effect": "none",
+      "independence_effect": "not_assessed",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    },
+    {
+      "relationship_id": "dbio:trust-relation:agent-evidence-eeoap:002:001",
+      "entity": "agent-evidence-eeoap",
+      "claim": "dbio:claim:agent-evidence-eeoap:002",
+      "evidence": "dbio:evidence:agent-evidence-eeoap:002",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_run": "dbio:verification-run:agent-evidence-eeoap:002:001",
+      "status": "pending",
+      "trust_effect": "none",
+      "independence_effect": "not_assessed",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    },
+    {
+      "relationship_id": "dbio:trust-relation:agent-evidence-eeoap:003:001",
+      "entity": "agent-evidence-eeoap",
+      "claim": "dbio:claim:agent-evidence-eeoap:003",
+      "evidence": "dbio:evidence:agent-evidence-eeoap:003",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_run": "dbio:verification-run:agent-evidence-eeoap:003:001",
+      "status": "pending",
+      "trust_effect": "none",
+      "independence_effect": "not_assessed",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    },
+    {
+      "relationship_id": "dbio:trust-relation:agent-evidence-eeoap:004:001",
+      "entity": "agent-evidence-eeoap",
+      "claim": "dbio:claim:agent-evidence-eeoap:004",
+      "evidence": "dbio:evidence:agent-evidence-eeoap:004",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_run": "dbio:verification-run:agent-evidence-eeoap:004:001",
+      "status": "pending",
+      "trust_effect": "none",
+      "independence_effect": "not_assessed",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    },
+    {
+      "relationship_id": "dbio:trust-relation:aro-audit-reference:001:001",
+      "entity": "aro-audit-reference",
+      "claim": "dbio:claim:aro-audit-reference:001",
+      "evidence": "dbio:evidence:aro-audit-reference:001",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_run": "dbio:verification-run:aro-audit-reference:001:001",
+      "status": "pending",
+      "trust_effect": "none",
+      "independence_effect": "not_assessed",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    },
+    {
+      "relationship_id": "dbio:trust-relation:aro-audit-reference:002:001",
+      "entity": "aro-audit-reference",
+      "claim": "dbio:claim:aro-audit-reference:002",
+      "evidence": "dbio:evidence:aro-audit-reference:002",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_run": "dbio:verification-run:aro-audit-reference:002:001",
+      "status": "pending",
+      "trust_effect": "none",
+      "independence_effect": "not_assessed",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    },
+    {
+      "relationship_id": "dbio:trust-relation:aro-audit-reference:003:001",
+      "entity": "aro-audit-reference",
+      "claim": "dbio:claim:aro-audit-reference:003",
+      "evidence": "dbio:evidence:aro-audit-reference:003",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_run": "dbio:verification-run:aro-audit-reference:003:001",
+      "status": "pending",
+      "trust_effect": "none",
+      "independence_effect": "not_assessed",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    },
+    {
+      "relationship_id": "dbio:trust-relation:verifiable-agent-demo:001:001",
+      "entity": "verifiable-agent-demo",
+      "claim": "dbio:claim:verifiable-agent-demo:001",
+      "evidence": "dbio:evidence:verifiable-agent-demo:001",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_run": "dbio:verification-run:verifiable-agent-demo:001:001",
+      "status": "pending",
+      "trust_effect": "none",
+      "independence_effect": "not_assessed",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    },
+    {
+      "relationship_id": "dbio:trust-relation:verifiable-agent-demo:002:001",
+      "entity": "verifiable-agent-demo",
+      "claim": "dbio:claim:verifiable-agent-demo:002",
+      "evidence": "dbio:evidence:verifiable-agent-demo:002",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_run": "dbio:verification-run:verifiable-agent-demo:002:001",
+      "status": "pending",
+      "trust_effect": "none",
+      "independence_effect": "not_assessed",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    },
+    {
+      "relationship_id": "dbio:trust-relation:verifiable-agent-demo:003:001",
+      "entity": "verifiable-agent-demo",
+      "claim": "dbio:claim:verifiable-agent-demo:003",
+      "evidence": "dbio:evidence:verifiable-agent-demo:003",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_run": "dbio:verification-run:verifiable-agent-demo:003:001",
+      "status": "pending",
+      "trust_effect": "none",
+      "independence_effect": "not_assessed",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    },
+    {
+      "relationship_id": "dbio:trust-relation:execution-integrity-core:001:001",
+      "entity": "execution-integrity-core",
+      "claim": "dbio:claim:execution-integrity-core:001",
+      "evidence": "dbio:evidence:execution-integrity-core:001",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_run": "dbio:verification-run:execution-integrity-core:001:001",
+      "status": "pending",
+      "trust_effect": "none",
+      "independence_effect": "not_assessed",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    },
+    {
+      "relationship_id": "dbio:trust-relation:execution-integrity-core:002:001",
+      "entity": "execution-integrity-core",
+      "claim": "dbio:claim:execution-integrity-core:002",
+      "evidence": "dbio:evidence:execution-integrity-core:002",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_run": "dbio:verification-run:execution-integrity-core:002:001",
+      "status": "pending",
+      "trust_effect": "none",
+      "independence_effect": "not_assessed",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    },
+    {
+      "relationship_id": "dbio:trust-relation:execution-integrity-core:003:001",
+      "entity": "execution-integrity-core",
+      "claim": "dbio:claim:execution-integrity-core:003",
+      "evidence": "dbio:evidence:execution-integrity-core:003",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_run": "dbio:verification-run:execution-integrity-core:003:001",
+      "status": "pending",
+      "trust_effect": "none",
+      "independence_effect": "not_assessed",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    },
+    {
+      "relationship_id": "dbio:trust-relation:execution-integrity-core:004:001",
+      "entity": "execution-integrity-core",
+      "claim": "dbio:claim:execution-integrity-core:004",
+      "evidence": "dbio:evidence:execution-integrity-core:004",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_run": "dbio:verification-run:execution-integrity-core:004:001",
+      "status": "pending",
+      "trust_effect": "none",
+      "independence_effect": "not_assessed",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    },
+    {
+      "relationship_id": "dbio:trust-relation:agent-evidence-receipt-layer:001:001",
+      "entity": "agent-evidence-receipt-layer",
+      "claim": "dbio:claim:agent-evidence-receipt-layer:001",
+      "evidence": "dbio:evidence:agent-evidence-receipt-layer:001",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_run": "dbio:verification-run:agent-evidence-receipt-layer:001:001",
+      "status": "pending",
+      "trust_effect": "none",
+      "independence_effect": "not_assessed",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    },
+    {
+      "relationship_id": "dbio:trust-relation:agent-evidence-receipt-layer:002:001",
+      "entity": "agent-evidence-receipt-layer",
+      "claim": "dbio:claim:agent-evidence-receipt-layer:002",
+      "evidence": "dbio:evidence:agent-evidence-receipt-layer:002",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_run": "dbio:verification-run:agent-evidence-receipt-layer:002:001",
+      "status": "pending",
+      "trust_effect": "none",
+      "independence_effect": "not_assessed",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    },
+    {
+      "relationship_id": "dbio:trust-relation:agent-evidence-receipt-layer:003:001",
+      "entity": "agent-evidence-receipt-layer",
+      "claim": "dbio:claim:agent-evidence-receipt-layer:003",
+      "evidence": "dbio:evidence:agent-evidence-receipt-layer:003",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_run": "dbio:verification-run:agent-evidence-receipt-layer:003:001",
+      "status": "pending",
+      "trust_effect": "none",
+      "independence_effect": "not_assessed",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    },
+    {
+      "relationship_id": "dbio:trust-relation:agent-evidence-receipt-layer:004:001",
+      "entity": "agent-evidence-receipt-layer",
+      "claim": "dbio:claim:agent-evidence-receipt-layer:004",
+      "evidence": "dbio:evidence:agent-evidence-receipt-layer:004",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_run": "dbio:verification-run:agent-evidence-receipt-layer:004:001",
+      "status": "pending",
+      "trust_effect": "none",
+      "independence_effect": "not_assessed",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    },
+    {
+      "relationship_id": "dbio:trust-relation:saee-agent-readiness:001:001",
+      "entity": "saee-agent-readiness",
+      "claim": "dbio:claim:saee-agent-readiness:001",
+      "evidence": "dbio:evidence:saee-agent-readiness:001",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_run": "dbio:verification-run:saee-agent-readiness:001:001",
+      "status": "pending",
+      "trust_effect": "none",
+      "independence_effect": "not_assessed",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    },
+    {
+      "relationship_id": "dbio:trust-relation:saee-agent-readiness:002:001",
+      "entity": "saee-agent-readiness",
+      "claim": "dbio:claim:saee-agent-readiness:002",
+      "evidence": "dbio:evidence:saee-agent-readiness:002",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_run": "dbio:verification-run:saee-agent-readiness:002:001",
+      "status": "pending",
+      "trust_effect": "none",
+      "independence_effect": "not_assessed",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    },
+    {
+      "relationship_id": "dbio:trust-relation:saee-agent-readiness:003:001",
+      "entity": "saee-agent-readiness",
+      "claim": "dbio:claim:saee-agent-readiness:003",
+      "evidence": "dbio:evidence:saee-agent-readiness:003",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_run": "dbio:verification-run:saee-agent-readiness:003:001",
+      "status": "pending",
+      "trust_effect": "none",
+      "independence_effect": "not_assessed",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    },
+    {
+      "relationship_id": "dbio:trust-relation:saee-agent-readiness:004:001",
+      "entity": "saee-agent-readiness",
+      "claim": "dbio:claim:saee-agent-readiness:004",
+      "evidence": "dbio:evidence:saee-agent-readiness:004",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_run": "dbio:verification-run:saee-agent-readiness:004:001",
+      "status": "pending",
+      "trust_effect": "none",
+      "independence_effect": "not_assessed",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    },
+    {
+      "relationship_id": "dbio:trust-relation:agent-governance-toolkit-external:001:001",
+      "entity": "agent-governance-toolkit-external",
+      "claim": "dbio:claim:agent-governance-toolkit-external:001",
+      "evidence": "dbio:evidence:agent-governance-toolkit-external:001",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_run": "dbio:verification-run:agent-governance-toolkit-external:001:001",
+      "status": "pending",
+      "trust_effect": "none",
+      "independence_effect": "not_assessed",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    },
+    {
+      "relationship_id": "dbio:trust-relation:agent-governance-toolkit-external:002:001",
+      "entity": "agent-governance-toolkit-external",
+      "claim": "dbio:claim:agent-governance-toolkit-external:002",
+      "evidence": "dbio:evidence:agent-governance-toolkit-external:002",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_run": "dbio:verification-run:agent-governance-toolkit-external:002:001",
+      "status": "pending",
+      "trust_effect": "none",
+      "independence_effect": "not_assessed",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    },
+    {
+      "relationship_id": "dbio:trust-relation:agent-governance-toolkit-external:003:001",
+      "entity": "agent-governance-toolkit-external",
+      "claim": "dbio:claim:agent-governance-toolkit-external:003",
+      "evidence": "dbio:evidence:agent-governance-toolkit-external:003",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_run": "dbio:verification-run:agent-governance-toolkit-external:003:001",
+      "status": "pending",
+      "trust_effect": "none",
+      "independence_effect": "not_assessed",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    },
+    {
+      "relationship_id": "dbio:trust-relation:agent-governance-toolkit-external:004:001",
+      "entity": "agent-governance-toolkit-external",
+      "claim": "dbio:claim:agent-governance-toolkit-external:004",
+      "evidence": "dbio:evidence:agent-governance-toolkit-external:004",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_run": "dbio:verification-run:agent-governance-toolkit-external:004:001",
+      "status": "pending",
+      "trust_effect": "none",
+      "independence_effect": "not_assessed",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    },
+    {
+      "relationship_id": "dbio:trust-relation:agent-governance-benchmark:001:001",
+      "entity": "agent-governance-benchmark",
+      "claim": "dbio:claim:agent-governance-benchmark:001",
+      "evidence": "dbio:evidence:agent-governance-benchmark:001",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_run": "dbio:verification-run:agent-governance-benchmark:001:001",
+      "status": "pending",
+      "trust_effect": "none",
+      "independence_effect": "not_assessed",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    },
+    {
+      "relationship_id": "dbio:trust-relation:agent-governance-benchmark:002:001",
+      "entity": "agent-governance-benchmark",
+      "claim": "dbio:claim:agent-governance-benchmark:002",
+      "evidence": "dbio:evidence:agent-governance-benchmark:002",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_run": "dbio:verification-run:agent-governance-benchmark:002:001",
+      "status": "pending",
+      "trust_effect": "none",
+      "independence_effect": "not_assessed",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    },
+    {
+      "relationship_id": "dbio:trust-relation:agent-governance-benchmark:003:001",
+      "entity": "agent-governance-benchmark",
+      "claim": "dbio:claim:agent-governance-benchmark:003",
+      "evidence": "dbio:evidence:agent-governance-benchmark:003",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_run": "dbio:verification-run:agent-governance-benchmark:003:001",
+      "status": "pending",
+      "trust_effect": "none",
+      "independence_effect": "not_assessed",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    },
+    {
+      "relationship_id": "dbio:trust-relation:agent-governance-benchmark:004:001",
+      "entity": "agent-governance-benchmark",
+      "claim": "dbio:claim:agent-governance-benchmark:004",
+      "evidence": "dbio:evidence:agent-governance-benchmark:004",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_run": "dbio:verification-run:agent-governance-benchmark:004:001",
+      "status": "pending",
+      "trust_effect": "none",
+      "independence_effect": "not_assessed",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    },
+    {
+      "relationship_id": "dbio:trust-relation:agent-receipt-validator-mcp:001:001",
+      "entity": "agent-receipt-validator-mcp",
+      "claim": "dbio:claim:agent-receipt-validator-mcp:001",
+      "evidence": "dbio:evidence:agent-receipt-validator-mcp:001",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_run": "dbio:verification-run:agent-receipt-validator-mcp:001:001",
+      "status": "pending",
+      "trust_effect": "none",
+      "independence_effect": "not_assessed",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    },
+    {
+      "relationship_id": "dbio:trust-relation:agent-receipt-validator-mcp:002:001",
+      "entity": "agent-receipt-validator-mcp",
+      "claim": "dbio:claim:agent-receipt-validator-mcp:002",
+      "evidence": "dbio:evidence:agent-receipt-validator-mcp:002",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_run": "dbio:verification-run:agent-receipt-validator-mcp:002:001",
+      "status": "pending",
+      "trust_effect": "none",
+      "independence_effect": "not_assessed",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    },
+    {
+      "relationship_id": "dbio:trust-relation:agent-receipt-validator-mcp:003:001",
+      "entity": "agent-receipt-validator-mcp",
+      "claim": "dbio:claim:agent-receipt-validator-mcp:003",
+      "evidence": "dbio:evidence:agent-receipt-validator-mcp:003",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_run": "dbio:verification-run:agent-receipt-validator-mcp:003:001",
+      "status": "pending",
+      "trust_effect": "none",
+      "independence_effect": "not_assessed",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    },
+    {
+      "relationship_id": "dbio:trust-relation:agent-receipt-validator-mcp:004:001",
+      "entity": "agent-receipt-validator-mcp",
+      "claim": "dbio:claim:agent-receipt-validator-mcp:004",
+      "evidence": "dbio:evidence:agent-receipt-validator-mcp:004",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_run": "dbio:verification-run:agent-receipt-validator-mcp:004:001",
+      "status": "pending",
+      "trust_effect": "none",
+      "independence_effect": "not_assessed",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    },
+    {
+      "relationship_id": "dbio:trust-relation:agent-accountability-evidence-layer:001:001",
+      "entity": "agent-accountability-evidence-layer",
+      "claim": "dbio:claim:agent-accountability-evidence-layer:001",
+      "evidence": "dbio:evidence:agent-accountability-evidence-layer:001",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_run": "dbio:verification-run:agent-accountability-evidence-layer:001:001",
+      "status": "pending",
+      "trust_effect": "none",
+      "independence_effect": "not_assessed",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    },
+    {
+      "relationship_id": "dbio:trust-relation:agent-accountability-evidence-layer:002:001",
+      "entity": "agent-accountability-evidence-layer",
+      "claim": "dbio:claim:agent-accountability-evidence-layer:002",
+      "evidence": "dbio:evidence:agent-accountability-evidence-layer:002",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_run": "dbio:verification-run:agent-accountability-evidence-layer:002:001",
+      "status": "pending",
+      "trust_effect": "none",
+      "independence_effect": "not_assessed",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    },
+    {
+      "relationship_id": "dbio:trust-relation:agent-accountability-evidence-layer:003:001",
+      "entity": "agent-accountability-evidence-layer",
+      "claim": "dbio:claim:agent-accountability-evidence-layer:003",
+      "evidence": "dbio:evidence:agent-accountability-evidence-layer:003",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_run": "dbio:verification-run:agent-accountability-evidence-layer:003:001",
+      "status": "pending",
+      "trust_effect": "none",
+      "independence_effect": "not_assessed",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    },
+    {
+      "relationship_id": "dbio:trust-relation:agent-accountability-evidence-layer:004:001",
+      "entity": "agent-accountability-evidence-layer",
+      "claim": "dbio:claim:agent-accountability-evidence-layer:004",
+      "evidence": "dbio:evidence:agent-accountability-evidence-layer:004",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_run": "dbio:verification-run:agent-accountability-evidence-layer:004:001",
+      "status": "pending",
+      "trust_effect": "none",
+      "independence_effect": "not_assessed",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    },
+    {
+      "relationship_id": "dbio:trust-relation:agent-object-protocol:001:001",
+      "entity": "agent-object-protocol",
+      "claim": "dbio:claim:agent-object-protocol:001",
+      "evidence": "dbio:evidence:agent-object-protocol:001",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_run": "dbio:verification-run:agent-object-protocol:001:001",
+      "status": "pending",
+      "trust_effect": "none",
+      "independence_effect": "not_assessed",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    },
+    {
+      "relationship_id": "dbio:trust-relation:agent-object-protocol:002:001",
+      "entity": "agent-object-protocol",
+      "claim": "dbio:claim:agent-object-protocol:002",
+      "evidence": "dbio:evidence:agent-object-protocol:002",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_run": "dbio:verification-run:agent-object-protocol:002:001",
+      "status": "pending",
+      "trust_effect": "none",
+      "independence_effect": "not_assessed",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    },
+    {
+      "relationship_id": "dbio:trust-relation:agent-object-protocol:003:001",
+      "entity": "agent-object-protocol",
+      "claim": "dbio:claim:agent-object-protocol:003",
+      "evidence": "dbio:evidence:agent-object-protocol:003",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_run": "dbio:verification-run:agent-object-protocol:003:001",
+      "status": "pending",
+      "trust_effect": "none",
+      "independence_effect": "not_assessed",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    },
+    {
+      "relationship_id": "dbio:trust-relation:ecl-execution-compact-layer:001:001",
+      "entity": "ecl-execution-compact-layer",
+      "claim": "dbio:claim:ecl-execution-compact-layer:001",
+      "evidence": "dbio:evidence:ecl-execution-compact-layer:001",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_run": "dbio:verification-run:ecl-execution-compact-layer:001:001",
+      "status": "pending",
+      "trust_effect": "none",
+      "independence_effect": "not_assessed",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    },
+    {
+      "relationship_id": "dbio:trust-relation:ecl-execution-compact-layer:002:001",
+      "entity": "ecl-execution-compact-layer",
+      "claim": "dbio:claim:ecl-execution-compact-layer:002",
+      "evidence": "dbio:evidence:ecl-execution-compact-layer:002",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_run": "dbio:verification-run:ecl-execution-compact-layer:002:001",
+      "status": "pending",
+      "trust_effect": "none",
+      "independence_effect": "not_assessed",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    },
+    {
+      "relationship_id": "dbio:trust-relation:ecl-execution-compact-layer:003:001",
+      "entity": "ecl-execution-compact-layer",
+      "claim": "dbio:claim:ecl-execution-compact-layer:003",
+      "evidence": "dbio:evidence:ecl-execution-compact-layer:003",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_run": "dbio:verification-run:ecl-execution-compact-layer:003:001",
+      "status": "pending",
+      "trust_effect": "none",
+      "independence_effect": "not_assessed",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    },
+    {
+      "relationship_id": "dbio:trust-relation:ecl-execution-compact-layer:004:001",
+      "entity": "ecl-execution-compact-layer",
+      "claim": "dbio:claim:ecl-execution-compact-layer:004",
+      "evidence": "dbio:evidence:ecl-execution-compact-layer:004",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_run": "dbio:verification-run:ecl-execution-compact-layer:004:001",
+      "status": "pending",
+      "trust_effect": "none",
+      "independence_effect": "not_assessed",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    },
+    {
+      "relationship_id": "dbio:trust-relation:cellcaps:001:001",
+      "entity": "cellcaps",
+      "claim": "dbio:claim:cellcaps:001",
+      "evidence": "dbio:evidence:cellcaps:001",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_run": "dbio:verification-run:cellcaps:001:001",
+      "status": "pending",
+      "trust_effect": "none",
+      "independence_effect": "not_assessed",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    },
+    {
+      "relationship_id": "dbio:trust-relation:cellcaps:002:001",
+      "entity": "cellcaps",
+      "claim": "dbio:claim:cellcaps:002",
+      "evidence": "dbio:evidence:cellcaps:002",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_run": "dbio:verification-run:cellcaps:002:001",
+      "status": "pending",
+      "trust_effect": "none",
+      "independence_effect": "not_assessed",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    },
+    {
+      "relationship_id": "dbio:trust-relation:cellcaps:003:001",
+      "entity": "cellcaps",
+      "claim": "dbio:claim:cellcaps:003",
+      "evidence": "dbio:evidence:cellcaps:003",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_run": "dbio:verification-run:cellcaps:003:001",
+      "status": "pending",
+      "trust_effect": "none",
+      "independence_effect": "not_assessed",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    },
+    {
+      "relationship_id": "dbio:trust-relation:cellcaps:004:001",
+      "entity": "cellcaps",
+      "claim": "dbio:claim:cellcaps:004",
+      "evidence": "dbio:evidence:cellcaps:004",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_run": "dbio:verification-run:cellcaps:004:001",
+      "status": "pending",
+      "trust_effect": "none",
+      "independence_effect": "not_assessed",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    },
+    {
+      "relationship_id": "dbio:trust-relation:pra-server:001:001",
+      "entity": "pra-server",
+      "claim": "dbio:claim:pra-server:001",
+      "evidence": "dbio:evidence:pra-server:001",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_run": "dbio:verification-run:pra-server:001:001",
+      "status": "pending",
+      "trust_effect": "none",
+      "independence_effect": "not_assessed",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    },
+    {
+      "relationship_id": "dbio:trust-relation:pra-server:002:001",
+      "entity": "pra-server",
+      "claim": "dbio:claim:pra-server:002",
+      "evidence": "dbio:evidence:pra-server:002",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_run": "dbio:verification-run:pra-server:002:001",
+      "status": "pending",
+      "trust_effect": "none",
+      "independence_effect": "not_assessed",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    },
+    {
+      "relationship_id": "dbio:trust-relation:pra-server:003:001",
+      "entity": "pra-server",
+      "claim": "dbio:claim:pra-server:003",
+      "evidence": "dbio:evidence:pra-server:003",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_run": "dbio:verification-run:pra-server:003:001",
+      "status": "pending",
+      "trust_effect": "none",
+      "independence_effect": "not_assessed",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    },
+    {
+      "relationship_id": "dbio:trust-relation:pra-server:004:001",
+      "entity": "pra-server",
+      "claim": "dbio:claim:pra-server:004",
+      "evidence": "dbio:evidence:pra-server:004",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_run": "dbio:verification-run:pra-server:004:001",
+      "status": "pending",
+      "trust_effect": "none",
+      "independence_effect": "not_assessed",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    },
+    {
+      "relationship_id": "dbio:trust-relation:standalone-agent-object-protocol-draft:001:001",
+      "entity": "standalone-agent-object-protocol-draft",
+      "claim": "dbio:claim:standalone-agent-object-protocol-draft:001",
+      "evidence": "dbio:evidence:standalone-agent-object-protocol-draft:001",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_run": "dbio:verification-run:standalone-agent-object-protocol-draft:001:001",
+      "status": "pending",
+      "trust_effect": "none",
+      "independence_effect": "not_assessed",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    },
+    {
+      "relationship_id": "dbio:trust-relation:standalone-agent-object-protocol-draft:002:001",
+      "entity": "standalone-agent-object-protocol-draft",
+      "claim": "dbio:claim:standalone-agent-object-protocol-draft:002",
+      "evidence": "dbio:evidence:standalone-agent-object-protocol-draft:002",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_run": "dbio:verification-run:standalone-agent-object-protocol-draft:002:001",
+      "status": "pending",
+      "trust_effect": "none",
+      "independence_effect": "not_assessed",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    },
+    {
+      "relationship_id": "dbio:trust-relation:standalone-agent-object-protocol-draft:003:001",
+      "entity": "standalone-agent-object-protocol-draft",
+      "claim": "dbio:claim:standalone-agent-object-protocol-draft:003",
+      "evidence": "dbio:evidence:standalone-agent-object-protocol-draft:003",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_run": "dbio:verification-run:standalone-agent-object-protocol-draft:003:001",
+      "status": "pending",
+      "trust_effect": "none",
+      "independence_effect": "not_assessed",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    },
+    {
+      "relationship_id": "dbio:trust-relation:sovereign-agent-local-gate:001:001",
+      "entity": "sovereign-agent-local-gate",
+      "claim": "dbio:claim:sovereign-agent-local-gate:001",
+      "evidence": "dbio:evidence:sovereign-agent-local-gate:001",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_run": "dbio:verification-run:sovereign-agent-local-gate:001:001",
+      "status": "pending",
+      "trust_effect": "none",
+      "independence_effect": "not_assessed",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    },
+    {
+      "relationship_id": "dbio:trust-relation:sovereign-agent-local-gate:002:001",
+      "entity": "sovereign-agent-local-gate",
+      "claim": "dbio:claim:sovereign-agent-local-gate:002",
+      "evidence": "dbio:evidence:sovereign-agent-local-gate:002",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_run": "dbio:verification-run:sovereign-agent-local-gate:002:001",
+      "status": "pending",
+      "trust_effect": "none",
+      "independence_effect": "not_assessed",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    },
+    {
+      "relationship_id": "dbio:trust-relation:sovereign-agent-local-gate:003:001",
+      "entity": "sovereign-agent-local-gate",
+      "claim": "dbio:claim:sovereign-agent-local-gate:003",
+      "evidence": "dbio:evidence:sovereign-agent-local-gate:003",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_run": "dbio:verification-run:sovereign-agent-local-gate:003:001",
+      "status": "pending",
+      "trust_effect": "none",
+      "independence_effect": "not_assessed",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    },
+    {
+      "relationship_id": "dbio:trust-relation:mcp-agent-ei-external:001:001",
+      "entity": "mcp-agent-ei-external",
+      "claim": "dbio:claim:mcp-agent-ei-external:001",
+      "evidence": "dbio:evidence:mcp-agent-ei-external:001",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_run": "dbio:verification-run:mcp-agent-ei-external:001:001",
+      "status": "pending",
+      "trust_effect": "none",
+      "independence_effect": "not_assessed",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    },
+    {
+      "relationship_id": "dbio:trust-relation:mcp-agent-ei-external:002:001",
+      "entity": "mcp-agent-ei-external",
+      "claim": "dbio:claim:mcp-agent-ei-external:002",
+      "evidence": "dbio:evidence:mcp-agent-ei-external:002",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_run": "dbio:verification-run:mcp-agent-ei-external:002:001",
+      "status": "pending",
+      "trust_effect": "none",
+      "independence_effect": "not_assessed",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    },
+    {
+      "relationship_id": "dbio:trust-relation:mcp-agent-ei-external:003:001",
+      "entity": "mcp-agent-ei-external",
+      "claim": "dbio:claim:mcp-agent-ei-external:003",
+      "evidence": "dbio:evidence:mcp-agent-ei-external:003",
+      "verifier": "dbio:verifier:digital-biosphere-local-structural-suite:v0.1",
+      "verification_run": "dbio:verification-run:mcp-agent-ei-external:003:001",
+      "status": "pending",
+      "trust_effect": "none",
+      "independence_effect": "not_assessed",
+      "capability_effect": "none",
+      "permission_effect": "none"
+    }
+  ]
+}

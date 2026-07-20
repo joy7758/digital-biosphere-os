@@ -1,0 +1,42 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereEcologicalInteractionRegistry",
+  "metadata": {
+    "title": "Entity-Environment Ecological Interactions v0.1",
+    "status": "empty_interaction_baseline",
+    "constitution": "../constitution/environment-constitution.yaml",
+    "entity_source_of_truth": "entities.yaml",
+    "environment_source_of_truth": "environments.yaml",
+    "generated_at": "2026-07-19T22:27:22+08:00",
+    "interaction_count": 0,
+    "runtime_interaction_count": 0,
+    "fitness_effect_count": 0,
+    "organism_effect_count": 0,
+    "permission_grant_count": 0,
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "The v0.1 registry is empty because no entity-environment participation evidence has been established.",
+      "Repository location, environment definition, task model, or selection pressure cannot substitute for an attributable interaction record."
+    ]
+  },
+  "interaction_record_schema": {
+    "required_fields": [
+      "entity_id",
+      "environment_id",
+      "interaction_type",
+      "resource_dependency",
+      "effect"
+    ],
+    "valid_interaction_types": [
+      "observes",
+      "consumes",
+      "produces",
+      "transforms",
+      "constrains",
+      "adapts_to"
+    ],
+    "default_effect": "unknown",
+    "authorization_boundary": "interaction registration cannot grant permission or establish organism status"
+  },
+  "ecological_interactions": []
+}

@@ -1,0 +1,59 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereFederationInteroperabilityRules",
+  "metadata": {
+    "title": "Federation Interoperability Rules v0.1",
+    "status": "declarative_fail_closed",
+    "constitution": "../constitution/federation-constitution.yaml",
+    "rule_count": 7,
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "Rules constrain future federation interaction but do not establish compatibility, trust, capability, permission, or execution authority.",
+      "Cross-project references remain evidence-bounded and non-transitive."
+    ]
+  },
+  "rules": [
+    {
+      "rule_id": "protocol_may_be_implemented_by_service",
+      "statement": "A service may implement a version-bound protocol through an explicit manifest and evidence-backed implements relation.",
+      "constraint": "Implementation does not transfer protocol identity, ownership, authority, conformance, or permission.",
+      "governance_effect": "none"
+    },
+    {
+      "rule_id": "service_cannot_modify_protocol_identity",
+      "statement": "A service cannot modify, absorb, replace, or inherit the identity of a protocol it implements or references.",
+      "constraint": "Protocol changes remain controlled by the protocol entity and require an additive evolution record.",
+      "governance_effect": "identity_preservation"
+    },
+    {
+      "rule_id": "verifier_not_verified_subject",
+      "statement": "A verifier cannot automatically become, own, or receive authority from the subject it verifies.",
+      "constraint": "Verifier identity, subject identity, review authority, trust, independence, capability, and permission remain separate.",
+      "governance_effect": "separation_only"
+    },
+    {
+      "rule_id": "manifest_mediated_communication",
+      "statement": "Projects communicate federation identity, roles, constitution references, evidence, dependencies, and evolution pointers through versioned manifests.",
+      "constraint": "A central pending placeholder is not project-local manifest adoption evidence.",
+      "governance_effect": "traceability_only"
+    },
+    {
+      "rule_id": "cross_project_change_requires_evolution_record",
+      "statement": "Every material cross-project change must append an attributable federation evolution record.",
+      "constraint": "A ledger record documents a change but does not replace target-repository authorization, tests, commit, release, or deployment evidence.",
+      "governance_effect": "history_preservation"
+    },
+    {
+      "rule_id": "reference_not_compatibility",
+      "statement": "A references relation records documented awareness or architectural context only.",
+      "constraint": "Reference does not prove dependency, implementation, interoperability, successful execution, adoption, or compatibility.",
+      "governance_effect": "none"
+    },
+    {
+      "rule_id": "no_transitive_authority",
+      "statement": "Membership, dependency, implementation, verification, extension, and reference relations are non-transitive for authority.",
+      "constraint": "No graph path may derive capability, permission, ownership, trust, constitution adoption, Agent identity, runtime, or organism status.",
+      "governance_effect": "none"
+    }
+  ]
+}

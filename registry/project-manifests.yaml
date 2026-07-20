@@ -1,0 +1,56 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereFederationProjectManifestRegistry",
+  "metadata": {
+    "title": "Federation Project Manifest Registry v0.1",
+    "status": "central_pending_placeholders_only",
+    "constitution": "../constitution/federation-constitution.yaml",
+    "schema": "../schemas/project-manifest.schema.yaml",
+    "entity_source_of_truth": "entities.yaml",
+    "generated_at": "2026-07-19T22:49:34+08:00",
+    "manifest_count": 23,
+    "pending_manifest_count": 23,
+    "submitted_manifest_count": 0,
+    "accepted_manifest_count": 0,
+    "project_local_manifest_count": 0,
+    "declared_dependency_count": 0,
+    "manifest_capability_claim_reference_count": 0,
+    "manifest_evidence_reference_count": 0,
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "These are central pending placeholders derived from canonical identity records, not manifests supplied or adopted by external projects.",
+      "Empty dependency, claim, evidence, and evolution arrays preserve unknown project-local federation intent rather than erasing central registries.",
+      "Pending manifests create no membership registration, capability, permission, trust, runtime, organism, or interoperability result."
+    ]
+  },
+  "manifest_record_schema": {
+    "$ref": "../schemas/project-manifest.schema.yaml",
+    "default_status": "pending",
+    "project_local_adoption_required_for_registration": true
+  },
+  "manifests": [
+    {"manifest_id":"dbio://project-manifest/digital-biosphere-architecture/v0.1","entity_id":"digital-biosphere-architecture","repository":"/Users/zhangbin/GitHub/digital-biosphere-architecture","role":"foundation","dependencies":[],"constitution":"constitution/constitution.yaml","capability_claims":[],"evidence_refs":[],"evolution_tracking":[],"status":"pending"},
+    {"manifest_id":"dbio://project-manifest/pop-persona-object-protocol/v0.1","entity_id":"pop-persona-object-protocol","repository":"/Users/zhangbin/GitHub/persona-object-protocol","role":"protocol","dependencies":[],"constitution":"constitution/constitution.yaml","capability_claims":[],"evidence_refs":[],"evolution_tracking":[],"status":"pending"},
+    {"manifest_id":"dbio://project-manifest/aip-agent-intent-protocol/v0.1","entity_id":"aip-agent-intent-protocol","repository":"/Users/zhangbin/GitHub/agent-intent-protocol","role":"protocol","dependencies":[],"constitution":"constitution/constitution.yaml","capability_claims":[],"evidence_refs":[],"evolution_tracking":[],"status":"pending"},
+    {"manifest_id":"dbio://project-manifest/token-governor-reference/v0.1","entity_id":"token-governor-reference","repository":"/Users/zhangbin/GitHub/token-governor","role":"governance","dependencies":[],"constitution":"constitution/constitution.yaml","capability_claims":[],"evidence_refs":[],"evolution_tracking":[],"status":"pending"},
+    {"manifest_id":"dbio://project-manifest/fdo-kernel-mvk/v0.1","entity_id":"fdo-kernel-mvk","repository":"/Users/zhangbin/GitHub/fdo-kernel-mvk","role":"foundation","dependencies":[],"constitution":"constitution/constitution.yaml","capability_claims":[],"evidence_refs":[],"evolution_tracking":[],"status":"pending"},
+    {"manifest_id":"dbio://project-manifest/agent-evidence-eeoap/v0.1","entity_id":"agent-evidence-eeoap","repository":"/Users/zhangbin/GitHub/agent-evidence","role":"evidence","dependencies":[],"constitution":"constitution/constitution.yaml","capability_claims":[],"evidence_refs":[],"evolution_tracking":[],"status":"pending"},
+    {"manifest_id":"dbio://project-manifest/aro-audit-reference/v0.1","entity_id":"aro-audit-reference","repository":"/Users/zhangbin/GitHub/aro-audit","role":"verification","dependencies":[],"constitution":"constitution/constitution.yaml","capability_claims":[],"evidence_refs":[],"evolution_tracking":[],"status":"pending"},
+    {"manifest_id":"dbio://project-manifest/verifiable-agent-demo/v0.1","entity_id":"verifiable-agent-demo","repository":"/Users/zhangbin/GitHub/verifiable-agent-demo","role":"experimental","dependencies":[],"constitution":"constitution/constitution.yaml","capability_claims":[],"evidence_refs":[],"evolution_tracking":[],"status":"pending"},
+    {"manifest_id":"dbio://project-manifest/execution-integrity-core/v0.1","entity_id":"execution-integrity-core","repository":"/Users/zhangbin/GitHub/execution-integrity-core","role":"foundation","dependencies":[],"constitution":"constitution/constitution.yaml","capability_claims":[],"evidence_refs":[],"evolution_tracking":[],"status":"pending"},
+    {"manifest_id":"dbio://project-manifest/agent-evidence-receipt-layer/v0.1","entity_id":"agent-evidence-receipt-layer","repository":"/Users/zhangbin/GitHub/agent-evidence-layer","role":"evidence","dependencies":[],"constitution":"constitution/constitution.yaml","capability_claims":[],"evidence_refs":[],"evolution_tracking":[],"status":"pending"},
+    {"manifest_id":"dbio://project-manifest/saee-agent-readiness/v0.1","entity_id":"saee-agent-readiness","repository":"/Users/zhangbin/GitHub/SAEE","role":"verification","dependencies":[],"constitution":"constitution/constitution.yaml","capability_claims":[],"evidence_refs":[],"evolution_tracking":[],"status":"pending"},
+    {"manifest_id":"dbio://project-manifest/agent-governance-toolkit-external/v0.1","entity_id":"agent-governance-toolkit-external","repository":"/Users/zhangbin/GitHub/agent-governance-toolkit","role":"governance","dependencies":[],"constitution":"constitution/constitution.yaml","capability_claims":[],"evidence_refs":[],"evolution_tracking":[],"status":"pending"},
+    {"manifest_id":"dbio://project-manifest/agent-governance-benchmark/v0.1","entity_id":"agent-governance-benchmark","repository":"/Users/zhangbin/GitHub/agent-governance-benchmark","role":"verification","dependencies":[],"constitution":"constitution/constitution.yaml","capability_claims":[],"evidence_refs":[],"evolution_tracking":[],"status":"pending"},
+    {"manifest_id":"dbio://project-manifest/agent-receipt-validator-mcp/v0.1","entity_id":"agent-receipt-validator-mcp","repository":"/Users/zhangbin/GitHub/agent-receipt-validator-mcp","role":"verification","dependencies":[],"constitution":"constitution/constitution.yaml","capability_claims":[],"evidence_refs":[],"evolution_tracking":[],"status":"pending"},
+    {"manifest_id":"dbio://project-manifest/agent-accountability-evidence-layer/v0.1","entity_id":"agent-accountability-evidence-layer","repository":"/Users/zhangbin/GitHub/agent-accountability-evidence-layer","role":"evidence","dependencies":[],"constitution":"constitution/constitution.yaml","capability_claims":[],"evidence_refs":[],"evolution_tracking":[],"status":"pending"},
+    {"manifest_id":"dbio://project-manifest/agent-object-protocol/v0.1","entity_id":"agent-object-protocol","repository":"/Users/zhangbin/GitHub/agent-object-protocol","role":"protocol","dependencies":[],"constitution":"constitution/constitution.yaml","capability_claims":[],"evidence_refs":[],"evolution_tracking":[],"status":"pending"},
+    {"manifest_id":"dbio://project-manifest/ecl-execution-compact-layer/v0.1","entity_id":"ecl-execution-compact-layer","repository":"/Users/zhangbin/GitHub/ecl-execution-compact-layer","role":"protocol","dependencies":[],"constitution":"constitution/constitution.yaml","capability_claims":[],"evidence_refs":[],"evolution_tracking":[],"status":"pending"},
+    {"manifest_id":"dbio://project-manifest/cellcaps/v0.1","entity_id":"cellcaps","repository":"/Users/zhangbin/GitHub/cellcaps","role":"unknown","dependencies":[],"constitution":"constitution/constitution.yaml","capability_claims":[],"evidence_refs":[],"evolution_tracking":[],"status":"pending"},
+    {"manifest_id":"dbio://project-manifest/pra-server/v0.1","entity_id":"pra-server","repository":"/Users/zhangbin/pra-server","role":"experimental","dependencies":[],"constitution":"constitution/constitution.yaml","capability_claims":[],"evidence_refs":[],"evolution_tracking":[],"status":"pending"},
+    {"manifest_id":"dbio://project-manifest/standalone-agent-object-protocol-draft/v0.1","entity_id":"standalone-agent-object-protocol-draft","repository":"/Users/zhangbin/agent","role":"protocol","dependencies":[],"constitution":"constitution/constitution.yaml","capability_claims":[],"evidence_refs":[],"evolution_tracking":[],"status":"pending"},
+    {"manifest_id":"dbio://project-manifest/sovereign-agent-local-gate/v0.1","entity_id":"sovereign-agent-local-gate","repository":"/Users/zhangbin/sovereign-agent","role":"governance","dependencies":[],"constitution":"constitution/constitution.yaml","capability_claims":[],"evidence_refs":[],"evolution_tracking":[],"status":"pending"},
+    {"manifest_id":"dbio://project-manifest/mcp-agent-ei-external/v0.1","entity_id":"mcp-agent-ei-external","repository":"/Users/zhangbin/GitHub/mcp-agent-ei","role":"experimental","dependencies":[],"constitution":"constitution/constitution.yaml","capability_claims":[],"evidence_refs":[],"evolution_tracking":[],"status":"pending"},
+    {"manifest_id":"dbio://project-manifest/autonomous-cell-protocol/v0.1","entity_id":"autonomous-cell-protocol","repository":"/Users/zhangbin/GitHub/海洋/autonomous-cell-protocol","role":"protocol","dependencies":[],"constitution":"constitution/constitution.yaml","capability_claims":[],"evidence_refs":[],"evolution_tracking":[],"status":"pending"}
+  ]
+}

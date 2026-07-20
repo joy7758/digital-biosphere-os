@@ -1,0 +1,45 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereEnvironmentCollectionEvidenceRegistry",
+  "metadata": {
+    "title": "Environment Collection Evidence v0.1",
+    "status": "one_verified_collection_evidence_record",
+    "constitution": "../constitution/environment-evidence-capture-constitution.yaml",
+    "capture_source_of_truth": "environment-evidence-captures.yaml",
+    "generated_at": "2026-07-20T09:23:44+08:00",
+    "collection_evidence_count": 1,
+    "verified_collection_evidence_count": 1,
+    "qualification_evidence_created_count": 1,
+    "environment_qualification_count": 1,
+    "permission_grant_count": 0,
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "The registry is empty because no collection method was run and no result was produced.",
+      "Collection evidence documents how collection occurred; it cannot independently certify an environment or populate qualification evidence."
+    ]
+  },
+  "environment_collection_evidence_schema": {
+    "required_fields": ["evidence_id", "capture_id", "method", "source", "result", "timestamp"],
+    "additional_governance_fields": ["fact_refs", "digest_refs", "status", "limitations", "verification_ref", "supersedes", "revocation_ref", "authority_effect"],
+    "valid_statuses": ["captured", "verified", "partial", "failed", "invalid", "revoked"],
+    "verification_boundary": "verified requires an existing completed capture, attributable collector, retained method and source, linked facts and digests, and separate verification."
+  },
+  "environment_collection_evidence": [
+    {
+      "evidence_id": "DBOS-EXP-0001-ENV-COLLECTION-EVIDENCE-0001",
+      "capture_id": "DBOS-EXP-0001-ENV-EVIDENCE-CAPTURE-0001",
+      "method": "execution/dbos_exp_0001.py collect-environment using Python standard library and allowlisted read-only OS commands",
+      "source": "evidence/experiments/DBOS-EXP-0001/environment/environment-observation.json",
+      "result": {"status": "completed", "observation_digest": "sha256:61a158347002b0dae542203f5260309ad8783fb8b898d14788a8eec887a5e3f9", "fact_count": 5, "digest_count": 3, "sensitive_value_count": 0, "external_repository_read_count": 0},
+      "timestamp": "2026-07-20T10:07:49+08:00",
+      "fact_refs": ["DBOS-EXP-0001-ENV-FACT-OS-0001", "DBOS-EXP-0001-ENV-FACT-PYTHON-0001", "DBOS-EXP-0001-ENV-FACT-DEPENDENCY-0001", "DBOS-EXP-0001-ENV-FACT-CONFIGURATION-0001", "DBOS-EXP-0001-ENV-FACT-HARDWARE-0001"],
+      "digest_refs": ["DBOS-EXP-0001-ENV-DIGEST-DEPENDENCY-0001", "DBOS-EXP-0001-ENV-DIGEST-CONFIGURATION-0001", "DBOS-EXP-0001-ENV-DIGEST-ENVIRONMENT-0001"],
+      "status": "verified",
+      "limitations": ["local automated collection", "not independent", "no environment qualification authority"],
+      "verification_ref": "validation/execution_chain_validator.py#environment",
+      "supersedes": null,
+      "revocation_ref": null,
+      "authority_effect": "none"
+    }
+  ]
+}

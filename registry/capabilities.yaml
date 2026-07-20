@@ -1,0 +1,88 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereCapabilityRegistry",
+  "metadata": {
+    "title": "Digital Biosphere Capability Registry v0.1",
+    "status": "empty_confirmed_capability_baseline",
+    "capability_constitution": "../constitution/capability-constitution.yaml",
+    "capability_policy": "../policies/capability-policy.yaml",
+    "generated_at": "2026-07-19T19:39:01+08:00",
+    "confirmed_capability_count": 0,
+    "potential_capability_evidence_count": 78,
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "Capability classification does not grant permission.",
+      "No capability is assigned to any entity in v0.1.",
+      "The five classes are taxonomy records, not executable capabilities.",
+      "Potential capability evidence remains outside the confirmed capabilities list."
+    ]
+  },
+  "capability_record_schema": {
+    "required_fields": [
+      "capability_id",
+      "name",
+      "type",
+      "risk_level",
+      "required_permission",
+      "evidence_requirement"
+    ],
+    "capability_id_format": "dbio://capability/<type>/<name>/<version>",
+    "valid_types": [
+      "information",
+      "computation",
+      "modification",
+      "external_action",
+      "self_evolution"
+    ],
+    "valid_risk_levels": [
+      "unknown",
+      "low",
+      "moderate",
+      "high",
+      "critical"
+    ],
+    "required_permission_boundary": "A permission reference must be explicit; it cannot be derived from capability type, evidence, entity type, parent, package, repository, or service.",
+    "evidence_requirement_boundary": "Evidence may support existence or scope of a capability but cannot grant permission."
+  },
+  "capability_types": {
+    "A": {
+      "name": "information",
+      "description": "Read, discover, retrieve, describe, summarize, or expose information without asserting a right to access a specific source.",
+      "dangerous_by_default": false,
+      "risk_floor": "unknown"
+    },
+    "B": {
+      "name": "computation",
+      "description": "Transform, validate, compare, simulate, calculate, or reason over inputs without an authorized external side effect.",
+      "dangerous_by_default": false,
+      "risk_floor": "unknown"
+    },
+    "C": {
+      "name": "modification",
+      "description": "Create, edit, mutate, overwrite, delete, or otherwise change data, code, schema, configuration, evidence, or state.",
+      "dangerous_by_default": true,
+      "risk_floor": "high"
+    },
+    "D": {
+      "name": "external_action",
+      "description": "Cause an effect outside the local governed boundary, including publication, message sending, account action, deployment, release, payment, or provider operation.",
+      "dangerous_by_default": true,
+      "risk_floor": "high"
+    },
+    "E": {
+      "name": "self_evolution",
+      "description": "Change the entity's own identity, capability set, policy, code, model, prompts, goals, lifecycle, or successors.",
+      "dangerous_by_default": true,
+      "risk_floor": "critical"
+    }
+  },
+  "classification_counts": {
+    "information": 0,
+    "computation": 0,
+    "modification": 0,
+    "external_action": 0,
+    "self_evolution": 0
+  },
+  "capabilities": []
+}
+

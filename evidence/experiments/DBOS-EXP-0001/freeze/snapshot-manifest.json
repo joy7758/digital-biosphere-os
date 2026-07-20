@@ -1,0 +1,839 @@
+{
+  "agent_count": 0,
+  "captured_at": "2026-07-20T10:20:17+08:00",
+  "digital_organism_count": 0,
+  "experiment_id": "DBOS-EXP-0001",
+  "file_count": 164,
+  "files": [
+    {
+      "digest": "sha256:29e10e7a70a8a507a63205ad0bb98d33fd81aaa408b2b59392ab1c625ae21838",
+      "path": "constitution/automated-runner-constitution.yaml",
+      "size": 6529
+    },
+    {
+      "digest": "sha256:284d6671663dbc83ee8c7c210462b2338ab247fc13e07007332d215b9b0a8f5a",
+      "path": "constitution/capability-constitution.yaml",
+      "size": 5347
+    },
+    {
+      "digest": "sha256:a4eb12fe900bf64e4f83d0f6ec5d7b3a7947f699036d7abed948d98944a844d6",
+      "path": "constitution/capability-verification-constitution.yaml",
+      "size": 5936
+    },
+    {
+      "digest": "sha256:ae521772016d3fc9d377c2553bbddaff47fc21210dab4f52e17990cce3d0fe9d",
+      "path": "constitution/constitution.yaml",
+      "size": 18315
+    },
+    {
+      "digest": "sha256:82a7af0e107e170e7958f1c772fe5da0e621d88a3db8251ef8774caf53fcf815",
+      "path": "constitution/environment-collector-constitution.yaml",
+      "size": 7951
+    },
+    {
+      "digest": "sha256:b451f22400bff305148dd45eb67bc545161f62a4b17962a05bf7da9e80487f2c",
+      "path": "constitution/environment-constitution.yaml",
+      "size": 6345
+    },
+    {
+      "digest": "sha256:8a07df88f7bb9df63f71989c482a90e5bd93eceffe93eaed143067ae50c3df67",
+      "path": "constitution/environment-evidence-capture-constitution.yaml",
+      "size": 7411
+    },
+    {
+      "digest": "sha256:bce4493577f6869ec09bdc2a80d28cda78559f39954606314c077ed8829ae902",
+      "path": "constitution/environment-qualification-constitution.yaml",
+      "size": 8550
+    },
+    {
+      "digest": "sha256:1c3f961d69dc8b8f902c3ff9b15a636e884a55348daa07becc4e36e356f3ddea",
+      "path": "constitution/event-attestation-constitution.yaml",
+      "size": 8319
+    },
+    {
+      "digest": "sha256:b5dad97c538caad92461591fa7b1fc2d8657016f5851178c3d299619acc052cb",
+      "path": "constitution/event-constitution.yaml",
+      "size": 7311
+    },
+    {
+      "digest": "sha256:338a3d7aa2d18e38525adce728d00b6312fbe48da916fd06c01e7c76acd44674",
+      "path": "constitution/event-integrity-constitution.yaml",
+      "size": 8671
+    },
+    {
+      "digest": "sha256:1e79bf8b96a815bf9b5b8c5a1f7897712ea8eb2d164e05a1b98e348c01a9cd62",
+      "path": "constitution/evidence-constitution.yaml",
+      "size": 7602
+    },
+    {
+      "digest": "sha256:496f051a3cb87dbf7740b79766d9c6ba7133e4912a34f86d9a9ebe288237dc67",
+      "path": "constitution/execution-context-constitution.yaml",
+      "size": 11537
+    },
+    {
+      "digest": "sha256:16c15e19bfa6e0c5a62ebae189e624a4d8ee7aa67b38e28e9ae99dd184a60341",
+      "path": "constitution/executor-constitution.yaml",
+      "size": 8555
+    },
+    {
+      "digest": "sha256:69805c0f19994cad013db92d58c66f54a635707daf24f55bbe5845562c603e1c",
+      "path": "constitution/executor-identity-constitution.yaml",
+      "size": 6787
+    },
+    {
+      "digest": "sha256:db7eeebf2bfc9284c079d1de21b33e445d16c0d04d842dbebb9eb49fa67b075c",
+      "path": "constitution/experiment-freeze-constitution.yaml",
+      "size": 7007
+    },
+    {
+      "digest": "sha256:18790ad7126a6d3bef7290d397955e9ff403ec97762d7440f71f75808fd6d79c",
+      "path": "constitution/experiment-readiness-constitution.yaml",
+      "size": 13964
+    },
+    {
+      "digest": "sha256:fa074deaa8971ca8b2bda90932c022a9c5230904a33b3cb12759ce049b8715d9",
+      "path": "constitution/experimental-protocol-constitution.yaml",
+      "size": 13754
+    },
+    {
+      "digest": "sha256:e9e7037701ca0bc808ee9496b450a612162b6fddb8a43f19be1a5543d81e6be1",
+      "path": "constitution/federation-constitution.yaml",
+      "size": 8400
+    },
+    {
+      "digest": "sha256:242ef60bf96ff1631a08644aebd373e90ed737ddb8c7999a11f553c64e4374ee",
+      "path": "constitution/governance-archetype-constitution.yaml",
+      "size": 6822
+    },
+    {
+      "digest": "sha256:40c2edeb2891aa47f118401161d9551234daab8b701a763c119475b000eec18c",
+      "path": "constitution/governance-evidence-constitution.yaml",
+      "size": 6819
+    },
+    {
+      "digest": "sha256:86db65242e39374f4416ba2c39df2caa8699a0bffd70531aa161f7c33da37219",
+      "path": "constitution/identity-constitution.yaml",
+      "size": 5845
+    },
+    {
+      "digest": "sha256:f84b2a023807f306b86514bca5918832469cba0c3c283ee8600548ad95d281a1",
+      "path": "constitution/organism-genesis-constitution.yaml",
+      "size": 6631
+    },
+    {
+      "digest": "sha256:07da02394ab7e11aff02875934a878d1ad1731c3db655508a0f16d53c0721a31",
+      "path": "constitution/saee-constitution.yaml",
+      "size": 10216
+    },
+    {
+      "digest": "sha256:516cabfc8a26e8e0f73e45db4467d1c4054e0da2c73b7bc79140674320017534",
+      "path": "constitution/snapshot-capture-constitution.yaml",
+      "size": 7667
+    },
+    {
+      "digest": "sha256:37fa55ad4556af57423324a60f373ff14f432ab42a84bf3ab2d422a7d2b4b4d2",
+      "path": "constitution/snapshot-capture-readiness-constitution.yaml",
+      "size": 7507
+    },
+    {
+      "digest": "sha256:2cbc7239424b16a38d01ba3fed386c87c641f17d40f6b51a4b7ee406ee522c5b",
+      "path": "constitution/verification-constitution.yaml",
+      "size": 8025
+    },
+    {
+      "digest": "sha256:d60f0a6e125344f0577d031846d8dd80e8bb5e9026a7ca4befcd83551c6c3d7c",
+      "path": "constitution/verification-network-constitution.yaml",
+      "size": 5847
+    },
+    {
+      "digest": "sha256:be4e70c69a40b390077124bc84a2fc4e997f35ac57929f721a8620c7a766547a",
+      "path": "registry/agents.yaml",
+      "size": 42546
+    },
+    {
+      "digest": "sha256:e11ef4abe284bc28de99f0f1393e9021f3403db235923b9fa9fa32a9fb2407fa",
+      "path": "registry/artifact-digests.yaml",
+      "size": 1493
+    },
+    {
+      "digest": "sha256:8543731887aab9e77670e27b0bf5dddf3cb7628ee61ca617a434409f48387e80",
+      "path": "registry/attestation-methods.yaml",
+      "size": 2555
+    },
+    {
+      "digest": "sha256:ee5659eaa8e714c7de3dff66b6e9fd4f1c311ff40c67f7a5000df831ba7b9e95",
+      "path": "registry/behavior-traces.yaml",
+      "size": 1296
+    },
+    {
+      "digest": "sha256:27d65a0bebffb5d7c890676f432ee61c7998398a9e5d0ce4b3c13ab97bb0eaa4",
+      "path": "registry/capabilities.yaml",
+      "size": 3204
+    },
+    {
+      "digest": "sha256:a160dc6249f415a626bbcc0849e40a486db07020a72f91c53d37ecfc79cb5e2b",
+      "path": "registry/capability-claims.yaml",
+      "size": 70187
+    },
+    {
+      "digest": "sha256:31629b186f486a6ac21abd2b8e967932f35600fde69caa2eba5b3b062dac8cf5",
+      "path": "registry/capability-evidence.yaml",
+      "size": 102235
+    },
+    {
+      "digest": "sha256:0549661751c1ed085150f7259ab8d9aec090613bf7d6beff8db015ac66023b50",
+      "path": "registry/capability-maturity.yaml",
+      "size": 3789
+    },
+    {
+      "digest": "sha256:f897771ea5a443b924884d79bf53361707f0070b694445f0ab751906fccb9362",
+      "path": "registry/capability-profiles.yaml",
+      "size": 65583
+    },
+    {
+      "digest": "sha256:62c362c321f8e5c3b7754b6e4e8790ffc6cd7e0e7a841255ab598f12a032e521",
+      "path": "registry/capability-reviews.yaml",
+      "size": 1274
+    },
+    {
+      "digest": "sha256:ab7ba85d6b10c9fe77578ab1434f79c0076c04c1497b7f3d779c72f6a9251966",
+      "path": "registry/capture-authorizations.yaml",
+      "size": 2286
+    },
+    {
+      "digest": "sha256:084c783d0c5d7bbab6cf8b752a9a42772c15975278bd5c37b438af4f3ce93ef4",
+      "path": "registry/capture-collectors.yaml",
+      "size": 1472
+    },
+    {
+      "digest": "sha256:4b5ffbb13c5557ce29450704e26dac11a5778e6360c24c5c0bf7b0ccb84f2609",
+      "path": "registry/capture-evidence.yaml",
+      "size": 1509
+    },
+    {
+      "digest": "sha256:feb6e5d68a434d52837a86bfefdce4f608195332a35b3a919d5cd5e145efc1e9",
+      "path": "registry/capture-readiness-reviews.yaml",
+      "size": 3672
+    },
+    {
+      "digest": "sha256:ac8e18d9effe9fe118d60e08a235359791ec426b01313a6e75ef1ea2db7963fa",
+      "path": "registry/capture-scopes.yaml",
+      "size": 2503
+    },
+    {
+      "digest": "sha256:e025be3d77aae5cb6a0c120f9e7f7432b57dba4236fda41f5ebfaba6cbeca65a",
+      "path": "registry/collector-evidence.yaml",
+      "size": 3035
+    },
+    {
+      "digest": "sha256:8538023e482bc4a8e245cdd0d85a02e5d6a0face99274635851ea3f536daac0f",
+      "path": "registry/collector-runs.yaml",
+      "size": 3136
+    },
+    {
+      "digest": "sha256:cb6d229004d713667ea8f3405cd77acdf56d95b96e62fbe5a8d4c344e01c61d6",
+      "path": "registry/collector-scopes.yaml",
+      "size": 4133
+    },
+    {
+      "digest": "sha256:f2261ca1a40da8c14bb490dd40d541a11c2dea928470e43e8951357c438c52c0",
+      "path": "registry/dependency-graph.yaml",
+      "size": 12343
+    },
+    {
+      "digest": "sha256:c1328401daf0f1cb6983b21820826cdce0dab25eef73323de9de99a1ca084996",
+      "path": "registry/ecological-entities.yaml",
+      "size": 13422
+    },
+    {
+      "digest": "sha256:c8064cd091836d0a9c79ca75a3da182c61ccd4eb5b1474a3e8a2e1b431eea322",
+      "path": "registry/ecological-interactions.yaml",
+      "size": 1441
+    },
+    {
+      "digest": "sha256:d0e3526b37922ce635c3f2764847530cd1a41da5c90a8deb132044ddc9bc86fe",
+      "path": "registry/entities.yaml",
+      "size": 89637
+    },
+    {
+      "digest": "sha256:8f6b2872d70626d3ac98d88a718b9f42e4fd6620c65226ee8beda0b816162a6f",
+      "path": "registry/entity-capabilities.yaml",
+      "size": 54133
+    },
+    {
+      "digest": "sha256:5ef6b3bb33821fc2ad9400de2b6a55efa757e011a1ca976c8e6b42feadc73e3d",
+      "path": "registry/environment-collection-evidence.yaml",
+      "size": 2932
+    },
+    {
+      "digest": "sha256:f16546c6eba7621a876a0d7c61e3edde3ca054293ec4a4d97373a166322ab24a",
+      "path": "registry/environment-collectors.yaml",
+      "size": 2908
+    },
+    {
+      "digest": "sha256:8562ab2acf305f729827ffafa5da101efd6e05a9a1afcf189c8ada5e0bfb6fbe",
+      "path": "registry/environment-digests.yaml",
+      "size": 4277
+    },
+    {
+      "digest": "sha256:01ba0dc8fa67626900564f07316d80ab67027f8f83cb61fd1f0b3661006d8734",
+      "path": "registry/environment-evidence-captures.yaml",
+      "size": 3892
+    },
+    {
+      "digest": "sha256:6dd5f894be5ec5041b2f1f90139714051a96e27dcfa4f1cb328e7a9005824f3b",
+      "path": "registry/environment-evidence.yaml",
+      "size": 5348
+    },
+    {
+      "digest": "sha256:634e711e1dd845fb9d6ffa7ef66828ee95e4c2f2a48bc7dab9e5a0f612e8e01a",
+      "path": "registry/environment-facts.yaml",
+      "size": 5061
+    },
+    {
+      "digest": "sha256:75e42bec76feac46a0496b59a1c3051e5c8945ab08df1da8435f4f2bc332718a",
+      "path": "registry/environment-identities.yaml",
+      "size": 2499
+    },
+    {
+      "digest": "sha256:339900b4b41e3b6988b214f0eb12e67c843e23fccf465667ca1fa4d3aea23b90",
+      "path": "registry/environment-locks.yaml",
+      "size": 4252
+    },
+    {
+      "digest": "sha256:07639f26641969107a3f6a87b6f76cd588fbf9ec081d437c1f0b757cdf07380c",
+      "path": "registry/environment-qualifications.yaml",
+      "size": 3958
+    },
+    {
+      "digest": "sha256:eb86344010306c01acbcb3ff6b491de698c134355f8c8a7f780e558a50392364",
+      "path": "registry/environments.yaml",
+      "size": 3116
+    },
+    {
+      "digest": "sha256:c1aaad67f9e66c3dc81a0a5d4c8763a0c5e55c874682ad978e4d32587ca08d03",
+      "path": "registry/event-attestations.yaml",
+      "size": 2224
+    },
+    {
+      "digest": "sha256:65dfc2bb55a31c3c894ad17c912841ce3734a91ded806682859391c382dbb8cc",
+      "path": "registry/event-integrity-checks.yaml",
+      "size": 3095
+    },
+    {
+      "digest": "sha256:31bf7ad17c8c3f95142306427dbbb02ebcbca99399f9c81af3ff55501894cb11",
+      "path": "registry/event-integrity.yaml",
+      "size": 2036
+    },
+    {
+      "digest": "sha256:83e7ca9198b68b4cf24b6c29575110fd77b14f91a98ac8e46ce9c0cdb011567e",
+      "path": "registry/event-observations.yaml",
+      "size": 1273
+    },
+    {
+      "digest": "sha256:6bd79acedf3fbe6f7cfcb3a9ac25807f4f19860bf38f8bb7f152baf0d0e54aa9",
+      "path": "registry/event-ordering.yaml",
+      "size": 8197
+    },
+    {
+      "digest": "sha256:9369dbd4c895f26a04d1870fa2ae0679206cc4ee5e0fe3129bd6ed7dfb2a154d",
+      "path": "registry/event-producers.yaml",
+      "size": 2773
+    },
+    {
+      "digest": "sha256:dffcd2dfa24fbad071bcb9c0072de6fd03febfe75655f54cf8be83b1c20ac2a9",
+      "path": "registry/event-streams.yaml",
+      "size": 9539
+    },
+    {
+      "digest": "sha256:86fbdf5a78a768d74b987be8bf06d530bdc4502ef5c8a44a9d36b85108e299ac",
+      "path": "registry/event-types.yaml",
+      "size": 3857
+    },
+    {
+      "digest": "sha256:1854ae40f06bad4c00d0f4a8605e25b3f642c2068a5d65dbd262ea918a878aa4",
+      "path": "registry/event-witnesses.yaml",
+      "size": 2125
+    },
+    {
+      "digest": "sha256:23783a780d62dd2259c9ab0538f3f6bccef7cb7b972234ab74c55a287315a630",
+      "path": "registry/events.yaml",
+      "size": 1818
+    },
+    {
+      "digest": "sha256:9828db52ef9ab5a1bff2ecd05ddddc9554f40b446c73fea12bfa94a0f0b6fef1",
+      "path": "registry/evidence-types.yaml",
+      "size": 3336
+    },
+    {
+      "digest": "sha256:4b06ccae4965584b961d45a81816c0bc44ba17c17c2896d070b7a874664f58ba",
+      "path": "registry/evolution-mapping.yaml",
+      "size": 8787
+    },
+    {
+      "digest": "sha256:9a7fa3daf654a73fb50345d70a6a71c9f3c1982452d3262bd55c77a184f105a5",
+      "path": "registry/evolution-principles.yaml",
+      "size": 2938
+    },
+    {
+      "digest": "sha256:705e1a4fb9c4eed1b254de380f627b6894621f17c5c6704a56c1465d5232d70f",
+      "path": "registry/execution-contexts.yaml",
+      "size": 2286
+    },
+    {
+      "digest": "sha256:9101fe337bc4faa20889c94b2538b6928ccd3d3dc08f7341bdae415e89a18bf6",
+      "path": "registry/execution-dependencies.yaml",
+      "size": 1540
+    },
+    {
+      "digest": "sha256:c14a8cf8b2bb7effb406e4cb84e412188c9707319af434c6d789cd33dccff150",
+      "path": "registry/executor-authorizations.yaml",
+      "size": 2791
+    },
+    {
+      "digest": "sha256:95696d1a7a051b2beb83a881efb0251214142f8a51fb1f1bd7b721a467f85b9d",
+      "path": "registry/executor-boundaries.yaml",
+      "size": 4207
+    },
+    {
+      "digest": "sha256:aa44b02ca047100d73a6ee90d5f324b3c9205d4cf0885cd78281ce38145a87fe",
+      "path": "registry/executor-identities.yaml",
+      "size": 2928
+    },
+    {
+      "digest": "sha256:5c51ef1b2e770b0f8784d30116a46bffa1b04ad6bb18b5eb9ce88082292fe3f4",
+      "path": "registry/executor-scopes.yaml",
+      "size": 2206
+    },
+    {
+      "digest": "sha256:5383dbd5ab228299f139bac27cd34de23b877c4f55df0a49e75087d7862cce16",
+      "path": "registry/executor-verifications.yaml",
+      "size": 2132
+    },
+    {
+      "digest": "sha256:f7ed1c6de7db0f09a1dc4ba659ca3ba6557329e2099f8123f6300ce930a3e7da",
+      "path": "registry/executors.yaml",
+      "size": 2156
+    },
+    {
+      "digest": "sha256:47004c7e6612aecbc11acff3cc2f0a71d2f1f82cea55c35cfd7e50db24603bcb",
+      "path": "registry/experiment-authorizations.yaml",
+      "size": 2531
+    },
+    {
+      "digest": "sha256:6e6666f0189aae0994d1dcec90d2f3647ef4f41d2f984a2952b7663b6c8965d1",
+      "path": "registry/experiment-execution-chain.yaml",
+      "size": 1842
+    },
+    {
+      "digest": "sha256:56ada06741d6730dee7818e72be330996cd6f4373aecf5be4446d4664b923b69",
+      "path": "registry/experiment-inputs.yaml",
+      "size": 3863
+    },
+    {
+      "digest": "sha256:eb87e4f0bbc84349ea6260e24c05c3fbb572863ecee813ec0e05a2b69558f26e",
+      "path": "registry/experiment-observations.yaml",
+      "size": 1530
+    },
+    {
+      "digest": "sha256:8710a6dc86196596bdde409756b2d6d22eb2e98d35db70a6fcc37855786efa3f",
+      "path": "registry/experiment-outputs.yaml",
+      "size": 3121
+    },
+    {
+      "digest": "sha256:a44b6cc50765fffe6d8a60601c2c41410d9495a9bc307a266f308f83f5cfd41d",
+      "path": "registry/experiment-procedures.yaml",
+      "size": 7785
+    },
+    {
+      "digest": "sha256:f76840a37feff3e2f71b9bbd827ce0885b816f23dc07bc65a440b68c644de609",
+      "path": "registry/experiment-snapshots.yaml",
+      "size": 2133
+    },
+    {
+      "digest": "sha256:61353eb5db598d817ce945cfe1699e0ddcf94b777eb123fe8c6563e327e26129",
+      "path": "registry/experiment-stop-rules.yaml",
+      "size": 2653
+    },
+    {
+      "digest": "sha256:23b23f2e35e0d65f336bce2f34c702cbc1e8e460905e9bf8538f00fab8425095",
+      "path": "registry/experiment-subjects.yaml",
+      "size": 2722
+    },
+    {
+      "digest": "sha256:4fce7fb992301d58e2dbad092da9e164f3dcb929e5aec827f035420575a5ee56",
+      "path": "registry/experiments.yaml",
+      "size": 4295
+    },
+    {
+      "digest": "sha256:67023eef78fde602463274731379e7f4217f7331df69a01d51275d1614af1310",
+      "path": "registry/federation-map.yaml",
+      "size": 6035
+    },
+    {
+      "digest": "sha256:30706c7a45054878072af2932f2b598d0133e601a748f8da1d5491cb50bcea97",
+      "path": "registry/federation-members.yaml",
+      "size": 8457
+    },
+    {
+      "digest": "sha256:f035e16a0e08d6b7909e977b5ed015c4d30be46ca844059cbba549c820be0c7e",
+      "path": "registry/fitness-model.yaml",
+      "size": 2960
+    },
+    {
+      "digest": "sha256:9307641dc7775b10e6f459074424d2b9cb5cd7b5f468eaaf0ea37b492184c19e",
+      "path": "registry/freeze-certificates.yaml",
+      "size": 2131
+    },
+    {
+      "digest": "sha256:c5ebfe5d614cb40bc1bbbe01ff06587f19375dfbb61526c5df87e25eb06a49dc",
+      "path": "registry/freeze-manifests.yaml",
+      "size": 3007
+    },
+    {
+      "digest": "sha256:141479411f79d7a20ce1c8f8a34420f4dadb2b72a319af61120a918c2184c34b",
+      "path": "registry/governance-archetypes.yaml",
+      "size": 2473
+    },
+    {
+      "digest": "sha256:d73beb2d9954a0bc887655646cbff72d5368934d363196c275fd1f6eb1be4df5",
+      "path": "registry/governance-bindings.yaml",
+      "size": 1766
+    },
+    {
+      "digest": "sha256:5757222dd81ffa77c52a6bf13f783e0805997b347c537255ca3a29072d12da36",
+      "path": "registry/governance-claims.yaml",
+      "size": 1702
+    },
+    {
+      "digest": "sha256:2cc1ecf6e5bd53f88ca42c669eb5b9a64f0ca918c0d528b1fd85bbf39f73c953",
+      "path": "registry/governance-evaluation.yaml",
+      "size": 2103
+    },
+    {
+      "digest": "sha256:e958f8732a12b9a2ec2db66fe19f2b84ecaa1a27eb778e1c17fa645b16949364",
+      "path": "registry/governance-evidence.yaml",
+      "size": 1765
+    },
+    {
+      "digest": "sha256:54cff49eeff2c5efb7bc981d5d362c0136c5cd80e12db3e748f5436cb98ec350",
+      "path": "registry/governance-maturity.yaml",
+      "size": 3884
+    },
+    {
+      "digest": "sha256:0504cbeedba7dca0cb52327aa38cd47f85e60bb225dba0d1208a20a53bebf34d",
+      "path": "registry/governance-observations.yaml",
+      "size": 6716
+    },
+    {
+      "digest": "sha256:07ea9b360ef63c4c5be58d6f719e4f4a9dbb920fcfcd397786d29a28c53103a8",
+      "path": "registry/governance-transitions.yaml",
+      "size": 2248
+    },
+    {
+      "digest": "sha256:cfa9cb9f2a9b6e3342ace181097471aa87a07c512ab70978afd4e91c8c2fc166",
+      "path": "registry/identity-rules.yaml",
+      "size": 3999
+    },
+    {
+      "digest": "sha256:f4986c0a807a29fdf48b9d77276f7e081b473b4e97aa5bef3c2adc1e36303df7",
+      "path": "registry/input-snapshots.yaml",
+      "size": 1396
+    },
+    {
+      "digest": "sha256:19c0be93362f40a8831c781b1f7623a59e41aae429699b4559c72f5241b89b62",
+      "path": "registry/interoperability-rules.yaml",
+      "size": 3259
+    },
+    {
+      "digest": "sha256:9bc30db696dfe31383d994fe54ddfe8546e35107961a689bdd3298a70f8a6933",
+      "path": "registry/organism-candidates.yaml",
+      "size": 2693
+    },
+    {
+      "digest": "sha256:b8ebb8ff09250315c9738ee12018c7049a62e130ba8fd12dbc5efdd5d5fc66d2",
+      "path": "registry/output-snapshots.yaml",
+      "size": 1414
+    },
+    {
+      "digest": "sha256:c5f4082ac51ecb881342a13b01500b72e1973865afe731522ba6d8e5e3091163",
+      "path": "registry/project-manifests.yaml",
+      "size": 9359
+    },
+    {
+      "digest": "sha256:5d6aa8ab506c7779794a5bd704307bef757b2b0f0a3c25ca154a3927f7478354",
+      "path": "registry/readiness-reviews.yaml",
+      "size": 3687
+    },
+    {
+      "digest": "sha256:477b80ca26feaa688f74286b69d9a434e87a8f7762dc2a22e4978241c65e29db",
+      "path": "registry/reproducibility-requirements.yaml",
+      "size": 4509
+    },
+    {
+      "digest": "sha256:7064f1b542291b1f2bb604a4c134b044eed7d9825e1446c14cfd647d041bdcd5",
+      "path": "registry/resource-flows.yaml",
+      "size": 1378
+    },
+    {
+      "digest": "sha256:acff9dd884eb0047f9ef0d2bc4393c5dd28e6c9eafd8ca43b0ea7e03e26029e5",
+      "path": "registry/resource-models.yaml",
+      "size": 2449
+    },
+    {
+      "digest": "sha256:e4130b5c34ce9091c80e61ce83c8de142d641ad75f84d4aa44744b684fa75be3",
+      "path": "registry/runner-environments.yaml",
+      "size": 3323
+    },
+    {
+      "digest": "sha256:d42e16756f45695b2b9f7ba20cdcb6131e124f7272118d4e95ad8d4546b3b65c",
+      "path": "registry/runner-evidence.yaml",
+      "size": 1900
+    },
+    {
+      "digest": "sha256:7b81d9d49d3464009096fbad685f741c4d81db48067b21c5cbdb1a0ad3771e0b",
+      "path": "registry/runner-executions.yaml",
+      "size": 2363
+    },
+    {
+      "digest": "sha256:7ae3d05ddbc4d9e5c5a7b68af9be2a48fa33c235d72087e489d3e23b23031022",
+      "path": "registry/runner-scopes.yaml",
+      "size": 2158
+    },
+    {
+      "digest": "sha256:97ed664f841386190cde53fdd2f59fa03daee45700c53bb653d47e1f1ac57d96",
+      "path": "registry/runners.yaml",
+      "size": 2487
+    },
+    {
+      "digest": "sha256:d6de7256a9cc8c9209173bc5c46220c148c069a2ce8d1d4690a1b5b9b43e6ca8",
+      "path": "registry/runtime-instances.yaml",
+      "size": 1610
+    },
+    {
+      "digest": "sha256:4ce89914c451b552b4f11ce4eafddd159470146d2720289cac144f0b2e13a636",
+      "path": "registry/selection-pressures.yaml",
+      "size": 2914
+    },
+    {
+      "digest": "sha256:ba734ba35c1a2a2718146a7aa65f0599b729ed7871d86532d43c10dd7ab2dc9b",
+      "path": "registry/snapshot-captures.yaml",
+      "size": 2867
+    },
+    {
+      "digest": "sha256:73fc838a747738764061e79cc42060c5547190a895d7a7d601f25a4734973f77",
+      "path": "registry/snapshot-sources.yaml",
+      "size": 2512
+    },
+    {
+      "digest": "sha256:5b02d8a1ad4a3dab2b06edc8e1e826ea87f3cae018d6b781d610a1762d3b1615",
+      "path": "registry/trust-anchors.yaml",
+      "size": 1633
+    },
+    {
+      "digest": "sha256:3d6ab2a5c527dd49d41ac6c85c54f23129c9b9882155492f3ef834b49630432b",
+      "path": "registry/trust-graph.yaml",
+      "size": 117019
+    },
+    {
+      "digest": "sha256:9cf2c1119d29ec8a4ce250b3f9aae497fe4a05530e236bf0b70c0c3e5c1764da",
+      "path": "registry/validator-manifests.yaml",
+      "size": 3364
+    },
+    {
+      "digest": "sha256:4d0cc21f2b98cada43e8908f79a84454c0135c93ae0c2a469d20b07e47f5e144",
+      "path": "registry/verification-level.yaml",
+      "size": 3502
+    },
+    {
+      "digest": "sha256:0a5a50627d27dd9d027e1cce54148d974441a924d0b96cd347683d21db8821bd",
+      "path": "registry/verification-records.yaml",
+      "size": 85748
+    },
+    {
+      "digest": "sha256:58da766e0e117a7f5fc9029ccc4f9a069fbb46ece59558194bca2881bcfd909f",
+      "path": "registry/verification-runs.yaml",
+      "size": 56176
+    },
+    {
+      "digest": "sha256:ac8053ec5b1945778b519e6c17b29a232473d3ca26c98932f269f45cf32de32d",
+      "path": "registry/verifier-types.yaml",
+      "size": 3386
+    },
+    {
+      "digest": "sha256:7b11f13cadc476b271db44ee029ec1938be678d429b4e5d6ebc6c2df0859116d",
+      "path": "registry/verifiers.yaml",
+      "size": 5522
+    },
+    {
+      "digest": "sha256:c1edbf122093b0ee22c830614c01223b6ca654a87968a3fe5614a545410ff7bd",
+      "path": "validation/attestation_validator.py",
+      "size": 30761
+    },
+    {
+      "digest": "sha256:6f211f2dd285dcf23a818f653b2d63dc436a1b63a9451901bc73ca952dfdaeda",
+      "path": "validation/capability_claim_validator.py",
+      "size": 21412
+    },
+    {
+      "digest": "sha256:ec97a0ca5dbc040c6b28bf10d3e5985bff0248a8fe0205ae21ee60f2c2219825",
+      "path": "validation/capability_validator.py",
+      "size": 13598
+    },
+    {
+      "digest": "sha256:be49fa72279d0a84bfed83ff829ba4b78fbebc47afde25d574136a5f7e15adae",
+      "path": "validation/capture_readiness_validator.py",
+      "size": 32663
+    },
+    {
+      "digest": "sha256:2e8128404298625a263fe41a1391769b65473f28486cf34f3d91bc851599a96e",
+      "path": "validation/environment_collector_validator.py",
+      "size": 36517
+    },
+    {
+      "digest": "sha256:6ad0807fa62274b96fd2726ea901239899e420c02e09f0614aa37fec99db682f",
+      "path": "validation/environment_evidence_capture_validator.py",
+      "size": 35574
+    },
+    {
+      "digest": "sha256:d6a58ee4df6ffc8bed2064458f64980e0953d79c57f2f5d338df0892f89170cf",
+      "path": "validation/environment_qualification_validator.py",
+      "size": 33827
+    },
+    {
+      "digest": "sha256:eab79a11ca6d4abc3e732f9366783b00adc91c40a821c83f8324aea80b35fe4d",
+      "path": "validation/environment_validator.py",
+      "size": 26486
+    },
+    {
+      "digest": "sha256:9f467e6c97ac978a21dd0345ab0ac47f7160308be99991dea406efb6b721b826",
+      "path": "validation/event_integrity_validator.py",
+      "size": 30154
+    },
+    {
+      "digest": "sha256:e67f1a408b7b1426d2ac0cbcd2e1ab224ddb5242a3043da8226f5687e12fe077",
+      "path": "validation/event_validator.py",
+      "size": 25901
+    },
+    {
+      "digest": "sha256:423d08f5349bd76a484f219fb47b7bcdb3f44e8a6f2f4927f43aee85e5b5ae8b",
+      "path": "validation/evidence_validator.py",
+      "size": 23662
+    },
+    {
+      "digest": "sha256:e263807c358a910690330e78a21f07e9f4f730f88c6654ec367789e079f7d564",
+      "path": "validation/execution_chain_compat.py",
+      "size": 1646
+    },
+    {
+      "digest": "sha256:3dff1cccc34f1fca6128f75a6679b935056ceefadb398c310ff9ad2735418eb5",
+      "path": "validation/execution_chain_validator.py",
+      "size": 25841
+    },
+    {
+      "digest": "sha256:a50c526727167ec3aab84f52f8293dd033cf98ef47dfc47b1e9bd91a924c0260",
+      "path": "validation/execution_context_validator.py",
+      "size": 27729
+    },
+    {
+      "digest": "sha256:fd598bef9ccd22c4d67a05ba05ecb3912b8d5f8994a4272b086b9c57385d54ac",
+      "path": "validation/executor_identity_validator.py",
+      "size": 29466
+    },
+    {
+      "digest": "sha256:f6f6b063b13ec198dd7a85564e3de4791fbe881bcf281f5e2976c2eb27aaa301",
+      "path": "validation/executor_validator.py",
+      "size": 27704
+    },
+    {
+      "digest": "sha256:6534ac10752083951463d0f8b23e5ad9aca9d1921cf0d667352fceb36b35f452",
+      "path": "validation/experimental_protocol_validator.py",
+      "size": 33726
+    },
+    {
+      "digest": "sha256:34d4ee298a5ac0ca538f2e0a0e8d9a946be6fba578e9ec642c27794515ee8f59",
+      "path": "validation/federation_validator.py",
+      "size": 26322
+    },
+    {
+      "digest": "sha256:70c1d1c428ba0c649803b7e5102bd85371c07894409a0821e393bfb75948cbc2",
+      "path": "validation/freeze_validator.py",
+      "size": 29957
+    },
+    {
+      "digest": "sha256:5f3cfb6c484d619f390db5dfb223b4ed1ea77c0fd13a08f69b47847a76f3950d",
+      "path": "validation/genesis_experiment_validator.py",
+      "size": 33492
+    },
+    {
+      "digest": "sha256:06ff7256ffae6a4c73d1f770d2d92048d03b58ac9d3782c1c3d2f6bbf276c630",
+      "path": "validation/governance_evidence_validator.py",
+      "size": 28152
+    },
+    {
+      "digest": "sha256:1b2d71d2d2b85d8b12a39e09cce19c9e916371625ae467feb35540c8be9dcc47",
+      "path": "validation/governance_validator.py",
+      "size": 25030
+    },
+    {
+      "digest": "sha256:ee45c4ed9dc8c678a008d58fbdbd78d056cf478da458ed0d38ede5a22b729df1",
+      "path": "validation/identity_validator.py",
+      "size": 12835
+    },
+    {
+      "digest": "sha256:d04e2f296fdc5c03beb433890baa6823ba010b0992b3c6420a19e6de17b73200",
+      "path": "validation/organism_validator.py",
+      "size": 26114
+    },
+    {
+      "digest": "sha256:aad55ab09df8454f5fba9070c6abafb1870de45d14d25000b4e251811bdfa1e1",
+      "path": "validation/readiness_validator.py",
+      "size": 31771
+    },
+    {
+      "digest": "sha256:cc99115759a09823a11f238c0baa66059a582a8799fc43ece326984b0b20d5ef",
+      "path": "validation/runner_validator.py",
+      "size": 35240
+    },
+    {
+      "digest": "sha256:f090e1d40522a1189a5bb1e622ef9d99c570b7ce8ce88237b972f08a8de40293",
+      "path": "validation/saee_validator.py",
+      "size": 23892
+    },
+    {
+      "digest": "sha256:4b2a19502d415d3cfcc2c09e69fb6dd5e89d433da88e1deb807098602a4681ad",
+      "path": "validation/snapshot_capture_validator.py",
+      "size": 27711
+    },
+    {
+      "digest": "sha256:56721aee801cade3d1b351710b891aafcb43943b0509e47656d44e978ee5994a",
+      "path": "validation/verification_network_validator.py",
+      "size": 24263
+    },
+    {
+      "digest": "sha256:166e5ccb813e300a08479538443efe09f5857111ce9cf6ff58900b3138a6e110",
+      "path": "validation/verification_validator.py",
+      "size": 26682
+    },
+    {
+      "digest": "sha256:c5fa7031980120f8c369ed038e60b9a81cde88b9f391e72d18c4eb376d7ca156",
+      "path": "execution/README.md",
+      "size": 1017
+    },
+    {
+      "digest": "sha256:3ece45ca3bba89e2628d0351cb8bd2032e2f709e88db3566a57897e9a68da6ed",
+      "path": "execution/dbos_exp_0001.py",
+      "size": 27585
+    }
+  ],
+  "included_roots": [
+    "constitution",
+    "registry",
+    "validation",
+    "execution"
+  ],
+  "kind": "DBOSExperimentFrozenInputManifest",
+  "root_semantics": "paths_relative_to_digital_biosphere_os",
+  "runtime_count": 0,
+  "schema_version": "0.1"
+}

@@ -1,0 +1,185 @@
+{
+  "captured_at": "2026-07-20T10:20:17+08:00",
+  "execution_order": [
+    "validation/attestation_validator.py",
+    "validation/capability_claim_validator.py",
+    "validation/capability_validator.py",
+    "validation/capture_readiness_validator.py",
+    "validation/environment_collector_validator.py",
+    "validation/environment_evidence_capture_validator.py",
+    "validation/environment_qualification_validator.py",
+    "validation/environment_validator.py",
+    "validation/event_integrity_validator.py",
+    "validation/event_validator.py",
+    "validation/evidence_validator.py",
+    "validation/execution_chain_validator.py",
+    "validation/execution_context_validator.py",
+    "validation/executor_identity_validator.py",
+    "validation/executor_validator.py",
+    "validation/experimental_protocol_validator.py",
+    "validation/federation_validator.py",
+    "validation/freeze_validator.py",
+    "validation/genesis_experiment_validator.py",
+    "validation/governance_evidence_validator.py",
+    "validation/governance_validator.py",
+    "validation/identity_validator.py",
+    "validation/organism_validator.py",
+    "validation/readiness_validator.py",
+    "validation/runner_validator.py",
+    "validation/saee_validator.py",
+    "validation/snapshot_capture_validator.py",
+    "validation/verification_network_validator.py",
+    "validation/verification_validator.py"
+  ],
+  "experiment_id": "DBOS-EXP-0001",
+  "kind": "DBOSExperimentValidatorManifest",
+  "schema_version": "0.1",
+  "validator_count": 29,
+  "validators": [
+    {
+      "digest": "sha256:c1edbf122093b0ee22c830614c01223b6ca654a87968a3fe5614a545410ff7bd",
+      "path": "validation/attestation_validator.py",
+      "size": 30761
+    },
+    {
+      "digest": "sha256:6f211f2dd285dcf23a818f653b2d63dc436a1b63a9451901bc73ca952dfdaeda",
+      "path": "validation/capability_claim_validator.py",
+      "size": 21412
+    },
+    {
+      "digest": "sha256:ec97a0ca5dbc040c6b28bf10d3e5985bff0248a8fe0205ae21ee60f2c2219825",
+      "path": "validation/capability_validator.py",
+      "size": 13598
+    },
+    {
+      "digest": "sha256:be49fa72279d0a84bfed83ff829ba4b78fbebc47afde25d574136a5f7e15adae",
+      "path": "validation/capture_readiness_validator.py",
+      "size": 32663
+    },
+    {
+      "digest": "sha256:2e8128404298625a263fe41a1391769b65473f28486cf34f3d91bc851599a96e",
+      "path": "validation/environment_collector_validator.py",
+      "size": 36517
+    },
+    {
+      "digest": "sha256:6ad0807fa62274b96fd2726ea901239899e420c02e09f0614aa37fec99db682f",
+      "path": "validation/environment_evidence_capture_validator.py",
+      "size": 35574
+    },
+    {
+      "digest": "sha256:d6a58ee4df6ffc8bed2064458f64980e0953d79c57f2f5d338df0892f89170cf",
+      "path": "validation/environment_qualification_validator.py",
+      "size": 33827
+    },
+    {
+      "digest": "sha256:eab79a11ca6d4abc3e732f9366783b00adc91c40a821c83f8324aea80b35fe4d",
+      "path": "validation/environment_validator.py",
+      "size": 26486
+    },
+    {
+      "digest": "sha256:9f467e6c97ac978a21dd0345ab0ac47f7160308be99991dea406efb6b721b826",
+      "path": "validation/event_integrity_validator.py",
+      "size": 30154
+    },
+    {
+      "digest": "sha256:e67f1a408b7b1426d2ac0cbcd2e1ab224ddb5242a3043da8226f5687e12fe077",
+      "path": "validation/event_validator.py",
+      "size": 25901
+    },
+    {
+      "digest": "sha256:423d08f5349bd76a484f219fb47b7bcdb3f44e8a6f2f4927f43aee85e5b5ae8b",
+      "path": "validation/evidence_validator.py",
+      "size": 23662
+    },
+    {
+      "digest": "sha256:3dff1cccc34f1fca6128f75a6679b935056ceefadb398c310ff9ad2735418eb5",
+      "path": "validation/execution_chain_validator.py",
+      "size": 25841
+    },
+    {
+      "digest": "sha256:a50c526727167ec3aab84f52f8293dd033cf98ef47dfc47b1e9bd91a924c0260",
+      "path": "validation/execution_context_validator.py",
+      "size": 27729
+    },
+    {
+      "digest": "sha256:fd598bef9ccd22c4d67a05ba05ecb3912b8d5f8994a4272b086b9c57385d54ac",
+      "path": "validation/executor_identity_validator.py",
+      "size": 29466
+    },
+    {
+      "digest": "sha256:f6f6b063b13ec198dd7a85564e3de4791fbe881bcf281f5e2976c2eb27aaa301",
+      "path": "validation/executor_validator.py",
+      "size": 27704
+    },
+    {
+      "digest": "sha256:6534ac10752083951463d0f8b23e5ad9aca9d1921cf0d667352fceb36b35f452",
+      "path": "validation/experimental_protocol_validator.py",
+      "size": 33726
+    },
+    {
+      "digest": "sha256:34d4ee298a5ac0ca538f2e0a0e8d9a946be6fba578e9ec642c27794515ee8f59",
+      "path": "validation/federation_validator.py",
+      "size": 26322
+    },
+    {
+      "digest": "sha256:70c1d1c428ba0c649803b7e5102bd85371c07894409a0821e393bfb75948cbc2",
+      "path": "validation/freeze_validator.py",
+      "size": 29957
+    },
+    {
+      "digest": "sha256:5f3cfb6c484d619f390db5dfb223b4ed1ea77c0fd13a08f69b47847a76f3950d",
+      "path": "validation/genesis_experiment_validator.py",
+      "size": 33492
+    },
+    {
+      "digest": "sha256:06ff7256ffae6a4c73d1f770d2d92048d03b58ac9d3782c1c3d2f6bbf276c630",
+      "path": "validation/governance_evidence_validator.py",
+      "size": 28152
+    },
+    {
+      "digest": "sha256:1b2d71d2d2b85d8b12a39e09cce19c9e916371625ae467feb35540c8be9dcc47",
+      "path": "validation/governance_validator.py",
+      "size": 25030
+    },
+    {
+      "digest": "sha256:ee45c4ed9dc8c678a008d58fbdbd78d056cf478da458ed0d38ede5a22b729df1",
+      "path": "validation/identity_validator.py",
+      "size": 12835
+    },
+    {
+      "digest": "sha256:d04e2f296fdc5c03beb433890baa6823ba010b0992b3c6420a19e6de17b73200",
+      "path": "validation/organism_validator.py",
+      "size": 26114
+    },
+    {
+      "digest": "sha256:aad55ab09df8454f5fba9070c6abafb1870de45d14d25000b4e251811bdfa1e1",
+      "path": "validation/readiness_validator.py",
+      "size": 31771
+    },
+    {
+      "digest": "sha256:cc99115759a09823a11f238c0baa66059a582a8799fc43ece326984b0b20d5ef",
+      "path": "validation/runner_validator.py",
+      "size": 35240
+    },
+    {
+      "digest": "sha256:f090e1d40522a1189a5bb1e622ef9d99c570b7ce8ce88237b972f08a8de40293",
+      "path": "validation/saee_validator.py",
+      "size": 23892
+    },
+    {
+      "digest": "sha256:4b2a19502d415d3cfcc2c09e69fb6dd5e89d433da88e1deb807098602a4681ad",
+      "path": "validation/snapshot_capture_validator.py",
+      "size": 27711
+    },
+    {
+      "digest": "sha256:56721aee801cade3d1b351710b891aafcb43943b0509e47656d44e978ee5994a",
+      "path": "validation/verification_network_validator.py",
+      "size": 24263
+    },
+    {
+      "digest": "sha256:166e5ccb813e300a08479538443efe09f5857111ce9cf6ff58900b3138a6e110",
+      "path": "validation/verification_validator.py",
+      "size": 26682
+    }
+  ]
+}

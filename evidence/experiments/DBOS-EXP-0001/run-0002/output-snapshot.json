@@ -1,0 +1,7 @@
+{
+  "context_id": "dbio:execution-context:digital-biosphere-os:0001",
+  "hash": "sha256:472ddeee4d7caf6fcba281829d2b3624fbba3cc334f963ae3e4839e21a564d2d",
+  "output_ref": "validator-results.json",
+  "snapshot_id": "dbio:snapshot:output:dbio:execution-context:digital-biosphere-os:0001:0001",
+  "timestamp": "2026-07-20T10:50:17+08:00"
+}

@@ -1,0 +1,80 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereGovernanceMaturityRegistry",
+  "metadata": {
+    "title": "Governance Maturity Model v0.1",
+    "status": "g0_unknown_entity_baseline",
+    "constitution": "../constitution/governance-evidence-constitution.yaml",
+    "claim_registry": "governance-claims.yaml",
+    "evidence_registry": "governance-evidence.yaml",
+    "observation_registry": "governance-observations.yaml",
+    "generated_at": "2026-07-19T23:31:39+08:00",
+    "distribution_unit": "canonical_entity_without_maturity_assignment",
+    "canonical_entity_count": 23,
+    "invariant": "Governance Maturity != Governance Authority != Governance Binding",
+    "serialization": "JSON-compatible YAML 1.2"
+  },
+  "levels": [
+    {
+      "level": "G0",
+      "name": "Unknown",
+      "definition": "No registered governance claim exists for the entity, or governance state cannot be determined.",
+      "required_predecessors": [],
+      "entry_requirements": []
+    },
+    {
+      "level": "G1",
+      "name": "Declared",
+      "definition": "A bounded governance claim identifies one existing entity, one existing archetype, scope, and pending status without approval or binding.",
+      "required_predecessors": ["G0"],
+      "entry_requirements": ["unique claim_id", "existing entity", "existing archetype", "bounded scope", "status=pending"]
+    },
+    {
+      "level": "G2",
+      "name": "Evidenced",
+      "definition": "Claim-bound governance artifact evidence has assessed provenance, integrity, identity, scope, version, and relevance.",
+      "required_predecessors": ["G0", "G1"],
+      "entry_requirements": ["G1 requirements", "assessed GE2 evidence", "evidence references bound to the claim"]
+    },
+    {
+      "level": "G3",
+      "name": "Verified",
+      "definition": "Observed coordination evidence has been evaluated through an attributable bounded verification method with decision and limitations.",
+      "required_predecessors": ["G0", "G1", "G2"],
+      "entry_requirements": ["G2 requirements", "verified GE3 evidence", "attributable verification", "recorded limitations"]
+    },
+    {
+      "level": "G4",
+      "name": "Adaptive",
+      "definition": "Independent evidence supports bounded governance adaptation across recorded conditions without identity loss or uncontrolled authority expansion.",
+      "required_predecessors": ["G0", "G1", "G2", "G3"],
+      "entry_requirements": ["G3 requirements", "independently verified GE4 evidence", "conflict disclosure", "multiple attributable observations", "revocation path"]
+    },
+    {
+      "level": "G5",
+      "name": "Ecological",
+      "definition": "Continuous ecosystem-scale observation supports stability, diversity, adaptation, resource balance, drift detection, and revocation under a defined window.",
+      "required_predecessors": ["G0", "G1", "G2", "G3", "G4"],
+      "entry_requirements": ["G4 requirements", "GE5 continuous observation", "declared ecosystem boundary", "coverage and drift evidence", "stability and diversity evidence"]
+    }
+  ],
+  "transition_rules": [
+    "Levels are sequential and cannot be skipped.",
+    "G0 is inferred only from absence of a claim and does not create a maturity assignment.",
+    "A pending claim may enter G1 only and cannot create a governance binding.",
+    "G2 requires assessed GE2 evidence.",
+    "G3 requires verified GE3 evidence and attributable verification.",
+    "G4 requires independently verified GE4 evidence and adaptation observations.",
+    "G5 requires GE5 continuous ecological observation over a defined window.",
+    "Invalid or revoked evidence provides no current maturity support.",
+    "No G level grants governance authority, capability, permission, trust, runtime, or organism status."
+  ],
+  "current_distribution": {
+    "G0": 23,
+    "G1": 0,
+    "G2": 0,
+    "G3": 0,
+    "G4": 0,
+    "G5": 0
+  }
+}

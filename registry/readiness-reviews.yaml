@@ -1,0 +1,83 @@
+{
+  "schema_version": "0.1",
+  "kind": "DigitalBiosphereExperimentReadinessReviewRegistry",
+  "metadata": {
+    "title": "Experiment Readiness Reviews v0.1",
+    "status": "all_five_criteria_ready_with_separate_authorization",
+    "constitution": "../constitution/experiment-readiness-constitution.yaml",
+    "experiment_source_of_truth": "experiments.yaml",
+    "generated_at": "2026-07-20T01:21:56+08:00",
+    "review_count": 5,
+    "readiness_status": "ready",
+    "review_status_distribution": {"pending": 0, "ready": 5, "not_ready": 0, "invalid": 0, "revoked": 0},
+    "ready_criterion_count": 5,
+    "pending_criterion_count": 0,
+    "execution_authority_count": 1,
+    "event_created_count": 0,
+    "runtime_created_count": 0,
+    "agent_created_count": 0,
+    "organism_created_count": 0,
+    "capability_effect_count": 0,
+    "permission_grant_count": 0,
+    "c_e_v_level_change_count": 0,
+    "serialization": "JSON-compatible YAML 1.2",
+    "boundaries": [
+      "All five review entries are pending and provide no ready decision, authorization, execution right, or event evidence.",
+      "References in evidence are review inputs only; they do not claim that the criterion is satisfied."
+    ]
+  },
+  "readiness_review_schema": {
+    "required_fields": ["review_id", "experiment_id", "criterion", "status", "evidence"],
+    "valid_criteria": ["subject_readiness", "snapshot_readiness", "validator_freeze", "environment_readiness", "authorization_readiness"],
+    "valid_statuses": ["pending", "ready", "not_ready", "invalid", "revoked"],
+    "default_status": "pending",
+    "ready_boundary": "ready requires criterion-specific evidence and never grants execution authority."
+  },
+  "readiness_reviews": [
+    {
+      "review_id": "DBOS-EXP-0001-READINESS-0001",
+      "experiment_id": "DBOS-EXP-0001",
+      "criterion": "subject_readiness",
+      "status": "ready",
+      "evidence": ["DBOS-SUBJECT-0001", "evidence/experiments/DBOS-EXP-0001/identity/subject-identity-evidence.json"],
+      "missing_conditions": [],
+      "execution_effect": "none"
+    },
+    {
+      "review_id": "DBOS-EXP-0001-READINESS-0002",
+      "experiment_id": "DBOS-EXP-0001",
+      "criterion": "snapshot_readiness",
+      "status": "ready",
+      "evidence": ["DBOS-EXP-0001-SNAPSHOT-0001", "evidence/experiments/DBOS-EXP-0001/freeze/freeze-certificate.json"],
+      "missing_conditions": [],
+      "execution_effect": "none"
+    },
+    {
+      "review_id": "DBOS-EXP-0001-READINESS-0003",
+      "experiment_id": "DBOS-EXP-0001",
+      "criterion": "validator_freeze",
+      "status": "ready",
+      "evidence": ["DBOS-EXP-0001-VALIDATOR-MANIFEST-0001", "evidence/experiments/DBOS-EXP-0001/freeze/validator-manifest.json"],
+      "missing_conditions": [],
+      "execution_effect": "none"
+    },
+    {
+      "review_id": "DBOS-EXP-0001-READINESS-0004",
+      "experiment_id": "DBOS-EXP-0001",
+      "criterion": "environment_readiness",
+      "status": "ready",
+      "evidence": ["dbio://runner-environment/dbos-exp-0001/local-governance-workspace/v0.1", "evidence/experiments/DBOS-EXP-0001/environment/environment-verification.json"],
+      "missing_conditions": [],
+      "execution_effect": "none"
+    },
+    {
+      "review_id": "DBOS-EXP-0001-READINESS-0005",
+      "experiment_id": "DBOS-EXP-0001",
+      "criterion": "authorization_readiness",
+      "status": "ready",
+      "evidence": ["DBOS-EXP-0001-AUTH-0001", "DBOS-EXP-0001-EXECUTOR-AUTH-0001", "evidence/experiments/DBOS-EXP-0001/authorization/execution-authorization.json"],
+      "missing_conditions": [],
+      "execution_effect": "none"
+    }
+  ]
+}
