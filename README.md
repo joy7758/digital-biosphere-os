@@ -105,10 +105,12 @@ API_NE_EXECUTION_ENGINE=true
 DBOS_NE_SAEE=true
 CURRENT_API_IMPLEMENTATION=false
 CURRENT_MINIMAL_OBJECT_SDK_SKELETON=true
-CURRENT_INSTALLABLE_SDK_IMPLEMENTATION=false
+CURRENT_INSTALLABLE_SDK_IMPLEMENTATION=true
+WHEEL_CANDIDATE_VALIDATED=true
+PUBLIC_PACKAGE_PUBLISHED=false
 ```
 
-本层当前仅为 `SPECIFICATION_ONLY`（仅规范），不定义 endpoint（端点）、transport（传输协议）、Server（服务器）、OpenAPI、SDK 或代码。现有 `entity_support/` 函数仍是本地支撑边界，不是已发布 API；`dbos.register(...)` 和 `dbos.execute(...)` 仍为未冻结概念名称，不能被解释为“调用即注册”或“DBOS 执行 Agent”。
+API Boundary Layer 当前仍为 `SPECIFICATION_ONLY`（仅规范），不定义 endpoint（端点）、transport（传输协议）、Server（服务器）或 OpenAPI。独立的最小 Object SDK（对象软件开发工具包）已经实现五类内存对象和本地验证，并通过 wheel candidate（分发包候选）安装复核；它不是 API Runtime（应用程序接口运行时）。现有 `entity_support/` 函数仍是本地支撑边界，不是已发布 API；`dbos.register(...)` 和 `dbos.execute(...)` 仍为未冻结概念名称，不能被解释为“调用即注册”或“DBOS 执行 Agent”。
 
 ## Object Contract Layer（对象契约层）
 
@@ -147,7 +149,9 @@ REFERENCE_NE_TRUTH=true
 MACHINE_READABLE_SCHEMA=DEFINED_V0.1
 DOMAIN_ENTITY_OR_GOVERNANCE_INSTANCE_CREATED=false
 SDK_IN_MEMORY_REPRESENTATION_SUPPORTED=true
-CURRENT_INSTALLABLE_SDK_IMPLEMENTATION=false
+CURRENT_INSTALLABLE_SDK_IMPLEMENTATION=true
+WHEEL_CANDIDATE_VALIDATED=true
+PUBLIC_PACKAGE_PUBLISHED=false
 CURRENT_MINIMAL_OBJECT_SDK_SKELETON=true
 ```
 

@@ -43,7 +43,7 @@ DBOS 不负责推理、规划、工具调用、任务调度或模型托管。你
 
 ## 3. Prepare the Local Checkout（准备本地检出）— 5–10 分钟
 
-当前 SDK（软件开发工具包）支持从仓库 checkout（检出）进行 local editable install（本地可编辑安装），但不是已发布的软件包，也没有 wheel（分发包）兼容承诺。建议使用隔离环境，并从 DBOS 仓库根目录运行：
+当前 SDK（软件开发工具包）支持从仓库 checkout（检出）进行 local editable install（本地可编辑安装）。同一源码还通过了本地 wheel candidate（分发包候选）构建和隔离安装验证，但它仍不是已发布的软件包；在存在独立 Release Record（发布记录）和公开下载地址前，不得声称已经公开分发。建议使用隔离环境，并从 DBOS 仓库根目录运行：
 
 ```bash
 python3 --version
@@ -177,4 +177,4 @@ python3 tools/run_tests.py
 - 阅读 [`../sdk/README.md`](../sdk/README.md)，查看本地 SDK 的全部限制；
 - 阅读 [`../validation-result-contract-specification.md`](../validation-result-contract-specification.md)，了解完整结果契约。
 
-下一阶段可以设计 Reference Implementation（参考实现），但必须使用真实、受控、明确授权的外部项目，并另行建立证据；本快速入门本身不是外部集成证明。当前 `pyproject.toml` 只支持本地 Developer Preview 安装，不构成 PyPI、wheel、稳定 API 或生产兼容声明。
+下一阶段可以设计 Reference Implementation（参考实现），但必须使用真实、受控、明确授权的外部项目，并另行建立证据；本快速入门本身不是外部集成证明。当前 `pyproject.toml` 支持本地 editable install 和受控 wheel candidate 构建；这不构成 PyPI publication（PyPI 发布）、稳定 API 或生产兼容声明。
