@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "dbio://schema/verification-object/v0.1",
+  "title": "DBOS Verification Object Schema v0.1",
+  "description": "Machine-readable structural contract for a Verification Object projection. Structural validity does not run verification, prove facts, approve a review, certify a subject, grant a capability, or grant permission.",
+  "x-dbios-schema-version": "v0.1",
+  "x-dbios-object-contract-version": "v0.1",
+  "allOf": [
+    {"$ref": "dbio://schema/common-object/v0.1"},
+    {
+      "type": "object",
+      "required": [
+        "verification_id",
+        "target_reference",
+        "verification_type",
+        "verification_status"
+      ],
+      "properties": {
+        "object_type": {"const": "VERIFICATION"},
+        "status": {
+          "enum": ["UNKNOWN", "DECLARED", "SUPERSEDED", "REVOKED"]
+        },
+        "verification_id": {
+          "$ref": "dbio://schema/common-object/v0.1#/$defs/nonEmptyString"
+        },
+        "target_reference": {
+          "$ref": "dbio://schema/common-object/v0.1#/$defs/referenceObject"
+        },
+        "verification_type": {
+          "enum": [
+            "UNKNOWN",
+            "SELF_CHECK",
+            "AUTOMATED_VALIDATION",
+            "REPRODUCIBLE_VERIFICATION",
+            "INDEPENDENT_VERIFICATION",
+            "CONTINUOUS_VERIFICATION"
+          ]
+        },
+        "verification_status": {
+          "enum": [
+            "UNKNOWN",
+            "PENDING",
+            "PASS",
+            "FAIL",
+            "INCONCLUSIVE",
+            "REVOKED"
+          ]
+        }
+      }
+    }
+  ],
+  "unevaluatedProperties": false,
+  "x-dbios-invariants": [
+    {
+      "name": "object_id_equals_verification_id",
+      "left": "$.object_id",
+      "operator": "EQUALS",
+      "right": "$.verification_id",
+      "validator_required": true,
+      "error": "CONFLICT"
+    },
+    {
+      "name": "non_pending_results_require_resolvable_verification_record",
+      "when": "$.verification_status in [PASS, FAIL, INCONCLUSIVE, REVOKED]",
+      "required": "source record with evidence, verifier, method, scope, timestamp, and limitations",
+      "validator_required": true,
+      "error": "UNRESOLVED_REFERENCE"
+    },
+    {
+      "name": "independent_type_requires_independence_evidence",
+      "when": "$.verification_type == INDEPENDENT_VERIFICATION",
+      "validator_required": true,
+      "error": "UNRESOLVED_REFERENCE"
+    }
+  ],
+  "x-dbios-prohibited-fields": [
+    "permission",
+    "permission_granted",
+    "capability_grant",
+    "entity_activated",
+    "certification_granted",
+    "fitness_score",
+    "evolution_decision"
+  ],
+  "x-dbios-boundaries": {
+    "verification_execution_effect": "NONE",
+    "review_approval_effect": "NONE",
+    "certification_effect": "NONE",
+    "capability_grant_effect": "NONE",
+    "authority_effect": "NONE",
+    "permission_effect": "NONE",
+    "saee_effect": "NONE"
+  }
+}

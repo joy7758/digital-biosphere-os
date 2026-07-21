@@ -6,6 +6,12 @@ experiment. It recomputes retained digests and follows references; it never
 creates identity, evidence, authorization, events, capability, permission, an
 Agent, a Runtime instance, or a Digital Organism.
 
+After the execution chain is complete, historical subject-identity bytes are
+checked through their retained append-only manifest bindings. A later working
+tree is allowed to differ, but that drift is reported explicitly and is never
+treated as the historical bytes. Before completion, the current path must still
+match the declared identity digest exactly.
+
 PASS is phase-scoped. In particular, a local structural PASS is not an
 independent verification, capability approval, permission grant, production
 fitness claim, or evidence/verification maturity promotion.
@@ -107,19 +113,127 @@ def check_zero_boundaries(root: Path, errors: list[str]) -> None:
     require(len(verifications) == 78 and all(item.get("status") == "pending" and item.get("decision") == "pending" and item.get("verification_level") == "V0" for item in verifications), "78 verification records must remain pending V0", errors)
 
 
-def validate_environment(root: Path, errors: list[str]) -> None:
+def retained_identity_binding_exists(
+    evidence_root: Path,
+    relative_path: str,
+    expected_digest: str,
+    expected_size: int,
+) -> bool:
+    """Find an append-only run manifest that preserves one historical binding.
+
+    This checks record continuity only. It does not claim that a mutable current
+    path still contains the historical bytes or that the recorded content is
+    independently true.
+    """
+    for manifest_path in sorted(evidence_root.glob("*/auxiliary-input-manifest.json")):
+        try:
+            manifest = load(manifest_path)
+        except ValueError:
+            continue
+        artifacts = manifest.get("artifacts")
+        if not isinstance(artifacts, list):
+            continue
+        if any(
+            isinstance(artifact, dict)
+            and artifact.get("path") == relative_path
+            and artifact.get("digest") == expected_digest
+            and artifact.get("size") == expected_size
+            for artifact in artifacts
+        ):
+            return True
+    return False
+
+
+def validate_subject_identity_evidence(
+    root: Path,
+    evidence_root: Path,
+    identity: dict[str, Any],
+    phase: str,
+    errors: list[str],
+    warnings: list[str],
+) -> int:
+    """Validate identity bindings without confusing history with the worktree."""
+    drift_count = 0
+    evidence_items = identity.get("evidence")
+    if not isinstance(evidence_items, list) or not evidence_items:
+        errors.append("subject identity evidence must contain retained evidence bindings")
+        return drift_count
+
+    for index, item in enumerate(evidence_items):
+        label = f"subject identity evidence[{index}]"
+        if not isinstance(item, dict):
+            errors.append(f"{label} must be a mapping")
+            continue
+        relative_path = item.get("path")
+        expected_sha256 = item.get("sha256")
+        expected_size = item.get("size")
+        if not isinstance(relative_path, str) or not relative_path:
+            errors.append(f"{label}.path must be a non-empty string")
+            continue
+        expected_digest = f"sha256:{expected_sha256}"
+        require(HASH_RE.fullmatch(expected_digest) is not None, f"{label}.sha256 is invalid", errors)
+        require(
+            isinstance(expected_size, int) and not isinstance(expected_size, bool) and expected_size >= 0,
+            f"{label}.size must be a non-negative integer",
+            errors,
+        )
+        if HASH_RE.fullmatch(expected_digest) is None or not isinstance(expected_size, int) or isinstance(expected_size, bool) or expected_size < 0:
+            continue
+
+        current_path = root / relative_path
+        current_matches = (
+            current_path.is_file()
+            and current_path.stat().st_size == expected_size
+            and digest_file(current_path) == expected_digest
+        )
+        if current_matches:
+            continue
+
+        if phase != "completed":
+            require(current_path.is_file(), f"identity evidence path missing: {relative_path}", errors)
+            if current_path.is_file():
+                require(current_path.stat().st_size == expected_size, f"identity evidence size mismatch: {relative_path}", errors)
+                require(digest_file(current_path) == expected_digest, f"identity evidence digest mismatch: {relative_path}", errors)
+            continue
+
+        require(
+            retained_identity_binding_exists(
+                evidence_root,
+                relative_path,
+                expected_digest,
+                expected_size,
+            ),
+            f"completed identity evidence has no retained manifest binding: {relative_path}",
+            errors,
+        )
+        drift_count += 1
+        warnings.append(
+            "current workspace differs from retained historical identity binding: "
+            f"{relative_path}; historical digest was not rewritten"
+        )
+    return drift_count
+
+
+def validate_environment(
+    root: Path,
+    phase: str,
+    errors: list[str],
+    warnings: list[str],
+) -> int:
     evidence_root = root / "evidence/experiments/DBOS-EXP-0001"
     identity_path = evidence_root / "identity/subject-identity-evidence.json"
     observation_path = evidence_root / "environment/environment-observation.json"
     receipt_path = evidence_root / "environment/environment-observation.receipt.json"
     identity = load(identity_path)
     require(identity.get("subject_id") == "DBOS-SUBJECT-0001" and identity.get("entity_id") == SUBJECT_ID, "bounded subject identity evidence mismatch", errors)
-    for item in identity.get("evidence", []):
-        path = root / item.get("path", "")
-        require(path.is_file(), f"identity evidence path missing: {item.get('path')}", errors)
-        if path.is_file():
-            require(path.stat().st_size == item.get("size"), f"identity evidence size mismatch: {item.get('path')}", errors)
-            require(digest_file(path) == "sha256:" + item.get("sha256", ""), f"identity evidence digest mismatch: {item.get('path')}", errors)
+    identity_drift_count = validate_subject_identity_evidence(
+        root,
+        evidence_root,
+        identity,
+        phase,
+        errors,
+        warnings,
+    )
     subjects = records(load(root / "registry/experiment-subjects.yaml"), "experiment_subjects", "subject_id", errors)
     subject = subjects.get("DBOS-SUBJECT-0001", {})
     require(subject.get("identity_status") == "verified" and subject.get("evidence_ref") == identity_path.relative_to(root).as_posix(), "experiment subject must be evidence-backed verified", errors)
@@ -170,6 +284,7 @@ def validate_environment(root: Path, errors: list[str]) -> None:
     lock = locks.get("DBOS-EXP-0001-ENV-LOCK-0001", {})
     require(lock.get("status") == "frozen" and valid_time(lock.get("locked_at")), "environment lock must be frozen", errors)
     require(lock.get("dependencies_digest") == observation["digests"]["dependency"] and lock.get("configuration_digest") == observation["digests"]["configuration"], "environment lock digests mismatch", errors)
+    return identity_drift_count
 
 
 def validate_freeze(root: Path, errors: list[str]) -> None:
@@ -357,8 +472,9 @@ def validate_completed(root: Path, errors: list[str]) -> None:
 
 def validate(root: Path, phase: str) -> dict[str, Any]:
     errors: list[str] = []
+    warnings: list[str] = []
     check_zero_boundaries(root, errors)
-    validate_environment(root, errors)
+    identity_drift_count = validate_environment(root, phase, errors, warnings)
     if PHASES.index(phase) >= PHASES.index("freeze"):
         validate_freeze(root, errors)
     if PHASES.index(phase) >= PHASES.index("runner"):
@@ -378,6 +494,11 @@ def validate(root: Path, phase: str) -> dict[str, Any]:
         "capability_assignment_count": 0,
         "permission_grant_count": 0,
         "c_e_v_level_change_count": 0,
+        "historical_identity_validation_mode": (
+            "retained_manifest_binding" if phase == "completed" else "current_path_exact_digest"
+        ),
+        "current_workspace_identity_drift_count": identity_drift_count,
+        "warnings": warnings,
         "errors": errors,
     }
 
@@ -415,6 +536,8 @@ def main() -> int:
         print(json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True))
     else:
         print(result["status"])
+        for warning in result.get("warnings", []):
+            print(f"WARNING: {warning}")
         for error in result.get("errors", []):
             print(f"- {error}")
     return 0 if result.get("status") == "PASS" else 1

@@ -1,0 +1,3 @@
+# DBOS Object Schema Validator v0.1 runtime dependency.
+# This dependency does not provide authority, execution, SDK, or API behavior.
+jsonschema>=4.18,<5

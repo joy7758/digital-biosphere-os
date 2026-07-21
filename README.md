@@ -12,11 +12,610 @@ Digital Biosphere OS 是用于管理 AI agent（人工智能智能体）、代�
 
 智能体在解释或规划 DBOS 任务前，应先读取该战略对齐说明，并保持：`DBOS is infrastructure, not application`（DBOS 是基础设施，不是应用）。
 
+## Canonical Reference Layer（规范引用层）
+
+Developer Ecosystem（开发者生态）使用 Canonical Reference Resolver Specification v0.1（规范引用解析规范 v0.1）统一 Entity、Candidate、Authorization、Registration、Execution、Evidence 和 Verification 引用的类型、Namespace（命名空间）、Version、Source 与解析结果。
+
+入口：
+
+- [`canonical-reference-resolver-specification.md`](canonical-reference-resolver-specification.md)：Reference Object（引用对象）、七种引用类型、四态 Resolution Result（解析结果）和 Source ownership（来源所有权）；
+- [`reference-namespace-model.md`](reference-namespace-model.md)：`dbio`、External（外部）与 Extension（扩展）命名空间及冲突、alias（别名）和版本规则；
+- [`reference-resolution-boundary-rules.md`](reference-resolution-boundary-rules.md)：允许的只读 lookup（查找）与禁止的 Permission、Capability、Activation 和 Verification 推导；
+- [`ADR-017-canonical-reference-resolver.md`](ADR-017-canonical-reference-resolver.md)：统一解析语义的架构决策与未来实现闸门。
+
+解析状态固定为 `RESOLVED`、`AMBIGUOUS`、`UNKNOWN`、`INVALID`。`RESOLVED` 只表示在声明的 Namespace、Reference Type、Version 和 Source 中找到唯一记录，不表示记录真实、身份已验证、授权有效、权限已授予或实体已激活。
+
+```text
+REFERENCE_NE_AUTHORITY=true
+REFERENCE_NE_TRUTH=true
+RESOLVER_NE_VERIFICATION=true
+VERIFICATION_NE_PERMISSION=true
+UNKNOWN_MUST_REMAIN_UNKNOWN=true
+CURRENT_RESOLVER_IMPLEMENTATION=false
+CURRENT_RESOLVER_API=false
+```
+
+本层当前仅为 `SPECIFICATION_ONLY`（仅规范），不创建 Database（数据库）、Identity Provider（身份提供者）、Permission System（权限系统）、Resolver 代码、SDK（软件开发工具包）或 API（应用程序接口）。
+
+本 README 更新发生在 `DBOS-EXP-0001` 冻结快照之后，只增加当前工作树的规范入口，不改写、删除或重新声称历史 snapshot digest（快照摘要）。
+
+## Documentation Evolution Evidence Layer（文档演化证据层）
+
+Documentation Evolution Evidence Specification v0.1（文档演化证据规范 v0.1）定义 DBOS 文档如何形成后继版本、追加变化记录并连接前后快照，同时保持已有实验证据和历史验证结果不可变。
+
+入口：
+
+- [`documentation-evolution-evidence-specification.md`](documentation-evolution-evidence-specification.md)：Documentation Object（文档对象）、Change Record（变化记录）、四种变化类型和只追加证据边界；
+- [`documentation-snapshot-model.md`](documentation-snapshot-model.md)：Previous Snapshot（前一快照）、Change Evidence（变化证据）和 Current Snapshot（当前快照）的有向关系；
+- [`documentation-validation-boundary.md`](documentation-validation-boundary.md)：`PASS`、`FAIL`、`EXPECTED_CHANGE` 的互不替代语义与禁止自动修复规则；
+- [`ADR-018-documentation-evolution-evidence.md`](ADR-018-documentation-evolution-evidence.md)：建立文档证据链的架构决策、备选方案和未来实现闸门。
+
+```text
+DOCUMENTATION_CHANGE_NE_HISTORICAL_REWRITE=true
+NEW_VERSION_NE_OLD_EVIDENCE_REPLACEMENT=true
+HASH_DIFFERENCE_NE_ERROR=true
+EVIDENCE_RECORDS_APPEND_ONLY=true
+CURRENT_DOCUMENTATION_LEDGER=false
+CURRENT_VERSION_AWARE_VALIDATOR=false
+```
+
+本层当前仅为 `SPECIFICATION_ONLY`（仅规范）。它不创建真实 Documentation Object、Change Record、新快照、Schema（模式）、验证代码、SDK（软件开发工具包）或 API（应用程序接口）。`DBOS-EXP-0001` 的旧 evidence（证据）、snapshot、hash、report 和历史 `FAIL` 均保持不变；当前工作树相对旧快照的差异尚未被自动分类为 `EXPECTED_CHANGE`。
+
+## API Boundary Layer（应用程序接口边界层）
+
+DBOS API Boundary Decision v0.1（DBOS 应用程序接口边界决策 v0.1）定义未来开发者接口可以读取、解析、观察和连接什么，以及不得决定、执行或授予什么。
+
+入口：
+
+- [`api-boundary-decision.md`](api-boundary-decision.md)：Identity、Lifecycle、Capability、Execution Context、Evidence、Verification 和 Reference Resolver 七类 API 职责；
+- [`api-responsibility-model.md`](api-responsibility-model.md)：Data Access（数据访问）、Reference Resolution（引用解析）、State Observation（状态观察）和 Evidence Linking（证据连接）的责任矩阵；
+- [`api-object-contract-model.md`](api-object-contract-model.md)：Entity、Capability、Execution、Evidence Reference 和 Verification 五类概念对象边界；
+- [`api-error-model.md`](api-error-model.md)：`UNKNOWN`、`INVALID`、`UNAUTHORIZED_REFERENCE`、`CONFLICT`、`VERSION_MISMATCH` 五类可解释错误；
+- [`ADR-019-api-boundary-decision.md`](ADR-019-api-boundary-decision.md)：为什么必须在 SDK 实现前冻结 API 职责边界。
+
+```text
+DBOS_ROLE=INFRASTRUCTURE
+ALLOWED_API_EFFECTS=READ_RESOLVE_OBSERVE_LINK
+API_NE_AUTHORITY=true
+API_NE_PERMISSION=true
+API_NE_AGENT_FRAMEWORK=true
+API_NE_EXECUTION_ENGINE=true
+DBOS_NE_SAEE=true
+CURRENT_API_IMPLEMENTATION=false
+CURRENT_MINIMAL_OBJECT_SDK_SKELETON=true
+CURRENT_INSTALLABLE_SDK_IMPLEMENTATION=false
+```
+
+本层当前仅为 `SPECIFICATION_ONLY`（仅规范），不定义 endpoint（端点）、transport（传输协议）、Server（服务器）、OpenAPI、SDK 或代码。现有 `entity_support/` 函数仍是本地支撑边界，不是已发布 API；`dbos.register(...)` 和 `dbos.execute(...)` 仍为未冻结概念名称，不能被解释为“调用即注册”或“DBOS 执行 Agent”。
+
+## Object Contract Layer（对象契约层）
+
+DBOS Object Contract Specification v0.1（DBOS 核心对象契约规范 v0.1）冻结未来 API、SDK、Adapter（适配器）和开发者扩展共享的五类对象语义，但不创建对象实例或代码。
+
+规范入口：
+
+- [`object-contract-specification.md`](object-contract-specification.md)：八个公共字段、五种对象类型、ID 等价、Version、Source、Status、空值和引用规则；
+- [`entity-object-contract.md`](entity-object-contract.md)：Entity Object（实体对象）及其身份、Owner 和生命周期边界；
+- [`capability-object-contract.md`](capability-object-contract.md)：Capability Object（能力对象）及声明、范围、限制和验证边界；
+- [`execution-object-contract.md`](execution-object-contract.md)：Execution Object（执行对象）及惰性记录、上下文与非执行边界；
+- [`evidence-reference-object-contract.md`](evidence-reference-object-contract.md)：Evidence Reference Object（证据引用对象）及 Source、Integrity 和 Truth 分离；
+- [`verification-object-contract.md`](verification-object-contract.md)：Verification Object（验证对象）及验证类型、状态和 Permission 分离；
+- [`object-error-semantics.md`](object-error-semantics.md)：`UNKNOWN`、`INVALID`、`VERSION_MISMATCH`、`CONFLICT`、`UNRESOLVED_REFERENCE`；
+- [`ADR-020-object-contract.md`](ADR-020-object-contract.md)：统一对象契约的架构决策、智能体推荐边界和未来实现闸门。
+
+所有对象必须支持：
+
+```text
+object_id
+object_type
+version
+source
+status
+created_at
+updated_at
+limitations
+```
+
+```text
+OBJECT_CONTRACT_VERSION=v0.1
+OBJECT_CONTRACT_SEMANTICS=FROZEN_FOR_SPECIFICATION
+OBJECT_NE_AUTHORITY=true
+OBJECT_NE_PERMISSION=true
+REFERENCE_NE_TRUTH=true
+MACHINE_READABLE_SCHEMA=DEFINED_V0.1
+DOMAIN_ENTITY_OR_GOVERNANCE_INSTANCE_CREATED=false
+SDK_IN_MEMORY_REPRESENTATION_SUPPORTED=true
+CURRENT_INSTALLABLE_SDK_IMPLEMENTATION=false
+CURRENT_MINIMAL_OBJECT_SDK_SKELETON=true
+```
+
+本层不生成 Entity、Capability Grant（能力授予）、Execution、Evidence Truth（证据真相结论）、Verification `PASS`、Permission 或 SAEE Evolution（SAEE 演化）。当前 `entity_support/` 的 string reference（字符串引用）保持原样，未来 Adapter 必须显式包装，禁止回写历史记录。
+
+## Autonomy Policy Layer（自主策略层）
+
+DBOS Autonomy Policy Specification v0.1（DBOS 自主策略规范 v0.1）提出一个独立的人工监督层：在 Identity、Capability、Permission、Execution Context 和风险约束已经满足后，表达某项动作需要逐动作人工批准、可以按委托规则继续，还是可以在严格范围内无需逐动作批准。
+
+规范入口：
+
+- [`autonomy-policy-specification.md`](autonomy-policy-specification.md)：三种模式、Scope、Constraint、Approval、Evidence、判定顺序和科研智能体应用；
+- [`autonomy-policy-object-model.md`](autonomy-policy-object-model.md)：未来 Policy 对象字段、生命周期、模式要求和软件开发工具包边界；
+- [`autonomy-boundary-rules.md`](autonomy-boundary-rules.md)：Identity、Capability、Permission、Execution、Evidence、SAEE 与撤销边界；
+- [`autonomy-mode-comparison.md`](autonomy-mode-comparison.md)：用户体验、风险、人工介入和 Evidence 要求比较；
+- [`ADR-026-autonomy-policy.md`](ADR-026-autonomy-policy.md)：为什么 Autonomy 必须独立于 Permission 和 Capability。
+
+```text
+AUTONOMY_POLICY_SPECIFICATION=PROPOSED_V0.1
+AUTONOMY_POLICY_APPROVED=false
+AUTONOMY_POLICY_IMPLEMENTATION=false
+AUTONOMY_POLICY_OBJECT_INSTANCE_COUNT=0
+AUTONOMY_POLICY_SCHEMA=false
+AUTONOMY_POLICY_VALIDATOR=false
+AUTONOMY_POLICY_API=false
+AUTONOMY_POLICY_SDK=false
+AUTONOMY_POLICY_ENFORCEMENT=false
+AUTONOMY_NE_PERMISSION=true
+FULL_AUTONOMY_NE_UNLIMITED_PERMISSION=true
+AGENT_COUNT_CREATED_BY_THIS_PROPOSAL=0
+RUNTIME_COUNT_CREATED_BY_THIS_PROPOSAL=0
+ENTITY_COUNT_CREATED_BY_THIS_PROPOSAL=0
+PERMISSION_COUNT_CREATED_BY_THIS_PROPOSAL=0
+EXECUTION_COUNT_CREATED_BY_THIS_PROPOSAL=0
+AGENT_CREATED=false
+RUNTIME_CREATED=false
+ENTITY_CREATED=false
+PERMISSION_GRANTED=false
+EXECUTION_CREATED=false
+IDENTITY_MODIFIED=false
+EVIDENCE_MODIFIED=false
+SAEE_MODIFIED=false
+```
+
+三种模式为 `APPROVAL_REQUIRED`（请求批准）、`DELEGATED_AUTONOMY`（委托自主）和 `FULL_AUTONOMY_WITHIN_SCOPE`（范围内完全自主）。当规则冲突时最严格约束优先；现有危险能力的强制人工批准不能被范围内完全自主绕过。
+
+本层是 Architecture Specification Proposal（架构规范提案），不是策略实例、Permission、执行引擎或产品功能。用户任务建议的 `ADR-022-autonomy-policy.md` 与既有 `ADR-022-validation-result-contract.md` 冲突，因此使用唯一编号 `ADR-026-autonomy-policy.md`，不覆盖历史。
+
+## Object Schema Layer（对象模式层）
+
+DBOS Object Schema Specification v0.1（DBOS 核心对象模式规范 v0.1）把人类可读 Object Contract（对象契约）转换为 JSON Schema Draft 2020-12（JSON 模式 2020-12 草案）机器标准。仓库原有 `schemas/project-manifest.schema.yaml` 保持不变，本层新增 6 个对象 Schema。
+
+机器入口：
+
+- [`schemas/common-object-schema.yaml`](schemas/common-object-schema.yaml)：8 个公共字段、Source Descriptor（来源描述）、Reference Object（引用对象）和复用定义；
+- [`schemas/entity-object-schema.yaml`](schemas/entity-object-schema.yaml)：Entity Object 结构、类型与生命周期词表；
+- [`schemas/capability-object-schema.yaml`](schemas/capability-object-schema.yaml)：Capability Object 结构、范围、限制和安全验证状态；
+- [`schemas/execution-object-schema.yaml`](schemas/execution-object-schema.yaml)：Execution Object 结构与 `UNKNOWN/CREATED` 上限；
+- [`schemas/evidence-reference-object-schema.yaml`](schemas/evidence-reference-object-schema.yaml)：Evidence Reference Object 结构与 `UNKNOWN/PENDING` 完整性上限；
+- [`schemas/verification-object-schema.yaml`](schemas/verification-object-schema.yaml)：Verification Object 结构、验证类型和结果词表。
+
+治理入口：
+
+- [`schema-version-policy.md`](schema-version-policy.md)：Compatible Change（兼容变更）、Breaking Change（破坏性变更）、Deprecated Field（弃用字段）和 Migration Requirement（迁移要求）；
+- [`ADR-021-object-schema-governance.md`](ADR-021-object-schema-governance.md)：模式方言、组合策略、扩展关键字、验证边界和下一闸门。
+
+```text
+SCHEMA_DIALECT=JSON_SCHEMA_DRAFT_2020_12
+OBJECT_SCHEMA_FILE_COUNT=6
+SCHEMA_NE_OBJECT_INSTANCE=true
+SCHEMA_NE_AUTHORITY=true
+VALIDATION_NE_VERIFICATION=true
+SCHEMA_VERSION_NE_OBJECT_VERSION=true
+OBJECT_INSTANCE_CREATED=false
+OBJECT_VALIDATOR_CREATED=true
+OBJECT_VALIDATOR_IMPLEMENTATION=LOCAL_READ_ONLY_V0.1
+LOCAL_OBJECT_SDK_SKELETON=true
+INSTALLABLE_SDK_PACKAGE=false
+API_CREATED=false
+PERMISSION_GRANTED=false
+SAEE_CALLED=false
+```
+
+五类类型 Schema 使用 `unevaluatedProperties=false` 拒绝未声明字段，并以 `x-dbios-invariants`、`x-dbios-prohibited-fields` 和 `x-dbios-boundaries` 表达通用 JSON Schema 无法完整执行的治理规则。Schema 结构 `VALID` 不表示对象真实、已登记、已授权、已执行或已验证。
+
+## Object Schema Validator Layer（对象模式验证器层）
+
+DBOS Object Schema Validator v0.1（DBOS 对象模式验证器 v0.1）是本地、只读、失败关闭的 Developer Infrastructure Tool（开发者基础设施工具）。它离线加载 6 个对象 Schema，先执行 JSON Schema Draft 2020-12（JSON 模式 2020-12 草案）检查，再执行 DBOS 的 ID 一致性、时间顺序、治理禁止字段、Source/Reference（来源/引用）一致性和未知状态保护。
+
+工具入口：
+
+- [`validator/object_schema_validator.py`](validator/object_schema_validator.py)：离线 Schema Registry（模式注册表）、结构验证、语义不变量和只读命令行入口；
+- [`validator/governance_constraint_validator.py`](validator/governance_constraint_validator.py)：拒绝 Permission、Authorization、Authority、Execution、Truth 和 SAEE 效果字段；
+- [`validator/reference_consistency_validator.py`](validator/reference_consistency_validator.py)：检查嵌入式 Reference Object（引用对象）的形状、角色和 Source owner（来源所有者）一致性；
+- [`validator/validation_result_model.py`](validator/validation_result_model.py)：不可变的 `PASS/FAIL/UNKNOWN/CONFLICT/VERSION_MISMATCH` 结果封装，并保留所用 Schema `$id` 与 SHA-256 摘要；
+- [`validator/requirements.txt`](validator/requirements.txt)：本地验证器的 `jsonschema`（JSON 模式校验库）依赖边界；
+- [`tests/schema_validator/`](tests/schema_validator/)：只驻留测试内存、不进入 registry 的 synthetic fixtures（合成测试夹具）与正负向测试。
+
+只读调用：
+
+```bash
+python3 -m validator.object_schema_validator OBJECT.json
+```
+
+该命令只读取输入并把诊断写到标准输出；非 `PASS` 返回非零退出码，不修改输入文件。`schema_id` 未显式提供时，只按受支持的 `object_type` 映射到固定 v0.1 `$id`，不会选择可变的 `latest`（最新版本）。
+
+```text
+OBJECT_SCHEMA_VALIDATOR=IMPLEMENTED_V0.1
+VALIDATOR_MODE=LOCAL_READ_ONLY
+VALIDATOR_SCHEMA_COUNT=6
+VALIDATOR_TEST_COUNT=33
+NEGATIVE_VALIDATOR_TEST_COUNT=25
+AUTO_REPAIR=false
+EXTERNAL_REFERENCE_RESOLUTION=false
+OBJECT_CREATION_EFFECT=NONE
+AUTHORITY_EFFECT=NONE
+PERMISSION_EFFECT=NONE
+EXECUTION_EFFECT=NONE
+VERIFICATION_EFFECT=NONE
+SAEE_EFFECT=NONE
+LOCAL_OBJECT_SDK_SKELETON=true
+INSTALLABLE_SDK_PACKAGE=false
+API_SERVER_CREATED=false
+AGENT_CREATED=false
+RUNTIME_CREATED=false
+```
+
+Validation `PASS`（验证通过）仅表示调用方提供的表示符合本地结构和治理约束。它不表示 Reference 已解析、事实为真、Verification 已完成、Authorization 已授予、Permission 已产生、对象已登记或执行已发生。当前 v0.1 不访问网络、不访问外部 Source、不修复对象，也不为尚未由 Canonical Reference Layer（规范引用层）定义的 `CAPABILITY` 引用类型虚构语义。
+
+Pre-development Agent Consultation（开发前智能体咨询）结论：`RECOMMEND_LOCAL_VALIDATOR_PREVIEW=true`，因为机器 Schema、离线注册表、失败关闭错误和负向治理测试已经存在；`RECOMMEND_AS_AUTHORIZATION_OR_FACT_VERIFIER=false`，因为外部引用解析、独立事实验证、SDK 兼容矩阵和生产集成证据仍不存在。
+
+## Validation Result Contract Layer（验证结果契约层）
+
+DBOS Validation Result Contract Specification v0.1（DBOS 验证结果契约规范 v0.1）冻结本地 Validator 的开发者反馈语言。实际输出固定包含 `validation_id`、`validator_version`、`target_reference`、`schema_reference`、`result`、`errors`、`warnings`、`limitations` 和 `timestamp` 九个字段。
+
+规范入口：
+
+- [`validation-result-contract-specification.md`](validation-result-contract-specification.md)：结果字段、五种状态、确定性优先级、空值和保留规则；
+- [`validation-error-object-model.md`](validation-error-object-model.md)：`error_code/message/field_reference/severity/resolution_hint` 五字段错误对象；
+- [`validation-result-boundary-rules.md`](validation-result-boundary-rules.md)：`PASS` 不产生授权、`FAIL` 不改写历史、`UNKNOWN` 不自动成功；
+- [`ADR-022-validation-result-contract.md`](ADR-022-validation-result-contract.md)：字段收敛、空 ID/时间和智能体推荐决策；
+- [`tests/validation_result_contract/`](tests/validation_result_contract/)：五种状态格式和无 Permission、Entity、Execution、SAEE 效果的合成测试。
+
+当前本地 Validator 没有持久化 Validation Registry（验证登记表），因此瞬时结果诚实输出 `validation_id=null` 和 `timestamp=null`。这不是失败，也不允许未来消费者补造 ID 或当前时间。
+
+```text
+VALIDATION_RESULT_CONTRACT=FROZEN_V0.1
+VALIDATION_RESULT_FIELD_COUNT=9
+VALIDATION_ERROR_FIELD_COUNT=5
+RESULT_STATUS_COUNT=5
+VALIDATION_RESULT_CONTRACT_TEST_COUNT=21
+NEGATIVE_RESULT_BOUNDARY_TEST_COUNT=11
+RESULT_NE_TRUTH=true
+PASS_NE_AUTHORIZATION=true
+FAIL_NE_HISTORY_REWRITE=true
+UNKNOWN_NE_DEFAULT_SUCCESS=true
+RESULT_PERMISSION_EFFECT=NONE
+RESULT_ENTITY_CREATION_EFFECT=NONE
+RESULT_EXECUTION_EFFECT=NONE
+RESULT_SAEE_EFFECT=NONE
+LOCAL_OBJECT_SDK_SKELETON=true
+INSTALLABLE_SDK_PACKAGE=false
+API_CREATED=false
+```
+
+## Minimal Object SDK Layer（最小对象软件开发工具包层）
+
+DBOS Minimal Object SDK Skeleton v0.1（DBOS 最小对象软件开发工具包骨架 v0.1）把已冻结的对象契约、机器 Schema（模式）、本地 Validator（验证器）和 `ValidationResult`（验证结果）连接为第一个开发者工具入口。
+
+入口：
+
+- [`sdk/README.md`](sdk/README.md)：能力、边界、本地示例、推荐状态和智能体可读顺序；
+- [`sdk/objects/`](sdk/objects/)：公共不可变基类和 Entity、Capability、Execution、Evidence Reference、Verification 五类纯数据对象；
+- [`sdk/serialization/`](sdk/serialization/)：分离的 `dict` 与确定性 JSON（JavaScript 对象表示法）序列化；
+- [`sdk/validation/`](sdk/validation/)：调用既有规范验证器并返回九字段结果的唯一 SDK 桥接；
+- [`sdk/errors/`](sdk/errors/)：`UNKNOWN/FAIL/CONFLICT/VERSION_MISMATCH` 无自动修复包装；
+- [`tests/sdk/`](tests/sdk/)：合成内存对象的创建、序列化、桥接和负向边界测试。
+
+当前对象采用 Frozen Dataclass（冻结数据类），不会自动生成 ID、时间戳、状态、事实、验证结论或权限。对象构造成功与 JSON 序列化成功都不等于验证通过；Validation `PASS` 仍只表示本地结构与治理约束通过。
+
+```text
+MINIMAL_OBJECT_SDK=IMPLEMENTED_LOCAL_V0.1
+SDK_OBJECT_TYPE_COUNT=5
+SDK_CAPABILITIES=CREATE_REPRESENTATION_SERIALIZE_VALIDATE
+SDK_TEST_COUNT=29
+NEGATIVE_SDK_BOUNDARY_TEST_COUNT=9
+INSTALLABLE_PACKAGE=false
+PUBLISHED_PACKAGE=false
+API_SERVER_CREATED=false
+AGENT_CREATED=false
+RUNTIME_CREATED=false
+PERMISSION_CREATED=false
+EXECUTION_EFFECT=NONE
+```
+
+Pre-development Agent Consultation（开发前智能体咨询）结论：`RECOMMEND_AS_LOCAL_SDK_PREVIEW=true`，因为稳定对象契约、机器 Schema、失败关闭 Validator 和统一结果模型已经可组合；`RECOMMEND_AS_INSTALLABLE_PRODUCTION_SDK=false`，因为没有打包元数据、发布版本、跨语言兼容矩阵、外部集成证据或生产支持承诺。
+
+## Developer Quick Start（开发者快速入门）
+
+DBOS Developer Quick Start v0.1（DBOS 开发者快速入门 v0.1）提供当前唯一的陌生开发者可运行入口：
+
+> DBOS helps AI agents become verifiable digital entities.
+>
+> DBOS 帮助 AI Agent（人工智能智能体）成为可验证的数字实体。
+
+入口：
+
+- [`docs/developer-quickstart.md`](docs/developer-quickstart.md)：30 分钟目标流程、三个命令和五态结果解释；
+- [`examples/basic_object/`](examples/basic_object/)：合成 Entity Object（实体对象表示）的创建与 `PASS` 验证；
+- [`examples/basic_object/negative/`](examples/basic_object/negative/)：Permission 字段、未知字段和版本不匹配三类失败关闭示例；
+- [`docs/developer-concepts.md`](docs/developer-concepts.md)：五类对象、公共字段与引用关系；
+- [`docs/integration-boundary.md`](docs/integration-boundary.md)：未来 LangChain、CrewAI 和 MCP Adapter（适配器）边界；
+- [`tests/developer_quickstart/`](tests/developer_quickstart/)：脚本可运行性、结果格式和零治理状态修改测试。
+
+```text
+DEVELOPER_QUICKSTART=RUNNABLE_LOCAL_PREVIEW_V0.1
+TARGET_COMPLETION_TIME_MINUTES=30
+EXTERNAL_USABILITY_STUDY=false
+RUNNABLE_EXAMPLE_SCRIPT_COUNT=3
+POSITIVE_VALIDATION_RESULT=PASS
+NEGATIVE_CASE_COUNT=3
+QUICKSTART_TEST_COUNT=8
+REAL_ENTITY_CREATED=false
+AGENT_CREATED=false
+RUNTIME_CREATED=false
+PERMISSION_CREATED=false
+OFFICIAL_ADAPTER_COUNT=0
+```
+
+当前证据只证明脚本在本地自动化测试中可运行，不证明陌生开发者已经在 30 分钟内完成接入。可安装软件包、稳定公共 API（应用程序接口）、官方适配器和真实外部集成仍不存在。
+
+## Adapter Boundary Layer（适配器边界层）
+
+DBOS Adapter Boundary Specification v0.1（DBOS 适配器边界规范 v0.1）把 Adapter 定义为 Translation Boundary（转换边界）：外部框架继续拥有运行与行为，Adapter 只把调用方显式提供的表示转换为 DBOS 对象候选和 Validator（验证器）输入。
+
+规范入口：
+
+- [`adapter-boundary-specification.md`](adapter-boundary-specification.md)：Adapter Input（适配器输入）、Transformation（转换）、Output（输出）、允许/禁止行为和失败语义；
+- [`adapter-object-mapping-model.md`](adapter-object-mapping-model.md)：Entity、Execution、Evidence、Verification 映射，以及 Capability Mapping（能力映射）默认排除；
+- [`adapter-security-boundary-rules.md`](adapter-security-boundary-rules.md)：Namespace（命名空间）、Reference（引用）、Version（版本）、Validator、Evidence 与供应链边界；
+- [`ADR-023-adapter-boundary.md`](ADR-023-adapter-boundary.md)：Adapter 独立于 DBOS 核心的架构决策；
+- [`docs/integration-boundary.md`](docs/integration-boundary.md)：MCP、LangChain 和 CrewAI 的未来接入方向。
+
+```text
+ADAPTER_BOUNDARY_SPECIFICATION=FROZEN_V0.1
+ADAPTER_ROLE=TRANSLATION_BOUNDARY
+ADAPTER_IMPLEMENTATION_COUNT=0
+OFFICIAL_ADAPTER_COUNT=0
+MAPPING_INSTANCE_COUNT=0
+MCP_ADAPTER_IMPLEMENTED=false
+LANGCHAIN_ADAPTER_IMPLEMENTED=false
+CREWAI_ADAPTER_IMPLEMENTED=false
+ADAPTER_ARCHITECTURE_AUTHORITY=false
+ADAPTER_RUNTIME_EFFECT=NONE
+ADAPTER_PERMISSION_EFFECT=NONE
+ADAPTER_EVIDENCE_MUTATION_EFFECT=NONE
+VALIDATOR_OVERRIDE_ALLOWED=false
+```
+
+当前只冻结跨框架共享语义，不创建 Adapter 代码、兼容性主张或真实映射。具体框架接入必须使用受控外部输入、精确版本矩阵、负向测试、供应链审查和新的明确授权。
+
+## MCP Adapter Proposal Layer（MCP 适配器提案层）
+
+DBOS MCP Adapter Proposal v0.1（DBOS MCP 适配器提案 v0.1）把未来 MCP 接入限定为 External Integration Boundary（外部集成边界）：MCP 负责连接，Adapter 负责候选转换，DBOS 负责结构约束、引用和证据边界。提案不实现 MCP Server、MCP Client、MCP Runtime 或 Adapter 代码。
+
+提案入口：
+
+- [`mcp-adapter-proposal.md`](mcp-adapter-proposal.md)：目的、范围、允许/禁止转换和实现闸门；
+- [`mcp-object-mapping-model.md`](mcp-object-mapping-model.md)：Tool Call → Execution Object Candidate（执行对象候选）、Resource → Evidence Reference Candidate（证据引用候选）、Context → Execution Context Reference（执行上下文引用）的受限映射；
+- [`mcp-security-boundary.md`](mcp-security-boundary.md)：命名空间隔离、引用保留、来源归属、失败处理和版本兼容；
+- [`mcp-adapter-risk-assessment.md`](mcp-adapter-risk-assessment.md)：工具注入、错误能力映射、证据污染、权限升级等风险；
+- [`ADR-024-mcp-adapter-proposal.md`](ADR-024-mcp-adapter-proposal.md)：为什么采用 Proposal-first（提案先行）。
+
+```text
+MCP_ADAPTER_PROPOSAL=ACCEPTED_V0.1
+MCP_ADAPTER_SPECIFICATION=FROZEN_V0.1
+MCP_ADAPTER_IMPLEMENTATION_SCOPE=SYNTHETIC_TOOL_CALL_ONLY
+MCP_REFERENCE_ADAPTER_SCOPE=SYNTHETIC_TOOL_CALL_ONLY
+MCP_PRODUCTION_ADAPTER_IMPLEMENTATION=false
+MCP_RUNTIME_CONNECTED=false
+MCP_SERVER_CREATED=false
+MCP_CLIENT_CREATED=false
+PERSISTED_MCP_MAPPING_INSTANCE_COUNT=0
+MCP_COMPATIBILITY_EVIDENCE=false
+TOOL_AVAILABILITY_NE_CAPABILITY=true
+MCP_PERMISSION_NE_DBOS_PERMISSION=true
+RESOURCE_NE_EVIDENCE_TRUTH=true
+MCP_CAN_OVERRIDE_VALIDATOR=false
+MCP_CAN_TRIGGER_EVOLUTION=false
+```
+
+MCP Event（MCP 事件）不等于 DBOS Fact（DBOS 事实），Tool Availability（工具可用性）不等于 Capability Verification（能力验证），MCP Permission（MCP 权限）不等于 DBOS Permission。Resource 只有在稳定引用、可归属来源和既有 Execution Reference 同时存在时，才可进入 Evidence Reference Candidate；否则保持外部引用并返回 `UNKNOWN`。
+
+## MCP Adapter Specification Layer（MCP 适配器规范层）
+
+DBOS MCP Adapter Specification v0.1（DBOS MCP 适配器规范 v0.1）冻结 Adapter 的公共输入、输出、映射生命周期、字段规则、错误处理、版本政策和安全限制。当前只有后文所述的合成 Tool Call（工具调用）参考切片；本规范仍不是 MCP Runtime、Server、Client 或真实协议兼容性认证。
+
+规范入口：
+
+- [`mcp-adapter-specification.md`](mcp-adapter-specification.md)：公共输入/输出模型、生命周期、错误、版本、安全和实现条件；
+- [`mcp-tool-call-mapping-specification.md`](mcp-tool-call-mapping-specification.md)：Tool Call → Execution Object Candidate 的字段规则；
+- [`mcp-resource-mapping-specification.md`](mcp-resource-mapping-specification.md)：Resource → Evidence Reference Candidate 的字段规则；
+- [`mcp-context-mapping-specification.md`](mcp-context-mapping-specification.md)：调用方 Context Reference → DBOS Context Reference 的 Adapter 抽象；
+- [`mcp-error-handling-specification.md`](mcp-error-handling-specification.md)：`INVALID_TOOL_REFERENCE/UNKNOWN_RESOURCE/VERSION_MISMATCH/UNRESOLVED_CONTEXT/CONFLICTING_REFERENCE`；
+- [`mcp-version-compatibility-policy.md`](mcp-version-compatibility-policy.md)：`COMPATIBLE/DEPRECATED/UNSUPPORTED` 和精确版本矩阵规则；
+- [`ADR-025-mcp-adapter-specification.md`](ADR-025-mcp-adapter-specification.md)：为什么 Proposal 后需要 Specification。
+
+```text
+MCP_ADAPTER_SPECIFICATION=FROZEN_V0.1
+MCP_ADAPTER_IMPLEMENTATION_SCOPE=SYNTHETIC_TOOL_CALL_ONLY
+MCP_TOOL_CALL_REFERENCE_ADAPTER_IMPLEMENTED=true
+MCP_PRODUCTION_ADAPTER_IMPLEMENTATION=false
+SUPPORTED_MCP_PROTOCOL_REVISIONS=[]
+DEFAULT_MCP_PROTOCOL_REVISION=null
+MCP_MAPPING_PROFILE_COUNT=0
+SYNTHETIC_TOOL_CALL_FIXTURE_TEMPLATE_COUNT=1
+PERSISTED_MCP_MAPPING_INSTANCE_COUNT=0
+MCP_COMPATIBILITY_EVIDENCE=false
+MCP_SECURITY_CONTROLS_TESTED=false
+MCP_REFERENCE_ADAPTER_SCOPE=SYNTHETIC_TOOL_CALL_ONLY
+```
+
+“MCP Context”在本规范中只是 DBOS Adapter Input Abstraction（DBOS 适配器输入抽象），不声明所有 MCP 修订存在统一顶层对象。规范冻结不等于任一协议修订已经支持；后续实现必须先选择精确修订、建立真实 fixture、版本矩阵、安全负向测试和新的明确授权。
+
+## MCP Adapter Test Harness Specification Layer（MCP 适配器测试环境规范层）
+
+DBOS MCP Adapter Test Harness Specification v0.1（DBOS MCP 适配器测试环境规范 v0.1）冻结隔离测试环境的 Synthetic Fixture（合成夹具）、预期映射、验证预期、失败语义和安全测试范围。当前实现其中 Tool Call 的本地单元测试切片；它不创建 MCP Runtime（MCP 运行时）、Server（服务器）、Client（客户端）或真实连接。
+
+规范入口：
+
+- [`mcp-test-harness-specification.md`](mcp-test-harness-specification.md)：测试环境管线、隔离边界、结果语义、测试清单和实现闸门；
+- [`mcp-test-fixture-model.md`](mcp-test-fixture-model.md)：Tool Call（工具调用）、Resource（资源）和 Context（上下文）三类合成夹具模型；
+- [`mcp-positive-test-cases.md`](mcp-positive-test-cases.md)：3 项允许映射的规范案例，当前全部 `NOT_RUN`；
+- [`mcp-negative-test-cases.md`](mcp-negative-test-cases.md)：5 项必须拒绝的治理越界；
+- [`mcp-security-test-model.md`](mcp-security-test-model.md)：工具注入、引用冲突、版本冲突、敏感数据暴露和重放尝试；
+- [`ADR-027-mcp-test-harness.md`](ADR-027-mcp-test-harness.md)：为什么先冻结测试环境，再考虑 Adapter 实现。
+
+```text
+MCP_TEST_HARNESS_SPECIFICATION=FROZEN_V0.1
+MCP_TEST_HARNESS_IMPLEMENTATION=PARTIAL_TOOL_CALL_ONLY
+SYNTHETIC_TOOL_CALL_FIXTURE_TEMPLATE_COUNT=1
+MCP_TEST_CASE_DEFINITION_COUNT=13
+LOCAL_MCP_ADAPTER_UNIT_TEST_COUNT=21
+LATEST_LOCAL_MCP_ADAPTER_UNIT_TEST_RESULT=PASS
+PERSISTED_MCP_HARNESS_RUN_RECORD_COUNT=0
+PERSISTED_MCP_HARNESS_RESULT_RECORD_COUNT=0
+MCP_REAL_CONNECTION=false
+MCP_ADAPTER_IMPLEMENTATION_SCOPE=SYNTHETIC_TOOL_CALL_ONLY
+MCP_PRODUCTION_ADAPTER_IMPLEMENTATION=false
+MCP_RUNTIME_CONNECTED=false
+AGENT_CREATED=false
+RUNTIME_CREATED=false
+PERMISSION_GRANTED=false
+CANONICAL_EVIDENCE_MODIFIED=false
+PRODUCTION_READY=false
+```
+
+Synthetic Input（合成输入）不等于真实 MCP Event（MCP 事件），Test Fixture（测试夹具）不等于 Evidence Truth（证据真相），Test Pass（测试通过）不等于 Production Ready（生产就绪）。当前没有受支持的真实协议修订或真实 Mapping Profile（映射配置）；21 项本地测试只覆盖合成 Tool Call 参考实现，不把 13 项规范案例全部升级为已执行证据。
+
+## Minimal MCP Tool Call Reference Adapter Layer（最小 MCP 工具调用参考适配器层）
+
+最小实现只把一个严格、内存中的 Synthetic MCP Tool Call Fixture（合成 MCP 工具调用夹具）转换为 Execution Object Candidate（执行对象候选），随后强制调用现有 DBOS Validator（DBOS 验证器）。它不连接 MCP、不调用 Tool、不创建 Agent（智能体）、Runtime（运行时）、Permission（权限）、Capability Grant（能力授予）或 Evidence（证据）。
+
+代码与测试入口：
+
+- [`adapters/mcp/tool_call_adapter.py`](adapters/mcp/tool_call_adapter.py)：输入前置检查、版本拒绝、治理越界拒绝和 Validator 桥接；
+- [`adapters/mcp/mapping.py`](adapters/mcp/mapping.py)：不可变输入、候选和结果模型，以及确定性 `extension:` 候选 ID；
+- [`adapters/mcp/errors.py`](adapters/mcp/errors.py)：冻结的五种 Adapter 错误及映射状态；
+- [`adapters/mcp/__init__.py`](adapters/mcp/__init__.py)：最小公共入口；
+- [`tests/mcp_adapter/`](tests/mcp_adapter/)：21 项合成正向与负向单元测试。
+
+输入除任务列出的 `tool_call_id/tool_name/arguments_reference/context_reference/source_reference/protocol_revision` 外，还必须提供 `entity_reference` 和 `mapping_profile_version`，以避免身份和版本推断。唯一接受的测试版本是：
+
+```text
+protocol_revision=DBOS_MCP_SYNTHETIC_TOOL_CALL_V0_1
+mapping_profile_version=dbos.synthetic.mcp-tool-call/v0.1
+```
+
+这两个值是 DBOS synthetic profile（DBOS 合成配置），不是实际 MCP 协议版本或兼容性声明。
+
+字段映射：
+
+```text
+tool_call_id + source_reference -> extension-scoped execution_candidate_id
+tool_name -> external TOOL task_reference
+context_reference -> context_reference
+arguments_reference -> input_reference
+source_reference -> source
+entity_reference -> entity_reference
+output_reference -> null
+status -> UNKNOWN
+```
+
+当前正向结果是 `mapping_status=MAPPED` 与 `validation_result=UNKNOWN`。`UNKNOWN` 是预期的安全状态，因为 Adapter 没有执行 Tool，也没有外部执行事实。
+
+```text
+MCP_TOOL_CALL_REFERENCE_ADAPTER_IMPLEMENTED=true
+MCP_ADAPTER_IMPLEMENTATION_SCOPE=SYNTHETIC_TOOL_CALL_ONLY
+LOCAL_MCP_ADAPTER_UNIT_TEST_COUNT=21
+LATEST_LOCAL_MCP_ADAPTER_UNIT_TEST_RESULT=PASS
+SUPPORTED_MCP_PROTOCOL_REVISIONS=[]
+REAL_MCP_CONNECTED=false
+TOOL_INVOKED=false
+CANONICAL_EXECUTION_OBJECT_CREATED=false
+ENTITY_CREATED=false
+AGENT_CREATED=false
+RUNTIME_CREATED=false
+CAPABILITY_GRANTED=false
+PERMISSION_GRANTED=false
+CANONICAL_EVIDENCE_MODIFIED=false
+PRODUCTION_READY=false
+```
+
+## MCP Reference Demo Layer（MCP 参考演示层）
+
+DBOS MCP Reference Demo v0.1（DBOS MCP 参考演示 v0.1）把现有技术链路组织成一个开发者可运行的完整故事：无身份、无执行能力的合成场景声明一个 MCP 风格 Tool Call（工具调用），Adapter（适配器）形成内存中的 Execution Object Candidate（执行对象候选），Validator（验证器）保留 `UNKNOWN`，三项负向输入则失败关闭。
+
+开发者价值：原始 Tool Call 只说明“某个外部系统声明了一个工具请求”；DBOS 增加类型化引用、确定性候选、版本拒绝、治理边界、统一 Validation Result（验证结果）和限制说明，但不接管 Agent 推理或 Tool 执行。
+
+演示入口：
+
+- [`examples/mcp_reference_demo/README.md`](examples/mcp_reference_demo/README.md)：教学目标、单命令运行方式、预期结果和边界；
+- [`examples/mcp_reference_demo/synthetic_agent.py`](examples/mcp_reference_demo/synthetic_agent.py)：无 Agent 类或身份的合成输入声明函数；
+- [`examples/mcp_reference_demo/synthetic_mcp_event.py`](examples/mcp_reference_demo/synthetic_mcp_event.py)：严格合成版本配置；
+- [`examples/mcp_reference_demo/run_demo.py`](examples/mcp_reference_demo/run_demo.py)：正向链路、三项负向案例和确定性 JSON 输出；
+- [`examples/mcp_reference_demo/demo_report.md`](examples/mcp_reference_demo/demo_report.md)：人类可读静态报告；
+- [`tests/mcp_reference_demo/`](tests/mcp_reference_demo/)：15 项成功、负向边界和零副作用测试。
+
+运行：
+
+```bash
+PYTHONDONTWRITEBYTECODE=1 python3 examples/mcp_reference_demo/run_demo.py
+```
+
+当前本地观察：
+
+```text
+DEMO_CONTRACT_SATISFIED=true
+SUCCESS_MAPPING_STATUS=MAPPED
+EXECUTION_CANDIDATE_STATUS=UNKNOWN
+VALIDATOR_INVOKED=true
+VALIDATION_RESULT=UNKNOWN
+TOOL_TO_CAPABILITY=REJECTED/FAIL
+TOOL_PERMISSION_TO_DBOS_PERMISSION=REJECTED/FAIL
+UNKNOWN_VERSION=VERSION_MISMATCH
+MCP_REFERENCE_DEMO_TEST_COUNT=15
+LATEST_LOCAL_DEMO_TEST_RESULT=PASS
+```
+
+无效果边界：
+
+```text
+REFERENCE_DEMO_NE_PRODUCTION=true
+SYNTHETIC_NE_REAL=true
+VALIDATION_NE_TRUTH=true
+AGENT_CREATED=false
+RUNTIME_CREATED=false
+MCP_SERVER_CREATED=false
+REAL_MCP_CONNECTED=false
+TOOL_INVOKED=false
+PERMISSION_CREATED=false
+CAPABILITY_GRANTED=false
+EXECUTION_FACT_CREATED=false
+CANONICAL_EVIDENCE_CREATED=false
+PRODUCTION_READY=false
+```
+
+该 Demo（演示）不是产品、真实 MCP 连接、Agent Runtime（智能体运行时）、Execution Fact（执行事实）、Canonical Evidence（规范证据）或外部开发者验证。
+
 ## Agent-readable entry order
 
 智能体按以下顺序读取：
 
 - 战略前置：`STRATEGIC_ALIGNMENT.md`，用于定位、职责分层、SAEE 边界、开发者生态和非目标判断；它不产生技术授权。
+- 开发者与引用前置：依次读取 `developer-kit-specification.md`、`canonical-reference-resolver-specification.md`、`reference-namespace-model.md`、`reference-resolution-boundary-rules.md` 和 `ADR-017-canonical-reference-resolver.md`；这些文件只定义规范，不产生实现或权限。
+- API 边界前置：依次读取 `api-boundary-decision.md`、`api-responsibility-model.md`、`api-object-contract-model.md`、`api-error-model.md` 和 `ADR-019-api-boundary-decision.md`；它们只冻结职责、对象和错误语义，不创建 API、SDK、Agent 或 Runtime。
+- 对象契约前置：依次读取 `object-contract-specification.md`、五份 `*-object-contract.md`、`object-error-semantics.md` 和 `ADR-020-object-contract.md`；它们冻结语义字段，不创建 Schema、对象实例、代码或治理效果。
+- 自主策略前置：依次读取 `autonomy-policy-specification.md`、`autonomy-policy-object-model.md`、`autonomy-boundary-rules.md`、`autonomy-mode-comparison.md` 和 `ADR-026-autonomy-policy.md`；提案只表达人工监督语义，不创建 Policy 实例、Permission、Agent、Runtime、Execution 或 Evidence 效果。
+- 对象模式前置：依次读取 `schemas/common-object-schema.yaml`、五份类型 Schema、`schema-version-policy.md` 和 `ADR-021-object-schema-governance.md`；它们提供机器可读结构，不创建对象、Permission、Execution、Verification 或 SAEE 效果。
+- 对象验证器前置：依次读取 `validator/validation_result_model.py`、`validator/object_schema_validator.py`、`validator/governance_constraint_validator.py`、`validator/reference_consistency_validator.py` 和 `tests/schema_validator/`；它们只检查调用方提供的表示，不创建、修复、登记、授权或执行对象。
+- 验证结果前置：依次读取 `validation-result-contract-specification.md`、`validation-error-object-model.md`、`validation-result-boundary-rules.md`、`ADR-022-validation-result-contract.md` 和 `tests/validation_result_contract/`；结果只提供诊断语言，不产生 Truth、Authority、Permission、Execution 或 SAEE 效果。
+- 最小对象 SDK 前置：依次读取 `sdk/README.md`、`sdk/objects/`、`sdk/serialization/`、`sdk/validation/`、`sdk/errors/` 和 `tests/sdk/`；本地骨架只创建内存表示、序列化并调用既有 Validator，不创建 Agent、Runtime、API Server、Permission 或执行效果。
+- 开发者快速入门前置：依次读取 `docs/developer-quickstart.md`、`examples/basic_object/README.md`、`docs/developer-concepts.md`、`docs/integration-boundary.md` 和 `tests/developer_quickstart/`；示例只使用合成内存表示和本地验证结果，不构成真实外部接入或用户可用性证明。
+- 适配器边界前置：依次读取 `adapter-boundary-specification.md`、`adapter-object-mapping-model.md`、`adapter-security-boundary-rules.md` 和 `ADR-023-adapter-boundary.md`；它们只定义转换候选、版本和安全边界，不创建具体 Adapter、Agent、Runtime、Permission、Evidence Truth 或 Validator 替代品。
+- MCP 提案前置：依次读取 `mcp-adapter-proposal.md`、`mcp-object-mapping-model.md`、`mcp-security-boundary.md`、`mcp-adapter-risk-assessment.md` 和 `ADR-024-mcp-adapter-proposal.md`；提案不创建 MCP 代码、Server、Client、Runtime、对象实例、Permission、Evidence 或演化效果。
+- MCP 规范前置：依次读取 `mcp-adapter-specification.md`、三份 `mcp-*-mapping-specification.md`、`mcp-error-handling-specification.md`、`mcp-version-compatibility-policy.md` 和 `ADR-025-mcp-adapter-specification.md`；规范冻结字段和状态，不选择协议修订，不创建实现、兼容性证明、对象实例或治理效果。
+- MCP 测试环境前置：依次读取 `mcp-test-harness-specification.md`、`mcp-test-fixture-model.md`、`mcp-positive-test-cases.md`、`mcp-negative-test-cases.md`、`mcp-security-test-model.md` 和 `ADR-027-mcp-test-harness.md`；这些文件只定义合成输入与预期，不创建 fixture 实例、Harness 代码、真实 MCP 连接、测试结果、Canonical Evidence（规范证据）或生产就绪声明。
+- 最小 MCP Tool Call 参考实现前置：依次读取 `adapters/mcp/__init__.py`、`tool_call_adapter.py`、`mapping.py`、`errors.py` 和 `tests/mcp_adapter/`；代码只处理 DBOS 合成测试配置，生成内存候选并调用 Validator，不支持真实 MCP、Tool 执行、对象登记、Permission、Capability、Evidence 或生产使用。
+- MCP 参考演示前置：依次读取 `examples/mcp_reference_demo/README.md`、`synthetic_agent.py`、`synthetic_mcp_event.py`、`run_demo.py`、`demo_report.md` 和 `tests/mcp_reference_demo/`；演示只讲解合成转换、验证和拒绝链路，不创建真实 Agent、Runtime、MCP Server、Permission、Execution Fact、Canonical Evidence 或生产就绪结论。
+- 文档演化前置：依次读取 `documentation-evolution-evidence-specification.md`、`documentation-snapshot-model.md`、`documentation-validation-boundary.md` 和 `ADR-018-documentation-evolution-evidence.md`；它们只解释版本、快照和变化证据，不改写历史 `PASS/FAIL`。
 
 1. `constitution/constitution.yaml`：总对象定义、原则与状态边界。
 2. `constitution/saee-constitution.yaml`：最高生态解释原则、生态分类、演化、选择与稳定性规则。

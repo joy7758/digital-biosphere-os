@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "dbio://schema/execution-object/v0.1",
+  "title": "DBOS Execution Object Schema v0.1",
+  "description": "Machine-readable structural contract for an inert Execution record. Structural validation does not run a task, model, tool, process, Agent, or Runtime and does not establish an Execution Result.",
+  "x-dbios-schema-version": "v0.1",
+  "x-dbios-object-contract-version": "v0.1",
+  "allOf": [
+    {"$ref": "dbio://schema/common-object/v0.1"},
+    {
+      "type": "object",
+      "required": [
+        "execution_id",
+        "entity_reference",
+        "task_reference",
+        "context_reference",
+        "input_reference",
+        "output_reference"
+      ],
+      "properties": {
+        "object_type": {"const": "EXECUTION"},
+        "status": {"enum": ["UNKNOWN", "CREATED"]},
+        "execution_id": {
+          "$ref": "dbio://schema/common-object/v0.1#/$defs/nonEmptyString"
+        },
+        "entity_reference": {
+          "allOf": [
+            {"$ref": "dbio://schema/common-object/v0.1#/$defs/referenceObject"},
+            {"properties": {"reference_type": {"const": "ENTITY"}}}
+          ]
+        },
+        "task_reference": {
+          "$ref": "dbio://schema/common-object/v0.1#/$defs/referenceObject"
+        },
+        "context_reference": {
+          "$ref": "dbio://schema/common-object/v0.1#/$defs/referenceObject"
+        },
+        "input_reference": {
+          "$ref": "dbio://schema/common-object/v0.1#/$defs/referenceObject"
+        },
+        "output_reference": {
+          "oneOf": [
+            {"$ref": "dbio://schema/common-object/v0.1#/$defs/referenceObject"},
+            {"type": "null"}
+          ]
+        }
+      }
+    }
+  ],
+  "unevaluatedProperties": false,
+  "x-dbios-invariants": [
+    {
+      "name": "object_id_equals_execution_id",
+      "left": "$.object_id",
+      "operator": "EQUALS",
+      "right": "$.execution_id",
+      "validator_required": true,
+      "error": "CONFLICT"
+    },
+    {
+      "name": "output_reference_does_not_imply_execution_result",
+      "validator_required": true,
+      "error": "INVALID"
+    }
+  ],
+  "x-dbios-prohibited-fields": [
+    "result",
+    "success",
+    "model_call",
+    "tool_call",
+    "runtime_started",
+    "permission_granted"
+  ],
+  "x-dbios-boundaries": {
+    "execution_result_effect": "NONE",
+    "model_execution_effect": "NONE",
+    "tool_invocation_effect": "NONE",
+    "runtime_effect": "NONE",
+    "authority_effect": "NONE",
+    "permission_effect": "NONE"
+  }
+}

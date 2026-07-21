@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "digital-biosphere-os-preview"
+version = "0.1.0.dev0"
+description = "Local editable Developer Preview for bounded DBOS object contracts and validation"
+readme = "docs/developer-quickstart.md"
+requires-python = ">=3.11"
+dependencies = [
+  "jsonschema>=4.18,<5",
+]
+classifiers = [
+  "Development Status :: 2 - Pre-Alpha",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+]
+
+[project.scripts]
+dbos-validate = "validator.object_schema_validator:main"
+dbos-tests = "tools.run_tests:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["adapters*", "dbos*", "sdk*", "tools*", "validator*"]
+exclude = ["tests*"]
