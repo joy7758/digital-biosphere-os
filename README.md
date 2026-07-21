@@ -12,6 +12,28 @@ Digital Biosphere OS 是用于管理 AI agent（人工智能智能体）、代�
 
 智能体在解释或规划 DBOS 任务前，应先读取该战略对齐说明，并保持：`DBOS is infrastructure, not application`（DBOS 是基础设施，不是应用）。
 
+## License and Trial Access（许可证与试用访问）
+
+本仓库的 Owner-created surfaces（负责人创作表面）采用
+[`Apache-2.0`](LICENSE)。第三方依赖、数据、Evidence（证据）和独立许可材料继续遵循
+各自来源与许可证；根 `LICENSE` 不自动重许可这些材料。
+
+当前 Developer Preview（开发者预览）访问模型是 `PRIVATE_COLLABORATOR_TRIAL`
+（私有协作者试用）：仓库保持 private（私有），只为未来冻结试用包中的已确认开发者
+准备受控访问。该决定不表示已经添加协作者，也不表示 public release（公开发布）、
+生产可用、Permission Grant（权限授予）或 Agent Runtime（智能体运行时）。
+
+```text
+LICENSE_ID=Apache-2.0
+REPOSITORY_VISIBILITY=PRIVATE
+TRIAL_ACCESS_MODEL=PRIVATE_COLLABORATOR_TRIAL
+TRIAL_PARTICIPANTS_ADDED=0
+PUBLIC_RELEASE_AUTHORIZED=false
+AGENT_CREATED_BY_LICENSE_ADOPTION=false
+RUNTIME_CREATED_BY_LICENSE_ADOPTION=false
+PERMISSION_GRANTED_BY_LICENSE_ADOPTION=false
+```
+
 ## Canonical Reference Layer（规范引用层）
 
 Developer Ecosystem（开发者生态）使用 Canonical Reference Resolver Specification v0.1（规范引用解析规范 v0.1）统一 Entity、Candidate、Authorization、Registration、Execution、Evidence 和 Verification 引用的类型、Namespace（命名空间）、Version、Source 与解析结果。
