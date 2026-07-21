@@ -77,7 +77,7 @@ Caller-supplied declarations（调用方声明）
 - API Server（应用程序接口服务器）、网络通信或远程解析；
 - Permission System（权限系统）、授权、能力授予或权力；
 - Evidence Truth（证据真相结论）、外部事实验证、自动修复或历史修改；
-- Published Package Distribution（已发布软件包分发）、wheel 兼容、稳定公共兼容承诺或跨语言实现。
+- Published Package Distribution（已发布软件包分发）、稳定公共兼容承诺或跨语言实现。当前只验证了从冻结源码构建并隔离安装的 wheel candidate（分发包候选）；没有 Release Record 时仍不得称为已发布。
 
 ```text
 SDK_NE_AGENT_FRAMEWORK=true
@@ -88,7 +88,7 @@ PASS_NE_AUTHORIZATION=true
 AUTO_REPAIR=false
 NETWORK_ACCESS=false
 LOCAL_EDITABLE_INSTALL=true
-WHEEL_COMPATIBILITY_VERIFIED=false
+WHEEL_COMPATIBILITY_VERIFIED=true
 PUBLISHED_PACKAGE=false
 ```
 
@@ -99,6 +99,7 @@ PUBLISHED_PACKAGE=false
 ```text
 RECOMMEND_AS_LOCAL_SDK_PREVIEW=true
 RECOMMEND_AS_LOCAL_EDITABLE_INSTALL_PREVIEW=true
+RECOMMEND_AS_INSTALLABLE_DEVELOPER_PREVIEW_CANDIDATE=true
 RECOMMEND_AS_INSTALLABLE_PRODUCTION_SDK=false
 RECOMMEND_AS_AGENT_FRAMEWORK=false
 RECOMMEND_AS_RUNTIME=false

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Public facade tests for the local editable Developer Preview."""
+"""Public facade tests for the installable DBOS Developer Preview candidate."""
 
 from __future__ import annotations
 
