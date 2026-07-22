@@ -9,7 +9,7 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 
-from dbos.telemetry_admission.models import TelemetryAdmissionError
+from dbos.telemetry_admission.models import TelemetryAdmissionError, ValidationDecision
 from dbos.telemetry_admission.service import TelemetryAdmissionService
 from dbos.telemetry_admission.store import SQLiteTelemetryAdmissionStore
 from dbos.telemetry_admission.validator import TelemetryEnvelopeValidator
@@ -183,12 +183,67 @@ class AuthoritySecurityTests(unittest.TestCase):
         with self.assertRaises(TelemetryAdmissionError):
             SQLiteTelemetryAdmissionStore(link)
 
+    def test_symlink_in_store_parent_chain_is_rejected(self) -> None:
+        outside = Path(self.temp.name) / "outside"
+        outside.mkdir()
+        link = Path(self.temp.name) / "linked-directory"
+        link.symlink_to(outside, target_is_directory=True)
+        nested = link / "nested"
+        nested.mkdir()
+        with self.assertRaises(TelemetryAdmissionError):
+            SQLiteTelemetryAdmissionStore(nested / "store.sqlite3")
+
     def test_world_readable_existing_store_is_rejected(self) -> None:
         path = Path(self.temp.name) / "world.sqlite3"
         path.touch(mode=0o644)
         os.chmod(path, 0o644)
         with self.assertRaises(TelemetryAdmissionError):
             SQLiteTelemetryAdmissionStore(path)
+
+    def test_non_regular_store_path_is_rejected(self) -> None:
+        directory = Path(self.temp.name) / "directory.sqlite3"
+        directory.mkdir(mode=0o700)
+        with self.assertRaises(TelemetryAdmissionError):
+            SQLiteTelemetryAdmissionStore(directory)
+
+    def test_forged_accepted_decision_without_envelope_is_rejected(self) -> None:
+        forged = ValidationDecision(
+            state="ACCEPTED_AS_MATERIAL",
+            reason_codes=(),
+            limitations=(),
+            normalized_envelope=None,
+            safe_observation_reference=None,
+            safe_source_digest=None,
+        )
+        with self.assertRaises(TelemetryAdmissionError) as caught:
+            self.store.record_decision(forged)
+        self.assertEqual(caught.exception.reason_code, "TA_SHAPE_INVALID")
+        self.store.initialize()
+        self.assertEqual(self.store.counts()["admission_lifecycles"], 0)
+
+    def test_forged_normalized_decision_cannot_bypass_closed_schema(self) -> None:
+        envelope = make_envelope()
+        envelope["prompt"] = "must-not-persist"
+        forged = ValidationDecision(
+            state="ACCEPTED_AS_MATERIAL",
+            reason_codes=(),
+            limitations=(),
+            normalized_envelope=envelope,
+            safe_observation_reference=envelope["observation_id"],
+            safe_source_digest=envelope["source_digest"],
+        )
+        with self.assertRaises(TelemetryAdmissionError) as caught:
+            self.store.record_decision(forged)
+        self.assertEqual(caught.exception.reason_code, "TA_SHAPE_INVALID")
+        self.store.initialize()
+        self.assertNotIn(b"must-not-persist", self.store.path.read_bytes())
+
+    def test_item_counts_cannot_contradict_admission_state(self) -> None:
+        with self.assertRaises(TelemetryAdmissionError):
+            self.service.admit(
+                make_envelope(), accepted_item_count=1, rejected_item_count=1
+            )
+        self.assertEqual(self.store.counts()["admission_lifecycles"], 0)
 
     def test_result_has_no_governance_effect_fields(self) -> None:
         result = self.service.admit(make_envelope()).as_dict()

@@ -103,6 +103,21 @@ class MetricsSchemaBoundaryTests(unittest.TestCase):
             self.assertNotIn("trace_id", serialized)
             self.assertIn("accepted_as_material|TRACE|0.1.0", serialized)
 
+    def test_duration_observation_bookkeeping_has_constant_memory(self) -> None:
+        metrics = AdmissionMetrics()
+        for _ in range(10_000):
+            metrics.observe(
+                outcome="accepted_as_material",
+                signal_type="TRACE",
+                schema_version="0.1.0",
+                accepted_items=1,
+                rejected_items=0,
+                duration_seconds=0.001,
+            )
+        snapshot = metrics.snapshot()
+        self.assertEqual(snapshot["duration_observation_count"], 10_000)
+        self.assertNotIn("_durations", vars(metrics))
+
     def test_metrics_sink_failure_does_not_change_committed_result(self) -> None:
         def fail_sink(name: str, labels: object, value: float) -> None:
             raise RuntimeError("synthetic-sink-failure")

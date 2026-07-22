@@ -27,7 +27,10 @@ class AdmissionMetrics:
         self._requests: Counter[tuple[str, str, str]] = Counter()
         self._items: Counter[tuple[str, str]] = Counter()
         self._duplicates: Counter[str] = Counter()
-        self._durations: list[tuple[str, float]] = []
+        # Retain only a count locally. Duration values are emitted to the
+        # optional sink; keeping one tuple per admission would make this
+        # reference helper grow without bound during a long-running caller.
+        self._duration_observation_count = 0
         self._diagnostics: Counter[str] = Counter()
 
     def observe(
@@ -58,7 +61,7 @@ class AdmissionMetrics:
             )
             if safe_outcome.startswith("duplicate_"):
                 self._duplicates[safe_outcome] += 1
-            self._durations.append((safe_outcome, safe_duration))
+            self._duration_observation_count += 1
         if self._sink is not None:
             try:
                 self._sink("requests", labels, 1.0)
@@ -80,7 +83,7 @@ class AdmissionMetrics:
                     "|".join(key): value for key, value in sorted(self._items.items())
                 },
                 "duplicates": dict(sorted(self._duplicates.items())),
-                "duration_observation_count": len(self._durations),
+                "duration_observation_count": self._duration_observation_count,
                 "diagnostics": dict(sorted(self._diagnostics.items())),
             }
 

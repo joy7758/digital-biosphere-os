@@ -265,6 +265,29 @@ class MigrationRecoveryTests(unittest.TestCase):
                 backup, tampered, self.root / "restored.sqlite3"
             )
 
+    def test_malformed_manifest_types_fail_closed_with_stable_error(self) -> None:
+        store = SQLiteTelemetryAdmissionStore(self.path)
+        TelemetryAdmissionService(store).admit(make_envelope())
+        backup = self.root / "malformed-manifest-backup.sqlite3"
+        manifest = store.backup(backup)
+        for field, malformed in (
+            ("migration_checksums", []),
+            ("counts", []),
+            ("counts", {"admission_records": True}),
+        ):
+            candidate = json.loads(json.dumps(manifest))
+            candidate[field] = malformed
+            with self.subTest(field=field, malformed=malformed):
+                with self.assertRaises(TelemetryAdmissionError) as caught:
+                    SQLiteTelemetryAdmissionStore.restore(
+                        backup,
+                        candidate,
+                        self.root / f"malformed-{field}-{type(malformed).__name__}.sqlite3",
+                    )
+                self.assertEqual(
+                    caught.exception.reason_code, "TA_STORAGE_INTEGRITY_FAILURE"
+                )
+
     def test_ta_r005_truncated_backup_is_rejected(self) -> None:
         store = SQLiteTelemetryAdmissionStore(self.path)
         TelemetryAdmissionService(store).admit(make_envelope())
@@ -313,6 +336,23 @@ class MigrationRecoveryTests(unittest.TestCase):
         preflight = prior.migration_preflight()
         self.assertEqual(preflight["classification"], "COMPATIBLE_MIGRATION_REQUIRED")
         self.assertFalse(preflight["mutation_performed"])
+
+    def test_backup_manifest_preserves_compatible_migration_lineage(self) -> None:
+        prior = create_prior_compatible_store(self.path)
+        prior.migrate_compatible(self.root / "prior-pre-migration.sqlite3")
+        backup = self.root / "compatible-history-backup.sqlite3"
+        manifest = prior.backup(backup)
+        actual_history = SQLiteTelemetryAdmissionStore(backup).integrity_report()[
+            "migration_checksums"
+        ]
+        self.assertEqual(manifest["migration_checksums"], actual_history)
+        self.assertEqual(set(actual_history), {"0000", "0001-compat"})
+        restored = SQLiteTelemetryAdmissionStore.restore(
+            backup,
+            manifest,
+            self.root / "compatible-history-restored.sqlite3",
+        )
+        self.assertEqual(restored.integrity_report()["status"], "PASS")
 
 
 if __name__ == "__main__":

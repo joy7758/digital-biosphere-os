@@ -29,6 +29,7 @@ from .contracts import (
     ADMISSION_RECORD_FIELDS,
     ADMISSION_STATES,
     BUSY_TIMEOUT_MILLISECONDS,
+    DIGEST_PATTERN,
     FINGERPRINT_VERSION,
     MAX_LIMITATIONS,
     MAX_REASON_CODES,
@@ -221,13 +222,29 @@ def _validate_explicit_path(path: str | Path, *, must_not_exist: bool = False) -
     candidate = Path(path)
     if not candidate.is_absolute() or ".." in candidate.parts:
         raise TelemetryAdmissionError("TA_STORAGE_UNAVAILABLE")
-    if not candidate.parent.exists() or candidate.parent.is_symlink():
+    if (
+        not candidate.parent.exists()
+        or not candidate.parent.is_dir()
+        or candidate.parent.is_symlink()
+    ):
         raise TelemetryAdmissionError("TA_STORAGE_UNAVAILABLE")
     if candidate.is_symlink():
         raise TelemetryAdmissionError("TA_STORAGE_UNAVAILABLE")
+    # Reject caller-controlled intermediate symlinks as well as a symlink at
+    # the final parent.  A top-level platform alias such as macOS /var is
+    # resolved below, but any deeper redirect can escape the caller-selected
+    # store directory and therefore fails closed.
+    anchor = Path(candidate.anchor)
+    for ancestor in candidate.parents:
+        if ancestor in {anchor, anchor / ancestor.name}:
+            continue
+        if ancestor.is_symlink():
+            raise TelemetryAdmissionError("TA_STORAGE_UNAVAILABLE")
     if must_not_exist and candidate.exists():
         raise TelemetryAdmissionError("TA_STORAGE_UNAVAILABLE")
     if candidate.exists():
+        if not candidate.is_file():
+            raise TelemetryAdmissionError("TA_STORAGE_UNAVAILABLE")
         mode = stat.S_IMODE(candidate.stat().st_mode)
         if mode & 0o077:
             raise TelemetryAdmissionError("TA_STORAGE_UNAVAILABLE")
@@ -593,6 +610,7 @@ class SQLiteTelemetryAdmissionStore:
     ) -> AdmissionResult:
         """Commit one decision and return acknowledgement only after commit."""
 
+        self._validate_decision(decision)
         self.initialize()
         connection = self._connect()
         try:
@@ -622,6 +640,62 @@ class SQLiteTelemetryAdmissionStore:
             connection.close()
             _secure_database_files(self.path)
         return result
+
+    @staticmethod
+    def _validate_decision(decision: object) -> None:
+        """Reject forged validator output before it reaches persistence.
+
+        ``ValidationDecision`` is intentionally agent-readable and public, so
+        its Python type is not an authority token.  The store revalidates every
+        accepted/partial/unknown normalized envelope and permits a content-free
+        rejection stub only when it cannot create an acceptance effect.
+        """
+
+        if not isinstance(decision, ValidationDecision):
+            raise TelemetryAdmissionError("TA_SHAPE_INVALID")
+        if (
+            (not decision.reason_codes and decision.normalized_envelope is None)
+            or any(code not in REASON_CODE_SET for code in decision.reason_codes)
+            or len(decision.reason_codes) > MAX_REASON_CODES
+            or len(set(decision.reason_codes)) != len(decision.reason_codes)
+            or len(decision.limitations) > MAX_LIMITATIONS
+            or len(set(decision.limitations)) != len(decision.limitations)
+            or any(not _safe_reference(value) for value in decision.limitations)
+            or (
+                decision.safe_observation_reference is not None
+                and not _safe_reference(decision.safe_observation_reference)
+            )
+            or (
+                decision.safe_source_digest is not None
+                and DIGEST_PATTERN.fullmatch(decision.safe_source_digest) is None
+            )
+        ):
+            raise TelemetryAdmissionError("TA_SHAPE_INVALID")
+
+        if decision.normalized_envelope is None:
+            if decision.state != "REJECTED":
+                raise TelemetryAdmissionError("TA_SHAPE_INVALID")
+            return
+
+        # Import locally to keep the storage module's dependency direction
+        # explicit while preventing callers from forging an accepted decision.
+        from .validator import TelemetryEnvelopeValidator
+
+        revalidated = TelemetryEnvelopeValidator().validate(
+            dict(decision.normalized_envelope)
+        )
+        if (
+            revalidated.normalized_envelope is None
+            or revalidated.state != decision.state
+            or revalidated.reason_codes != decision.reason_codes
+            or revalidated.limitations != decision.limitations
+            or revalidated.safe_observation_reference
+            != decision.safe_observation_reference
+            or revalidated.safe_source_digest != decision.safe_source_digest
+            or _canonical_json(dict(revalidated.normalized_envelope))
+            != _canonical_json(dict(decision.normalized_envelope))
+        ):
+            raise TelemetryAdmissionError("TA_SHAPE_INVALID")
 
     def _record_in_transaction(
         self,
@@ -822,12 +896,20 @@ class SQLiteTelemetryAdmissionStore:
         rejected = (
             default_rejected if rejected_item_count is None else rejected_item_count
         )
-        if not isinstance(accepted, int) or accepted < 0:
+        if not isinstance(accepted, int) or isinstance(accepted, bool) or accepted < 0:
             raise ValueError("invalid accepted count")
-        if not isinstance(rejected, int) or rejected < 0:
+        if not isinstance(rejected, int) or isinstance(rejected, bool) or rejected < 0:
             raise ValueError("invalid rejected count")
+        if state == "ACCEPTED_AS_MATERIAL" and (accepted == 0 or rejected != 0):
+            raise ValueError("accepted result requires accepted items only")
         if state == "PARTIAL" and (accepted == 0 or rejected == 0):
             raise ValueError("partial result requires accepted and rejected items")
+        if state == "REJECTED" and (accepted != 0 or rejected == 0):
+            raise ValueError("rejected result requires rejected items only")
+        if state in {"DUPLICATE_CONFIRMED", "DUPLICATE_SUSPECTED", "UNKNOWN"} and (
+            accepted != 0 or rejected != 0
+        ):
+            raise ValueError("non-material result requires zero item counts")
         terminal = self._insert_record(
             connection,
             admission_id=admission_id,
@@ -1247,7 +1329,11 @@ class SQLiteTelemetryAdmissionStore:
         manifest_without_digest = {
             "backup_id": self._id_factory("backup"),
             "schema_version": STORE_SCHEMA_VERSION,
-            "migration_checksums": {MIGRATION_VERSION: migration_checksum()},
+            # Bind the manifest to the history actually present in the
+            # snapshot. A store upgraded from the compatible fixture has a
+            # different, equally valid lineage from a directly initialized
+            # store and must not be mislabeled as the direct path.
+            "migration_checksums": dict(report["migration_checksums"]),
             "database_sha256": _file_sha256(destination_path),
             "record_chain_digest": backup_store._chain_digest(),
             "counts": report["counts"],
@@ -1299,6 +1385,8 @@ class SQLiteTelemetryAdmissionStore:
     ) -> "SQLiteTelemetryAdmissionStore":
         """Restore a verified backup to a new path; never overwrite a store."""
 
+        if not isinstance(manifest, Mapping):
+            raise TelemetryAdmissionError("TA_STORAGE_INTEGRITY_FAILURE")
         source_path = _validate_explicit_path(backup_path)
         destination_path = _validate_explicit_path(destination, must_not_exist=True)
         supplied_digest = manifest.get("manifest_digest")
@@ -1315,11 +1403,27 @@ class SQLiteTelemetryAdmissionStore:
             )
             if key in manifest
         }
+        migration_checksums = manifest.get("migration_checksums")
+        counts = manifest.get("counts")
         if (
             len(manifest_without_digest) != 7
+            or not isinstance(migration_checksums, Mapping)
+            or any(
+                not isinstance(key, str) or not isinstance(value, str)
+                for key, value in migration_checksums.items()
+            )
+            or not isinstance(counts, Mapping)
+            or set(counts) != set(EXPECTED_TABLE_COLUMNS) - {"schema_migrations"}
+            or any(
+                not isinstance(key, str)
+                or not isinstance(value, int)
+                or isinstance(value, bool)
+                or value < 0
+                for key, value in counts.items()
+            )
             or supplied_digest != _sha256_json(manifest_without_digest)
             or manifest.get("schema_version") != STORE_SCHEMA_VERSION
-            or tuple(sorted(manifest.get("migration_checksums", {}).items()))
+            or tuple(sorted(migration_checksums.items()))
             not in {
                 tuple(sorted(DIRECT_MIGRATION_HISTORY)),
                 tuple(sorted(COMPATIBLE_MIGRATION_HISTORY)),
