@@ -1,0 +1,2 @@
+telemetry_admission_validator: PASS
+checks: 25/25

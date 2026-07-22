@@ -1,0 +1,212 @@
+{
+  "report_schema_version": "0.1",
+  "report_id": "DBOS-PR-2A-LINUX-ARM64-CROSS-PLATFORM-VALIDATION-2026-07-22",
+  "observed_at": "2026-07-22T17:12:34Z",
+  "decision_reference": "DQ-018",
+  "review_gate": "PR-G2A",
+  "status": "PASS_LINUX_ARM64_REFERENCE_VALIDATION",
+  "result_semantics": "REFERENCE_VALIDATION_NOT_SLO_NOT_GATE_APPROVAL_NOT_PRODUCTION_READY",
+  "source_binding": {
+    "repository": "digital-biosphere-os",
+    "branch": "codex/telemetry-admission-foundation",
+    "implementation_source_commit": "57c7b9e55dfcab84e81e7c5f61e9d8ea61045dbe",
+    "implementation_tree": "a044e54841f856df49e682f8a7a07d9b64a0db8b",
+    "remote_commit_matches_local_and_clean_clone": true,
+    "clean_clone_worktree_clean": true,
+    "implementation_manifest_sha256": "d0951d6c6252109261f7d2806082b850741df3d1decc4ff5c6418602dff69710",
+    "implementation_file_count": 57,
+    "implementation_bytes": 720322,
+    "source_stable_during_all_characterizations": true,
+    "report_is_successor_receipt_not_part_of_characterized_manifest": true
+  },
+  "environment": {
+    "scope": "CPython 3.12.13 Linux glibc arm64",
+    "platform": "Linux-6.8.0-100-generic-aarch64-with-glibc2.36",
+    "machine": "aarch64",
+    "python_version": "3.12.13",
+    "sqlite_version": "3.40.1",
+    "cpu_count": 4,
+    "base_image": "python:3.12.13-slim-bookworm@sha256:d50fb7611f86d04a3b0471b46d7557818d88983fc3136726336b2a4c657aa30b",
+    "base_image_os": "linux",
+    "base_image_architecture": "arm64",
+    "cross_platform_claim": "LINUX_ARM64_FIXED_REFERENCE_ENVIRONMENT_ONLY"
+  },
+  "supply_chain": {
+    "runtime_lock_path": "requirements/telemetry-admission-runtime-py312-linux-arm64.lock",
+    "runtime_lock_sha256": "b989823d32d406ce283b11500a8198155c56381adeb37a13c7dc2c58fb0b38b3",
+    "build_lock_path": "requirements/telemetry-admission-build.lock",
+    "build_lock_sha256": "1cea23a952436c9e226278bb037a803510d3e5f16ae984891420de5a5dcea95c",
+    "runtime_dependency_count": 7,
+    "require_hashes": true,
+    "binary_wheels_only": true,
+    "pip_check": "PASS"
+  },
+  "validation": {
+    "all_tests": {
+      "status": "PASS",
+      "test_count": 533,
+      "test_directory_count": 16
+    },
+    "focused_telemetry_tests": {
+      "status": "PASS",
+      "test_count": 199
+    },
+    "validators": {
+      "total": 35,
+      "passed": 30,
+      "expected_external_source_fail_closed": 5,
+      "unexpected_failures": 0,
+      "external_source_fail_closed_names": [
+        "capability_claim_validator",
+        "capability_validator",
+        "evidence_validator",
+        "federation_validator",
+        "identity_validator"
+      ],
+      "telemetry_admission_validator": "25/25 PASS",
+      "hermetic_result_semantics": "30_PASS_PLUS_5_EXPECTED_EXTERNAL_SOURCE_FAIL_CLOSED_NOT_35_PASS"
+    },
+    "static_security": {
+      "ruff_version": "0.14.10",
+      "ruff_finding_count": 0,
+      "ruff_format_file_count": 34,
+      "ruff_format_status": "PASS",
+      "bandit_version": "1.9.4",
+      "bandit_scanned_loc": 5360,
+      "bandit_finding_count": 0,
+      "bandit_nosec_count": 0,
+      "bandit_skipped_test_count": 0,
+      "pip_audit_version": "2.10.1",
+      "audited_runtime_dependency_count": 7,
+      "known_vulnerability_count": 0
+    }
+  },
+  "characterization": {
+    "result_semantics": "CHARACTERIZATION_NOT_SLO",
+    "backend_scope": "SQLITE_SINGLE_HOST_EPHEMERAL_REFERENCE_ONLY",
+    "all_cases_source_binding": "PASS",
+    "all_cases_integrity": "PASS",
+    "all_case_authority_effects_false": true,
+    "cases": {
+      "TA-P001": {
+        "parameters": {"unique_admissions": 10000, "workers": 1},
+        "operations": 10000,
+        "wall_seconds": 33.732231,
+        "p95_ms": 4.016631,
+        "integrity_status": "PASS"
+      },
+      "TA-P002": {
+        "parameters": {"original_admissions": 1000, "confirmed_retries": 10000},
+        "duplicate_accuracy": 1.0,
+        "lifecycle_growth": 0,
+        "integrity_status": "PASS"
+      },
+      "TA-P003": {
+        "parameters": {"workers": 32, "duration_seconds": 300, "target_operations_per_second": 64},
+        "operations": 19036,
+        "wall_seconds": 300.501323,
+        "observed_operations_per_second": 63.34747484622555,
+        "p95_ms": 169.249292,
+        "errors": {},
+        "integrity_status": "PASS"
+      },
+      "TA-P004": {
+        "parameters": {"unique_admissions": 1000, "backup_count": 10, "writer_workers": 1},
+        "backups_completed": 10,
+        "restore_passes": 10,
+        "restore_pass_rate": 1.0,
+        "writer_errors": [],
+        "integrity_status": "PASS"
+      },
+      "TA-P005": {
+        "parameters": {"duration_seconds": 3600, "target_operations_per_second": 5, "integrity_interval_seconds": 60},
+        "wall_seconds": 3600.032738,
+        "operations": 17410,
+        "observed_operations_per_second": 4.83606713245395,
+        "p50_ms": 12.833333,
+        "p95_ms": 18.490721,
+        "p99_ms": 24.048967,
+        "max_ms": 157.820792,
+        "database_bytes": 109092864,
+        "periodic_integrity_check_count": 59,
+        "periodic_integrity_pass_count": 59,
+        "final_integrity_status": "PASS",
+        "errors": {},
+        "process_max_rss_native_units": 49228,
+        "process_max_rss_native_unit_semantics": "LINUX_KIB",
+        "process_max_rss_bytes_normalized": 50409472,
+        "python_tracemalloc_peak_bytes": 6624510,
+        "source_manifest_at_start": "sha256:d0951d6c6252109261f7d2806082b850741df3d1decc4ff5c6418602dff69710",
+        "source_manifest_at_end": "sha256:d0951d6c6252109261f7d2806082b850741df3d1decc4ff5c6418602dff69710",
+        "result_artifact_sha256": "9ec918b0c9fe06297b3508e7f8ecc9ae01ed3076758048f669de8a13ee7fd771",
+        "result_artifact_mode": "0o600",
+        "overwrite_permitted": false
+      }
+    }
+  },
+  "container_security_boundary": {
+    "main_process_user": "65532:65532",
+    "read_only_root_filesystem": true,
+    "read_only_source_mount": true,
+    "capabilities_dropped": ["ALL"],
+    "no_new_privileges": true,
+    "temporary_database_scope": "ISOLATED_TMPFS",
+    "listener_created": false,
+    "collector_created": false,
+    "dbos_runtime_created": false,
+    "production_backend_used": false,
+    "network_note": "default container network used only for hash-locked wheel download before offline workload execution"
+  },
+  "attempt_history": [
+    {"attempt": 1, "status": "FAIL_CLOSED", "reason": "NOEXEC_TMPFS_BLOCKED_NATIVE_WHEEL_MAPPING"},
+    {"attempt": 2, "status": "PARTIAL", "reason": "TESTS_PASS_FIVE_EXTERNAL_SOURCE_VALIDATORS_FAIL_CLOSED"},
+    {"attempt": 3, "status": "FAIL_CLOSED", "reason": "RUFF_CACHE_WRITE_BLOCKED_BY_READ_ONLY_SOURCE"},
+    {"attempt": 4, "status": "FAIL_CLOSED", "reason": "WHOLE_REPOSITORY_RUFF_FOUND_OUT_OF_SCOPE_HISTORICAL_ISSUES"},
+    {"attempt": 5, "status": "FAIL_CLOSED", "reason": "DQ018_SCOPE_FORMAT_DRIFT_FOUND_AND_FIXED_IN_SUCCESSOR_SOURCE"},
+    {"attempt": 6, "status": "PARTIAL", "reason": "INTEGRATED_VALIDATION_PASS_AUDIT_TOOL_DOWNLOAD_TIMEOUT"},
+    {"attempt": 7, "status": "PASS", "reason": "STATIC_SECURITY_AND_DEPENDENCY_AUDIT_PASS"}
+  ],
+  "risk_effect": {
+    "risk_reference": "R-042",
+    "effect": "PARTIAL_MITIGATION_LINUX_ARM64_FIXED_REFERENCE_ONLY",
+    "risk_closed": false,
+    "remaining_platforms": ["Linux x86_64", "Windows", "production backend environments"]
+  },
+  "review_state": {
+    "pr_g2a_ready_for_human_review": true,
+    "pr_g2a_human_review_approved": false,
+    "full_pr_g2_ready": false,
+    "production_ready": false,
+    "release_authorized": false,
+    "deployment_authorized": false,
+    "dq_019": "BLOCKED_INPUT",
+    "dq_020": "BLOCKED_INPUT",
+    "dq_021": "BLOCKED_INPUT"
+  },
+  "remaining_gates": [
+    "PR_G2A_INDEPENDENT_HUMAN_REVIEW_AND_EXPLICIT_APPROVAL",
+    "DQ_019_PR_G2B_PRODUCTION_PERSISTENCE",
+    "PR_G2T_TELEMETRY_DEPLOYMENT_INTEGRATION",
+    "PR_G2I_IDENTITY_CONTINUITY_INTEGRATION",
+    "DQ_021_PR_G2C_FEDERATION_AND_DURABILITY",
+    "DQ_020_PR_G3_DEPLOYMENT_CASE_AUTHORIZATION",
+    "INDEPENDENT_HUMAN_SECURITY_REVIEW",
+    "LINUX_X86_64_WINDOWS_AND_PRODUCTION_BACKEND_VALIDATION",
+    "HUMAN_ROLLBACK_SWITCH_EXERCISE"
+  ],
+  "effects": {
+    "agent_created": false,
+    "runtime_created": false,
+    "entity_created": false,
+    "capability_created": false,
+    "permission_created": false,
+    "execution_created": false,
+    "evidence_created": false,
+    "verification_created": false,
+    "collector_created": false,
+    "network_endpoint_created": false,
+    "saee_called": false,
+    "gate_state_changed": false,
+    "production_ready_declared": false
+  }
+}

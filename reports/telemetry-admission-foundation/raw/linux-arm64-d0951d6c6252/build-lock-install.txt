@@ -1,0 +1,13 @@
+Collecting build==1.5.0 (from -r /source/requirements/telemetry-admission-build.lock (line 6))
+  Downloading build-1.5.0-py3-none-any.whl (26 kB)
+Collecting packaging==26.2 (from -r /source/requirements/telemetry-admission-build.lock (line 8))
+  Downloading packaging-26.2-py3-none-any.whl (100 kB)
+Collecting pyproject-hooks==1.2.0 (from -r /source/requirements/telemetry-admission-build.lock (line 10))
+  Downloading pyproject_hooks-1.2.0-py3-none-any.whl (10 kB)
+Collecting setuptools==83.0.0 (from -r /source/requirements/telemetry-admission-build.lock (line 12))
+  Downloading setuptools-83.0.0-py3-none-any.whl (1.0 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.0/1.0 MB 1.6 MB/s eta 0:00:00
+Collecting wheel==0.47.0 (from -r /source/requirements/telemetry-admission-build.lock (line 14))
+  Downloading wheel-0.47.0-py3-none-any.whl (32 kB)
+Installing collected packages: setuptools, pyproject-hooks, packaging, wheel, build
+Successfully installed build-1.5.0 packaging-26.2 pyproject-hooks-1.2.0 setuptools-83.0.0 wheel-0.47.0
