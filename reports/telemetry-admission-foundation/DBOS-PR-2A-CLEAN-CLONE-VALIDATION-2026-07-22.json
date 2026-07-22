@@ -1,51 +1,40 @@
 {
-  "report_schema_version": "0.1",
+  "report_schema_version": "0.2",
   "report_id": "DBOS-PR-2A-CLEAN-CLONE-VALIDATION-2026-07-22",
-  "observed_at": "2026-07-22T11:29:19Z",
+  "observed_at": "2026-07-22T12:07:50Z",
   "decision_reference": "DQ-018",
-  "review_gate": "PR-G2",
-  "status": "PASS_READY_FOR_PR_G2_HUMAN_REVIEW",
-  "result_semantics": "REMOTE_SOURCE_CLEAN_CLONE_REVIEW_INPUT_NOT_GATE_APPROVAL_NOT_PRODUCTION_READY",
+  "review_gate": "PR-G2A",
+  "status": "PASS_READY_FOR_PR_G2A_HUMAN_REVIEW",
+  "result_semantics": "REMOTE_EXACT_SOURCE_REVIEW_INPUT_NOT_GATE_APPROVAL_NOT_PRODUCTION_READY",
   "architecture_binding": {
     "repository": "digital-biosphere-architecture-specification",
     "branch": "codex/production-observability-baseline",
-    "head_commit": "7f2d3a0e39f65a92b7a96ea899ca12e3c050a0db",
-    "git_authorization_record_sha256": "a7b0e1b5e0aa8afc064ec6f633ae56805f32ab4eaba9367929f1343a15ab7cf4",
-    "git_authorization_status": "AUTHORIZED_MANIFEST_SCOPE_CORRECTED_NOT_YET_EXECUTED_AT_SOURCE_COMMIT_TIME"
+    "authorization_baseline_commit": "7f2d3a0e39f65a92b7a96ea899ca12e3c050a0db",
+    "governance_receipt_commit": "05589af948a788f38982b5b197427a6e1c357fa8"
   },
   "source_binding": {
     "repository": "digital-biosphere-os",
     "branch": "codex/telemetry-admission-foundation",
     "base_commit": "cd3f867c4379ec555c45e7d554088ad12ce08a24",
-    "exact_source_commit": "a3e491c954e911d84baa09fd6d9466fb80280941",
-    "remote_commit": "a3e491c954e911d84baa09fd6d9466fb80280941",
+    "exact_source_commit": "5c52c1c2f44767c0b13b4ac9670425721b9ea0dd",
+    "remote_commit": "5c52c1c2f44767c0b13b4ac9670425721b9ea0dd",
     "remote_commit_matches_local_source_commit": true,
-    "clean_clone_commit_matches_remote": true,
-    "implementation_manifest_sha256": "9a8c3546a925812f0da86dad6cd09aa4680b2b29b734cd07dcfa9bc51f8dfe95",
+    "independent_clean_clone_count": 2,
+    "clean_clone_commits_match_remote": true,
+    "implementation_manifest_sha256": "fdda745c3907e35ac92769740f07afc81483be674568879a3c0314c2a09baa51",
     "implementation_file_count": 56,
-    "implementation_bytes": 704010,
-    "manifest_matches_exact_commit": true,
-    "manifest_scope_correction": "THREE_SQL_MIGRATION_FILES_INCLUDED",
-    "previous_incomplete_scope_manifest_sha256": "f09e99b95a3332d40abc933eaee35ea8a646b11d330ffaa5213ee0bb28f339b4"
+    "implementation_bytes": 714335,
+    "manifest_matches_exact_commit": true
   },
-  "clean_clone_validation": {
-    "independent_remote_checkout_count": 2,
-    "primary_checkout_clean_before_and_after": true,
-    "secondary_checkout_clean_after_build": true,
-    "all_tests": {
-      "status": "PASS",
-      "test_count": 523,
-      "test_directory_count": 16
-    },
-    "focused_telemetry_tests": {
-      "status": "PASS",
-      "test_count": 189
-    },
+  "validation": {
+    "all_tests": {"status": "PASS", "test_count": 531, "test_directory_count": 16},
+    "focused_telemetry_tests": {"status": "PASS", "test_count": 197, "coverage_percent": 86},
     "validators": {
       "status": "PASS",
       "validator_count": 35,
       "telemetry_validator_checks": 25,
-      "telemetry_validator_passed": 25
+      "telemetry_validator_passed": 25,
+      "live_effect_count": 0
     },
     "opentelemetry_conformance": {
       "authorized_subset_result": "PASS",
@@ -53,81 +42,79 @@
       "schema_resource_cases": "36/36",
       "blocked_not_authorized_cases": 23,
       "full_catalog_result": "BLOCKED",
-      "full_catalog_block_reason": "DQ_020_PR_G3_DEPLOYMENT_CASES_NOT_AUTHORIZED_AND_NOT_EXECUTED",
-      "tool_source_binding_semantics": "IMPLEMENTATION_MANIFEST_ONLY",
-      "tool_does_not_claim_git_commit_inclusion": true
+      "full_catalog_block_reason": "DQ_020_PR_G3_DEPLOYMENT_CASES_NOT_AUTHORIZED_AND_NOT_EXECUTED"
     },
     "rollback": {
-      "status": "PASS",
+      "result": "PASS",
+      "admission_count": 25,
+      "acknowledged_receipt_count": 25,
       "failed_source_retained": true,
       "restore_destination_is_distinct": true,
       "receipt_mismatch_count": 0,
       "automatic_switch_performed": false,
       "next_gate": "HUMAN_SWITCH_REQUIRED"
+    },
+    "load_characterization": {
+      "result_semantics": "CHARACTERIZATION_NOT_SLO",
+      "backend_scope": "SQLITE_SINGLE_HOST_REFERENCE_ONLY",
+      "exact_source_profiles_completed": ["TA-P001", "TA-P002", "TA-P003", "TA-P004"],
+      "source_stable": true,
+      "integrity_status": "PASS",
+      "ta_p005_one_hour_profile_reexecuted": false
     }
   },
   "security_and_supply_chain": {
     "runtime_lock_sha256": "13a50e3f657af397b77809c7e00ceaef343b26bd111781376de5d04af36ada8d",
     "build_lock_sha256": "1cea23a952436c9e226278bb037a803510d3e5f16ae984891420de5a5dcea95c",
     "runtime_dependency_count": 7,
+    "pip_audit_version": "2.10.0",
     "known_dependency_vulnerability_count": 0,
     "production_slice_bandit": {
       "version": "1.9.4",
-      "scanned_loc": 5264,
+      "scanned_loc": 5352,
       "finding_count": 0,
       "nosec_count": 0,
       "skipped_test_count": 0
     },
-    "test_fixture_bandit_triage": {
-      "low_finding_count": 3,
-      "production_finding_count": 0,
-      "classification": "EXPECTED_TEST_SUBPROCESS_AND_SECRET_SHAPED_NEGATIVE_FIXTURE",
-      "not_suppressed_in_source": true
-    },
     "wheel": {
       "name": "digital_biosphere_os_preview-0.1.0.dev0-py3-none-any.whl",
-      "sha256": "49d193a29c0e62ac498699f2ca8cd68c753bfe0013c3bf79084a0d086f1e9853",
-      "size_bytes": 124815,
+      "sha256": "240828497ab265d3703f60ce5d71c2d49bc623c092ad607d8b2f8762ffc42e41",
+      "size_bytes": 126112,
+      "entry_count": 64,
       "independent_build_count": 2,
       "byte_identical": true,
       "installed_from_site_packages": true,
+      "package_resources_verified": true,
       "pip_check": "PASS",
       "published": false
     },
-    "full_wheel_build_input": {
-      "file_count": 61,
-      "total_bytes": 517203,
-      "manifest_sha256": "8f527e01a967c3ee7f8e95e5e0ddc0554b3fe15049a4246d1fb6a493f7daf116"
-    },
-    "wheel_content": {
-      "entry_count": 64,
-      "uncompressed_bytes": 523203,
-      "symlink_count": 0,
-      "content_manifest_sha256": "7f3a451a7a34668f8383d504a81d33077606b0857e9bf84690044eedb06a840c"
-    },
     "environment_scope": "CPython 3.12.13 macOS arm64",
     "cross_platform_claim": false,
-    "independent_security_review_complete": false
+    "independent_human_security_review_complete": false
   },
-  "historical_receipts": {
-    "f09e99_receipts_are_current_exact_source_evidence": false,
-    "load_characterization_reexecuted_against_exact_commit": false,
-    "retention_reason": "HISTORICAL_INCOMPLETE_MANIFEST_SCOPE_NO_SILENT_DELETION"
+  "independent_review": {
+    "findings_reproduced_and_fixed": 7,
+    "new_negative_or_recovery_tests": 8,
+    "unresolved_critical_or_high_in_exact_offline_scope": 0,
+    "report": "DBOS-PR-2A-INDEPENDENT-TECHNICAL-REVIEW-2026-07-22.json"
   },
   "review_readiness": {
-    "acceptance_conditions_locally_satisfied": 10,
-    "acceptance_condition_count": 10,
-    "pr_g2_ready_for_human_review": true,
-    "pr_g2_human_review_approved": false,
+    "pr_g2a_ready_for_human_review": true,
+    "pr_g2a_human_review_approved": false,
+    "full_pr_g2_ready": false,
+    "full_pr_g2_blocked_by": ["PR-G2B", "PR-G2T", "PR-G2I", "PR-G2C"],
     "production_ready": false,
     "release_authorized": false,
     "deployment_authorized": false
   },
   "remaining_gates": [
-    "PR_G2_HUMAN_REVIEW",
-    "DQ_019_PRODUCTION_PERSISTENCE_BACKEND_SELECTION_AND_DIRECT_EVIDENCE",
+    "PR_G2A_HUMAN_REVIEW",
+    "DQ_019_PR_G2B_PRODUCTION_PERSISTENCE",
+    "PR_G2T_TELEMETRY_DEPLOYMENT_INTEGRATION",
+    "PR_G2I_IDENTITY_CONTINUITY_INTEGRATION",
+    "DQ_021_PR_G2C_FEDERATION_AND_DURABILITY",
     "DQ_020_PR_G3_DEPLOYMENT_CASE_AUTHORIZATION",
-    "INDEPENDENT_SECURITY_REVIEW",
+    "INDEPENDENT_HUMAN_SECURITY_REVIEW",
     "CROSS_PLATFORM_LOCKS_AND_VALIDATION",
     "HUMAN_ROLLBACK_SWITCH_EXERCISE"
   ],

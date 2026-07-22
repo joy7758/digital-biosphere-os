@@ -1,0 +1,60 @@
+{
+  "report_schema_version": "0.1",
+  "report_id": "DBOS-PR-2A-INDEPENDENT-TECHNICAL-REVIEW-2026-07-22",
+  "observed_at": "2026-07-22T12:07:50Z",
+  "decision_reference": "DQ-018",
+  "review_gate": "PR-G2A",
+  "exact_source_commit": "5c52c1c2f44767c0b13b4ac9670425721b9ea0dd",
+  "implementation_manifest_sha256": "fdda745c3907e35ac92769740f07afc81483be674568879a3c0314c2a09baa51",
+  "verdict": "RECOMMENDED_FOR_PR_G2A_HUMAN_REVIEW",
+  "verdict_semantics": "AGENT_RECOMMENDATION_NOT_AUTHORIZATION",
+  "findings": [
+    {"id": "IR-01", "class": "BACKUP_MIGRATION_LINEAGE", "reproduced": true, "fixed": true, "regression_test": true},
+    {"id": "IR-02", "class": "ANCESTOR_SYMLINK_ESCAPE", "reproduced": true, "fixed": true, "regression_test": true},
+    {"id": "IR-03", "class": "NON_REGULAR_STORE_PATH", "reproduced": true, "fixed": true, "regression_test": true},
+    {"id": "IR-04", "class": "UNBOUNDED_METRICS_MEMORY", "reproduced": true, "fixed": true, "regression_test": true},
+    {"id": "IR-05", "class": "FORGED_ACCEPTED_DECISION", "reproduced": true, "fixed": true, "regression_test": true},
+    {"id": "IR-06", "class": "STATE_COUNT_CONTRADICTION", "reproduced": true, "fixed": true, "regression_test": true},
+    {"id": "IR-07", "class": "MALFORMED_RESTORE_MANIFEST_ERROR_SURFACE", "reproduced": true, "fixed": true, "regression_test": true}
+  ],
+  "post_fix_validation": {
+    "full_tests": "531/531 PASS",
+    "focused_telemetry_tests": "197/197 PASS",
+    "validators": "35/35 PASS",
+    "telemetry_validator": "25/25 PASS",
+    "focused_coverage_percent": 86,
+    "bandit": {"version": "1.9.4", "production_loc": 5352, "findings": 0},
+    "pip_audit": {"version": "2.10.0", "locked_dependencies": 7, "known_vulnerabilities": 0},
+    "otel_authorized_cases": "68/68 PASS",
+    "otel_blocked_cases": 23,
+    "reproducible_wheel_sha256": "240828497ab265d3703f60ce5d71c2d49bc623c092ad607d8b2f8762ffc42e41",
+    "rollback_result": "PASS",
+    "exact_source_load_profiles_completed": ["TA-P001", "TA-P002", "TA-P003", "TA-P004"],
+    "ta_p005_one_hour_profile_reexecuted": false
+  },
+  "open_boundaries": [
+    "PR_G2A_HUMAN_REVIEW_NOT_APPROVED",
+    "PR_G2B_NOT_COMPLETE",
+    "PR_G2T_NOT_COMPLETE",
+    "PR_G2I_NOT_COMPLETE",
+    "PR_G2C_NOT_COMPLETE",
+    "DQ_020_DEPLOYMENT_CASES_NOT_AUTHORIZED",
+    "INDEPENDENT_HUMAN_SECURITY_REVIEW_NOT_COMPLETE",
+    "CROSS_PLATFORM_VALIDATION_NOT_COMPLETE",
+    "HUMAN_ROLLBACK_SWITCH_NOT_COMPLETE"
+  ],
+  "unresolved_critical_or_high_in_exact_offline_scope": 0,
+  "pr_g2a_human_review_approved": false,
+  "full_pr_g2_ready": false,
+  "production_ready": false,
+  "effects": {
+    "agent_created": false,
+    "runtime_created": false,
+    "entity_created": false,
+    "permission_created": false,
+    "evidence_created": false,
+    "collector_created": false,
+    "network_endpoint_created": false,
+    "saee_called": false
+  }
+}

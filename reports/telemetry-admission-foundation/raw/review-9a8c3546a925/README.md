@@ -1,13 +1,14 @@
-# Exact Source Clean Clone Receipt Index
+# Historical Exact Source Clean Clone Receipt Index
 
 ```text
 source_commit=a3e491c954e911d84baa09fd6d9466fb80280941
 implementation_manifest=sha256:9a8c3546a925812f0da86dad6cd09aa4680b2b29b734cd07dcfa9bc51f8dfe95
-status=PASS_READY_FOR_PR_G2_HUMAN_REVIEW
+status=SUPERSEDED_BY_FDDA745C3907_PR_G2A_RECEIPT
 production_ready=false
 ```
 
-当前精确源码回执由父目录中的以下文件承载：
+本索引对应已被后续安全加固提交替代的历史源码。当前规范化入口见
+[`review-fdda745c3907/`](../review-fdda745c3907/)。以下链接保留用于追溯：
 
 - [`DBOS-PR-2A-CLEAN-CLONE-VALIDATION-2026-07-22.json`](../../DBOS-PR-2A-CLEAN-CLONE-VALIDATION-2026-07-22.json)
 - [`DBOS-PR-2A-CLEAN-CLONE-VALIDATION-2026-07-22.md`](../../DBOS-PR-2A-CLEAN-CLONE-VALIDATION-2026-07-22.md)

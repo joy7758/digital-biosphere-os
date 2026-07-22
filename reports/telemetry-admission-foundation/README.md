@@ -2,35 +2,35 @@
 
 ```text
 decision_reference=DQ-018
-source_commit=a3e491c954e911d84baa09fd6d9466fb80280941
-implementation_manifest=sha256:9a8c3546a925812f0da86dad6cd09aa4680b2b29b734cd07dcfa9bc51f8dfe95
+review_gate=PR-G2A
+source_commit=5c52c1c2f44767c0b13b4ac9670425721b9ea0dd
+implementation_manifest=sha256:fdda745c3907e35ac92769740f07afc81483be674568879a3c0314c2a09baa51
 clean_clone_result=PASS
-pr_g2_ready_for_human_review=true
-pr_g2_human_review_approved=false
+pr_g2a_ready_for_human_review=true
+pr_g2a_human_review_approved=false
+full_pr_g2_ready=false
 production_ready=false
 ```
 
 ## Agent Reading Order（智能体读取顺序）
 
-1. [`DBOS-PR-2A-PR-G2-REVIEW-PACKET-2026-07-22.json`](DBOS-PR-2A-PR-G2-REVIEW-PACKET-2026-07-22.json)：当前十项验收条件与下一人工 gate；
-2. [`DBOS-PR-2A-CLEAN-CLONE-VALIDATION-2026-07-22.json`](DBOS-PR-2A-CLEAN-CLONE-VALIDATION-2026-07-22.json)：精确远端源码、测试、OTel、回退、安全和 wheel 结果；
-3. [`raw/review-9a8c3546a925/`](raw/review-9a8c3546a925/)：当前 exact-source receipt index（精确源码回执索引）；
-4. [`DBOS-PR-2A-SBOM.cdx.json`](DBOS-PR-2A-SBOM.cdx.json)：依赖拓扑 SBOM；不代表 artifact 签名或发布；
-5. `f09e99…` 与 raw 根目录结果：仅历史回执。
+1. [`DBOS-PR-2A-PR-G2A-REVIEW-PACKET-2026-07-22.json`](DBOS-PR-2A-PR-G2A-REVIEW-PACKET-2026-07-22.json)：当前切片、闸门和完整 PR-G2 阻塞项；
+2. [`DBOS-PR-2A-INDEPENDENT-TECHNICAL-REVIEW-2026-07-22.json`](DBOS-PR-2A-INDEPENDENT-TECHNICAL-REVIEW-2026-07-22.json)：七项发现、关闭状态和剩余风险；
+3. [`DBOS-PR-2A-CLEAN-CLONE-VALIDATION-2026-07-22.json`](DBOS-PR-2A-CLEAN-CLONE-VALIDATION-2026-07-22.json)：精确远端源码、测试、OTel、恢复、供应链和 wheel；
+4. [`DBOS-PR-2A-SBOM.cdx.json`](DBOS-PR-2A-SBOM.cdx.json)：依赖拓扑 SBOM；不代表签名或发布；
+5. `9a8c3546…`、`f09e99…` 及旧 `PR-G2` 文件：仅历史／已被替代回执。
 
 ## Current Boundary（当前边界）
 
-当前候选只有离线、metadata-only Telemetry Admission reference conformance（参考符合性）。
-没有 OTLP listener、Collector configuration/deployment、production persistence、canonical
+当前候选是离线、metadata-only Telemetry Admission reference conformance（参考符合性），
+对应 `PR-G2A`。没有 OTLP listener、Collector deployment、production persistence、canonical
 Evidence、Agent、Runtime、Entity、Capability、Permission、Execution、Verification 或 SAEE
 调用。DQ-020 的 23 个部署用例没有执行。
 
-`READY_FOR_PR_G2_HUMAN_REVIEW` 只表示审查材料齐备。任何 `PASS` 都不等于 Human
-Approval、merge、release、deployment 或 Production Ready。
+`READY_FOR_PR_G2A_HUMAN_REVIEW` 仅表示材料可审查。它不等于 Human Approval、完整
+`PR-G2`、merge、release、deployment 或 Production Ready。
 
 ## Historical Boundary（历史边界）
 
-旧 `f09e99…` 清单遗漏三个 SQL migrations。相关测试、负载、安全和制品回执不删除，
-但明确标记为 historical incomplete-scope receipts（历史不完整范围回执）。当前
-exact source load characterization（精确源码负载表征）没有重跑，因此旧数据不能用作当前
-性能、容量或 SLO 声明。
+旧 `PR-G2` 命名把 S1 离线切片误写为完整 gate，已由 `PR-G2A` 回执纠正。旧文件不删除，
+但明确标记 `SUPERSEDED`。旧清单与旧负载数据不能作为当前源码的性能或容量声明。

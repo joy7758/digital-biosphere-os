@@ -1,0 +1,18 @@
+{
+  "report_schema_version": "0.1",
+  "report_id": "DBOS-PR-2A-PR-G2A-REVIEW-PACKET-2026-07-22",
+  "decision_reference": "DQ-018",
+  "review_gate": "PR-G2A",
+  "status": "READY_FOR_PR_G2A_HUMAN_REVIEW",
+  "exact_source_commit": "5c52c1c2f44767c0b13b4ac9670425721b9ea0dd",
+  "implementation_manifest_sha256": "fdda745c3907e35ac92769740f07afc81483be674568879a3c0314c2a09baa51",
+  "clean_clone_result": "PASS",
+  "independent_review_verdict": "RECOMMENDED_FOR_PR_G2A_HUMAN_REVIEW",
+  "pr_g2a_human_review_approved": false,
+  "full_pr_g2_ready": false,
+  "full_pr_g2_blocked_by": ["PR-G2B", "PR-G2T", "PR-G2I", "PR-G2C"],
+  "production_ready": false,
+  "release_authorized": false,
+  "deployment_authorized": false,
+  "next_required_action": "PR_G2A_HUMAN_REVIEW"
+}
