@@ -1,10 +1,18 @@
 {
   "contract_id": "DBOS-TA-LOAD-CHARACTERIZATION-0.1",
+  "contract_revision": "0.1.1",
+  "supersedes_contract_digest": "sha256:b817493ba4c5381dfe26cb042832b75a7f4d4c75f3948ba8d104e37f49f54e91",
+  "change_reason": "REMOVE_CONCURRENT_TRACEMALLOC_OBSERVER_EFFECT",
   "decision_reference": "DQ-018",
   "frozen_before_execution": true,
   "result_semantics": "CHARACTERIZATION_NOT_SLO",
   "backend_scope": "SQLITE_SINGLE_HOST_REFERENCE_ONLY",
   "pass_fail_thresholds": null,
+  "measurement_controls": {
+    "concurrent_python_allocation_tracing": "DISABLED_TO_AVOID_OBSERVER_EFFECT",
+    "process_max_rss_retained": true,
+    "disabled_metric_representation": null
+  },
   "authority_effects": {
     "agent_created": false,
     "runtime_created": false,
@@ -33,7 +41,8 @@
     "TA-P003": {
       "workers": 32,
       "duration_seconds": 300,
-      "target_operations_per_second": 64
+      "target_operations_per_second": 64,
+      "python_allocation_tracing": false
     },
     "TA-P004": {
       "unique_admissions": 1000,

@@ -182,12 +182,22 @@ def _authority_effects() -> dict[str, bool]:
     }
 
 
-def _run_metrics(started_wall: float, started_cpu: float) -> dict[str, Any]:
-    _, peak = tracemalloc.get_traced_memory()
+def _run_metrics(
+    started_wall: float,
+    started_cpu: float,
+    *,
+    python_allocation_tracing: bool,
+) -> dict[str, Any]:
+    peak: int | None = None
+    if python_allocation_tracing:
+        if not tracemalloc.is_tracing():
+            raise RuntimeError("python allocation tracing was not started")
+        _, peak = tracemalloc.get_traced_memory()
     usage = resource.getrusage(resource.RUSAGE_SELF)
     return {
         "wall_seconds": round(time.perf_counter() - started_wall, 6),
         "cpu_seconds": round(time.process_time() - started_cpu, 6),
+        "python_allocation_tracing": python_allocation_tracing,
         "python_tracemalloc_peak_bytes": peak,
         "process_max_rss_native_units": usage.ru_maxrss,
     }
@@ -304,7 +314,7 @@ def characterize_p001(directory: Path, count: int) -> dict[str, Any]:
         result = service.admit(_envelope(index))
         latencies.append(time.perf_counter() - started)
         states[result.state] = states.get(result.state, 0) + 1
-    metrics = _run_metrics(started_wall, started_cpu)
+    metrics = _run_metrics(started_wall, started_cpu, python_allocation_tracing=True)
     tracemalloc.stop()
     return {
         **_base_result("TA-P001", {"unique_admissions": count, "workers": 1}),
@@ -344,7 +354,7 @@ def characterize_p002(directory: Path, originals: int, retries: int) -> dict[str
         )
         latencies.append(time.perf_counter() - started)
         confirmed += int(result.state == "DUPLICATE_CONFIRMED")
-    metrics = _run_metrics(started_wall, started_cpu)
+    metrics = _run_metrics(started_wall, started_cpu, python_allocation_tracing=True)
     tracemalloc.stop()
     after = store.counts()
     return {
@@ -410,14 +420,12 @@ def characterize_p003(
                 if remaining > 0:
                     time.sleep(remaining)
 
-    tracemalloc.start()
     started_wall, started_cpu = time.perf_counter(), time.process_time()
     with ThreadPoolExecutor(max_workers=workers) as executor:
         futures = [executor.submit(worker, index) for index in range(workers)]
         for future in futures:
             future.result()
-    metrics = _run_metrics(started_wall, started_cpu)
-    tracemalloc.stop()
+    metrics = _run_metrics(started_wall, started_cpu, python_allocation_tracing=False)
     store = SQLiteTelemetryAdmissionStore(path)
     return {
         **_base_result(
@@ -430,6 +438,9 @@ def characterize_p003(
         ),
         "measurements": {
             **metrics,
+            "observer_effect_control": (
+                "CONCURRENT_TRACEMALLOC_DISABLED_PROCESS_MAX_RSS_RETAINED"
+            ),
             **_latencies(latencies),
             **_file_sizes(path),
             "operations": len(latencies),
@@ -587,7 +598,7 @@ def characterize_p005(
             remaining = operation_started + interval - time.perf_counter()
             if remaining > 0:
                 time.sleep(remaining)
-    metrics = _run_metrics(started_wall, started_cpu)
+    metrics = _run_metrics(started_wall, started_cpu, python_allocation_tracing=True)
     tracemalloc.stop()
     final = store.integrity_report()
     return {

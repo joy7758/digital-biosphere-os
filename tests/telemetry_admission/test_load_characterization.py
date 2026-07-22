@@ -29,9 +29,23 @@ from tools.telemetry_admission_characterize import (
 class LoadCharacterizationHarnessTests(unittest.TestCase):
     def test_contract_freezes_exact_workloads_without_posthoc_thresholds(self) -> None:
         contract = json.loads(CONTRACT_PATH.read_text(encoding="utf-8"))
+        self.assertEqual(contract["contract_revision"], "0.1.1")
+        self.assertEqual(
+            contract["supersedes_contract_digest"],
+            "sha256:b817493ba4c5381dfe26cb042832b75a7f4d4c75f3948ba8d104e37f49f54e91",
+        )
+        self.assertEqual(
+            contract["change_reason"],
+            "REMOVE_CONCURRENT_TRACEMALLOC_OBSERVER_EFFECT",
+        )
         self.assertTrue(contract["frozen_before_execution"])
         self.assertEqual(contract["result_semantics"], "CHARACTERIZATION_NOT_SLO")
         self.assertIsNone(contract["pass_fail_thresholds"])
+        self.assertEqual(
+            contract["measurement_controls"]["concurrent_python_allocation_tracing"],
+            "DISABLED_TO_AVOID_OBSERVER_EFFECT",
+        )
+        self.assertFalse(contract["workloads"]["TA-P003"]["python_allocation_tracing"])
         self.assertEqual(
             set(contract["workloads"]), {f"TA-P00{i}" for i in range(1, 6)}
         )
@@ -51,9 +65,21 @@ class LoadCharacterizationHarnessTests(unittest.TestCase):
         self.assertEqual(result["measurements"]["lifecycle_growth"], 0)
 
     def test_small_concurrency_backup_and_soak_runs_remain_integral(self) -> None:
-        with tempfile.TemporaryDirectory(prefix="dbos-ta-p003-test-") as temporary:
+        with (
+            tempfile.TemporaryDirectory(prefix="dbos-ta-p003-test-") as temporary,
+            patch(
+                "tools.telemetry_admission_characterize.tracemalloc.start"
+            ) as tracing_start,
+        ):
             result = characterize_p003(Path(temporary), 2, 0.1, 20)
+        tracing_start.assert_not_called()
         self.assertEqual(result["measurements"]["integrity"]["status"], "PASS")
+        self.assertFalse(result["measurements"]["python_allocation_tracing"])
+        self.assertIsNone(result["measurements"]["python_tracemalloc_peak_bytes"])
+        self.assertEqual(
+            result["measurements"]["observer_effect_control"],
+            "CONCURRENT_TRACEMALLOC_DISABLED_PROCESS_MAX_RSS_RETAINED",
+        )
 
         with tempfile.TemporaryDirectory(prefix="dbos-ta-p004-test-") as temporary:
             result = characterize_p004(Path(temporary), 20, 2)
