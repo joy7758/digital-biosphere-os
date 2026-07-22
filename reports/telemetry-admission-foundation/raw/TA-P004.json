@@ -1,0 +1,80 @@
+{
+  "authority_effects": {
+    "agent_created": false,
+    "entity_created": false,
+    "evidence_created": false,
+    "permission_granted": false,
+    "runtime_created": false,
+    "saee_invoked": false
+  },
+  "backend_scope": "SQLITE_SINGLE_HOST_REFERENCE_ONLY",
+  "case_id": "TA-P004",
+  "environment": {
+    "cpu_count": 10,
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python_version": "3.12.13",
+    "sqlite_version": "3.50.4"
+  },
+  "measurements": {
+    "backup_latency": {
+      "max_ms": 40.523583,
+      "mean_ms": 21.3276,
+      "p50_ms": 18.352375,
+      "p95_ms": 35.86792,
+      "p99_ms": 39.59245
+    },
+    "backups_completed": 10,
+    "database_bytes": 7946240,
+    "integrity": {
+      "counts": {
+        "admission_lifecycles": 1000,
+        "admission_records": 3000,
+        "backup_manifests": 10,
+        "intake_receipts": 1000,
+        "observation_envelopes": 1000,
+        "untrusted_idempotency_hints": 1000
+      },
+      "errors": [],
+      "migration_checksums": {
+        "0001": "sha256:a347ab62ff44635794ffa010e1a83251a1c0fc35f47f3cf3707aab5a49197760"
+      },
+      "missing_expected_receipt_count": 0,
+      "repair_performed": false,
+      "schema_version": "0.1.0",
+      "status": "PASS",
+      "store_configuration": {
+        "busy_timeout_ms": 5000,
+        "foreign_keys": 1,
+        "journal_mode": "wal",
+        "synchronous": 2
+      }
+    },
+    "restore_pass_rate": 1.0,
+    "restore_passes": 10,
+    "shm_bytes": 0,
+    "store_counts": {
+      "admission_lifecycles": 1000,
+      "admission_records": 3000,
+      "backup_manifests": 10,
+      "intake_receipts": 1000,
+      "observation_envelopes": 1000,
+      "untrusted_idempotency_hints": 1000
+    },
+    "wal_bytes": 0,
+    "write_latency": {
+      "max_ms": 9.865208,
+      "mean_ms": 2.229509,
+      "p50_ms": 2.098395,
+      "p95_ms": 3.243579,
+      "p99_ms": 5.568872
+    },
+    "writer_errors": [],
+    "writes": 1000
+  },
+  "parameters": {
+    "backup_count": 10,
+    "unique_admissions": 1000,
+    "writer_workers": 1
+  },
+  "result_semantics": "CHARACTERIZATION_NOT_SLO"
+}

@@ -1,0 +1,340 @@
+{
+  "superseded": true,
+  "superseded_by": "DBOS-PR-2A-CLEAN-CLONE-VALIDATION-2026-07-22.json",
+  "applies_to_current_exact_source": false,
+  "historical_manifest_scope": "F09E99_INCOMPLETE_THREE_SQL_MIGRATIONS_OMITTED",
+  "report_id": "DBOS-PR-2A-PRODUCTION-EVIDENCE-2026-07-22",
+  "report_time": "2026-07-22T10:36:42Z",
+  "slice_id": "DBOS-PR-2A-TELEMETRY-ADMISSION-FOUNDATION",
+  "result": "LOCAL_DQ018_AUTHORIZED_SUBSET_PASS",
+  "result_semantics": "LOCAL_REVIEW_INPUT_NOT_GATE_APPROVAL_NOT_PRODUCTION_READY",
+  "authorization": {
+    "decision_reference": "DQ-018",
+    "decision": "AUTHORIZE_DBOS_PR_2A_TELEMETRY_ADMISSION_FOUNDATION",
+    "decided_by_ref": "zhangbin",
+    "dbos_domain_owner_ref": "zhangbin",
+    "implementation_authorized": true,
+    "commit_authorized": false,
+    "push_authorized": false,
+    "deployment_authorized": false,
+    "dq_020_authorized": false
+  },
+  "adopted_reference_baselines": {
+    "DQ-022": "OTLP_1_11_0_REFERENCE_BASELINE",
+    "DQ-023": "OTEL_SEMCONV_1_43_CORE_AND_PINNED_GENAI_MAPPING",
+    "DQ-024": "OTEL_SCHEMA_RESOURCE_1_59_AND_QUARANTINE_DEVELOPMENT_ENTITY",
+    "DQ-025": "OTEL_COLLECTOR_V0_156_CUSTOM_MINIMAL_INVENTORY",
+    "ADR-024": "ACCEPT_STAGED_TELEMETRY_PRODUCTION_PATH"
+  },
+  "source_bindings": {
+    "dbos_base_commit": "cd3f867c4379ec555c45e7d554088ad12ce08a24",
+    "dbos_branch": "codex/telemetry-admission-foundation",
+    "dbos_source_state": "UNCOMMITTED_LOCAL_WORKTREE",
+    "source_commit_includes_current_implementation": false,
+    "implementation_manifest_algorithm": "sha256-canonical-file-inventory-v1",
+    "implementation_manifest_sha256": "f09e99b95a3332d40abc933eaee35ea8a646b11d330ffaa5213ee0bb28f339b4",
+    "implementation_file_count": 53,
+    "implementation_bytes": 698231,
+    "reports_excluded_from_manifest": true
+  },
+  "opentelemetry_reference_bindings": {
+    "otel_spec": "v1.59.0@a824dcfad3650dc648e950359ad5933e9393a1a8",
+    "otel_semconv_core": "v1.43.0@89aa8bb273254154b402ddd0edc08a2015db9ab5",
+    "otel_genai_mapping": "2e994c5f2d3c3bfc4245f6801404895bc96db696",
+    "otlp": "v1.11.0@79060837ccd9a934147a39a4649d5f214e27616c",
+    "otel_schema_url": "https://opentelemetry.io/schemas/1.43.0",
+    "otel_schema_file_format": "1.1.0",
+    "profile_artifact_sha256": {
+      "opentelemetry-semantic-mapping.v0.1.json": "b81213505b1a7c3841ba298545b642b127af1a96ec906536be27caab351de706",
+      "opentelemetry-semantic-conformance-cases.v0.1.json": "18b84edf6e8b618991c2dfd669d21794c3a3032188e198b7fd53899205b66c6e",
+      "opentelemetry-schema-resource-conformance-cases.v0.1.json": "805374a196f533d8b2c56492faeb566e05dd744edd0e519155442fcc50f8f452",
+      "opentelemetry-schema-1.43.0.yaml": "6ac5dd367ff707dbcdcb1e5b459d4ac2fd676fb44eb17a21f9494a9fee4233df",
+      "opentelemetry-semantic-conformance-result-set.schema.v0.1.json": "33fa128aa8063d8f4861f8abda23d9b48151f1a6529752848adaef3ea49f6f15",
+      "opentelemetry-schema-resource-conformance-result-set.schema.v0.1.json": "11a744b089bfab132f96825e5f10ce613d8d0b7ff145919fdff4bdb06c5112ee"
+    }
+  },
+  "conformance": {
+    "local_report_schema": "DBOS_LOCAL_AUTHORIZED_SUBSET_RECEIPT_0.1",
+    "authorized_subset_result": "PASS",
+    "full_catalog_result": "BLOCKED",
+    "production_ready": false,
+    "official_result_schema_meta_validation": "PASS",
+    "official_full_result_sets_emitted": false,
+    "semantic": {
+      "mapping_field_count": 47,
+      "catalog_case_count": 46,
+      "authorized_case_count": 32,
+      "authorized_passed": 32,
+      "authorized_failed": 0,
+      "blocked_not_authorized_count": 14,
+      "blocked_case_ids": [
+        "SEM-CF-SENS-001",
+        "SEM-CF-SENS-002",
+        "SEM-CF-SENS-003",
+        "SEM-CF-SENS-004",
+        "SEM-CF-SENS-005",
+        "SEM-CF-SENS-006",
+        "SEM-CF-SENS-007",
+        "SEM-CF-SENS-008",
+        "SEM-CF-SENS-009",
+        "SEM-CF-SENS-010",
+        "SEM-CF-CARD-001",
+        "SEM-CF-CARD-002",
+        "SEM-CF-CARD-003",
+        "SEM-CF-CARD-004"
+      ]
+    },
+    "schema_resource": {
+      "catalog_case_count": 45,
+      "authorized_case_count": 36,
+      "authorized_passed": 36,
+      "authorized_failed": 0,
+      "blocked_not_authorized_count": 9,
+      "blocked_case_ids": [
+        "OSR-CF-SRC-003",
+        "OSR-CF-SRC-005",
+        "OSR-CF-SRC-006",
+        "OSR-CF-SRC-007",
+        "OSR-CF-SRC-008",
+        "OSR-CF-PRE-005",
+        "OSR-CF-RES-007",
+        "OSR-CF-DATA-003",
+        "OSR-CF-DATA-005"
+      ]
+    },
+    "block_reason": "DQ_020_PR_G3_DEPLOYMENT_CASES_NOT_AUTHORIZED_AND_NOT_EXECUTED"
+  },
+  "validation": {
+    "all_dbos_tests": "523/523 PASS",
+    "test_directory_count": 16,
+    "focused_telemetry_tests": "189/189 PASS",
+    "validators": "35/35 PASS",
+    "telemetry_validator": "25/25 PASS",
+    "targeted_ruff_check": "PASS",
+    "targeted_ruff_format": "PASS",
+    "whole_repository_ruff": {
+      "result": "FAIL_PRE_EXISTING_OUT_OF_SCOPE_DEBT",
+      "finding_count": 39,
+      "telemetry_slice_finding_count": 0
+    },
+    "coverage_characterization": {
+      "threshold_frozen_before_run": false,
+      "result_semantics": "CHARACTERIZATION_NOT_GATE",
+      "statement_count": 1827,
+      "missing_statement_count": 252,
+      "branch_count": 658,
+      "partial_branch_count": 172,
+      "coverage_percent": 82
+    }
+  },
+  "load_characterization": {
+    "contract_sha256": "b817493ba4c5381dfe26cb042832b75a7f4d4c75f3948ba8d104e37f49f54e91",
+    "result_semantics": "CHARACTERIZATION_NOT_SLO",
+    "backend_scope": "SQLITE_SINGLE_HOST_REFERENCE_ONLY",
+    "pass_fail_thresholds": null,
+    "environment": {
+      "python_version": "3.12.13",
+      "sqlite_version": "3.50.4",
+      "platform": "macOS-26.5.2-arm64-arm-64bit",
+      "cpu_count": 10
+    },
+    "runs": {
+      "TA-P001": {
+        "operations": 10000,
+        "wall_seconds": 46.001634,
+        "p50_ms": 3.656895,
+        "p95_ms": 6.87502,
+        "p99_ms": 23.179435,
+        "integrity": "PASS",
+        "recorded_errors": 0
+      },
+      "TA-P002": {
+        "original_admissions": 1000,
+        "confirmed_retries": 10000,
+        "wall_seconds": 29.529154,
+        "duplicate_accuracy": 1.0,
+        "lifecycle_growth": 0,
+        "p95_ms": 4.412197,
+        "integrity": "PASS",
+        "recorded_errors": 0
+      },
+      "TA-P003": {
+        "workers": 32,
+        "duration_seconds": 300,
+        "operations": 19061,
+        "observed_operations_per_second": 63.42957639851384,
+        "p50_ms": 6.888042,
+        "p95_ms": 79.957709,
+        "p99_ms": 211.637292,
+        "integrity": "PASS",
+        "recorded_errors": 0
+      },
+      "TA-P004": {
+        "writes": 1000,
+        "backups_completed": 10,
+        "restore_passes": 10,
+        "restore_pass_rate": 1.0,
+        "writer_errors": 0,
+        "integrity": "PASS"
+      },
+      "TA-P005": {
+        "duration_seconds": 3600,
+        "wall_seconds": 3600.083674,
+        "operations": 17260,
+        "accepted": 12082,
+        "rejected": 3452,
+        "confirmed_duplicates": 1726,
+        "periodic_integrity_checks": 59,
+        "periodic_integrity_failures": 0,
+        "final_integrity": "PASS",
+        "recorded_errors": 0,
+        "p50_ms": 11.078729,
+        "p95_ms": 16.09301,
+        "p99_ms": 23.899769
+      }
+    },
+    "source_binding": {
+      "implementation_manifest_sha256": "f09e99b95a3332d40abc933eaee35ea8a646b11d330ffaa5213ee0bb28f339b4",
+      "all_runs_source_stable": true,
+      "all_runs_binding_result": "5/5 PASS",
+      "result_artifact_directory": "raw/current-f09e99b95a33",
+      "result_artifact_mode": "0o600",
+      "overwrite_permitted": false
+    },
+    "result_artifact_sha256": {
+      "TA-P001": "bc9d97dc7627a71256362ba1b4773a5e0832a57e3d9a9a8ce267f2795c3b018e",
+      "TA-P002": "92d8c5c362eb2c790c2d117ef99e994bd7970822a5137b25f4bb2c6444f64705",
+      "TA-P003": "8650c4805127db373dcb83d31bd528c6bd7899eaf94ef04b370e7f4ffc80eb3f",
+      "TA-P004": "0981676d5f9fd2a7c0f3eb6fab56e49c77997af610adf9e1b4308ee75045b81b",
+      "TA-P005": "14dfdbada26bc60e32c77f510a11362ba3d2fbb523e68c695089bfbabf0f0536"
+    }
+  },
+  "security_and_supply_chain": {
+    "bandit_version": "1.9.4",
+    "bandit_scanned_loc": 5263,
+    "bandit_findings": 0,
+    "bandit_nosec": 0,
+    "bandit_skipped_tests": 0,
+    "pip_check": "PASS",
+    "pip_audit_version": "2.10.1",
+    "runtime_dependency_count": 7,
+    "runtime_dependency_known_vulnerabilities": 0,
+    "root_package_database_status": "NOT_AUDITABLE_BY_PYPI_NOT_PUBLISHED",
+    "independent_security_review_complete": false,
+    "sbom": {
+      "format": "CycloneDX",
+      "spec_version": "1.6",
+      "schema_validation": "PASS",
+      "component_count": 8,
+      "dependency_count": 9,
+      "sha256": "70c21af4ab70e72df7a42029c11e6a888a78a58d86cdaea0fdb305a50df62c95"
+    },
+    "supply_chain_locking": {
+      "environment": "CPython_3.12_MACOS_11_PLUS_ARM64",
+      "cross_platform_claim": false,
+      "runtime_package_count": 7,
+      "build_package_count": 5,
+      "runtime_lock_sha256": "13a50e3f657af397b77809c7e00ceaef343b26bd111781376de5d04af36ada8d",
+      "build_lock_sha256": "1cea23a952436c9e226278bb037a803510d3e5f16ae984891420de5a5dcea95c",
+      "installation_instructions_sha256": "6126401c4bc81398bf585566c8cebea4f3c9d117d5d7cbcbf9740537fc812675",
+      "build_backend": "setuptools==83.0.0",
+      "source_date_epoch": 1784678400,
+      "locked_offline_build_environment": "PASS",
+      "locked_offline_runtime_environment": "PASS",
+      "reproducible_clean_snapshot_builds": "2/2 BYTE_IDENTICAL",
+      "reproducible_wheel_sha256": "f15fb089b1dadcc1d8278cf0a8dbf4ff89ddfaf203f9f5b73fbecdce3b816660",
+      "full_wheel_is_dq018_only": false,
+      "wheel_build_input_file_count": 61,
+      "wheel_build_input_manifest_sha256": "cc217f3f5611dd60f9cf5fc5b6a7e5e925e167d82087456199cf71f7d565fb59",
+      "wheel_content_entry_count": 64,
+      "wheel_content_manifest_sha256": "47b861624780bde443710ca5e3c9069e4658c58f77b8cfa02aea0a3508fc0b87"
+    }
+  },
+  "artifact": {
+    "distribution_scope": "FULL_DBOS_PREVIEW_PACKAGE_NOT_DQ018_ONLY",
+    "wheel_name": "digital_biosphere_os_preview-0.1.0.dev0-py3-none-any.whl",
+    "wheel_sha256": "f15fb089b1dadcc1d8278cf0a8dbf4ff89ddfaf203f9f5b73fbecdce3b816660",
+    "wheel_size_bytes": 124813,
+    "wheel_retained_in_repository": false,
+    "isolated_install": "PASS",
+    "installed_import_source": "ISOLATED_SITE_PACKAGES",
+    "installed_profile_check": {
+      "mapping_fields": 47,
+      "semantic_cases": 46,
+      "schema_resource_cases": 45,
+      "otel_schema_file_format": "1.1.0"
+    },
+    "installed_pip_check": "PASS"
+  },
+  "recovery": {
+    "drill_id": "DBOS-TA-ROLLBACK-DRILL-0.1",
+    "result": "LOCAL_SYNTHETIC_PASS",
+    "admission_count": 25,
+    "acknowledged_receipt_count": 25,
+    "receipt_mismatch_count": 0,
+    "failed_source_retained_read_only": true,
+    "restore_destination_distinct": true,
+    "restored_integrity": "PASS",
+    "automatic_switch_performed": false,
+    "next_gate": "HUMAN_SWITCH_REQUIRED"
+  },
+  "effects": {
+    "agent_created": 0,
+    "runtime_created": 0,
+    "entity_created": 0,
+    "capability_created": 0,
+    "permission_created": 0,
+    "execution_created": 0,
+    "evidence_created": 0,
+    "verification_created": 0,
+    "collector_created": 0,
+    "network_endpoint_created": 0,
+    "saee_called": 0,
+    "gate_state_changed": 0,
+    "production_ready_declared": 0
+  },
+  "raw_result_directories": {
+    "historical_pre_semantic": {
+      "path": "raw/TA-P001.json through raw/TA-P005.json",
+      "status": "SUPERSEDED_PRE_SEMANTIC_MANIFEST",
+      "applies_to_current_manifest": false
+    },
+    "current": {
+      "path": "raw/current-f09e99b95a33",
+      "implementation_manifest_sha256": "f09e99b95a3332d40abc933eaee35ea8a646b11d330ffaa5213ee0bb28f339b4",
+      "result_artifact_count": 5,
+      "source_binding_pass_count": 5,
+      "mode": "0o600",
+      "overwrite_permitted": false,
+      "canonical_evidence": false
+    }
+  },
+  "exit_gate": {
+    "dq_018_authorized_subset_complete": true,
+    "exact_source_manifest_present": true,
+    "exact_source_commit_present": false,
+    "authorized_semantic_subset_pass": true,
+    "authorized_schema_resource_subset_pass": true,
+    "full_semantic_catalog_pass": false,
+    "full_schema_resource_catalog_pass": false,
+    "dq_020_cases_executed": false,
+    "independent_security_review_complete": false,
+    "human_rollback_switch_exercise_complete": false,
+    "pr_g2_ready_for_review": false,
+    "production_ready": false
+  },
+  "open_findings": [
+    "SOURCE_WORKTREE_NOT_COMMITTED_OR_PUSHED",
+    "EXACT_SOURCE_COMMIT_MISSING",
+    "DQ_020_PR_G3_NETWORK_COLLECTOR_DEPLOYMENT_CASES_NOT_AUTHORIZED",
+    "FULL_PROGRAM_CONFORMANCE_CATALOGS_BLOCKED",
+    "INDEPENDENT_SECURITY_REVIEW_NOT_COMPLETE",
+    "PERFORMANCE_THRESHOLDS_NOT_OWNER_FROZEN_RESULTS_ARE_CHARACTERIZATION_ONLY",
+    "HUMAN_ROLLBACK_SWITCH_EXERCISE_NOT_COMPLETE",
+    "PRODUCTION_PERSISTENCE_BACKEND_NOT_SELECTED",
+    "CROSS_PLATFORM_DEPENDENCY_LOCKS_NOT_GENERATED",
+    "RESULT_ARTIFACT_0600_MODE_NOT_PRESERVED_BY_GIT_CHECKOUT",
+    "WHOLE_REPOSITORY_PRE_EXISTING_RUFF_DEBT_39",
+    "DBA_PR_G2_HUMAN_REVIEW_NOT_PERFORMED"
+  ]
+}

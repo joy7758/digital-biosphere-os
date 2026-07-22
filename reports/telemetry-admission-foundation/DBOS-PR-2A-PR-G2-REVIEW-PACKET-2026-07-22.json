@@ -1,0 +1,159 @@
+{
+  "packet_schema_version": "0.1",
+  "packet_id": "DBOS-PR-2A-PR-G2-REVIEW-PACKET-2026-07-22",
+  "observed_at": "2026-07-22T11:29:19Z",
+  "primary_repository": "digital-biosphere-os",
+  "decision_reference": "DQ-018",
+  "review_gate": "PR-G2",
+  "status": "READY_FOR_PR_G2_HUMAN_REVIEW",
+  "result_semantics": "EXACT_REMOTE_SOURCE_CLEAN_CLONE_REVIEW_INPUT_NOT_GATE_APPROVAL_NOT_PRODUCTION_READY",
+  "human_authorization": {
+    "implementation_token": "DQ-018=AUTHORIZE_DBOS_PR_2A_TELEMETRY_ADMISSION_FOUNDATION",
+    "git_token": "DBOS_PR_2A_GIT=AUTHORIZE_COMMIT_AND_PUSH",
+    "decided_by_ref": "zhangbin",
+    "dbos_domain_owner_ref": "zhangbin",
+    "implementation_authorized": true,
+    "commit_authorized": true,
+    "push_authorized": true,
+    "pr_authorized": false,
+    "merge_authorized": false,
+    "deployment_authorized": false,
+    "dq_020_authorized": false
+  },
+  "architecture_binding": {
+    "repository": "digital-biosphere-architecture-specification",
+    "branch": "codex/production-observability-baseline",
+    "head_commit": "7f2d3a0e39f65a92b7a96ea899ca12e3c050a0db",
+    "authorization_record": "DBOS-PR-2A-GIT-AUTHORIZATION-RECORD.json",
+    "authorization_record_sha256": "a7b0e1b5e0aa8afc064ec6f633ae56805f32ab4eaba9367929f1343a15ab7cf4",
+    "foundation_specification_sha256": "a7a5f41a0be132969b0d7b3085df6b8febb7d6db1aa1d3f8ef00e7a5addf9ddc",
+    "conformance_recovery_plan_sha256": "b052cdc5aa92fe82d33c1d257c9449f5a8b7be971bb954c8a2bab46fb13cabc4"
+  },
+  "implementation_binding": {
+    "branch": "codex/telemetry-admission-foundation",
+    "base_commit": "cd3f867c4379ec555c45e7d554088ad12ce08a24",
+    "source_state": "COMMITTED_REMOTE_BRANCH_CLEAN_CLONE_VALIDATED",
+    "exact_source_commit": "a3e491c954e911d84baa09fd6d9466fb80280941",
+    "remote_source_commit": "a3e491c954e911d84baa09fd6d9466fb80280941",
+    "implementation_manifest_sha256": "9a8c3546a925812f0da86dad6cd09aa4680b2b29b734cd07dcfa9bc51f8dfe95",
+    "implementation_file_count": 56,
+    "implementation_bytes": 704010,
+    "manifest_reconciliation": "PASS",
+    "previous_incomplete_scope_manifest_sha256": "f09e99b95a3332d40abc933eaee35ea8a646b11d330ffaa5213ee0bb28f339b4"
+  },
+  "current_review_evidence": {
+    "validation_json": "DBOS-PR-2A-CLEAN-CLONE-VALIDATION-2026-07-22.json",
+    "validation_markdown": "DBOS-PR-2A-CLEAN-CLONE-VALIDATION-2026-07-22.md",
+    "receipt_index": "raw/review-9a8c3546a925/README.md",
+    "historical_f09_receipts_are_current_evidence": false
+  },
+  "agent_recommendation": {
+    "verdict": "RECOMMENDED_FOR_PR_G2_HUMAN_REVIEW",
+    "recommended_as": "OFFLINE_REFERENCE_CONFORMANCE_CANDIDATE",
+    "not_recommended_as": [
+      "PRODUCTION_TELEMETRY_SERVICE",
+      "OTLP_LISTENER",
+      "COLLECTOR_DEPLOYMENT",
+      "CANONICAL_EVIDENCE_PATH",
+      "PRODUCTION_READY_RELEASE"
+    ],
+    "reasons": [
+      "Exact source commit, remote branch, corrected manifest, clean clone tests, validators, OTel subsets, rollback, and reproducible wheel are now traceable.",
+      "The authorized slice remains offline, metadata-only, fail-closed, and zero-effect.",
+      "Production persistence, DQ-020 deployment cases, independent security review, cross-platform locks, and Human rollback switching remain open."
+    ]
+  },
+  "acceptance_criteria": [
+    {
+      "id": "TA-AC-01",
+      "status": "PASS",
+      "evidence": "Version-locked schemas, reason codes, state machine, three SQL migration files, and 25/25 telemetry validator checks."
+    },
+    {
+      "id": "TA-AC-02",
+      "status": "PASS_LOCAL_DIRECT_RECEIPTS",
+      "evidence": "189/189 telemetry tests, 32/32 Semantic cases, 36/36 Schema/Resource cases, and rollback PASS; 23 DQ-020 cases remain blocked."
+    },
+    {
+      "id": "TA-AC-03",
+      "status": "PASS",
+      "evidence": "523/523 tests across 16 directories and 35/35 validators from remote clean clone."
+    },
+    {
+      "id": "TA-AC-04",
+      "status": "PASS_LOCAL_ASSERTED_SCOPE",
+      "evidence": "All Agent, Runtime, Entity, Capability, Permission, Evidence, Collector, endpoint, and SAEE effect counts are zero."
+    },
+    {
+      "id": "TA-AC-05",
+      "status": "PASS_LOCAL_ASSERTED_SCOPE",
+      "evidence": "Authorized tests use metadata-only synthetic fixtures and reject sensitive content; no real telemetry claim is made."
+    },
+    {
+      "id": "TA-AC-06",
+      "status": "PASS_DECLARED_TEST_SCOPE",
+      "evidence": "Acknowledged synthetic records retain RPO=0 within the declared rollback test scope; no production RPO claim is made."
+    },
+    {
+      "id": "TA-AC-07",
+      "status": "PASS_LOCAL_SYNTHETIC",
+      "evidence": "Failed source retained, restore destination distinct, receipt mismatch zero, integrity PASS, and no automatic switch."
+    },
+    {
+      "id": "TA-AC-08",
+      "status": "PASS_LOCAL_SCAN_SCOPE",
+      "evidence": "Production slice Bandit 0 findings; seven locked dependencies 0 known vulnerabilities; independent review remains open."
+    },
+    {
+      "id": "TA-AC-09",
+      "status": "PASS",
+      "evidence": "DBA agent recommendation and Human DQ-018 authorization remain traceable on the production-observability baseline."
+    },
+    {
+      "id": "TA-AC-10",
+      "status": "PASS_EXACT_REMOTE_SOURCE_CLEAN_CLONE",
+      "evidence": "Exact source commit a3e491c954e911d84baa09fd6d9466fb80280941, manifest 9a8c3546..., byte-identical wheel 49d193a2..., and rollback trace are bound."
+    }
+  ],
+  "summary": {
+    "criteria_passed_or_locally_passed": 10,
+    "criteria_count": 10,
+    "criteria_blocked": 0,
+    "pr_g2_ready_for_review": true,
+    "pr_g2_human_review_approved": false,
+    "production_ready": false,
+    "full_catalog_result": "BLOCKED",
+    "dq_020_case_count_executed": 0
+  },
+  "next_required_action": {
+    "action": "PR_G2_HUMAN_REVIEW_REQUIRED",
+    "automatic_approval_allowed": false,
+    "pr_created": false,
+    "merge_allowed": false,
+    "release_allowed": false,
+    "deployment_allowed": false
+  },
+  "known_issues": [
+    "Production persistence backend remains unselected under DQ-019.",
+    "The exact dependency lock is CPython 3.12 macOS arm64 only.",
+    "Independent security review and Human rollback switch exercise remain open.",
+    "The 23 DQ-020 deployment cases remain blocked and unexecuted.",
+    "Current exact-commit load characterization was not rerun; f09e99 load receipts are historical only.",
+    "Whole-repository Ruff debt outside the telemetry slice remains out of scope."
+  ],
+  "effects": {
+    "agent_created": false,
+    "runtime_created": false,
+    "entity_created": false,
+    "capability_created": false,
+    "permission_created": false,
+    "execution_created": false,
+    "evidence_created": false,
+    "verification_created": false,
+    "collector_created": false,
+    "network_endpoint_created": false,
+    "saee_called": false,
+    "gate_state_changed": false,
+    "production_ready_declared": false
+  }
+}

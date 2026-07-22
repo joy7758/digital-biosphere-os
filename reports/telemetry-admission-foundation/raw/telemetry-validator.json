@@ -1,0 +1,43 @@
+{
+  "check_count": 12,
+  "checks": {
+    "acknowledged_receipt_continuity": true,
+    "authority_rejected": true,
+    "canary_absent": true,
+    "confirmed_replay": true,
+    "conformance_catalog_exact": true,
+    "load_contract_frozen_without_posthoc_thresholds": true,
+    "log_accepted": true,
+    "metric_accepted": true,
+    "profile_rejected": true,
+    "recovery_pass": true,
+    "sensitive_rejected": true,
+    "trace_accepted": true
+  },
+  "contract": "TMAI-DBOS-TELEMETRY-ADMISSION-FOUNDATION-0.1",
+  "errors": [],
+  "live_effect_counts": {
+    "agent": 0,
+    "capability": 0,
+    "collector": 0,
+    "entity": 0,
+    "evidence": 0,
+    "network_endpoint": 0,
+    "permission": 0,
+    "runtime": 0,
+    "saee_call": 0,
+    "verification": 0
+  },
+  "passed_check_count": 12,
+  "production_ready": false,
+  "status": "PASS",
+  "temporary_reference_store_counts": {
+    "admission_lifecycles": 2,
+    "admission_records": 7,
+    "backup_manifests": 1,
+    "intake_receipts": 2,
+    "observation_envelopes": 2,
+    "untrusted_idempotency_hints": 1
+  },
+  "temporary_store_removed": true
+}

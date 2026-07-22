@@ -1,0 +1,538 @@
+{
+  "receipt_schema_version": "0.1",
+  "receipt_id": "DBOS-WHEEL-CONTENT-MANIFEST-F15FB089B1DA",
+  "observed_at": "2026-07-22T10:36:42Z",
+  "build_a": {
+    "content_manifest_sha256": "47b861624780bde443710ca5e3c9069e4658c58f77b8cfa02aea0a3508fc0b87",
+    "entries": [
+      {
+        "compressed_bytes": 158,
+        "is_symlink": false,
+        "path": "adapters/__init__.py",
+        "sha256": "efb55fb9ef3ccef42c23113b8474d96c2df26687eac4e88519dd2976ebf42900",
+        "size_bytes": 211,
+        "unix_mode": "0o644"
+      },
+      {
+        "compressed_bytes": 387,
+        "is_symlink": false,
+        "path": "adapters/mcp/__init__.py",
+        "sha256": "3cfc9a56b8797bcec7b358a3755fcf5fff3e63c268a550294977bcdc7573145a",
+        "size_bytes": 879,
+        "unix_mode": "0o644"
+      },
+      {
+        "compressed_bytes": 927,
+        "is_symlink": false,
+        "path": "adapters/mcp/errors.py",
+        "sha256": "aa97ea6dbc62dc7dbfe42d5b194d0d401b8f4ffcd8439b80d8a6fe74f338283b",
+        "size_bytes": 2206,
+        "unix_mode": "0o644"
+      },
+      {
+        "compressed_bytes": 1812,
+        "is_symlink": false,
+        "path": "adapters/mcp/mapping.py",
+        "sha256": "df464cbe4164dd8139dab8fb3f8b03e1cd9a270e4e28d6f50c483b2761790bc2",
+        "size_bytes": 5326,
+        "unix_mode": "0o644"
+      },
+      {
+        "compressed_bytes": 3251,
+        "is_symlink": false,
+        "path": "adapters/mcp/tool_call_adapter.py",
+        "sha256": "1e806f834cdb8f8cc53e2dad6f2251df45e98ea074231897ab0146629bc112e4",
+        "size_bytes": 14069,
+        "unix_mode": "0o644"
+      },
+      {
+        "compressed_bytes": 517,
+        "is_symlink": false,
+        "path": "dbos/__init__.py",
+        "sha256": "eb752b87a09f5504041c9c8555e31ea21a1015ec256a760433db53c40a7b9cee",
+        "size_bytes": 1176,
+        "unix_mode": "0o644"
+      },
+      {
+        "compressed_bytes": 761,
+        "is_symlink": false,
+        "path": "dbos/telemetry_admission/__init__.py",
+        "sha256": "cb11cc76e08a43fe6b98226fad69ef2bfa3b9893ac6bd3f6e7d4026f6312bf8d",
+        "size_bytes": 1810,
+        "unix_mode": "0o644"
+      },
+      {
+        "compressed_bytes": 3104,
+        "is_symlink": false,
+        "path": "dbos/telemetry_admission/contracts.py",
+        "sha256": "4cac312168e672a9fbbf7f80ec7ea7a88b77ffff55bd48e7b9124d853cf3999d",
+        "size_bytes": 7909,
+        "unix_mode": "0o644"
+      },
+      {
+        "compressed_bytes": 1125,
+        "is_symlink": false,
+        "path": "dbos/telemetry_admission/metrics.py",
+        "sha256": "6491391b0b9b1e060d6e31e0abeae4ee8bb98152ad3a0b2866941b1b0ed6e568",
+        "size_bytes": 3251,
+        "unix_mode": "0o644"
+      },
+      {
+        "compressed_bytes": 370,
+        "is_symlink": false,
+        "path": "dbos/telemetry_admission/migrations/0000_prior_compatible.fixture.sql",
+        "sha256": "df6afeaece6bdf543741a0808ed509ceef3120c8d2e2ab3e5ab4ca60f3762402",
+        "size_bytes": 715,
+        "unix_mode": "0o644"
+      },
+      {
+        "compressed_bytes": 134,
+        "is_symlink": false,
+        "path": "dbos/telemetry_admission/migrations/0001_compatibility.sql",
+        "sha256": "13cfaf4c90b0160052bdf8a0ea44c56b8011610c4e7c9a84a4f0761fc5efdfbb",
+        "size_bytes": 185,
+        "unix_mode": "0o644"
+      },
+      {
+        "compressed_bytes": 866,
+        "is_symlink": false,
+        "path": "dbos/telemetry_admission/migrations/0001_initial.sql",
+        "sha256": "a347ab62ff44635794ffa010e1a83251a1c0fc35f47f3cf3707aab5a49197760",
+        "size_bytes": 4840,
+        "unix_mode": "0o644"
+      },
+      {
+        "compressed_bytes": 73,
+        "is_symlink": false,
+        "path": "dbos/telemetry_admission/migrations/__init__.py",
+        "sha256": "aff37030370bab5af2b75e53d7271d3efdf1b71536c300994de9334f73bd319c",
+        "size_bytes": 73,
+        "unix_mode": "0o644"
+      },
+      {
+        "compressed_bytes": 909,
+        "is_symlink": false,
+        "path": "dbos/telemetry_admission/models.py",
+        "sha256": "5bfc7376a2b91e1ec51d1c47e825f8577358a99bf9096ab1055e44efde755226",
+        "size_bytes": 2567,
+        "unix_mode": "0o644"
+      },
+      {
+        "compressed_bytes": 975,
+        "is_symlink": false,
+        "path": "dbos/telemetry_admission/profiles/README.md",
+        "sha256": "cd8f82fdf1f85834b0cb2bb143836655a522f60a2c63c75ea6f72d98611549de",
+        "size_bytes": 1839,
+        "unix_mode": "0o644"
+      },
+      {
+        "compressed_bytes": 521,
+        "is_symlink": false,
+        "path": "dbos/telemetry_admission/profiles/THIRD_PARTY_NOTICES.md",
+        "sha256": "768dd202edd51bf75f346e945b9f3d4a3ef6d884f62e63b7061ceb2f02a10ac8",
+        "size_bytes": 863,
+        "unix_mode": "0o644"
+      },
+      {
+        "compressed_bytes": 74,
+        "is_symlink": false,
+        "path": "dbos/telemetry_admission/profiles/__init__.py",
+        "sha256": "d280c0a0976f99a777cebb0753025cd5792e88775f924808cbd4f5626bef314d",
+        "size_bytes": 82,
+        "unix_mode": "0o644"
+      },
+      {
+        "compressed_bytes": 4599,
+        "is_symlink": false,
+        "path": "dbos/telemetry_admission/profiles/opentelemetry-schema-1.43.0.yaml",
+        "sha256": "6ac5dd367ff707dbcdcb1e5b459d4ac2fd676fb44eb17a21f9494a9fee4233df",
+        "size_bytes": 33432,
+        "unix_mode": "0o644"
+      },
+      {
+        "compressed_bytes": 8348,
+        "is_symlink": false,
+        "path": "dbos/telemetry_admission/profiles/opentelemetry-schema-resource-conformance-cases.v0.1.json",
+        "sha256": "805374a196f533d8b2c56492faeb566e05dd744edd0e519155442fcc50f8f452",
+        "size_bytes": 60951,
+        "unix_mode": "0o644"
+      },
+      {
+        "compressed_bytes": 5124,
+        "is_symlink": false,
+        "path": "dbos/telemetry_admission/profiles/opentelemetry-schema-resource-conformance-result-set.schema.v0.1.json",
+        "sha256": "11a744b089bfab132f96825e5f10ce613d8d0b7ff145919fdff4bdb06c5112ee",
+        "size_bytes": 41298,
+        "unix_mode": "0o644"
+      },
+      {
+        "compressed_bytes": 6931,
+        "is_symlink": false,
+        "path": "dbos/telemetry_admission/profiles/opentelemetry-semantic-conformance-cases.v0.1.json",
+        "sha256": "18b84edf6e8b618991c2dfd669d21794c3a3032188e198b7fd53899205b66c6e",
+        "size_bytes": 43612,
+        "unix_mode": "0o644"
+      },
+      {
+        "compressed_bytes": 3969,
+        "is_symlink": false,
+        "path": "dbos/telemetry_admission/profiles/opentelemetry-semantic-conformance-result-set.schema.v0.1.json",
+        "sha256": "33fa128aa8063d8f4861f8abda23d9b48151f1a6529752848adaef3ea49f6f15",
+        "size_bytes": 24856,
+        "unix_mode": "0o644"
+      },
+      {
+        "compressed_bytes": 3261,
+        "is_symlink": false,
+        "path": "dbos/telemetry_admission/profiles/opentelemetry-semantic-mapping.v0.1.json",
+        "sha256": "b81213505b1a7c3841ba298545b642b127af1a96ec906536be27caab351de706",
+        "size_bytes": 26770,
+        "unix_mode": "0o644"
+      },
+      {
+        "compressed_bytes": 8319,
+        "is_symlink": false,
+        "path": "dbos/telemetry_admission/provenance.py",
+        "sha256": "df19e20f4fb832b0a61b92e250e6f6f31211dd35cb88d9f9cc8bcf14ad432afd",
+        "size_bytes": 40718,
+        "unix_mode": "0o644"
+      },
+      {
+        "compressed_bytes": 1302,
+        "is_symlink": false,
+        "path": "dbos/telemetry_admission/references.py",
+        "sha256": "d9ea2c26ab474e6a74a94dc455a14598c8a79f7adcd494a8492df9ba97c1645c",
+        "size_bytes": 4436,
+        "unix_mode": "0o644"
+      },
+      {
+        "compressed_bytes": 4656,
+        "is_symlink": false,
+        "path": "dbos/telemetry_admission/semantic.py",
+        "sha256": "0f5ef63cfcbf4fdc212ad915683bf1157ab1b8b166f4439ea8d91482c79a4e82",
+        "size_bytes": 19258,
+        "unix_mode": "0o644"
+      },
+      {
+        "compressed_bytes": 1059,
+        "is_symlink": false,
+        "path": "dbos/telemetry_admission/service.py",
+        "sha256": "ab12478c8bf5a970046cd764403e8d7169fb049ca9eb512134f46e1ff983840f",
+        "size_bytes": 3261,
+        "unix_mode": "0o644"
+      },
+      {
+        "compressed_bytes": 10451,
+        "is_symlink": false,
+        "path": "dbos/telemetry_admission/store.py",
+        "sha256": "6040c71bae1b61d9795070ab2ab0c61196fd669350c9c497a7f18c866c75e207",
+        "size_bytes": 55386,
+        "unix_mode": "0o644"
+      },
+      {
+        "compressed_bytes": 4047,
+        "is_symlink": false,
+        "path": "dbos/telemetry_admission/validator.py",
+        "sha256": "70f6fd59fbfc2f5d45de4040cc6d9f701c72677b987c1d5f07e0fc72d8410564",
+        "size_bytes": 17335,
+        "unix_mode": "0o644"
+      },
+      {
+        "compressed_bytes": 4190,
+        "is_symlink": false,
+        "path": "digital_biosphere_os_preview-0.1.0.dev0.dist-info/METADATA",
+        "sha256": "6b68208b24e143b7a56184ff6ab80719cf582aea1830e0ceb770e7d4cba5f963",
+        "size_bytes": 8216,
+        "unix_mode": "0o644"
+      },
+      {
+        "compressed_bytes": 3140,
+        "is_symlink": false,
+        "path": "digital_biosphere_os_preview-0.1.0.dev0.dist-info/RECORD",
+        "sha256": "7e3e0dfd4b216300a6fb8d761421d8c537b4d444a2bf79d1400f4f8be56a40c9",
+        "size_bytes": 6225,
+        "unix_mode": "0o664"
+      },
+      {
+        "compressed_bytes": 91,
+        "is_symlink": false,
+        "path": "digital_biosphere_os_preview-0.1.0.dev0.dist-info/WHEEL",
+        "sha256": "2b6eb4118ce7cd7b09601406aa623c553c4476265836f0d9c16f5c061f7efcc0",
+        "size_bytes": 91,
+        "unix_mode": "0o644"
+      },
+      {
+        "compressed_bytes": 61,
+        "is_symlink": false,
+        "path": "digital_biosphere_os_preview-0.1.0.dev0.dist-info/entry_points.txt",
+        "sha256": "7056593cb3bf7888c3080d8cbfa2313f7e1c494bff46434a10ecfdf1764b7464",
+        "size_bytes": 73,
+        "unix_mode": "0o644"
+      },
+      {
+        "compressed_bytes": 3949,
+        "is_symlink": false,
+        "path": "digital_biosphere_os_preview-0.1.0.dev0.dist-info/licenses/LICENSE",
+        "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+        "size_bytes": 11358,
+        "unix_mode": "0o644"
+      },
+      {
+        "compressed_bytes": 36,
+        "is_symlink": false,
+        "path": "digital_biosphere_os_preview-0.1.0.dev0.dist-info/top_level.txt",
+        "sha256": "8573966032379024b86d3a75f80ca87a8d4adc81b51143f06dcd0e695ebec221",
+        "size_bytes": 36,
+        "unix_mode": "0o644"
+      },
+      {
+        "compressed_bytes": 196,
+        "is_symlink": false,
+        "path": "schemas/__init__.py",
+        "sha256": "3e0ba321027c162f47b2ba547c93a2039f6c5edae92d84dc66004c61ab70537d",
+        "size_bytes": 268,
+        "unix_mode": "0o644"
+      },
+      {
+        "compressed_bytes": 856,
+        "is_symlink": false,
+        "path": "schemas/capability-object-schema.yaml",
+        "sha256": "882e46bf7b2a862fb7e65c9e554c7bdf73772c89c6a65dde66de979651443fe2",
+        "size_bytes": 2625,
+        "unix_mode": "0o644"
+      },
+      {
+        "compressed_bytes": 1616,
+        "is_symlink": false,
+        "path": "schemas/common-object-schema.yaml",
+        "sha256": "fa0a469158dedf54d6cc9628f18f755088a0985e0ea1008cc705c0cf215cbc6b",
+        "size_bytes": 5331,
+        "unix_mode": "0o644"
+      },
+      {
+        "compressed_bytes": 931,
+        "is_symlink": false,
+        "path": "schemas/entity-object-schema.yaml",
+        "sha256": "e2b183fd38796e1e561679708add4686f0871c2491ae94b18fa98bc2cb968311",
+        "size_bytes": 2710,
+        "unix_mode": "0o644"
+      },
+      {
+        "compressed_bytes": 795,
+        "is_symlink": false,
+        "path": "schemas/evidence-reference-object-schema.yaml",
+        "sha256": "e4c58ac178f4e2fbe8039773a9e23dd74bc7ea2d47596964f2ac992698fd8f18",
+        "size_bytes": 2344,
+        "unix_mode": "0o644"
+      },
+      {
+        "compressed_bytes": 797,
+        "is_symlink": false,
+        "path": "schemas/execution-object-schema.yaml",
+        "sha256": "87c3a00bceef7cd3547c011abf5e475c717c541904f428bbaf266424f2ac66ca",
+        "size_bytes": 2548,
+        "unix_mode": "0o644"
+      },
+      {
+        "compressed_bytes": 922,
+        "is_symlink": false,
+        "path": "schemas/project-manifest.schema.yaml",
+        "sha256": "15be68cd8374e078f1f5c6c6538bfb78d23bdd296a321492041e0c6af54213b5",
+        "size_bytes": 2694,
+        "unix_mode": "0o644"
+      },
+      {
+        "compressed_bytes": 1269,
+        "is_symlink": false,
+        "path": "schemas/telemetry-admission-record-schema.yaml",
+        "sha256": "a405b581937fb4b93c2490552d5d19f05231286b9a0d2a64b273ddd58e33b1ba",
+        "size_bytes": 3699,
+        "unix_mode": "0o644"
+      },
+      {
+        "compressed_bytes": 1600,
+        "is_symlink": false,
+        "path": "schemas/telemetry-observation-envelope-schema.yaml",
+        "sha256": "6b919693668036728eed5f466f413c1efca1d64c163e3fb26e388969ebb56d0c",
+        "size_bytes": 5740,
+        "unix_mode": "0o644"
+      },
+      {
+        "compressed_bytes": 1017,
+        "is_symlink": false,
+        "path": "schemas/verification-object-schema.yaml",
+        "sha256": "80e81ec55f49c52f74bb211b44eca3a3b26176b15705ea1e57521858978ba161",
+        "size_bytes": 2947,
+        "unix_mode": "0o644"
+      },
+      {
+        "compressed_bytes": 341,
+        "is_symlink": false,
+        "path": "sdk/__init__.py",
+        "sha256": "40c2a44fabeb2bd7d3ad8339b1ba18a281fd23197a84467f1dd7e602d379e6a3",
+        "size_bytes": 745,
+        "unix_mode": "0o644"
+      },
+      {
+        "compressed_bytes": 157,
+        "is_symlink": false,
+        "path": "sdk/errors/__init__.py",
+        "sha256": "1a94cee2f4819ff313efb6317196ae14768b59b5a4416f661fd749d557a3da5a",
+        "size_bytes": 279,
+        "unix_mode": "0o644"
+      },
+      {
+        "compressed_bytes": 695,
+        "is_symlink": false,
+        "path": "sdk/errors/validation.py",
+        "sha256": "c7e3924272c1e28d20cf9105144df0dfeb776b8d07e9a1695368b3ca1afa6cbf",
+        "size_bytes": 1683,
+        "unix_mode": "0o644"
+      },
+      {
+        "compressed_bytes": 198,
+        "is_symlink": false,
+        "path": "sdk/objects/__init__.py",
+        "sha256": "2f397240b954a71e8e21b4a882298bc838f043caceeb032c635c3d97e4fd5898",
+        "size_bytes": 526,
+        "unix_mode": "0o644"
+      },
+      {
+        "compressed_bytes": 723,
+        "is_symlink": false,
+        "path": "sdk/objects/base.py",
+        "sha256": "c699c1e3339084f2e9b7b0b07a0b5a1a67635c185dc01f46cd8e45fb89dcea8d",
+        "size_bytes": 1626,
+        "unix_mode": "0o644"
+      },
+      {
+        "compressed_bytes": 459,
+        "is_symlink": false,
+        "path": "sdk/objects/capability.py",
+        "sha256": "f66759c53e26282d32053d50fbd3702ae616286e0924bd55e26d36532dc4fd0e",
+        "size_bytes": 1053,
+        "unix_mode": "0o644"
+      },
+      {
+        "compressed_bytes": 414,
+        "is_symlink": false,
+        "path": "sdk/objects/entity.py",
+        "sha256": "2dcd189b688d5f5e6fe42811dafbfd9b53fcad78bef0fd2496af1f416570369d",
+        "size_bytes": 892,
+        "unix_mode": "0o644"
+      },
+      {
+        "compressed_bytes": 433,
+        "is_symlink": false,
+        "path": "sdk/objects/evidence_reference.py",
+        "sha256": "4bb54e71f4f00b43d5861d59006c2c799e6998bbd195e58e571df78bf30e01db",
+        "size_bytes": 950,
+        "unix_mode": "0o644"
+      },
+      {
+        "compressed_bytes": 453,
+        "is_symlink": false,
+        "path": "sdk/objects/execution.py",
+        "sha256": "7eea6ffc24e33c8cd52a7cfe1b5fe371c62fd21aa7eee6fb8f3ff95ac8805cda",
+        "size_bytes": 1097,
+        "unix_mode": "0o644"
+      },
+      {
+        "compressed_bytes": 397,
+        "is_symlink": false,
+        "path": "sdk/objects/verification.py",
+        "sha256": "f68868f063e6fdb972f7696bd6fb213fd81f117a89f376dcc1d9b0df50c77f38",
+        "size_bytes": 817,
+        "unix_mode": "0o644"
+      },
+      {
+        "compressed_bytes": 115,
+        "is_symlink": false,
+        "path": "sdk/serialization/__init__.py",
+        "sha256": "4f90073698d17a6fee0ff5e2b1e6a519934bcfe4ab5579a5b835957f6c9380a5",
+        "size_bytes": 182,
+        "unix_mode": "0o644"
+      },
+      {
+        "compressed_bytes": 616,
+        "is_symlink": false,
+        "path": "sdk/serialization/serializer.py",
+        "sha256": "f7121127e562404f160e3c92eba97ae70d4dd44fd9fd9451bf6507d5e1b1061e",
+        "size_bytes": 1478,
+        "unix_mode": "0o644"
+      },
+      {
+        "compressed_bytes": 117,
+        "is_symlink": false,
+        "path": "sdk/validation/__init__.py",
+        "sha256": "0e85e8222ce770b3e8c416983b81786b999036c449d1838956e31cf89789015f",
+        "size_bytes": 158,
+        "unix_mode": "0o644"
+      },
+      {
+        "compressed_bytes": 399,
+        "is_symlink": false,
+        "path": "sdk/validation/bridge.py",
+        "sha256": "bc6136a784a49e21dd36a4cd4c44a731819315ef9e20ab2b624cdf41b97fab92",
+        "size_bytes": 819,
+        "unix_mode": "0o644"
+      },
+      {
+        "compressed_bytes": 543,
+        "is_symlink": false,
+        "path": "validator/__init__.py",
+        "sha256": "fe2d6b9915953f5f982ac619f964572c5ca674211378102c05b6254d44b25b01",
+        "size_bytes": 1281,
+        "unix_mode": "0o644"
+      },
+      {
+        "compressed_bytes": 1204,
+        "is_symlink": false,
+        "path": "validator/governance_constraint_validator.py",
+        "sha256": "2ac33db68dc067e9ddbd87385e6ffd67228865cbe08db7b796c2677fe4b61bda",
+        "size_bytes": 3966,
+        "unix_mode": "0o644"
+      },
+      {
+        "compressed_bytes": 4634,
+        "is_symlink": false,
+        "path": "validator/object_schema_validator.py",
+        "sha256": "710d718124ef44ff999dbf71d91ae9549412977faffc16678f4088c4b84592a1",
+        "size_bytes": 18109,
+        "unix_mode": "0o644"
+      },
+      {
+        "compressed_bytes": 1340,
+        "is_symlink": false,
+        "path": "validator/reference_consistency_validator.py",
+        "sha256": "99004e3c12db33c6d662cc2078df1c77ea787f8a1a76fd60c52d1d0c3b467458",
+        "size_bytes": 4674,
+        "unix_mode": "0o644"
+      },
+      {
+        "compressed_bytes": 1907,
+        "is_symlink": false,
+        "path": "validator/validation_result_model.py",
+        "sha256": "084f2a29b8da081aa8f0cf2761b14c1203a31c002830dc674f9db025b6cd12dd",
+        "size_bytes": 6650,
+        "unix_mode": "0o644"
+      }
+    ],
+    "entry_count": 64,
+    "symlink_count": 0,
+    "uncompressed_bytes": 523204,
+    "wheel_name": "digital_biosphere_os_preview-0.1.0.dev0-py3-none-any.whl",
+    "wheel_sha256": "f15fb089b1dadcc1d8278cf0a8dbf4ff89ddfaf203f9f5b73fbecdce3b816660",
+    "wheel_size_bytes": 124813
+  },
+  "build_b_comparison": {
+    "wheel_sha256": "f15fb089b1dadcc1d8278cf0a8dbf4ff89ddfaf203f9f5b73fbecdce3b816660",
+    "content_manifest_sha256": "47b861624780bde443710ca5e3c9069e4658c58f77b8cfa02aea0a3508fc0b87",
+    "entry_count": 64,
+    "byte_identical": true,
+    "content_manifest_identical": true
+  },
+  "artifact_retained_in_repository": false,
+  "published": false,
+  "production_ready": false
+}

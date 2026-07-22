@@ -1,0 +1,218 @@
+{
+  "all_pass": true,
+  "artifact_id": "DBOS-VALIDATOR-AGGREGATE-2026-07-22",
+  "pass_count": 35,
+  "validator_count": 35,
+  "validators": [
+    {
+      "check_count": null,
+      "sha256": "6c8e896816b7618afeaf54a5a7e77e0cea48edfc694e2ced6fe957afff228341",
+      "status": "PASS",
+      "validator": "attestation_validator"
+    },
+    {
+      "check_count": null,
+      "sha256": "e1eec20b24fdff2558a5a46043d9ea089931de03f70709c62be66047318f0252",
+      "status": "PASS",
+      "validator": "authorization_registry_validator"
+    },
+    {
+      "check_count": null,
+      "sha256": "e6ef1ef423012e82237cc8718bbf2f5e199f8513c69dd7a63b00de9fb1aba332",
+      "status": "PASS",
+      "validator": "candidate_registration_validator"
+    },
+    {
+      "check_count": null,
+      "sha256": "f2ceac2ce9e814116d5a2ad93fe8e1fd0b16136133126065b981103180ec69a2",
+      "status": "PASS",
+      "validator": "capability_claim_validator"
+    },
+    {
+      "check_count": null,
+      "sha256": "bb6515cebf6c245ddef16fabae01fe2689e78fd687ce9a496399fe5a0ea964ef",
+      "status": "PASS",
+      "validator": "capability_validator"
+    },
+    {
+      "check_count": null,
+      "sha256": "6c8e896816b7618afeaf54a5a7e77e0cea48edfc694e2ced6fe957afff228341",
+      "status": "PASS",
+      "validator": "capture_readiness_validator"
+    },
+    {
+      "check_count": null,
+      "sha256": "1a1ebe36b73efbff1c12492765b9a3c639662de19294614da91c727bcbd52bf8",
+      "status": "PASS",
+      "validator": "digital_entity_infrastructure_validator"
+    },
+    {
+      "check_count": null,
+      "sha256": "2cec27dd74274998fabc63b7018ed3d4d3fd0a9bcd4cf5477c235c35cb4ca241",
+      "status": "PASS",
+      "validator": "entity_support_validator"
+    },
+    {
+      "check_count": null,
+      "sha256": "6c8e896816b7618afeaf54a5a7e77e0cea48edfc694e2ced6fe957afff228341",
+      "status": "PASS",
+      "validator": "environment_collector_validator"
+    },
+    {
+      "check_count": null,
+      "sha256": "6c8e896816b7618afeaf54a5a7e77e0cea48edfc694e2ced6fe957afff228341",
+      "status": "PASS",
+      "validator": "environment_evidence_capture_validator"
+    },
+    {
+      "check_count": null,
+      "sha256": "6c8e896816b7618afeaf54a5a7e77e0cea48edfc694e2ced6fe957afff228341",
+      "status": "PASS",
+      "validator": "environment_qualification_validator"
+    },
+    {
+      "check_count": null,
+      "sha256": "6c8e896816b7618afeaf54a5a7e77e0cea48edfc694e2ced6fe957afff228341",
+      "status": "PASS",
+      "validator": "environment_validator"
+    },
+    {
+      "check_count": null,
+      "sha256": "6c8e896816b7618afeaf54a5a7e77e0cea48edfc694e2ced6fe957afff228341",
+      "status": "PASS",
+      "validator": "event_integrity_validator"
+    },
+    {
+      "check_count": null,
+      "sha256": "6c8e896816b7618afeaf54a5a7e77e0cea48edfc694e2ced6fe957afff228341",
+      "status": "PASS",
+      "validator": "event_validator"
+    },
+    {
+      "check_count": null,
+      "sha256": "83a4c8c13465099b594e45b66c043a7542befe9a70cfbe193d37e4ab9716357f",
+      "status": "PASS",
+      "validator": "evidence_validator"
+    },
+    {
+      "check_count": null,
+      "sha256": "6c8e896816b7618afeaf54a5a7e77e0cea48edfc694e2ced6fe957afff228341",
+      "status": "PASS",
+      "validator": "execution_chain_validator"
+    },
+    {
+      "check_count": null,
+      "sha256": "6c8e896816b7618afeaf54a5a7e77e0cea48edfc694e2ced6fe957afff228341",
+      "status": "PASS",
+      "validator": "execution_context_validator"
+    },
+    {
+      "check_count": null,
+      "sha256": "6c8e896816b7618afeaf54a5a7e77e0cea48edfc694e2ced6fe957afff228341",
+      "status": "PASS",
+      "validator": "executor_identity_validator"
+    },
+    {
+      "check_count": null,
+      "sha256": "6c8e896816b7618afeaf54a5a7e77e0cea48edfc694e2ced6fe957afff228341",
+      "status": "PASS",
+      "validator": "executor_validator"
+    },
+    {
+      "check_count": null,
+      "sha256": "6c8e896816b7618afeaf54a5a7e77e0cea48edfc694e2ced6fe957afff228341",
+      "status": "PASS",
+      "validator": "experimental_protocol_validator"
+    },
+    {
+      "check_count": null,
+      "sha256": "a0ab5a35ba31b74a535745c1a927eae1956dc7300b53ebf48e012890d90e6bf8",
+      "status": "PASS",
+      "validator": "federation_validator"
+    },
+    {
+      "check_count": null,
+      "sha256": "6c8e896816b7618afeaf54a5a7e77e0cea48edfc694e2ced6fe957afff228341",
+      "status": "PASS",
+      "validator": "freeze_validator"
+    },
+    {
+      "check_count": null,
+      "sha256": "6c8e896816b7618afeaf54a5a7e77e0cea48edfc694e2ced6fe957afff228341",
+      "status": "PASS",
+      "validator": "genesis_experiment_validator"
+    },
+    {
+      "check_count": null,
+      "sha256": "e311172c49b20fe9f382a914a96bca5bf107a7e9de999dc27326cff6bfd2768a",
+      "status": "PASS",
+      "validator": "governance_evidence_validator"
+    },
+    {
+      "check_count": null,
+      "sha256": "3251b9890e9e716160e9c302ab58d9c2f1c8ba7f70b4b04fb7bdfb9b03d1b275",
+      "status": "PASS",
+      "validator": "governance_validator"
+    },
+    {
+      "check_count": null,
+      "sha256": "ae0dbd54389a94e2e63034216866221d52d861455d00e87acfa253e3b44b7027",
+      "status": "PASS",
+      "validator": "identity_validator"
+    },
+    {
+      "check_count": null,
+      "sha256": "4442d876e702eca98dc9ef767772b38b56b15e46ca0a2ecaff05d63f7cc55300",
+      "status": "PASS",
+      "validator": "organism_validator"
+    },
+    {
+      "check_count": null,
+      "sha256": "6c8e896816b7618afeaf54a5a7e77e0cea48edfc694e2ced6fe957afff228341",
+      "status": "PASS",
+      "validator": "readiness_validator"
+    },
+    {
+      "check_count": null,
+      "sha256": "83019af27f44dd1cf7bf29bae41e405d9bae37e2c16c15233a825b339ea27e99",
+      "status": "PASS",
+      "validator": "registration_execution_validator"
+    },
+    {
+      "check_count": null,
+      "sha256": "6c8e896816b7618afeaf54a5a7e77e0cea48edfc694e2ced6fe957afff228341",
+      "status": "PASS",
+      "validator": "runner_validator"
+    },
+    {
+      "check_count": null,
+      "sha256": "5ff74b5b8f4f458ccf654a846801e5abb7f17f3b356483f96a6f0e1eb8945243",
+      "status": "PASS",
+      "validator": "saee_validator"
+    },
+    {
+      "check_count": null,
+      "sha256": "6c8e896816b7618afeaf54a5a7e77e0cea48edfc694e2ced6fe957afff228341",
+      "status": "PASS",
+      "validator": "snapshot_capture_validator"
+    },
+    {
+      "check_count": 12,
+      "sha256": "f7f1179849ecd5e5811cca13cb1579df145b8cc654a8830c291c447732d384fc",
+      "status": "PASS",
+      "validator": "telemetry_admission_validator"
+    },
+    {
+      "check_count": null,
+      "sha256": "417775a034a688e723f9412fe1130cab4fe3ef97a5ca1f1733e097da9ca9cd60",
+      "status": "PASS",
+      "validator": "verification_network_validator"
+    },
+    {
+      "check_count": null,
+      "sha256": "286debd3f46a871646cdc51d2a3d99021e2d0c1caff55c5d3705e991fde67273",
+      "status": "PASS",
+      "validator": "verification_validator"
+    }
+  ]
+}

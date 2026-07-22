@@ -1,0 +1,163 @@
+{
+  "canonical_evidence": false,
+  "entries": [
+    {
+      "mode": "0o644",
+      "path": "reports/telemetry-admission-foundation/raw/review-f09e99b95a33/all-tests.json",
+      "sha256": "f6d9bbe017fd77b4dc976bc642a9a560d06471ec89d443014e1b7214089e9cc2",
+      "size_bytes": 4458
+    },
+    {
+      "mode": "0o644",
+      "path": "reports/telemetry-admission-foundation/raw/review-f09e99b95a33/bandit.json",
+      "sha256": "1408c5538e7b38a9b9b0c708f6e95f38f5b48d8b75bee76576b1ae83c183b963",
+      "size_bytes": 5931
+    },
+    {
+      "mode": "0o644",
+      "path": "reports/telemetry-admission-foundation/raw/review-f09e99b95a33/coverage-summary.json",
+      "sha256": "9bf904695fa4665a3233c6c6ab0b17ef2f9dc0539acb61c6a2583187035978fc",
+      "size_bytes": 1173
+    },
+    {
+      "mode": "0o644",
+      "path": "reports/telemetry-admission-foundation/raw/review-f09e99b95a33/focused-telemetry-tests.json",
+      "sha256": "af07fba34e3dbbee9677ce2f26a80931c09a8f38761dbc9d690a506867e90e62",
+      "size_bytes": 540
+    },
+    {
+      "mode": "0o644",
+      "path": "reports/telemetry-admission-foundation/raw/review-f09e99b95a33/otel-conformance.json",
+      "sha256": "8b87855f2b563369c4832608f69a99d8bd21307e0e4ca2365b23db79fd6c626a",
+      "size_bytes": 81782
+    },
+    {
+      "mode": "0o644",
+      "path": "reports/telemetry-admission-foundation/raw/review-f09e99b95a33/pip-audit.json",
+      "sha256": "68e8060cb5dd6d8614d8d1cf0798fdcef8ee2db7a63859ab8224fe59e14c1524",
+      "size_bytes": 658
+    },
+    {
+      "mode": "0o644",
+      "path": "reports/telemetry-admission-foundation/raw/review-f09e99b95a33/rollback-drill.json",
+      "sha256": "7a868a4a8eddd8af87669fdefbb23b4c514dbde81829667379e41e1f9750a46a",
+      "size_bytes": 3010
+    },
+    {
+      "mode": "0o644",
+      "path": "reports/telemetry-admission-foundation/raw/review-f09e99b95a33/static-quality-receipt.json",
+      "sha256": "49a20f00143c9e684281afb48c5c8cbfde8bf27c0c4d46890369bb98632f3196",
+      "size_bytes": 1015
+    },
+    {
+      "mode": "0o644",
+      "path": "reports/telemetry-admission-foundation/raw/review-f09e99b95a33/supply-chain-receipt.json",
+      "sha256": "975ffe4020fe67b49f1b538f43156e1fadd0ecf1f9e9da1938868b73d14a439e",
+      "size_bytes": 2496
+    },
+    {
+      "mode": "0o644",
+      "path": "reports/telemetry-admission-foundation/raw/review-f09e99b95a33/telemetry-validator.json",
+      "sha256": "51ea03aa1f46a28a1fd71f182ef2bdea9a2eb4a32c35c07acfa2b67a46c449bd",
+      "size_bytes": 1738
+    },
+    {
+      "mode": "0o644",
+      "path": "reports/telemetry-admission-foundation/raw/review-f09e99b95a33/validator-aggregate.json",
+      "sha256": "81ee47681a7c582687436ac02a5b7f5457a57e8117301c4e3bc8356e1bbb5e24",
+      "size_bytes": 9765
+    },
+    {
+      "mode": "0o644",
+      "path": "reports/telemetry-admission-foundation/raw/review-f09e99b95a33/wheel-build-input-manifest.json",
+      "sha256": "7739331b29d03e243ab700e43e8eed658b2b65fdca7a5b7b027be0f3ccfb1be7",
+      "size_bytes": 13018
+    },
+    {
+      "mode": "0o644",
+      "path": "reports/telemetry-admission-foundation/raw/review-f09e99b95a33/wheel-content-manifest.json",
+      "sha256": "97b767484810762bb811da57ad28f79d2bd257c40e43c1bc1e19f8050480ff0c",
+      "size_bytes": 19104
+    },
+    {
+      "mode": "0o644",
+      "path": "reports/telemetry-admission-foundation/raw/review-f09e99b95a33/whole-repository-ruff.json",
+      "sha256": "44152362b3752cccceb3ad96d1602a5f235aa8734ee0fcd616f42f191071c9c9",
+      "size_bytes": 24092
+    },
+    {
+      "mode": "0o600",
+      "path": "reports/telemetry-admission-foundation/raw/current-f09e99b95a33/TA-P001.json",
+      "sha256": "bc9d97dc7627a71256362ba1b4773a5e0832a57e3d9a9a8ce267f2795c3b018e",
+      "size_bytes": 26546
+    },
+    {
+      "mode": "0o600",
+      "path": "reports/telemetry-admission-foundation/raw/current-f09e99b95a33/TA-P002.json",
+      "sha256": "92d8c5c362eb2c790c2d117ef99e994bd7970822a5137b25f4bb2c6444f64705",
+      "size_bytes": 26826
+    },
+    {
+      "mode": "0o600",
+      "path": "reports/telemetry-admission-foundation/raw/current-f09e99b95a33/TA-P003.json",
+      "sha256": "8650c4805127db373dcb83d31bd528c6bd7899eaf94ef04b370e7f4ffc80eb3f",
+      "size_bytes": 26666
+    },
+    {
+      "mode": "0o600",
+      "path": "reports/telemetry-admission-foundation/raw/current-f09e99b95a33/TA-P004.json",
+      "sha256": "0981676d5f9fd2a7c0f3eb6fab56e49c77997af610adf9e1b4308ee75045b81b",
+      "size_bytes": 26666
+    },
+    {
+      "mode": "0o600",
+      "path": "reports/telemetry-admission-foundation/raw/current-f09e99b95a33/TA-P005.json",
+      "sha256": "14dfdbada26bc60e32c77f510a11362ba3d2fbb523e68c695089bfbabf0f0536",
+      "size_bytes": 47466
+    },
+    {
+      "mode": "0o644",
+      "path": "reports/telemetry-admission-foundation/DBOS-PR-2A-PRODUCTION-EVIDENCE-2026-07-22.json",
+      "sha256": "3775e7d81ba940e288e29eb9242ae2cc9e65f8139a08a15013526274cfa4e2dd",
+      "size_bytes": 12969
+    },
+    {
+      "mode": "0o644",
+      "path": "reports/telemetry-admission-foundation/DBOS-PR-2A-PRODUCTION-EVIDENCE-2026-07-22.md",
+      "sha256": "6e34d56e2056ce34a4f4a544cda24c771a443c04e21f96add93e5830721406a6",
+      "size_bytes": 10711
+    },
+    {
+      "mode": "0o644",
+      "path": "reports/telemetry-admission-foundation/DBOS-PR-2A-SBOM.cdx.json",
+      "sha256": "70c21af4ab70e72df7a42029c11e6a888a78a58d86cdaea0fdb305a50df62c95",
+      "size_bytes": 17596
+    },
+    {
+      "mode": "0o644",
+      "path": "requirements/telemetry-admission-runtime-py312-macos-arm64.lock",
+      "sha256": "13a50e3f657af397b77809c7e00ceaef343b26bd111781376de5d04af36ada8d",
+      "size_bytes": 1091
+    },
+    {
+      "mode": "0o644",
+      "path": "requirements/telemetry-admission-build.lock",
+      "sha256": "1cea23a952436c9e226278bb037a803510d3e5f16ae984891420de5a5dcea95c",
+      "size_bytes": 705
+    },
+    {
+      "mode": "0o644",
+      "path": "requirements/README.md",
+      "sha256": "6126401c4bc81398bf585566c8cebea4f3c9d117d5d7cbcbf9740537fc812675",
+      "size_bytes": 1955
+    }
+  ],
+  "entries_manifest_sha256": "66e7505f95453ac022f0cdcf0bb8647d6aa84ff51e1a41ad1eb07b5de9ee46ec",
+  "entry_count": 25,
+  "implementation_manifest_sha256": "f09e99b95a3332d40abc933eaee35ea8a646b11d330ffaa5213ee0bb28f339b4",
+  "inventory_id": "DBOS-PR-2A-REVIEW-EVIDENCE-F09E99B95A33",
+  "inventory_schema_version": "0.1",
+  "observed_at": "2026-07-22T10:36:42Z",
+  "production_ready": false,
+  "total_bytes": 367977
+}

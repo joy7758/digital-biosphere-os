@@ -1,0 +1,97 @@
+{
+  "acknowledged_receipt_count": 25,
+  "admission_count": 25,
+  "authority_effects": {
+    "agent_created": false,
+    "entity_created": false,
+    "evidence_created": false,
+    "permission_granted": false,
+    "runtime_created": false,
+    "saee_invoked": false
+  },
+  "automatic_switch_performed": false,
+  "backup_manifest": {
+    "backup_id": "ta:backup:6a04c42ac61f48d2a84bfa24ea2e4289",
+    "counts": {
+      "admission_lifecycles": 25,
+      "admission_records": 75,
+      "backup_manifests": 0,
+      "intake_receipts": 25,
+      "observation_envelopes": 25,
+      "untrusted_idempotency_hints": 25
+    },
+    "created_at": "2026-07-22T06:56:24.706841Z",
+    "database_sha256": "sha256:dd816cad5d307c211f36c542d5bbc9777fd44f1dc165ca02e35729eb5d287cc6",
+    "manifest_digest": "sha256:09dd7a5bd11ef6ec5679b7872a0bbe5bbf0ab17a1c790879c1df95429231cdd8",
+    "migration_checksums": {
+      "0001": "sha256:a347ab62ff44635794ffa010e1a83251a1c0fc35f47f3cf3707aab5a49197760"
+    },
+    "record_chain_digest": "sha256:2179e97a4fa474aa3180845bf9ff8d0066d30b73f575d4d53996d6e80060d56e",
+    "schema_version": "0.1.0"
+  },
+  "drill_id": "DBOS-TA-ROLLBACK-DRILL-0.1",
+  "environment": {
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python_version": "3.12.13",
+    "sqlite_version": "3.50.4"
+  },
+  "failed_source_classification": "FAIL_CLOSED",
+  "failed_source_retained": true,
+  "next_gate": "HUMAN_SWITCH_REQUIRED",
+  "pre_incident_integrity": {
+    "counts": {
+      "admission_lifecycles": 25,
+      "admission_records": 75,
+      "backup_manifests": 0,
+      "intake_receipts": 25,
+      "observation_envelopes": 25,
+      "untrusted_idempotency_hints": 25
+    },
+    "errors": [],
+    "migration_checksums": {
+      "0001": "sha256:a347ab62ff44635794ffa010e1a83251a1c0fc35f47f3cf3707aab5a49197760"
+    },
+    "missing_expected_receipt_count": 0,
+    "repair_performed": false,
+    "schema_version": "0.1.0",
+    "status": "PASS",
+    "store_configuration": {
+      "busy_timeout_ms": 5000,
+      "foreign_keys": 1,
+      "journal_mode": "wal",
+      "synchronous": 2
+    }
+  },
+  "receipt_mismatch_count": 0,
+  "restore_destination_is_distinct": true,
+  "restored_integrity": {
+    "counts": {
+      "admission_lifecycles": 25,
+      "admission_records": 75,
+      "backup_manifests": 0,
+      "intake_receipts": 25,
+      "observation_envelopes": 25,
+      "untrusted_idempotency_hints": 25
+    },
+    "errors": [],
+    "migration_checksums": {
+      "0001": "sha256:a347ab62ff44635794ffa010e1a83251a1c0fc35f47f3cf3707aab5a49197760"
+    },
+    "missing_expected_receipt_count": 0,
+    "repair_performed": false,
+    "schema_version": "0.1.0",
+    "status": "PASS",
+    "store_configuration": {
+      "busy_timeout_ms": 5000,
+      "foreign_keys": 1,
+      "journal_mode": "wal",
+      "synchronous": 2
+    }
+  },
+  "result": "PASS",
+  "result_semantics": "LOCAL_SYNTHETIC_ROLLBACK_EXERCISE",
+  "retained_modes": {
+    "failed-source.sqlite3": "0o400"
+  },
+  "rollback_decision_recorded": false
+}

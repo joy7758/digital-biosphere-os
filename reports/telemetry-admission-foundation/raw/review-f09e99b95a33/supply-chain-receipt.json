@@ -1,0 +1,59 @@
+{
+  "receipt_schema_version": "0.1",
+  "receipt_id": "DBOS-PR-2A-SUPPLY-CHAIN-F09E99B95A33",
+  "observed_at": "2026-07-22T10:36:42Z",
+  "result": "LOCAL_REPRODUCIBLE_BUILD_AND_ISOLATED_INSTALL_PASS",
+  "result_semantics": "LOCAL_REVIEW_INPUT_NOT_INDEPENDENT_ATTESTATION_NOT_RELEASE_AUTHORIZATION",
+  "environment_scope": "CPython 3.12 macOS 11+ arm64",
+  "cross_platform_claim": false,
+  "locks": {
+    "runtime": {
+      "path": "requirements/telemetry-admission-runtime-py312-macos-arm64.lock",
+      "sha256": "13a50e3f657af397b77809c7e00ceaef343b26bd111781376de5d04af36ada8d",
+      "package_count": 7,
+      "offline_hash_install": "PASS"
+    },
+    "build": {
+      "path": "requirements/telemetry-admission-build.lock",
+      "sha256": "1cea23a952436c9e226278bb037a803510d3e5f16ae984891420de5a5dcea95c",
+      "package_count": 5,
+      "offline_hash_install": "PASS"
+    },
+    "instructions": {
+      "path": "requirements/README.md",
+      "sha256": "6126401c4bc81398bf585566c8cebea4f3c9d117d5d7cbcbf9740537fc812675"
+    }
+  },
+  "build": {
+    "backend": "setuptools==83.0.0",
+    "source_date_epoch": 1784678400,
+    "clean_snapshot_count": 2,
+    "wheel_sha256_a": "f15fb089b1dadcc1d8278cf0a8dbf4ff89ddfaf203f9f5b73fbecdce3b816660",
+    "wheel_sha256_b": "f15fb089b1dadcc1d8278cf0a8dbf4ff89ddfaf203f9f5b73fbecdce3b816660",
+    "byte_identical": true,
+    "wheel_size_bytes": 124813,
+    "wheel_build_input_manifest_sha256": "cc217f3f5611dd60f9cf5fc5b6a7e5e925e167d82087456199cf71f7d565fb59",
+    "wheel_content_manifest_sha256": "47b861624780bde443710ca5e3c9069e4658c58f77b8cfa02aea0a3508fc0b87",
+    "wheel_entry_count": 64,
+    "symlink_count": 0
+  },
+  "isolated_install": {
+    "result": "PASS",
+    "import_source": "/tmp/dbos-dq018-repro-final.A7q8yJ/runtime-env/lib/python3.12/site-packages/dbos/__init__.py",
+    "python_version": "3.12.13",
+    "pip_check": "PASS",
+    "installed_profile_inventory": "47 46 45 1.1.0",
+    "published": false
+  },
+  "tool_versions": {
+    "ruff": "ruff 0.15.22",
+    "bandit": "__main__.py 1.9.4",
+    "pip_audit": "pip-audit 2.10.1"
+  },
+  "limitations": [
+    "The wheel is the full DBOS preview package, not a DQ-018-only distribution.",
+    "The 61-file wheel build-input manifest is separate from the 53-file DQ-018 implementation manifest.",
+    "No signature, transparency-log entry, provenance attestation, publication, or independent rebuild exists.",
+    "Git does not preserve the 0o600 mode of local JSON result artifacts."
+  ]
+}

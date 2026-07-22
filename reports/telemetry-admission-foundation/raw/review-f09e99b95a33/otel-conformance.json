@@ -1,0 +1,2354 @@
+{
+  "authorized_subset_result": "PASS",
+  "effects": {
+    "agent_created": false,
+    "capability_created": false,
+    "collector_created": false,
+    "entity_created": false,
+    "evidence_created": false,
+    "execution_created": false,
+    "gate_state_changed": false,
+    "network_endpoint_created": false,
+    "permission_created": false,
+    "production_ready_declared": false,
+    "runtime_created": false,
+    "saee_called": false,
+    "verification_created": false
+  },
+  "environment": {
+    "components": {
+      "PyYAML": "6.0.3",
+      "jsonschema": "4.26.0"
+    },
+    "environment_digest": "sha256:42746206697b8e202c3dc27db70cce520d2004309228fb11ad7aaa524b37a288",
+    "implementation": "CPython",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.12.13"
+  },
+  "full_catalog_block_reason": "DQ_020_PR_G3_DEPLOYMENT_CASES_NOT_AUTHORIZED_AND_NOT_EXECUTED",
+  "full_catalog_result": "BLOCKED",
+  "generated_at": "2026-07-22T10:36:42Z",
+  "implementation_manifest": {
+    "entries": [
+      {
+        "digest": "sha256:8ca40ef5e35535fd0499cdd6f5eb81c53017c897fc3240330b4e56c2b274ee22",
+        "path": "README.md",
+        "size_bytes": 75561
+      },
+      {
+        "digest": "sha256:cb11cc76e08a43fe6b98226fad69ef2bfa3b9893ac6bd3f6e7d4026f6312bf8d",
+        "path": "dbos/telemetry_admission/__init__.py",
+        "size_bytes": 1810
+      },
+      {
+        "digest": "sha256:4cac312168e672a9fbbf7f80ec7ea7a88b77ffff55bd48e7b9124d853cf3999d",
+        "path": "dbos/telemetry_admission/contracts.py",
+        "size_bytes": 7909
+      },
+      {
+        "digest": "sha256:6491391b0b9b1e060d6e31e0abeae4ee8bb98152ad3a0b2866941b1b0ed6e568",
+        "path": "dbos/telemetry_admission/metrics.py",
+        "size_bytes": 3251
+      },
+      {
+        "digest": "sha256:aff37030370bab5af2b75e53d7271d3efdf1b71536c300994de9334f73bd319c",
+        "path": "dbos/telemetry_admission/migrations/__init__.py",
+        "size_bytes": 73
+      },
+      {
+        "digest": "sha256:5bfc7376a2b91e1ec51d1c47e825f8577358a99bf9096ab1055e44efde755226",
+        "path": "dbos/telemetry_admission/models.py",
+        "size_bytes": 2567
+      },
+      {
+        "digest": "sha256:cd8f82fdf1f85834b0cb2bb143836655a522f60a2c63c75ea6f72d98611549de",
+        "path": "dbos/telemetry_admission/profiles/README.md",
+        "size_bytes": 1839
+      },
+      {
+        "digest": "sha256:768dd202edd51bf75f346e945b9f3d4a3ef6d884f62e63b7061ceb2f02a10ac8",
+        "path": "dbos/telemetry_admission/profiles/THIRD_PARTY_NOTICES.md",
+        "size_bytes": 863
+      },
+      {
+        "digest": "sha256:d280c0a0976f99a777cebb0753025cd5792e88775f924808cbd4f5626bef314d",
+        "path": "dbos/telemetry_admission/profiles/__init__.py",
+        "size_bytes": 82
+      },
+      {
+        "digest": "sha256:6ac5dd367ff707dbcdcb1e5b459d4ac2fd676fb44eb17a21f9494a9fee4233df",
+        "path": "dbos/telemetry_admission/profiles/opentelemetry-schema-1.43.0.yaml",
+        "size_bytes": 33432
+      },
+      {
+        "digest": "sha256:805374a196f533d8b2c56492faeb566e05dd744edd0e519155442fcc50f8f452",
+        "path": "dbos/telemetry_admission/profiles/opentelemetry-schema-resource-conformance-cases.v0.1.json",
+        "size_bytes": 60951
+      },
+      {
+        "digest": "sha256:11a744b089bfab132f96825e5f10ce613d8d0b7ff145919fdff4bdb06c5112ee",
+        "path": "dbos/telemetry_admission/profiles/opentelemetry-schema-resource-conformance-result-set.schema.v0.1.json",
+        "size_bytes": 41298
+      },
+      {
+        "digest": "sha256:18b84edf6e8b618991c2dfd669d21794c3a3032188e198b7fd53899205b66c6e",
+        "path": "dbos/telemetry_admission/profiles/opentelemetry-semantic-conformance-cases.v0.1.json",
+        "size_bytes": 43612
+      },
+      {
+        "digest": "sha256:33fa128aa8063d8f4861f8abda23d9b48151f1a6529752848adaef3ea49f6f15",
+        "path": "dbos/telemetry_admission/profiles/opentelemetry-semantic-conformance-result-set.schema.v0.1.json",
+        "size_bytes": 24856
+      },
+      {
+        "digest": "sha256:b81213505b1a7c3841ba298545b642b127af1a96ec906536be27caab351de706",
+        "path": "dbos/telemetry_admission/profiles/opentelemetry-semantic-mapping.v0.1.json",
+        "size_bytes": 26770
+      },
+      {
+        "digest": "sha256:df19e20f4fb832b0a61b92e250e6f6f31211dd35cb88d9f9cc8bcf14ad432afd",
+        "path": "dbos/telemetry_admission/provenance.py",
+        "size_bytes": 40718
+      },
+      {
+        "digest": "sha256:d9ea2c26ab474e6a74a94dc455a14598c8a79f7adcd494a8492df9ba97c1645c",
+        "path": "dbos/telemetry_admission/references.py",
+        "size_bytes": 4436
+      },
+      {
+        "digest": "sha256:0f5ef63cfcbf4fdc212ad915683bf1157ab1b8b166f4439ea8d91482c79a4e82",
+        "path": "dbos/telemetry_admission/semantic.py",
+        "size_bytes": 19258
+      },
+      {
+        "digest": "sha256:ab12478c8bf5a970046cd764403e8d7169fb049ca9eb512134f46e1ff983840f",
+        "path": "dbos/telemetry_admission/service.py",
+        "size_bytes": 3261
+      },
+      {
+        "digest": "sha256:6040c71bae1b61d9795070ab2ab0c61196fd669350c9c497a7f18c866c75e207",
+        "path": "dbos/telemetry_admission/store.py",
+        "size_bytes": 55386
+      },
+      {
+        "digest": "sha256:70f6fd59fbfc2f5d45de4040cc6d9f701c72677b987c1d5f07e0fc72d8410564",
+        "path": "dbos/telemetry_admission/validator.py",
+        "size_bytes": 17335
+      },
+      {
+        "digest": "sha256:f497501eaf43258a1ea95404598907fef35989bf2a685ab63a17d792caea71a5",
+        "path": "pyproject.toml",
+        "size_bytes": 926
+      },
+      {
+        "digest": "sha256:6126401c4bc81398bf585566c8cebea4f3c9d117d5d7cbcbf9740537fc812675",
+        "path": "requirements/README.md",
+        "size_bytes": 1955
+      },
+      {
+        "digest": "sha256:1cea23a952436c9e226278bb037a803510d3e5f16ae984891420de5a5dcea95c",
+        "path": "requirements/telemetry-admission-build.lock",
+        "size_bytes": 705
+      },
+      {
+        "digest": "sha256:13a50e3f657af397b77809c7e00ceaef343b26bd111781376de5d04af36ada8d",
+        "path": "requirements/telemetry-admission-runtime-py312-macos-arm64.lock",
+        "size_bytes": 1091
+      },
+      {
+        "digest": "sha256:a405b581937fb4b93c2490552d5d19f05231286b9a0d2a64b273ddd58e33b1ba",
+        "path": "schemas/telemetry-admission-record-schema.yaml",
+        "size_bytes": 3699
+      },
+      {
+        "digest": "sha256:6b919693668036728eed5f466f413c1efca1d64c163e3fb26e388969ebb56d0c",
+        "path": "schemas/telemetry-observation-envelope-schema.yaml",
+        "size_bytes": 5740
+      },
+      {
+        "digest": "sha256:013f4855c385b7b0d63eadb5ffc532eb6f3d2d75ad9c24b85c4007780cdc2edc",
+        "path": "tests/telemetry_admission/conformance_catalog.v0.1.json",
+        "size_bytes": 11309
+      },
+      {
+        "digest": "sha256:1d3652a5f39227f4550e18b2353e8cf937f9163ba75839b96c01d0542b690123",
+        "path": "tests/telemetry_admission/fixtures.py",
+        "size_bytes": 4275
+      },
+      {
+        "digest": "sha256:b817493ba4c5381dfe26cb042832b75a7f4d4c75f3948ba8d104e37f49f54e91",
+        "path": "tests/telemetry_admission/load_characterization.v0.1.json",
+        "size_bytes": 1610
+      },
+      {
+        "digest": "sha256:8a4b9de1f7d73034b0abccff30d39ffad3e74cf8494b219ba10d1972e8356ebe",
+        "path": "tests/telemetry_admission/schema_resource_pr_g2_bindings.v0.1.json",
+        "size_bytes": 9723
+      },
+      {
+        "digest": "sha256:b3ba70ee3034145ca705e3d7ef4c68afd4738fb3c6d13cf9f442f89887d033e6",
+        "path": "tests/telemetry_admission/semantic_pr_g2_bindings.v0.1.json",
+        "size_bytes": 9126
+      },
+      {
+        "digest": "sha256:11d483aaf85183f0164bdb91474fb2d1b929e62d1fecdbe4c365fa5b7eda5c8b",
+        "path": "tests/telemetry_admission/subprocess_fault_worker.py",
+        "size_bytes": 1086
+      },
+      {
+        "digest": "sha256:b175edf00b93b380ec65b328031b467157477493bf42c0875497084b9f07202b",
+        "path": "tests/telemetry_admission/test_advanced_fault_conformance.py",
+        "size_bytes": 8588
+      },
+      {
+        "digest": "sha256:a42b657ff7a3e03e2197b6980f313c3b397924215491354ee558cec13a44b470",
+        "path": "tests/telemetry_admission/test_advanced_recovery.py",
+        "size_bytes": 9176
+      },
+      {
+        "digest": "sha256:2f52ccc6c15bbdc37fa0344072b677aa621933e2d3157ff9b2b4a07c0d7e1a86",
+        "path": "tests/telemetry_admission/test_authority_security.py",
+        "size_bytes": 9655
+      },
+      {
+        "digest": "sha256:c4ce8514ae78ae94a78d14276d46792c426bca9e6a2d5e42d5565820021a6fae",
+        "path": "tests/telemetry_admission/test_conformance_catalog.py",
+        "size_bytes": 1996
+      },
+      {
+        "digest": "sha256:951db11d5cb25497e690834329feb6183d192c8d35c1e72fd006f825cace5fbf",
+        "path": "tests/telemetry_admission/test_contract_validation.py",
+        "size_bytes": 5497
+      },
+      {
+        "digest": "sha256:dad29760441116d9a39c92616db7bb5d6f511210e3ee6ef3fcf7887f66e89089",
+        "path": "tests/telemetry_admission/test_duplicate_append.py",
+        "size_bytes": 10622
+      },
+      {
+        "digest": "sha256:c55dfbe4f301254ba3bf3675607388c327a39f731b718b132abbf6e5eac1118b",
+        "path": "tests/telemetry_admission/test_load_characterization.py",
+        "size_bytes": 5472
+      },
+      {
+        "digest": "sha256:1cbe747080540d16305ccd90f64d0b7b788bfcb122d28818d138bc99760c7e0d",
+        "path": "tests/telemetry_admission/test_metrics_schema_boundaries.py",
+        "size_bytes": 6323
+      },
+      {
+        "digest": "sha256:8829763b0fd264561df4834eaf3d856a373e4cd107a04b6cc0b7f199807700e7",
+        "path": "tests/telemetry_admission/test_migration_recovery.py",
+        "size_bytes": 13565
+      },
+      {
+        "digest": "sha256:16ef7d96edd86f4ee7f93cb9e3a5dfbd225e7d23f419e0f19a0e1766145399c3",
+        "path": "tests/telemetry_admission/test_otel_conformance_report.py",
+        "size_bytes": 1447
+      },
+      {
+        "digest": "sha256:09975e09d795b571ecfd9a73a08f34eac071ad21f6d2969b417e8bd4cd209b2b",
+        "path": "tests/telemetry_admission/test_reference_profile_bindings.py",
+        "size_bytes": 3718
+      },
+      {
+        "digest": "sha256:e5ff63b401e8288882a475c0491ccddfe984519ebf1c814e25e32cbc12f6b154",
+        "path": "tests/telemetry_admission/test_rollback_drill.py",
+        "size_bytes": 1042
+      },
+      {
+        "digest": "sha256:087183f3dac10c1d2074cdc0a5a96d9260f01bee157290c408a0e2e2aff76883",
+        "path": "tests/telemetry_admission/test_schema_resource_conformance.py",
+        "size_bytes": 21645
+      },
+      {
+        "digest": "sha256:8b6525fe06b32b94b619a7f4cd63c4766795599a9701f8c6302a3e22f136affb",
+        "path": "tests/telemetry_admission/test_semantic_conformance.py",
+        "size_bytes": 11014
+      },
+      {
+        "digest": "sha256:016ac40999a6240e0201a368cfeec12caf0330d73a1129697343c28a8111f0a9",
+        "path": "tests/telemetry_admission/test_storage_faults.py",
+        "size_bytes": 4401
+      },
+      {
+        "digest": "sha256:4cba5b447ad6ec78a40d2871f6077045ab5733daeae1a4534803268be4d9709d",
+        "path": "tests/telemetry_admission/test_supply_chain_locks.py",
+        "size_bytes": 5123
+      },
+      {
+        "digest": "sha256:68fc7a8a8f3f51dea0d1b2470ad7d66d320c7349c872be2492e68893dbbe25ea",
+        "path": "tools/telemetry_admission_characterize.py",
+        "size_bytes": 26794
+      },
+      {
+        "digest": "sha256:d9a94ebb43d0ce1e1c3a545d43356012d0e09ce7f87618e2b3703523224daa6e",
+        "path": "tools/telemetry_admission_otel_conformance.py",
+        "size_bytes": 11327
+      },
+      {
+        "digest": "sha256:dbdb4c154171d1aa317d9deab9c13e02f871f18668d39b4b5e6f5b2c15a4ed88",
+        "path": "tools/telemetry_admission_rollback_drill.py",
+        "size_bytes": 7896
+      },
+      {
+        "digest": "sha256:10183960af18573e1e34879a1e0ca92154fcd29380cbe1e661eb54607084608a",
+        "path": "validation/telemetry_admission_validator.py",
+        "size_bytes": 16417
+      }
+    ],
+    "file_count": 53,
+    "manifest_digest": "sha256:f09e99b95a3332d40abc933eaee35ea8a646b11d330ffaa5213ee0bb28f339b4",
+    "total_bytes": 698231
+  },
+  "independent_review_complete": false,
+  "official_result_schema_meta_validation": "PASS",
+  "production_ready": false,
+  "report_id": "TMAI-DBOS-DQ018-OTEL-OFFLINE-CONFORMANCE-LOCAL",
+  "report_schema_version": "0.1",
+  "schema_resource": {
+    "authorized_case_count": 36,
+    "authorized_failed": 0,
+    "authorized_passed": 36,
+    "authorized_subset_result": "PASS",
+    "binding_id": "TMAI-DBOS-SCHEMA-RESOURCE-PR-G2-BINDING-0.1",
+    "blocked_case_results": [
+      {
+        "case_id": "OSR-CF-SRC-003",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "gate_refs": [
+          "DQ-024",
+          "DQ-020",
+          "PR-G3",
+          "PR-G5"
+        ],
+        "result": "BLOCKED_NOT_AUTHORIZED"
+      },
+      {
+        "case_id": "OSR-CF-SRC-005",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "gate_refs": [
+          "DQ-024",
+          "DQ-020",
+          "PR-G3"
+        ],
+        "result": "BLOCKED_NOT_AUTHORIZED"
+      },
+      {
+        "case_id": "OSR-CF-SRC-006",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "gate_refs": [
+          "DQ-024",
+          "DQ-020",
+          "PR-G3",
+          "PR-G5"
+        ],
+        "result": "BLOCKED_NOT_AUTHORIZED"
+      },
+      {
+        "case_id": "OSR-CF-SRC-007",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "gate_refs": [
+          "DQ-024",
+          "DQ-020",
+          "PR-G3",
+          "PR-G5"
+        ],
+        "result": "BLOCKED_NOT_AUTHORIZED"
+      },
+      {
+        "case_id": "OSR-CF-SRC-008",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "gate_refs": [
+          "DQ-024",
+          "DQ-020",
+          "PR-G3",
+          "PR-G5"
+        ],
+        "result": "BLOCKED_NOT_AUTHORIZED"
+      },
+      {
+        "case_id": "OSR-CF-PRE-005",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "gate_refs": [
+          "DQ-022",
+          "DQ-024",
+          "DQ-020",
+          "PR-G3"
+        ],
+        "result": "BLOCKED_NOT_AUTHORIZED"
+      },
+      {
+        "case_id": "OSR-CF-RES-007",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "gate_refs": [
+          "DQ-024",
+          "DQ-020",
+          "PR-G3",
+          "PR-G5"
+        ],
+        "result": "BLOCKED_NOT_AUTHORIZED"
+      },
+      {
+        "case_id": "OSR-CF-DATA-003",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "gate_refs": [
+          "DQ-024",
+          "DQ-020",
+          "PR-G3",
+          "PR-G5"
+        ],
+        "result": "BLOCKED_NOT_AUTHORIZED"
+      },
+      {
+        "case_id": "OSR-CF-DATA-005",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "gate_refs": [
+          "DQ-024",
+          "DQ-020",
+          "PR-G3",
+          "PR-G6"
+        ],
+        "result": "BLOCKED_NOT_AUTHORIZED"
+      }
+    ],
+    "blocked_not_authorized_count": 9,
+    "case_results": [
+      {
+        "case_id": "OSR-CF-SRC-001",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "failure_class": null,
+        "result": "PASS",
+        "test_node": "test_schema_resource_conformance.SchemaResourceConformanceTests.test_osr_cf_src_001"
+      },
+      {
+        "case_id": "OSR-CF-SRC-002",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "failure_class": null,
+        "result": "PASS",
+        "test_node": "test_schema_resource_conformance.SchemaResourceConformanceTests.test_osr_cf_src_002"
+      },
+      {
+        "case_id": "OSR-CF-SRC-004",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "failure_class": null,
+        "result": "PASS",
+        "test_node": "test_schema_resource_conformance.SchemaResourceConformanceTests.test_osr_cf_src_004"
+      },
+      {
+        "case_id": "OSR-CF-PRE-001",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "failure_class": null,
+        "result": "PASS",
+        "test_node": "test_schema_resource_conformance.SchemaResourceConformanceTests.test_osr_cf_pre_001"
+      },
+      {
+        "case_id": "OSR-CF-PRE-002",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "failure_class": null,
+        "result": "PASS",
+        "test_node": "test_schema_resource_conformance.SchemaResourceConformanceTests.test_osr_cf_pre_002"
+      },
+      {
+        "case_id": "OSR-CF-PRE-003",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "failure_class": null,
+        "result": "PASS",
+        "test_node": "test_schema_resource_conformance.SchemaResourceConformanceTests.test_osr_cf_pre_003"
+      },
+      {
+        "case_id": "OSR-CF-PRE-004",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "failure_class": null,
+        "result": "PASS",
+        "test_node": "test_schema_resource_conformance.SchemaResourceConformanceTests.test_osr_cf_pre_004"
+      },
+      {
+        "case_id": "OSR-CF-TRN-001",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "failure_class": null,
+        "result": "PASS",
+        "test_node": "test_schema_resource_conformance.SchemaResourceConformanceTests.test_osr_cf_trn_001"
+      },
+      {
+        "case_id": "OSR-CF-TRN-002",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "failure_class": null,
+        "result": "PASS",
+        "test_node": "test_schema_resource_conformance.SchemaResourceConformanceTests.test_osr_cf_trn_002"
+      },
+      {
+        "case_id": "OSR-CF-TRN-003",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "failure_class": null,
+        "result": "PASS",
+        "test_node": "test_schema_resource_conformance.SchemaResourceConformanceTests.test_osr_cf_trn_003"
+      },
+      {
+        "case_id": "OSR-CF-TRN-004",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "failure_class": null,
+        "result": "PASS",
+        "test_node": "test_schema_resource_conformance.SchemaResourceConformanceTests.test_osr_cf_trn_004"
+      },
+      {
+        "case_id": "OSR-CF-TRN-005",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "failure_class": null,
+        "result": "PASS",
+        "test_node": "test_schema_resource_conformance.SchemaResourceConformanceTests.test_osr_cf_trn_005"
+      },
+      {
+        "case_id": "OSR-CF-TRN-006",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "failure_class": null,
+        "result": "PASS",
+        "test_node": "test_schema_resource_conformance.SchemaResourceConformanceTests.test_osr_cf_trn_006"
+      },
+      {
+        "case_id": "OSR-CF-RES-001",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "failure_class": null,
+        "result": "PASS",
+        "test_node": "test_schema_resource_conformance.SchemaResourceConformanceTests.test_osr_cf_res_001"
+      },
+      {
+        "case_id": "OSR-CF-RES-002",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "failure_class": null,
+        "result": "PASS",
+        "test_node": "test_schema_resource_conformance.SchemaResourceConformanceTests.test_osr_cf_res_002"
+      },
+      {
+        "case_id": "OSR-CF-RES-003",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "failure_class": null,
+        "result": "PASS",
+        "test_node": "test_schema_resource_conformance.SchemaResourceConformanceTests.test_osr_cf_res_003"
+      },
+      {
+        "case_id": "OSR-CF-RES-004",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "failure_class": null,
+        "result": "PASS",
+        "test_node": "test_schema_resource_conformance.SchemaResourceConformanceTests.test_osr_cf_res_004"
+      },
+      {
+        "case_id": "OSR-CF-RES-005",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "failure_class": null,
+        "result": "PASS",
+        "test_node": "test_schema_resource_conformance.SchemaResourceConformanceTests.test_osr_cf_res_005"
+      },
+      {
+        "case_id": "OSR-CF-RES-006",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "failure_class": null,
+        "result": "PASS",
+        "test_node": "test_schema_resource_conformance.SchemaResourceConformanceTests.test_osr_cf_res_006"
+      },
+      {
+        "case_id": "OSR-CF-ENT-001",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "failure_class": null,
+        "result": "PASS",
+        "test_node": "test_schema_resource_conformance.SchemaResourceConformanceTests.test_osr_cf_ent_001"
+      },
+      {
+        "case_id": "OSR-CF-ENT-002",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "failure_class": null,
+        "result": "PASS",
+        "test_node": "test_schema_resource_conformance.SchemaResourceConformanceTests.test_osr_cf_ent_002"
+      },
+      {
+        "case_id": "OSR-CF-ENT-003",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "failure_class": null,
+        "result": "PASS",
+        "test_node": "test_schema_resource_conformance.SchemaResourceConformanceTests.test_osr_cf_ent_003"
+      },
+      {
+        "case_id": "OSR-CF-ENT-004",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "failure_class": null,
+        "result": "PASS",
+        "test_node": "test_schema_resource_conformance.SchemaResourceConformanceTests.test_osr_cf_ent_004"
+      },
+      {
+        "case_id": "OSR-CF-ENT-005",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "failure_class": null,
+        "result": "PASS",
+        "test_node": "test_schema_resource_conformance.SchemaResourceConformanceTests.test_osr_cf_ent_005"
+      },
+      {
+        "case_id": "OSR-CF-ENT-006",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "failure_class": null,
+        "result": "PASS",
+        "test_node": "test_schema_resource_conformance.SchemaResourceConformanceTests.test_osr_cf_ent_006"
+      },
+      {
+        "case_id": "OSR-CF-ENT-007",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "failure_class": null,
+        "result": "PASS",
+        "test_node": "test_schema_resource_conformance.SchemaResourceConformanceTests.test_osr_cf_ent_007"
+      },
+      {
+        "case_id": "OSR-CF-ENT-008",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "failure_class": null,
+        "result": "PASS",
+        "test_node": "test_schema_resource_conformance.SchemaResourceConformanceTests.test_osr_cf_ent_008"
+      },
+      {
+        "case_id": "OSR-CF-DATA-001",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "failure_class": null,
+        "result": "PASS",
+        "test_node": "test_schema_resource_conformance.SchemaResourceConformanceTests.test_osr_cf_data_001"
+      },
+      {
+        "case_id": "OSR-CF-DATA-002",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "failure_class": null,
+        "result": "PASS",
+        "test_node": "test_schema_resource_conformance.SchemaResourceConformanceTests.test_osr_cf_data_002"
+      },
+      {
+        "case_id": "OSR-CF-DATA-004",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "failure_class": null,
+        "result": "PASS",
+        "test_node": "test_schema_resource_conformance.SchemaResourceConformanceTests.test_osr_cf_data_004"
+      },
+      {
+        "case_id": "OSR-CF-DATA-006",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "failure_class": null,
+        "result": "PASS",
+        "test_node": "test_schema_resource_conformance.SchemaResourceConformanceTests.test_osr_cf_data_006"
+      },
+      {
+        "case_id": "OSR-CF-DATA-007",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "failure_class": null,
+        "result": "PASS",
+        "test_node": "test_schema_resource_conformance.SchemaResourceConformanceTests.test_osr_cf_data_007"
+      },
+      {
+        "case_id": "OSR-CF-RSLT-001",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "failure_class": null,
+        "result": "PASS",
+        "test_node": "test_schema_resource_conformance.SchemaResourceConformanceTests.test_osr_cf_rslt_001"
+      },
+      {
+        "case_id": "OSR-CF-RSLT-002",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "failure_class": null,
+        "result": "PASS",
+        "test_node": "test_schema_resource_conformance.SchemaResourceConformanceTests.test_osr_cf_rslt_002"
+      },
+      {
+        "case_id": "OSR-CF-RSLT-003",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "failure_class": null,
+        "result": "PASS",
+        "test_node": "test_schema_resource_conformance.SchemaResourceConformanceTests.test_osr_cf_rslt_003"
+      },
+      {
+        "case_id": "OSR-CF-RSLT-004",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "failure_class": null,
+        "result": "PASS",
+        "test_node": "test_schema_resource_conformance.SchemaResourceConformanceTests.test_osr_cf_rslt_004"
+      }
+    ],
+    "catalog_digest": "sha256:805374a196f533d8b2c56492faeb566e05dd744edd0e519155442fcc50f8f452",
+    "catalog_id": "TMAI-OTEL-SCHEMA-RESOURCE-CONFORMANCE-0.1",
+    "effects": {
+      "agent_created": false,
+      "capability_created": false,
+      "collector_created": false,
+      "entity_created": false,
+      "evidence_created": false,
+      "execution_created": false,
+      "gate_state_changed": false,
+      "network_endpoint_created": false,
+      "permission_created": false,
+      "production_ready_declared": false,
+      "runtime_created": false,
+      "saee_called": false,
+      "verification_created": false
+    },
+    "full_catalog_result": "BLOCKED"
+  },
+  "scope": "DQ_018_PR_G2_OFFLINE_SUBSET_ONLY",
+  "semantic": {
+    "authorized_case_count": 32,
+    "authorized_failed": 0,
+    "authorized_passed": 32,
+    "authorized_subset_result": "PASS",
+    "binding_id": "TMAI-DBOS-SEMANTIC-PR-G2-BINDING-0.1",
+    "blocked_case_results": [
+      {
+        "case_id": "SEM-CF-SENS-001",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "gate_refs": [
+          "DQ-018",
+          "PR-G5"
+        ],
+        "result": "BLOCKED_NOT_AUTHORIZED"
+      },
+      {
+        "case_id": "SEM-CF-SENS-002",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "gate_refs": [
+          "DQ-018",
+          "PR-G5"
+        ],
+        "result": "BLOCKED_NOT_AUTHORIZED"
+      },
+      {
+        "case_id": "SEM-CF-SENS-003",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "gate_refs": [
+          "DQ-018",
+          "PR-G5"
+        ],
+        "result": "BLOCKED_NOT_AUTHORIZED"
+      },
+      {
+        "case_id": "SEM-CF-SENS-004",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "gate_refs": [
+          "DQ-018",
+          "PR-G5"
+        ],
+        "result": "BLOCKED_NOT_AUTHORIZED"
+      },
+      {
+        "case_id": "SEM-CF-SENS-005",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "gate_refs": [
+          "DQ-018",
+          "PR-G5"
+        ],
+        "result": "BLOCKED_NOT_AUTHORIZED"
+      },
+      {
+        "case_id": "SEM-CF-SENS-006",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "gate_refs": [
+          "DQ-018",
+          "PR-G5"
+        ],
+        "result": "BLOCKED_NOT_AUTHORIZED"
+      },
+      {
+        "case_id": "SEM-CF-SENS-007",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "gate_refs": [
+          "DQ-018",
+          "PR-G5"
+        ],
+        "result": "BLOCKED_NOT_AUTHORIZED"
+      },
+      {
+        "case_id": "SEM-CF-SENS-008",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "gate_refs": [
+          "DQ-018",
+          "PR-G5"
+        ],
+        "result": "BLOCKED_NOT_AUTHORIZED"
+      },
+      {
+        "case_id": "SEM-CF-SENS-009",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "gate_refs": [
+          "DQ-018",
+          "PR-G5"
+        ],
+        "result": "BLOCKED_NOT_AUTHORIZED"
+      },
+      {
+        "case_id": "SEM-CF-SENS-010",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "gate_refs": [
+          "DQ-018",
+          "PR-G5"
+        ],
+        "result": "BLOCKED_NOT_AUTHORIZED"
+      },
+      {
+        "case_id": "SEM-CF-CARD-001",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "gate_refs": [
+          "DQ-020",
+          "PR-G3",
+          "PR-G5"
+        ],
+        "result": "BLOCKED_NOT_AUTHORIZED"
+      },
+      {
+        "case_id": "SEM-CF-CARD-002",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "gate_refs": [
+          "DQ-020",
+          "PR-G3",
+          "PR-G5"
+        ],
+        "result": "BLOCKED_NOT_AUTHORIZED"
+      },
+      {
+        "case_id": "SEM-CF-CARD-003",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "gate_refs": [
+          "DQ-020",
+          "PR-G3",
+          "PR-G5"
+        ],
+        "result": "BLOCKED_NOT_AUTHORIZED"
+      },
+      {
+        "case_id": "SEM-CF-CARD-004",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "gate_refs": [
+          "DQ-020",
+          "PR-G3",
+          "PR-G5"
+        ],
+        "result": "BLOCKED_NOT_AUTHORIZED"
+      }
+    ],
+    "blocked_not_authorized_count": 14,
+    "case_results": [
+      {
+        "case_id": "SEM-CF-VSN-001",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "failure_class": null,
+        "result": "PASS",
+        "test_node": "test_semantic_conformance.SemanticConformanceTests.test_sem_cf_vsn_001"
+      },
+      {
+        "case_id": "SEM-CF-VSN-002",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "failure_class": null,
+        "result": "PASS",
+        "test_node": "test_semantic_conformance.SemanticConformanceTests.test_sem_cf_vsn_002"
+      },
+      {
+        "case_id": "SEM-CF-VSN-003",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "failure_class": null,
+        "result": "PASS",
+        "test_node": "test_semantic_conformance.SemanticConformanceTests.test_sem_cf_vsn_003"
+      },
+      {
+        "case_id": "SEM-CF-VSN-004",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "failure_class": null,
+        "result": "PASS",
+        "test_node": "test_semantic_conformance.SemanticConformanceTests.test_sem_cf_vsn_004"
+      },
+      {
+        "case_id": "SEM-CF-VSN-005",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "failure_class": null,
+        "result": "PASS",
+        "test_node": "test_semantic_conformance.SemanticConformanceTests.test_sem_cf_vsn_005"
+      },
+      {
+        "case_id": "SEM-CF-CORE-001",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "failure_class": null,
+        "result": "PASS",
+        "test_node": "test_semantic_conformance.SemanticConformanceTests.test_sem_cf_core_001"
+      },
+      {
+        "case_id": "SEM-CF-CORE-002",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "failure_class": null,
+        "result": "PASS",
+        "test_node": "test_semantic_conformance.SemanticConformanceTests.test_sem_cf_core_002"
+      },
+      {
+        "case_id": "SEM-CF-CORE-003",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "failure_class": null,
+        "result": "PASS",
+        "test_node": "test_semantic_conformance.SemanticConformanceTests.test_sem_cf_core_003"
+      },
+      {
+        "case_id": "SEM-CF-CORE-004",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "failure_class": null,
+        "result": "PASS",
+        "test_node": "test_semantic_conformance.SemanticConformanceTests.test_sem_cf_core_004"
+      },
+      {
+        "case_id": "SEM-CF-CORE-005",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "failure_class": null,
+        "result": "PASS",
+        "test_node": "test_semantic_conformance.SemanticConformanceTests.test_sem_cf_core_005"
+      },
+      {
+        "case_id": "SEM-CF-GENAI-001",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "failure_class": null,
+        "result": "PASS",
+        "test_node": "test_semantic_conformance.SemanticConformanceTests.test_sem_cf_genai_001"
+      },
+      {
+        "case_id": "SEM-CF-GENAI-002",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "failure_class": null,
+        "result": "PASS",
+        "test_node": "test_semantic_conformance.SemanticConformanceTests.test_sem_cf_genai_002"
+      },
+      {
+        "case_id": "SEM-CF-GENAI-003",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "failure_class": null,
+        "result": "PASS",
+        "test_node": "test_semantic_conformance.SemanticConformanceTests.test_sem_cf_genai_003"
+      },
+      {
+        "case_id": "SEM-CF-GENAI-004",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "failure_class": null,
+        "result": "PASS",
+        "test_node": "test_semantic_conformance.SemanticConformanceTests.test_sem_cf_genai_004"
+      },
+      {
+        "case_id": "SEM-CF-GENAI-005",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "failure_class": null,
+        "result": "PASS",
+        "test_node": "test_semantic_conformance.SemanticConformanceTests.test_sem_cf_genai_005"
+      },
+      {
+        "case_id": "SEM-CF-GENAI-006",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "failure_class": null,
+        "result": "PASS",
+        "test_node": "test_semantic_conformance.SemanticConformanceTests.test_sem_cf_genai_006"
+      },
+      {
+        "case_id": "SEM-CF-DRIFT-001",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "failure_class": null,
+        "result": "PASS",
+        "test_node": "test_semantic_conformance.SemanticConformanceTests.test_sem_cf_drift_001"
+      },
+      {
+        "case_id": "SEM-CF-DRIFT-002",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "failure_class": null,
+        "result": "PASS",
+        "test_node": "test_semantic_conformance.SemanticConformanceTests.test_sem_cf_drift_002"
+      },
+      {
+        "case_id": "SEM-CF-DRIFT-003",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "failure_class": null,
+        "result": "PASS",
+        "test_node": "test_semantic_conformance.SemanticConformanceTests.test_sem_cf_drift_003"
+      },
+      {
+        "case_id": "SEM-CF-DRIFT-004",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "failure_class": null,
+        "result": "PASS",
+        "test_node": "test_semantic_conformance.SemanticConformanceTests.test_sem_cf_drift_004"
+      },
+      {
+        "case_id": "SEM-CF-DRIFT-005",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "failure_class": null,
+        "result": "PASS",
+        "test_node": "test_semantic_conformance.SemanticConformanceTests.test_sem_cf_drift_005"
+      },
+      {
+        "case_id": "SEM-CF-AUTH-001",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "failure_class": null,
+        "result": "PASS",
+        "test_node": "test_semantic_conformance.SemanticConformanceTests.test_sem_cf_auth_001"
+      },
+      {
+        "case_id": "SEM-CF-AUTH-002",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "failure_class": null,
+        "result": "PASS",
+        "test_node": "test_semantic_conformance.SemanticConformanceTests.test_sem_cf_auth_002"
+      },
+      {
+        "case_id": "SEM-CF-AUTH-003",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "failure_class": null,
+        "result": "PASS",
+        "test_node": "test_semantic_conformance.SemanticConformanceTests.test_sem_cf_auth_003"
+      },
+      {
+        "case_id": "SEM-CF-AUTH-004",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "failure_class": null,
+        "result": "PASS",
+        "test_node": "test_semantic_conformance.SemanticConformanceTests.test_sem_cf_auth_004"
+      },
+      {
+        "case_id": "SEM-CF-AUTH-005",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "failure_class": null,
+        "result": "PASS",
+        "test_node": "test_semantic_conformance.SemanticConformanceTests.test_sem_cf_auth_005"
+      },
+      {
+        "case_id": "SEM-CF-AUTH-006",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "failure_class": null,
+        "result": "PASS",
+        "test_node": "test_semantic_conformance.SemanticConformanceTests.test_sem_cf_auth_006"
+      },
+      {
+        "case_id": "SEM-CF-AUTH-007",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "failure_class": null,
+        "result": "PASS",
+        "test_node": "test_semantic_conformance.SemanticConformanceTests.test_sem_cf_auth_007"
+      },
+      {
+        "case_id": "SEM-CF-RESULT-001",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "failure_class": null,
+        "result": "PASS",
+        "test_node": "test_semantic_conformance.SemanticConformanceTests.test_sem_cf_result_001"
+      },
+      {
+        "case_id": "SEM-CF-RESULT-002",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "failure_class": null,
+        "result": "PASS",
+        "test_node": "test_semantic_conformance.SemanticConformanceTests.test_sem_cf_result_002"
+      },
+      {
+        "case_id": "SEM-CF-RESULT-003",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "failure_class": null,
+        "result": "PASS",
+        "test_node": "test_semantic_conformance.SemanticConformanceTests.test_sem_cf_result_003"
+      },
+      {
+        "case_id": "SEM-CF-RESULT-004",
+        "effects": {
+          "agent_created": false,
+          "capability_created": false,
+          "collector_created": false,
+          "entity_created": false,
+          "evidence_created": false,
+          "execution_created": false,
+          "gate_state_changed": false,
+          "network_endpoint_created": false,
+          "permission_created": false,
+          "production_ready_declared": false,
+          "runtime_created": false,
+          "saee_called": false,
+          "verification_created": false
+        },
+        "failure_class": null,
+        "result": "PASS",
+        "test_node": "test_semantic_conformance.SemanticConformanceTests.test_sem_cf_result_004"
+      }
+    ],
+    "catalog_digest": "sha256:18b84edf6e8b618991c2dfd669d21794c3a3032188e198b7fd53899205b66c6e",
+    "catalog_id": "TMAI-OTEL-SEMANTIC-CONFORMANCE-0.1",
+    "effects": {
+      "agent_created": false,
+      "capability_created": false,
+      "collector_created": false,
+      "entity_created": false,
+      "evidence_created": false,
+      "execution_created": false,
+      "gate_state_changed": false,
+      "network_endpoint_created": false,
+      "permission_created": false,
+      "production_ready_declared": false,
+      "runtime_created": false,
+      "saee_called": false,
+      "verification_created": false
+    },
+    "full_catalog_result": "BLOCKED"
+  },
+  "source": {
+    "base_commit": "cd3f867c4379ec555c45e7d554088ad12ce08a24",
+    "branch": "codex/telemetry-admission-foundation",
+    "source_binding": "IMPLEMENTATION_MANIFEST_ONLY",
+    "source_commit_includes_current_implementation": false,
+    "worktree_state": "NOT_EVALUATED_BY_OFFLINE_REPORT_TOOL"
+  }
+}

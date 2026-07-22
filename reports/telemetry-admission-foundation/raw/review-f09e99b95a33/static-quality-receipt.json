@@ -1,0 +1,31 @@
+{
+  "receipt_schema_version": "0.1",
+  "receipt_id": "DBOS-PR-2A-STATIC-QUALITY-F09E99B95A33",
+  "observed_at": "2026-07-22T10:36:42Z",
+  "implementation_manifest_sha256": "f09e99b95a3332d40abc933eaee35ea8a646b11d330ffaa5213ee0bb28f339b4",
+  "targeted_scope": "dbos/telemetry_admission tests/telemetry_admission validation/telemetry_admission_validator.py tools/telemetry_admission_*.py",
+  "targeted_ruff": {
+    "result": "PASS",
+    "finding_count": 0
+  },
+  "targeted_format": {
+    "result": "PASS",
+    "output": "34 files already formatted"
+  },
+  "bandit": {
+    "result": "PASS",
+    "finding_count": 0,
+    "scanned_loc": 5263,
+    "nosec": 0,
+    "skipped_tests": 0
+  },
+  "whole_repository_ruff": {
+    "result": "FAIL_PRE_EXISTING_OUT_OF_SCOPE_DEBT",
+    "finding_count": 39,
+    "file_count": 9,
+    "telemetry_slice_finding_count": 0,
+    "raw_receipt": "whole-repository-ruff.json"
+  },
+  "result_semantics": "TARGETED_SLICE_PASS_DOES_NOT_CLOSE_WHOLE_REPOSITORY_DEBT",
+  "production_ready": false
+}

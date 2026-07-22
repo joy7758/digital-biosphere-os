@@ -1,0 +1,35 @@
+{
+  "receipt_schema_version": "0.1",
+  "receipt_id": "DBOS-PR-2A-COVERAGE-F09E99B95A33",
+  "observed_at": "2026-07-22T10:36:42Z",
+  "implementation_manifest_sha256": "f09e99b95a3332d40abc933eaee35ea8a646b11d330ffaa5213ee0bb28f339b4",
+  "command_scope": "dbos.telemetry_admission with tests/telemetry_admission",
+  "test_result": "PASS",
+  "test_count": 189,
+  "threshold_frozen_before_run": false,
+  "result_semantics": "CHARACTERIZATION_NOT_GATE",
+  "totals": {
+    "covered_branches": 474,
+    "covered_lines": 1575,
+    "excluded_lines": 0,
+    "missing_branches": 184,
+    "missing_lines": 252,
+    "num_branches": 658,
+    "num_partial_branches": 172,
+    "num_statements": 1827,
+    "percent_branches_covered": 72.03647416413374,
+    "percent_branches_covered_display": "72",
+    "percent_covered": 82.45472837022133,
+    "percent_covered_display": "82",
+    "percent_statements_covered": 86.20689655172414,
+    "percent_statements_covered_display": "86"
+  },
+  "authority_effects": {
+    "agent_created": false,
+    "runtime_created": false,
+    "entity_created": false,
+    "permission_created": false,
+    "evidence_created": false,
+    "saee_called": false
+  }
+}

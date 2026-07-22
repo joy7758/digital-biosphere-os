@@ -1,0 +1,839 @@
+[
+  {
+    "cell": null,
+    "code": "F401",
+    "end_location": {
+      "column": 10,
+      "row": 19
+    },
+    "filename": "/Users/zhangbin/GitHub/.worktrees/digital-biosphere-os-telemetry-admission-foundation/execution/dbos_exp_0001.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "",
+          "end_location": {
+            "column": 1,
+            "row": 20
+          },
+          "location": {
+            "column": 1,
+            "row": 19
+          }
+        }
+      ],
+      "message": "Remove unused import: `io`"
+    },
+    "location": {
+      "column": 8,
+      "row": 19
+    },
+    "message": "`io` imported but unused",
+    "name": "unused-import",
+    "noqa_row": 19,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/unused-import"
+  },
+  {
+    "cell": null,
+    "code": "F841",
+    "end_location": {
+      "column": 18,
+      "row": 378
+    },
+    "filename": "/Users/zhangbin/GitHub/.worktrees/digital-biosphere-os-telemetry-admission-foundation/execution/dbos_exp_0001.py",
+    "fix": {
+      "applicability": "unsafe",
+      "edits": [
+        {
+          "content": "",
+          "end_location": {
+            "column": 21,
+            "row": 378
+          },
+          "location": {
+            "column": 5,
+            "row": 378
+          }
+        }
+      ],
+      "message": "Remove assignment to unused variable `authorization`"
+    },
+    "location": {
+      "column": 5,
+      "row": 378
+    },
+    "message": "Local variable `authorization` is assigned to but never used",
+    "name": "unused-variable",
+    "noqa_row": 378,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/unused-variable"
+  },
+  {
+    "cell": null,
+    "code": "E402",
+    "end_location": {
+      "column": 2,
+      "row": 31
+    },
+    "filename": "/Users/zhangbin/GitHub/.worktrees/digital-biosphere-os-telemetry-admission-foundation/validation/authorization_registry_validator.py",
+    "fix": null,
+    "location": {
+      "column": 1,
+      "row": 29
+    },
+    "message": "Module level import not at top of file",
+    "name": "module-import-not-at-top-of-file",
+    "noqa_row": 29,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/module-import-not-at-top-of-file"
+  },
+  {
+    "cell": null,
+    "code": "E402",
+    "end_location": {
+      "column": 86,
+      "row": 32
+    },
+    "filename": "/Users/zhangbin/GitHub/.worktrees/digital-biosphere-os-telemetry-admission-foundation/validation/authorization_registry_validator.py",
+    "fix": null,
+    "location": {
+      "column": 1,
+      "row": 32
+    },
+    "message": "Module level import not at top of file",
+    "name": "module-import-not-at-top-of-file",
+    "noqa_row": 32,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/module-import-not-at-top-of-file"
+  },
+  {
+    "cell": null,
+    "code": "E402",
+    "end_location": {
+      "column": 80,
+      "row": 33
+    },
+    "filename": "/Users/zhangbin/GitHub/.worktrees/digital-biosphere-os-telemetry-admission-foundation/validation/authorization_registry_validator.py",
+    "fix": null,
+    "location": {
+      "column": 1,
+      "row": 33
+    },
+    "message": "Module level import not at top of file",
+    "name": "module-import-not-at-top-of-file",
+    "noqa_row": 33,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/module-import-not-at-top-of-file"
+  },
+  {
+    "cell": null,
+    "code": "E402",
+    "end_location": {
+      "column": 2,
+      "row": 37
+    },
+    "filename": "/Users/zhangbin/GitHub/.worktrees/digital-biosphere-os-telemetry-admission-foundation/validation/authorization_registry_validator.py",
+    "fix": null,
+    "location": {
+      "column": 1,
+      "row": 34
+    },
+    "message": "Module level import not at top of file",
+    "name": "module-import-not-at-top-of-file",
+    "noqa_row": 34,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/module-import-not-at-top-of-file"
+  },
+  {
+    "cell": null,
+    "code": "E402",
+    "end_location": {
+      "column": 2,
+      "row": 40
+    },
+    "filename": "/Users/zhangbin/GitHub/.worktrees/digital-biosphere-os-telemetry-admission-foundation/validation/authorization_registry_validator.py",
+    "fix": null,
+    "location": {
+      "column": 1,
+      "row": 38
+    },
+    "message": "Module level import not at top of file",
+    "name": "module-import-not-at-top-of-file",
+    "noqa_row": 38,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/module-import-not-at-top-of-file"
+  },
+  {
+    "cell": null,
+    "code": "E402",
+    "end_location": {
+      "column": 2,
+      "row": 44
+    },
+    "filename": "/Users/zhangbin/GitHub/.worktrees/digital-biosphere-os-telemetry-admission-foundation/validation/authorization_registry_validator.py",
+    "fix": null,
+    "location": {
+      "column": 1,
+      "row": 41
+    },
+    "message": "Module level import not at top of file",
+    "name": "module-import-not-at-top-of-file",
+    "noqa_row": 41,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/module-import-not-at-top-of-file"
+  },
+  {
+    "cell": null,
+    "code": "E402",
+    "end_location": {
+      "column": 81,
+      "row": 27
+    },
+    "filename": "/Users/zhangbin/GitHub/.worktrees/digital-biosphere-os-telemetry-admission-foundation/validation/candidate_registration_validator.py",
+    "fix": null,
+    "location": {
+      "column": 1,
+      "row": 27
+    },
+    "message": "Module level import not at top of file",
+    "name": "module-import-not-at-top-of-file",
+    "noqa_row": 27,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/module-import-not-at-top-of-file"
+  },
+  {
+    "cell": null,
+    "code": "E402",
+    "end_location": {
+      "column": 2,
+      "row": 30
+    },
+    "filename": "/Users/zhangbin/GitHub/.worktrees/digital-biosphere-os-telemetry-admission-foundation/validation/candidate_registration_validator.py",
+    "fix": null,
+    "location": {
+      "column": 1,
+      "row": 28
+    },
+    "message": "Module level import not at top of file",
+    "name": "module-import-not-at-top-of-file",
+    "noqa_row": 28,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/module-import-not-at-top-of-file"
+  },
+  {
+    "cell": null,
+    "code": "E402",
+    "end_location": {
+      "column": 2,
+      "row": 36
+    },
+    "filename": "/Users/zhangbin/GitHub/.worktrees/digital-biosphere-os-telemetry-admission-foundation/validation/candidate_registration_validator.py",
+    "fix": null,
+    "location": {
+      "column": 1,
+      "row": 31
+    },
+    "message": "Module level import not at top of file",
+    "name": "module-import-not-at-top-of-file",
+    "noqa_row": 31,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/module-import-not-at-top-of-file"
+  },
+  {
+    "cell": null,
+    "code": "E402",
+    "end_location": {
+      "column": 77,
+      "row": 37
+    },
+    "filename": "/Users/zhangbin/GitHub/.worktrees/digital-biosphere-os-telemetry-admission-foundation/validation/candidate_registration_validator.py",
+    "fix": null,
+    "location": {
+      "column": 1,
+      "row": 37
+    },
+    "message": "Module level import not at top of file",
+    "name": "module-import-not-at-top-of-file",
+    "noqa_row": 37,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/module-import-not-at-top-of-file"
+  },
+  {
+    "cell": null,
+    "code": "E402",
+    "end_location": {
+      "column": 86,
+      "row": 29
+    },
+    "filename": "/Users/zhangbin/GitHub/.worktrees/digital-biosphere-os-telemetry-admission-foundation/validation/digital_entity_infrastructure_validator.py",
+    "fix": null,
+    "location": {
+      "column": 1,
+      "row": 29
+    },
+    "message": "Module level import not at top of file",
+    "name": "module-import-not-at-top-of-file",
+    "noqa_row": 29,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/module-import-not-at-top-of-file"
+  },
+  {
+    "cell": null,
+    "code": "E402",
+    "end_location": {
+      "column": 80,
+      "row": 30
+    },
+    "filename": "/Users/zhangbin/GitHub/.worktrees/digital-biosphere-os-telemetry-admission-foundation/validation/digital_entity_infrastructure_validator.py",
+    "fix": null,
+    "location": {
+      "column": 1,
+      "row": 30
+    },
+    "message": "Module level import not at top of file",
+    "name": "module-import-not-at-top-of-file",
+    "noqa_row": 30,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/module-import-not-at-top-of-file"
+  },
+  {
+    "cell": null,
+    "code": "E402",
+    "end_location": {
+      "column": 71,
+      "row": 31
+    },
+    "filename": "/Users/zhangbin/GitHub/.worktrees/digital-biosphere-os-telemetry-admission-foundation/validation/digital_entity_infrastructure_validator.py",
+    "fix": null,
+    "location": {
+      "column": 1,
+      "row": 31
+    },
+    "message": "Module level import not at top of file",
+    "name": "module-import-not-at-top-of-file",
+    "noqa_row": 31,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/module-import-not-at-top-of-file"
+  },
+  {
+    "cell": null,
+    "code": "E402",
+    "end_location": {
+      "column": 76,
+      "row": 32
+    },
+    "filename": "/Users/zhangbin/GitHub/.worktrees/digital-biosphere-os-telemetry-admission-foundation/validation/digital_entity_infrastructure_validator.py",
+    "fix": null,
+    "location": {
+      "column": 1,
+      "row": 32
+    },
+    "message": "Module level import not at top of file",
+    "name": "module-import-not-at-top-of-file",
+    "noqa_row": 32,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/module-import-not-at-top-of-file"
+  },
+  {
+    "cell": null,
+    "code": "E402",
+    "end_location": {
+      "column": 80,
+      "row": 33
+    },
+    "filename": "/Users/zhangbin/GitHub/.worktrees/digital-biosphere-os-telemetry-admission-foundation/validation/digital_entity_infrastructure_validator.py",
+    "fix": null,
+    "location": {
+      "column": 1,
+      "row": 33
+    },
+    "message": "Module level import not at top of file",
+    "name": "module-import-not-at-top-of-file",
+    "noqa_row": 33,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/module-import-not-at-top-of-file"
+  },
+  {
+    "cell": null,
+    "code": "E402",
+    "end_location": {
+      "column": 71,
+      "row": 34
+    },
+    "filename": "/Users/zhangbin/GitHub/.worktrees/digital-biosphere-os-telemetry-admission-foundation/validation/digital_entity_infrastructure_validator.py",
+    "fix": null,
+    "location": {
+      "column": 1,
+      "row": 34
+    },
+    "message": "Module level import not at top of file",
+    "name": "module-import-not-at-top-of-file",
+    "noqa_row": 34,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/module-import-not-at-top-of-file"
+  },
+  {
+    "cell": null,
+    "code": "E402",
+    "end_location": {
+      "column": 86,
+      "row": 35
+    },
+    "filename": "/Users/zhangbin/GitHub/.worktrees/digital-biosphere-os-telemetry-admission-foundation/validation/digital_entity_infrastructure_validator.py",
+    "fix": null,
+    "location": {
+      "column": 1,
+      "row": 35
+    },
+    "message": "Module level import not at top of file",
+    "name": "module-import-not-at-top-of-file",
+    "noqa_row": 35,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/module-import-not-at-top-of-file"
+  },
+  {
+    "cell": null,
+    "code": "E402",
+    "end_location": {
+      "column": 69,
+      "row": 36
+    },
+    "filename": "/Users/zhangbin/GitHub/.worktrees/digital-biosphere-os-telemetry-admission-foundation/validation/digital_entity_infrastructure_validator.py",
+    "fix": null,
+    "location": {
+      "column": 1,
+      "row": 36
+    },
+    "message": "Module level import not at top of file",
+    "name": "module-import-not-at-top-of-file",
+    "noqa_row": 36,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/module-import-not-at-top-of-file"
+  },
+  {
+    "cell": null,
+    "code": "E402",
+    "end_location": {
+      "column": 79,
+      "row": 37
+    },
+    "filename": "/Users/zhangbin/GitHub/.worktrees/digital-biosphere-os-telemetry-admission-foundation/validation/digital_entity_infrastructure_validator.py",
+    "fix": null,
+    "location": {
+      "column": 1,
+      "row": 37
+    },
+    "message": "Module level import not at top of file",
+    "name": "module-import-not-at-top-of-file",
+    "noqa_row": 37,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/module-import-not-at-top-of-file"
+  },
+  {
+    "cell": null,
+    "code": "E402",
+    "end_location": {
+      "column": 2,
+      "row": 41
+    },
+    "filename": "/Users/zhangbin/GitHub/.worktrees/digital-biosphere-os-telemetry-admission-foundation/validation/digital_entity_infrastructure_validator.py",
+    "fix": null,
+    "location": {
+      "column": 1,
+      "row": 38
+    },
+    "message": "Module level import not at top of file",
+    "name": "module-import-not-at-top-of-file",
+    "noqa_row": 38,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/module-import-not-at-top-of-file"
+  },
+  {
+    "cell": null,
+    "code": "E402",
+    "end_location": {
+      "column": 2,
+      "row": 45
+    },
+    "filename": "/Users/zhangbin/GitHub/.worktrees/digital-biosphere-os-telemetry-admission-foundation/validation/digital_entity_infrastructure_validator.py",
+    "fix": null,
+    "location": {
+      "column": 1,
+      "row": 42
+    },
+    "message": "Module level import not at top of file",
+    "name": "module-import-not-at-top-of-file",
+    "noqa_row": 42,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/module-import-not-at-top-of-file"
+  },
+  {
+    "cell": null,
+    "code": "E402",
+    "end_location": {
+      "column": 2,
+      "row": 49
+    },
+    "filename": "/Users/zhangbin/GitHub/.worktrees/digital-biosphere-os-telemetry-admission-foundation/validation/digital_entity_infrastructure_validator.py",
+    "fix": null,
+    "location": {
+      "column": 1,
+      "row": 46
+    },
+    "message": "Module level import not at top of file",
+    "name": "module-import-not-at-top-of-file",
+    "noqa_row": 46,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/module-import-not-at-top-of-file"
+  },
+  {
+    "cell": null,
+    "code": "E402",
+    "end_location": {
+      "column": 71,
+      "row": 28
+    },
+    "filename": "/Users/zhangbin/GitHub/.worktrees/digital-biosphere-os-telemetry-admission-foundation/validation/entity_support_validator.py",
+    "fix": null,
+    "location": {
+      "column": 1,
+      "row": 28
+    },
+    "message": "Module level import not at top of file",
+    "name": "module-import-not-at-top-of-file",
+    "noqa_row": 28,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/module-import-not-at-top-of-file"
+  },
+  {
+    "cell": null,
+    "code": "E402",
+    "end_location": {
+      "column": 76,
+      "row": 29
+    },
+    "filename": "/Users/zhangbin/GitHub/.worktrees/digital-biosphere-os-telemetry-admission-foundation/validation/entity_support_validator.py",
+    "fix": null,
+    "location": {
+      "column": 1,
+      "row": 29
+    },
+    "message": "Module level import not at top of file",
+    "name": "module-import-not-at-top-of-file",
+    "noqa_row": 29,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/module-import-not-at-top-of-file"
+  },
+  {
+    "cell": null,
+    "code": "E402",
+    "end_location": {
+      "column": 71,
+      "row": 30
+    },
+    "filename": "/Users/zhangbin/GitHub/.worktrees/digital-biosphere-os-telemetry-admission-foundation/validation/entity_support_validator.py",
+    "fix": null,
+    "location": {
+      "column": 1,
+      "row": 30
+    },
+    "message": "Module level import not at top of file",
+    "name": "module-import-not-at-top-of-file",
+    "noqa_row": 30,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/module-import-not-at-top-of-file"
+  },
+  {
+    "cell": null,
+    "code": "E402",
+    "end_location": {
+      "column": 69,
+      "row": 31
+    },
+    "filename": "/Users/zhangbin/GitHub/.worktrees/digital-biosphere-os-telemetry-admission-foundation/validation/entity_support_validator.py",
+    "fix": null,
+    "location": {
+      "column": 1,
+      "row": 31
+    },
+    "message": "Module level import not at top of file",
+    "name": "module-import-not-at-top-of-file",
+    "noqa_row": 31,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/module-import-not-at-top-of-file"
+  },
+  {
+    "cell": null,
+    "code": "E402",
+    "end_location": {
+      "column": 2,
+      "row": 35
+    },
+    "filename": "/Users/zhangbin/GitHub/.worktrees/digital-biosphere-os-telemetry-admission-foundation/validation/entity_support_validator.py",
+    "fix": null,
+    "location": {
+      "column": 1,
+      "row": 32
+    },
+    "message": "Module level import not at top of file",
+    "name": "module-import-not-at-top-of-file",
+    "noqa_row": 32,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/module-import-not-at-top-of-file"
+  },
+  {
+    "cell": null,
+    "code": "F401",
+    "end_location": {
+      "column": 11,
+      "row": 26
+    },
+    "filename": "/Users/zhangbin/GitHub/.worktrees/digital-biosphere-os-telemetry-admission-foundation/validation/execution_chain_validator.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "",
+          "end_location": {
+            "column": 1,
+            "row": 27
+          },
+          "location": {
+            "column": 1,
+            "row": 26
+          }
+        }
+      ],
+      "message": "Remove unused import: `sys`"
+    },
+    "location": {
+      "column": 8,
+      "row": 26
+    },
+    "message": "`sys` imported but unused",
+    "name": "unused-import",
+    "noqa_row": 26,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/unused-import"
+  },
+  {
+    "cell": null,
+    "code": "F841",
+    "end_location": {
+      "column": 23,
+      "row": 301
+    },
+    "filename": "/Users/zhangbin/GitHub/.worktrees/digital-biosphere-os-telemetry-admission-foundation/validation/execution_chain_validator.py",
+    "fix": {
+      "applicability": "unsafe",
+      "edits": [
+        {
+          "content": "",
+          "end_location": {
+            "column": 26,
+            "row": 301
+          },
+          "location": {
+            "column": 5,
+            "row": 301
+          }
+        }
+      ],
+      "message": "Remove assignment to unused variable `validator_manifest`"
+    },
+    "location": {
+      "column": 5,
+      "row": 301
+    },
+    "message": "Local variable `validator_manifest` is assigned to but never used",
+    "name": "unused-variable",
+    "noqa_row": 301,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/unused-variable"
+  },
+  {
+    "cell": null,
+    "code": "F401",
+    "end_location": {
+      "column": 32,
+      "row": 22
+    },
+    "filename": "/Users/zhangbin/GitHub/.worktrees/digital-biosphere-os-telemetry-admission-foundation/validation/freeze_validator.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "",
+          "end_location": {
+            "column": 1,
+            "row": 23
+          },
+          "location": {
+            "column": 1,
+            "row": 22
+          }
+        }
+      ],
+      "message": "Remove unused import: `collections.Counter`"
+    },
+    "location": {
+      "column": 25,
+      "row": 22
+    },
+    "message": "`collections.Counter` imported but unused",
+    "name": "unused-import",
+    "noqa_row": 22,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/unused-import"
+  },
+  {
+    "cell": null,
+    "code": "E402",
+    "end_location": {
+      "column": 81,
+      "row": 28
+    },
+    "filename": "/Users/zhangbin/GitHub/.worktrees/digital-biosphere-os-telemetry-admission-foundation/validation/registration_execution_validator.py",
+    "fix": null,
+    "location": {
+      "column": 1,
+      "row": 28
+    },
+    "message": "Module level import not at top of file",
+    "name": "module-import-not-at-top-of-file",
+    "noqa_row": 28,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/module-import-not-at-top-of-file"
+  },
+  {
+    "cell": null,
+    "code": "E402",
+    "end_location": {
+      "column": 2,
+      "row": 31
+    },
+    "filename": "/Users/zhangbin/GitHub/.worktrees/digital-biosphere-os-telemetry-admission-foundation/validation/registration_execution_validator.py",
+    "fix": null,
+    "location": {
+      "column": 1,
+      "row": 29
+    },
+    "message": "Module level import not at top of file",
+    "name": "module-import-not-at-top-of-file",
+    "noqa_row": 29,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/module-import-not-at-top-of-file"
+  },
+  {
+    "cell": null,
+    "code": "E402",
+    "end_location": {
+      "column": 88,
+      "row": 32
+    },
+    "filename": "/Users/zhangbin/GitHub/.worktrees/digital-biosphere-os-telemetry-admission-foundation/validation/registration_execution_validator.py",
+    "fix": null,
+    "location": {
+      "column": 1,
+      "row": 32
+    },
+    "message": "Module level import not at top of file",
+    "name": "module-import-not-at-top-of-file",
+    "noqa_row": 32,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/module-import-not-at-top-of-file"
+  },
+  {
+    "cell": null,
+    "code": "E402",
+    "end_location": {
+      "column": 77,
+      "row": 33
+    },
+    "filename": "/Users/zhangbin/GitHub/.worktrees/digital-biosphere-os-telemetry-admission-foundation/validation/registration_execution_validator.py",
+    "fix": null,
+    "location": {
+      "column": 1,
+      "row": 33
+    },
+    "message": "Module level import not at top of file",
+    "name": "module-import-not-at-top-of-file",
+    "noqa_row": 33,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/module-import-not-at-top-of-file"
+  },
+  {
+    "cell": null,
+    "code": "E402",
+    "end_location": {
+      "column": 2,
+      "row": 36
+    },
+    "filename": "/Users/zhangbin/GitHub/.worktrees/digital-biosphere-os-telemetry-admission-foundation/validation/registration_execution_validator.py",
+    "fix": null,
+    "location": {
+      "column": 1,
+      "row": 34
+    },
+    "message": "Module level import not at top of file",
+    "name": "module-import-not-at-top-of-file",
+    "noqa_row": 34,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/module-import-not-at-top-of-file"
+  },
+  {
+    "cell": null,
+    "code": "E402",
+    "end_location": {
+      "column": 2,
+      "row": 40
+    },
+    "filename": "/Users/zhangbin/GitHub/.worktrees/digital-biosphere-os-telemetry-admission-foundation/validation/registration_execution_validator.py",
+    "fix": null,
+    "location": {
+      "column": 1,
+      "row": 37
+    },
+    "message": "Module level import not at top of file",
+    "name": "module-import-not-at-top-of-file",
+    "noqa_row": 37,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/module-import-not-at-top-of-file"
+  },
+  {
+    "cell": null,
+    "code": "F841",
+    "end_location": {
+      "column": 64,
+      "row": 467
+    },
+    "filename": "/Users/zhangbin/GitHub/.worktrees/digital-biosphere-os-telemetry-admission-foundation/validator/object_schema_validator.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "",
+          "end_location": {
+            "column": 64,
+            "row": 467
+          },
+          "location": {
+            "column": 57,
+            "row": 467
+          }
+        }
+      ],
+      "message": "Remove assignment to unused variable `exc`"
+    },
+    "location": {
+      "column": 61,
+      "row": 467
+    },
+    "message": "Local variable `exc` is assigned to but never used",
+    "name": "unused-variable",
+    "noqa_row": 467,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/unused-variable"
+  }
+]

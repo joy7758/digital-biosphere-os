@@ -1,0 +1,141 @@
+{
+  "agent_created": false,
+  "errors": [],
+  "governed_state_modified": false,
+  "permission_granted": false,
+  "results": [
+    {
+      "errors": [],
+      "output": null,
+      "returncode": 0,
+      "status": "PASS",
+      "test_count": 34,
+      "test_directory": "/Users/zhangbin/GitHub/.worktrees/digital-biosphere-os-telemetry-admission-foundation/tests/authorization_registry"
+    },
+    {
+      "errors": [],
+      "output": null,
+      "returncode": 0,
+      "status": "PASS",
+      "test_count": 27,
+      "test_directory": "/Users/zhangbin/GitHub/.worktrees/digital-biosphere-os-telemetry-admission-foundation/tests/candidate_registration"
+    },
+    {
+      "errors": [],
+      "output": null,
+      "returncode": 0,
+      "status": "PASS",
+      "test_count": 18,
+      "test_directory": "/Users/zhangbin/GitHub/.worktrees/digital-biosphere-os-telemetry-admission-foundation/tests/conformance"
+    },
+    {
+      "errors": [],
+      "output": null,
+      "returncode": 0,
+      "status": "PASS",
+      "test_count": 8,
+      "test_directory": "/Users/zhangbin/GitHub/.worktrees/digital-biosphere-os-telemetry-admission-foundation/tests/developer_quickstart"
+    },
+    {
+      "errors": [],
+      "output": null,
+      "returncode": 0,
+      "status": "PASS",
+      "test_count": 27,
+      "test_directory": "/Users/zhangbin/GitHub/.worktrees/digital-biosphere-os-telemetry-admission-foundation/tests/entity_registration"
+    },
+    {
+      "errors": [],
+      "output": null,
+      "returncode": 0,
+      "status": "PASS",
+      "test_count": 77,
+      "test_directory": "/Users/zhangbin/GitHub/.worktrees/digital-biosphere-os-telemetry-admission-foundation/tests/entity_support"
+    },
+    {
+      "errors": [],
+      "output": null,
+      "returncode": 0,
+      "status": "PASS",
+      "test_count": 4,
+      "test_directory": "/Users/zhangbin/GitHub/.worktrees/digital-biosphere-os-telemetry-admission-foundation/tests/execution_chain"
+    },
+    {
+      "errors": [],
+      "output": null,
+      "returncode": 0,
+      "status": "PASS",
+      "test_count": 21,
+      "test_directory": "/Users/zhangbin/GitHub/.worktrees/digital-biosphere-os-telemetry-admission-foundation/tests/mcp_adapter"
+    },
+    {
+      "errors": [],
+      "output": null,
+      "returncode": 0,
+      "status": "PASS",
+      "test_count": 15,
+      "test_directory": "/Users/zhangbin/GitHub/.worktrees/digital-biosphere-os-telemetry-admission-foundation/tests/mcp_reference_demo"
+    },
+    {
+      "errors": [],
+      "output": null,
+      "returncode": 0,
+      "status": "PASS",
+      "test_count": 11,
+      "test_directory": "/Users/zhangbin/GitHub/.worktrees/digital-biosphere-os-telemetry-admission-foundation/tests/multi_agent_trust_demo"
+    },
+    {
+      "errors": [],
+      "output": null,
+      "returncode": 0,
+      "status": "PASS",
+      "test_count": 6,
+      "test_directory": "/Users/zhangbin/GitHub/.worktrees/digital-biosphere-os-telemetry-admission-foundation/tests/package_preview"
+    },
+    {
+      "errors": [],
+      "output": null,
+      "returncode": 0,
+      "status": "PASS",
+      "test_count": 33,
+      "test_directory": "/Users/zhangbin/GitHub/.worktrees/digital-biosphere-os-telemetry-admission-foundation/tests/schema_validator"
+    },
+    {
+      "errors": [],
+      "output": null,
+      "returncode": 0,
+      "status": "PASS",
+      "test_count": 29,
+      "test_directory": "/Users/zhangbin/GitHub/.worktrees/digital-biosphere-os-telemetry-admission-foundation/tests/sdk"
+    },
+    {
+      "errors": [],
+      "output": null,
+      "returncode": 0,
+      "status": "PASS",
+      "test_count": 189,
+      "test_directory": "/Users/zhangbin/GitHub/.worktrees/digital-biosphere-os-telemetry-admission-foundation/tests/telemetry_admission"
+    },
+    {
+      "errors": [],
+      "output": null,
+      "returncode": 0,
+      "status": "PASS",
+      "test_count": 3,
+      "test_directory": "/Users/zhangbin/GitHub/.worktrees/digital-biosphere-os-telemetry-admission-foundation/tests/test_tooling"
+    },
+    {
+      "errors": [],
+      "output": null,
+      "returncode": 0,
+      "status": "PASS",
+      "test_count": 21,
+      "test_directory": "/Users/zhangbin/GitHub/.worktrees/digital-biosphere-os-telemetry-admission-foundation/tests/validation_result_contract"
+    }
+  ],
+  "runner": "dbos_unittest_directory_runner",
+  "runtime_created": false,
+  "status": "PASS",
+  "test_count": 523,
+  "test_directory_count": 16
+}

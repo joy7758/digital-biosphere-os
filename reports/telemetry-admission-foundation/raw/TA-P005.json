@@ -1,0 +1,799 @@
+{
+  "authority_effects": {
+    "agent_created": false,
+    "entity_created": false,
+    "evidence_created": false,
+    "permission_granted": false,
+    "runtime_created": false,
+    "saee_invoked": false
+  },
+  "backend_scope": "SQLITE_SINGLE_HOST_REFERENCE_ONLY",
+  "case_id": "TA-P005",
+  "environment": {
+    "cpu_count": 10,
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python_version": "3.12.13",
+    "sqlite_version": "3.50.4"
+  },
+  "measurements": {
+    "cpu_seconds": 271.356028,
+    "database_bytes": 107847680,
+    "errors": {},
+    "final_integrity": {
+      "counts": {
+        "admission_lifecycles": 15507,
+        "admission_records": 48244,
+        "backup_manifests": 0,
+        "intake_receipts": 15507,
+        "observation_envelopes": 15507,
+        "untrusted_idempotency_hints": 12061
+      },
+      "errors": [],
+      "migration_checksums": {
+        "0001": "sha256:a347ab62ff44635794ffa010e1a83251a1c0fc35f47f3cf3707aab5a49197760"
+      },
+      "missing_expected_receipt_count": 0,
+      "repair_performed": false,
+      "schema_version": "0.1.0",
+      "status": "PASS",
+      "store_configuration": {
+        "busy_timeout_ms": 5000,
+        "foreign_keys": 1,
+        "journal_mode": "wal",
+        "synchronous": 2
+      }
+    },
+    "integrity_checks": [
+      {
+        "counts": {
+          "admission_lifecycles": 264,
+          "admission_records": 821,
+          "backup_manifests": 0,
+          "intake_receipts": 264,
+          "observation_envelopes": 264,
+          "untrusted_idempotency_hints": 206
+        },
+        "elapsed_seconds": 60.201153,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 527,
+          "admission_records": 1639,
+          "backup_manifests": 0,
+          "intake_receipts": 527,
+          "observation_envelopes": 527,
+          "untrusted_idempotency_hints": 411
+        },
+        "elapsed_seconds": 120.342442,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 793,
+          "admission_records": 2467,
+          "backup_manifests": 0,
+          "intake_receipts": 793,
+          "observation_envelopes": 793,
+          "untrusted_idempotency_hints": 617
+        },
+        "elapsed_seconds": 180.559085,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 1059,
+          "admission_records": 3294,
+          "backup_manifests": 0,
+          "intake_receipts": 1059,
+          "observation_envelopes": 1059,
+          "untrusted_idempotency_hints": 825
+        },
+        "elapsed_seconds": 240.624351,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 1324,
+          "admission_records": 4119,
+          "backup_manifests": 0,
+          "intake_receipts": 1324,
+          "observation_envelopes": 1324,
+          "untrusted_idempotency_hints": 1030
+        },
+        "elapsed_seconds": 300.674541,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 1590,
+          "admission_records": 4946,
+          "backup_manifests": 0,
+          "intake_receipts": 1590,
+          "observation_envelopes": 1590,
+          "untrusted_idempotency_hints": 1238
+        },
+        "elapsed_seconds": 360.776847,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 1855,
+          "admission_records": 5771,
+          "backup_manifests": 0,
+          "intake_receipts": 1855,
+          "observation_envelopes": 1855,
+          "untrusted_idempotency_hints": 1443
+        },
+        "elapsed_seconds": 420.940739,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 2121,
+          "admission_records": 6598,
+          "backup_manifests": 0,
+          "intake_receipts": 2121,
+          "observation_envelopes": 2121,
+          "untrusted_idempotency_hints": 1651
+        },
+        "elapsed_seconds": 481.10278,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 2385,
+          "admission_records": 7420,
+          "backup_manifests": 0,
+          "intake_receipts": 2385,
+          "observation_envelopes": 2385,
+          "untrusted_idempotency_hints": 1855
+        },
+        "elapsed_seconds": 541.182523,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 2649,
+          "admission_records": 8241,
+          "backup_manifests": 0,
+          "intake_receipts": 2649,
+          "observation_envelopes": 2649,
+          "untrusted_idempotency_hints": 2061
+        },
+        "elapsed_seconds": 601.230671,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 2910,
+          "admission_records": 9053,
+          "backup_manifests": 0,
+          "intake_receipts": 2910,
+          "observation_envelopes": 2910,
+          "untrusted_idempotency_hints": 2264
+        },
+        "elapsed_seconds": 661.30794,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 3172,
+          "admission_records": 9868,
+          "backup_manifests": 0,
+          "intake_receipts": 3172,
+          "observation_envelopes": 3172,
+          "untrusted_idempotency_hints": 2468
+        },
+        "elapsed_seconds": 721.5518,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 3433,
+          "admission_records": 10680,
+          "backup_manifests": 0,
+          "intake_receipts": 3433,
+          "observation_envelopes": 3433,
+          "untrusted_idempotency_hints": 2671
+        },
+        "elapsed_seconds": 781.614212,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 3694,
+          "admission_records": 11492,
+          "backup_manifests": 0,
+          "intake_receipts": 3694,
+          "observation_envelopes": 3694,
+          "untrusted_idempotency_hints": 2874
+        },
+        "elapsed_seconds": 841.752926,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 3955,
+          "admission_records": 12304,
+          "backup_manifests": 0,
+          "intake_receipts": 3955,
+          "observation_envelopes": 3955,
+          "untrusted_idempotency_hints": 3077
+        },
+        "elapsed_seconds": 901.908231,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 4215,
+          "admission_records": 13113,
+          "backup_manifests": 0,
+          "intake_receipts": 4215,
+          "observation_envelopes": 4215,
+          "untrusted_idempotency_hints": 3279
+        },
+        "elapsed_seconds": 961.986872,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 4475,
+          "admission_records": 13922,
+          "backup_manifests": 0,
+          "intake_receipts": 4475,
+          "observation_envelopes": 4475,
+          "untrusted_idempotency_hints": 3481
+        },
+        "elapsed_seconds": 1022.180625,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 4738,
+          "admission_records": 14740,
+          "backup_manifests": 0,
+          "intake_receipts": 4738,
+          "observation_envelopes": 4738,
+          "untrusted_idempotency_hints": 3686
+        },
+        "elapsed_seconds": 1082.301527,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 5001,
+          "admission_records": 15558,
+          "backup_manifests": 0,
+          "intake_receipts": 5001,
+          "observation_envelopes": 5001,
+          "untrusted_idempotency_hints": 3891
+        },
+        "elapsed_seconds": 1142.456705,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 5264,
+          "admission_records": 16376,
+          "backup_manifests": 0,
+          "intake_receipts": 5264,
+          "observation_envelopes": 5264,
+          "untrusted_idempotency_hints": 4095
+        },
+        "elapsed_seconds": 1202.56276,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 5526,
+          "admission_records": 17192,
+          "backup_manifests": 0,
+          "intake_receipts": 5526,
+          "observation_envelopes": 5526,
+          "untrusted_idempotency_hints": 4298
+        },
+        "elapsed_seconds": 1262.76238,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 5788,
+          "admission_records": 18007,
+          "backup_manifests": 0,
+          "intake_receipts": 5788,
+          "observation_envelopes": 5788,
+          "untrusted_idempotency_hints": 4502
+        },
+        "elapsed_seconds": 1323.021165,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 6050,
+          "admission_records": 18822,
+          "backup_manifests": 0,
+          "intake_receipts": 6050,
+          "observation_envelopes": 6050,
+          "untrusted_idempotency_hints": 4706
+        },
+        "elapsed_seconds": 1383.142386,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 6312,
+          "admission_records": 19637,
+          "backup_manifests": 0,
+          "intake_receipts": 6312,
+          "observation_envelopes": 6312,
+          "untrusted_idempotency_hints": 4910
+        },
+        "elapsed_seconds": 1443.223766,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 6574,
+          "admission_records": 20452,
+          "backup_manifests": 0,
+          "intake_receipts": 6574,
+          "observation_envelopes": 6574,
+          "untrusted_idempotency_hints": 5114
+        },
+        "elapsed_seconds": 1503.367125,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 6836,
+          "admission_records": 21267,
+          "backup_manifests": 0,
+          "intake_receipts": 6836,
+          "observation_envelopes": 6836,
+          "untrusted_idempotency_hints": 5318
+        },
+        "elapsed_seconds": 1563.584056,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 7094,
+          "admission_records": 22070,
+          "backup_manifests": 0,
+          "intake_receipts": 7094,
+          "observation_envelopes": 7094,
+          "untrusted_idempotency_hints": 5518
+        },
+        "elapsed_seconds": 1623.73668,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 7352,
+          "admission_records": 22872,
+          "backup_manifests": 0,
+          "intake_receipts": 7352,
+          "observation_envelopes": 7352,
+          "untrusted_idempotency_hints": 5719
+        },
+        "elapsed_seconds": 1683.872269,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 7609,
+          "admission_records": 23672,
+          "backup_manifests": 0,
+          "intake_receipts": 7609,
+          "observation_envelopes": 7609,
+          "untrusted_idempotency_hints": 5919
+        },
+        "elapsed_seconds": 1743.948962,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 7866,
+          "admission_records": 24472,
+          "backup_manifests": 0,
+          "intake_receipts": 7866,
+          "observation_envelopes": 7866,
+          "untrusted_idempotency_hints": 6118
+        },
+        "elapsed_seconds": 1804.144125,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 8124,
+          "admission_records": 25274,
+          "backup_manifests": 0,
+          "intake_receipts": 8124,
+          "observation_envelopes": 8124,
+          "untrusted_idempotency_hints": 6320
+        },
+        "elapsed_seconds": 1864.352459,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 8380,
+          "admission_records": 26071,
+          "backup_manifests": 0,
+          "intake_receipts": 8380,
+          "observation_envelopes": 8380,
+          "untrusted_idempotency_hints": 6518
+        },
+        "elapsed_seconds": 1924.493471,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 8639,
+          "admission_records": 26876,
+          "backup_manifests": 0,
+          "intake_receipts": 8639,
+          "observation_envelopes": 8639,
+          "untrusted_idempotency_hints": 6720
+        },
+        "elapsed_seconds": 1984.808785,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 8898,
+          "admission_records": 27682,
+          "backup_manifests": 0,
+          "intake_receipts": 8898,
+          "observation_envelopes": 8898,
+          "untrusted_idempotency_hints": 6922
+        },
+        "elapsed_seconds": 2045.097182,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 9156,
+          "admission_records": 28485,
+          "backup_manifests": 0,
+          "intake_receipts": 9156,
+          "observation_envelopes": 9156,
+          "untrusted_idempotency_hints": 7122
+        },
+        "elapsed_seconds": 2104.937415,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 9415,
+          "admission_records": 29291,
+          "backup_manifests": 0,
+          "intake_receipts": 9415,
+          "observation_envelopes": 9415,
+          "untrusted_idempotency_hints": 7323
+        },
+        "elapsed_seconds": 2165.112171,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 9675,
+          "admission_records": 30099,
+          "backup_manifests": 0,
+          "intake_receipts": 9675,
+          "observation_envelopes": 9675,
+          "untrusted_idempotency_hints": 7525
+        },
+        "elapsed_seconds": 2225.195198,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 9934,
+          "admission_records": 30905,
+          "backup_manifests": 0,
+          "intake_receipts": 9934,
+          "observation_envelopes": 9934,
+          "untrusted_idempotency_hints": 7728
+        },
+        "elapsed_seconds": 2285.384866,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 10193,
+          "admission_records": 31711,
+          "backup_manifests": 0,
+          "intake_receipts": 10193,
+          "observation_envelopes": 10193,
+          "untrusted_idempotency_hints": 7929
+        },
+        "elapsed_seconds": 2345.590527,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 10451,
+          "admission_records": 32514,
+          "backup_manifests": 0,
+          "intake_receipts": 10451,
+          "observation_envelopes": 10451,
+          "untrusted_idempotency_hints": 8129
+        },
+        "elapsed_seconds": 2405.679307,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 10710,
+          "admission_records": 33319,
+          "backup_manifests": 0,
+          "intake_receipts": 10710,
+          "observation_envelopes": 10710,
+          "untrusted_idempotency_hints": 8330
+        },
+        "elapsed_seconds": 2465.781614,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 10966,
+          "admission_records": 34116,
+          "backup_manifests": 0,
+          "intake_receipts": 10966,
+          "observation_envelopes": 10966,
+          "untrusted_idempotency_hints": 8530
+        },
+        "elapsed_seconds": 2525.875615,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 11222,
+          "admission_records": 34912,
+          "backup_manifests": 0,
+          "intake_receipts": 11222,
+          "observation_envelopes": 11222,
+          "untrusted_idempotency_hints": 8729
+        },
+        "elapsed_seconds": 2586.311511,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 11478,
+          "admission_records": 35709,
+          "backup_manifests": 0,
+          "intake_receipts": 11478,
+          "observation_envelopes": 11478,
+          "untrusted_idempotency_hints": 8928
+        },
+        "elapsed_seconds": 2646.372041,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 11735,
+          "admission_records": 36508,
+          "backup_manifests": 0,
+          "intake_receipts": 11735,
+          "observation_envelopes": 11735,
+          "untrusted_idempotency_hints": 9128
+        },
+        "elapsed_seconds": 2706.376514,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 11992,
+          "admission_records": 37308,
+          "backup_manifests": 0,
+          "intake_receipts": 11992,
+          "observation_envelopes": 11992,
+          "untrusted_idempotency_hints": 9328
+        },
+        "elapsed_seconds": 2766.494287,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 12249,
+          "admission_records": 38108,
+          "backup_manifests": 0,
+          "intake_receipts": 12249,
+          "observation_envelopes": 12249,
+          "untrusted_idempotency_hints": 9527
+        },
+        "elapsed_seconds": 2827.662026,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 12502,
+          "admission_records": 38895,
+          "backup_manifests": 0,
+          "intake_receipts": 12502,
+          "observation_envelopes": 12502,
+          "untrusted_idempotency_hints": 9724
+        },
+        "elapsed_seconds": 2886.899223,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 12759,
+          "admission_records": 39694,
+          "backup_manifests": 0,
+          "intake_receipts": 12759,
+          "observation_envelopes": 12759,
+          "untrusted_idempotency_hints": 9925
+        },
+        "elapsed_seconds": 2946.989835,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 13015,
+          "admission_records": 40491,
+          "backup_manifests": 0,
+          "intake_receipts": 13015,
+          "observation_envelopes": 13015,
+          "untrusted_idempotency_hints": 10123
+        },
+        "elapsed_seconds": 3007.172388,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 13271,
+          "admission_records": 41287,
+          "backup_manifests": 0,
+          "intake_receipts": 13271,
+          "observation_envelopes": 13271,
+          "untrusted_idempotency_hints": 10323
+        },
+        "elapsed_seconds": 3067.23416,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 13524,
+          "admission_records": 42074,
+          "backup_manifests": 0,
+          "intake_receipts": 13524,
+          "observation_envelopes": 13524,
+          "untrusted_idempotency_hints": 10520
+        },
+        "elapsed_seconds": 3127.769309,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 13775,
+          "admission_records": 42855,
+          "backup_manifests": 0,
+          "intake_receipts": 13775,
+          "observation_envelopes": 13775,
+          "untrusted_idempotency_hints": 10715
+        },
+        "elapsed_seconds": 3187.766292,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 14027,
+          "admission_records": 43639,
+          "backup_manifests": 0,
+          "intake_receipts": 14027,
+          "observation_envelopes": 14027,
+          "untrusted_idempotency_hints": 10911
+        },
+        "elapsed_seconds": 3247.809247,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 14279,
+          "admission_records": 44423,
+          "backup_manifests": 0,
+          "intake_receipts": 14279,
+          "observation_envelopes": 14279,
+          "untrusted_idempotency_hints": 11107
+        },
+        "elapsed_seconds": 3308.042652,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 14531,
+          "admission_records": 45207,
+          "backup_manifests": 0,
+          "intake_receipts": 14531,
+          "observation_envelopes": 14531,
+          "untrusted_idempotency_hints": 11303
+        },
+        "elapsed_seconds": 3368.349147,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 14781,
+          "admission_records": 45985,
+          "backup_manifests": 0,
+          "intake_receipts": 14781,
+          "observation_envelopes": 14781,
+          "untrusted_idempotency_hints": 11497
+        },
+        "elapsed_seconds": 3428.372337,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 15032,
+          "admission_records": 46766,
+          "backup_manifests": 0,
+          "intake_receipts": 15032,
+          "observation_envelopes": 15032,
+          "untrusted_idempotency_hints": 11692
+        },
+        "elapsed_seconds": 3488.413566,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 15283,
+          "admission_records": 47547,
+          "backup_manifests": 0,
+          "intake_receipts": 15283,
+          "observation_envelopes": 15283,
+          "untrusted_idempotency_hints": 11887
+        },
+        "elapsed_seconds": 3548.607874,
+        "status": "PASS"
+      }
+    ],
+    "max_ms": 307.396792,
+    "mean_ms": 12.382772,
+    "operations": 17230,
+    "p50_ms": 13.008063,
+    "p95_ms": 18.060067,
+    "p99_ms": 25.421588,
+    "process_max_rss_native_units": 187547648,
+    "python_tracemalloc_peak_bytes": 83773151,
+    "shm_bytes": 0,
+    "states": {
+      "ACCEPTED_AS_MATERIAL": 12061,
+      "DUPLICATE_CONFIRMED": 1723,
+      "REJECTED": 3446
+    },
+    "store_counts": {
+      "admission_lifecycles": 15507,
+      "admission_records": 48244,
+      "backup_manifests": 0,
+      "intake_receipts": 15507,
+      "observation_envelopes": 15507,
+      "untrusted_idempotency_hints": 12061
+    },
+    "wal_bytes": 0,
+    "wall_seconds": 3600.033342
+  },
+  "parameters": {
+    "duration_seconds": 3600,
+    "integrity_interval_seconds": 60,
+    "mix_cycle": [
+      "ACCEPTED_AS_MATERIAL",
+      "ACCEPTED_AS_MATERIAL",
+      "ACCEPTED_AS_MATERIAL",
+      "ACCEPTED_AS_MATERIAL",
+      "ACCEPTED_AS_MATERIAL",
+      "ACCEPTED_AS_MATERIAL",
+      "ACCEPTED_AS_MATERIAL",
+      "REJECTED",
+      "REJECTED",
+      "DUPLICATE_CONFIRMED"
+    ],
+    "target_operations_per_second": 5
+  },
+  "result_semantics": "CHARACTERIZATION_NOT_SLO"
+}

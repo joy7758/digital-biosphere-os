@@ -1,0 +1,21 @@
+{
+  "agent_created": false,
+  "errors": [],
+  "governed_state_modified": false,
+  "permission_granted": false,
+  "results": [
+    {
+      "errors": [],
+      "output": null,
+      "returncode": 0,
+      "status": "PASS",
+      "test_count": 189,
+      "test_directory": "/Users/zhangbin/GitHub/.worktrees/digital-biosphere-os-telemetry-admission-foundation/tests/telemetry_admission"
+    }
+  ],
+  "runner": "dbos_unittest_directory_runner",
+  "runtime_created": false,
+  "status": "PASS",
+  "test_count": 189,
+  "test_directory_count": 1
+}

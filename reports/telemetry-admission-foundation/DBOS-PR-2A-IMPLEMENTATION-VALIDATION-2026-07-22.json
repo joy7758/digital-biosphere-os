@@ -1,0 +1,116 @@
+{
+  "superseded": true,
+  "superseded_by": "DBOS-PR-2A-PRODUCTION-EVIDENCE-2026-07-22.json",
+  "applies_to_current_manifest": false,
+  "report_id": "DBOS-PR-2A-IMPLEMENTATION-VALIDATION-2026-07-22",
+  "historical_snapshot": true,
+  "superseded_by": "DBOS-PR-2A-PRODUCTION-EVIDENCE-2026-07-22",
+  "slice_id": "DBOS-PR-2A-TELEMETRY-ADMISSION-FOUNDATION",
+  "report_time": "2026-07-22T05:10:28Z",
+  "result": "LOCAL_IMPLEMENTATION_CANDIDATE_PASS",
+  "truth_boundary": {
+    "canonical_evidence": false,
+    "independent_security_review": false,
+    "pr_g2_approval": false,
+    "production_ready": false,
+    "deployment_authorized": false
+  },
+  "authorization": {
+    "decision_reference": "DQ-018",
+    "implementation_authorized": true,
+    "decided_by_ref": "zhangbin",
+    "dbos_domain_owner_ref": "zhangbin",
+    "dbos_commit_authorized": false,
+    "dbos_push_authorized": false,
+    "deployment_authorized": false
+  },
+  "source_bindings": {
+    "dba_content_commit": "264f3171c3dfa8a9f614c7d0c835e4be26870d01",
+    "dba_freeze_attestation_commit": "248ba46b057b14ab9df07d4ab3787f58ee9cdf71",
+    "dbos_base_commit": "cd3f867c4379ec555c45e7d554088ad12ce08a24",
+    "dbos_branch": "codex/telemetry-admission-foundation",
+    "dbos_source_state": "UNCOMMITTED_LOCAL_WORKTREE",
+    "implementation_file_count": 21,
+    "implementation_bytes": 207479,
+    "implementation_manifest_sha256": "0d7a8a850e917840e863f44b98c3fd6f93f9f881324af51ae22ce4962d430557"
+  },
+  "environment": {
+    "python_version": "3.12.13",
+    "sqlite_version": "3.50.4",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "filesystem": "APFS",
+    "journal_mode": "wal",
+    "synchronous": "FULL",
+    "foreign_keys": true,
+    "busy_timeout_ms": 5000
+  },
+  "before_state": {
+    "dbos_commit": "cd3f867c4379ec555c45e7d554088ad12ce08a24",
+    "test_directory_count": 15,
+    "test_count": 334,
+    "test_result": "PASS",
+    "validator_count": 34,
+    "validator_result": "PASS"
+  },
+  "after_state": {
+    "test_directory_count": 16,
+    "test_count": 396,
+    "test_result": "PASS",
+    "focused_test_count": 62,
+    "focused_test_result": "PASS",
+    "validator_count": 35,
+    "validator_result": "PASS",
+    "telemetry_validator_check_count": 9,
+    "telemetry_validator_result": "PASS",
+    "schema_count": 2,
+    "schema_meta_validation": "PASS",
+    "ruff_check": "PASS",
+    "ruff_format_check": "PASS",
+    "git_diff_check": "PASS"
+  },
+  "artifact": {
+    "wheel_name": "digital_biosphere_os_preview-0.1.0.dev0-py3-none-any.whl",
+    "wheel_sha256": "37f32a4815af31ed9cb5dcd95627c7e0bf9051ed60e1c38e4499575ff397b6ca",
+    "wheel_size_bytes": 69301,
+    "wheel_required_files_present": true,
+    "installed_store_check": "PASS",
+    "migration_version": "0001",
+    "migration_sha256": "a347ab62ff44635794ffa010e1a83251a1c0fc35f47f3cf3707aab5a49197760"
+  },
+  "effects": {
+    "agent_created": 0,
+    "runtime_created": 0,
+    "entity_created": 0,
+    "capability_created": 0,
+    "permission_granted": 0,
+    "evidence_created": 0,
+    "verification_created": 0,
+    "saee_called": 0,
+    "network_endpoint_created": 0,
+    "collector_deployed": 0,
+    "raw_telemetry_persisted": false,
+    "governed_state_modified": false
+  },
+  "exit_gate": {
+    "dq_018_implementation_slice_present": true,
+    "focused_tests_pass": true,
+    "existing_dbos_regression_pass": true,
+    "wheel_packaging_pass": true,
+    "all_preregistered_tests_pass": false,
+    "independent_security_review_complete": false,
+    "recovery_validated_partial": true,
+    "security_findings_closed": false,
+    "pr_g2_ready_for_review": false,
+    "production_ready": false
+  },
+  "open_findings": [
+    "FULL_FAULT_MIGRATION_RECOVERY_MATRIX_NOT_EXECUTED",
+    "TA_P_LOAD_AND_SOAK_NOT_EXECUTED",
+    "LOAD_THRESHOLDS_NOT_PREFROZEN",
+    "INDEPENDENT_SECURITY_REVIEW_NOT_COMPLETE",
+    "DEPENDENCY_SBOM_REVIEW_NOT_COMPLETE",
+    "HUMAN_ROLLBACK_SWITCH_EXERCISE_NOT_COMPLETE",
+    "PRODUCTION_PERSISTENCE_BACKEND_NOT_SELECTED",
+    "SOURCE_WORKTREE_NOT_COMMITTED_OR_PUSHED"
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "authority_effects": {
+    "agent_created": false,
+    "entity_created": false,
+    "evidence_created": false,
+    "permission_granted": false,
+    "runtime_created": false,
+    "saee_invoked": false
+  },
+  "backend_scope": "SQLITE_SINGLE_HOST_REFERENCE_ONLY",
+  "case_id": "TA-P001",
+  "environment": {
+    "cpu_count": 10,
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python_version": "3.12.13",
+    "sqlite_version": "3.50.4"
+  },
+  "measurements": {
+    "cpu_seconds": 32.28762,
+    "database_bytes": 78815232,
+    "integrity": {
+      "counts": {
+        "admission_lifecycles": 10000,
+        "admission_records": 30000,
+        "backup_manifests": 0,
+        "intake_receipts": 10000,
+        "observation_envelopes": 10000,
+        "untrusted_idempotency_hints": 10000
+      },
+      "errors": [],
+      "migration_checksums": {
+        "0001": "sha256:a347ab62ff44635794ffa010e1a83251a1c0fc35f47f3cf3707aab5a49197760"
+      },
+      "missing_expected_receipt_count": 0,
+      "repair_performed": false,
+      "schema_version": "0.1.0",
+      "status": "PASS",
+      "store_configuration": {
+        "busy_timeout_ms": 5000,
+        "foreign_keys": 1,
+        "journal_mode": "wal",
+        "synchronous": 2
+      }
+    },
+    "max_ms": 228.614875,
+    "mean_ms": 3.717081,
+    "operations": 10000,
+    "p50_ms": 3.360542,
+    "p95_ms": 4.708208,
+    "p99_ms": 9.87373,
+    "process_max_rss_native_units": 33767424,
+    "python_tracemalloc_peak_bytes": 3567746,
+    "shm_bytes": 0,
+    "states": {
+      "ACCEPTED_AS_MATERIAL": 10000
+    },
+    "store_counts": {
+      "admission_lifecycles": 10000,
+      "admission_records": 30000,
+      "backup_manifests": 0,
+      "intake_receipts": 10000,
+      "observation_envelopes": 10000,
+      "untrusted_idempotency_hints": 10000
+    },
+    "wal_bytes": 0,
+    "wall_seconds": 37.185085
+  },
+  "parameters": {
+    "unique_admissions": 10000,
+    "workers": 1
+  },
+  "result_semantics": "CHARACTERIZATION_NOT_SLO"
+}

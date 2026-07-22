@@ -1,0 +1,76 @@
+{
+  "authority_effects": {
+    "agent_created": false,
+    "entity_created": false,
+    "evidence_created": false,
+    "permission_granted": false,
+    "runtime_created": false,
+    "saee_invoked": false
+  },
+  "backend_scope": "SQLITE_SINGLE_HOST_REFERENCE_ONLY",
+  "case_id": "TA-P003",
+  "environment": {
+    "cpu_count": 10,
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python_version": "3.12.13",
+    "sqlite_version": "3.50.4"
+  },
+  "measurements": {
+    "cpu_seconds": 154.300541,
+    "database_bytes": 149520384,
+    "errors": {},
+    "integrity": {
+      "counts": {
+        "admission_lifecycles": 19000,
+        "admission_records": 57000,
+        "backup_manifests": 0,
+        "intake_receipts": 19000,
+        "observation_envelopes": 19000,
+        "untrusted_idempotency_hints": 19000
+      },
+      "errors": [],
+      "migration_checksums": {
+        "0001": "sha256:a347ab62ff44635794ffa010e1a83251a1c0fc35f47f3cf3707aab5a49197760"
+      },
+      "missing_expected_receipt_count": 0,
+      "repair_performed": false,
+      "schema_version": "0.1.0",
+      "status": "PASS",
+      "store_configuration": {
+        "busy_timeout_ms": 5000,
+        "foreign_keys": 1,
+        "journal_mode": "wal",
+        "synchronous": 2
+      }
+    },
+    "max_ms": 1900.482125,
+    "mean_ms": 74.303167,
+    "observed_operations_per_second": 63.22555105044295,
+    "operations": 19000,
+    "p50_ms": 53.059583,
+    "p95_ms": 200.364123,
+    "p99_ms": 299.104531,
+    "process_max_rss_native_units": 45154304,
+    "python_tracemalloc_peak_bytes": 5854532,
+    "shm_bytes": 0,
+    "states": {
+      "ACCEPTED_AS_MATERIAL": 19000
+    },
+    "store_counts": {
+      "admission_lifecycles": 19000,
+      "admission_records": 57000,
+      "backup_manifests": 0,
+      "intake_receipts": 19000,
+      "observation_envelopes": 19000,
+      "untrusted_idempotency_hints": 19000
+    },
+    "wal_bytes": 0,
+    "wall_seconds": 300.511418
+  },
+  "parameters": {
+    "duration_seconds": 300,
+    "target_operations_per_second": 64,
+    "workers": 32
+  },
+  "result_semantics": "CHARACTERIZATION_NOT_SLO"
+}

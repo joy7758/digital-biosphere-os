@@ -1,0 +1,342 @@
+{
+  "receipt_schema_version": "0.1",
+  "receipt_id": "DBOS-PR-2A-VALIDATOR-AGGREGATE-F09E99B95A33",
+  "observed_at": "2026-07-22T10:36:42Z",
+  "implementation_manifest_sha256": "f09e99b95a3332d40abc933eaee35ea8a646b11d330ffaa5213ee0bb28f339b4",
+  "result": "PASS",
+  "validator_count": 35,
+  "passed_count": 35,
+  "failed_count": 0,
+  "authority_effects": {
+    "agent_created": false,
+    "runtime_created": false,
+    "entity_created": false,
+    "capability_created": false,
+    "permission_created": false,
+    "execution_created": false,
+    "evidence_created": false,
+    "verification_created": false,
+    "collector_created": false,
+    "network_endpoint_created": false,
+    "saee_called": false,
+    "gate_state_changed": false,
+    "production_ready_declared": false
+  },
+  "validators": [
+    {
+      "validator": "attestation_validator",
+      "path": "validation/attestation_validator.py",
+      "exit_code": 0,
+      "status": "PASS",
+      "declared_status": "PASS",
+      "check_count": null,
+      "passed_check_count": null
+    },
+    {
+      "validator": "authorization_registry_validator",
+      "path": "validation/authorization_registry_validator.py",
+      "exit_code": 0,
+      "status": "PASS",
+      "declared_status": null,
+      "check_count": null,
+      "passed_check_count": null
+    },
+    {
+      "validator": "candidate_registration_validator",
+      "path": "validation/candidate_registration_validator.py",
+      "exit_code": 0,
+      "status": "PASS",
+      "declared_status": null,
+      "check_count": null,
+      "passed_check_count": null
+    },
+    {
+      "validator": "capability_claim_validator",
+      "path": "validation/capability_claim_validator.py",
+      "exit_code": 0,
+      "status": "PASS",
+      "declared_status": "PASS",
+      "check_count": null,
+      "passed_check_count": null
+    },
+    {
+      "validator": "capability_validator",
+      "path": "validation/capability_validator.py",
+      "exit_code": 0,
+      "status": "PASS",
+      "declared_status": "PASS",
+      "check_count": null,
+      "passed_check_count": null
+    },
+    {
+      "validator": "capture_readiness_validator",
+      "path": "validation/capture_readiness_validator.py",
+      "exit_code": 0,
+      "status": "PASS",
+      "declared_status": "PASS",
+      "check_count": null,
+      "passed_check_count": null
+    },
+    {
+      "validator": "digital_entity_infrastructure_validator",
+      "path": "validation/digital_entity_infrastructure_validator.py",
+      "exit_code": 0,
+      "status": "PASS",
+      "declared_status": null,
+      "check_count": null,
+      "passed_check_count": null
+    },
+    {
+      "validator": "entity_support_validator",
+      "path": "validation/entity_support_validator.py",
+      "exit_code": 0,
+      "status": "PASS",
+      "declared_status": null,
+      "check_count": null,
+      "passed_check_count": null
+    },
+    {
+      "validator": "environment_collector_validator",
+      "path": "validation/environment_collector_validator.py",
+      "exit_code": 0,
+      "status": "PASS",
+      "declared_status": null,
+      "check_count": null,
+      "passed_check_count": null
+    },
+    {
+      "validator": "environment_evidence_capture_validator",
+      "path": "validation/environment_evidence_capture_validator.py",
+      "exit_code": 0,
+      "status": "PASS",
+      "declared_status": null,
+      "check_count": null,
+      "passed_check_count": null
+    },
+    {
+      "validator": "environment_qualification_validator",
+      "path": "validation/environment_qualification_validator.py",
+      "exit_code": 0,
+      "status": "PASS",
+      "declared_status": null,
+      "check_count": null,
+      "passed_check_count": null
+    },
+    {
+      "validator": "environment_validator",
+      "path": "validation/environment_validator.py",
+      "exit_code": 0,
+      "status": "PASS",
+      "declared_status": "PASS",
+      "check_count": null,
+      "passed_check_count": null
+    },
+    {
+      "validator": "event_integrity_validator",
+      "path": "validation/event_integrity_validator.py",
+      "exit_code": 0,
+      "status": "PASS",
+      "declared_status": "PASS",
+      "check_count": null,
+      "passed_check_count": null
+    },
+    {
+      "validator": "event_validator",
+      "path": "validation/event_validator.py",
+      "exit_code": 0,
+      "status": "PASS",
+      "declared_status": "PASS",
+      "check_count": null,
+      "passed_check_count": null
+    },
+    {
+      "validator": "evidence_validator",
+      "path": "validation/evidence_validator.py",
+      "exit_code": 0,
+      "status": "PASS",
+      "declared_status": "PASS",
+      "check_count": null,
+      "passed_check_count": null
+    },
+    {
+      "validator": "execution_chain_validator",
+      "path": "validation/execution_chain_validator.py",
+      "exit_code": 0,
+      "status": "PASS",
+      "declared_status": "PASS",
+      "check_count": null,
+      "passed_check_count": null
+    },
+    {
+      "validator": "execution_context_validator",
+      "path": "validation/execution_context_validator.py",
+      "exit_code": 0,
+      "status": "PASS",
+      "declared_status": "PASS",
+      "check_count": null,
+      "passed_check_count": null
+    },
+    {
+      "validator": "executor_identity_validator",
+      "path": "validation/executor_identity_validator.py",
+      "exit_code": 0,
+      "status": "PASS",
+      "declared_status": null,
+      "check_count": null,
+      "passed_check_count": null
+    },
+    {
+      "validator": "executor_validator",
+      "path": "validation/executor_validator.py",
+      "exit_code": 0,
+      "status": "PASS",
+      "declared_status": null,
+      "check_count": null,
+      "passed_check_count": null
+    },
+    {
+      "validator": "experimental_protocol_validator",
+      "path": "validation/experimental_protocol_validator.py",
+      "exit_code": 0,
+      "status": "PASS",
+      "declared_status": "PASS",
+      "check_count": null,
+      "passed_check_count": null
+    },
+    {
+      "validator": "federation_validator",
+      "path": "validation/federation_validator.py",
+      "exit_code": 0,
+      "status": "PASS",
+      "declared_status": "PASS",
+      "check_count": null,
+      "passed_check_count": null
+    },
+    {
+      "validator": "freeze_validator",
+      "path": "validation/freeze_validator.py",
+      "exit_code": 0,
+      "status": "PASS",
+      "declared_status": "PASS",
+      "check_count": null,
+      "passed_check_count": null
+    },
+    {
+      "validator": "genesis_experiment_validator",
+      "path": "validation/genesis_experiment_validator.py",
+      "exit_code": 0,
+      "status": "PASS",
+      "declared_status": "PASS",
+      "check_count": null,
+      "passed_check_count": null
+    },
+    {
+      "validator": "governance_evidence_validator",
+      "path": "validation/governance_evidence_validator.py",
+      "exit_code": 0,
+      "status": "PASS",
+      "declared_status": "PASS",
+      "check_count": null,
+      "passed_check_count": null
+    },
+    {
+      "validator": "governance_validator",
+      "path": "validation/governance_validator.py",
+      "exit_code": 0,
+      "status": "PASS",
+      "declared_status": "PASS",
+      "check_count": null,
+      "passed_check_count": null
+    },
+    {
+      "validator": "identity_validator",
+      "path": "validation/identity_validator.py",
+      "exit_code": 0,
+      "status": "PASS",
+      "declared_status": "PASS",
+      "check_count": null,
+      "passed_check_count": null
+    },
+    {
+      "validator": "organism_validator",
+      "path": "validation/organism_validator.py",
+      "exit_code": 0,
+      "status": "PASS",
+      "declared_status": "PASS",
+      "check_count": null,
+      "passed_check_count": null
+    },
+    {
+      "validator": "readiness_validator",
+      "path": "validation/readiness_validator.py",
+      "exit_code": 0,
+      "status": "PASS",
+      "declared_status": "PASS",
+      "check_count": null,
+      "passed_check_count": null
+    },
+    {
+      "validator": "registration_execution_validator",
+      "path": "validation/registration_execution_validator.py",
+      "exit_code": 0,
+      "status": "PASS",
+      "declared_status": null,
+      "check_count": null,
+      "passed_check_count": null
+    },
+    {
+      "validator": "runner_validator",
+      "path": "validation/runner_validator.py",
+      "exit_code": 0,
+      "status": "PASS",
+      "declared_status": null,
+      "check_count": null,
+      "passed_check_count": null
+    },
+    {
+      "validator": "saee_validator",
+      "path": "validation/saee_validator.py",
+      "exit_code": 0,
+      "status": "PASS",
+      "declared_status": "PASS",
+      "check_count": null,
+      "passed_check_count": null
+    },
+    {
+      "validator": "snapshot_capture_validator",
+      "path": "validation/snapshot_capture_validator.py",
+      "exit_code": 0,
+      "status": "PASS",
+      "declared_status": "PASS",
+      "check_count": null,
+      "passed_check_count": null
+    },
+    {
+      "validator": "telemetry_admission_validator",
+      "path": "validation/telemetry_admission_validator.py",
+      "exit_code": 0,
+      "status": "PASS",
+      "declared_status": null,
+      "check_count": null,
+      "passed_check_count": null
+    },
+    {
+      "validator": "verification_network_validator",
+      "path": "validation/verification_network_validator.py",
+      "exit_code": 0,
+      "status": "PASS",
+      "declared_status": "PASS",
+      "check_count": null,
+      "passed_check_count": null
+    },
+    {
+      "validator": "verification_validator",
+      "path": "validation/verification_validator.py",
+      "exit_code": 0,
+      "status": "PASS",
+      "declared_status": "PASS",
+      "check_count": null,
+      "passed_check_count": null
+    }
+  ]
+}
