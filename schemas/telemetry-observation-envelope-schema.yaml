@@ -1,0 +1,128 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "dbio://schema/telemetry-observation-envelope/v0.1",
+  "title": "DBOS TelemetryObservationEnvelope v0.1",
+  "description": "Closed metadata-only observation material. Acceptance does not create Evidence, Verification, Identity, Permission, Entity, Agent, Runtime, execution, or truth.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "observation_id", "object_kind", "schema_version", "profile_id",
+    "otel_spec_version", "otlp_version", "semantic_convention_version",
+    "semantic_convention_schema_url", "genai_semconv_ref",
+    "producer_reference", "transport_source_reference", "resource",
+    "instrumentation_scope", "signal_type", "signal_reference", "context",
+    "observed_at", "received_at", "clock_source", "sampling_state",
+    "redaction_state", "content_capture_state", "delivery_state",
+    "source_digest", "source_size_bytes", "idempotency_reference", "limitations"
+  ],
+  "properties": {
+    "observation_id": {"$ref": "#/$defs/reference"},
+    "object_kind": {"const": "TelemetryObservationEnvelope"},
+    "schema_version": {"const": "0.1.0"},
+    "profile_id": {"const": "TMAI-OTEL-OBSERVABILITY-PROFILE-0.1"},
+    "otel_spec_version": {"const": "1.59.0"},
+    "otlp_version": {"enum": ["1.11.0", "NOT_OTLP"]},
+    "semantic_convention_version": {"enum": ["1.43.0", "UNKNOWN"]},
+    "semantic_convention_schema_url": {
+      "enum": ["https://opentelemetry.io/schemas/1.43.0", "UNKNOWN"]
+    },
+    "genai_semconv_ref": {
+      "enum": [
+        "NOT_USED",
+        "semantic-conventions-genai@2e994c6d59a93bb4fc1752c5378eedb9b8e14d6b"
+      ]
+    },
+    "producer_reference": {"$ref": "#/$defs/reference"},
+    "transport_source_reference": {"$ref": "#/$defs/reference"},
+    "resource": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["reference", "schema_url", "attribute_set_digest", "attribute_count"],
+      "properties": {
+        "reference": {"$ref": "#/$defs/reference"},
+        "schema_url": {"enum": ["https://opentelemetry.io/schemas/1.43.0", "UNKNOWN"]},
+        "attribute_set_digest": {"$ref": "#/$defs/digest"},
+        "attribute_count": {"type": "integer", "minimum": 0, "maximum": 1024}
+      }
+    },
+    "instrumentation_scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "version", "schema_url", "attribute_set_digest"],
+      "properties": {
+        "name": {"$ref": "#/$defs/reference"},
+        "version": {"$ref": "#/$defs/referenceOrUnknown"},
+        "schema_url": {"enum": ["https://opentelemetry.io/schemas/1.43.0", "UNKNOWN"]},
+        "attribute_set_digest": {"$ref": "#/$defs/digest"}
+      }
+    },
+    "signal_type": {"enum": ["TRACE", "METRIC", "LOG"]},
+    "signal_reference": {"$ref": "#/$defs/reference"},
+    "context": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["trace_id", "span_id", "trace_flags", "parent_state"],
+      "properties": {
+        "trace_id": {"type": "string", "pattern": "^([0-9a-f]{32}|NOT_APPLICABLE)$"},
+        "span_id": {"type": "string", "pattern": "^([0-9a-f]{16}|NOT_APPLICABLE)$"},
+        "trace_flags": {"type": "string", "pattern": "^([0-9a-f]{2}|NOT_APPLICABLE)$"},
+        "parent_state": {"enum": ["ROOT", "CHILD", "UNKNOWN", "NOT_APPLICABLE"]}
+      }
+    },
+    "observed_at": {"type": "string", "format": "date-time"},
+    "received_at": {"type": "string", "format": "date-time"},
+    "clock_source": {"enum": ["SOURCE_DECLARED", "INTAKE_CLOCK", "UNKNOWN"]},
+    "sampling_state": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["decision", "rule_reference", "known_loss"],
+      "properties": {
+        "decision": {"enum": ["RECORD_AND_SAMPLE", "RECORD_ONLY", "DROP", "UNKNOWN", "NOT_APPLICABLE"]},
+        "rule_reference": {"$ref": "#/$defs/referenceOrUnknown"},
+        "known_loss": {"type": "boolean"}
+      }
+    },
+    "redaction_state": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["policy_reference", "result", "removed_count", "hashed_count"],
+      "properties": {
+        "policy_reference": {"$ref": "#/$defs/referenceOrUnknown"},
+        "result": {"enum": ["NOT_REQUIRED", "APPLIED", "PARTIAL", "FAILED", "UNKNOWN"]},
+        "removed_count": {"type": "integer", "minimum": 0, "maximum": 1024},
+        "hashed_count": {"type": "integer", "minimum": 0, "maximum": 1024}
+      }
+    },
+    "content_capture_state": {"enum": ["DISABLED", "METADATA_ONLY"]},
+    "delivery_state": {"enum": ["RECEIVED", "PARTIAL", "RETRYING", "DROPPED", "UNKNOWN"]},
+    "source_digest": {"$ref": "#/$defs/digest"},
+    "source_size_bytes": {"type": "integer", "minimum": 0, "maximum": 16777216},
+    "idempotency_reference": {"$ref": "#/$defs/referenceOrUnknown"},
+    "limitations": {
+      "type": "array", "maxItems": 16, "uniqueItems": true,
+      "items": {"$ref": "#/$defs/reference"}
+    }
+  },
+  "$defs": {
+    "reference": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"},
+    "referenceOrUnknown": {
+      "anyOf": [
+        {"const": "UNKNOWN"},
+        {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"}
+      ]
+    },
+    "digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"}
+  },
+  "x-dbios-prohibited-effects": [
+    "evidence", "verification", "identity", "entity", "capability",
+    "authorization", "permission", "execution", "saee", "agent", "runtime"
+  ],
+  "x-dbios-boundaries": {
+    "schema_creates_instance": false,
+    "authority_effect": "NONE",
+    "permission_effect": "NONE",
+    "evidence_effect": "NONE",
+    "execution_effect": "NONE",
+    "saee_effect": "NONE"
+  }
+}

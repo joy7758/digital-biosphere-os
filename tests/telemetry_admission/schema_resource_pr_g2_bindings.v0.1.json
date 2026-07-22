@@ -1,0 +1,296 @@
+{
+  "binding_id": "TMAI-DBOS-SCHEMA-RESOURCE-PR-G2-BINDING-0.1",
+  "status": "BINDING_DEFINED_RESULT_SEPARATE",
+  "authorization_scope": "DQ_018_PR_G2_OFFLINE_ONLY",
+  "catalog_id": "TMAI-OTEL-SCHEMA-RESOURCE-CONFORMANCE-0.1",
+  "catalog_digest": "sha256:805374a196f533d8b2c56492faeb566e05dd744edd0e519155442fcc50f8f452",
+  "schema_artifact_digest": "sha256:6ac5dd367ff707dbcdcb1e5b459d4ac2fd676fb44eb17a21f9494a9fee4233df",
+  "authorized_case_count": 36,
+  "blocked_not_authorized_case_count": 9,
+  "authorized_cases": [
+    {
+      "case_id": "OSR-CF-SRC-001",
+      "test_node": "test_schema_resource_conformance.SchemaResourceConformanceTests.test_osr_cf_src_001",
+      "status": "BOUND_TO_EXECUTABLE_TEST"
+    },
+    {
+      "case_id": "OSR-CF-SRC-002",
+      "test_node": "test_schema_resource_conformance.SchemaResourceConformanceTests.test_osr_cf_src_002",
+      "status": "BOUND_TO_EXECUTABLE_TEST"
+    },
+    {
+      "case_id": "OSR-CF-SRC-004",
+      "test_node": "test_schema_resource_conformance.SchemaResourceConformanceTests.test_osr_cf_src_004",
+      "status": "BOUND_TO_EXECUTABLE_TEST"
+    },
+    {
+      "case_id": "OSR-CF-PRE-001",
+      "test_node": "test_schema_resource_conformance.SchemaResourceConformanceTests.test_osr_cf_pre_001",
+      "status": "BOUND_TO_EXECUTABLE_TEST"
+    },
+    {
+      "case_id": "OSR-CF-PRE-002",
+      "test_node": "test_schema_resource_conformance.SchemaResourceConformanceTests.test_osr_cf_pre_002",
+      "status": "BOUND_TO_EXECUTABLE_TEST"
+    },
+    {
+      "case_id": "OSR-CF-PRE-003",
+      "test_node": "test_schema_resource_conformance.SchemaResourceConformanceTests.test_osr_cf_pre_003",
+      "status": "BOUND_TO_EXECUTABLE_TEST"
+    },
+    {
+      "case_id": "OSR-CF-PRE-004",
+      "test_node": "test_schema_resource_conformance.SchemaResourceConformanceTests.test_osr_cf_pre_004",
+      "status": "BOUND_TO_EXECUTABLE_TEST"
+    },
+    {
+      "case_id": "OSR-CF-TRN-001",
+      "test_node": "test_schema_resource_conformance.SchemaResourceConformanceTests.test_osr_cf_trn_001",
+      "status": "BOUND_TO_EXECUTABLE_TEST"
+    },
+    {
+      "case_id": "OSR-CF-TRN-002",
+      "test_node": "test_schema_resource_conformance.SchemaResourceConformanceTests.test_osr_cf_trn_002",
+      "status": "BOUND_TO_EXECUTABLE_TEST"
+    },
+    {
+      "case_id": "OSR-CF-TRN-003",
+      "test_node": "test_schema_resource_conformance.SchemaResourceConformanceTests.test_osr_cf_trn_003",
+      "status": "BOUND_TO_EXECUTABLE_TEST"
+    },
+    {
+      "case_id": "OSR-CF-TRN-004",
+      "test_node": "test_schema_resource_conformance.SchemaResourceConformanceTests.test_osr_cf_trn_004",
+      "status": "BOUND_TO_EXECUTABLE_TEST"
+    },
+    {
+      "case_id": "OSR-CF-TRN-005",
+      "test_node": "test_schema_resource_conformance.SchemaResourceConformanceTests.test_osr_cf_trn_005",
+      "status": "BOUND_TO_EXECUTABLE_TEST"
+    },
+    {
+      "case_id": "OSR-CF-TRN-006",
+      "test_node": "test_schema_resource_conformance.SchemaResourceConformanceTests.test_osr_cf_trn_006",
+      "status": "BOUND_TO_EXECUTABLE_TEST"
+    },
+    {
+      "case_id": "OSR-CF-RES-001",
+      "test_node": "test_schema_resource_conformance.SchemaResourceConformanceTests.test_osr_cf_res_001",
+      "status": "BOUND_TO_EXECUTABLE_TEST"
+    },
+    {
+      "case_id": "OSR-CF-RES-002",
+      "test_node": "test_schema_resource_conformance.SchemaResourceConformanceTests.test_osr_cf_res_002",
+      "status": "BOUND_TO_EXECUTABLE_TEST"
+    },
+    {
+      "case_id": "OSR-CF-RES-003",
+      "test_node": "test_schema_resource_conformance.SchemaResourceConformanceTests.test_osr_cf_res_003",
+      "status": "BOUND_TO_EXECUTABLE_TEST"
+    },
+    {
+      "case_id": "OSR-CF-RES-004",
+      "test_node": "test_schema_resource_conformance.SchemaResourceConformanceTests.test_osr_cf_res_004",
+      "status": "BOUND_TO_EXECUTABLE_TEST"
+    },
+    {
+      "case_id": "OSR-CF-RES-005",
+      "test_node": "test_schema_resource_conformance.SchemaResourceConformanceTests.test_osr_cf_res_005",
+      "status": "BOUND_TO_EXECUTABLE_TEST"
+    },
+    {
+      "case_id": "OSR-CF-RES-006",
+      "test_node": "test_schema_resource_conformance.SchemaResourceConformanceTests.test_osr_cf_res_006",
+      "status": "BOUND_TO_EXECUTABLE_TEST"
+    },
+    {
+      "case_id": "OSR-CF-ENT-001",
+      "test_node": "test_schema_resource_conformance.SchemaResourceConformanceTests.test_osr_cf_ent_001",
+      "status": "BOUND_TO_EXECUTABLE_TEST"
+    },
+    {
+      "case_id": "OSR-CF-ENT-002",
+      "test_node": "test_schema_resource_conformance.SchemaResourceConformanceTests.test_osr_cf_ent_002",
+      "status": "BOUND_TO_EXECUTABLE_TEST"
+    },
+    {
+      "case_id": "OSR-CF-ENT-003",
+      "test_node": "test_schema_resource_conformance.SchemaResourceConformanceTests.test_osr_cf_ent_003",
+      "status": "BOUND_TO_EXECUTABLE_TEST"
+    },
+    {
+      "case_id": "OSR-CF-ENT-004",
+      "test_node": "test_schema_resource_conformance.SchemaResourceConformanceTests.test_osr_cf_ent_004",
+      "status": "BOUND_TO_EXECUTABLE_TEST"
+    },
+    {
+      "case_id": "OSR-CF-ENT-005",
+      "test_node": "test_schema_resource_conformance.SchemaResourceConformanceTests.test_osr_cf_ent_005",
+      "status": "BOUND_TO_EXECUTABLE_TEST"
+    },
+    {
+      "case_id": "OSR-CF-ENT-006",
+      "test_node": "test_schema_resource_conformance.SchemaResourceConformanceTests.test_osr_cf_ent_006",
+      "status": "BOUND_TO_EXECUTABLE_TEST"
+    },
+    {
+      "case_id": "OSR-CF-ENT-007",
+      "test_node": "test_schema_resource_conformance.SchemaResourceConformanceTests.test_osr_cf_ent_007",
+      "status": "BOUND_TO_EXECUTABLE_TEST"
+    },
+    {
+      "case_id": "OSR-CF-ENT-008",
+      "test_node": "test_schema_resource_conformance.SchemaResourceConformanceTests.test_osr_cf_ent_008",
+      "status": "BOUND_TO_EXECUTABLE_TEST"
+    },
+    {
+      "case_id": "OSR-CF-DATA-001",
+      "test_node": "test_schema_resource_conformance.SchemaResourceConformanceTests.test_osr_cf_data_001",
+      "status": "BOUND_TO_EXECUTABLE_TEST"
+    },
+    {
+      "case_id": "OSR-CF-DATA-002",
+      "test_node": "test_schema_resource_conformance.SchemaResourceConformanceTests.test_osr_cf_data_002",
+      "status": "BOUND_TO_EXECUTABLE_TEST"
+    },
+    {
+      "case_id": "OSR-CF-DATA-004",
+      "test_node": "test_schema_resource_conformance.SchemaResourceConformanceTests.test_osr_cf_data_004",
+      "status": "BOUND_TO_EXECUTABLE_TEST"
+    },
+    {
+      "case_id": "OSR-CF-DATA-006",
+      "test_node": "test_schema_resource_conformance.SchemaResourceConformanceTests.test_osr_cf_data_006",
+      "status": "BOUND_TO_EXECUTABLE_TEST"
+    },
+    {
+      "case_id": "OSR-CF-DATA-007",
+      "test_node": "test_schema_resource_conformance.SchemaResourceConformanceTests.test_osr_cf_data_007",
+      "status": "BOUND_TO_EXECUTABLE_TEST"
+    },
+    {
+      "case_id": "OSR-CF-RSLT-001",
+      "test_node": "test_schema_resource_conformance.SchemaResourceConformanceTests.test_osr_cf_rslt_001",
+      "status": "BOUND_TO_EXECUTABLE_TEST"
+    },
+    {
+      "case_id": "OSR-CF-RSLT-002",
+      "test_node": "test_schema_resource_conformance.SchemaResourceConformanceTests.test_osr_cf_rslt_002",
+      "status": "BOUND_TO_EXECUTABLE_TEST"
+    },
+    {
+      "case_id": "OSR-CF-RSLT-003",
+      "test_node": "test_schema_resource_conformance.SchemaResourceConformanceTests.test_osr_cf_rslt_003",
+      "status": "BOUND_TO_EXECUTABLE_TEST"
+    },
+    {
+      "case_id": "OSR-CF-RSLT-004",
+      "test_node": "test_schema_resource_conformance.SchemaResourceConformanceTests.test_osr_cf_rslt_004",
+      "status": "BOUND_TO_EXECUTABLE_TEST"
+    }
+  ],
+  "blocked_not_authorized_cases": [
+    {
+      "case_id": "OSR-CF-SRC-003",
+      "gate_refs": [
+        "DQ-024",
+        "DQ-020",
+        "PR-G3",
+        "PR-G5"
+      ],
+      "status": "BLOCKED_NOT_AUTHORIZED"
+    },
+    {
+      "case_id": "OSR-CF-SRC-005",
+      "gate_refs": [
+        "DQ-024",
+        "DQ-020",
+        "PR-G3"
+      ],
+      "status": "BLOCKED_NOT_AUTHORIZED"
+    },
+    {
+      "case_id": "OSR-CF-SRC-006",
+      "gate_refs": [
+        "DQ-024",
+        "DQ-020",
+        "PR-G3",
+        "PR-G5"
+      ],
+      "status": "BLOCKED_NOT_AUTHORIZED"
+    },
+    {
+      "case_id": "OSR-CF-SRC-007",
+      "gate_refs": [
+        "DQ-024",
+        "DQ-020",
+        "PR-G3",
+        "PR-G5"
+      ],
+      "status": "BLOCKED_NOT_AUTHORIZED"
+    },
+    {
+      "case_id": "OSR-CF-SRC-008",
+      "gate_refs": [
+        "DQ-024",
+        "DQ-020",
+        "PR-G3",
+        "PR-G5"
+      ],
+      "status": "BLOCKED_NOT_AUTHORIZED"
+    },
+    {
+      "case_id": "OSR-CF-PRE-005",
+      "gate_refs": [
+        "DQ-022",
+        "DQ-024",
+        "DQ-020",
+        "PR-G3"
+      ],
+      "status": "BLOCKED_NOT_AUTHORIZED"
+    },
+    {
+      "case_id": "OSR-CF-RES-007",
+      "gate_refs": [
+        "DQ-024",
+        "DQ-020",
+        "PR-G3",
+        "PR-G5"
+      ],
+      "status": "BLOCKED_NOT_AUTHORIZED"
+    },
+    {
+      "case_id": "OSR-CF-DATA-003",
+      "gate_refs": [
+        "DQ-024",
+        "DQ-020",
+        "PR-G3",
+        "PR-G5"
+      ],
+      "status": "BLOCKED_NOT_AUTHORIZED"
+    },
+    {
+      "case_id": "OSR-CF-DATA-005",
+      "gate_refs": [
+        "DQ-024",
+        "DQ-020",
+        "PR-G3",
+        "PR-G6"
+      ],
+      "status": "BLOCKED_NOT_AUTHORIZED"
+    }
+  ],
+  "effects": {
+    "agent_created": false,
+    "runtime_created": false,
+    "entity_created": false,
+    "capability_created": false,
+    "permission_created": false,
+    "evidence_created": false,
+    "verification_created": false,
+    "collector_created": false,
+    "network_endpoint_created": false,
+    "saee_called": false,
+    "gate_state_changed": false
+  }
+}

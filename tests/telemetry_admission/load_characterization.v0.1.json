@@ -1,0 +1,61 @@
+{
+  "contract_id": "DBOS-TA-LOAD-CHARACTERIZATION-0.1",
+  "decision_reference": "DQ-018",
+  "frozen_before_execution": true,
+  "result_semantics": "CHARACTERIZATION_NOT_SLO",
+  "backend_scope": "SQLITE_SINGLE_HOST_REFERENCE_ONLY",
+  "pass_fail_thresholds": null,
+  "authority_effects": {
+    "agent_created": false,
+    "runtime_created": false,
+    "entity_created": false,
+    "capability_created": false,
+    "permission_created": false,
+    "execution_created": false,
+    "evidence_created": false,
+    "verification_created": false,
+    "collector_created": false,
+    "network_endpoint_created": false,
+    "saee_called": false,
+    "gate_state_changed": false,
+    "production_ready_declared": false
+  },
+  "workloads": {
+    "TA-P001": {
+      "unique_admissions": 10000,
+      "workers": 1
+    },
+    "TA-P002": {
+      "original_admissions": 1000,
+      "confirmed_retries": 10000,
+      "workers": 1
+    },
+    "TA-P003": {
+      "workers": 32,
+      "duration_seconds": 300,
+      "target_operations_per_second": 64
+    },
+    "TA-P004": {
+      "unique_admissions": 1000,
+      "backup_count": 10,
+      "writer_workers": 1
+    },
+    "TA-P005": {
+      "duration_seconds": 3600,
+      "target_operations_per_second": 5,
+      "integrity_interval_seconds": 60,
+      "mix_cycle": [
+        "ACCEPTED_AS_MATERIAL",
+        "ACCEPTED_AS_MATERIAL",
+        "ACCEPTED_AS_MATERIAL",
+        "ACCEPTED_AS_MATERIAL",
+        "ACCEPTED_AS_MATERIAL",
+        "ACCEPTED_AS_MATERIAL",
+        "ACCEPTED_AS_MATERIAL",
+        "REJECTED",
+        "REJECTED",
+        "DUPLICATE_CONFIRMED"
+      ]
+    }
+  }
+}

@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools>=69"]
+requires = ["setuptools==83.0.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -10,6 +10,7 @@ readme = "docs/developer-quickstart.md"
 requires-python = ">=3.11"
 dependencies = [
   "jsonschema>=4.18,<5",
+  "PyYAML>=6.0,<7",
 ]
 classifiers = [
   "Development Status :: 2 - Pre-Alpha",
@@ -27,3 +28,9 @@ exclude = ["tests*"]
 
 [tool.setuptools.package-data]
 schemas = ["*.yaml"]
+"dbos.telemetry_admission" = [
+  "migrations/*.sql",
+  "profiles/*.json",
+  "profiles/*.md",
+  "profiles/*.yaml",
+]

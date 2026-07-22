@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "dbio://schema/telemetry-admission-record/v0.1",
+  "title": "DBOS TelemetryAdmissionRecord v0.1",
+  "description": "Append-only telemetry material admission transition. ACCEPTED_AS_MATERIAL is not Evidence or truth.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "admission_record_id", "admission_id", "observation_reference", "sequence",
+    "previous_record_reference", "state", "policy_version", "validator_version",
+    "source_digest", "idempotency_reference", "intake_receipt_reference",
+    "duplicate_reference", "comparison_fingerprint", "fingerprint_version",
+    "accepted_item_count", "rejected_item_count", "reason_codes", "limitations",
+    "recorded_at", "actor_reference"
+  ],
+  "properties": {
+    "admission_record_id": {"$ref": "#/$defs/reference"},
+    "admission_id": {"$ref": "#/$defs/reference"},
+    "observation_reference": {"$ref": "#/$defs/reference"},
+    "sequence": {"type": "integer", "minimum": 1},
+    "previous_record_reference": {"oneOf": [{"$ref": "#/$defs/reference"}, {"type": "null"}]},
+    "state": {"enum": ["RECEIVED", "VALIDATING", "ACCEPTED_AS_MATERIAL", "PARTIAL", "REJECTED", "DUPLICATE_CONFIRMED", "DUPLICATE_SUSPECTED", "UNKNOWN"]},
+    "policy_version": {"const": "TMAI-DBOS-TELEMETRY-ADMISSION-POLICY-0.1.0"},
+    "validator_version": {"const": "TMAI-DBOS-TELEMETRY-ADMISSION-VALIDATOR-0.1.0"},
+    "source_digest": {"$ref": "#/$defs/digest"},
+    "idempotency_reference": {"$ref": "#/$defs/reference"},
+    "intake_receipt_reference": {"$ref": "#/$defs/reference"},
+    "duplicate_reference": {"oneOf": [{"$ref": "#/$defs/reference"}, {"type": "null"}]},
+    "comparison_fingerprint": {"oneOf": [{"$ref": "#/$defs/digest"}, {"type": "null"}]},
+    "fingerprint_version": {"const": "TMAI-TA-FINGERPRINT-SHA256-0.1.0"},
+    "accepted_item_count": {"type": "integer", "minimum": 0},
+    "rejected_item_count": {"type": "integer", "minimum": 0},
+    "reason_codes": {
+      "type": "array", "maxItems": 16, "uniqueItems": true,
+      "items": {"$ref": "#/$defs/reasonCode"}
+    },
+    "limitations": {
+      "type": "array", "maxItems": 16, "uniqueItems": true,
+      "items": {"$ref": "#/$defs/reference"}
+    },
+    "recorded_at": {"type": "string", "format": "date-time"},
+    "actor_reference": {"$ref": "#/$defs/reference"}
+  },
+  "$defs": {
+    "reference": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"},
+    "digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "reasonCode": {
+      "enum": [
+        "TA_SCHEMA_UNSUPPORTED", "TA_PROFILE_UNSUPPORTED", "TA_SIGNAL_UNSUPPORTED",
+        "TA_SHAPE_INVALID", "TA_SIZE_LIMIT_EXCEEDED", "TA_RESOURCE_MISSING",
+        "TA_INSTRUMENTATION_SCOPE_MISSING", "TA_CONTEXT_INVALID",
+        "TA_SCHEMA_URL_UNKNOWN", "TA_SEMCONV_UNSUPPORTED",
+        "TA_GENAI_SEMCONV_UNPINNED", "TA_CONTENT_CAPTURE_PROHIBITED",
+        "TA_SENSITIVE_KEY_DETECTED", "TA_DIGEST_INVALID",
+        "TA_PROVENANCE_INCOMPLETE", "TA_IDEMPOTENCY_UNKNOWN",
+        "TA_INTAKE_RECEIPT_INVALID", "TA_DUPLICATE_CONFIRMED",
+        "TA_DUPLICATE_SUSPECTED", "TA_FINGERPRINT_POLICY_UNSUPPORTED",
+        "TA_FINGERPRINT_COLLISION_OR_LEGITIMATE_DUPLICATE",
+        "TA_IDEMPOTENCY_CONFLICT", "TA_PARTIAL_INPUT", "TA_SAMPLING_LIMITATION",
+        "TA_CLOCK_UNCERTAIN", "TA_STORAGE_UNAVAILABLE",
+        "TA_STORAGE_INTEGRITY_FAILURE", "TA_INTERNAL_UNKNOWN"
+      ]
+    }
+  },
+  "x-dbios-boundaries": {
+    "admission_is_evidence": false,
+    "admission_is_truth": false,
+    "authority_effect": "NONE",
+    "permission_effect": "NONE",
+    "execution_effect": "NONE",
+    "saee_effect": "NONE"
+  }
+}

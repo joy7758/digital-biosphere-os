@@ -1,0 +1,303 @@
+{
+  "binding_id": "TMAI-DBOS-SEMANTIC-PR-G2-BINDING-0.1",
+  "status": "BINDING_DEFINED_RESULT_SEPARATE",
+  "authorization_scope": "DQ_018_PR_G2_OFFLINE_ONLY",
+  "catalog_id": "TMAI-OTEL-SEMANTIC-CONFORMANCE-0.1",
+  "catalog_digest": "sha256:18b84edf6e8b618991c2dfd669d21794c3a3032188e198b7fd53899205b66c6e",
+  "mapping_catalog_digest": "sha256:b81213505b1a7c3841ba298545b642b127af1a96ec906536be27caab351de706",
+  "authorized_case_count": 32,
+  "blocked_not_authorized_case_count": 14,
+  "authorized_cases": [
+    {
+      "case_id": "SEM-CF-VSN-001",
+      "test_node": "test_semantic_conformance.SemanticConformanceTests.test_sem_cf_vsn_001",
+      "status": "BOUND_TO_EXECUTABLE_TEST"
+    },
+    {
+      "case_id": "SEM-CF-VSN-002",
+      "test_node": "test_semantic_conformance.SemanticConformanceTests.test_sem_cf_vsn_002",
+      "status": "BOUND_TO_EXECUTABLE_TEST"
+    },
+    {
+      "case_id": "SEM-CF-VSN-003",
+      "test_node": "test_semantic_conformance.SemanticConformanceTests.test_sem_cf_vsn_003",
+      "status": "BOUND_TO_EXECUTABLE_TEST"
+    },
+    {
+      "case_id": "SEM-CF-VSN-004",
+      "test_node": "test_semantic_conformance.SemanticConformanceTests.test_sem_cf_vsn_004",
+      "status": "BOUND_TO_EXECUTABLE_TEST"
+    },
+    {
+      "case_id": "SEM-CF-VSN-005",
+      "test_node": "test_semantic_conformance.SemanticConformanceTests.test_sem_cf_vsn_005",
+      "status": "BOUND_TO_EXECUTABLE_TEST"
+    },
+    {
+      "case_id": "SEM-CF-CORE-001",
+      "test_node": "test_semantic_conformance.SemanticConformanceTests.test_sem_cf_core_001",
+      "status": "BOUND_TO_EXECUTABLE_TEST"
+    },
+    {
+      "case_id": "SEM-CF-CORE-002",
+      "test_node": "test_semantic_conformance.SemanticConformanceTests.test_sem_cf_core_002",
+      "status": "BOUND_TO_EXECUTABLE_TEST"
+    },
+    {
+      "case_id": "SEM-CF-CORE-003",
+      "test_node": "test_semantic_conformance.SemanticConformanceTests.test_sem_cf_core_003",
+      "status": "BOUND_TO_EXECUTABLE_TEST"
+    },
+    {
+      "case_id": "SEM-CF-CORE-004",
+      "test_node": "test_semantic_conformance.SemanticConformanceTests.test_sem_cf_core_004",
+      "status": "BOUND_TO_EXECUTABLE_TEST"
+    },
+    {
+      "case_id": "SEM-CF-CORE-005",
+      "test_node": "test_semantic_conformance.SemanticConformanceTests.test_sem_cf_core_005",
+      "status": "BOUND_TO_EXECUTABLE_TEST"
+    },
+    {
+      "case_id": "SEM-CF-GENAI-001",
+      "test_node": "test_semantic_conformance.SemanticConformanceTests.test_sem_cf_genai_001",
+      "status": "BOUND_TO_EXECUTABLE_TEST"
+    },
+    {
+      "case_id": "SEM-CF-GENAI-002",
+      "test_node": "test_semantic_conformance.SemanticConformanceTests.test_sem_cf_genai_002",
+      "status": "BOUND_TO_EXECUTABLE_TEST"
+    },
+    {
+      "case_id": "SEM-CF-GENAI-003",
+      "test_node": "test_semantic_conformance.SemanticConformanceTests.test_sem_cf_genai_003",
+      "status": "BOUND_TO_EXECUTABLE_TEST"
+    },
+    {
+      "case_id": "SEM-CF-GENAI-004",
+      "test_node": "test_semantic_conformance.SemanticConformanceTests.test_sem_cf_genai_004",
+      "status": "BOUND_TO_EXECUTABLE_TEST"
+    },
+    {
+      "case_id": "SEM-CF-GENAI-005",
+      "test_node": "test_semantic_conformance.SemanticConformanceTests.test_sem_cf_genai_005",
+      "status": "BOUND_TO_EXECUTABLE_TEST"
+    },
+    {
+      "case_id": "SEM-CF-GENAI-006",
+      "test_node": "test_semantic_conformance.SemanticConformanceTests.test_sem_cf_genai_006",
+      "status": "BOUND_TO_EXECUTABLE_TEST"
+    },
+    {
+      "case_id": "SEM-CF-DRIFT-001",
+      "test_node": "test_semantic_conformance.SemanticConformanceTests.test_sem_cf_drift_001",
+      "status": "BOUND_TO_EXECUTABLE_TEST"
+    },
+    {
+      "case_id": "SEM-CF-DRIFT-002",
+      "test_node": "test_semantic_conformance.SemanticConformanceTests.test_sem_cf_drift_002",
+      "status": "BOUND_TO_EXECUTABLE_TEST"
+    },
+    {
+      "case_id": "SEM-CF-DRIFT-003",
+      "test_node": "test_semantic_conformance.SemanticConformanceTests.test_sem_cf_drift_003",
+      "status": "BOUND_TO_EXECUTABLE_TEST"
+    },
+    {
+      "case_id": "SEM-CF-DRIFT-004",
+      "test_node": "test_semantic_conformance.SemanticConformanceTests.test_sem_cf_drift_004",
+      "status": "BOUND_TO_EXECUTABLE_TEST"
+    },
+    {
+      "case_id": "SEM-CF-DRIFT-005",
+      "test_node": "test_semantic_conformance.SemanticConformanceTests.test_sem_cf_drift_005",
+      "status": "BOUND_TO_EXECUTABLE_TEST"
+    },
+    {
+      "case_id": "SEM-CF-AUTH-001",
+      "test_node": "test_semantic_conformance.SemanticConformanceTests.test_sem_cf_auth_001",
+      "status": "BOUND_TO_EXECUTABLE_TEST"
+    },
+    {
+      "case_id": "SEM-CF-AUTH-002",
+      "test_node": "test_semantic_conformance.SemanticConformanceTests.test_sem_cf_auth_002",
+      "status": "BOUND_TO_EXECUTABLE_TEST"
+    },
+    {
+      "case_id": "SEM-CF-AUTH-003",
+      "test_node": "test_semantic_conformance.SemanticConformanceTests.test_sem_cf_auth_003",
+      "status": "BOUND_TO_EXECUTABLE_TEST"
+    },
+    {
+      "case_id": "SEM-CF-AUTH-004",
+      "test_node": "test_semantic_conformance.SemanticConformanceTests.test_sem_cf_auth_004",
+      "status": "BOUND_TO_EXECUTABLE_TEST"
+    },
+    {
+      "case_id": "SEM-CF-AUTH-005",
+      "test_node": "test_semantic_conformance.SemanticConformanceTests.test_sem_cf_auth_005",
+      "status": "BOUND_TO_EXECUTABLE_TEST"
+    },
+    {
+      "case_id": "SEM-CF-AUTH-006",
+      "test_node": "test_semantic_conformance.SemanticConformanceTests.test_sem_cf_auth_006",
+      "status": "BOUND_TO_EXECUTABLE_TEST"
+    },
+    {
+      "case_id": "SEM-CF-AUTH-007",
+      "test_node": "test_semantic_conformance.SemanticConformanceTests.test_sem_cf_auth_007",
+      "status": "BOUND_TO_EXECUTABLE_TEST"
+    },
+    {
+      "case_id": "SEM-CF-RESULT-001",
+      "test_node": "test_semantic_conformance.SemanticConformanceTests.test_sem_cf_result_001",
+      "status": "BOUND_TO_EXECUTABLE_TEST"
+    },
+    {
+      "case_id": "SEM-CF-RESULT-002",
+      "test_node": "test_semantic_conformance.SemanticConformanceTests.test_sem_cf_result_002",
+      "status": "BOUND_TO_EXECUTABLE_TEST"
+    },
+    {
+      "case_id": "SEM-CF-RESULT-003",
+      "test_node": "test_semantic_conformance.SemanticConformanceTests.test_sem_cf_result_003",
+      "status": "BOUND_TO_EXECUTABLE_TEST"
+    },
+    {
+      "case_id": "SEM-CF-RESULT-004",
+      "test_node": "test_semantic_conformance.SemanticConformanceTests.test_sem_cf_result_004",
+      "status": "BOUND_TO_EXECUTABLE_TEST"
+    }
+  ],
+  "blocked_not_authorized_cases": [
+    {
+      "case_id": "SEM-CF-SENS-001",
+      "gate_refs": [
+        "DQ-018",
+        "PR-G5"
+      ],
+      "status": "BLOCKED_NOT_AUTHORIZED"
+    },
+    {
+      "case_id": "SEM-CF-SENS-002",
+      "gate_refs": [
+        "DQ-018",
+        "PR-G5"
+      ],
+      "status": "BLOCKED_NOT_AUTHORIZED"
+    },
+    {
+      "case_id": "SEM-CF-SENS-003",
+      "gate_refs": [
+        "DQ-018",
+        "PR-G5"
+      ],
+      "status": "BLOCKED_NOT_AUTHORIZED"
+    },
+    {
+      "case_id": "SEM-CF-SENS-004",
+      "gate_refs": [
+        "DQ-018",
+        "PR-G5"
+      ],
+      "status": "BLOCKED_NOT_AUTHORIZED"
+    },
+    {
+      "case_id": "SEM-CF-SENS-005",
+      "gate_refs": [
+        "DQ-018",
+        "PR-G5"
+      ],
+      "status": "BLOCKED_NOT_AUTHORIZED"
+    },
+    {
+      "case_id": "SEM-CF-SENS-006",
+      "gate_refs": [
+        "DQ-018",
+        "PR-G5"
+      ],
+      "status": "BLOCKED_NOT_AUTHORIZED"
+    },
+    {
+      "case_id": "SEM-CF-SENS-007",
+      "gate_refs": [
+        "DQ-018",
+        "PR-G5"
+      ],
+      "status": "BLOCKED_NOT_AUTHORIZED"
+    },
+    {
+      "case_id": "SEM-CF-SENS-008",
+      "gate_refs": [
+        "DQ-018",
+        "PR-G5"
+      ],
+      "status": "BLOCKED_NOT_AUTHORIZED"
+    },
+    {
+      "case_id": "SEM-CF-SENS-009",
+      "gate_refs": [
+        "DQ-018",
+        "PR-G5"
+      ],
+      "status": "BLOCKED_NOT_AUTHORIZED"
+    },
+    {
+      "case_id": "SEM-CF-SENS-010",
+      "gate_refs": [
+        "DQ-018",
+        "PR-G5"
+      ],
+      "status": "BLOCKED_NOT_AUTHORIZED"
+    },
+    {
+      "case_id": "SEM-CF-CARD-001",
+      "gate_refs": [
+        "DQ-020",
+        "PR-G3",
+        "PR-G5"
+      ],
+      "status": "BLOCKED_NOT_AUTHORIZED"
+    },
+    {
+      "case_id": "SEM-CF-CARD-002",
+      "gate_refs": [
+        "DQ-020",
+        "PR-G3",
+        "PR-G5"
+      ],
+      "status": "BLOCKED_NOT_AUTHORIZED"
+    },
+    {
+      "case_id": "SEM-CF-CARD-003",
+      "gate_refs": [
+        "DQ-020",
+        "PR-G3",
+        "PR-G5"
+      ],
+      "status": "BLOCKED_NOT_AUTHORIZED"
+    },
+    {
+      "case_id": "SEM-CF-CARD-004",
+      "gate_refs": [
+        "DQ-020",
+        "PR-G3",
+        "PR-G5"
+      ],
+      "status": "BLOCKED_NOT_AUTHORIZED"
+    }
+  ],
+  "effects": {
+    "agent_created": false,
+    "runtime_created": false,
+    "entity_created": false,
+    "capability_created": false,
+    "permission_created": false,
+    "evidence_created": false,
+    "verification_created": false,
+    "collector_created": false,
+    "network_endpoint_created": false,
+    "saee_called": false,
+    "gate_state_changed": false
+  }
+}

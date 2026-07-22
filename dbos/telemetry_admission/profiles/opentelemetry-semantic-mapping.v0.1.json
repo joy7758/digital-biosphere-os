@@ -1,0 +1,218 @@
+{
+  "catalog_schema_version": "0.1",
+  "catalog_id": "TMAI-OTEL-SEMANTIC-MAPPING-0.1",
+  "status": "ADOPTED_CONTRACT_NOT_IMPLEMENTED",
+  "observed_at": "2026-07-22",
+  "decision_reference": "DQ-023",
+  "primary_repository": "digital-biosphere-architecture",
+  "reference_baselines": {
+    "otel_specification": {
+      "repository": "https://github.com/open-telemetry/opentelemetry-specification",
+      "tag": "v1.59.0",
+      "commit": "a824fb4eba795c5c65dd397b3d22e7c28e934de3",
+      "observed_head_not_adopted": "2b04e8b639d2a1baf2e1eaab68ee254cdc6100f0",
+      "adoption_status": "ADOPTED_REFERENCE"
+    },
+    "core_semantic_conventions": {
+      "repository": "https://github.com/open-telemetry/semantic-conventions",
+      "tag": "v1.43.0",
+      "commit": "89aae438b3b3b0a8dd33003c9d70592baf7dbd0d",
+      "adoption_status": "ADOPTED_REFERENCE"
+    },
+    "genai_semantic_conventions": {
+      "repository": "https://github.com/open-telemetry/semantic-conventions-genai",
+      "tag": null,
+      "commit": "2e994c6d59a93bb4fc1752c5378eedb9b8e14d6b",
+      "schema_url": null,
+      "schema_url_observation": "EXACT_COMMIT_README_TODO",
+      "adoption_status": "PINNED_DEVELOPMENT_REFERENCE_ADOPTED"
+    },
+    "otlp": {
+      "repository": "https://github.com/open-telemetry/opentelemetry-proto",
+      "tag": "v1.11.0",
+      "commit": "790608c4d51e6ffc12210b541e8514cbed9e91a4",
+      "adoption_status": "DQ_023_DECIDED_REFERENCE_ADOPTED"
+    }
+  },
+  "profile_policy": {
+    "defines_custom_otel_namespace": false,
+    "raw_upstream_fields_preserved": true,
+    "trusted_binding_occurs_outside_raw_telemetry": true,
+    "development_fields_isolated": true,
+    "sensitive_content_default": "DISABLED",
+    "deprecated_input_policy": "REJECT_AND_RETAIN_DIAGNOSTIC",
+    "unknown_or_drift_policy": "FAIL_CLOSED"
+  },
+  "stability_source_registry": [
+    {
+      "source_id": "SRC-OTEL-CORE-SERVICE-1.43",
+      "exact_url": "https://github.com/open-telemetry/semantic-conventions/blob/v1.43.0/docs/resource/service.md",
+      "exact_reference": "v1.43.0@89aae438b3b3b0a8dd33003c9d70592baf7dbd0d",
+      "applicable_mapping_ids": ["OTEL-SM-001", "OTEL-SM-002", "OTEL-SM-003", "OTEL-SM-004"],
+      "verification_status": "SOURCE_PINNED_FIELD_STABILITY_INVENTORIED_VALIDATOR_NOT_IMPLEMENTED"
+    },
+    {
+      "source_id": "SRC-OTEL-CORE-DEPLOYMENT-1.43",
+      "exact_url": "https://github.com/open-telemetry/semantic-conventions/blob/v1.43.0/docs/registry/attributes/deployment.md",
+      "exact_reference": "v1.43.0@89aae438b3b3b0a8dd33003c9d70592baf7dbd0d",
+      "applicable_mapping_ids": ["OTEL-SM-005"],
+      "verification_status": "SOURCE_PINNED_FIELD_STABILITY_INVENTORIED_VALIDATOR_NOT_IMPLEMENTED"
+    },
+    {
+      "source_id": "SRC-OTEL-CORE-TELEMETRY-1.43",
+      "exact_url": "https://github.com/open-telemetry/semantic-conventions/blob/v1.43.0/docs/registry/attributes/telemetry.md",
+      "exact_reference": "v1.43.0@89aae438b3b3b0a8dd33003c9d70592baf7dbd0d",
+      "applicable_mapping_ids": ["OTEL-SM-006", "OTEL-SM-007", "OTEL-SM-008", "OTEL-SM-009", "OTEL-SM-010"],
+      "verification_status": "SOURCE_PINNED_FIELD_STABILITY_INVENTORIED_VALIDATOR_NOT_IMPLEMENTED"
+    },
+    {
+      "source_id": "SRC-OTEL-SPEC-SCOPE-1.59",
+      "exact_url": "https://github.com/open-telemetry/opentelemetry-specification/blob/v1.59.0/specification/common/instrumentation-scope.md",
+      "exact_reference": "v1.59.0@a824fb4eba795c5c65dd397b3d22e7c28e934de3",
+      "applicable_mapping_ids": ["OTEL-SM-011", "OTEL-SM-012", "OTEL-SM-013"],
+      "verification_status": "SOURCE_PINNED_FIELD_STABILITY_INVENTORIED_VALIDATOR_NOT_IMPLEMENTED"
+    },
+    {
+      "source_id": "SRC-OTEL-SPEC-TRACE-1.59",
+      "exact_url": "https://github.com/open-telemetry/opentelemetry-specification/blob/v1.59.0/specification/trace/api.md",
+      "exact_reference": "v1.59.0@a824fb4eba795c5c65dd397b3d22e7c28e934de3",
+      "applicable_mapping_ids": ["OTEL-SM-014", "OTEL-SM-015", "OTEL-SM-016", "OTEL-SM-017", "OTEL-SM-018", "OTEL-SM-019"],
+      "verification_status": "SOURCE_PINNED_FIELD_STABILITY_INVENTORIED_VALIDATOR_NOT_IMPLEMENTED"
+    },
+    {
+      "source_id": "SRC-OTEL-CORE-ERROR-1.43",
+      "exact_url": "https://github.com/open-telemetry/semantic-conventions/blob/v1.43.0/docs/registry/attributes/error.md",
+      "exact_reference": "v1.43.0@89aae438b3b3b0a8dd33003c9d70592baf7dbd0d",
+      "applicable_mapping_ids": ["OTEL-SM-020"],
+      "verification_status": "SOURCE_PINNED_FIELD_STABILITY_INVENTORIED_VALIDATOR_NOT_IMPLEMENTED"
+    },
+    {
+      "source_id": "SRC-OTEL-GENAI-AGENT-2E99",
+      "exact_url": "https://github.com/open-telemetry/semantic-conventions-genai/blob/2e994c6d59a93bb4fc1752c5378eedb9b8e14d6b/docs/gen-ai/gen-ai-agent-spans.md",
+      "exact_reference": "2e994c6d59a93bb4fc1752c5378eedb9b8e14d6b",
+      "applicable_mapping_ids": ["OTEL-SM-021", "OTEL-SM-022", "OTEL-SM-023", "OTEL-SM-024", "OTEL-SM-025", "OTEL-SM-026", "OTEL-SM-027", "OTEL-SM-028", "OTEL-SM-029", "OTEL-SM-030", "OTEL-SM-031", "OTEL-SM-032", "OTEL-SM-033", "OTEL-SM-034"],
+      "verification_status": "SOURCE_PINNED_FIELD_STABILITY_INVENTORIED_VALIDATOR_NOT_IMPLEMENTED"
+    },
+    {
+      "source_id": "SRC-OTEL-GENAI-REGISTRY-2E99",
+      "exact_url": "https://github.com/open-telemetry/semantic-conventions-genai/blob/2e994c6d59a93bb4fc1752c5378eedb9b8e14d6b/docs/registry/attributes/gen-ai.md",
+      "exact_reference": "2e994c6d59a93bb4fc1752c5378eedb9b8e14d6b",
+      "applicable_mapping_ids": ["OTEL-SM-035", "OTEL-SM-036", "OTEL-SM-037", "OTEL-SM-038", "OTEL-SM-039", "OTEL-SM-040", "OTEL-SM-041", "OTEL-SM-042", "OTEL-SM-043", "OTEL-SM-044"],
+      "verification_status": "SOURCE_PINNED_FIELD_STABILITY_INVENTORIED_VALIDATOR_NOT_IMPLEMENTED"
+    },
+    {
+      "source_id": "SRC-OTEL-CORE-GENAI-DEPRECATED-1.43",
+      "exact_url": "https://github.com/open-telemetry/semantic-conventions/blob/v1.43.0/docs/registry/attributes/gen-ai.md",
+      "exact_reference": "v1.43.0@89aae438b3b3b0a8dd33003c9d70592baf7dbd0d",
+      "applicable_mapping_ids": ["OTEL-SM-045", "OTEL-SM-046", "OTEL-SM-047"],
+      "verification_status": "SOURCE_PINNED_FIELD_STABILITY_INVENTORIED_VALIDATOR_NOT_IMPLEMENTED"
+    }
+  ],
+  "sensitive_content_policy": {
+    "default_state": "DISABLED",
+    "raw_content_in_baggage_allowed": false,
+    "baggage_violation_policy": "REJECT_OR_STRIP_WITH_AUDITABLE_LIMITATION",
+    "opt_in_required_bindings": ["decision_reference", "policy_digest", "field_allowlist", "retention_reference", "residency_reference", "access_policy_reference", "redaction_policy_reference"],
+    "partial_opt_in_policy": "EXACT_FIELD_ALLOWLIST_AND_PER_RECORD_REDACTION_OUTCOME_REQUIRED"
+  },
+  "cardinality_policy": {
+    "metric_label_prohibited_fields": ["service.instance.id", "trace_id", "span_id", "parent_span_id", "gen_ai.agent.id", "gen_ai.conversation.id", "gen_ai.tool.call.id"],
+    "deployment_budget_required_for_fields": ["service.name", "service.namespace", "gen_ai.operation.name", "gen_ai.provider.name", "gen_ai.workflow.name", "gen_ai.request.model", "gen_ai.response.model", "gen_ai.tool.name", "error.type"],
+    "budget_scope": "PER_TENANT_PER_SERVICE_PER_WINDOW",
+    "overflow_policy": "REMOVE_DIMENSION_RETAIN_AGGREGATE_AND_AUDITABLE_LIMITATION",
+    "silent_drop_allowed": false
+  },
+  "mapping_groups": [
+    {
+      "group_id": "OTEL-SM-RESOURCE",
+      "required_mapping_ids": ["OTEL-SM-001", "OTEL-SM-002", "OTEL-SM-003", "OTEL-SM-004", "OTEL-SM-005", "OTEL-SM-006", "OTEL-SM-007", "OTEL-SM-008", "OTEL-SM-009", "OTEL-SM-010"]
+    },
+    {
+      "group_id": "OTEL-SM-SCOPE_CONTEXT",
+      "required_mapping_ids": ["OTEL-SM-011", "OTEL-SM-012", "OTEL-SM-013", "OTEL-SM-014", "OTEL-SM-015", "OTEL-SM-016", "OTEL-SM-017", "OTEL-SM-018", "OTEL-SM-019", "OTEL-SM-020"]
+    },
+    {
+      "group_id": "OTEL-SM-GENAI_OPERATION",
+      "required_mapping_ids": ["OTEL-SM-021", "OTEL-SM-022", "OTEL-SM-023", "OTEL-SM-024", "OTEL-SM-025", "OTEL-SM-026", "OTEL-SM-027", "OTEL-SM-028", "OTEL-SM-029", "OTEL-SM-030", "OTEL-SM-031"]
+    },
+    {
+      "group_id": "OTEL-SM-GENAI_TOOL",
+      "required_mapping_ids": ["OTEL-SM-032", "OTEL-SM-033", "OTEL-SM-034"]
+    },
+    {
+      "group_id": "OTEL-SM-GENAI_EVALUATION",
+      "required_mapping_ids": ["OTEL-SM-035", "OTEL-SM-036"]
+    },
+    {
+      "group_id": "OTEL-SM-SENSITIVE_CONTENT",
+      "required_mapping_ids": ["OTEL-SM-037", "OTEL-SM-038", "OTEL-SM-039", "OTEL-SM-040", "OTEL-SM-041", "OTEL-SM-042", "OTEL-SM-043", "OTEL-SM-044"]
+    },
+    {
+      "group_id": "OTEL-SM-DEPRECATED",
+      "required_mapping_ids": ["OTEL-SM-045", "OTEL-SM-046", "OTEL-SM-047"]
+    }
+  ],
+  "mappings": [
+    {"mapping_id":"OTEL-SM-001","upstream_field":"service.name","source":"CORE_SEMCONV","stability":"STABLE","signal_surfaces":["RESOURCE"],"capture_class":"DEFAULT_METADATA","profile_handling":"ALLOW_METADATA","target":"OBSERVATION_ENVELOPE","target_field":"resource_ref","canonical_effect":"NONE","authority_rule":"RESOURCE_HINT_ONLY"},
+    {"mapping_id":"OTEL-SM-002","upstream_field":"service.namespace","source":"CORE_SEMCONV","stability":"STABLE","signal_surfaces":["RESOURCE"],"capture_class":"DEFAULT_METADATA","profile_handling":"ALLOW_METADATA","target":"OBSERVATION_ENVELOPE","target_field":"resource_ref","canonical_effect":"NONE","authority_rule":"RESOURCE_HINT_ONLY"},
+    {"mapping_id":"OTEL-SM-003","upstream_field":"service.instance.id","source":"CORE_SEMCONV","stability":"STABLE","signal_surfaces":["RESOURCE"],"capture_class":"CONDITIONAL_METADATA","profile_handling":"ALLOW_WITH_BINDING","target":"OBSERVATION_ENVELOPE","target_field":"resource_ref","canonical_effect":"NONE","authority_rule":"IDENTITY_HINT_ONLY"},
+    {"mapping_id":"OTEL-SM-004","upstream_field":"service.version","source":"CORE_SEMCONV","stability":"STABLE","signal_surfaces":["RESOURCE"],"capture_class":"DEFAULT_METADATA","profile_handling":"ALLOW_METADATA","target":"OBSERVATION_ENVELOPE","target_field":"resource_ref","canonical_effect":"NONE","authority_rule":"RESOURCE_HINT_ONLY"},
+    {"mapping_id":"OTEL-SM-005","upstream_field":"deployment.environment.name","source":"CORE_SEMCONV","stability":"STABLE","signal_surfaces":["RESOURCE"],"capture_class":"DEFAULT_METADATA","profile_handling":"ALLOW_METADATA","target":"OBSERVATION_ENVELOPE","target_field":"resource_ref","canonical_effect":"NONE","authority_rule":"RESOURCE_HINT_ONLY"},
+    {"mapping_id":"OTEL-SM-006","upstream_field":"telemetry.sdk.name","source":"CORE_SEMCONV","stability":"STABLE","signal_surfaces":["RESOURCE"],"capture_class":"DEFAULT_METADATA","profile_handling":"ALLOW_METADATA","target":"OBSERVATION_ENVELOPE","target_field":"instrumentation_scope","canonical_effect":"NONE","authority_rule":"INSTRUMENTATION_DESCRIPTION_ONLY"},
+    {"mapping_id":"OTEL-SM-007","upstream_field":"telemetry.sdk.version","source":"CORE_SEMCONV","stability":"STABLE","signal_surfaces":["RESOURCE"],"capture_class":"DEFAULT_METADATA","profile_handling":"ALLOW_METADATA","target":"OBSERVATION_ENVELOPE","target_field":"instrumentation_scope","canonical_effect":"NONE","authority_rule":"INSTRUMENTATION_DESCRIPTION_ONLY"},
+    {"mapping_id":"OTEL-SM-008","upstream_field":"telemetry.sdk.language","source":"CORE_SEMCONV","stability":"STABLE","signal_surfaces":["RESOURCE"],"capture_class":"DEFAULT_METADATA","profile_handling":"ALLOW_METADATA","target":"OBSERVATION_ENVELOPE","target_field":"instrumentation_scope","canonical_effect":"NONE","authority_rule":"INSTRUMENTATION_DESCRIPTION_ONLY"},
+    {"mapping_id":"OTEL-SM-009","upstream_field":"telemetry.distro.name","source":"CORE_SEMCONV","stability":"STABLE","signal_surfaces":["RESOURCE"],"capture_class":"CONDITIONAL_METADATA","profile_handling":"ALLOW_METADATA","target":"OBSERVATION_ENVELOPE","target_field":"instrumentation_scope","canonical_effect":"NONE","authority_rule":"INSTRUMENTATION_DESCRIPTION_ONLY"},
+    {"mapping_id":"OTEL-SM-010","upstream_field":"telemetry.distro.version","source":"CORE_SEMCONV","stability":"STABLE","signal_surfaces":["RESOURCE"],"capture_class":"CONDITIONAL_METADATA","profile_handling":"ALLOW_METADATA","target":"OBSERVATION_ENVELOPE","target_field":"instrumentation_scope","canonical_effect":"NONE","authority_rule":"INSTRUMENTATION_DESCRIPTION_ONLY"},
+    {"mapping_id":"OTEL-SM-011","upstream_field":"instrumentation_scope.name","source":"OTLP_STRUCTURE","stability":"STABLE","signal_surfaces":["TRACE","METRIC","LOG"],"capture_class":"DEFAULT_METADATA","profile_handling":"ALLOW_METADATA","target":"OBSERVATION_ENVELOPE","target_field":"instrumentation_scope","canonical_effect":"NONE","authority_rule":"INSTRUMENTATION_DESCRIPTION_ONLY"},
+    {"mapping_id":"OTEL-SM-012","upstream_field":"instrumentation_scope.version","source":"OTLP_STRUCTURE","stability":"STABLE","signal_surfaces":["TRACE","METRIC","LOG"],"capture_class":"DEFAULT_METADATA","profile_handling":"ALLOW_METADATA","target":"OBSERVATION_ENVELOPE","target_field":"instrumentation_scope","canonical_effect":"NONE","authority_rule":"INSTRUMENTATION_DESCRIPTION_ONLY"},
+    {"mapping_id":"OTEL-SM-013","upstream_field":"instrumentation_scope.schema_url","source":"OTLP_STRUCTURE","stability":"STABLE","signal_surfaces":["TRACE","METRIC","LOG"],"capture_class":"CONDITIONAL_METADATA","profile_handling":"ALLOW_WITH_BINDING","target":"OBSERVATION_ENVELOPE","target_field":"instrumentation_scope","canonical_effect":"NONE","authority_rule":"INSTRUMENTATION_DESCRIPTION_ONLY"},
+    {"mapping_id":"OTEL-SM-014","upstream_field":"trace_id","source":"OTLP_STRUCTURE","stability":"STABLE","signal_surfaces":["TRACE","LOG"],"capture_class":"CONDITIONAL_METADATA","profile_handling":"ALLOW_METADATA","target":"OBSERVATION_ENVELOPE","target_field":"trace_id","canonical_effect":"NONE","authority_rule":"CORRELATION_ONLY"},
+    {"mapping_id":"OTEL-SM-015","upstream_field":"span_id","source":"OTLP_STRUCTURE","stability":"STABLE","signal_surfaces":["TRACE","LOG"],"capture_class":"CONDITIONAL_METADATA","profile_handling":"ALLOW_METADATA","target":"OBSERVATION_ENVELOPE","target_field":"span_id","canonical_effect":"NONE","authority_rule":"CORRELATION_ONLY"},
+    {"mapping_id":"OTEL-SM-016","upstream_field":"parent_span_id","source":"OTLP_STRUCTURE","stability":"STABLE","signal_surfaces":["TRACE"],"capture_class":"CONDITIONAL_METADATA","profile_handling":"ALLOW_METADATA","target":"OBSERVATION_ENVELOPE","target_field":"parent_span_id","canonical_effect":"NONE","authority_rule":"CORRELATION_ONLY"},
+    {"mapping_id":"OTEL-SM-017","upstream_field":"span.name","source":"OTEL_SPEC","stability":"STABLE","signal_surfaces":["TRACE"],"capture_class":"DEFAULT_METADATA","profile_handling":"ALLOW_METADATA","target":"OBSERVATION_ENVELOPE","target_field":"observed_operation","canonical_effect":"NONE","authority_rule":"OPERATION_HINT_ONLY"},
+    {"mapping_id":"OTEL-SM-018","upstream_field":"span.kind","source":"OTEL_SPEC","stability":"STABLE","signal_surfaces":["TRACE"],"capture_class":"DEFAULT_METADATA","profile_handling":"ALLOW_METADATA","target":"OBSERVATION_ENVELOPE","target_field":"observed_operation","canonical_effect":"NONE","authority_rule":"OPERATION_HINT_ONLY"},
+    {"mapping_id":"OTEL-SM-019","upstream_field":"span.status","source":"OTEL_SPEC","stability":"STABLE","signal_surfaces":["TRACE"],"capture_class":"CONDITIONAL_METADATA","profile_handling":"ALLOW_METADATA","target":"ADMISSION_LIMITATION","target_field":"limitations","canonical_effect":"NONE","authority_rule":"DIAGNOSTIC_ONLY"},
+    {"mapping_id":"OTEL-SM-020","upstream_field":"error.type","source":"CORE_SEMCONV","stability":"STABLE","signal_surfaces":["TRACE","METRIC","LOG","EVENT"],"capture_class":"CONDITIONAL_METADATA","profile_handling":"ALLOW_METADATA","target":"ADMISSION_LIMITATION","target_field":"error_class","canonical_effect":"NONE","authority_rule":"DIAGNOSTIC_ONLY"},
+    {"mapping_id":"OTEL-SM-021","upstream_field":"gen_ai.operation.name","source":"GENAI_SEMCONV","stability":"DEVELOPMENT","signal_surfaces":["TRACE","METRIC"],"capture_class":"CONDITIONAL_METADATA","profile_handling":"ALLOW_WITH_BINDING","target":"OBSERVATION_ENVELOPE","target_field":"observed_operation","canonical_effect":"NONE","authority_rule":"OPERATION_HINT_ONLY"},
+    {"mapping_id":"OTEL-SM-022","upstream_field":"gen_ai.provider.name","source":"GENAI_SEMCONV","stability":"DEVELOPMENT","signal_surfaces":["TRACE","METRIC","LOG","EVENT"],"capture_class":"CONDITIONAL_METADATA","profile_handling":"ALLOW_WITH_BINDING","target":"OBSERVATION_ENVELOPE","target_field":"provider_ref","canonical_effect":"NONE","authority_rule":"RESOURCE_HINT_ONLY"},
+    {"mapping_id":"OTEL-SM-023","upstream_field":"gen_ai.agent.id","source":"GENAI_SEMCONV","stability":"DEVELOPMENT","signal_surfaces":["TRACE","METRIC","LOG","EVENT"],"capture_class":"CONDITIONAL_METADATA","profile_handling":"ALLOW_WITH_BINDING","target":"OBSERVATION_ENVELOPE","target_field":"provider_agent_hint","canonical_effect":"NONE","authority_rule":"IDENTITY_HINT_ONLY"},
+    {"mapping_id":"OTEL-SM-024","upstream_field":"gen_ai.agent.name","source":"GENAI_SEMCONV","stability":"DEVELOPMENT","signal_surfaces":["TRACE","METRIC","LOG","EVENT"],"capture_class":"CONDITIONAL_METADATA","profile_handling":"ALLOW_WITH_BINDING","target":"OBSERVATION_ENVELOPE","target_field":"provider_agent_hint","canonical_effect":"NONE","authority_rule":"IDENTITY_HINT_ONLY"},
+    {"mapping_id":"OTEL-SM-025","upstream_field":"gen_ai.agent.version","source":"GENAI_SEMCONV","stability":"DEVELOPMENT","signal_surfaces":["TRACE","METRIC","LOG","EVENT"],"capture_class":"CONDITIONAL_METADATA","profile_handling":"ALLOW_WITH_BINDING","target":"OBSERVATION_ENVELOPE","target_field":"provider_agent_hint","canonical_effect":"NONE","authority_rule":"IDENTITY_HINT_ONLY"},
+    {"mapping_id":"OTEL-SM-026","upstream_field":"gen_ai.workflow.name","source":"GENAI_SEMCONV","stability":"DEVELOPMENT","signal_surfaces":["TRACE","METRIC","LOG","EVENT"],"capture_class":"CONDITIONAL_METADATA","profile_handling":"ALLOW_WITH_BINDING","target":"OBSERVATION_ENVELOPE","target_field":"workflow_ref","canonical_effect":"NONE","authority_rule":"OPERATION_HINT_ONLY"},
+    {"mapping_id":"OTEL-SM-027","upstream_field":"gen_ai.conversation.id","source":"GENAI_SEMCONV","stability":"DEVELOPMENT","signal_surfaces":["TRACE","LOG","EVENT"],"capture_class":"HIGH_CARDINALITY_METADATA","profile_handling":"ALLOW_WITH_BINDING","target":"OBSERVATION_ENVELOPE","target_field":"conversation_ref","canonical_effect":"NONE","authority_rule":"CORRELATION_ONLY"},
+    {"mapping_id":"OTEL-SM-028","upstream_field":"gen_ai.request.model","source":"GENAI_SEMCONV","stability":"DEVELOPMENT","signal_surfaces":["TRACE","METRIC"],"capture_class":"CONDITIONAL_METADATA","profile_handling":"ALLOW_WITH_BINDING","target":"OBSERVATION_ENVELOPE","target_field":"model_ref","canonical_effect":"NONE","authority_rule":"RESOURCE_HINT_ONLY"},
+    {"mapping_id":"OTEL-SM-029","upstream_field":"gen_ai.response.model","source":"GENAI_SEMCONV","stability":"DEVELOPMENT","signal_surfaces":["TRACE","METRIC"],"capture_class":"CONDITIONAL_METADATA","profile_handling":"ALLOW_WITH_BINDING","target":"OBSERVATION_ENVELOPE","target_field":"model_ref","canonical_effect":"NONE","authority_rule":"RESOURCE_HINT_ONLY"},
+    {"mapping_id":"OTEL-SM-030","upstream_field":"gen_ai.usage.input_tokens","source":"GENAI_SEMCONV","stability":"DEVELOPMENT","signal_surfaces":["TRACE","METRIC"],"capture_class":"CONDITIONAL_METADATA","profile_handling":"ALLOW_WITH_BINDING","target":"OBSERVATION_ENVELOPE","target_field":"resource_usage","canonical_effect":"NONE","authority_rule":"USAGE_MATERIAL_ONLY"},
+    {"mapping_id":"OTEL-SM-031","upstream_field":"gen_ai.usage.output_tokens","source":"GENAI_SEMCONV","stability":"DEVELOPMENT","signal_surfaces":["TRACE","METRIC"],"capture_class":"CONDITIONAL_METADATA","profile_handling":"ALLOW_WITH_BINDING","target":"OBSERVATION_ENVELOPE","target_field":"resource_usage","canonical_effect":"NONE","authority_rule":"USAGE_MATERIAL_ONLY"},
+    {"mapping_id":"OTEL-SM-032","upstream_field":"gen_ai.tool.name","source":"GENAI_SEMCONV","stability":"DEVELOPMENT","signal_surfaces":["TRACE","LOG","EVENT"],"capture_class":"CONDITIONAL_METADATA","profile_handling":"ALLOW_WITH_BINDING","target":"OBSERVATION_ENVELOPE","target_field":"tool_ref","canonical_effect":"NONE","authority_rule":"CAPABILITY_HINT_ONLY"},
+    {"mapping_id":"OTEL-SM-033","upstream_field":"gen_ai.tool.type","source":"GENAI_SEMCONV","stability":"DEVELOPMENT","signal_surfaces":["TRACE","LOG","EVENT"],"capture_class":"CONDITIONAL_METADATA","profile_handling":"ALLOW_WITH_BINDING","target":"OBSERVATION_ENVELOPE","target_field":"tool_ref","canonical_effect":"NONE","authority_rule":"CAPABILITY_HINT_ONLY"},
+    {"mapping_id":"OTEL-SM-034","upstream_field":"gen_ai.tool.call.id","source":"GENAI_SEMCONV","stability":"DEVELOPMENT","signal_surfaces":["TRACE","LOG","EVENT"],"capture_class":"HIGH_CARDINALITY_METADATA","profile_handling":"ALLOW_WITH_BINDING","target":"OBSERVATION_ENVELOPE","target_field":"tool_ref","canonical_effect":"NONE","authority_rule":"CORRELATION_ONLY"},
+    {"mapping_id":"OTEL-SM-035","upstream_field":"gen_ai.evaluation.name","source":"GENAI_SEMCONV","stability":"DEVELOPMENT","signal_surfaces":["EVENT","LOG"],"capture_class":"CONDITIONAL_METADATA","profile_handling":"ALLOW_WITH_BINDING","target":"OBSERVATION_ENVELOPE","target_field":"evaluation_material_ref","canonical_effect":"NONE","authority_rule":"EVALUATION_MATERIAL_ONLY"},
+    {"mapping_id":"OTEL-SM-036","upstream_field":"gen_ai.evaluation.score.value","source":"GENAI_SEMCONV","stability":"DEVELOPMENT","signal_surfaces":["EVENT","LOG"],"capture_class":"CONDITIONAL_METADATA","profile_handling":"ALLOW_WITH_BINDING","target":"OBSERVATION_ENVELOPE","target_field":"evaluation_material_ref","canonical_effect":"NONE","authority_rule":"EVALUATION_MATERIAL_ONLY"},
+    {"mapping_id":"OTEL-SM-037","upstream_field":"gen_ai.system_instructions","source":"GENAI_SEMCONV","stability":"DEVELOPMENT","signal_surfaces":["TRACE","EVENT","LOG"],"capture_class":"OPT_IN_SENSITIVE_DISABLED_BY_DEFAULT","profile_handling":"ALLOW_ONLY_AFTER_DATA_GOVERNANCE","target":"ADMISSION_LIMITATION","target_field":"content_capture_state","canonical_effect":"NONE","authority_rule":"SENSITIVE_CONTENT_NOT_DEFAULT"},
+    {"mapping_id":"OTEL-SM-038","upstream_field":"gen_ai.input.messages","source":"GENAI_SEMCONV","stability":"DEVELOPMENT","signal_surfaces":["TRACE","EVENT","LOG"],"capture_class":"OPT_IN_SENSITIVE_DISABLED_BY_DEFAULT","profile_handling":"ALLOW_ONLY_AFTER_DATA_GOVERNANCE","target":"ADMISSION_LIMITATION","target_field":"content_capture_state","canonical_effect":"NONE","authority_rule":"SENSITIVE_CONTENT_NOT_DEFAULT"},
+    {"mapping_id":"OTEL-SM-039","upstream_field":"gen_ai.output.messages","source":"GENAI_SEMCONV","stability":"DEVELOPMENT","signal_surfaces":["TRACE","EVENT","LOG"],"capture_class":"OPT_IN_SENSITIVE_DISABLED_BY_DEFAULT","profile_handling":"ALLOW_ONLY_AFTER_DATA_GOVERNANCE","target":"ADMISSION_LIMITATION","target_field":"content_capture_state","canonical_effect":"NONE","authority_rule":"SENSITIVE_CONTENT_NOT_DEFAULT"},
+    {"mapping_id":"OTEL-SM-040","upstream_field":"gen_ai.tool.call.arguments","source":"GENAI_SEMCONV","stability":"DEVELOPMENT","signal_surfaces":["TRACE","EVENT","LOG"],"capture_class":"OPT_IN_SENSITIVE_DISABLED_BY_DEFAULT","profile_handling":"ALLOW_ONLY_AFTER_DATA_GOVERNANCE","target":"ADMISSION_LIMITATION","target_field":"content_capture_state","canonical_effect":"NONE","authority_rule":"SENSITIVE_CONTENT_NOT_DEFAULT"},
+    {"mapping_id":"OTEL-SM-041","upstream_field":"gen_ai.tool.call.result","source":"GENAI_SEMCONV","stability":"DEVELOPMENT","signal_surfaces":["TRACE","EVENT","LOG"],"capture_class":"OPT_IN_SENSITIVE_DISABLED_BY_DEFAULT","profile_handling":"ALLOW_ONLY_AFTER_DATA_GOVERNANCE","target":"ADMISSION_LIMITATION","target_field":"content_capture_state","canonical_effect":"NONE","authority_rule":"SENSITIVE_CONTENT_NOT_DEFAULT"},
+    {"mapping_id":"OTEL-SM-042","upstream_field":"gen_ai.retrieval.query.text","source":"GENAI_SEMCONV","stability":"DEVELOPMENT","signal_surfaces":["TRACE","EVENT","LOG"],"capture_class":"OPT_IN_SENSITIVE_DISABLED_BY_DEFAULT","profile_handling":"ALLOW_ONLY_AFTER_DATA_GOVERNANCE","target":"ADMISSION_LIMITATION","target_field":"content_capture_state","canonical_effect":"NONE","authority_rule":"SENSITIVE_CONTENT_NOT_DEFAULT"},
+    {"mapping_id":"OTEL-SM-043","upstream_field":"gen_ai.retrieval.documents","source":"GENAI_SEMCONV","stability":"DEVELOPMENT","signal_surfaces":["TRACE","EVENT","LOG"],"capture_class":"OPT_IN_SENSITIVE_DISABLED_BY_DEFAULT","profile_handling":"ALLOW_ONLY_AFTER_DATA_GOVERNANCE","target":"ADMISSION_LIMITATION","target_field":"content_capture_state","canonical_effect":"NONE","authority_rule":"SENSITIVE_CONTENT_NOT_DEFAULT"},
+    {"mapping_id":"OTEL-SM-044","upstream_field":"gen_ai.evaluation.explanation","source":"GENAI_SEMCONV","stability":"DEVELOPMENT","signal_surfaces":["EVENT","LOG"],"capture_class":"OPT_IN_SENSITIVE_DISABLED_BY_DEFAULT","profile_handling":"ALLOW_ONLY_AFTER_DATA_GOVERNANCE","target":"ADMISSION_LIMITATION","target_field":"content_capture_state","canonical_effect":"NONE","authority_rule":"SENSITIVE_CONTENT_NOT_DEFAULT"},
+    {"mapping_id":"OTEL-SM-045","upstream_field":"gen_ai.system","source":"CORE_SEMCONV","stability":"DEPRECATED","signal_surfaces":["TRACE","METRIC","LOG","EVENT"],"capture_class":"PROHIBITED_DEPRECATED","profile_handling":"REJECT_DEPRECATED","target":"REJECT_INPUT","target_field":null,"canonical_effect":"NONE","authority_rule":"DEPRECATED_REJECTED"},
+    {"mapping_id":"OTEL-SM-046","upstream_field":"gen_ai.prompt","source":"CORE_SEMCONV","stability":"DEPRECATED","signal_surfaces":["TRACE","EVENT","LOG"],"capture_class":"PROHIBITED_DEPRECATED","profile_handling":"REJECT_DEPRECATED","target":"REJECT_INPUT","target_field":null,"canonical_effect":"NONE","authority_rule":"DEPRECATED_REJECTED"},
+    {"mapping_id":"OTEL-SM-047","upstream_field":"gen_ai.completion","source":"CORE_SEMCONV","stability":"DEPRECATED","signal_surfaces":["TRACE","EVENT","LOG"],"capture_class":"PROHIBITED_DEPRECATED","profile_handling":"REJECT_DEPRECATED","target":"REJECT_INPUT","target_field":null,"canonical_effect":"NONE","authority_rule":"DEPRECATED_REJECTED"}
+  ],
+  "effects": {
+    "creates_entity": false,
+    "creates_identity": false,
+    "creates_capability": false,
+    "grants_permission": false,
+    "creates_execution": false,
+    "creates_evidence": false,
+    "creates_verification": false,
+    "creates_saee_evaluation": false,
+    "creates_governance_decision": false,
+    "authorizes_implementation": false,
+    "authorizes_deployment": false,
+    "production_ready": false
+  }
+}

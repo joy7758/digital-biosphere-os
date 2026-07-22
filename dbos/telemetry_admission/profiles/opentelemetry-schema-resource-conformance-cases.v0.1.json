@@ -1,0 +1,1686 @@
+{
+  "catalog_schema_version": "0.1",
+  "catalog_id": "TMAI-OTEL-SCHEMA-RESOURCE-CONFORMANCE-0.1",
+  "status": "ADOPTED_CONTRACT_NOT_EXECUTED",
+  "primary_repository": "digital-biosphere-architecture",
+  "decision_reference": "DQ-024",
+  "contract_binding": {
+    "otel_specification": "v1.59.0@a824fb4eba795c5c65dd397b3d22e7c28e934de3",
+    "core_semconv": "v1.43.0@89aae438b3b3b0a8dd33003c9d70592baf7dbd0d",
+    "core_schema_url": "https://opentelemetry.io/schemas/1.43.0",
+    "core_schema_observed_digest": "sha256:6ac5dd367ff707dbcdcb1e5b459d4ac2fd676fb44eb17a21f9494a9fee4233df",
+    "core_schema_file_format": "1.1.0",
+    "profile_id": "TMAI-OTEL-SCHEMA-RESOURCE-ENTITY-PROVENANCE-PROFILE-0.1",
+    "profile_path": "architecture/opentelemetry-schema-resource-entity-provenance-profile.md",
+    "profile_digest": null,
+    "adoption_status": "ADOPTED_REFERENCE"
+  },
+  "source_registry": [
+    {
+      "source_id": "OTEL-SRC-SCHEMA-SPEC",
+      "url": "https://raw.githubusercontent.com/open-telemetry/opentelemetry-specification/v1.59.0/specification/schemas/README.md",
+      "exact_version": "v1.59.0@a824fb4eba795c5c65dd397b3d22e7c28e934de3",
+      "stability": "STABLE",
+      "observed_digest": "sha256:e2004aec29dbe833bd61039b69ec8e08449daf97842a9fcef42d598b49456412",
+      "observed_at": "2026-07-22",
+      "adoption_status": "ADOPTED_REFERENCE"
+    },
+    {
+      "source_id": "OTEL-SRC-SCHEMA-1-43",
+      "url": "https://opentelemetry.io/schemas/1.43.0",
+      "exact_version": "1.43.0",
+      "stability": "PUBLISHED_ARTIFACT_CANDIDATE",
+      "observed_digest": "sha256:6ac5dd367ff707dbcdcb1e5b459d4ac2fd676fb44eb17a21f9494a9fee4233df",
+      "observed_at": "2026-07-22",
+      "adoption_status": "ADOPTED_REFERENCE"
+    },
+    {
+      "source_id": "OTEL-SRC-RESOURCE-SDK",
+      "url": "https://raw.githubusercontent.com/open-telemetry/opentelemetry-specification/v1.59.0/specification/resource/sdk.md",
+      "exact_version": "v1.59.0@a824fb4eba795c5c65dd397b3d22e7c28e934de3",
+      "stability": "STABLE",
+      "observed_digest": "sha256:2745d9cfa45d2f925ecdb12292793ee908e51dd69692dff927b03338153c66b2",
+      "observed_at": "2026-07-22",
+      "adoption_status": "ADOPTED_REFERENCE"
+    },
+    {
+      "source_id": "OTEL-SRC-RESOURCE-DM",
+      "url": "https://raw.githubusercontent.com/open-telemetry/opentelemetry-specification/v1.59.0/specification/resource/data-model.md",
+      "exact_version": "v1.59.0@a824fb4eba795c5c65dd397b3d22e7c28e934de3",
+      "stability": "DEVELOPMENT",
+      "observed_digest": "sha256:1c58df74ec7245a5a5d2054a4106c12a9041c5900794e94953336023e1436f0a",
+      "observed_at": "2026-07-22",
+      "adoption_status": "ADOPTED_REFERENCE"
+    },
+    {
+      "source_id": "OTEL-SRC-ENTITY-DM",
+      "url": "https://raw.githubusercontent.com/open-telemetry/opentelemetry-specification/v1.59.0/specification/entities/data-model.md",
+      "exact_version": "v1.59.0@a824fb4eba795c5c65dd397b3d22e7c28e934de3",
+      "stability": "DEVELOPMENT",
+      "observed_digest": "sha256:b0c3f6bbb5ea01628a248edd4c66cb04e5bdd480443cabf2a6b30d1685530408",
+      "observed_at": "2026-07-22",
+      "adoption_status": "ADOPTED_REFERENCE_QUARANTINED_DEVELOPMENT"
+    },
+    {
+      "source_id": "OTEL-SRC-ENTITY-PROP",
+      "url": "https://raw.githubusercontent.com/open-telemetry/opentelemetry-specification/v1.59.0/specification/entities/entity-propagation.md",
+      "exact_version": "v1.59.0@a824fb4eba795c5c65dd397b3d22e7c28e934de3",
+      "stability": "DEVELOPMENT",
+      "observed_digest": "sha256:5b3ec810c707b7816643a3efcac08d5c17f8fb0a36540f1bbd84715cbb1f5102",
+      "observed_at": "2026-07-22",
+      "adoption_status": "ADOPTED_REFERENCE_QUARANTINED_DEVELOPMENT"
+    }
+  ],
+  "case_groups": [
+    {
+      "group_id": "OSR-CG-SCHEMA_SOURCE",
+      "title": "Schema source and acquisition",
+      "purpose": "Pin exact schema source, digest, redirect, network, size, and parse behavior.",
+      "required_for_gates": [
+        "DQ-024",
+        "DQ-023",
+        "DQ-018",
+        "PR-G2"
+      ],
+      "required_case_ids": [
+        "OSR-CF-SRC-001",
+        "OSR-CF-SRC-002",
+        "OSR-CF-SRC-003",
+        "OSR-CF-SRC-004",
+        "OSR-CF-SRC-005",
+        "OSR-CF-SRC-006",
+        "OSR-CF-SRC-007",
+        "OSR-CF-SRC-008"
+      ]
+    },
+    {
+      "group_id": "OSR-CG-SCHEMA_PRECEDENCE",
+      "title": "Resource and scope schema precedence",
+      "purpose": "Preserve Resource and Instrumentation Scope schema URLs and apply exact contained-signal precedence.",
+      "required_for_gates": [
+        "DQ-022",
+        "DQ-024",
+        "DQ-018",
+        "PR-G2"
+      ],
+      "required_case_ids": [
+        "OSR-CF-PRE-001",
+        "OSR-CF-PRE-002",
+        "OSR-CF-PRE-003",
+        "OSR-CF-PRE-004",
+        "OSR-CF-PRE-005"
+      ]
+    },
+    {
+      "group_id": "OSR-CG-TRANSFORMATION",
+      "title": "Schema transformation lineage",
+      "purpose": "Apply only pinned transformations while retaining original input, loss, failures, and authority boundaries.",
+      "required_for_gates": [
+        "DQ-023",
+        "DQ-024",
+        "DQ-018",
+        "PR-G2",
+        "PR-G3"
+      ],
+      "required_case_ids": [
+        "OSR-CF-TRN-001",
+        "OSR-CF-TRN-002",
+        "OSR-CF-TRN-003",
+        "OSR-CF-TRN-004",
+        "OSR-CF-TRN-005",
+        "OSR-CF-TRN-006"
+      ]
+    },
+    {
+      "group_id": "OSR-CG-RESOURCE_PROVENANCE",
+      "title": "Resource detection and merge provenance",
+      "purpose": "Record detector source, order, configuration, merge precedence, conflicts, and drift without identity elevation.",
+      "required_for_gates": [
+        "DQ-024",
+        "DQ-018",
+        "PR-G2",
+        "PR-G3"
+      ],
+      "required_case_ids": [
+        "OSR-CF-RES-001",
+        "OSR-CF-RES-002",
+        "OSR-CF-RES-003",
+        "OSR-CF-RES-004",
+        "OSR-CF-RES-005",
+        "OSR-CF-RES-006",
+        "OSR-CF-RES-007"
+      ]
+    },
+    {
+      "group_id": "OSR-CG-ENTITY_QUARANTINE",
+      "title": "Development OTel Entity quarantine",
+      "purpose": "Keep OTel Entity and OTEL_ENTITIES as untrusted observation material distinct from TMAI Digital Entity.",
+      "required_for_gates": [
+        "DQ-024",
+        "DQ-018",
+        "PR-G2",
+        "PR-G5"
+      ],
+      "required_case_ids": [
+        "OSR-CF-ENT-001",
+        "OSR-CF-ENT-002",
+        "OSR-CF-ENT-003",
+        "OSR-CF-ENT-004",
+        "OSR-CF-ENT-005",
+        "OSR-CF-ENT-006",
+        "OSR-CF-ENT-007",
+        "OSR-CF-ENT-008"
+      ]
+    },
+    {
+      "group_id": "OSR-CG-DATA_GOVERNANCE",
+      "title": "Telemetry data governance and tenant isolation",
+      "purpose": "Minimize sensitive telemetry, bind retention and access policy, isolate tenants, and prevent quarantine payloads from becoming authority-bearing records.",
+      "required_for_gates": [
+        "DQ-024",
+        "DQ-018",
+        "PR-G2",
+        "PR-G3",
+        "PR-G5",
+        "PR-G6"
+      ],
+      "required_case_ids": [
+        "OSR-CF-DATA-001",
+        "OSR-CF-DATA-002",
+        "OSR-CF-DATA-003",
+        "OSR-CF-DATA-004",
+        "OSR-CF-DATA-005",
+        "OSR-CF-DATA-006",
+        "OSR-CF-DATA-007"
+      ]
+    },
+    {
+      "group_id": "OSR-CG-RESULT_AUTHORITY",
+      "title": "Result and authority boundary",
+      "purpose": "Reject synthetic, incomplete, self-authorizing, or gate-closing result claims.",
+      "required_for_gates": [
+        "DQ-024",
+        "PR-G2",
+        "PR-G3",
+        "PR-G5",
+        "PR-G6"
+      ],
+      "required_case_ids": [
+        "OSR-CF-RSLT-001",
+        "OSR-CF-RSLT-002",
+        "OSR-CF-RSLT-003",
+        "OSR-CF-RSLT-004"
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "case_id": "OSR-CF-SRC-001",
+      "group_id": "OSR-CG-SCHEMA_SOURCE",
+      "title": "Exact pinned schema artifact accepted",
+      "case_class": "SCHEMA_SOURCE",
+      "source_ids": [
+        "OTEL-SRC-SCHEMA-SPEC",
+        "OTEL-SRC-SCHEMA-1-43"
+      ],
+      "fixture_class": "VALID_PINNED_SCHEMA",
+      "stimulus": "Use exact URL, final URL, content type, file format, and sha256 digest for schema 1.43.0.",
+      "expected_outcome": "ACCEPT_PINNED_SOURCE",
+      "required_assertions": [
+        "Exact source and digest match",
+        "Runtime network fetch remains disabled"
+      ],
+      "required_evidence": [
+        "schema artifact digest",
+        "source resolution report"
+      ],
+      "forbidden_effects": "ALL_CANONICAL_AND_AUTHORITY_EFFECTS",
+      "gate_refs": [
+        "DQ-024",
+        "DQ-023",
+        "DQ-018",
+        "PR-G2"
+      ],
+      "authorization_prerequisites": [
+        "DQ-024 and DQ-018 must be human-decided before any implementation execution; deployment-path cases additionally require DQ-020."
+      ],
+      "implementation_required": true,
+      "current_execution_status": "NOT_EXECUTED"
+    },
+    {
+      "case_id": "OSR-CF-SRC-002",
+      "group_id": "OSR-CG-SCHEMA_SOURCE",
+      "title": "Unpinned runtime schema URL rejected",
+      "case_class": "SCHEMA_SOURCE",
+      "source_ids": [
+        "OTEL-SRC-SCHEMA-SPEC"
+      ],
+      "fixture_class": "INVALID_OR_DRIFTED_SCHEMA",
+      "stimulus": "Submit an unreviewed schema URL for runtime retrieval.",
+      "expected_outcome": "REJECTED_WITH_DIAGNOSTIC",
+      "required_assertions": [
+        "No runtime network fetch",
+        "Original telemetry retained"
+      ],
+      "required_evidence": [
+        "rejection diagnostic",
+        "raw input reference"
+      ],
+      "forbidden_effects": "ALL_CANONICAL_AND_AUTHORITY_EFFECTS",
+      "gate_refs": [
+        "DQ-024",
+        "DQ-018",
+        "PR-G2"
+      ],
+      "authorization_prerequisites": [
+        "DQ-024 and DQ-018 must be human-decided before any implementation execution; deployment-path cases additionally require DQ-020."
+      ],
+      "implementation_required": true,
+      "current_execution_status": "NOT_EXECUTED"
+    },
+    {
+      "case_id": "OSR-CF-SRC-003",
+      "group_id": "OSR-CG-SCHEMA_SOURCE",
+      "title": "Redirect to disallowed destination rejected",
+      "case_class": "SCHEMA_SOURCE",
+      "source_ids": [
+        "OTEL-SRC-SCHEMA-SPEC"
+      ],
+      "fixture_class": "REDIRECT_OR_NETWORK",
+      "stimulus": "Resolve an allowlisted URL through a redirect to a private, link-local, credentialed, or unapproved host.",
+      "expected_outcome": "REJECTED_WITH_DIAGNOSTIC",
+      "required_assertions": [
+        "Final URL allowlist enforced",
+        "No SSRF target contacted"
+      ],
+      "required_evidence": [
+        "redirect chain",
+        "network policy observation"
+      ],
+      "forbidden_effects": "ALL_CANONICAL_AND_AUTHORITY_EFFECTS",
+      "gate_refs": [
+        "DQ-024",
+        "DQ-020",
+        "PR-G3",
+        "PR-G5"
+      ],
+      "authorization_prerequisites": [
+        "DQ-024 and DQ-018 must be human-decided before any implementation execution; deployment-path cases additionally require DQ-020."
+      ],
+      "implementation_required": true,
+      "current_execution_status": "NOT_EXECUTED"
+    },
+    {
+      "case_id": "OSR-CF-SRC-004",
+      "group_id": "OSR-CG-SCHEMA_SOURCE",
+      "title": "Schema digest drift rejected",
+      "case_class": "SCHEMA_SOURCE",
+      "source_ids": [
+        "OTEL-SRC-SCHEMA-1-43"
+      ],
+      "fixture_class": "INVALID_OR_DRIFTED_SCHEMA",
+      "stimulus": "Provide content at the exact schema URL with a digest different from the frozen digest.",
+      "expected_outcome": "REJECTED_WITH_DIAGNOSTIC",
+      "required_assertions": [
+        "Digest drift fails closed",
+        "Human version review required"
+      ],
+      "required_evidence": [
+        "expected and observed digests",
+        "drift record"
+      ],
+      "forbidden_effects": "ALL_CANONICAL_AND_AUTHORITY_EFFECTS",
+      "gate_refs": [
+        "DQ-024",
+        "DQ-023",
+        "PR-G2"
+      ],
+      "authorization_prerequisites": [
+        "DQ-024 and DQ-018 must be human-decided before any implementation execution; deployment-path cases additionally require DQ-020."
+      ],
+      "implementation_required": true,
+      "current_execution_status": "NOT_EXECUTED"
+    },
+    {
+      "case_id": "OSR-CF-SRC-005",
+      "group_id": "OSR-CG-SCHEMA_SOURCE",
+      "title": "Schema unavailable or timeout blocks transformation",
+      "case_class": "SCHEMA_SOURCE",
+      "source_ids": [
+        "OTEL-SRC-SCHEMA-SPEC"
+      ],
+      "fixture_class": "REDIRECT_OR_NETWORK",
+      "stimulus": "Make the frozen schema artifact unavailable or exceed the acquisition timeout.",
+      "expected_outcome": "BLOCKED_RETAIN_ORIGINAL",
+      "required_assertions": [
+        "No guessed transformation",
+        "Original telemetry and timeout retained"
+      ],
+      "required_evidence": [
+        "timeout observation",
+        "original input digest"
+      ],
+      "forbidden_effects": "ALL_CANONICAL_AND_AUTHORITY_EFFECTS",
+      "gate_refs": [
+        "DQ-024",
+        "DQ-020",
+        "PR-G3"
+      ],
+      "authorization_prerequisites": [
+        "DQ-024 and DQ-018 must be human-decided before any implementation execution; deployment-path cases additionally require DQ-020."
+      ],
+      "implementation_required": true,
+      "current_execution_status": "NOT_EXECUTED"
+    },
+    {
+      "case_id": "OSR-CF-SRC-006",
+      "group_id": "OSR-CG-SCHEMA_SOURCE",
+      "title": "Invalid media, size, decompression, or parse rejected",
+      "case_class": "SCHEMA_SOURCE",
+      "source_ids": [
+        "OTEL-SRC-SCHEMA-SPEC"
+      ],
+      "fixture_class": "INVALID_OR_DRIFTED_SCHEMA",
+      "stimulus": "Provide wrong media type, oversize, compressed amplification, malformed YAML, or unsupported file format.",
+      "expected_outcome": "REJECTED_WITH_DIAGNOSTIC",
+      "required_assertions": [
+        "Bounded parser enforced",
+        "No partial transformation"
+      ],
+      "required_evidence": [
+        "parser limits",
+        "rejection result"
+      ],
+      "forbidden_effects": "ALL_CANONICAL_AND_AUTHORITY_EFFECTS",
+      "gate_refs": [
+        "DQ-024",
+        "DQ-020",
+        "PR-G3",
+        "PR-G5"
+      ],
+      "authorization_prerequisites": [
+        "DQ-024 and DQ-018 must be human-decided before any implementation execution; deployment-path cases additionally require DQ-020."
+      ],
+      "implementation_required": true,
+      "current_execution_status": "NOT_EXECUTED"
+    },
+    {
+      "case_id": "OSR-CF-SRC-007",
+      "group_id": "OSR-CG-SCHEMA_SOURCE",
+      "title": "DNS rebinding redirect loop and excessive hop rejected",
+      "case_class": "SCHEMA_SOURCE",
+      "source_ids": [
+        "OTEL-SRC-SCHEMA-SPEC"
+      ],
+      "fixture_class": "REDIRECT_OR_NETWORK",
+      "stimulus": "Resolve an allowlisted schema URL through DNS rebinding, a redirect loop, an excessive redirect chain, or an address that changes into a private or link-local range.",
+      "expected_outcome": "REJECTED_WITH_DIAGNOSTIC",
+      "required_assertions": [
+        "Every hop and resolved address is revalidated",
+        "Redirect count and resolution time are bounded"
+      ],
+      "required_evidence": [
+        "resolution and redirect trace",
+        "fail-closed acquisition result"
+      ],
+      "forbidden_effects": "ALL_CANONICAL_AND_AUTHORITY_EFFECTS",
+      "gate_refs": [
+        "DQ-024",
+        "DQ-020",
+        "PR-G3",
+        "PR-G5"
+      ],
+      "authorization_prerequisites": [
+        "DQ-024 and DQ-018 must be human-decided before any implementation execution; deployment-path cases additionally require DQ-020."
+      ],
+      "implementation_required": true,
+      "current_execution_status": "NOT_EXECUTED"
+    },
+    {
+      "case_id": "OSR-CF-SRC-008",
+      "group_id": "OSR-CG-SCHEMA_SOURCE",
+      "title": "Mutable poisoned or cross-version cache entry rejected",
+      "case_class": "SCHEMA_SOURCE",
+      "source_ids": [
+        "OTEL-SRC-SCHEMA-SPEC",
+        "OTEL-SRC-SCHEMA-1-43"
+      ],
+      "fixture_class": "SCHEMA_CACHE",
+      "stimulus": "Replace a cached immutable schema artifact, alias a different version to the frozen URL, or serve a cache entry whose URL, final URL, content digest, or file format binding differs.",
+      "expected_outcome": "REJECTED_WITH_DIAGNOSTIC",
+      "required_assertions": [
+        "Cache key binds exact URL version digest and format",
+        "Cache mutation never becomes a silent transform input"
+      ],
+      "required_evidence": [
+        "cache manifest and digest comparison",
+        "poisoning rejection result"
+      ],
+      "forbidden_effects": "ALL_CANONICAL_AND_AUTHORITY_EFFECTS",
+      "gate_refs": [
+        "DQ-024",
+        "DQ-020",
+        "PR-G3",
+        "PR-G5"
+      ],
+      "authorization_prerequisites": [
+        "DQ-024 and DQ-018 must be human-decided before any implementation execution; deployment-path cases additionally require DQ-020."
+      ],
+      "implementation_required": true,
+      "current_execution_status": "NOT_EXECUTED"
+    },
+    {
+      "case_id": "OSR-CF-PRE-001",
+      "group_id": "OSR-CG-SCHEMA_PRECEDENCE",
+      "title": "Scope schema URL takes contained-signal precedence",
+      "case_class": "SCHEMA_PRECEDENCE",
+      "source_ids": [
+        "OTEL-SRC-SCHEMA-SPEC"
+      ],
+      "fixture_class": "RESOURCE_AND_SCOPE_SCHEMA",
+      "stimulus": "Provide non-empty Resource and Instrumentation Scope schema URLs for the same signal batch.",
+      "expected_outcome": "UNCHANGED_WITH_LINEAGE",
+      "required_assertions": [
+        "Both original URLs retained",
+        "Scope precedence reason recorded"
+      ],
+      "required_evidence": [
+        "input URL inventory",
+        "effective schema record"
+      ],
+      "forbidden_effects": "ALL_CANONICAL_AND_AUTHORITY_EFFECTS",
+      "gate_refs": [
+        "DQ-022",
+        "DQ-024",
+        "DQ-018",
+        "PR-G2"
+      ],
+      "authorization_prerequisites": [
+        "DQ-024 and DQ-018 must be human-decided before any implementation execution; deployment-path cases additionally require DQ-020."
+      ],
+      "implementation_required": true,
+      "current_execution_status": "NOT_EXECUTED"
+    },
+    {
+      "case_id": "OSR-CF-PRE-002",
+      "group_id": "OSR-CG-SCHEMA_PRECEDENCE",
+      "title": "Empty scope inherits non-empty resource schema",
+      "case_class": "SCHEMA_PRECEDENCE",
+      "source_ids": [
+        "OTEL-SRC-SCHEMA-SPEC"
+      ],
+      "fixture_class": "RESOURCE_AND_SCOPE_SCHEMA",
+      "stimulus": "Provide an empty Scope schema URL and a non-empty Resource schema URL.",
+      "expected_outcome": "UNCHANGED_WITH_LINEAGE",
+      "required_assertions": [
+        "Resource schema selected",
+        "Empty scope remains observable"
+      ],
+      "required_evidence": [
+        "precedence result",
+        "raw envelope digest"
+      ],
+      "forbidden_effects": "ALL_CANONICAL_AND_AUTHORITY_EFFECTS",
+      "gate_refs": [
+        "DQ-022",
+        "DQ-024",
+        "DQ-018",
+        "PR-G2"
+      ],
+      "authorization_prerequisites": [
+        "DQ-024 and DQ-018 must be human-decided before any implementation execution; deployment-path cases additionally require DQ-020."
+      ],
+      "implementation_required": true,
+      "current_execution_status": "NOT_EXECUTED"
+    },
+    {
+      "case_id": "OSR-CF-PRE-003",
+      "group_id": "OSR-CG-SCHEMA_PRECEDENCE",
+      "title": "Both schema URLs empty remain unknown",
+      "case_class": "SCHEMA_PRECEDENCE",
+      "source_ids": [
+        "OTEL-SRC-SCHEMA-SPEC"
+      ],
+      "fixture_class": "RESOURCE_AND_SCOPE_SCHEMA",
+      "stimulus": "Provide empty Resource and Scope schema URLs.",
+      "expected_outcome": "BLOCKED_RETAIN_ORIGINAL",
+      "required_assertions": [
+        "No schema guessed",
+        "Unknown limitation retained"
+      ],
+      "required_evidence": [
+        "unknown limitation",
+        "raw input reference"
+      ],
+      "forbidden_effects": "ALL_CANONICAL_AND_AUTHORITY_EFFECTS",
+      "gate_refs": [
+        "DQ-022",
+        "DQ-024",
+        "DQ-018",
+        "PR-G2"
+      ],
+      "authorization_prerequisites": [
+        "DQ-024 and DQ-018 must be human-decided before any implementation execution; deployment-path cases additionally require DQ-020."
+      ],
+      "implementation_required": true,
+      "current_execution_status": "NOT_EXECUTED"
+    },
+    {
+      "case_id": "OSR-CF-PRE-004",
+      "group_id": "OSR-CG-SCHEMA_PRECEDENCE",
+      "title": "Cross-family scope override is not silent",
+      "case_class": "SCHEMA_PRECEDENCE",
+      "source_ids": [
+        "OTEL-SRC-SCHEMA-SPEC"
+      ],
+      "fixture_class": "RESOURCE_AND_SCOPE_SCHEMA",
+      "stimulus": "Provide Resource and Scope URLs from different schema families.",
+      "expected_outcome": "REJECTED_WITH_DIAGNOSTIC",
+      "required_assertions": [
+        "Precedence does not hide family conflict",
+        "No transformation until policy decision"
+      ],
+      "required_evidence": [
+        "family comparison",
+        "conflict diagnostic"
+      ],
+      "forbidden_effects": "ALL_CANONICAL_AND_AUTHORITY_EFFECTS",
+      "gate_refs": [
+        "DQ-022",
+        "DQ-024",
+        "DQ-018",
+        "PR-G2"
+      ],
+      "authorization_prerequisites": [
+        "DQ-024 and DQ-018 must be human-decided before any implementation execution; deployment-path cases additionally require DQ-020."
+      ],
+      "implementation_required": true,
+      "current_execution_status": "NOT_EXECUTED"
+    },
+    {
+      "case_id": "OSR-CF-PRE-005",
+      "group_id": "OSR-CG-SCHEMA_PRECEDENCE",
+      "title": "Trace metric and log scope bindings remain separate",
+      "case_class": "SCHEMA_PRECEDENCE",
+      "source_ids": [
+        "OTEL-SRC-SCHEMA-SPEC"
+      ],
+      "fixture_class": "RESOURCE_AND_SCOPE_SCHEMA",
+      "stimulus": "Provide different scope schema bindings across Trace, Metric, and Log batches.",
+      "expected_outcome": "UNCHANGED_WITH_LINEAGE",
+      "required_assertions": [
+        "Per-signal scope retained",
+        "No cross-signal overwrite"
+      ],
+      "required_evidence": [
+        "three-signal binding inventory",
+        "projection digests"
+      ],
+      "forbidden_effects": "ALL_CANONICAL_AND_AUTHORITY_EFFECTS",
+      "gate_refs": [
+        "DQ-022",
+        "DQ-024",
+        "DQ-020",
+        "PR-G3"
+      ],
+      "authorization_prerequisites": [
+        "DQ-024 and DQ-018 must be human-decided before any implementation execution; deployment-path cases additionally require DQ-020."
+      ],
+      "implementation_required": true,
+      "current_execution_status": "NOT_EXECUTED"
+    },
+    {
+      "case_id": "OSR-CF-TRN-001",
+      "group_id": "OSR-CG-TRANSFORMATION",
+      "title": "Supported pinned rename transforms with lineage",
+      "case_class": "TRANSFORMATION",
+      "source_ids": [
+        "OTEL-SRC-SCHEMA-SPEC",
+        "OTEL-SRC-SCHEMA-1-43"
+      ],
+      "fixture_class": "SUPPORTED_TRANSFORMATION",
+      "stimulus": "Apply an exact source-to-target rename defined by the pinned schema artifact.",
+      "expected_outcome": "TRANSFORMED_WITH_LINEAGE",
+      "required_assertions": [
+        "Only declared operation applied",
+        "Input and output digests retained"
+      ],
+      "required_evidence": [
+        "transformation record",
+        "operation inventory"
+      ],
+      "forbidden_effects": "ALL_CANONICAL_AND_AUTHORITY_EFFECTS",
+      "gate_refs": [
+        "DQ-023",
+        "DQ-024",
+        "DQ-018",
+        "PR-G2"
+      ],
+      "authorization_prerequisites": [
+        "DQ-024 and DQ-018 must be human-decided before any implementation execution; deployment-path cases additionally require DQ-020."
+      ],
+      "implementation_required": true,
+      "current_execution_status": "NOT_EXECUTED"
+    },
+    {
+      "case_id": "OSR-CF-TRN-002",
+      "group_id": "OSR-CG-TRANSFORMATION",
+      "title": "Breaking or impossible transformation blocks",
+      "case_class": "TRANSFORMATION",
+      "source_ids": [
+        "OTEL-SRC-SCHEMA-SPEC"
+      ],
+      "fixture_class": "UNSUPPORTED_TRANSFORMATION",
+      "stimulus": "Request a conversion that the pinned schema marks impossible or cannot express.",
+      "expected_outcome": "BLOCKED_RETAIN_ORIGINAL",
+      "required_assertions": [
+        "No invented conversion",
+        "Breaking limitation explicit"
+      ],
+      "required_evidence": [
+        "unsupported operation record",
+        "original input reference"
+      ],
+      "forbidden_effects": "ALL_CANONICAL_AND_AUTHORITY_EFFECTS",
+      "gate_refs": [
+        "DQ-023",
+        "DQ-024",
+        "DQ-018",
+        "PR-G2"
+      ],
+      "authorization_prerequisites": [
+        "DQ-024 and DQ-018 must be human-decided before any implementation execution; deployment-path cases additionally require DQ-020."
+      ],
+      "implementation_required": true,
+      "current_execution_status": "NOT_EXECUTED"
+    },
+    {
+      "case_id": "OSR-CF-TRN-003",
+      "group_id": "OSR-CG-TRANSFORMATION",
+      "title": "Original projection remains immutable",
+      "case_class": "TRANSFORMATION",
+      "source_ids": [
+        "OTEL-SRC-SCHEMA-SPEC"
+      ],
+      "fixture_class": "SUPPORTED_TRANSFORMATION",
+      "stimulus": "Transform a valid input then attempt to overwrite the original projection.",
+      "expected_outcome": "REJECTED_WITH_DIAGNOSTIC",
+      "required_assertions": [
+        "Original object unchanged",
+        "Output uses a new reference"
+      ],
+      "required_evidence": [
+        "before and after digests",
+        "append-only lineage"
+      ],
+      "forbidden_effects": "ALL_CANONICAL_AND_AUTHORITY_EFFECTS",
+      "gate_refs": [
+        "DQ-024",
+        "DQ-018",
+        "PR-G2"
+      ],
+      "authorization_prerequisites": [
+        "DQ-024 and DQ-018 must be human-decided before any implementation execution; deployment-path cases additionally require DQ-020."
+      ],
+      "implementation_required": true,
+      "current_execution_status": "NOT_EXECUTED"
+    },
+    {
+      "case_id": "OSR-CF-TRN-004",
+      "group_id": "OSR-CG-TRANSFORMATION",
+      "title": "Transformer artifact and environment are digest bound",
+      "case_class": "TRANSFORMATION",
+      "source_ids": [
+        "OTEL-SRC-SCHEMA-SPEC"
+      ],
+      "fixture_class": "SUPPORTED_TRANSFORMATION",
+      "stimulus": "Execute with an unpinned transformer version, artifact, config, or runtime environment.",
+      "expected_outcome": "BLOCKED_RETAIN_ORIGINAL",
+      "required_assertions": [
+        "All implementation bindings required",
+        "No portable PASS without environment"
+      ],
+      "required_evidence": [
+        "artifact and environment digests",
+        "validator report"
+      ],
+      "forbidden_effects": "ALL_CANONICAL_AND_AUTHORITY_EFFECTS",
+      "gate_refs": [
+        "DQ-024",
+        "DQ-018",
+        "PR-G2"
+      ],
+      "authorization_prerequisites": [
+        "DQ-024 and DQ-018 must be human-decided before any implementation execution; deployment-path cases additionally require DQ-020."
+      ],
+      "implementation_required": true,
+      "current_execution_status": "NOT_EXECUTED"
+    },
+    {
+      "case_id": "OSR-CF-TRN-005",
+      "group_id": "OSR-CG-TRANSFORMATION",
+      "title": "Unknown transformation type rejected",
+      "case_class": "TRANSFORMATION",
+      "source_ids": [
+        "OTEL-SRC-SCHEMA-SPEC"
+      ],
+      "fixture_class": "UNSUPPORTED_TRANSFORMATION",
+      "stimulus": "Insert a transform type absent from the frozen schema file format.",
+      "expected_outcome": "REJECTED_WITH_DIAGNOSTIC",
+      "required_assertions": [
+        "Unknown operation not executed",
+        "Diagnostic retained"
+      ],
+      "required_evidence": [
+        "unknown operation fixture",
+        "rejection result"
+      ],
+      "forbidden_effects": "ALL_CANONICAL_AND_AUTHORITY_EFFECTS",
+      "gate_refs": [
+        "DQ-023",
+        "DQ-024",
+        "DQ-018",
+        "PR-G2"
+      ],
+      "authorization_prerequisites": [
+        "DQ-024 and DQ-018 must be human-decided before any implementation execution; deployment-path cases additionally require DQ-020."
+      ],
+      "implementation_required": true,
+      "current_execution_status": "NOT_EXECUTED"
+    },
+    {
+      "case_id": "OSR-CF-TRN-006",
+      "group_id": "OSR-CG-TRANSFORMATION",
+      "title": "Transformation cannot generate authority fields",
+      "case_class": "TRANSFORMATION",
+      "source_ids": [
+        "OTEL-SRC-SCHEMA-SPEC",
+        "OTEL-SRC-SCHEMA-1-43"
+      ],
+      "fixture_class": "UNSUPPORTED_TRANSFORMATION",
+      "stimulus": "Attempt to produce tmai.*, dbos.*, saee.*, permission, authorization, evidence, or verification fields.",
+      "expected_outcome": "REJECTED_WITH_DIAGNOSTIC",
+      "required_assertions": [
+        "Authority namespace rejected",
+        "No canonical effect"
+      ],
+      "required_evidence": [
+        "authority canary",
+        "zero-effect assertion"
+      ],
+      "forbidden_effects": "ALL_CANONICAL_AND_AUTHORITY_EFFECTS",
+      "gate_refs": [
+        "DQ-024",
+        "DQ-018",
+        "PR-G2",
+        "PR-G5"
+      ],
+      "authorization_prerequisites": [
+        "DQ-024 and DQ-018 must be human-decided before any implementation execution; deployment-path cases additionally require DQ-020."
+      ],
+      "implementation_required": true,
+      "current_execution_status": "NOT_EXECUTED"
+    },
+    {
+      "case_id": "OSR-CF-RES-001",
+      "group_id": "OSR-CG-RESOURCE_PROVENANCE",
+      "title": "Matching non-empty Resource schema URLs merge",
+      "case_class": "RESOURCE_PROVENANCE",
+      "source_ids": [
+        "OTEL-SRC-RESOURCE-SDK"
+      ],
+      "fixture_class": "RESOURCE_MERGE",
+      "stimulus": "Merge Resources with the same non-empty schema URL and deterministic detector order.",
+      "expected_outcome": "UNCHANGED_WITH_LINEAGE",
+      "required_assertions": [
+        "Updating attribute precedence recorded",
+        "Schema URL retained"
+      ],
+      "required_evidence": [
+        "merge trace",
+        "detector provenance"
+      ],
+      "forbidden_effects": "ALL_CANONICAL_AND_AUTHORITY_EFFECTS",
+      "gate_refs": [
+        "DQ-024",
+        "DQ-018",
+        "PR-G2"
+      ],
+      "authorization_prerequisites": [
+        "DQ-024 and DQ-018 must be human-decided before any implementation execution; deployment-path cases additionally require DQ-020."
+      ],
+      "implementation_required": true,
+      "current_execution_status": "NOT_EXECUTED"
+    },
+    {
+      "case_id": "OSR-CF-RES-002",
+      "group_id": "OSR-CG-RESOURCE_PROVENANCE",
+      "title": "Old empty and updating non-empty schema merge",
+      "case_class": "RESOURCE_PROVENANCE",
+      "source_ids": [
+        "OTEL-SRC-RESOURCE-SDK"
+      ],
+      "fixture_class": "RESOURCE_MERGE",
+      "stimulus": "Merge old Resource with empty URL and updating Resource with a frozen non-empty URL.",
+      "expected_outcome": "UNCHANGED_WITH_LINEAGE",
+      "required_assertions": [
+        "Updating URL selected",
+        "Source order retained"
+      ],
+      "required_evidence": [
+        "merge trace",
+        "schema URL result"
+      ],
+      "forbidden_effects": "ALL_CANONICAL_AND_AUTHORITY_EFFECTS",
+      "gate_refs": [
+        "DQ-024",
+        "DQ-018",
+        "PR-G2"
+      ],
+      "authorization_prerequisites": [
+        "DQ-024 and DQ-018 must be human-decided before any implementation execution; deployment-path cases additionally require DQ-020."
+      ],
+      "implementation_required": true,
+      "current_execution_status": "NOT_EXECUTED"
+    },
+    {
+      "case_id": "OSR-CF-RES-003",
+      "group_id": "OSR-CG-RESOURCE_PROVENANCE",
+      "title": "Updating empty and old non-empty schema merge",
+      "case_class": "RESOURCE_PROVENANCE",
+      "source_ids": [
+        "OTEL-SRC-RESOURCE-SDK"
+      ],
+      "fixture_class": "RESOURCE_MERGE",
+      "stimulus": "Merge updating Resource with empty URL into old Resource with a frozen non-empty URL.",
+      "expected_outcome": "UNCHANGED_WITH_LINEAGE",
+      "required_assertions": [
+        "Old URL retained",
+        "Empty updating source recorded"
+      ],
+      "required_evidence": [
+        "merge trace",
+        "schema URL result"
+      ],
+      "forbidden_effects": "ALL_CANONICAL_AND_AUTHORITY_EFFECTS",
+      "gate_refs": [
+        "DQ-024",
+        "DQ-018",
+        "PR-G2"
+      ],
+      "authorization_prerequisites": [
+        "DQ-024 and DQ-018 must be human-decided before any implementation execution; deployment-path cases additionally require DQ-020."
+      ],
+      "implementation_required": true,
+      "current_execution_status": "NOT_EXECUTED"
+    },
+    {
+      "case_id": "OSR-CF-RES-004",
+      "group_id": "OSR-CG-RESOURCE_PROVENANCE",
+      "title": "Conflicting non-empty Resource schema URLs fail closed",
+      "case_class": "RESOURCE_PROVENANCE",
+      "source_ids": [
+        "OTEL-SRC-RESOURCE-SDK"
+      ],
+      "fixture_class": "RESOURCE_MERGE",
+      "stimulus": "Merge Resources with different non-empty schema URLs.",
+      "expected_outcome": "REJECTED_WITH_DIAGNOSTIC",
+      "required_assertions": [
+        "Undefined implementation-specific result unused",
+        "Conflict remains visible"
+      ],
+      "required_evidence": [
+        "conflict fixture",
+        "rejection result"
+      ],
+      "forbidden_effects": "ALL_CANONICAL_AND_AUTHORITY_EFFECTS",
+      "gate_refs": [
+        "DQ-024",
+        "DQ-018",
+        "PR-G2"
+      ],
+      "authorization_prerequisites": [
+        "DQ-024 and DQ-018 must be human-decided before any implementation execution; deployment-path cases additionally require DQ-020."
+      ],
+      "implementation_required": true,
+      "current_execution_status": "NOT_EXECUTED"
+    },
+    {
+      "case_id": "OSR-CF-RES-005",
+      "group_id": "OSR-CG-RESOURCE_PROVENANCE",
+      "title": "Malformed OTEL_RESOURCE_ATTRIBUTES discarded as a whole",
+      "case_class": "RESOURCE_PROVENANCE",
+      "source_ids": [
+        "OTEL-SRC-RESOURCE-SDK"
+      ],
+      "fixture_class": "RESOURCE_DETECTOR",
+      "stimulus": "Provide a percent-decoding or key-value syntax error in OTEL_RESOURCE_ATTRIBUTES.",
+      "expected_outcome": "REJECTED_WITH_DIAGNOSTIC",
+      "required_assertions": [
+        "No partial environment merge",
+        "Error reported"
+      ],
+      "required_evidence": [
+        "environment fixture",
+        "discard diagnostic"
+      ],
+      "forbidden_effects": "ALL_CANONICAL_AND_AUTHORITY_EFFECTS",
+      "gate_refs": [
+        "DQ-024",
+        "DQ-018",
+        "PR-G2",
+        "PR-G5"
+      ],
+      "authorization_prerequisites": [
+        "DQ-024 and DQ-018 must be human-decided before any implementation execution; deployment-path cases additionally require DQ-020."
+      ],
+      "implementation_required": true,
+      "current_execution_status": "NOT_EXECUTED"
+    },
+    {
+      "case_id": "OSR-CF-RES-006",
+      "group_id": "OSR-CG-RESOURCE_PROVENANCE",
+      "title": "User precedence over environment is not authority",
+      "case_class": "RESOURCE_PROVENANCE",
+      "source_ids": [
+        "OTEL-SRC-RESOURCE-SDK"
+      ],
+      "fixture_class": "RESOURCE_DETECTOR",
+      "stimulus": "Provide conflicting user Resource and OTEL_RESOURCE_ATTRIBUTES values.",
+      "expected_outcome": "UNCHANGED_WITH_LINEAGE",
+      "required_assertions": [
+        "User value wins per SDK rule",
+        "Neither value creates DBOS identity"
+      ],
+      "required_evidence": [
+        "detector source inventory",
+        "authority assertion"
+      ],
+      "forbidden_effects": "ALL_CANONICAL_AND_AUTHORITY_EFFECTS",
+      "gate_refs": [
+        "DQ-024",
+        "DQ-018",
+        "PR-G2"
+      ],
+      "authorization_prerequisites": [
+        "DQ-024 and DQ-018 must be human-decided before any implementation execution; deployment-path cases additionally require DQ-020."
+      ],
+      "implementation_required": true,
+      "current_execution_status": "NOT_EXECUTED"
+    },
+    {
+      "case_id": "OSR-CF-RES-007",
+      "group_id": "OSR-CG-RESOURCE_PROVENANCE",
+      "title": "Detector name order config or output drift fails closed",
+      "case_class": "RESOURCE_PROVENANCE",
+      "source_ids": [
+        "OTEL-SRC-RESOURCE-SDK",
+        "OTEL-SRC-RESOURCE-DM"
+      ],
+      "fixture_class": "RESOURCE_DETECTOR",
+      "stimulus": "Change detector name, duplicate a name, reorder detectors, change config, or drift identity-like output.",
+      "expected_outcome": "BLOCKED_RETAIN_ORIGINAL",
+      "required_assertions": [
+        "Detector/config digest mismatch visible",
+        "Old observation not overwritten"
+      ],
+      "required_evidence": [
+        "desired-running detector inventory",
+        "drift result"
+      ],
+      "forbidden_effects": "ALL_CANONICAL_AND_AUTHORITY_EFFECTS",
+      "gate_refs": [
+        "DQ-024",
+        "DQ-020",
+        "PR-G3",
+        "PR-G5"
+      ],
+      "authorization_prerequisites": [
+        "DQ-024 and DQ-018 must be human-decided before any implementation execution; deployment-path cases additionally require DQ-020."
+      ],
+      "implementation_required": true,
+      "current_execution_status": "NOT_EXECUTED"
+    },
+    {
+      "case_id": "OSR-CF-ENT-001",
+      "group_id": "OSR-CG-ENTITY_QUARANTINE",
+      "title": "Development OTel Entity input is quarantined",
+      "case_class": "ENTITY_QUARANTINE",
+      "source_ids": [
+        "OTEL-SRC-ENTITY-DM"
+      ],
+      "fixture_class": "OTEL_ENTITY_INPUT",
+      "stimulus": "Provide a structurally valid OTel Entity from the Development model.",
+      "expected_outcome": "QUARANTINED_OBSERVATION_ONLY",
+      "required_assertions": [
+        "Development stability retained",
+        "No trusted projection"
+      ],
+      "required_evidence": [
+        "quarantine record",
+        "raw entity digest"
+      ],
+      "forbidden_effects": "ALL_CANONICAL_AND_AUTHORITY_EFFECTS",
+      "gate_refs": [
+        "DQ-024",
+        "DQ-018",
+        "PR-G2"
+      ],
+      "authorization_prerequisites": [
+        "DQ-024 and DQ-018 must be human-decided before any implementation execution; deployment-path cases additionally require DQ-020."
+      ],
+      "implementation_required": true,
+      "current_execution_status": "NOT_EXECUTED"
+    },
+    {
+      "case_id": "OSR-CF-ENT-002",
+      "group_id": "OSR-CG-ENTITY_QUARANTINE",
+      "title": "OTel Entity cannot become TMAI Digital Entity",
+      "case_class": "ENTITY_QUARANTINE",
+      "source_ids": [
+        "OTEL-SRC-ENTITY-DM"
+      ],
+      "fixture_class": "OTEL_ENTITY_INPUT",
+      "stimulus": "Use OTel Entity type and ID fields as DBOS entity_type and entity_id.",
+      "expected_outcome": "REJECTED_WITH_DIAGNOSTIC",
+      "required_assertions": [
+        "Naming collision rejected",
+        "No Entity registration"
+      ],
+      "required_evidence": [
+        "identity elevation canary",
+        "zero canonical effects"
+      ],
+      "forbidden_effects": "ALL_CANONICAL_AND_AUTHORITY_EFFECTS",
+      "gate_refs": [
+        "DQ-024",
+        "DQ-018",
+        "PR-G2",
+        "PR-G5"
+      ],
+      "authorization_prerequisites": [
+        "DQ-024 and DQ-018 must be human-decided before any implementation execution; deployment-path cases additionally require DQ-020."
+      ],
+      "implementation_required": true,
+      "current_execution_status": "NOT_EXECUTED"
+    },
+    {
+      "case_id": "OSR-CF-ENT-003",
+      "group_id": "OSR-CG-ENTITY_QUARANTINE",
+      "title": "Valid OTEL_ENTITIES remains untrusted",
+      "case_class": "ENTITY_QUARANTINE",
+      "source_ids": [
+        "OTEL-SRC-ENTITY-PROP"
+      ],
+      "fixture_class": "OTEL_ENTITY_INPUT",
+      "stimulus": "Provide valid OTEL_ENTITIES service, host, container, or Kubernetes definitions.",
+      "expected_outcome": "QUARANTINED_OBSERVATION_ONLY",
+      "required_assertions": [
+        "Environment origin recorded",
+        "No Registration Authorization"
+      ],
+      "required_evidence": [
+        "environment reference",
+        "parsed quarantine result"
+      ],
+      "forbidden_effects": "ALL_CANONICAL_AND_AUTHORITY_EFFECTS",
+      "gate_refs": [
+        "DQ-024",
+        "DQ-018",
+        "PR-G2"
+      ],
+      "authorization_prerequisites": [
+        "DQ-024 and DQ-018 must be human-decided before any implementation execution; deployment-path cases additionally require DQ-020."
+      ],
+      "implementation_required": true,
+      "current_execution_status": "NOT_EXECUTED"
+    },
+    {
+      "case_id": "OSR-CF-ENT-004",
+      "group_id": "OSR-CG-ENTITY_QUARANTINE",
+      "title": "Malformed OTEL_ENTITIES partial handling retains warnings",
+      "case_class": "ENTITY_QUARANTINE",
+      "source_ids": [
+        "OTEL-SRC-ENTITY-PROP"
+      ],
+      "fixture_class": "OTEL_ENTITY_INPUT",
+      "stimulus": "Mix valid and malformed OTEL_ENTITIES segments.",
+      "expected_outcome": "QUARANTINED_OBSERVATION_ONLY",
+      "required_assertions": [
+        "Accepted and skipped segments distinguishable",
+        "No canonical merge from partial parse"
+      ],
+      "required_evidence": [
+        "parser warnings",
+        "segment inventory"
+      ],
+      "forbidden_effects": "ALL_CANONICAL_AND_AUTHORITY_EFFECTS",
+      "gate_refs": [
+        "DQ-024",
+        "DQ-018",
+        "PR-G2",
+        "PR-G5"
+      ],
+      "authorization_prerequisites": [
+        "DQ-024 and DQ-018 must be human-decided before any implementation execution; deployment-path cases additionally require DQ-020."
+      ],
+      "implementation_required": true,
+      "current_execution_status": "NOT_EXECUTED"
+    },
+    {
+      "case_id": "OSR-CF-ENT-005",
+      "group_id": "OSR-CG-ENTITY_QUARANTINE",
+      "title": "Duplicate last-wins Entity does not prove continuity",
+      "case_class": "ENTITY_QUARANTINE",
+      "source_ids": [
+        "OTEL-SRC-ENTITY-PROP"
+      ],
+      "fixture_class": "OTEL_ENTITY_INPUT",
+      "stimulus": "Provide duplicate same-type same-ID Entity entries with conflicting descriptions.",
+      "expected_outcome": "QUARANTINED_OBSERVATION_ONLY",
+      "required_assertions": [
+        "Duplicate and last occurrence recorded",
+        "No DBOS Identity Continuity conclusion"
+      ],
+      "required_evidence": [
+        "duplicate warning",
+        "ordered raw entries"
+      ],
+      "forbidden_effects": "ALL_CANONICAL_AND_AUTHORITY_EFFECTS",
+      "gate_refs": [
+        "DQ-024",
+        "DQ-018",
+        "PR-G2"
+      ],
+      "authorization_prerequisites": [
+        "DQ-024 and DQ-018 must be human-decided before any implementation execution; deployment-path cases additionally require DQ-020."
+      ],
+      "implementation_required": true,
+      "current_execution_status": "NOT_EXECUTED"
+    },
+    {
+      "case_id": "OSR-CF-ENT-006",
+      "group_id": "OSR-CG-ENTITY_QUARANTINE",
+      "title": "Different Entity schema URLs do not merge",
+      "case_class": "ENTITY_QUARANTINE",
+      "source_ids": [
+        "OTEL-SRC-ENTITY-DM",
+        "OTEL-SRC-ENTITY-PROP"
+      ],
+      "fixture_class": "OTEL_ENTITY_INPUT",
+      "stimulus": "Provide same type and ID attributes with different schema URLs.",
+      "expected_outcome": "REJECTED_WITH_DIAGNOSTIC",
+      "required_assertions": [
+        "OTel merge precondition enforced",
+        "No schema-conversion identity shortcut"
+      ],
+      "required_evidence": [
+        "schema comparison",
+        "merge rejection"
+      ],
+      "forbidden_effects": "ALL_CANONICAL_AND_AUTHORITY_EFFECTS",
+      "gate_refs": [
+        "DQ-024",
+        "DQ-018",
+        "PR-G2"
+      ],
+      "authorization_prerequisites": [
+        "DQ-024 and DQ-018 must be human-decided before any implementation execution; deployment-path cases additionally require DQ-020."
+      ],
+      "implementation_required": true,
+      "current_execution_status": "NOT_EXECUTED"
+    },
+    {
+      "case_id": "OSR-CF-ENT-007",
+      "group_id": "OSR-CG-ENTITY_QUARANTINE",
+      "title": "Compatible OTel Entity merge remains observation",
+      "case_class": "ENTITY_QUARANTINE",
+      "source_ids": [
+        "OTEL-SRC-ENTITY-DM"
+      ],
+      "fixture_class": "OTEL_ENTITY_INPUT",
+      "stimulus": "Merge same type, identical ID attributes, and same schema URL.",
+      "expected_outcome": "QUARANTINED_OBSERVATION_ONLY",
+      "required_assertions": [
+        "Description merge lineage retained",
+        "No DBOS Federation or Entity creation"
+      ],
+      "required_evidence": [
+        "merge lineage",
+        "zero-effect assertion"
+      ],
+      "forbidden_effects": "ALL_CANONICAL_AND_AUTHORITY_EFFECTS",
+      "gate_refs": [
+        "DQ-024",
+        "DQ-018",
+        "PR-G2"
+      ],
+      "authorization_prerequisites": [
+        "DQ-024 and DQ-018 must be human-decided before any implementation execution; deployment-path cases additionally require DQ-020."
+      ],
+      "implementation_required": true,
+      "current_execution_status": "NOT_EXECUTED"
+    },
+    {
+      "case_id": "OSR-CF-ENT-008",
+      "group_id": "OSR-CG-ENTITY_QUARANTINE",
+      "title": "Injected service instance and infrastructure IDs do not bind DBOS",
+      "case_class": "ENTITY_QUARANTINE",
+      "source_ids": [
+        "OTEL-SRC-ENTITY-DM",
+        "OTEL-SRC-ENTITY-PROP"
+      ],
+      "fixture_class": "OTEL_ENTITY_INPUT",
+      "stimulus": "Inject service.instance.id, host.id, container.id, or k8s UID as DBOS identity references.",
+      "expected_outcome": "REJECTED_WITH_DIAGNOSTIC",
+      "required_assertions": [
+        "Infrastructure IDs remain hints",
+        "Independent DBOS context required"
+      ],
+      "required_evidence": [
+        "forged ID fixtures",
+        "identity lookup shows no creation"
+      ],
+      "forbidden_effects": "ALL_CANONICAL_AND_AUTHORITY_EFFECTS",
+      "gate_refs": [
+        "DQ-024",
+        "DQ-018",
+        "PR-G2",
+        "PR-G5"
+      ],
+      "authorization_prerequisites": [
+        "DQ-024 and DQ-018 must be human-decided before any implementation execution; deployment-path cases additionally require DQ-020."
+      ],
+      "implementation_required": true,
+      "current_execution_status": "NOT_EXECUTED"
+    },
+    {
+      "case_id": "OSR-CF-DATA-001",
+      "group_id": "OSR-CG-DATA_GOVERNANCE",
+      "title": "Sensitive attributes require classification and minimization",
+      "case_class": "DATA_GOVERNANCE",
+      "source_ids": [
+        "OTEL-SRC-RESOURCE-DM",
+        "OTEL-SRC-ENTITY-DM"
+      ],
+      "fixture_class": "TELEMETRY_DATA_GOVERNANCE",
+      "stimulus": "Provide Resource or OTel Entity attributes containing personal, credential, token, secret, or regulated-data patterns without an approved field policy.",
+      "expected_outcome": "QUARANTINED_OBSERVATION_ONLY",
+      "required_assertions": [
+        "Unapproved sensitive fields do not enter trusted projections",
+        "Diagnostics do not echo secret values"
+      ],
+      "required_evidence": [
+        "field classification result",
+        "redaction-safe diagnostic digest"
+      ],
+      "forbidden_effects": "ALL_CANONICAL_AND_AUTHORITY_EFFECTS",
+      "gate_refs": [
+        "DQ-024",
+        "DQ-018",
+        "PR-G2",
+        "PR-G5"
+      ],
+      "authorization_prerequisites": [
+        "DQ-024 and DQ-018 must be human-decided before any implementation execution; deployment-path cases additionally require DQ-020."
+      ],
+      "implementation_required": true,
+      "current_execution_status": "NOT_EXECUTED"
+    },
+    {
+      "case_id": "OSR-CF-DATA-002",
+      "group_id": "OSR-CG-DATA_GOVERNANCE",
+      "title": "Raw retention requires an explicit policy binding",
+      "case_class": "DATA_GOVERNANCE",
+      "source_ids": [
+        "OTEL-SRC-SCHEMA-SPEC"
+      ],
+      "fixture_class": "TELEMETRY_DATA_GOVERNANCE",
+      "stimulus": "Retain original telemetry or a transformation input without purpose, retention class, expiry or disposition, access policy, and subject or tenant scope.",
+      "expected_outcome": "BLOCKED_RETAIN_ORIGINAL",
+      "required_assertions": [
+        "Original retention is policy-bound rather than indefinite",
+        "No transformation result is promoted while the retention contract is missing"
+      ],
+      "required_evidence": [
+        "retention policy lookup",
+        "blocked disposition record"
+      ],
+      "forbidden_effects": "ALL_CANONICAL_AND_AUTHORITY_EFFECTS",
+      "gate_refs": [
+        "DQ-024",
+        "DQ-018",
+        "PR-G2",
+        "PR-G6"
+      ],
+      "authorization_prerequisites": [
+        "DQ-024 and DQ-018 must be human-decided before any implementation execution; deployment-path cases additionally require DQ-020."
+      ],
+      "implementation_required": true,
+      "current_execution_status": "NOT_EXECUTED"
+    },
+    {
+      "case_id": "OSR-CF-DATA-003",
+      "group_id": "OSR-CG-DATA_GOVERNANCE",
+      "title": "Cross-tenant provenance and cache access is denied",
+      "case_class": "DATA_GOVERNANCE",
+      "source_ids": [
+        "OTEL-SRC-SCHEMA-SPEC",
+        "OTEL-SRC-RESOURCE-SDK"
+      ],
+      "fixture_class": "TELEMETRY_DATA_GOVERNANCE",
+      "stimulus": "Request another tenant's raw telemetry, quarantine payload, transformation lineage, detector output, cache entry, or result evidence by guessing references.",
+      "expected_outcome": "REJECTED_WITH_DIAGNOSTIC",
+      "required_assertions": [
+        "Tenant and purpose scope are checked before access",
+        "References do not disclose payload or existence across tenants"
+      ],
+      "required_evidence": [
+        "tenant isolation decision",
+        "non-disclosing denial diagnostic"
+      ],
+      "forbidden_effects": "ALL_CANONICAL_AND_AUTHORITY_EFFECTS",
+      "gate_refs": [
+        "DQ-024",
+        "DQ-020",
+        "PR-G3",
+        "PR-G5"
+      ],
+      "authorization_prerequisites": [
+        "DQ-024 and DQ-018 must be human-decided before any implementation execution; deployment-path cases additionally require DQ-020."
+      ],
+      "implementation_required": true,
+      "current_execution_status": "NOT_EXECUTED"
+    },
+    {
+      "case_id": "OSR-CF-DATA-004",
+      "group_id": "OSR-CG-DATA_GOVERNANCE",
+      "title": "Quarantine projection cannot carry canonical authority fields",
+      "case_class": "DATA_GOVERNANCE",
+      "source_ids": [
+        "OTEL-SRC-ENTITY-DM",
+        "OTEL-SRC-ENTITY-PROP"
+      ],
+      "fixture_class": "TELEMETRY_DATA_GOVERNANCE",
+      "stimulus": "Place entity_id, capability_id, permission, authorization, lifecycle_state, evidence truth, or verification fields into an OTel Entity quarantine projection.",
+      "expected_outcome": "REJECTED_WITH_DIAGNOSTIC",
+      "required_assertions": [
+        "Quarantine namespace has no canonical authority projection",
+        "Promotion requires a separate DBOS admission and registration path"
+      ],
+      "required_evidence": [
+        "forbidden-field rejection",
+        "canonical store non-creation check"
+      ],
+      "forbidden_effects": "ALL_CANONICAL_AND_AUTHORITY_EFFECTS",
+      "gate_refs": [
+        "DQ-024",
+        "DQ-018",
+        "PR-G2",
+        "PR-G5"
+      ],
+      "authorization_prerequisites": [
+        "DQ-024 and DQ-018 must be human-decided before any implementation execution; deployment-path cases additionally require DQ-020."
+      ],
+      "implementation_required": true,
+      "current_execution_status": "NOT_EXECUTED"
+    },
+    {
+      "case_id": "OSR-CF-DATA-005",
+      "group_id": "OSR-CG-DATA_GOVERNANCE",
+      "title": "Access export and disposition events remain auditable",
+      "case_class": "DATA_GOVERNANCE",
+      "source_ids": [
+        "OTEL-SRC-SCHEMA-SPEC"
+      ],
+      "fixture_class": "TELEMETRY_DATA_GOVERNANCE",
+      "stimulus": "Read, export, expire, redact, or disposition retained original or quarantined telemetry without an append-only governance event and policy reference.",
+      "expected_outcome": "REJECTED_WITH_DIAGNOSTIC",
+      "required_assertions": [
+        "Data operations require actor purpose policy and timestamp lineage",
+        "Disposition does not rewrite historical conformance results"
+      ],
+      "required_evidence": [
+        "data operation audit event",
+        "policy and disposition reference"
+      ],
+      "forbidden_effects": "ALL_CANONICAL_AND_AUTHORITY_EFFECTS",
+      "gate_refs": [
+        "DQ-024",
+        "DQ-020",
+        "PR-G3",
+        "PR-G6"
+      ],
+      "authorization_prerequisites": [
+        "DQ-024 and DQ-018 must be human-decided before any implementation execution; deployment-path cases additionally require DQ-020."
+      ],
+      "implementation_required": true,
+      "current_execution_status": "NOT_EXECUTED"
+    },
+    {
+      "case_id": "OSR-CF-DATA-006",
+      "group_id": "OSR-CG-DATA_GOVERNANCE",
+      "title": "Result references do not embed raw sensitive payloads",
+      "case_class": "DATA_GOVERNANCE",
+      "source_ids": [
+        "OTEL-SRC-SCHEMA-SPEC",
+        "OTEL-SRC-ENTITY-DM"
+      ],
+      "fixture_class": "TELEMETRY_DATA_GOVERNANCE",
+      "stimulus": "Embed raw telemetry, environment values, secret material, or OTel Entity descriptions in a conformance result or diagnostic field instead of a policy-scoped digest reference.",
+      "expected_outcome": "REJECTED_WITH_DIAGNOSTIC",
+      "required_assertions": [
+        "Result contains references and digests rather than sensitive payload",
+        "Diagnostics are bounded and redaction-safe"
+      ],
+      "required_evidence": [
+        "result payload inspection",
+        "redaction test report"
+      ],
+      "forbidden_effects": "ALL_CANONICAL_AND_AUTHORITY_EFFECTS",
+      "gate_refs": [
+        "DQ-024",
+        "PR-G2",
+        "PR-G5"
+      ],
+      "authorization_prerequisites": [
+        "DQ-024 and DQ-018 must be human-decided before any implementation execution; deployment-path cases additionally require DQ-020."
+      ],
+      "implementation_required": true,
+      "current_execution_status": "NOT_EXECUTED"
+    },
+    {
+      "case_id": "OSR-CF-DATA-007",
+      "group_id": "OSR-CG-DATA_GOVERNANCE",
+      "title": "Conformance result is evidence input not a gate decision",
+      "case_class": "DATA_GOVERNANCE",
+      "source_ids": [
+        "OTEL-SRC-SCHEMA-SPEC"
+      ],
+      "fixture_class": "TELEMETRY_DATA_GOVERNANCE",
+      "stimulus": "Consume a PASS result directly as deployment, identity, permission, evidence-truth, or production authorization without an independent governance decision.",
+      "expected_outcome": "REJECTED_WITH_DIAGNOSTIC",
+      "required_assertions": [
+        "Result is bounded evidence input only",
+        "Human gate authority and independent decision record remain required"
+      ],
+      "required_evidence": [
+        "gate decision lookup",
+        "direct-consumption rejection"
+      ],
+      "forbidden_effects": "ALL_CANONICAL_AND_AUTHORITY_EFFECTS",
+      "gate_refs": [
+        "DQ-024",
+        "PR-G2",
+        "PR-G3",
+        "PR-G5",
+        "PR-G6"
+      ],
+      "authorization_prerequisites": [
+        "DQ-024 and DQ-018 must be human-decided before any implementation execution; deployment-path cases additionally require DQ-020."
+      ],
+      "implementation_required": true,
+      "current_execution_status": "NOT_EXECUTED"
+    },
+    {
+      "case_id": "OSR-CF-RSLT-001",
+      "group_id": "OSR-CG-RESULT_AUTHORITY",
+      "title": "Synthetic result cannot PASS",
+      "case_class": "RESULT_AUTHORITY",
+      "source_ids": [
+        "OTEL-SRC-SCHEMA-SPEC"
+      ],
+      "fixture_class": "RESULT_DOCUMENT",
+      "stimulus": "Set synthetic_example=true and result=PASS.",
+      "expected_outcome": "RESULT_NOT_ASSESSED",
+      "required_assertions": [
+        "Synthetic result forced to DRAFT NOT_ASSESSED",
+        "No gate effect"
+      ],
+      "required_evidence": [
+        "schema rejection",
+        "result document"
+      ],
+      "forbidden_effects": "ALL_CANONICAL_AND_AUTHORITY_EFFECTS",
+      "gate_refs": [
+        "DQ-024",
+        "PR-G2"
+      ],
+      "authorization_prerequisites": [
+        "DQ-024 and DQ-018 must be human-decided before any implementation execution; deployment-path cases additionally require DQ-020."
+      ],
+      "implementation_required": true,
+      "current_execution_status": "NOT_EXECUTED"
+    },
+    {
+      "case_id": "OSR-CF-RSLT-002",
+      "group_id": "OSR-CG-RESULT_AUTHORITY",
+      "title": "Incomplete digest decision validator or review cannot PASS",
+      "case_class": "RESULT_AUTHORITY",
+      "source_ids": [
+        "OTEL-SRC-SCHEMA-SPEC",
+        "OTEL-SRC-RESOURCE-SDK"
+      ],
+      "fixture_class": "RESULT_DOCUMENT",
+      "stimulus": "Omit any required source, profile, catalog, implementation, environment, Decision, validator, or independent review binding.",
+      "expected_outcome": "RESULT_NOT_ASSESSED",
+      "required_assertions": [
+        "Missing binding fails closed",
+        "Summary cannot self-certify"
+      ],
+      "required_evidence": [
+        "negative result variants",
+        "validation report"
+      ],
+      "forbidden_effects": "ALL_CANONICAL_AND_AUTHORITY_EFFECTS",
+      "gate_refs": [
+        "DQ-024",
+        "DQ-018",
+        "PR-G2",
+        "PR-G3"
+      ],
+      "authorization_prerequisites": [
+        "DQ-024 and DQ-018 must be human-decided before any implementation execution; deployment-path cases additionally require DQ-020."
+      ],
+      "implementation_required": true,
+      "current_execution_status": "NOT_EXECUTED"
+    },
+    {
+      "case_id": "OSR-CF-RSLT-003",
+      "group_id": "OSR-CG-RESULT_AUTHORITY",
+      "title": "Successful schema pipeline creates no Evidence or Truth",
+      "case_class": "RESULT_AUTHORITY",
+      "source_ids": [
+        "OTEL-SRC-SCHEMA-SPEC",
+        "OTEL-SRC-RESOURCE-SDK",
+        "OTEL-SRC-ENTITY-DM"
+      ],
+      "fixture_class": "RESULT_DOCUMENT",
+      "stimulus": "Complete all schema and Resource checks then assert Evidence, Verification, Identity, or Truth creation.",
+      "expected_outcome": "REJECTED_WITH_DIAGNOSTIC",
+      "required_assertions": [
+        "All authority effects remain false",
+        "Admission remains separate"
+      ],
+      "required_evidence": [
+        "effect canary",
+        "canonical store lookup"
+      ],
+      "forbidden_effects": "ALL_CANONICAL_AND_AUTHORITY_EFFECTS",
+      "gate_refs": [
+        "DQ-024",
+        "PR-G2",
+        "PR-G5"
+      ],
+      "authorization_prerequisites": [
+        "DQ-024 and DQ-018 must be human-decided before any implementation execution; deployment-path cases additionally require DQ-020."
+      ],
+      "implementation_required": true,
+      "current_execution_status": "NOT_EXECUTED"
+    },
+    {
+      "case_id": "OSR-CF-RSLT-004",
+      "group_id": "OSR-CG-RESULT_AUTHORITY",
+      "title": "Conformance result cannot close production gate",
+      "case_class": "RESULT_AUTHORITY",
+      "source_ids": [
+        "OTEL-SRC-SCHEMA-SPEC"
+      ],
+      "fixture_class": "RESULT_DOCUMENT",
+      "stimulus": "Set closes_production_gate or declares_production_ready to true.",
+      "expected_outcome": "REJECTED_WITH_DIAGNOSTIC",
+      "required_assertions": [
+        "Result is not Governance Decision",
+        "Human gate authority remains required"
+      ],
+      "required_evidence": [
+        "effect rejection",
+        "decision lookup"
+      ],
+      "forbidden_effects": "ALL_CANONICAL_AND_AUTHORITY_EFFECTS",
+      "gate_refs": [
+        "DQ-024",
+        "PR-G2",
+        "PR-G3",
+        "PR-G5",
+        "PR-G6"
+      ],
+      "authorization_prerequisites": [
+        "DQ-024 and DQ-018 must be human-decided before any implementation execution; deployment-path cases additionally require DQ-020."
+      ],
+      "implementation_required": true,
+      "current_execution_status": "NOT_EXECUTED"
+    }
+  ],
+  "semantic_rules": [
+    "ALL_45_CASE_IDS_MUST_BE_UNIQUE_AND_GROUPED_EXACTLY_ONCE",
+    "ALL_6_SOURCE_IDS_MUST_RESOLVE_EXACTLY_ONCE",
+    "RUNTIME_NETWORK_SCHEMA_FETCH_IS_DISABLED_BY_DEFAULT",
+    "ORIGINAL_INPUT_AND_ALL_TRANSFORMATION_LINEAGE_MUST_BE_RETAINED",
+    "CONFLICTING_NON_EMPTY_RESOURCE_SCHEMA_URLS_FAIL_CLOSED",
+    "RESOURCE_MERGE_PRECEDENCE_IS_NOT_TRUST_AUTHORITY",
+    "OTEL_ENTITY_DEVELOPMENT_INPUT_IS_QUARANTINED",
+    "OTEL_ENTITY_IS_NOT_TMAI_DIGITAL_ENTITY",
+    "TELEMETRY_DATA_IS_MINIMIZED_POLICY_BOUND_AND_TENANT_ISOLATED",
+    "ORIGINAL_RETENTION_IS_POLICY_BOUND_NOT_INDEFINITE",
+    "ALL_EFFECTS_REMAIN_FALSE",
+    "RESULT_SET_CANNOT_CLOSE_A_GATE"
+  ],
+  "effects": {
+    "adopts_reference": false,
+    "changes_evidence_truth": false,
+    "creates_entity": false,
+    "creates_identity": false,
+    "creates_capability": false,
+    "grants_permission": false,
+    "creates_execution": false,
+    "creates_evidence": false,
+    "creates_verification": false,
+    "creates_saee_evaluation": false,
+    "creates_governance_decision": false,
+    "authorizes_implementation": false,
+    "authorizes_deployment": false,
+    "closes_production_gate": false,
+    "declares_production_ready": false
+  }
+}

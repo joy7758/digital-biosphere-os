@@ -12,6 +12,73 @@ Digital Biosphere OS 是用于管理 AI agent（人工智能智能体）、代�
 
 智能体在解释或规划 DBOS 任务前，应先读取该战略对齐说明，并保持：`DBOS is infrastructure, not application`（DBOS 是基础设施，不是应用）。
 
+## Telemetry Admission Foundation（遥测准入基础）
+
+`dbos.telemetry_admission` 实现 DQ-018 授权的最小、离线
+Telemetry Admission Foundation v0.1（遥测准入基础 v0.1）。它接收封闭的
+metadata-only（仅元数据）`TelemetryObservationEnvelope`，执行确定性验证，并把
+`TelemetryAdmissionRecord` 追加到 caller-owned（调用方指定）的单机 SQLite
+reference conformance backend（符合性参考后端）。
+
+入口：
+
+- [`schemas/telemetry-observation-envelope-schema.yaml`](schemas/telemetry-observation-envelope-schema.yaml)：封闭观察信封 schema；
+- [`schemas/telemetry-admission-record-schema.yaml`](schemas/telemetry-admission-record-schema.yaml)：只追加准入记录 schema；
+- [`dbos/telemetry_admission/`](dbos/telemetry_admission/)：离线 validator、service、低基数 self-observation、SQLite store、迁移、备份和恢复；
+- [`dbos/telemetry_admission/semantic.py`](dbos/telemetry_admission/semantic.py)：按 DBA 已采纳的 47-field OpenTelemetry mapping 执行离线、digest-only（仅摘要）语义投影；Stable 与 Development lane 分开，unknown/deprecated/authority 字段失败关闭；
+- [`dbos/telemetry_admission/provenance.py`](dbos/telemetry_admission/provenance.py)：验证 vendored OTel Schema `1.43.0` 精确字节，处理 Resource/Scope precedence（优先级）、受限 transformation lineage（转换来源链）、Resource detector merge provenance（探测合并来源）和 Development OTel Entity quarantine（隔离）；
+- [`dbos/telemetry_admission/profiles/`](dbos/telemetry_admission/profiles/)：DBA 人工采纳合同与官方 schema artifact 的 immutable digest-bound snapshots（不可变摘要绑定快照）；Runtime 不按输入 URL 获取 schema；
+- [`validation/telemetry_admission_validator.py`](validation/telemetry_admission_validator.py)：合成临时存储验证器；
+- [`tests/telemetry_admission/`](tests/telemetry_admission/)：schema、权力负例、敏感数据、重复、并发、事务、迁移、恢复、78-case admission catalog、32 个 DQ-018/PR-G2 semantic cases、36 个 DQ-018/PR-G2 Schema/Resource cases 与冻结负载契约；未获 DQ-020 授权的 14 + 9 个 deployment cases 明确保持 `BLOCKED_NOT_AUTHORIZED`；
+- [`tools/telemetry_admission_characterize.py`](tools/telemetry_admission_characterize.py)：`TA-P001`–`P005` 离线表征工具；`--output` 只创建权限为 `0600` 的新结果工件、拒绝覆盖，并记录运行前后源码清单一致性，结果仍不等于 SLO；
+- [`tools/telemetry_admission_rollback_drill.py`](tools/telemetry_admission_rollback_drill.py)：保留失败源、恢复到新路径并停在人工切换 gate 的合成回退演练；
+- [`tools/telemetry_admission_otel_conformance.py`](tools/telemetry_admission_otel_conformance.py)：逐案执行当前获准的 `32 + 36` 个离线 OTel bindings，并把未获准的 `14 + 9` 个用例保留为 `BLOCKED_NOT_AUTHORIZED`；报告器永远不把授权子集 PASS 改写成 full-catalog PASS；
+- [`requirements/`](requirements/)：`TA-T22` 的 exact-hash runtime/build locks（精确摘要运行／构建锁）、平台边界和固定 `SOURCE_DATE_EPOCH` 双构建说明；哈希锁安装与两个 wheel 字节一致只证明该环境的供应链可重复性，不构成发布或生产授权；
+- [`reports/telemetry-admission-foundation/DBOS-PR-2A-PRODUCTION-EVIDENCE-2026-07-22.md`](reports/telemetry-admission-foundation/DBOS-PR-2A-PRODUCTION-EVIDENCE-2026-07-22.md)：当前本地生产证据候选、精确绑定、SBOM、表征结果和仍未关闭的 PR-G2 闸门。
+
+```text
+REFERENCE_CONFORMANCE_BACKEND=SQLite single-host
+PRODUCTION_PERSISTENCE_BACKEND=NOT_SELECTED
+OTLP_LISTENER_CREATED=false
+COLLECTOR_DEPLOYED=false
+RAW_TELEMETRY_PERSISTED=false
+RUNTIME_SCHEMA_FETCH_ENABLED=false
+OTEL_SEMANTIC_MAPPING_FIELDS=47
+OTEL_SEMANTIC_PR_G2_CASES_BOUND=32
+OTEL_SCHEMA_RESOURCE_PR_G2_CASES_BOUND=36
+OTEL_DEPLOYMENT_CASES_BLOCKED_NOT_AUTHORIZED=23
+OTEL_ENTITY_STABILITY=DEVELOPMENT_QUARANTINED
+RUNTIME_DEPENDENCY_LOCK=PY312_MACOS_ARM64_EXACT_HASHED
+BUILD_TOOLCHAIN_LOCK=EXACT_HASHED
+REPRODUCIBLE_WHEEL_DOUBLE_BUILD_REQUIRED=true
+CHARACTERIZATION_RESULT_OVERWRITE_ALLOWED=false
+CHARACTERIZATION_SOURCE_STABILITY_REQUIRED=true
+ACCEPTED_AS_MATERIAL_NE_EVIDENCE=true
+ADMISSION_NE_PERMISSION=true
+SAEE_CALLED=false
+AGENT_CREATED=false
+RUNTIME_CREATED=false
+PRODUCTION_READY=false
+```
+
+该内部包不从 `dbos` 根 facade（门面）自动导出，避免把有界预生产切片误认为
+稳定公共 API。它不解码 OTLP、不监听网络、不保存 prompt/response/tool payload，
+不创建或修改 Evidence、Verification、Identity、Entity、Capability、Authorization、
+Permission、Agent、Runtime 或 SAEE 结果。SQLite 通过测试也不等于选择了生产数据库，
+更不构成部署授权。
+
+语义和来源结果只证明 exact local contract（精确本地合同）的输入形状、版本、摘要和
+零权力效果；它们不是 raw telemetry store（原始遥测存储）、Telemetry backend（遥测后端）、
+Evidence Admission（证据准入）或 production gate decision（生产闸门决策）。即使全部本地
+case 通过，仍保持：
+
+```text
+TELEMETRY_NE_EVIDENCE=true
+OTEL_ENTITY_NE_DBOS_ENTITY=true
+CONFORMANCE_RESULT_NE_GOVERNANCE_DECISION=true
+REFERENCE_IMPLEMENTATION_NE_PRODUCTION_DEPLOYMENT=true
+```
+
 ## License and Trial Access（许可证与试用访问）
 
 本仓库的 Owner-created surfaces（负责人创作表面）采用
