@@ -3,9 +3,11 @@
 from __future__ import annotations
 
 import json
+import sqlite3
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 from jsonschema import Draft202012Validator, FormatChecker
 
@@ -89,6 +91,54 @@ class MetricsSchemaBoundaryTests(unittest.TestCase):
                 "busy_timeout_ms": 5000,
             },
         )
+
+    def test_integrity_report_streams_admission_records_without_fetchall(self) -> None:
+        class StreamingCursor:
+            def __init__(self, cursor: sqlite3.Cursor) -> None:
+                self._cursor = cursor
+
+            def __iter__(self):
+                return iter(self._cursor)
+
+            def fetchall(self):
+                raise AssertionError("admission records must be streamed")
+
+            def __getattr__(self, name: str):
+                return getattr(self._cursor, name)
+
+        class ConnectionProxy:
+            def __init__(self, connection: sqlite3.Connection) -> None:
+                self._connection = connection
+
+            def execute(self, sql: str, *args: object):
+                cursor = self._connection.execute(sql, *args)
+                if "SELECT * FROM admission_records ORDER BY" in sql:
+                    return StreamingCursor(cursor)
+                return cursor
+
+            def __getattr__(self, name: str):
+                return getattr(self._connection, name)
+
+        with tempfile.TemporaryDirectory(prefix="dbos-ta-integrity-stream-") as temp:
+            store = SQLiteTelemetryAdmissionStore(Path(temp) / "store.sqlite3")
+            service = TelemetryAdmissionService(store)
+            for index in range(3):
+                service.admit(
+                    make_envelope(
+                        observation_id=f"ta:observation:stream-{index}",
+                        source_seed=f"stream-source-{index}",
+                        signal_reference=f"fixture:signal:stream-{index}",
+                        idempotency_reference=f"fixture:attempt:stream-{index}",
+                    )
+                )
+            original_connect = store._connect
+            with patch.object(
+                store,
+                "_connect",
+                side_effect=lambda: ConnectionProxy(original_connect()),
+            ):
+                report = store.integrity_report()
+        self.assertEqual(report["status"], "PASS")
 
     def test_metrics_have_only_bounded_dimensions(self) -> None:
         with tempfile.TemporaryDirectory(prefix="dbos-ta-metrics-") as temp:

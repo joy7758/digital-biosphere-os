@@ -1190,7 +1190,7 @@ class SQLiteTelemetryAdmissionStore:
         """Verify SQLite, FK, migration, append sequence, and stored digests."""
 
         expected_receipts = tuple(expected_receipt_references)
-        errors: list[str] = []
+        errors: set[str] = set()
         counts: dict[str, int] = {}
         connection: sqlite3.Connection | None = None
         try:
@@ -1200,9 +1200,9 @@ class SQLiteTelemetryAdmissionStore:
                 row[0] for row in connection.execute("PRAGMA integrity_check")
             ]
             if integrity_rows != ["ok"]:
-                errors.append("TA_STORAGE_INTEGRITY_FAILURE")
-            if connection.execute("PRAGMA foreign_key_check").fetchall():
-                errors.append("TA_STORAGE_INTEGRITY_FAILURE")
+                errors.add("TA_STORAGE_INTEGRITY_FAILURE")
+            if connection.execute("PRAGMA foreign_key_check").fetchone() is not None:
+                errors.add("TA_STORAGE_INTEGRITY_FAILURE")
             store_configuration = {
                 "journal_mode": str(
                     connection.execute("PRAGMA journal_mode").fetchone()[0]
@@ -1223,28 +1223,33 @@ class SQLiteTelemetryAdmissionStore:
                 "foreign_keys": 1,
                 "busy_timeout_ms": self.busy_timeout_ms,
             }:
-                errors.append("TA_STORAGE_INTEGRITY_FAILURE")
+                errors.add("TA_STORAGE_INTEGRITY_FAILURE")
             rows = connection.execute(
                 "SELECT * FROM admission_records ORDER BY admission_id,sequence"
-            ).fetchall()
-            by_lifecycle: dict[str, list[sqlite3.Row]] = {}
+            )
+            current_admission_id: str | None = None
+            expected_sequence = 0
+            expected_previous: str | None = None
             for row in rows:
-                by_lifecycle.setdefault(str(row["admission_id"]), []).append(row)
+                admission_id = str(row["admission_id"])
+                if admission_id != current_admission_id:
+                    current_admission_id = admission_id
+                    expected_sequence = 1
+                    expected_previous = None
+                else:
+                    expected_sequence += 1
                 record = self._record_from_row(row)
                 if tuple(record) != ADMISSION_RECORD_FIELDS:
-                    errors.append("TA_STORAGE_INTEGRITY_FAILURE")
+                    errors.add("TA_STORAGE_INTEGRITY_FAILURE")
                 if _sha256_json(record) != row["record_digest"]:
-                    errors.append("TA_STORAGE_INTEGRITY_FAILURE")
-            for lifecycle_rows in by_lifecycle.values():
-                expected_previous: str | None = None
-                for expected_sequence, row in enumerate(lifecycle_rows, start=1):
-                    if row["sequence"] != expected_sequence:
-                        errors.append("TA_STORAGE_INTEGRITY_FAILURE")
-                    if row["previous_record_reference"] != expected_previous:
-                        errors.append("TA_STORAGE_INTEGRITY_FAILURE")
-                    expected_previous = str(row["admission_record_id"])
+                    errors.add("TA_STORAGE_INTEGRITY_FAILURE")
+                if row["sequence"] != expected_sequence:
+                    errors.add("TA_STORAGE_INTEGRITY_FAILURE")
+                if row["previous_record_reference"] != expected_previous:
+                    errors.add("TA_STORAGE_INTEGRITY_FAILURE")
+                expected_previous = str(row["admission_record_id"])
             if any(not _safe_reference(value) for value in expected_receipts):
-                errors.append("TA_STORAGE_INTEGRITY_FAILURE")
+                errors.add("TA_STORAGE_INTEGRITY_FAILURE")
                 missing_receipt_count = len(expected_receipts)
             elif expected_receipts:
                 unique_receipts = set(expected_receipts)
@@ -1259,13 +1264,13 @@ class SQLiteTelemetryAdmissionStore:
                 )
                 missing_receipt_count = len(unique_receipts) - observed
                 if missing_receipt_count:
-                    errors.append("TA_STORAGE_INTEGRITY_FAILURE")
+                    errors.add("TA_STORAGE_INTEGRITY_FAILURE")
             else:
                 missing_receipt_count = 0
             counts = self.counts()
             applied_migration_checksums = self._applied_migration_checksums(connection)
         except (TelemetryAdmissionError, sqlite3.Error, json.JSONDecodeError):
-            errors.append("TA_STORAGE_INTEGRITY_FAILURE")
+            errors.add("TA_STORAGE_INTEGRITY_FAILURE")
             store_configuration = {}
             missing_receipt_count = len(expected_receipts)
             applied_migration_checksums = {}
