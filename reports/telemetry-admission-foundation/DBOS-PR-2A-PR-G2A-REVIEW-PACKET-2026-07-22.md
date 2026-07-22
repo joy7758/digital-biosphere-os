@@ -22,9 +22,11 @@ sequence，这一切片对应 `PR-G2A`，而不是完整 `PR-G2`。
 | DBA authorization baseline | `codex/production-observability-baseline@7f2d3a0e39f65a92b7a96ea899ca12e3c050a0db` |
 | DBA governance receipt baseline | `05589af948a788f38982b5b197427a6e1c357fa8` |
 | DBOS base | `origin/main@cd3f867c4379ec555c45e7d554088ad12ce08a24` |
-| DBOS exact source | `codex/telemetry-admission-foundation@5c52c1c2f44767c0b13b4ac9670425721b9ea0dd` |
-| implementation manifest | 56 files / 714335 bytes / `sha256:fdda745c…baa51` |
-| exact wheel | two clean clones / `sha256:24082849…e41` / byte identical |
+| DBOS predecessor source / receipt | `5c52c1c2…` / `aa6440e8…` |
+| DBOS exact hardened source | `codex/telemetry-admission-foundation@3a63161d3e04d785b4b04feadd4a0712bf6314fc` |
+| implementation manifest | 56 files / 716453 bytes / `sha256:b6c03faf…d9fc` |
+| streaming integrity hardening | [`DBOS-PR-2A-STREAMING-INTEGRITY-HARDENING-2026-07-22.json`](DBOS-PR-2A-STREAMING-INTEGRITY-HARDENING-2026-07-22.json) |
+| exact hardened wheel | two fixed-epoch builds / `sha256:03190078…5af9` / byte identical / install `PASS` |
 | independent review | [`DBOS-PR-2A-INDEPENDENT-TECHNICAL-REVIEW-2026-07-22.json`](DBOS-PR-2A-INDEPENDENT-TECHNICAL-REVIEW-2026-07-22.json) |
 | clean clone | [`DBOS-PR-2A-CLEAN-CLONE-VALIDATION-2026-07-22.json`](DBOS-PR-2A-CLEAN-CLONE-VALIDATION-2026-07-22.json) |
 
@@ -33,12 +35,14 @@ sequence，这一切片对应 `PR-G2A`，而不是完整 `PR-G2`。
 | evidence | result | boundary |
 |---|---|---|
 | schemas, reason codes, state machine, migrations | `PASS` | offline SQLite reference only |
-| full / focused tests | `531/531` / `197/197 PASS` | synthetic metadata-only |
+| full / focused tests | `532/532` / `198/198 PASS` | synthetic metadata-only |
 | validators | `35/35 PASS`; telemetry `25/25` | live effects `0` |
 | OTel authorized conformance | `68/68 PASS` | 23 DQ-020 cases blocked |
 | recovery | `PASS` | no automatic caller switch |
 | supply chain | reproducible wheel; locked deps audit `0` | one OS/arch lock only |
-| independent hardening | 7 findings fixed; 8 tests added | no independent human security review |
+| independent hardening | predecessor 7 findings fixed; streaming regression added | no independent human security review |
+| exact characterization | `TA-P001`—`TA-P005 PASS`; one-hour 59 checks + final `PASS` | one platform; no SLO claim |
+| automated security | Ruff/Bandit/pip-audit 0 findings | not a human security review |
 | authority | DQ-018 traceable | recommendation is not approval |
 
 ## Agent Recommendation（智能体建议）

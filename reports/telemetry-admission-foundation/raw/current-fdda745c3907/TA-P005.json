@@ -1,0 +1,1399 @@
+{
+  "authority_effects": {
+    "agent_created": false,
+    "capability_created": false,
+    "collector_created": false,
+    "entity_created": false,
+    "evidence_created": false,
+    "execution_created": false,
+    "gate_state_changed": false,
+    "network_endpoint_created": false,
+    "permission_created": false,
+    "production_ready_declared": false,
+    "runtime_created": false,
+    "saee_called": false,
+    "verification_created": false
+  },
+  "backend_scope": "SQLITE_SINGLE_HOST_REFERENCE_ONLY",
+  "case_id": "TA-P005",
+  "environment": {
+    "cpu_count": 10,
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python_version": "3.12.13",
+    "sqlite_version": "3.50.4"
+  },
+  "execution_binding": {
+    "binding_result": "PASS",
+    "binding_schema_version": "0.1",
+    "contract": {
+      "digest": "sha256:b817493ba4c5381dfe26cb042832b75a7f4d4c75f3948ba8d104e37f49f54e91",
+      "path": "tests/telemetry_admission/load_characterization.v0.1.json",
+      "size_bytes": 1610
+    },
+    "finished_at": "2026-07-22T13:45:52.354574+00:00",
+    "git_observation": {
+      "base_commit": "aa6440e83f35cc63483f487367ccb573bba7681a",
+      "branch": "codex/telemetry-admission-foundation",
+      "source_binding": "IMPLEMENTATION_MANIFEST_ONLY",
+      "source_commit_includes_current_implementation": false,
+      "worktree_state": "NOT_EVALUATED_BY_OFFLINE_REPORT_TOOL"
+    },
+    "implementation_manifest_at_end": {
+      "entries": [
+        {
+          "digest": "sha256:8ca40ef5e35535fd0499cdd6f5eb81c53017c897fc3240330b4e56c2b274ee22",
+          "path": "README.md",
+          "size_bytes": 75561
+        },
+        {
+          "digest": "sha256:cb11cc76e08a43fe6b98226fad69ef2bfa3b9893ac6bd3f6e7d4026f6312bf8d",
+          "path": "dbos/telemetry_admission/__init__.py",
+          "size_bytes": 1810
+        },
+        {
+          "digest": "sha256:4cac312168e672a9fbbf7f80ec7ea7a88b77ffff55bd48e7b9124d853cf3999d",
+          "path": "dbos/telemetry_admission/contracts.py",
+          "size_bytes": 7909
+        },
+        {
+          "digest": "sha256:06c2e3361c8f6e1f4dca026c9925f397876e40486b5bbabd9eb7143fbda084cd",
+          "path": "dbos/telemetry_admission/metrics.py",
+          "size_bytes": 3461
+        },
+        {
+          "digest": "sha256:eab5e868a93a917ca3820985308ebc62a878ef4613a824f462691f10172b22f6",
+          "path": "dbos/telemetry_admission/migrations/0000_prior_compatible.fixture.sql",
+          "size_bytes": 714
+        },
+        {
+          "digest": "sha256:13cfaf4c90b0160052bdf8a0ea44c56b8011610c4e7c9a84a4f0761fc5efdfbb",
+          "path": "dbos/telemetry_admission/migrations/0001_compatibility.sql",
+          "size_bytes": 185
+        },
+        {
+          "digest": "sha256:a347ab62ff44635794ffa010e1a83251a1c0fc35f47f3cf3707aab5a49197760",
+          "path": "dbos/telemetry_admission/migrations/0001_initial.sql",
+          "size_bytes": 4840
+        },
+        {
+          "digest": "sha256:aff37030370bab5af2b75e53d7271d3efdf1b71536c300994de9334f73bd319c",
+          "path": "dbos/telemetry_admission/migrations/__init__.py",
+          "size_bytes": 73
+        },
+        {
+          "digest": "sha256:5bfc7376a2b91e1ec51d1c47e825f8577358a99bf9096ab1055e44efde755226",
+          "path": "dbos/telemetry_admission/models.py",
+          "size_bytes": 2567
+        },
+        {
+          "digest": "sha256:cd8f82fdf1f85834b0cb2bb143836655a522f60a2c63c75ea6f72d98611549de",
+          "path": "dbos/telemetry_admission/profiles/README.md",
+          "size_bytes": 1839
+        },
+        {
+          "digest": "sha256:768dd202edd51bf75f346e945b9f3d4a3ef6d884f62e63b7061ceb2f02a10ac8",
+          "path": "dbos/telemetry_admission/profiles/THIRD_PARTY_NOTICES.md",
+          "size_bytes": 863
+        },
+        {
+          "digest": "sha256:d280c0a0976f99a777cebb0753025cd5792e88775f924808cbd4f5626bef314d",
+          "path": "dbos/telemetry_admission/profiles/__init__.py",
+          "size_bytes": 82
+        },
+        {
+          "digest": "sha256:6ac5dd367ff707dbcdcb1e5b459d4ac2fd676fb44eb17a21f9494a9fee4233df",
+          "path": "dbos/telemetry_admission/profiles/opentelemetry-schema-1.43.0.yaml",
+          "size_bytes": 33432
+        },
+        {
+          "digest": "sha256:805374a196f533d8b2c56492faeb566e05dd744edd0e519155442fcc50f8f452",
+          "path": "dbos/telemetry_admission/profiles/opentelemetry-schema-resource-conformance-cases.v0.1.json",
+          "size_bytes": 60951
+        },
+        {
+          "digest": "sha256:11a744b089bfab132f96825e5f10ce613d8d0b7ff145919fdff4bdb06c5112ee",
+          "path": "dbos/telemetry_admission/profiles/opentelemetry-schema-resource-conformance-result-set.schema.v0.1.json",
+          "size_bytes": 41298
+        },
+        {
+          "digest": "sha256:18b84edf6e8b618991c2dfd669d21794c3a3032188e198b7fd53899205b66c6e",
+          "path": "dbos/telemetry_admission/profiles/opentelemetry-semantic-conformance-cases.v0.1.json",
+          "size_bytes": 43612
+        },
+        {
+          "digest": "sha256:33fa128aa8063d8f4861f8abda23d9b48151f1a6529752848adaef3ea49f6f15",
+          "path": "dbos/telemetry_admission/profiles/opentelemetry-semantic-conformance-result-set.schema.v0.1.json",
+          "size_bytes": 24856
+        },
+        {
+          "digest": "sha256:b81213505b1a7c3841ba298545b642b127af1a96ec906536be27caab351de706",
+          "path": "dbos/telemetry_admission/profiles/opentelemetry-semantic-mapping.v0.1.json",
+          "size_bytes": 26770
+        },
+        {
+          "digest": "sha256:df19e20f4fb832b0a61b92e250e6f6f31211dd35cb88d9f9cc8bcf14ad432afd",
+          "path": "dbos/telemetry_admission/provenance.py",
+          "size_bytes": 40718
+        },
+        {
+          "digest": "sha256:d9ea2c26ab474e6a74a94dc455a14598c8a79f7adcd494a8492df9ba97c1645c",
+          "path": "dbos/telemetry_admission/references.py",
+          "size_bytes": 4436
+        },
+        {
+          "digest": "sha256:0f5ef63cfcbf4fdc212ad915683bf1157ab1b8b166f4439ea8d91482c79a4e82",
+          "path": "dbos/telemetry_admission/semantic.py",
+          "size_bytes": 19258
+        },
+        {
+          "digest": "sha256:ab12478c8bf5a970046cd764403e8d7169fb049ca9eb512134f46e1ff983840f",
+          "path": "dbos/telemetry_admission/service.py",
+          "size_bytes": 3261
+        },
+        {
+          "digest": "sha256:92e9ac0d51c682f613ad3712ade697130c9e0b9c6d44a0c3adb419180145c57c",
+          "path": "dbos/telemetry_admission/store.py",
+          "size_bytes": 60496
+        },
+        {
+          "digest": "sha256:70f6fd59fbfc2f5d45de4040cc6d9f701c72677b987c1d5f07e0fc72d8410564",
+          "path": "dbos/telemetry_admission/validator.py",
+          "size_bytes": 17335
+        },
+        {
+          "digest": "sha256:f497501eaf43258a1ea95404598907fef35989bf2a685ab63a17d792caea71a5",
+          "path": "pyproject.toml",
+          "size_bytes": 926
+        },
+        {
+          "digest": "sha256:6126401c4bc81398bf585566c8cebea4f3c9d117d5d7cbcbf9740537fc812675",
+          "path": "requirements/README.md",
+          "size_bytes": 1955
+        },
+        {
+          "digest": "sha256:1cea23a952436c9e226278bb037a803510d3e5f16ae984891420de5a5dcea95c",
+          "path": "requirements/telemetry-admission-build.lock",
+          "size_bytes": 705
+        },
+        {
+          "digest": "sha256:13a50e3f657af397b77809c7e00ceaef343b26bd111781376de5d04af36ada8d",
+          "path": "requirements/telemetry-admission-runtime-py312-macos-arm64.lock",
+          "size_bytes": 1091
+        },
+        {
+          "digest": "sha256:a405b581937fb4b93c2490552d5d19f05231286b9a0d2a64b273ddd58e33b1ba",
+          "path": "schemas/telemetry-admission-record-schema.yaml",
+          "size_bytes": 3699
+        },
+        {
+          "digest": "sha256:6b919693668036728eed5f466f413c1efca1d64c163e3fb26e388969ebb56d0c",
+          "path": "schemas/telemetry-observation-envelope-schema.yaml",
+          "size_bytes": 5740
+        },
+        {
+          "digest": "sha256:15f19189dce9af424b63bb639b011a246baa54720a073391616ddde577b45852",
+          "path": "tests/telemetry_admission/conformance_catalog.v0.1.json",
+          "size_bytes": 11308
+        },
+        {
+          "digest": "sha256:1d3652a5f39227f4550e18b2353e8cf937f9163ba75839b96c01d0542b690123",
+          "path": "tests/telemetry_admission/fixtures.py",
+          "size_bytes": 4275
+        },
+        {
+          "digest": "sha256:b817493ba4c5381dfe26cb042832b75a7f4d4c75f3948ba8d104e37f49f54e91",
+          "path": "tests/telemetry_admission/load_characterization.v0.1.json",
+          "size_bytes": 1610
+        },
+        {
+          "digest": "sha256:8a4b9de1f7d73034b0abccff30d39ffad3e74cf8494b219ba10d1972e8356ebe",
+          "path": "tests/telemetry_admission/schema_resource_pr_g2_bindings.v0.1.json",
+          "size_bytes": 9723
+        },
+        {
+          "digest": "sha256:b3ba70ee3034145ca705e3d7ef4c68afd4738fb3c6d13cf9f442f89887d033e6",
+          "path": "tests/telemetry_admission/semantic_pr_g2_bindings.v0.1.json",
+          "size_bytes": 9126
+        },
+        {
+          "digest": "sha256:11d483aaf85183f0164bdb91474fb2d1b929e62d1fecdbe4c365fa5b7eda5c8b",
+          "path": "tests/telemetry_admission/subprocess_fault_worker.py",
+          "size_bytes": 1086
+        },
+        {
+          "digest": "sha256:b175edf00b93b380ec65b328031b467157477493bf42c0875497084b9f07202b",
+          "path": "tests/telemetry_admission/test_advanced_fault_conformance.py",
+          "size_bytes": 8588
+        },
+        {
+          "digest": "sha256:a42b657ff7a3e03e2197b6980f313c3b397924215491354ee558cec13a44b470",
+          "path": "tests/telemetry_admission/test_advanced_recovery.py",
+          "size_bytes": 9176
+        },
+        {
+          "digest": "sha256:7e3a94cee4b5fdde5959ac9c8e3a47c705fcafd5016489eeb143afb2516690aa",
+          "path": "tests/telemetry_admission/test_authority_security.py",
+          "size_bytes": 12140
+        },
+        {
+          "digest": "sha256:c4ce8514ae78ae94a78d14276d46792c426bca9e6a2d5e42d5565820021a6fae",
+          "path": "tests/telemetry_admission/test_conformance_catalog.py",
+          "size_bytes": 1996
+        },
+        {
+          "digest": "sha256:951db11d5cb25497e690834329feb6183d192c8d35c1e72fd006f825cace5fbf",
+          "path": "tests/telemetry_admission/test_contract_validation.py",
+          "size_bytes": 5497
+        },
+        {
+          "digest": "sha256:dad29760441116d9a39c92616db7bb5d6f511210e3ee6ef3fcf7887f66e89089",
+          "path": "tests/telemetry_admission/test_duplicate_append.py",
+          "size_bytes": 10622
+        },
+        {
+          "digest": "sha256:c55dfbe4f301254ba3bf3675607388c327a39f731b718b132abbf6e5eac1118b",
+          "path": "tests/telemetry_admission/test_load_characterization.py",
+          "size_bytes": 5472
+        },
+        {
+          "digest": "sha256:527ed7f1f43e5f6a402e62a406c6680444cacfd176c9b113dc952c1bae43e348",
+          "path": "tests/telemetry_admission/test_metrics_schema_boundaries.py",
+          "size_bytes": 6915
+        },
+        {
+          "digest": "sha256:914f94bea5b3579e34d8219a91b3ca61add99d9004e6577f08c9f3a0043d54f7",
+          "path": "tests/telemetry_admission/test_migration_recovery.py",
+          "size_bytes": 15493
+        },
+        {
+          "digest": "sha256:16ef7d96edd86f4ee7f93cb9e3a5dfbd225e7d23f419e0f19a0e1766145399c3",
+          "path": "tests/telemetry_admission/test_otel_conformance_report.py",
+          "size_bytes": 1447
+        },
+        {
+          "digest": "sha256:09975e09d795b571ecfd9a73a08f34eac071ad21f6d2969b417e8bd4cd209b2b",
+          "path": "tests/telemetry_admission/test_reference_profile_bindings.py",
+          "size_bytes": 3718
+        },
+        {
+          "digest": "sha256:e5ff63b401e8288882a475c0491ccddfe984519ebf1c814e25e32cbc12f6b154",
+          "path": "tests/telemetry_admission/test_rollback_drill.py",
+          "size_bytes": 1042
+        },
+        {
+          "digest": "sha256:087183f3dac10c1d2074cdc0a5a96d9260f01bee157290c408a0e2e2aff76883",
+          "path": "tests/telemetry_admission/test_schema_resource_conformance.py",
+          "size_bytes": 21645
+        },
+        {
+          "digest": "sha256:8b6525fe06b32b94b619a7f4cd63c4766795599a9701f8c6302a3e22f136affb",
+          "path": "tests/telemetry_admission/test_semantic_conformance.py",
+          "size_bytes": 11014
+        },
+        {
+          "digest": "sha256:016ac40999a6240e0201a368cfeec12caf0330d73a1129697343c28a8111f0a9",
+          "path": "tests/telemetry_admission/test_storage_faults.py",
+          "size_bytes": 4401
+        },
+        {
+          "digest": "sha256:4cba5b447ad6ec78a40d2871f6077045ab5733daeae1a4534803268be4d9709d",
+          "path": "tests/telemetry_admission/test_supply_chain_locks.py",
+          "size_bytes": 5123
+        },
+        {
+          "digest": "sha256:68fc7a8a8f3f51dea0d1b2470ad7d66d320c7349c872be2492e68893dbbe25ea",
+          "path": "tools/telemetry_admission_characterize.py",
+          "size_bytes": 26794
+        },
+        {
+          "digest": "sha256:4b7c78080f75d4584f4b93ac66439e12b12b2b3c7be1eebb3afff72af0a6d785",
+          "path": "tools/telemetry_admission_otel_conformance.py",
+          "size_bytes": 11368
+        },
+        {
+          "digest": "sha256:dbdb4c154171d1aa317d9deab9c13e02f871f18668d39b4b5e6f5b2c15a4ed88",
+          "path": "tools/telemetry_admission_rollback_drill.py",
+          "size_bytes": 7896
+        },
+        {
+          "digest": "sha256:10183960af18573e1e34879a1e0ca92154fcd29380cbe1e661eb54607084608a",
+          "path": "validation/telemetry_admission_validator.py",
+          "size_bytes": 16417
+        }
+      ],
+      "file_count": 56,
+      "manifest_digest": "sha256:fdda745c3907e35ac92769740f07afc81483be674568879a3c0314c2a09baa51",
+      "total_bytes": 714335
+    },
+    "implementation_manifest_at_start": {
+      "entries": [
+        {
+          "digest": "sha256:8ca40ef5e35535fd0499cdd6f5eb81c53017c897fc3240330b4e56c2b274ee22",
+          "path": "README.md",
+          "size_bytes": 75561
+        },
+        {
+          "digest": "sha256:cb11cc76e08a43fe6b98226fad69ef2bfa3b9893ac6bd3f6e7d4026f6312bf8d",
+          "path": "dbos/telemetry_admission/__init__.py",
+          "size_bytes": 1810
+        },
+        {
+          "digest": "sha256:4cac312168e672a9fbbf7f80ec7ea7a88b77ffff55bd48e7b9124d853cf3999d",
+          "path": "dbos/telemetry_admission/contracts.py",
+          "size_bytes": 7909
+        },
+        {
+          "digest": "sha256:06c2e3361c8f6e1f4dca026c9925f397876e40486b5bbabd9eb7143fbda084cd",
+          "path": "dbos/telemetry_admission/metrics.py",
+          "size_bytes": 3461
+        },
+        {
+          "digest": "sha256:eab5e868a93a917ca3820985308ebc62a878ef4613a824f462691f10172b22f6",
+          "path": "dbos/telemetry_admission/migrations/0000_prior_compatible.fixture.sql",
+          "size_bytes": 714
+        },
+        {
+          "digest": "sha256:13cfaf4c90b0160052bdf8a0ea44c56b8011610c4e7c9a84a4f0761fc5efdfbb",
+          "path": "dbos/telemetry_admission/migrations/0001_compatibility.sql",
+          "size_bytes": 185
+        },
+        {
+          "digest": "sha256:a347ab62ff44635794ffa010e1a83251a1c0fc35f47f3cf3707aab5a49197760",
+          "path": "dbos/telemetry_admission/migrations/0001_initial.sql",
+          "size_bytes": 4840
+        },
+        {
+          "digest": "sha256:aff37030370bab5af2b75e53d7271d3efdf1b71536c300994de9334f73bd319c",
+          "path": "dbos/telemetry_admission/migrations/__init__.py",
+          "size_bytes": 73
+        },
+        {
+          "digest": "sha256:5bfc7376a2b91e1ec51d1c47e825f8577358a99bf9096ab1055e44efde755226",
+          "path": "dbos/telemetry_admission/models.py",
+          "size_bytes": 2567
+        },
+        {
+          "digest": "sha256:cd8f82fdf1f85834b0cb2bb143836655a522f60a2c63c75ea6f72d98611549de",
+          "path": "dbos/telemetry_admission/profiles/README.md",
+          "size_bytes": 1839
+        },
+        {
+          "digest": "sha256:768dd202edd51bf75f346e945b9f3d4a3ef6d884f62e63b7061ceb2f02a10ac8",
+          "path": "dbos/telemetry_admission/profiles/THIRD_PARTY_NOTICES.md",
+          "size_bytes": 863
+        },
+        {
+          "digest": "sha256:d280c0a0976f99a777cebb0753025cd5792e88775f924808cbd4f5626bef314d",
+          "path": "dbos/telemetry_admission/profiles/__init__.py",
+          "size_bytes": 82
+        },
+        {
+          "digest": "sha256:6ac5dd367ff707dbcdcb1e5b459d4ac2fd676fb44eb17a21f9494a9fee4233df",
+          "path": "dbos/telemetry_admission/profiles/opentelemetry-schema-1.43.0.yaml",
+          "size_bytes": 33432
+        },
+        {
+          "digest": "sha256:805374a196f533d8b2c56492faeb566e05dd744edd0e519155442fcc50f8f452",
+          "path": "dbos/telemetry_admission/profiles/opentelemetry-schema-resource-conformance-cases.v0.1.json",
+          "size_bytes": 60951
+        },
+        {
+          "digest": "sha256:11a744b089bfab132f96825e5f10ce613d8d0b7ff145919fdff4bdb06c5112ee",
+          "path": "dbos/telemetry_admission/profiles/opentelemetry-schema-resource-conformance-result-set.schema.v0.1.json",
+          "size_bytes": 41298
+        },
+        {
+          "digest": "sha256:18b84edf6e8b618991c2dfd669d21794c3a3032188e198b7fd53899205b66c6e",
+          "path": "dbos/telemetry_admission/profiles/opentelemetry-semantic-conformance-cases.v0.1.json",
+          "size_bytes": 43612
+        },
+        {
+          "digest": "sha256:33fa128aa8063d8f4861f8abda23d9b48151f1a6529752848adaef3ea49f6f15",
+          "path": "dbos/telemetry_admission/profiles/opentelemetry-semantic-conformance-result-set.schema.v0.1.json",
+          "size_bytes": 24856
+        },
+        {
+          "digest": "sha256:b81213505b1a7c3841ba298545b642b127af1a96ec906536be27caab351de706",
+          "path": "dbos/telemetry_admission/profiles/opentelemetry-semantic-mapping.v0.1.json",
+          "size_bytes": 26770
+        },
+        {
+          "digest": "sha256:df19e20f4fb832b0a61b92e250e6f6f31211dd35cb88d9f9cc8bcf14ad432afd",
+          "path": "dbos/telemetry_admission/provenance.py",
+          "size_bytes": 40718
+        },
+        {
+          "digest": "sha256:d9ea2c26ab474e6a74a94dc455a14598c8a79f7adcd494a8492df9ba97c1645c",
+          "path": "dbos/telemetry_admission/references.py",
+          "size_bytes": 4436
+        },
+        {
+          "digest": "sha256:0f5ef63cfcbf4fdc212ad915683bf1157ab1b8b166f4439ea8d91482c79a4e82",
+          "path": "dbos/telemetry_admission/semantic.py",
+          "size_bytes": 19258
+        },
+        {
+          "digest": "sha256:ab12478c8bf5a970046cd764403e8d7169fb049ca9eb512134f46e1ff983840f",
+          "path": "dbos/telemetry_admission/service.py",
+          "size_bytes": 3261
+        },
+        {
+          "digest": "sha256:92e9ac0d51c682f613ad3712ade697130c9e0b9c6d44a0c3adb419180145c57c",
+          "path": "dbos/telemetry_admission/store.py",
+          "size_bytes": 60496
+        },
+        {
+          "digest": "sha256:70f6fd59fbfc2f5d45de4040cc6d9f701c72677b987c1d5f07e0fc72d8410564",
+          "path": "dbos/telemetry_admission/validator.py",
+          "size_bytes": 17335
+        },
+        {
+          "digest": "sha256:f497501eaf43258a1ea95404598907fef35989bf2a685ab63a17d792caea71a5",
+          "path": "pyproject.toml",
+          "size_bytes": 926
+        },
+        {
+          "digest": "sha256:6126401c4bc81398bf585566c8cebea4f3c9d117d5d7cbcbf9740537fc812675",
+          "path": "requirements/README.md",
+          "size_bytes": 1955
+        },
+        {
+          "digest": "sha256:1cea23a952436c9e226278bb037a803510d3e5f16ae984891420de5a5dcea95c",
+          "path": "requirements/telemetry-admission-build.lock",
+          "size_bytes": 705
+        },
+        {
+          "digest": "sha256:13a50e3f657af397b77809c7e00ceaef343b26bd111781376de5d04af36ada8d",
+          "path": "requirements/telemetry-admission-runtime-py312-macos-arm64.lock",
+          "size_bytes": 1091
+        },
+        {
+          "digest": "sha256:a405b581937fb4b93c2490552d5d19f05231286b9a0d2a64b273ddd58e33b1ba",
+          "path": "schemas/telemetry-admission-record-schema.yaml",
+          "size_bytes": 3699
+        },
+        {
+          "digest": "sha256:6b919693668036728eed5f466f413c1efca1d64c163e3fb26e388969ebb56d0c",
+          "path": "schemas/telemetry-observation-envelope-schema.yaml",
+          "size_bytes": 5740
+        },
+        {
+          "digest": "sha256:15f19189dce9af424b63bb639b011a246baa54720a073391616ddde577b45852",
+          "path": "tests/telemetry_admission/conformance_catalog.v0.1.json",
+          "size_bytes": 11308
+        },
+        {
+          "digest": "sha256:1d3652a5f39227f4550e18b2353e8cf937f9163ba75839b96c01d0542b690123",
+          "path": "tests/telemetry_admission/fixtures.py",
+          "size_bytes": 4275
+        },
+        {
+          "digest": "sha256:b817493ba4c5381dfe26cb042832b75a7f4d4c75f3948ba8d104e37f49f54e91",
+          "path": "tests/telemetry_admission/load_characterization.v0.1.json",
+          "size_bytes": 1610
+        },
+        {
+          "digest": "sha256:8a4b9de1f7d73034b0abccff30d39ffad3e74cf8494b219ba10d1972e8356ebe",
+          "path": "tests/telemetry_admission/schema_resource_pr_g2_bindings.v0.1.json",
+          "size_bytes": 9723
+        },
+        {
+          "digest": "sha256:b3ba70ee3034145ca705e3d7ef4c68afd4738fb3c6d13cf9f442f89887d033e6",
+          "path": "tests/telemetry_admission/semantic_pr_g2_bindings.v0.1.json",
+          "size_bytes": 9126
+        },
+        {
+          "digest": "sha256:11d483aaf85183f0164bdb91474fb2d1b929e62d1fecdbe4c365fa5b7eda5c8b",
+          "path": "tests/telemetry_admission/subprocess_fault_worker.py",
+          "size_bytes": 1086
+        },
+        {
+          "digest": "sha256:b175edf00b93b380ec65b328031b467157477493bf42c0875497084b9f07202b",
+          "path": "tests/telemetry_admission/test_advanced_fault_conformance.py",
+          "size_bytes": 8588
+        },
+        {
+          "digest": "sha256:a42b657ff7a3e03e2197b6980f313c3b397924215491354ee558cec13a44b470",
+          "path": "tests/telemetry_admission/test_advanced_recovery.py",
+          "size_bytes": 9176
+        },
+        {
+          "digest": "sha256:7e3a94cee4b5fdde5959ac9c8e3a47c705fcafd5016489eeb143afb2516690aa",
+          "path": "tests/telemetry_admission/test_authority_security.py",
+          "size_bytes": 12140
+        },
+        {
+          "digest": "sha256:c4ce8514ae78ae94a78d14276d46792c426bca9e6a2d5e42d5565820021a6fae",
+          "path": "tests/telemetry_admission/test_conformance_catalog.py",
+          "size_bytes": 1996
+        },
+        {
+          "digest": "sha256:951db11d5cb25497e690834329feb6183d192c8d35c1e72fd006f825cace5fbf",
+          "path": "tests/telemetry_admission/test_contract_validation.py",
+          "size_bytes": 5497
+        },
+        {
+          "digest": "sha256:dad29760441116d9a39c92616db7bb5d6f511210e3ee6ef3fcf7887f66e89089",
+          "path": "tests/telemetry_admission/test_duplicate_append.py",
+          "size_bytes": 10622
+        },
+        {
+          "digest": "sha256:c55dfbe4f301254ba3bf3675607388c327a39f731b718b132abbf6e5eac1118b",
+          "path": "tests/telemetry_admission/test_load_characterization.py",
+          "size_bytes": 5472
+        },
+        {
+          "digest": "sha256:527ed7f1f43e5f6a402e62a406c6680444cacfd176c9b113dc952c1bae43e348",
+          "path": "tests/telemetry_admission/test_metrics_schema_boundaries.py",
+          "size_bytes": 6915
+        },
+        {
+          "digest": "sha256:914f94bea5b3579e34d8219a91b3ca61add99d9004e6577f08c9f3a0043d54f7",
+          "path": "tests/telemetry_admission/test_migration_recovery.py",
+          "size_bytes": 15493
+        },
+        {
+          "digest": "sha256:16ef7d96edd86f4ee7f93cb9e3a5dfbd225e7d23f419e0f19a0e1766145399c3",
+          "path": "tests/telemetry_admission/test_otel_conformance_report.py",
+          "size_bytes": 1447
+        },
+        {
+          "digest": "sha256:09975e09d795b571ecfd9a73a08f34eac071ad21f6d2969b417e8bd4cd209b2b",
+          "path": "tests/telemetry_admission/test_reference_profile_bindings.py",
+          "size_bytes": 3718
+        },
+        {
+          "digest": "sha256:e5ff63b401e8288882a475c0491ccddfe984519ebf1c814e25e32cbc12f6b154",
+          "path": "tests/telemetry_admission/test_rollback_drill.py",
+          "size_bytes": 1042
+        },
+        {
+          "digest": "sha256:087183f3dac10c1d2074cdc0a5a96d9260f01bee157290c408a0e2e2aff76883",
+          "path": "tests/telemetry_admission/test_schema_resource_conformance.py",
+          "size_bytes": 21645
+        },
+        {
+          "digest": "sha256:8b6525fe06b32b94b619a7f4cd63c4766795599a9701f8c6302a3e22f136affb",
+          "path": "tests/telemetry_admission/test_semantic_conformance.py",
+          "size_bytes": 11014
+        },
+        {
+          "digest": "sha256:016ac40999a6240e0201a368cfeec12caf0330d73a1129697343c28a8111f0a9",
+          "path": "tests/telemetry_admission/test_storage_faults.py",
+          "size_bytes": 4401
+        },
+        {
+          "digest": "sha256:4cba5b447ad6ec78a40d2871f6077045ab5733daeae1a4534803268be4d9709d",
+          "path": "tests/telemetry_admission/test_supply_chain_locks.py",
+          "size_bytes": 5123
+        },
+        {
+          "digest": "sha256:68fc7a8a8f3f51dea0d1b2470ad7d66d320c7349c872be2492e68893dbbe25ea",
+          "path": "tools/telemetry_admission_characterize.py",
+          "size_bytes": 26794
+        },
+        {
+          "digest": "sha256:4b7c78080f75d4584f4b93ac66439e12b12b2b3c7be1eebb3afff72af0a6d785",
+          "path": "tools/telemetry_admission_otel_conformance.py",
+          "size_bytes": 11368
+        },
+        {
+          "digest": "sha256:dbdb4c154171d1aa317d9deab9c13e02f871f18668d39b4b5e6f5b2c15a4ed88",
+          "path": "tools/telemetry_admission_rollback_drill.py",
+          "size_bytes": 7896
+        },
+        {
+          "digest": "sha256:10183960af18573e1e34879a1e0ca92154fcd29380cbe1e661eb54607084608a",
+          "path": "validation/telemetry_admission_validator.py",
+          "size_bytes": 16417
+        }
+      ],
+      "file_count": 56,
+      "manifest_digest": "sha256:fdda745c3907e35ac92769740f07afc81483be674568879a3c0314c2a09baa51",
+      "total_bytes": 714335
+    },
+    "source_stable_during_run": true,
+    "started_at": "2026-07-22T12:45:51.436166+00:00"
+  },
+  "measurements": {
+    "cpu_seconds": 288.687527,
+    "database_bytes": 107118592,
+    "errors": {},
+    "final_integrity": {
+      "counts": {
+        "admission_lifecycles": 15387,
+        "admission_records": 47870,
+        "backup_manifests": 0,
+        "intake_receipts": 15387,
+        "observation_envelopes": 15387,
+        "untrusted_idempotency_hints": 11969
+      },
+      "errors": [],
+      "migration_checksums": {
+        "0001": "sha256:a347ab62ff44635794ffa010e1a83251a1c0fc35f47f3cf3707aab5a49197760"
+      },
+      "missing_expected_receipt_count": 0,
+      "repair_performed": false,
+      "schema_version": "0.1.0",
+      "status": "PASS",
+      "store_configuration": {
+        "busy_timeout_ms": 5000,
+        "foreign_keys": 1,
+        "journal_mode": "wal",
+        "synchronous": 2
+      }
+    },
+    "integrity_checks": [
+      {
+        "counts": {
+          "admission_lifecycles": 264,
+          "admission_records": 821,
+          "backup_manifests": 0,
+          "intake_receipts": 264,
+          "observation_envelopes": 264,
+          "untrusted_idempotency_hints": 206
+        },
+        "elapsed_seconds": 60.236697,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 526,
+          "admission_records": 1636,
+          "backup_manifests": 0,
+          "intake_receipts": 526,
+          "observation_envelopes": 526,
+          "untrusted_idempotency_hints": 410
+        },
+        "elapsed_seconds": 120.386798,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 789,
+          "admission_records": 2454,
+          "backup_manifests": 0,
+          "intake_receipts": 789,
+          "observation_envelopes": 789,
+          "untrusted_idempotency_hints": 615
+        },
+        "elapsed_seconds": 180.52205,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 1052,
+          "admission_records": 3272,
+          "backup_manifests": 0,
+          "intake_receipts": 1052,
+          "observation_envelopes": 1052,
+          "untrusted_idempotency_hints": 819
+        },
+        "elapsed_seconds": 240.695498,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 1314,
+          "admission_records": 4088,
+          "backup_manifests": 0,
+          "intake_receipts": 1314,
+          "observation_envelopes": 1314,
+          "untrusted_idempotency_hints": 1022
+        },
+        "elapsed_seconds": 300.834076,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 1577,
+          "admission_records": 4906,
+          "backup_manifests": 0,
+          "intake_receipts": 1577,
+          "observation_envelopes": 1577,
+          "untrusted_idempotency_hints": 1227
+        },
+        "elapsed_seconds": 361.090759,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 1839,
+          "admission_records": 5721,
+          "backup_manifests": 0,
+          "intake_receipts": 1839,
+          "observation_envelopes": 1839,
+          "untrusted_idempotency_hints": 1431
+        },
+        "elapsed_seconds": 421.181305,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 2101,
+          "admission_records": 6536,
+          "backup_manifests": 0,
+          "intake_receipts": 2101,
+          "observation_envelopes": 2101,
+          "untrusted_idempotency_hints": 1635
+        },
+        "elapsed_seconds": 481.309732,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 2361,
+          "admission_records": 7345,
+          "backup_manifests": 0,
+          "intake_receipts": 2361,
+          "observation_envelopes": 2361,
+          "untrusted_idempotency_hints": 1837
+        },
+        "elapsed_seconds": 541.411548,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 2622,
+          "admission_records": 8157,
+          "backup_manifests": 0,
+          "intake_receipts": 2622,
+          "observation_envelopes": 2622,
+          "untrusted_idempotency_hints": 2040
+        },
+        "elapsed_seconds": 601.476784,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 2883,
+          "admission_records": 8969,
+          "backup_manifests": 0,
+          "intake_receipts": 2883,
+          "observation_envelopes": 2883,
+          "untrusted_idempotency_hints": 2243
+        },
+        "elapsed_seconds": 661.549691,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 3144,
+          "admission_records": 9781,
+          "backup_manifests": 0,
+          "intake_receipts": 3144,
+          "observation_envelopes": 3144,
+          "untrusted_idempotency_hints": 2446
+        },
+        "elapsed_seconds": 721.681726,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 3405,
+          "admission_records": 10593,
+          "backup_manifests": 0,
+          "intake_receipts": 3405,
+          "observation_envelopes": 3405,
+          "untrusted_idempotency_hints": 2649
+        },
+        "elapsed_seconds": 781.937757,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 3666,
+          "admission_records": 11405,
+          "backup_manifests": 0,
+          "intake_receipts": 3666,
+          "observation_envelopes": 3666,
+          "untrusted_idempotency_hints": 2852
+        },
+        "elapsed_seconds": 842.135855,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 3927,
+          "admission_records": 12217,
+          "backup_manifests": 0,
+          "intake_receipts": 3927,
+          "observation_envelopes": 3927,
+          "untrusted_idempotency_hints": 3055
+        },
+        "elapsed_seconds": 902.358859,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 4187,
+          "admission_records": 13026,
+          "backup_manifests": 0,
+          "intake_receipts": 4187,
+          "observation_envelopes": 4187,
+          "untrusted_idempotency_hints": 3257
+        },
+        "elapsed_seconds": 962.592823,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 4447,
+          "admission_records": 13835,
+          "backup_manifests": 0,
+          "intake_receipts": 4447,
+          "observation_envelopes": 4447,
+          "untrusted_idempotency_hints": 3459
+        },
+        "elapsed_seconds": 1022.803035,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 4707,
+          "admission_records": 14644,
+          "backup_manifests": 0,
+          "intake_receipts": 4707,
+          "observation_envelopes": 4707,
+          "untrusted_idempotency_hints": 3661
+        },
+        "elapsed_seconds": 1083.07448,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 4967,
+          "admission_records": 15452,
+          "backup_manifests": 0,
+          "intake_receipts": 4967,
+          "observation_envelopes": 4967,
+          "untrusted_idempotency_hints": 3864
+        },
+        "elapsed_seconds": 1143.123533,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 5226,
+          "admission_records": 16258,
+          "backup_manifests": 0,
+          "intake_receipts": 5226,
+          "observation_envelopes": 5226,
+          "untrusted_idempotency_hints": 4066
+        },
+        "elapsed_seconds": 1203.245499,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 5484,
+          "admission_records": 17061,
+          "backup_manifests": 0,
+          "intake_receipts": 5484,
+          "observation_envelopes": 5484,
+          "untrusted_idempotency_hints": 4266
+        },
+        "elapsed_seconds": 1263.319431,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 5742,
+          "admission_records": 17864,
+          "backup_manifests": 0,
+          "intake_receipts": 5742,
+          "observation_envelopes": 5742,
+          "untrusted_idempotency_hints": 4466
+        },
+        "elapsed_seconds": 1323.356521,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 6001,
+          "admission_records": 18669,
+          "backup_manifests": 0,
+          "intake_receipts": 6001,
+          "observation_envelopes": 6001,
+          "untrusted_idempotency_hints": 4669
+        },
+        "elapsed_seconds": 1383.519202,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 6259,
+          "admission_records": 19472,
+          "backup_manifests": 0,
+          "intake_receipts": 6259,
+          "observation_envelopes": 6259,
+          "untrusted_idempotency_hints": 4869
+        },
+        "elapsed_seconds": 1443.616382,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 6517,
+          "admission_records": 20275,
+          "backup_manifests": 0,
+          "intake_receipts": 6517,
+          "observation_envelopes": 6517,
+          "untrusted_idempotency_hints": 5069
+        },
+        "elapsed_seconds": 1503.765688,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 6776,
+          "admission_records": 21080,
+          "backup_manifests": 0,
+          "intake_receipts": 6776,
+          "observation_envelopes": 6776,
+          "untrusted_idempotency_hints": 5271
+        },
+        "elapsed_seconds": 1563.931116,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 7034,
+          "admission_records": 21883,
+          "backup_manifests": 0,
+          "intake_receipts": 7034,
+          "observation_envelopes": 7034,
+          "untrusted_idempotency_hints": 5472
+        },
+        "elapsed_seconds": 1624.217709,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 7291,
+          "admission_records": 22683,
+          "backup_manifests": 0,
+          "intake_receipts": 7291,
+          "observation_envelopes": 7291,
+          "untrusted_idempotency_hints": 5671
+        },
+        "elapsed_seconds": 1684.36448,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 7549,
+          "admission_records": 23485,
+          "backup_manifests": 0,
+          "intake_receipts": 7549,
+          "observation_envelopes": 7549,
+          "untrusted_idempotency_hints": 5873
+        },
+        "elapsed_seconds": 1744.553256,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 7805,
+          "admission_records": 24282,
+          "backup_manifests": 0,
+          "intake_receipts": 7805,
+          "observation_envelopes": 7805,
+          "untrusted_idempotency_hints": 6071
+        },
+        "elapsed_seconds": 1804.592483,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 8062,
+          "admission_records": 25081,
+          "backup_manifests": 0,
+          "intake_receipts": 8062,
+          "observation_envelopes": 8062,
+          "untrusted_idempotency_hints": 6272
+        },
+        "elapsed_seconds": 1864.716893,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 8318,
+          "admission_records": 25878,
+          "backup_manifests": 0,
+          "intake_receipts": 8318,
+          "observation_envelopes": 8318,
+          "untrusted_idempotency_hints": 6470
+        },
+        "elapsed_seconds": 1924.815722,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 8575,
+          "admission_records": 26677,
+          "backup_manifests": 0,
+          "intake_receipts": 8575,
+          "observation_envelopes": 8575,
+          "untrusted_idempotency_hints": 6671
+        },
+        "elapsed_seconds": 1984.962545,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 8831,
+          "admission_records": 27474,
+          "backup_manifests": 0,
+          "intake_receipts": 8831,
+          "observation_envelopes": 8831,
+          "untrusted_idempotency_hints": 6869
+        },
+        "elapsed_seconds": 2045.364381,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 9086,
+          "admission_records": 28267,
+          "backup_manifests": 0,
+          "intake_receipts": 9086,
+          "observation_envelopes": 9086,
+          "untrusted_idempotency_hints": 7068
+        },
+        "elapsed_seconds": 2105.470817,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 9341,
+          "admission_records": 29060,
+          "backup_manifests": 0,
+          "intake_receipts": 9341,
+          "observation_envelopes": 9341,
+          "untrusted_idempotency_hints": 7266
+        },
+        "elapsed_seconds": 2165.521021,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 9594,
+          "admission_records": 29847,
+          "backup_manifests": 0,
+          "intake_receipts": 9594,
+          "observation_envelopes": 9594,
+          "untrusted_idempotency_hints": 7462
+        },
+        "elapsed_seconds": 2225.50693,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 9849,
+          "admission_records": 30641,
+          "backup_manifests": 0,
+          "intake_receipts": 9849,
+          "observation_envelopes": 9849,
+          "untrusted_idempotency_hints": 7661
+        },
+        "elapsed_seconds": 2285.750503,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 10104,
+          "admission_records": 31434,
+          "backup_manifests": 0,
+          "intake_receipts": 10104,
+          "observation_envelopes": 10104,
+          "untrusted_idempotency_hints": 7860
+        },
+        "elapsed_seconds": 2345.780855,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 10359,
+          "admission_records": 32228,
+          "backup_manifests": 0,
+          "intake_receipts": 10359,
+          "observation_envelopes": 10359,
+          "untrusted_idempotency_hints": 8057
+        },
+        "elapsed_seconds": 2405.964989,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 10614,
+          "admission_records": 33021,
+          "backup_manifests": 0,
+          "intake_receipts": 10614,
+          "observation_envelopes": 10614,
+          "untrusted_idempotency_hints": 8256
+        },
+        "elapsed_seconds": 2466.145528,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 10869,
+          "admission_records": 33814,
+          "backup_manifests": 0,
+          "intake_receipts": 10869,
+          "observation_envelopes": 10869,
+          "untrusted_idempotency_hints": 8455
+        },
+        "elapsed_seconds": 2526.614842,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 11123,
+          "admission_records": 34604,
+          "backup_manifests": 0,
+          "intake_receipts": 11123,
+          "observation_envelopes": 11123,
+          "untrusted_idempotency_hints": 8652
+        },
+        "elapsed_seconds": 2586.580031,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 11376,
+          "admission_records": 35392,
+          "backup_manifests": 0,
+          "intake_receipts": 11376,
+          "observation_envelopes": 11376,
+          "untrusted_idempotency_hints": 8848
+        },
+        "elapsed_seconds": 2646.638043,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 11631,
+          "admission_records": 36185,
+          "backup_manifests": 0,
+          "intake_receipts": 11631,
+          "observation_envelopes": 11631,
+          "untrusted_idempotency_hints": 9047
+        },
+        "elapsed_seconds": 2706.893321,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 11885,
+          "admission_records": 36975,
+          "backup_manifests": 0,
+          "intake_receipts": 11885,
+          "observation_envelopes": 11885,
+          "untrusted_idempotency_hints": 9245
+        },
+        "elapsed_seconds": 2767.207212,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 12138,
+          "admission_records": 37762,
+          "backup_manifests": 0,
+          "intake_receipts": 12138,
+          "observation_envelopes": 12138,
+          "untrusted_idempotency_hints": 9442
+        },
+        "elapsed_seconds": 2827.259692,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 12392,
+          "admission_records": 38552,
+          "backup_manifests": 0,
+          "intake_receipts": 12392,
+          "observation_envelopes": 12392,
+          "untrusted_idempotency_hints": 9639
+        },
+        "elapsed_seconds": 2887.32262,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 12645,
+          "admission_records": 39340,
+          "backup_manifests": 0,
+          "intake_receipts": 12645,
+          "observation_envelopes": 12645,
+          "untrusted_idempotency_hints": 9835
+        },
+        "elapsed_seconds": 2947.538189,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 12899,
+          "admission_records": 40130,
+          "backup_manifests": 0,
+          "intake_receipts": 12899,
+          "observation_envelopes": 12899,
+          "untrusted_idempotency_hints": 10033
+        },
+        "elapsed_seconds": 3007.80542,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 13152,
+          "admission_records": 40917,
+          "backup_manifests": 0,
+          "intake_receipts": 13152,
+          "observation_envelopes": 13152,
+          "untrusted_idempotency_hints": 10230
+        },
+        "elapsed_seconds": 3067.937735,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 13404,
+          "admission_records": 41701,
+          "backup_manifests": 0,
+          "intake_receipts": 13404,
+          "observation_envelopes": 13404,
+          "untrusted_idempotency_hints": 10426
+        },
+        "elapsed_seconds": 3127.999441,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 13656,
+          "admission_records": 42485,
+          "backup_manifests": 0,
+          "intake_receipts": 13656,
+          "observation_envelopes": 13656,
+          "untrusted_idempotency_hints": 10622
+        },
+        "elapsed_seconds": 3188.279856,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 13907,
+          "admission_records": 43266,
+          "backup_manifests": 0,
+          "intake_receipts": 13907,
+          "observation_envelopes": 13907,
+          "untrusted_idempotency_hints": 10817
+        },
+        "elapsed_seconds": 3248.297604,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 14158,
+          "admission_records": 44047,
+          "backup_manifests": 0,
+          "intake_receipts": 14158,
+          "observation_envelopes": 14158,
+          "untrusted_idempotency_hints": 11012
+        },
+        "elapsed_seconds": 3308.407394,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 14410,
+          "admission_records": 44831,
+          "backup_manifests": 0,
+          "intake_receipts": 14410,
+          "observation_envelopes": 14410,
+          "untrusted_idempotency_hints": 11208
+        },
+        "elapsed_seconds": 3368.512392,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 14661,
+          "admission_records": 45612,
+          "backup_manifests": 0,
+          "intake_receipts": 14661,
+          "observation_envelopes": 14661,
+          "untrusted_idempotency_hints": 11403
+        },
+        "elapsed_seconds": 3428.690177,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 14913,
+          "admission_records": 46395,
+          "backup_manifests": 0,
+          "intake_receipts": 14913,
+          "observation_envelopes": 14913,
+          "untrusted_idempotency_hints": 11599
+        },
+        "elapsed_seconds": 3488.759172,
+        "status": "PASS"
+      },
+      {
+        "counts": {
+          "admission_lifecycles": 15164,
+          "admission_records": 47176,
+          "backup_manifests": 0,
+          "intake_receipts": 15164,
+          "observation_envelopes": 15164,
+          "untrusted_idempotency_hints": 11795
+        },
+        "elapsed_seconds": 3548.896669,
+        "status": "PASS"
+      }
+    ],
+    "max_ms": 573.92825,
+    "mean_ms": 13.206137,
+    "operations": 17096,
+    "p50_ms": 13.737937,
+    "p95_ms": 19.117333,
+    "p99_ms": 26.862007,
+    "process_max_rss_native_units": 192724992,
+    "python_tracemalloc_peak_bytes": 81218785,
+    "shm_bytes": 0,
+    "states": {
+      "ACCEPTED_AS_MATERIAL": 11969,
+      "DUPLICATE_CONFIRMED": 1709,
+      "REJECTED": 3418
+    },
+    "store_counts": {
+      "admission_lifecycles": 15387,
+      "admission_records": 47870,
+      "backup_manifests": 0,
+      "intake_receipts": 15387,
+      "observation_envelopes": 15387,
+      "untrusted_idempotency_hints": 11969
+    },
+    "wal_bytes": 0,
+    "wall_seconds": 3600.14069
+  },
+  "parameters": {
+    "duration_seconds": 3600.0,
+    "integrity_interval_seconds": 60.0,
+    "mix_cycle": [
+      "ACCEPTED_AS_MATERIAL",
+      "ACCEPTED_AS_MATERIAL",
+      "ACCEPTED_AS_MATERIAL",
+      "ACCEPTED_AS_MATERIAL",
+      "ACCEPTED_AS_MATERIAL",
+      "ACCEPTED_AS_MATERIAL",
+      "ACCEPTED_AS_MATERIAL",
+      "REJECTED",
+      "REJECTED",
+      "DUPLICATE_CONFIRMED"
+    ],
+    "target_operations_per_second": 5.0
+  },
+  "result_semantics": "CHARACTERIZATION_NOT_SLO"
+}
