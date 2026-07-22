@@ -1,0 +1,197 @@
+{
+  "schema_version": "0.1",
+  "receipt_id": "DBOS-PR-2A-P003-OBSERVER-EFFECT-HARDENING-20260723-001",
+  "observed_at": "2026-07-23T04:34:05+08:00",
+  "decision_reference": "DQ-018",
+  "review_gate": "PR-G2A",
+  "result_semantics": "OFFLINE_SYNTHETIC_EMULATED_CHARACTERIZATION_NOT_SLO_NOT_NATIVE_NOT_PRODUCTION_EVIDENCE",
+  "source_binding": {
+    "repository": "https://github.com/joy7758/digital-biosphere-os.git",
+    "branch": "codex/telemetry-admission-foundation",
+    "commit": "23c8f0878058f29e733b6f164572ac157c6c7d1c",
+    "tree": "27703ed64d6e885a2933a5a39139a59bab83c3c1",
+    "fresh_remote_clean_clone": true,
+    "manifest_sha256": "43382e4274c19ef6b10ee6e76f36ddddc18f05b7dfaedfdca43ddd8d3f2abc8c",
+    "manifest_file_count": 58,
+    "manifest_bytes": 726068,
+    "source_stable_during_runs": true
+  },
+  "measurement_contract": {
+    "contract_id": "DBOS-TA-LOAD-CHARACTERIZATION-0.1",
+    "revision": "0.1.1",
+    "digest": "sha256:80f37f4ec370b84f71da2615f43d170ecbb76f2fc296df93078be18941bf9fe6",
+    "bytes": 2054,
+    "supersedes_digest": "sha256:b817493ba4c5381dfe26cb042832b75a7f4d4c75f3948ba8d104e37f49f54e91",
+    "change_reason": "REMOVE_CONCURRENT_TRACEMALLOC_OBSERVER_EFFECT",
+    "result_semantics_unchanged": "CHARACTERIZATION_NOT_SLO"
+  },
+  "root_cause": {
+    "classification": "MEASUREMENT_OBSERVER_EFFECT",
+    "storage_integrity_failure": false,
+    "underlying_exception": "sqlite3.OperationalError: database is locked",
+    "failure_location": "SQLiteTelemetryAdmissionStore.record_decision BEGIN IMMEDIATE",
+    "diagnostic_same_image_tmpfs_30_seconds": {
+      "tracemalloc_disabled": {
+        "attempts": 1853,
+        "successful_operations": 1853,
+        "errors": {},
+        "integrity_status": "PASS"
+      },
+      "tracemalloc_enabled": {
+        "attempts": 772,
+        "successful_operations": 734,
+        "errors": {
+          "TA_STORAGE_UNAVAILABLE": 38
+        },
+        "integrity_status": "PASS"
+      }
+    }
+  },
+  "predecessor_full_tmpfs": {
+    "source_commit": "d62b411845b18af3ec79af67622666e96d1baed3",
+    "contract_digest": "b817493ba4c5381dfe26cb042832b75a7f4d4c75f3948ba8d104e37f49f54e91",
+    "workers": 32,
+    "duration_seconds": 300,
+    "target_operations_per_second": 64,
+    "python_allocation_tracing": true,
+    "operations": 6699,
+    "errors": {
+      "TA_STORAGE_UNAVAILABLE": 426
+    },
+    "observed_operations_per_second": 22.28227671103138,
+    "p95_ms": 3787.475977,
+    "integrity_status": "PASS",
+    "source_binding_result": "PASS",
+    "history_preserved": true
+  },
+  "successor_full_tmpfs": {
+    "execution_mode": "EMULATED_LINUX_AMD64_ON_ARM64_HOST",
+    "medium": "LINUX_TMPFS",
+    "workers": 32,
+    "duration_seconds": 300,
+    "target_operations_per_second": 64,
+    "python_allocation_tracing": false,
+    "python_tracemalloc_peak_bytes": null,
+    "observer_effect_control": "CONCURRENT_TRACEMALLOC_DISABLED_PROCESS_MAX_RSS_RETAINED",
+    "operations": 18953,
+    "errors": {},
+    "observed_operations_per_second": 63.076226186627956,
+    "p50_ms": 39.719834,
+    "p95_ms": 276.034217,
+    "p99_ms": 697.786762,
+    "max_ms": 2510.001585,
+    "mean_ms": 79.229194,
+    "wall_seconds": 300.47771,
+    "cpu_seconds": 307.762333,
+    "process_max_rss_native_units": 138476,
+    "process_max_rss_native_unit_semantics": "LINUX_KIB",
+    "database_bytes": 149180416,
+    "integrity_status": "PASS",
+    "source_binding_result": "PASS",
+    "raw_result": {
+      "path": "raw/p003-observer-effect-43382e4274c1/TA-P003.tmpfs.json",
+      "bytes": 29092,
+      "sha256": "da031f6446fa9041e354ab7458a0f65197b88ca3b2c631a4d3eff52533ec9142",
+      "original_mode": "0o600",
+      "overwrite_permitted": false
+    }
+  },
+  "successor_named_volume_corroboration": {
+    "medium": "LINUX_DOCKER_NAMED_VOLUME",
+    "operations": 18753,
+    "errors": {},
+    "observed_operations_per_second": 62.407787485526406,
+    "p95_ms": 381.234525,
+    "wall_seconds": 300.491345,
+    "integrity_status": "PASS",
+    "source_binding_result": "PASS",
+    "local_artifact_sha256": "ab2a7c2635948130f7643c5cc7384005957ab99db9052faba9ef77526197ccb4",
+    "local_artifact_bytes": 29092
+  },
+  "comparison": {
+    "operation_count_increase_percent": 182.92282430213467,
+    "observed_rate_increase_percent": 183.07801309818825,
+    "p95_reduction_percent": 92.7119216418465,
+    "errors_before": 426,
+    "errors_after": 0,
+    "comparison_is_slo": false
+  },
+  "validation": {
+    "full_tests": "534/534 PASS",
+    "test_directories": 16,
+    "focused_telemetry_tests": "200/200 PASS",
+    "hermetic_validators": {
+      "passed": 30,
+      "expected_external_source_fail_closed": 5,
+      "unexpected_failures": 0
+    },
+    "telemetry_admission_validator": "25/25 PASS",
+    "ruff_findings": 0,
+    "ruff_formatted_files": 34,
+    "bandit": {
+      "version": "1.9.4",
+      "loc": 4650,
+      "findings": 0,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "pip_audit": {
+      "version": "2.10.1",
+      "locked_runtime_dependencies": 7,
+      "known_vulnerabilities": 0
+    },
+    "pip_check": "PASS",
+    "audit_tool_transitive_hash_lock": false
+  },
+  "agent_recommendation": {
+    "status": "CONDITIONALLY_RECOMMENDED",
+    "recommended_as": "OBSERVER_EFFECT_HARDENED_OFFLINE_EMULATED_CONCURRENCY_CHARACTERIZATION",
+    "not_recommended_as": "NATIVE_X86_64_CAPACITY_SLO_OR_PRODUCTION_READINESS_EVIDENCE"
+  },
+  "current_source_scope": {
+    "p003_reexecuted": true,
+    "p003_result": "PASS_EMULATED_AMD64",
+    "p001_reexecuted": false,
+    "p002_reexecuted": false,
+    "p004_reexecuted": false,
+    "p005_one_hour_reexecuted": false,
+    "full_ta_p001_to_ta_p005_rebase_complete": false,
+    "native_linux_x86_64_validated": false
+  },
+  "failure_retention": [
+    "PREDECESSOR_426_STORAGE_ERRORS_PRESERVED",
+    "INITIAL_PYYAML_IMPORT_FAILURE_BEFORE_WORKLOAD",
+    "PYPI_TLS_EOF_BEFORE_WORKLOAD",
+    "MISSING_DIAGNOSTIC_WORK_DIRECTORY_FAIL_CLOSED",
+    "FIRST_FIXED_TMPFS_RESULT_LOST_AFTER_CONTAINER_STOP_NOT_USED_AS_RAW_EVIDENCE",
+    "BANDIT_ENTRYPOINT_PERMISSION_AND_SUMMARY_QUOTING_FAILURES_REEXECUTED"
+  ],
+  "decision_state": {
+    "selected_token": null,
+    "decided_by_ref": null,
+    "pr_g2a_current_source_review_packet_refresh_required": true,
+    "pr_g2a_human_review_approved": false,
+    "dq_019_status": "BLOCKED_INPUT",
+    "dq_020_status": "BLOCKED_INPUT",
+    "dq_021_status": "BLOCKED_INPUT",
+    "full_pr_g2_ready": false,
+    "production_ready": false
+  },
+  "effects": {
+    "pr_created": false,
+    "merge_performed": false,
+    "main_modified": false,
+    "release_created": false,
+    "deployment_performed": false,
+    "collector_built": false,
+    "listener_created": false,
+    "database_created": false,
+    "agent_created": false,
+    "runtime_created": false,
+    "entity_created": false,
+    "permission_granted": false,
+    "canonical_evidence_created": false,
+    "saee_output_created": false,
+    "gate_approved": false
+  }
+}

@@ -1,7 +1,8 @@
 # Raw and Historical Receipt Index
 
 ```text
-current_exact_source_emulated_amd64_receipt=linux-amd64-emulated-6d1bcbbfc2cb/
+current_exact_source_p003_observer_effect_receipt=p003-observer-effect-43382e4274c1/
+predecessor_full_emulated_amd64_receipt=linux-amd64-emulated-6d1bcbbfc2cb/
 latest_native_linux_arm64_reference_receipt=linux-arm64-d0951d6c6252/
 predecessor_macos_arm64_reference_receipt=current-b6c03faf50bf/
 historical_receipts=current-fdda745c3907/,review-fdda745c3907/,review-9a8c3546a925/,review-f09e99b95a33/,current-f09e99b95a33/
@@ -11,7 +12,17 @@ production_ready=false
 
 ## Current Exact Source（当前精确源码）
 
-当前远端源码 `d62b411…` 的 Linux amd64 emulated compatibility（模拟兼容）入口是：
+当前远端源码 `23c8f08…` 的 TA-P003 observer-effect hardening（观察者效应加固）入口是：
+
+- [`p003-observer-effect-43382e4274c1/`](p003-observer-effect-43382e4274c1/)
+- source commit `23c8f0878058f29e733b6f164572ac157c6c7d1c`
+- manifest `sha256:43382e4274c19ef6b10ee6e76f36ddddc18f05b7dfaedfdca43ddd8d3f2abc8c`
+- 当前源码 534/534 tests；30 validators `PASS` + 5 external-source fail closed
+- TA-P003 完整 tmpfs run：18,953 operations、0 errors、integrity/source `PASS`
+- 当前源码的 TA-P001、TA-P002、TA-P004、TA-P005 尚未重跑；不是完整五项基线
+- execution mode `EMULATED_LINUX_AMD64_ON_ARM64_HOST`，不是原生 x86_64 验证
+
+predecessor `d62b411…` 的 Linux amd64 emulated compatibility（模拟兼容）入口是：
 
 - [`linux-amd64-emulated-6d1bcbbfc2cb/`](linux-amd64-emulated-6d1bcbbfc2cb/)
 - source commit `d62b411845b18af3ec79af67622666e96d1baed3`
