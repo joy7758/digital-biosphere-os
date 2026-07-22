@@ -54,8 +54,32 @@ python -m pip install --no-deps dist/digital_biosphere_os_preview-0.1.0.dev0-py3
 python -m pip check
 ```
 
-The two runtime locks intentionally differ for platform wheels such as PyYAML
-and rpds-py. Neither lock is a portable universal lock, an operating-system
+`telemetry-admission-runtime-py312-linux-x86_64.lock` is another separately
+resolved seven-package closure for:
+
+```text
+CPython 3.12
+Linux glibc
+x86_64
+```
+
+It pins the official amd64 image manifest:
+
+```text
+python:3.12.13-slim-bookworm@sha256:72d3d75f2639ab82b34b29390ad3d6e0827c775befee94edda8e9976818f488d
+```
+
+Install it only on that declared platform boundary:
+
+```bash
+python -m pip install --require-hashes --only-binary=:all: \
+  -r requirements/telemetry-admission-runtime-py312-linux-x86_64.lock
+python -m pip install --no-deps dist/digital_biosphere_os_preview-0.1.0.dev0-py3-none-any.whl
+python -m pip check
+```
+
+The three runtime locks intentionally differ for platform wheels such as
+PyYAML and rpds-py. No lock is a portable universal lock, an operating-system
 support promise, or production compatibility evidence. A new Python, libc,
 CPU architecture, base image, or dependency version requires a separately
 named lock and direct validation.

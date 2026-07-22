@@ -13,7 +13,12 @@ from tools.telemetry_admission_otel_conformance import _source_manifest
 ROOT = Path(__file__).resolve().parents[2]
 REQUIREMENTS = ROOT / "requirements"
 MACOS_RUNTIME_LOCK = REQUIREMENTS / "telemetry-admission-runtime-py312-macos-arm64.lock"
-LINUX_RUNTIME_LOCK = REQUIREMENTS / "telemetry-admission-runtime-py312-linux-arm64.lock"
+LINUX_ARM64_RUNTIME_LOCK = (
+    REQUIREMENTS / "telemetry-admission-runtime-py312-linux-arm64.lock"
+)
+LINUX_X86_64_RUNTIME_LOCK = (
+    REQUIREMENTS / "telemetry-admission-runtime-py312-linux-x86_64.lock"
+)
 BUILD_LOCK = REQUIREMENTS / "telemetry-admission-build.lock"
 ENTRY_PATTERN = re.compile(r"^([A-Za-z0-9_.-]+)==([^ ]+) \\$", re.ASCII)
 HASH_PATTERN = re.compile(r"^    --hash=sha256:([0-9a-f]{64})$", re.ASCII)
@@ -48,7 +53,7 @@ EXPECTED_RUNTIME_MACOS = {
         "481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8",
     ),
 }
-EXPECTED_RUNTIME_LINUX = {
+EXPECTED_RUNTIME_LINUX_ARM64 = {
     **EXPECTED_RUNTIME_MACOS,
     "pyyaml": (
         "6.0.3",
@@ -57,6 +62,17 @@ EXPECTED_RUNTIME_LINUX = {
     "rpds-py": (
         "2026.6.3",
         "55927d532399c2c646100ff7feb48eaa940ad70f42cd68e1328f3ded9f81ca24",
+    ),
+}
+EXPECTED_RUNTIME_LINUX_X86_64 = {
+    **EXPECTED_RUNTIME_MACOS,
+    "pyyaml": (
+        "6.0.3",
+        "ba1cc08a7ccde2d2ec775841541641e4548226580ab850948cbfda66a1befcdc",
+    ),
+    "rpds-py": (
+        "2026.6.3",
+        "ecabd69db66de867690f9797f2f8fa27ba501bbc24540cbdbdc649cd15888ba6",
     ),
 }
 EXPECTED_BUILD = {
@@ -119,17 +135,35 @@ class SupplyChainLockTests(unittest.TestCase):
         self.assertIn("environment=CPython-3.12 macOS-11+-arm64", header)
         self.assertIn("cross_platform_claim=false", header)
 
-    def test_linux_runtime_lock_is_exact_platform_scoped_transitive_closure(
+    def test_linux_arm64_runtime_lock_is_exact_platform_scoped_transitive_closure(
         self,
     ) -> None:
-        self.assertEqual(_parse_lock(LINUX_RUNTIME_LOCK), EXPECTED_RUNTIME_LINUX)
-        header = LINUX_RUNTIME_LOCK.read_text(encoding="utf-8")
+        self.assertEqual(
+            _parse_lock(LINUX_ARM64_RUNTIME_LOCK), EXPECTED_RUNTIME_LINUX_ARM64
+        )
+        header = LINUX_ARM64_RUNTIME_LOCK.read_text(encoding="utf-8")
         self.assertIn("environment=CPython-3.12 Linux-glibc-arm64", header)
         self.assertIn(
             "base_image=python:3.12.13-slim-bookworm@sha256:"
             "d50fb7611f86d04a3b0471b46d7557818d88983fc3136726336b2a4c657aa30b",
             header,
         )
+        self.assertIn("cross_platform_claim=false", header)
+
+    def test_linux_x86_64_runtime_lock_is_exact_platform_scoped_transitive_closure(
+        self,
+    ) -> None:
+        self.assertEqual(
+            _parse_lock(LINUX_X86_64_RUNTIME_LOCK), EXPECTED_RUNTIME_LINUX_X86_64
+        )
+        header = LINUX_X86_64_RUNTIME_LOCK.read_text(encoding="utf-8")
+        self.assertIn("environment=CPython-3.12 Linux-glibc-x86_64", header)
+        self.assertIn(
+            "base_image=python:3.12.13-slim-bookworm@sha256:"
+            "72d3d75f2639ab82b34b29390ad3d6e0827c775befee94edda8e9976818f488d",
+            header,
+        )
+        self.assertIn("image_arch=amd64", header)
         self.assertIn("cross_platform_claim=false", header)
 
     def test_build_toolchain_is_exact_hash_locked(self) -> None:
@@ -140,7 +174,11 @@ class SupplyChainLockTests(unittest.TestCase):
         self.assertEqual(pyproject["build-system"]["requires"], ["setuptools==83.0.0"])
         dependencies = pyproject["project"]["dependencies"]
         self.assertEqual(set(dependencies), {"jsonschema>=4.18,<5", "PyYAML>=6.0,<7"})
-        for runtime_lock in (MACOS_RUNTIME_LOCK, LINUX_RUNTIME_LOCK):
+        for runtime_lock in (
+            MACOS_RUNTIME_LOCK,
+            LINUX_ARM64_RUNTIME_LOCK,
+            LINUX_X86_64_RUNTIME_LOCK,
+        ):
             locked = _parse_lock(runtime_lock)
             self.assertIn("jsonschema", locked)
             self.assertIn("pyyaml", locked)
@@ -154,9 +192,15 @@ class SupplyChainLockTests(unittest.TestCase):
         self.assertIn("--no-isolation", readme)
         self.assertIn("cross-platform equivalence", readme)
         self.assertIn("telemetry-admission-runtime-py312-linux-arm64.lock", readme)
+        self.assertIn("telemetry-admission-runtime-py312-linux-x86_64.lock", readme)
         self.assertIn(
             "python:3.12.13-slim-bookworm@sha256:"
             "d50fb7611f86d04a3b0471b46d7557818d88983fc3136726336b2a4c657aa30b",
+            readme,
+        )
+        self.assertIn(
+            "python:3.12.13-slim-bookworm@sha256:"
+            "72d3d75f2639ab82b34b29390ad3d6e0827c775befee94edda8e9976818f488d",
             readme,
         )
 
@@ -166,6 +210,7 @@ class SupplyChainLockTests(unittest.TestCase):
             {
                 "requirements/telemetry-admission-build.lock",
                 "requirements/telemetry-admission-runtime-py312-linux-arm64.lock",
+                "requirements/telemetry-admission-runtime-py312-linux-x86_64.lock",
                 "requirements/telemetry-admission-runtime-py312-macos-arm64.lock",
                 "requirements/README.md",
             }.issubset(paths)
