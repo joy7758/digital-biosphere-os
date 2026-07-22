@@ -1,0 +1,224 @@
+{
+  "report_schema_version": "0.1",
+  "report_id": "DBOS-PR-2A-LINUX-X86-64-EMULATED-COMPATIBILITY-VALIDATION-2026-07-23",
+  "observed_at": "2026-07-22T19:15:59.592272+00:00",
+  "decision_reference": "DQ-018",
+  "review_gate": "PR-G2A",
+  "status": "PARTIAL_EMULATED_LINUX_AMD64_COMPATIBILITY",
+  "result_semantics": "EMULATED_COMPATIBILITY_NOT_NATIVE_NOT_SLO_NOT_GATE_APPROVAL_NOT_PRODUCTION_READY",
+  "agent_recommendation": {
+    "status": "CONDITIONALLY_RECOMMENDED",
+    "recommended_as": "OFFLINE_EMULATED_AMD64_COMPATIBILITY_AND_FAILURE_DISCOVERY_MATERIAL",
+    "not_recommended_as": "NATIVE_X86_64_OR_PRODUCTION_READINESS_EVIDENCE",
+    "corrective_actions_completed": [
+      "EXACT_X86_64_RUNTIME_LOCK",
+      "CLEAN_CLONE_FULL_TESTS",
+      "FAIL_CLOSED_VALIDATORS",
+      "STATIC_AND_DEPENDENCY_SECURITY",
+      "RESTORE_CHARACTERIZATION",
+      "ONE_HOUR_INTEGRITY_CHARACTERIZATION"
+    ],
+    "remaining_stop_conditions": [
+      "NATIVE_LINUX_X86_64_TA_P003_RERUN",
+      "PR_G2A_INDEPENDENT_HUMAN_REVIEW"
+    ]
+  },
+  "source_binding": {
+    "repository": "digital-biosphere-os",
+    "branch": "codex/telemetry-admission-foundation",
+    "implementation_source_commit": "d62b411845b18af3ec79af67622666e96d1baed3",
+    "implementation_tree": "109b2a9dcad86d1ff882ac472394a140f0dc5169",
+    "remote_commit_matches_clean_clone": true,
+    "clean_clone_worktree_clean": true,
+    "implementation_manifest_sha256": "6d1bcbbfc2cba1add823d390e013d4c755047f1147e338a0a59bf8e4bac0d6e4",
+    "implementation_file_count": 58,
+    "implementation_bytes": 723949,
+    "source_stable_during_all_characterizations": true,
+    "report_is_successor_receipt_not_part_of_characterized_manifest": true
+  },
+  "environment": {
+    "scope": "CPython 3.12.13 Linux glibc x86_64 userspace under QEMU emulation",
+    "guest_platform": "Linux-6.8.0-100-generic-x86_64-with-glibc2.36",
+    "guest_machine": "x86_64",
+    "host_machine": "arm64",
+    "execution_mode": "EMULATED_LINUX_AMD64_ON_ARM64_HOST",
+    "python_version": "3.12.13",
+    "sqlite_version": "3.40.1",
+    "cpu_count_visible_to_guest": 4,
+    "base_image": "python:3.12.13-slim-bookworm@sha256:72d3d75f2639ab82b34b29390ad3d6e0827c775befee94edda8e9976818f488d",
+    "base_image_os": "linux",
+    "base_image_architecture": "amd64",
+    "native_linux_x86_64_validated": false,
+    "performance_comparable_to_native": false
+  },
+  "supply_chain": {
+    "runtime_lock_path": "requirements/telemetry-admission-runtime-py312-linux-x86_64.lock",
+    "runtime_lock_sha256": "76746fc746c6e5e9e5bc2c4141d905809d0040296af4ab636a289cb6dc8c1ddf",
+    "build_lock_path": "requirements/telemetry-admission-build.lock",
+    "build_lock_sha256": "1cea23a952436c9e226278bb037a803510d3e5f16ae984891420de5a5dcea95c",
+    "runtime_dependency_count": 7,
+    "require_hashes": true,
+    "binary_wheels_only": true,
+    "pip_check": "PASS"
+  },
+  "validation": {
+    "all_tests": {"status": "PASS", "test_count": 534, "test_directory_count": 16},
+    "focused_telemetry_tests": {"status": "PASS", "test_count": 200},
+    "validators": {
+      "total": 35,
+      "passed": 30,
+      "expected_external_source_fail_closed": 5,
+      "unexpected_failures": 0,
+      "external_source_fail_closed_names": [
+        "capability_claim_validator",
+        "capability_validator",
+        "evidence_validator",
+        "federation_validator",
+        "identity_validator"
+      ],
+      "telemetry_admission_validator": "25/25 PASS",
+      "result_semantics": "30_PASS_PLUS_5_EXPECTED_EXTERNAL_SOURCE_FAIL_CLOSED_NOT_35_PASS"
+    },
+    "static_security": {
+      "ruff_version": "0.14.10",
+      "ruff_finding_count": 0,
+      "ruff_format_file_count": 34,
+      "ruff_format_status": "PASS",
+      "bandit_version": "1.9.4",
+      "bandit_scanned_loc": 5363,
+      "bandit_finding_count": 0,
+      "bandit_nosec_count": 0,
+      "bandit_skipped_test_count": 0,
+      "pip_audit_version": "2.10.1",
+      "audited_runtime_dependency_count": 7,
+      "known_vulnerability_count": 0
+    }
+  },
+  "characterization": {
+    "overall_status": "PARTIAL",
+    "result_semantics": "EMULATED_CHARACTERIZATION_NOT_NATIVE_NOT_SLO",
+    "backend_scope": "SQLITE_SINGLE_HOST_EPHEMERAL_REFERENCE_ONLY",
+    "all_cases_source_binding": "PASS",
+    "all_cases_integrity": "PASS",
+    "all_case_authority_effects_false": true,
+    "native_rerun_required": true,
+    "cases": {
+      "TA-P001": {
+        "parameters": {"unique_admissions": 10000, "workers": 1},
+        "operations": 10000,
+        "wall_seconds": 356.455124,
+        "p95_ms": 44.947435,
+        "integrity_status": "PASS",
+        "source_binding": "PASS",
+        "status": "PASS_EMULATED_OBSERVATION"
+      },
+      "TA-P002": {
+        "parameters": {"original_admissions": 1000, "confirmed_retries": 10000},
+        "wall_seconds": 284.38491,
+        "duplicate_accuracy": 1.0,
+        "lifecycle_growth": 0,
+        "integrity_status": "PASS",
+        "source_binding": "PASS",
+        "status": "PASS_IDEMPOTENCY_COMPATIBILITY"
+      },
+      "TA-P003": {
+        "parameters": {"workers": 32, "duration_seconds": 300, "target_operations_per_second": 64},
+        "operations": 6699,
+        "wall_seconds": 300.642528,
+        "observed_operations_per_second": 22.28227671103138,
+        "p95_ms": 3787.475977,
+        "errors": {"TA_STORAGE_UNAVAILABLE": 426},
+        "integrity_status": "PASS",
+        "source_binding": "PASS",
+        "status": "PARTIAL_NATIVE_RERUN_REQUIRED"
+      },
+      "TA-P004": {
+        "parameters": {"unique_admissions": 1000, "backup_count": 10, "writer_workers": 1},
+        "backups_completed": 10,
+        "restore_passes": 10,
+        "restore_pass_rate": 1.0,
+        "writer_errors": [],
+        "integrity_status": "PASS",
+        "source_binding": "PASS",
+        "status": "PASS_RESTORE_COMPATIBILITY"
+      },
+      "TA-P005": {
+        "parameters": {"duration_seconds": 3600, "target_operations_per_second": 5, "integrity_interval_seconds": 60},
+        "wall_seconds": 3600.143806,
+        "operations": 13171,
+        "observed_operations_per_second": 3.658465,
+        "p50_ms": 55.287042,
+        "p95_ms": 78.330001,
+        "p99_ms": 167.712816,
+        "max_ms": 921.57125,
+        "database_bytes": 82599936,
+        "periodic_integrity_check_count": 59,
+        "periodic_integrity_pass_count": 59,
+        "final_integrity_status": "PASS",
+        "errors": {},
+        "process_max_rss_native_units": 98988,
+        "process_max_rss_native_unit_semantics": "LINUX_KIB",
+        "process_max_rss_bytes_normalized": 101363712,
+        "python_tracemalloc_peak_bytes": 4967450,
+        "result_artifact_sha256": "7678e1e07d7906e2a833c59a2a096699447b64eb1a0869a14b9c0cc194a83b31",
+        "result_artifact_mode": "0o600",
+        "overwrite_permitted": false,
+        "status": "PASS_LONG_RUN_INTEGRITY_EMULATED_NOT_SLO"
+      }
+    }
+  },
+  "container_security_boundary": {
+    "read_only_root_filesystem": true,
+    "read_only_source_mount": true,
+    "capabilities_dropped": ["ALL"],
+    "no_new_privileges": true,
+    "published_ports": 0,
+    "functional_test_network": "NONE",
+    "characterization_network": "NONE",
+    "temporary_database_scope": "ISOLATED_LINUX_TMPFS",
+    "listener_created": false,
+    "collector_created": false,
+    "dbos_runtime_created": false,
+    "production_backend_used": false
+  },
+  "attempt_history": [
+    {"attempt": 1, "status": "BLOCKED_EXTERNAL_ENVIRONMENT", "reason": "NATIVE_X86_64_SSH_CONNECTION_CLOSED_BEFORE_SESSION"},
+    {"attempt": 2, "status": "FAIL_CLOSED", "reason": "RUFF_CACHE_WRITE_BLOCKED_BY_READ_ONLY_SOURCE"},
+    {"attempt": 3, "status": "FAIL_CLOSED", "reason": "TA_P001_BIND_MOUNT_FCHMOD_0600_REJECTED"},
+    {"attempt": 4, "status": "PASS", "reason": "LINUX_TMPFS_SECURITY_SEMANTICS_PRESERVED"},
+    {"attempt": 5, "status": "PARTIAL", "reason": "TA_P003_RECORDED_426_STORAGE_UNAVAILABLE_ERRORS"},
+    {"attempt": 6, "status": "PASS", "reason": "TA_P005_3600_SECONDS_59_OF_59_PERIODIC_CHECKS_AND_FINAL_INTEGRITY_PASS"}
+  ],
+  "risk_effect": {
+    "risk_reference": "R-042",
+    "effect": "ADDITIONAL_EMULATED_AMD64_COMPATIBILITY_MATERIAL_ONLY",
+    "risk_closed": false,
+    "native_linux_x86_64_mitigated": false,
+    "remaining_platforms": ["native Linux x86_64", "Windows", "production backend environments"]
+  },
+  "review_state": {
+    "pr_g2a_ready_for_human_review": true,
+    "pr_g2a_human_review_approved": false,
+    "full_pr_g2_ready": false,
+    "production_ready": false,
+    "release_authorized": false,
+    "deployment_authorized": false,
+    "dq_019": "BLOCKED_INPUT",
+    "dq_020": "BLOCKED_INPUT",
+    "dq_021": "BLOCKED_INPUT"
+  },
+  "authority_effects": {
+    "agent_created": false,
+    "runtime_created": false,
+    "entity_created": false,
+    "capability_created": false,
+    "permission_created": false,
+    "execution_created": false,
+    "canonical_evidence_created": false,
+    "verification_created": false,
+    "collector_created": false,
+    "network_endpoint_created": false,
+    "saee_called": false,
+    "gate_state_changed": false
+  }
+}
