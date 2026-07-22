@@ -282,7 +282,8 @@ class MigrationRecoveryTests(unittest.TestCase):
                     SQLiteTelemetryAdmissionStore.restore(
                         backup,
                         candidate,
-                        self.root / f"malformed-{field}-{type(malformed).__name__}.sqlite3",
+                        self.root
+                        / f"malformed-{field}-{type(malformed).__name__}.sqlite3",
                     )
                 self.assertEqual(
                     caught.exception.reason_code, "TA_STORAGE_INTEGRITY_FAILURE"
