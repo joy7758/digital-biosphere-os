@@ -1,0 +1,172 @@
+{
+  "schema_version": "0.1",
+  "receipt_id": "DBOS-PR-2A-CURRENT-SOURCE-LOAD-REBASE-20260723-001",
+  "observed_at": "2026-07-23T06:13:40+08:00",
+  "decision_reference": "DQ-018",
+  "review_gate": "PR-G2A",
+  "status": "PASS_EMULATED_AMD64_CURRENT_SOURCE_LOAD_REBASE",
+  "result_semantics": "OFFLINE_SYNTHETIC_EMULATED_CHARACTERIZATION_NOT_NATIVE_NOT_SLO_NOT_PRODUCTION_EVIDENCE_NOT_GATE_APPROVAL",
+  "source_binding": {
+    "repository": "https://github.com/joy7758/digital-biosphere-os.git",
+    "branch": "codex/telemetry-admission-foundation",
+    "implementation_commit": "23c8f0878058f29e733b6f164572ac157c6c7d1c",
+    "implementation_tree": "27703ed64d6e885a2933a5a39139a59bab83c3c1",
+    "implementation_manifest_sha256": "43382e4274c19ef6b10ee6e76f36ddddc18f05b7dfaedfdca43ddd8d3f2abc8c",
+    "implementation_file_count": 58,
+    "implementation_bytes": 726068,
+    "source_stable_during_all_runs": true,
+    "all_case_binding_results": "PASS"
+  },
+  "measurement_contract": {
+    "contract_id": "DBOS-TA-LOAD-CHARACTERIZATION-0.1",
+    "revision": "0.1.1",
+    "digest": "sha256:80f37f4ec370b84f71da2615f43d170ecbb76f2fc296df93078be18941bf9fe6",
+    "bytes": 2054,
+    "result_semantics": "CHARACTERIZATION_NOT_SLO"
+  },
+  "environment": {
+    "execution_mode": "EMULATED_LINUX_AMD64_ON_ARM64_HOST",
+    "base_image": "python:3.12.13-slim-bookworm@sha256:72d3d75f2639ab82b34b29390ad3d6e0827c775befee94edda8e9976818f488d",
+    "python_version": "3.12.13",
+    "guest_architecture": "amd64",
+    "host_architecture": "arm64",
+    "cpu_limit": 4,
+    "memory_limit_bytes": 2147483648,
+    "work_tmpfs_limit_bytes": 1073741824,
+    "network": "NONE",
+    "native_linux_x86_64_validated": false,
+    "performance_comparable_to_native": false
+  },
+  "characterization": {
+    "overall_status": "PASS_EMULATED_AMD64_CURRENT_SOURCE_LOAD_REBASE",
+    "all_cases_integrity": "PASS",
+    "all_cases_source_binding": "PASS",
+    "all_case_authority_effects_false": true,
+    "cases": {
+      "TA-P001": {
+        "parameters": {"unique_admissions": 10000, "workers": 1},
+        "operations": 10000,
+        "wall_seconds": 301.217194,
+        "p50_ms": 28.389104,
+        "p95_ms": 35.769773,
+        "p99_ms": 55.940966,
+        "max_ms": 428.809167,
+        "mean_ms": 30.106632,
+        "database_bytes": 78778368,
+        "integrity_status": "PASS",
+        "source_binding": "PASS",
+        "result_artifact": {"path": "raw/current-source-rebase-43382e4274c1/TA-P001.json", "sha256": "78f60db0b41672829d787bb8bcd276503a49fc03e518a871c5a75266f84a0299", "bytes": 28885},
+        "receipt_artifact": {"path": "raw/current-source-rebase-43382e4274c1/TA-P001.receipt.json", "sha256": "c4d6e80a08e77da383bbf3ea5cf5897b20c296b367779e95aea8d64d44070f8e", "bytes": 775}
+      },
+      "TA-P002": {
+        "parameters": {"original_admissions": 1000, "confirmed_retries": 10000},
+        "confirmed_retries": 10000,
+        "duplicate_accuracy": 1.0,
+        "lifecycle_growth": 0,
+        "record_growth": 10000,
+        "wall_seconds": 249.081119,
+        "p95_ms": 30.195171,
+        "integrity_status": "PASS",
+        "source_binding": "PASS",
+        "result_artifact": {"path": "raw/current-source-rebase-43382e4274c1/TA-P002.json", "sha256": "bbc48c1d8e466ce4b41e9e32a0b4c909b98c6e77cfe9d766387a540e7bf068f5", "bytes": 29164},
+        "receipt_artifact": {"path": "raw/current-source-rebase-43382e4274c1/TA-P002.receipt.json", "sha256": "a1274d86a3abb2f824ef2fca511bfdfcb5a919abf898e8c1d37d79b89d9941a5", "bytes": 775}
+      },
+      "TA-P003": {
+        "parameters": {"workers": 32, "duration_seconds": 300, "target_operations_per_second": 64},
+        "operations": 18953,
+        "wall_seconds": 300.47771,
+        "observed_operations_per_second": 63.076226186627956,
+        "p95_ms": 276.034217,
+        "errors": {},
+        "observer_effect_control": "CONCURRENT_TRACEMALLOC_DISABLED_PROCESS_MAX_RSS_RETAINED",
+        "integrity_status": "PASS",
+        "source_binding": "PASS",
+        "result_artifact": {"path": "raw/p003-observer-effect-43382e4274c1/TA-P003.tmpfs.json", "sha256": "da031f6446fa9041e354ab7458a0f65197b88ca3b2c631a4d3eff52533ec9142", "bytes": 29092},
+        "receipt_reference": "DBOS-PR-2A-P003-OBSERVER-EFFECT-HARDENING-2026-07-23.json"
+      },
+      "TA-P004": {
+        "parameters": {"unique_admissions": 1000, "backup_count": 10, "writer_workers": 1},
+        "writes": 1000,
+        "backups_completed": 10,
+        "restore_passes": 10,
+        "restore_pass_rate": 1.0,
+        "writer_errors": [],
+        "write_p95_ms": 17.442135,
+        "backup_p95_ms": 109.212958,
+        "integrity_status": "PASS",
+        "source_binding": "PASS",
+        "result_artifact": {"path": "raw/current-source-rebase-43382e4274c1/TA-P004.json", "sha256": "287ba32d59306443b73c52e5a64b9583e55c47edcbf43e85793fd94e7d1b6f85", "bytes": 28964},
+        "receipt_artifact": {"path": "raw/current-source-rebase-43382e4274c1/TA-P004.receipt.json", "sha256": "909313614f28a1ec3f1ee6a32846364f530939cb15eb8c4cd3b627b2f034e596", "bytes": 775}
+      },
+      "TA-P005": {
+        "parameters": {"duration_seconds": 3600, "target_operations_per_second": 5, "integrity_interval_seconds": 60},
+        "operations": 13532,
+        "wall_seconds": 3600.19434,
+        "derived_operations_per_second": 3.7586859824906007,
+        "derived_field_note": "operations divided by wall_seconds; source artifact does not emit observed_operations_per_second",
+        "states": {"ACCEPTED_AS_MATERIAL": 9473, "REJECTED": 2706, "DUPLICATE_CONFIRMED": 1353},
+        "p50_ms": 55.850229,
+        "p95_ms": 70.085335,
+        "p99_ms": 83.51352,
+        "max_ms": 278.605542,
+        "mean_ms": 53.481622,
+        "database_bytes": 84762624,
+        "periodic_integrity_check_count": 59,
+        "periodic_integrity_pass_count": 59,
+        "final_integrity_status": "PASS",
+        "errors": {},
+        "process_max_rss_native_units": 100780,
+        "process_max_rss_native_unit_semantics": "LINUX_KIB",
+        "process_max_rss_bytes_normalized": 103198720,
+        "python_tracemalloc_peak_bytes": 5031829,
+        "integrity_status": "PASS",
+        "source_binding": "PASS",
+        "result_artifact": {"path": "raw/current-source-rebase-43382e4274c1/TA-P005.json", "sha256": "b166709d55f969d1249e84e2acba9d949dc90520bd94a292e975d6b50d2a329c", "bytes": 49758},
+        "receipt_artifact": {"path": "raw/current-source-rebase-43382e4274c1/TA-P005.receipt.json", "sha256": "678fabab084fdec804b31d3b64592c9bd26de76606d7ee069a7564a1d34e2102", "bytes": 775}
+      }
+    }
+  },
+  "agent_recommendation": {
+    "status": "CONDITIONALLY_RECOMMENDED",
+    "recommended_as": "CURRENT_EXACT_SOURCE_OFFLINE_OBSERVER_EFFECT_HARDENED_EMULATED_AMD64_LOAD_CHARACTERIZATION",
+    "not_recommended_as": "NATIVE_X86_64_CAPACITY_SLO_PRODUCTION_DURABILITY_OR_PRODUCTION_READINESS_EVIDENCE"
+  },
+  "current_source_scope": {
+    "ta_p001_to_ta_p005_rebase_complete": true,
+    "native_linux_x86_64_validated": false,
+    "pr_g2a_current_source_review_packet_refresh_required": true,
+    "pr_g2a_ready_for_human_review": false
+  },
+  "failure_retention": [
+    "PREDECESSOR_TA_P003_426_STORAGE_ERRORS_PRESERVED",
+    "NATIVE_X86_64_SSH_CLOSED_BEFORE_KEY_EXCHANGE",
+    "P005_SOURCE_OBSERVED_OPERATIONS_PER_SECOND_ABSENT_DERIVED_VALUE_EXPLICITLY_LABELED"
+  ],
+  "decision_state": {
+    "selected_token": null,
+    "decided_by_ref": null,
+    "pr_g2a_human_review_approved": false,
+    "dq_019_status": "BLOCKED_INPUT",
+    "dq_020_status": "BLOCKED_INPUT",
+    "dq_021_status": "BLOCKED_INPUT",
+    "full_pr_g2_ready": false,
+    "production_ready": false
+  },
+  "effects": {
+    "pr_created": false,
+    "merge_performed": false,
+    "main_modified": false,
+    "release_created": false,
+    "deployment_performed": false,
+    "collector_built": false,
+    "listener_created": false,
+    "database_created": false,
+    "agent_created": false,
+    "runtime_created": false,
+    "entity_created": false,
+    "permission_granted": false,
+    "canonical_evidence_created": false,
+    "saee_output_created": false,
+    "gate_approved": false
+  }
+}

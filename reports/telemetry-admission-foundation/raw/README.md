@@ -1,6 +1,7 @@
 # Raw and Historical Receipt Index
 
 ```text
+current_exact_source_full_load_rebase_receipt=current-source-rebase-43382e4274c1/
 current_exact_source_p003_observer_effect_receipt=p003-observer-effect-43382e4274c1/
 predecessor_full_emulated_amd64_receipt=linux-amd64-emulated-6d1bcbbfc2cb/
 latest_native_linux_arm64_reference_receipt=linux-arm64-d0951d6c6252/
@@ -12,14 +13,24 @@ production_ready=false
 
 ## Current Exact Source（当前精确源码）
 
-当前远端源码 `23c8f08…` 的 TA-P003 observer-effect hardening（观察者效应加固）入口是：
+当前远端源码 `23c8f08…` 的完整 load rebase（负载重基线）入口是：
+
+- [`current-source-rebase-43382e4274c1/`](current-source-rebase-43382e4274c1/)
+- source commit `23c8f0878058f29e733b6f164572ac157c6c7d1c`
+- manifest `sha256:43382e4274c19ef6b10ee6e76f36ddddc18f05b7dfaedfdca43ddd8d3f2abc8c`
+- measurement contract revision `0.1.1` / `sha256:80f37f4e…9fe6`
+- TA-P001、TA-P002、TA-P004、TA-P005 原始结果及 receipts 在该目录；TA-P003 引用下列既有同源工件
+- TA-P001—TA-P005 integrity/source binding 全部 `PASS`，authority effects 全部 false
+- execution mode `EMULATED_LINUX_AMD64_ON_ARM64_HOST`，不是原生 x86_64、SLO 或生产验证
+
+同一 current source 的 TA-P003 observer-effect hardening（观察者效应加固）入口是：
 
 - [`p003-observer-effect-43382e4274c1/`](p003-observer-effect-43382e4274c1/)
 - source commit `23c8f0878058f29e733b6f164572ac157c6c7d1c`
 - manifest `sha256:43382e4274c19ef6b10ee6e76f36ddddc18f05b7dfaedfdca43ddd8d3f2abc8c`
 - 当前源码 534/534 tests；30 validators `PASS` + 5 external-source fail closed
 - TA-P003 完整 tmpfs run：18,953 operations、0 errors、integrity/source `PASS`
-- 当前源码的 TA-P001、TA-P002、TA-P004、TA-P005 尚未重跑；不是完整五项基线
+- 当前源码的 TA-P001—TA-P005 已完整重跑；完整结果从上述 load rebase 回执读取
 - execution mode `EMULATED_LINUX_AMD64_ON_ARM64_HOST`，不是原生 x86_64 验证
 
 predecessor `d62b411…` 的 Linux amd64 emulated compatibility（模拟兼容）入口是：

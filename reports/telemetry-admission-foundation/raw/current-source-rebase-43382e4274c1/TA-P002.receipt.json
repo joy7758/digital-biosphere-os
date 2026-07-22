@@ -1,0 +1,27 @@
+{
+  "authority_effects": {
+    "agent_created": false,
+    "capability_created": false,
+    "collector_created": false,
+    "entity_created": false,
+    "evidence_created": false,
+    "execution_created": false,
+    "gate_state_changed": false,
+    "network_endpoint_created": false,
+    "permission_created": false,
+    "production_ready_declared": false,
+    "runtime_created": false,
+    "saee_called": false,
+    "verification_created": false
+  },
+  "case_id": "TA-P002",
+  "integrity_status": "PASS",
+  "result_artifact": {
+    "digest": "sha256:bbc48c1d8e466ce4b41e9e32a0b4c909b98c6e77cfe9d766387a540e7bf068f5",
+    "mode": "0o600",
+    "overwrite_permitted": false,
+    "path": "/results/TA-P002.json",
+    "size_bytes": 29164
+  },
+  "source_binding_result": "PASS"
+}
