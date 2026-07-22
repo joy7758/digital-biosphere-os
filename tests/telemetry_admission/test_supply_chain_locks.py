@@ -12,12 +12,13 @@ from tools.telemetry_admission_otel_conformance import _source_manifest
 
 ROOT = Path(__file__).resolve().parents[2]
 REQUIREMENTS = ROOT / "requirements"
-RUNTIME_LOCK = REQUIREMENTS / "telemetry-admission-runtime-py312-macos-arm64.lock"
+MACOS_RUNTIME_LOCK = REQUIREMENTS / "telemetry-admission-runtime-py312-macos-arm64.lock"
+LINUX_RUNTIME_LOCK = REQUIREMENTS / "telemetry-admission-runtime-py312-linux-arm64.lock"
 BUILD_LOCK = REQUIREMENTS / "telemetry-admission-build.lock"
 ENTRY_PATTERN = re.compile(r"^([A-Za-z0-9_.-]+)==([^ ]+) \\$", re.ASCII)
 HASH_PATTERN = re.compile(r"^    --hash=sha256:([0-9a-f]{64})$", re.ASCII)
 
-EXPECTED_RUNTIME = {
+EXPECTED_RUNTIME_MACOS = {
     "attrs": (
         "26.1.0",
         "c647aa4a12dfbad9333ca4e71fe62ddc36f4e63b2d260a37a8b83d2f043ac309",
@@ -45,6 +46,17 @@ EXPECTED_RUNTIME = {
     "typing-extensions": (
         "4.16.0",
         "481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8",
+    ),
+}
+EXPECTED_RUNTIME_LINUX = {
+    **EXPECTED_RUNTIME_MACOS,
+    "pyyaml": (
+        "6.0.3",
+        "9149cad251584d5fb4981be1ecde53a1ca46c891a79788c0df828d2f166bda28",
+    ),
+    "rpds-py": (
+        "2026.6.3",
+        "55927d532399c2c646100ff7feb48eaa940ad70f42cd68e1328f3ded9f81ca24",
     ),
 }
 EXPECTED_BUILD = {
@@ -99,10 +111,25 @@ def _parse_lock(path: Path) -> dict[str, tuple[str, str]]:
 
 
 class SupplyChainLockTests(unittest.TestCase):
-    def test_runtime_lock_is_exact_platform_scoped_transitive_closure(self) -> None:
-        self.assertEqual(_parse_lock(RUNTIME_LOCK), EXPECTED_RUNTIME)
-        header = RUNTIME_LOCK.read_text(encoding="utf-8")
+    def test_macos_runtime_lock_is_exact_platform_scoped_transitive_closure(
+        self,
+    ) -> None:
+        self.assertEqual(_parse_lock(MACOS_RUNTIME_LOCK), EXPECTED_RUNTIME_MACOS)
+        header = MACOS_RUNTIME_LOCK.read_text(encoding="utf-8")
         self.assertIn("environment=CPython-3.12 macOS-11+-arm64", header)
+        self.assertIn("cross_platform_claim=false", header)
+
+    def test_linux_runtime_lock_is_exact_platform_scoped_transitive_closure(
+        self,
+    ) -> None:
+        self.assertEqual(_parse_lock(LINUX_RUNTIME_LOCK), EXPECTED_RUNTIME_LINUX)
+        header = LINUX_RUNTIME_LOCK.read_text(encoding="utf-8")
+        self.assertIn("environment=CPython-3.12 Linux-glibc-arm64", header)
+        self.assertIn(
+            "base_image=python:3.12.13-slim-bookworm@sha256:"
+            "d50fb7611f86d04a3b0471b46d7557818d88983fc3136726336b2a4c657aa30b",
+            header,
+        )
         self.assertIn("cross_platform_claim=false", header)
 
     def test_build_toolchain_is_exact_hash_locked(self) -> None:
@@ -113,9 +140,10 @@ class SupplyChainLockTests(unittest.TestCase):
         self.assertEqual(pyproject["build-system"]["requires"], ["setuptools==83.0.0"])
         dependencies = pyproject["project"]["dependencies"]
         self.assertEqual(set(dependencies), {"jsonschema>=4.18,<5", "PyYAML>=6.0,<7"})
-        locked = _parse_lock(RUNTIME_LOCK)
-        self.assertIn("jsonschema", locked)
-        self.assertIn("pyyaml", locked)
+        for runtime_lock in (MACOS_RUNTIME_LOCK, LINUX_RUNTIME_LOCK):
+            locked = _parse_lock(runtime_lock)
+            self.assertIn("jsonschema", locked)
+            self.assertIn("pyyaml", locked)
 
     def test_documented_install_and_build_paths_fail_closed(self) -> None:
         readme = (REQUIREMENTS / "README.md").read_text(encoding="utf-8")
@@ -125,12 +153,19 @@ class SupplyChainLockTests(unittest.TestCase):
         self.assertIn("SOURCE_DATE_EPOCH=1784678400", readme)
         self.assertIn("--no-isolation", readme)
         self.assertIn("cross-platform equivalence", readme)
+        self.assertIn("telemetry-admission-runtime-py312-linux-arm64.lock", readme)
+        self.assertIn(
+            "python:3.12.13-slim-bookworm@sha256:"
+            "d50fb7611f86d04a3b0471b46d7557818d88983fc3136726336b2a4c657aa30b",
+            readme,
+        )
 
-    def test_source_manifest_binds_both_locks_and_instructions(self) -> None:
+    def test_source_manifest_binds_platform_locks_and_instructions(self) -> None:
         paths = {entry["path"] for entry in _source_manifest()["entries"]}
         self.assertTrue(
             {
                 "requirements/telemetry-admission-build.lock",
+                "requirements/telemetry-admission-runtime-py312-linux-arm64.lock",
                 "requirements/telemetry-admission-runtime-py312-macos-arm64.lock",
                 "requirements/README.md",
             }.issubset(paths)

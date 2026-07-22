@@ -60,11 +60,14 @@ SUPPLY_CHAIN_ARTIFACTS = {
     ROOT / "requirements" / "telemetry-admission-runtime-py312-macos-arm64.lock": (
         "13a50e3f657af397b77809c7e00ceaef343b26bd111781376de5d04af36ada8d"
     ),
+    ROOT / "requirements" / "telemetry-admission-runtime-py312-linux-arm64.lock": (
+        "b989823d32d406ce283b11500a8198155c56381adeb37a13c7dc2c58fb0b38b3"
+    ),
     ROOT / "requirements" / "telemetry-admission-build.lock": (
         "1cea23a952436c9e226278bb037a803510d3e5f16ae984891420de5a5dcea95c"
     ),
     ROOT / "requirements" / "README.md": (
-        "6126401c4bc81398bf585566c8cebea4f3c9d117d5d7cbcbf9740537fc812675"
+        "3cabd78f5af38b3fd7dd417443263d2da47f7eadb5d1efc0dafd311383099f31"
     ),
 }
 CASE_COUNTS = {"C": 12, "N": 7, "D": 12, "S": 11, "F": 14, "M": 12, "R": 10}
