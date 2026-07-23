@@ -55,6 +55,16 @@ COMPATIBILITY_MIGRATION_RESOURCE = (
 DATABASE_APPLICATION_ID = 0x544D4149  # ASCII "TMAI"
 DATABASE_USER_VERSION = 1
 ACTOR_REFERENCE = "dbos.telemetry_admission:0.1.0"
+SENSITIVE_REFERENCE_MARKERS = (
+    "api-key",
+    "apikey",
+    "bearer",
+    "cookie",
+    "credential",
+    "password",
+    "secret",
+    "token",
+)
 
 EXPECTED_TABLE_COLUMNS = {
     "schema_migrations": ("version", "checksum", "applied_at"),
@@ -228,6 +238,17 @@ def _validate_explicit_path(path: str | Path, *, must_not_exist: bool = False) -
         or candidate.parent.is_symlink()
     ):
         raise TelemetryAdmissionError("TA_STORAGE_UNAVAILABLE")
+    try:
+        parent_metadata = candidate.parent.stat(follow_symlinks=False)
+    except OSError as exc:
+        raise TelemetryAdmissionError("TA_STORAGE_UNAVAILABLE") from exc
+    parent_mode = stat.S_IMODE(parent_metadata.st_mode)
+    if (
+        not stat.S_ISDIR(parent_metadata.st_mode)
+        or parent_metadata.st_uid != os.geteuid()
+        or parent_mode & 0o022
+    ):
+        raise TelemetryAdmissionError("TA_STORAGE_UNAVAILABLE")
     if candidate.is_symlink():
         raise TelemetryAdmissionError("TA_STORAGE_UNAVAILABLE")
     # Reject caller-controlled intermediate symlinks as well as a symlink at
@@ -329,6 +350,35 @@ class SQLiteTelemetryAdmissionStore:
         self._id_factory = id_factory
         self._fault_injector = fault_injector
 
+    def _new_reference(self, kind: str) -> str:
+        """Revalidate generated identifiers before any persistence effect."""
+
+        try:
+            value = self._id_factory(kind)
+        except Exception:
+            raise TelemetryAdmissionError("TA_STORAGE_INTEGRITY_FAILURE") from None
+        if (
+            not isinstance(value, str)
+            or not _safe_reference(value)
+            or any(marker in value.lower() for marker in SENSITIVE_REFERENCE_MARKERS)
+        ):
+            raise TelemetryAdmissionError("TA_STORAGE_INTEGRITY_FAILURE")
+        return value
+
+    def _timestamp(self) -> str:
+        """Return one bounded, timezone-aware callback timestamp."""
+
+        try:
+            value = self._clock()
+            if not isinstance(value, str) or not 1 <= len(value) <= 64:
+                raise ValueError
+            parsed = datetime.fromisoformat(value.replace("Z", "+00:00"))
+            if parsed.tzinfo is None or parsed.utcoffset() is None:
+                raise ValueError
+        except Exception:
+            raise TelemetryAdmissionError("TA_STORAGE_INTEGRITY_FAILURE") from None
+        return value
+
     def _connect(self) -> sqlite3.Connection:
         try:
             connection = sqlite3.connect(
@@ -383,7 +433,7 @@ class SQLiteTelemetryAdmissionStore:
                 self._fault("after_migration_statement")
             connection.execute(
                 "INSERT INTO schema_migrations(version, checksum, applied_at) VALUES (?, ?, ?)",
-                (MIGRATION_VERSION, checksum, self._clock()),
+                (MIGRATION_VERSION, checksum, self._timestamp()),
             )
             connection.execute(f"PRAGMA application_id={DATABASE_APPLICATION_ID}")
             connection.execute(f"PRAGMA user_version={DATABASE_USER_VERSION}")
@@ -574,14 +624,16 @@ class SQLiteTelemetryAdmissionStore:
                 (
                     COMPATIBILITY_MIGRATION_VERSION,
                     compatibility_migration_checksum(),
-                    self._clock(),
+                    self._timestamp(),
                 ),
             )
             connection.execute(f"PRAGMA user_version={DATABASE_USER_VERSION}")
             connection.commit()
-        except (OSError, RuntimeError, sqlite3.Error) as exc:
+        except (OSError, RuntimeError, sqlite3.Error, TelemetryAdmissionError) as exc:
             if connection.in_transaction:
                 connection.rollback()
+            if isinstance(exc, TelemetryAdmissionError):
+                raise
             raise TelemetryAdmissionError("TA_STORAGE_INTEGRITY_FAILURE") from exc
 
     @staticmethod
@@ -746,7 +798,7 @@ class SQLiteTelemetryAdmissionStore:
                 normalized = None
 
         if admission_id is None or not _safe_reference(admission_id):
-            admission_id = self._id_factory("admission")
+            admission_id = self._new_reference("admission")
         existing = connection.execute(
             "SELECT 1 FROM admission_lifecycles WHERE admission_id=?", (admission_id,)
         ).fetchone()
@@ -754,7 +806,7 @@ class SQLiteTelemetryAdmissionStore:
             reasons.add("TA_IDEMPOTENCY_CONFLICT")
             state = "REJECTED"
             normalized = None
-            admission_id = self._id_factory("admission")
+            admission_id = self._new_reference("admission")
 
         source_digest = source_digest or _fallback_digest(admission_id)
         comparison_fingerprint: str | None = None
@@ -792,7 +844,7 @@ class SQLiteTelemetryAdmissionStore:
         observation_reference = (
             str(normalized["observation_id"])
             if normalized is not None
-            else self._id_factory("observation")
+            else self._new_reference("observation")
         )
         if connection.execute(
             "SELECT 1 FROM observation_envelopes WHERE observation_id=?",
@@ -802,9 +854,9 @@ class SQLiteTelemetryAdmissionStore:
             state = "REJECTED"
             normalized = None
             comparison_fingerprint = None
-            observation_reference = self._id_factory("observation")
+            observation_reference = self._new_reference("observation")
 
-        recorded_at = self._clock()
+        recorded_at = self._timestamp()
         envelope_json = _canonical_json(normalized) if normalized is not None else None
         stub_material = {
             "observation_reference": observation_reference,
@@ -849,7 +901,7 @@ class SQLiteTelemetryAdmissionStore:
         )
         self._fault("after_lifecycle_insert")
 
-        receipt_reference = self._id_factory("receipt")
+        receipt_reference = self._new_reference("receipt")
         connection.execute(
             "INSERT INTO intake_receipts("
             "intake_receipt_reference,admission_id,source_digest,issued_at"
@@ -1019,7 +1071,7 @@ class SQLiteTelemetryAdmissionStore:
         ):
             raise ValueError("invalid limitations")
         record = {
-            "admission_record_id": self._id_factory("record"),
+            "admission_record_id": self._new_reference("record"),
             "admission_id": admission_id,
             "observation_reference": observation_reference,
             "sequence": sequence,
@@ -1037,7 +1089,7 @@ class SQLiteTelemetryAdmissionStore:
             "rejected_item_count": rejected_item_count,
             "reason_codes": list(ordered_reasons),
             "limitations": list(limitations),
-            "recorded_at": self._clock(),
+            "recorded_at": self._timestamp(),
             "actor_reference": ACTOR_REFERENCE,
         }
         digest = _sha256_json(record)
@@ -1332,7 +1384,7 @@ class SQLiteTelemetryAdmissionStore:
         if report["status"] != "PASS":
             raise TelemetryAdmissionError("TA_STORAGE_INTEGRITY_FAILURE")
         manifest_without_digest = {
-            "backup_id": self._id_factory("backup"),
+            "backup_id": self._new_reference("backup"),
             "schema_version": STORE_SCHEMA_VERSION,
             # Bind the manifest to the history actually present in the
             # snapshot. A store upgraded from the compatible fixture has a
@@ -1342,7 +1394,7 @@ class SQLiteTelemetryAdmissionStore:
             "database_sha256": _file_sha256(destination_path),
             "record_chain_digest": backup_store._chain_digest(),
             "counts": report["counts"],
-            "created_at": self._clock(),
+            "created_at": self._timestamp(),
         }
         manifest = {
             **manifest_without_digest,

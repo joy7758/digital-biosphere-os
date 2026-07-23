@@ -200,6 +200,71 @@ class AuthoritySecurityTests(unittest.TestCase):
         with self.assertRaises(TelemetryAdmissionError):
             SQLiteTelemetryAdmissionStore(path)
 
+    def test_hsr_pre_001_world_writable_direct_parent_is_rejected(self) -> None:
+        parent = Path(self.temp.name) / "world-writable-parent"
+        parent.mkdir(mode=0o700)
+        os.chmod(parent, 0o777)
+        try:
+            with self.assertRaises(TelemetryAdmissionError) as caught:
+                SQLiteTelemetryAdmissionStore(parent / "admission.sqlite3")
+            self.assertEqual(caught.exception.reason_code, "TA_STORAGE_UNAVAILABLE")
+        finally:
+            os.chmod(parent, 0o700)
+
+    def test_hsr_pre_002_generated_reference_is_revalidated_before_persistence(
+        self,
+    ) -> None:
+        canary = "ta:token:secret-canary"
+        path = Path(self.temp.name) / "generated-reference.sqlite3"
+        store = SQLiteTelemetryAdmissionStore(
+            path,
+            id_factory=lambda _kind: canary,
+        )
+
+        with self.assertRaises(TelemetryAdmissionError) as caught:
+            TelemetryAdmissionService(store).admit(make_envelope())
+
+        self.assertEqual(caught.exception.reason_code, "TA_STORAGE_INTEGRITY_FAILURE")
+        self.assertNotIn(canary, str(caught.exception))
+        for artifact in Path(self.temp.name).iterdir():
+            if artifact.is_file():
+                self.assertNotIn(canary.encode(), artifact.read_bytes())
+
+    def test_hsr_pre_002_generated_timestamp_is_revalidated_before_persistence(
+        self,
+    ) -> None:
+        canary = "Bearer-secret-clock"
+        path = Path(self.temp.name) / "generated-timestamp.sqlite3"
+        store = SQLiteTelemetryAdmissionStore(path, clock=lambda: canary)
+
+        with self.assertRaises(TelemetryAdmissionError) as caught:
+            store.initialize()
+
+        self.assertEqual(caught.exception.reason_code, "TA_STORAGE_INTEGRITY_FAILURE")
+        self.assertNotIn(canary, str(caught.exception))
+        for artifact in Path(self.temp.name).iterdir():
+            if artifact.is_file():
+                self.assertNotIn(canary.encode(), artifact.read_bytes())
+
+    def test_hsr_pre_002_callback_exception_is_not_reflected_or_persisted(
+        self,
+    ) -> None:
+        canary = "callback-exception-secret-canary"
+        path = Path(self.temp.name) / "callback-exception.sqlite3"
+
+        def fail(_kind: str) -> str:
+            raise RuntimeError(canary)
+
+        store = SQLiteTelemetryAdmissionStore(path, id_factory=fail)
+        with self.assertRaises(TelemetryAdmissionError) as caught:
+            TelemetryAdmissionService(store).admit(make_envelope())
+
+        self.assertEqual(caught.exception.reason_code, "TA_STORAGE_INTEGRITY_FAILURE")
+        self.assertNotIn(canary, str(caught.exception))
+        for artifact in Path(self.temp.name).iterdir():
+            if artifact.is_file():
+                self.assertNotIn(canary.encode(), artifact.read_bytes())
+
     def test_non_regular_store_path_is_rejected(self) -> None:
         directory = Path(self.temp.name) / "directory.sqlite3"
         directory.mkdir(mode=0o700)
