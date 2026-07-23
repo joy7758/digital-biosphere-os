@@ -1,0 +1,257 @@
+{
+  "agent_created": false,
+  "failed": 0,
+  "governed_state_modified": false,
+  "passed": 35,
+  "permission_granted": false,
+  "results": [
+    {
+      "output": "{\n  \"agent_count\": 0,\n  \"c_e_v_level_change_count\": 0,\n  \"capability_assignment_count\": 0,\n  \"current_workspace_identity_drift_count\": 1,\n  \"digital_organism_count\": 0,\n  \"errors\": [],\n  \"experiment_id\": \"DBOS-EXP-0001\",\n  \"historical_identity_validation_mode\": \"retained_manifest_binding\",\n  \"permission_grant_count\": 0,\n  \"phase\": \"completed\",\n  \"runtime_count\": 0,\n  \"status\": \"PASS\",\n  \"validator\": \"execution_chain_validator\",\n  \"warnings\": [\n    \"current workspace differs from retained historical identity binding: README.md; historical digest was not rewritten\"\n  ]\n}\n",
+      "path": "validation/attestation_validator.py",
+      "returncode": 0,
+      "status": "PASS",
+      "validator": "attestation_validator"
+    },
+    {
+      "output": "authorization_registry_validator: PASS\nnegative cases rejected: 6/6\n",
+      "path": "validation/authorization_registry_validator.py",
+      "returncode": 0,
+      "status": "PASS",
+      "validator": "authorization_registry_validator"
+    },
+    {
+      "output": "candidate_registration_validator: PASS\nnegative cases rejected: 5/5\n",
+      "path": "validation/candidate_registration_validator.py",
+      "returncode": 0,
+      "status": "PASS",
+      "validator": "candidate_registration_validator"
+    },
+    {
+      "output": "{\n  \"approved_review_count\": 0,\n  \"assigned_capability_count\": 0,\n  \"capability_claim_count\": 78,\n  \"claim_classification_counts\": {\n    \"computation\": 0,\n    \"external_action\": 0,\n    \"information\": 0,\n    \"modification\": 0,\n    \"self_evolution\": 0,\n    \"unknown\": 78\n  },\n  \"claim_status_counts\": {\n    \"autonomous\": 0,\n    \"evidenced\": 0,\n    \"governed\": 0,\n    \"pending\": 78,\n    \"rejected\": 0,\n    \"revoked\": 0,\n    \"verified\": 0,\n    \"withdrawn\": 0\n  },\n  \"entity_count\": 23,\n  \"errors\": [],\n  \"maturity_distribution\": {\n    \"C0\": 0,\n    \"C1\": 78,\n    \"C2\": 0,\n    \"C3\": 0,\n    \"C4\": 0,\n    \"C5\": 0\n  },\n  \"permission_grant_count\": 0,\n  \"review_count\": 0,\n  \"source_potential_evidence_count\": 78,\n  \"status\": \"PASS\",\n  \"unique_evidence_source_path_count\": 44,\n  \"unresolved_field_counts\": {\n    \"capability_type\": 78,\n    \"environment\": 78,\n    \"scope\": 78,\n    \"side_effect\": 78\n  }\n}\n",
+      "path": "validation/capability_claim_validator.py",
+      "returncode": 0,
+      "status": "PASS",
+      "validator": "capability_claim_validator"
+    },
+    {
+      "output": "{\n  \"assigned_capability_count\": 0,\n  \"capability_classification_counts\": {\n    \"computation\": 0,\n    \"external_action\": 0,\n    \"information\": 0,\n    \"modification\": 0,\n    \"self_evolution\": 0\n  },\n  \"entity_count\": 23,\n  \"errors\": [],\n  \"potential_capability_evidence_count\": 78,\n  \"registered_capability_count\": 0,\n  \"relationship_status_counts\": {\n    \"proposed\": 0,\n    \"unknown\": 23,\n    \"verified\": 0\n  },\n  \"status\": \"PASS\"\n}\n",
+      "path": "validation/capability_validator.py",
+      "returncode": 0,
+      "status": "PASS",
+      "validator": "capability_validator"
+    },
+    {
+      "output": "{\n  \"agent_count\": 0,\n  \"c_e_v_level_change_count\": 0,\n  \"capability_assignment_count\": 0,\n  \"current_workspace_identity_drift_count\": 1,\n  \"digital_organism_count\": 0,\n  \"errors\": [],\n  \"experiment_id\": \"DBOS-EXP-0001\",\n  \"historical_identity_validation_mode\": \"retained_manifest_binding\",\n  \"permission_grant_count\": 0,\n  \"phase\": \"completed\",\n  \"runtime_count\": 0,\n  \"status\": \"PASS\",\n  \"validator\": \"execution_chain_validator\",\n  \"warnings\": [\n    \"current workspace differs from retained historical identity binding: README.md; historical digest was not rewritten\"\n  ]\n}\n",
+      "path": "validation/capture_readiness_validator.py",
+      "returncode": 0,
+      "status": "PASS",
+      "validator": "capture_readiness_validator"
+    },
+    {
+      "output": "digital_entity_infrastructure_validator: PASS\nnegative cases rejected: 11/11\n",
+      "path": "validation/digital_entity_infrastructure_validator.py",
+      "returncode": 0,
+      "status": "PASS",
+      "validator": "digital_entity_infrastructure_validator"
+    },
+    {
+      "output": "entity_support_validator: PASS\nnegative cases rejected: 5/5\n",
+      "path": "validation/entity_support_validator.py",
+      "returncode": 0,
+      "status": "PASS",
+      "validator": "entity_support_validator"
+    },
+    {
+      "output": "PASS\nWARNING: current workspace differs from retained historical identity binding: README.md; historical digest was not rewritten\n",
+      "path": "validation/environment_collector_validator.py",
+      "returncode": 0,
+      "status": "PASS",
+      "validator": "environment_collector_validator"
+    },
+    {
+      "output": "PASS\nWARNING: current workspace differs from retained historical identity binding: README.md; historical digest was not rewritten\n",
+      "path": "validation/environment_evidence_capture_validator.py",
+      "returncode": 0,
+      "status": "PASS",
+      "validator": "environment_evidence_capture_validator"
+    },
+    {
+      "output": "PASS\nWARNING: current workspace differs from retained historical identity binding: README.md; historical digest was not rewritten\n",
+      "path": "validation/environment_qualification_validator.py",
+      "returncode": 0,
+      "status": "PASS",
+      "validator": "environment_qualification_validator"
+    },
+    {
+      "output": "{\n  \"agent_count\": 0,\n  \"c_e_v_level_change_count\": 0,\n  \"capability_assignment_count\": 0,\n  \"current_workspace_identity_drift_count\": 1,\n  \"digital_organism_count\": 0,\n  \"errors\": [],\n  \"experiment_id\": \"DBOS-EXP-0001\",\n  \"historical_identity_validation_mode\": \"retained_manifest_binding\",\n  \"permission_grant_count\": 0,\n  \"phase\": \"completed\",\n  \"runtime_count\": 0,\n  \"status\": \"PASS\",\n  \"validator\": \"execution_chain_validator\",\n  \"warnings\": [\n    \"current workspace differs from retained historical identity binding: README.md; historical digest was not rewritten\"\n  ]\n}\n",
+      "path": "validation/environment_validator.py",
+      "returncode": 0,
+      "status": "PASS",
+      "validator": "environment_validator"
+    },
+    {
+      "output": "{\n  \"agent_count\": 0,\n  \"c_e_v_level_change_count\": 0,\n  \"capability_assignment_count\": 0,\n  \"current_workspace_identity_drift_count\": 1,\n  \"digital_organism_count\": 0,\n  \"errors\": [],\n  \"experiment_id\": \"DBOS-EXP-0001\",\n  \"historical_identity_validation_mode\": \"retained_manifest_binding\",\n  \"permission_grant_count\": 0,\n  \"phase\": \"completed\",\n  \"runtime_count\": 0,\n  \"status\": \"PASS\",\n  \"validator\": \"execution_chain_validator\",\n  \"warnings\": [\n    \"current workspace differs from retained historical identity binding: README.md; historical digest was not rewritten\"\n  ]\n}\n",
+      "path": "validation/event_integrity_validator.py",
+      "returncode": 0,
+      "status": "PASS",
+      "validator": "event_integrity_validator"
+    },
+    {
+      "output": "{\n  \"agent_count\": 0,\n  \"c_e_v_level_change_count\": 0,\n  \"capability_assignment_count\": 0,\n  \"current_workspace_identity_drift_count\": 1,\n  \"digital_organism_count\": 0,\n  \"errors\": [],\n  \"experiment_id\": \"DBOS-EXP-0001\",\n  \"historical_identity_validation_mode\": \"retained_manifest_binding\",\n  \"permission_grant_count\": 0,\n  \"phase\": \"completed\",\n  \"runtime_count\": 0,\n  \"status\": \"PASS\",\n  \"validator\": \"execution_chain_validator\",\n  \"warnings\": [\n    \"current workspace differs from retained historical identity binding: README.md; historical digest was not rewritten\"\n  ]\n}\n",
+      "path": "validation/event_validator.py",
+      "returncode": 0,
+      "status": "PASS",
+      "validator": "event_validator"
+    },
+    {
+      "output": "{\n  \"approved_review_count\": 0,\n  \"assigned_capability_count\": 0,\n  \"capability_claim_count\": 78,\n  \"capability_evidence_count\": 78,\n  \"capability_maturity_distribution\": {\n    \"C0\": 0,\n    \"C1\": 78,\n    \"C2\": 0,\n    \"C3\": 0,\n    \"C4\": 0,\n    \"C5\": 0\n  },\n  \"capability_profile_count\": 78,\n  \"errors\": [],\n  \"evidence_level_distribution\": {\n    \"E0\": 0,\n    \"E1\": 78,\n    \"E2\": 0,\n    \"E3\": 0,\n    \"E4\": 0,\n    \"E5\": 0\n  },\n  \"evidence_status_distribution\": {\n    \"assessed\": 0,\n    \"independently_verified\": 0,\n    \"invalid\": 0,\n    \"observed\": 0,\n    \"pending\": 78,\n    \"revoked\": 0,\n    \"verified\": 0\n  },\n  \"permission_grant_count\": 0,\n  \"status\": \"PASS\",\n  \"unique_artifact_reference_path_count\": 44\n}\n",
+      "path": "validation/evidence_validator.py",
+      "returncode": 0,
+      "status": "PASS",
+      "validator": "evidence_validator"
+    },
+    {
+      "output": "{\n  \"agent_count\": 0,\n  \"c_e_v_level_change_count\": 0,\n  \"capability_assignment_count\": 0,\n  \"current_workspace_identity_drift_count\": 1,\n  \"digital_organism_count\": 0,\n  \"errors\": [],\n  \"experiment_id\": \"DBOS-EXP-0001\",\n  \"historical_identity_validation_mode\": \"retained_manifest_binding\",\n  \"permission_grant_count\": 0,\n  \"phase\": \"completed\",\n  \"runtime_count\": 0,\n  \"status\": \"PASS\",\n  \"validator\": \"execution_chain_validator\",\n  \"warnings\": [\n    \"current workspace differs from retained historical identity binding: README.md; historical digest was not rewritten\"\n  ]\n}\n",
+      "path": "validation/execution_chain_validator.py",
+      "returncode": 0,
+      "status": "PASS",
+      "validator": "execution_chain_validator"
+    },
+    {
+      "output": "{\n  \"agent_count\": 0,\n  \"c_e_v_level_change_count\": 0,\n  \"capability_assignment_count\": 0,\n  \"current_workspace_identity_drift_count\": 1,\n  \"digital_organism_count\": 0,\n  \"errors\": [],\n  \"experiment_id\": \"DBOS-EXP-0001\",\n  \"historical_identity_validation_mode\": \"retained_manifest_binding\",\n  \"permission_grant_count\": 0,\n  \"phase\": \"completed\",\n  \"runtime_count\": 0,\n  \"status\": \"PASS\",\n  \"validator\": \"execution_chain_validator\",\n  \"warnings\": [\n    \"current workspace differs from retained historical identity binding: README.md; historical digest was not rewritten\"\n  ]\n}\n",
+      "path": "validation/execution_context_validator.py",
+      "returncode": 0,
+      "status": "PASS",
+      "validator": "execution_context_validator"
+    },
+    {
+      "output": "PASS\nWARNING: current workspace differs from retained historical identity binding: README.md; historical digest was not rewritten\n",
+      "path": "validation/executor_identity_validator.py",
+      "returncode": 0,
+      "status": "PASS",
+      "validator": "executor_identity_validator"
+    },
+    {
+      "output": "PASS\nWARNING: current workspace differs from retained historical identity binding: README.md; historical digest was not rewritten\n",
+      "path": "validation/executor_validator.py",
+      "returncode": 0,
+      "status": "PASS",
+      "validator": "executor_validator"
+    },
+    {
+      "output": "{\n  \"agent_count\": 0,\n  \"c_e_v_level_change_count\": 0,\n  \"capability_assignment_count\": 0,\n  \"current_workspace_identity_drift_count\": 1,\n  \"digital_organism_count\": 0,\n  \"errors\": [],\n  \"experiment_id\": \"DBOS-EXP-0001\",\n  \"historical_identity_validation_mode\": \"retained_manifest_binding\",\n  \"permission_grant_count\": 0,\n  \"phase\": \"completed\",\n  \"runtime_count\": 0,\n  \"status\": \"PASS\",\n  \"validator\": \"execution_chain_validator\",\n  \"warnings\": [\n    \"current workspace differs from retained historical identity binding: README.md; historical digest was not rewritten\"\n  ]\n}\n",
+      "path": "validation/experimental_protocol_validator.py",
+      "returncode": 0,
+      "status": "PASS",
+      "validator": "experimental_protocol_validator"
+    },
+    {
+      "output": "{\n  \"agent_created_count\": 0,\n  \"c_e_v_level_change_count\": 0,\n  \"capability_count\": 0,\n  \"dependency_graph_node_count\": 23,\n  \"dependency_relationship_count\": 29,\n  \"dependency_relationship_distribution\": {\n    \"depends_on\": 6,\n    \"extends\": 1,\n    \"implements\": 2,\n    \"references\": 20,\n    \"verifies\": 0\n  },\n  \"digital_organism_count\": 0,\n  \"errors\": [],\n  \"federation_member_count\": 23,\n  \"federation_role_distribution\": {\n    \"evidence\": 3,\n    \"experimental\": 3,\n    \"foundation\": 3,\n    \"governance\": 3,\n    \"protocol\": 6,\n    \"unknown\": 1,\n    \"verification\": 4\n  },\n  \"manifest_count\": 23,\n  \"manifest_status_distribution\": {\n    \"accepted\": 0,\n    \"pending\": 23,\n    \"submitted\": 0\n  },\n  \"member_status_distribution\": {\n    \"proposed\": 23,\n    \"registered\": 0,\n    \"verified\": 0\n  },\n  \"organism_candidate_count\": 0,\n  \"permission_grant_count\": 0,\n  \"project_local_manifest_adoption_count\": 0,\n  \"repository_merge_count\": 0,\n  \"runtime_instance_count\": 0,\n  \"status\": \"PASS\",\n  \"verified_interoperability_count\": 0\n}\n",
+      "path": "validation/federation_validator.py",
+      "returncode": 0,
+      "status": "PASS",
+      "validator": "federation_validator"
+    },
+    {
+      "output": "{\n  \"agent_count\": 0,\n  \"c_e_v_level_change_count\": 0,\n  \"capability_assignment_count\": 0,\n  \"current_workspace_identity_drift_count\": 1,\n  \"digital_organism_count\": 0,\n  \"errors\": [],\n  \"experiment_id\": \"DBOS-EXP-0001\",\n  \"historical_identity_validation_mode\": \"retained_manifest_binding\",\n  \"permission_grant_count\": 0,\n  \"phase\": \"completed\",\n  \"runtime_count\": 0,\n  \"status\": \"PASS\",\n  \"validator\": \"execution_chain_validator\",\n  \"warnings\": [\n    \"current workspace differs from retained historical identity binding: README.md; historical digest was not rewritten\"\n  ]\n}\n",
+      "path": "validation/freeze_validator.py",
+      "returncode": 0,
+      "status": "PASS",
+      "validator": "freeze_validator"
+    },
+    {
+      "output": "{\n  \"agent_count\": 0,\n  \"c_e_v_level_change_count\": 0,\n  \"capability_assignment_count\": 0,\n  \"current_workspace_identity_drift_count\": 1,\n  \"digital_organism_count\": 0,\n  \"errors\": [],\n  \"experiment_id\": \"DBOS-EXP-0001\",\n  \"historical_identity_validation_mode\": \"retained_manifest_binding\",\n  \"permission_grant_count\": 0,\n  \"phase\": \"completed\",\n  \"runtime_count\": 0,\n  \"status\": \"PASS\",\n  \"validator\": \"execution_chain_validator\",\n  \"warnings\": [\n    \"current workspace differs from retained historical identity binding: README.md; historical digest was not rewritten\"\n  ]\n}\n",
+      "path": "validation/genesis_experiment_validator.py",
+      "returncode": 0,
+      "status": "PASS",
+      "validator": "genesis_experiment_validator"
+    },
+    {
+      "output": "{\n  \"c_e_v_level_change_count\": 0,\n  \"capability_count\": 0,\n  \"digital_organism_count\": 0,\n  \"errors\": [],\n  \"governance_authority_grant_count\": 0,\n  \"governance_binding_count\": 0,\n  \"governance_claim_count\": 0,\n  \"governance_evidence_count\": 0,\n  \"governance_maturity_distribution\": {\n    \"G0\": 23,\n    \"G1\": 0,\n    \"G2\": 0,\n    \"G3\": 0,\n    \"G4\": 0,\n    \"G5\": 0\n  },\n  \"governance_observation_entry_count\": 23,\n  \"observed_governance_value_count\": 0,\n  \"organism_candidate_count\": 0,\n  \"permission_grant_count\": 0,\n  \"runtime_instance_count\": 0,\n  \"status\": \"PASS\"\n}\n",
+      "path": "validation/governance_evidence_validator.py",
+      "returncode": 0,
+      "status": "PASS",
+      "validator": "governance_evidence_validator"
+    },
+    {
+      "output": "{\n  \"agent_created_count\": 0,\n  \"archetype_distribution\": {\n    \"ecology\": 1,\n    \"federation\": 1,\n    \"hierarchy\": 1\n  },\n  \"binding_count\": 0,\n  \"binding_status_distribution\": {\n    \"active\": 0,\n    \"pending\": 0,\n    \"retired\": 0,\n    \"revoked\": 0,\n    \"suspended\": 0\n  },\n  \"c_e_v_level_change_count\": 0,\n  \"capability_count\": 0,\n  \"digital_organism_count\": 0,\n  \"errors\": [],\n  \"evaluation_dimensions\": [\n    \"coordination_efficiency\",\n    \"autonomy\",\n    \"stability\",\n    \"adaptability\",\n    \"centralization_risk\"\n  ],\n  \"executed_transition_count\": 0,\n  \"governance_archetype_count\": 3,\n  \"non_null_evaluation_score_count\": 0,\n  \"organism_candidate_count\": 0,\n  \"permission_grant_count\": 0,\n  \"runtime_instance_count\": 0,\n  \"status\": \"PASS\",\n  \"transition_definition_count\": 1\n}\n",
+      "path": "validation/governance_validator.py",
+      "returncode": 0,
+      "status": "PASS",
+      "validator": "governance_validator"
+    },
+    {
+      "output": "{\n  \"classification_counts\": {\n    \"agent\": 0,\n    \"artifact\": 0,\n    \"governance_system\": 0,\n    \"protocol\": 10,\n    \"repository\": 5,\n    \"service\": 8\n  },\n  \"entity_count\": 23,\n  \"errors\": [],\n  \"path_identity_counts\": {\n    \"duplicate\": 5,\n    \"mirror\": 24,\n    \"temporary\": 113,\n    \"unknown\": 21\n  },\n  \"path_observation_count\": 163,\n  \"status\": \"PASS\"\n}\n",
+      "path": "validation/identity_validator.py",
+      "returncode": 0,
+      "status": "PASS",
+      "validator": "identity_validator"
+    },
+    {
+      "output": "{\n  \"agent_created_count\": 0,\n  \"baseline_missing_requirement_counts\": {\n    \"behavior_trace_available\": 23,\n    \"capability_verified\": 23,\n    \"evidence_level_at_least_E3\": 23,\n    \"evolution_record_available\": 23,\n    \"identity_verified\": 23,\n    \"resource_flow_recorded\": 23,\n    \"runtime_exists\": 23,\n    \"verification_level_at_least_V3\": 23\n  },\n  \"behavior_trace_count\": 0,\n  \"c_e_v_level_change_count\": 0,\n  \"candidate_count\": 0,\n  \"capability_count\": 0,\n  \"digital_organism_count\": 0,\n  \"entity_count\": 23,\n  \"errors\": [],\n  \"permission_grant_count\": 0,\n  \"qualified_candidate_count\": 0,\n  \"resource_flow_count\": 0,\n  \"runtime_instance_count\": 0,\n  \"status\": \"PASS\"\n}\n",
+      "path": "validation/organism_validator.py",
+      "returncode": 0,
+      "status": "PASS",
+      "validator": "organism_validator"
+    },
+    {
+      "output": "{\n  \"agent_count\": 0,\n  \"c_e_v_level_change_count\": 0,\n  \"capability_assignment_count\": 0,\n  \"current_workspace_identity_drift_count\": 1,\n  \"digital_organism_count\": 0,\n  \"errors\": [],\n  \"experiment_id\": \"DBOS-EXP-0001\",\n  \"historical_identity_validation_mode\": \"retained_manifest_binding\",\n  \"permission_grant_count\": 0,\n  \"phase\": \"completed\",\n  \"runtime_count\": 0,\n  \"status\": \"PASS\",\n  \"validator\": \"execution_chain_validator\",\n  \"warnings\": [\n    \"current workspace differs from retained historical identity binding: README.md; historical digest was not rewritten\"\n  ]\n}\n",
+      "path": "validation/readiness_validator.py",
+      "returncode": 0,
+      "status": "PASS",
+      "validator": "readiness_validator"
+    },
+    {
+      "output": "registration_execution_validator: PASS\nnegative cases rejected: 6/6\n",
+      "path": "validation/registration_execution_validator.py",
+      "returncode": 0,
+      "status": "PASS",
+      "validator": "registration_execution_validator"
+    },
+    {
+      "output": "PASS\nWARNING: current workspace differs from retained historical identity binding: README.md; historical digest was not rewritten\n",
+      "path": "validation/runner_validator.py",
+      "returncode": 0,
+      "status": "PASS",
+      "validator": "runner_validator"
+    },
+    {
+      "output": "{\n  \"agent_created_count\": 0,\n  \"c_e_v_level_change_count\": 0,\n  \"capability_assignment_count\": 0,\n  \"capability_count\": 0,\n  \"ecological_entity_count\": 23,\n  \"ecological_type_distribution\": {\n    \"Artifact\": 5,\n    \"Candidate Organism\": 0,\n    \"Digital Organism\": 0,\n    \"Protocol\": 10,\n    \"Runtime\": 0,\n    \"Service\": 8\n  },\n  \"entity_count\": 23,\n  \"errors\": [],\n  \"evolution_principle_count\": 5,\n  \"evolution_stage_distribution\": {\n    \"candidate-organism\": 0,\n    \"digital-organism\": 0,\n    \"ecologically-retired\": 0,\n    \"pre-organism\": 23\n  },\n  \"fitness_dimension_count\": 5,\n  \"fitness_status_distribution\": {\n    \"assessed\": 0,\n    \"invalid\": 0,\n    \"revoked\": 0,\n    \"unknown\": 23\n  },\n  \"known_fitness_score_count\": 0,\n  \"layer_mapping_count\": 12,\n  \"permission_grant_count\": 0,\n  \"status\": \"PASS\"\n}\n",
+      "path": "validation/saee_validator.py",
+      "returncode": 0,
+      "status": "PASS",
+      "validator": "saee_validator"
+    },
+    {
+      "output": "{\n  \"agent_count\": 0,\n  \"c_e_v_level_change_count\": 0,\n  \"capability_assignment_count\": 0,\n  \"current_workspace_identity_drift_count\": 1,\n  \"digital_organism_count\": 0,\n  \"errors\": [],\n  \"experiment_id\": \"DBOS-EXP-0001\",\n  \"historical_identity_validation_mode\": \"retained_manifest_binding\",\n  \"permission_grant_count\": 0,\n  \"phase\": \"completed\",\n  \"runtime_count\": 0,\n  \"status\": \"PASS\",\n  \"validator\": \"execution_chain_validator\",\n  \"warnings\": [\n    \"current workspace differs from retained historical identity binding: README.md; historical digest was not rewritten\"\n  ]\n}\n",
+      "path": "validation/snapshot_capture_validator.py",
+      "returncode": 0,
+      "status": "PASS",
+      "validator": "snapshot_capture_validator"
+    },
+    {
+      "output": "telemetry_admission_validator: PASS\nchecks: 25/25\n",
+      "path": "validation/telemetry_admission_validator.py",
+      "returncode": 0,
+      "status": "PASS",
+      "validator": "telemetry_admission_validator"
+    },
+    {
+      "output": "{\n  \"agent_created_count\": 0,\n  \"assigned_capability_count\": 0,\n  \"errors\": [],\n  \"permission_grant_count\": 0,\n  \"status\": \"PASS\",\n  \"trust_established_count\": 0,\n  \"trust_graph_node_count\": 258,\n  \"trust_graph_node_type_distribution\": {\n    \"claim\": 78,\n    \"entity\": 23,\n    \"evidence\": 78,\n    \"verification_run\": 78,\n    \"verifier\": 1\n  },\n  \"trust_graph_relationship_count\": 78,\n  \"verification_record_count\": 78,\n  \"verification_run_count\": 78,\n  \"verification_run_status_distribution\": {\n    \"completed\": 0,\n    \"in_progress\": 0,\n    \"invalid\": 0,\n    \"pending\": 78,\n    \"revoked\": 0\n  },\n  \"verifier_count\": 1,\n  \"verifier_type_definition_count\": 4,\n  \"verifier_type_distribution\": {\n    \"automated\": 1,\n    \"experimental\": 0,\n    \"external\": 0,\n    \"maintainer\": 0\n  }\n}\n",
+      "path": "validation/verification_network_validator.py",
+      "returncode": 0,
+      "status": "PASS",
+      "validator": "verification_network_validator"
+    },
+    {
+      "output": "{\n  \"assigned_capability_count\": 0,\n  \"capability_claim_count\": 78,\n  \"decision_distribution\": {\n    \"fail\": 0,\n    \"inconclusive\": 0,\n    \"pass\": 0,\n    \"pending\": 78,\n    \"revoked\": 0\n  },\n  \"entity_count\": 23,\n  \"errors\": [],\n  \"permission_grant_count\": 0,\n  \"referenced_evidence_count\": 78,\n  \"status\": \"PASS\",\n  \"verification_level_distribution\": {\n    \"V0\": 78,\n    \"V1\": 0,\n    \"V2\": 0,\n    \"V3\": 0,\n    \"V4\": 0,\n    \"V5\": 0\n  },\n  \"verification_record_count\": 78,\n  \"verification_status_distribution\": {\n    \"completed\": 0,\n    \"in_progress\": 0,\n    \"invalid\": 0,\n    \"pending\": 78,\n    \"revoked\": 0\n  },\n  \"verifier_count\": 1,\n  \"verifier_trust_distribution\": {\n    \"continuous\": 0,\n    \"independent\": 0,\n    \"local_automated\": 1,\n    \"reproducible\": 0,\n    \"self_asserted\": 0,\n    \"unknown\": 0\n  },\n  \"verifier_type_distribution\": {\n    \"automated\": 1,\n    \"experimental\": 0,\n    \"external\": 0,\n    \"maintainer\": 0\n  }\n}\n",
+      "path": "validation/verification_validator.py",
+      "returncode": 0,
+      "status": "PASS",
+      "validator": "verification_validator"
+    }
+  ],
+  "runtime_created": false,
+  "status": "PASS",
+  "validator_count": 35
+}

@@ -1,0 +1,16 @@
+{
+  "source_date_epoch": 1784678400,
+  "wheel_name": "digital_biosphere_os_preview-0.1.0.dev0-py3-none-any.whl",
+  "build_a": {
+    "sha256": "0319007826990d53addee8392be257d68966565c2242cde71e66b01ade155af9",
+    "bytes": 126088
+  },
+  "build_b": {
+    "sha256": "0319007826990d53addee8392be257d68966565c2242cde71e66b01ade155af9",
+    "bytes": 126088
+  },
+  "byte_identical": true,
+  "install_smoke": "PASS",
+  "pip_check": "PASS",
+  "release_created": false
+}

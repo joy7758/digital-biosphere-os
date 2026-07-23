@@ -1,0 +1,9 @@
+{
+  "checks": {
+    "migration_0001_initial_present": true,
+    "schema_resource_cases_present": true,
+    "semantic_mapping_present": true,
+    "source_tree_outside_cwd_import": true
+  },
+  "status": "PASS"
+}

@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "test_count": 200,
+  "test_directory": "tests/telemetry_admission",
+  "errors": [],
+  "agent_created": false,
+  "runtime_created": false,
+  "permission_granted": false,
+  "governed_state_modified": false
+}

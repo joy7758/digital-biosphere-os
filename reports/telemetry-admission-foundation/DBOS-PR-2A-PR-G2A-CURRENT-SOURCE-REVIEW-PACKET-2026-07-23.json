@@ -1,0 +1,74 @@
+{
+  "report_schema_version": "0.1",
+  "report_id": "DBOS-PR-2A-PR-G2A-CURRENT-SOURCE-REVIEW-PACKET-20260723-001",
+  "decision_reference": "DQ-018",
+  "review_gate": "PR-G2A",
+  "packet_refresh_complete": true,
+  "status": "WAITING_NATIVE_LINUX_X86_64",
+  "exact_source": {
+    "commit": "23c8f0878058f29e733b6f164572ac157c6c7d1c",
+    "tree": "27703ed64d6e885a2933a5a39139a59bab83c3c1",
+    "implementation_manifest_sha256": "43382e4274c19ef6b10ee6e76f36ddddc18f05b7dfaedfdca43ddd8d3f2abc8c",
+    "implementation_file_count": 58,
+    "implementation_bytes": 726068
+  },
+  "current_source_independent_review": {
+    "report": "DBOS-PR-2A-CURRENT-SOURCE-INDEPENDENT-TECHNICAL-REVIEW-2026-07-23.json",
+    "status": "CONDITIONALLY_RECOMMENDED_PENDING_NATIVE_X86_64",
+    "agent_review_complete": true,
+    "human_security_review_complete": false
+  },
+  "acceptance_matrix": {
+    "clean_remote_clone": "PASS",
+    "full_tests": "534/534 PASS",
+    "focused_telemetry_tests": "200/200 PASS",
+    "validators": "35/35 PASS",
+    "telemetry_validator": "25/25 PASS",
+    "otel_authorized_subsets": "32/32 + 36/36 PASS",
+    "otel_deployment_cases": "23 BLOCKED",
+    "ta_p001_to_ta_p005_current_source": "PASS_EMULATED_AMD64_NOT_SLO",
+    "automated_security_findings": 0,
+    "reproducible_wheel": true,
+    "isolated_wheel_install": "PASS",
+    "native_linux_x86_64": "NOT_ASSESSED"
+  },
+  "raw_review_inventory": {
+    "path": "raw/review-current-43382e4274c1/review-evidence-inventory.json",
+    "sha256": "e7ceb5aced0890b8243a442c02cb63dab2e5ce0ad7aca6e42a03b1e712fcfdf5",
+    "entry_count": 15
+  },
+  "agent_recommendation": {
+    "status": "CONDITIONALLY_RECOMMENDED",
+    "recommended_as": "CURRENT_SOURCE_OFFLINE_TELEMETRY_ADMISSION_REFERENCE_SLICE_PENDING_NATIVE_X86_64",
+    "not_recommended_as": "PR_G2A_HUMAN_REVIEW_READY_FULL_PR_G2_OR_PRODUCTION_TELEMETRY_SERVICE"
+  },
+  "decision_state": {
+    "pr_g2a_ready_for_human_review": false,
+    "pr_g2a_human_review_approved": false,
+    "dq_019_status": "BLOCKED_INPUT",
+    "dq_020_status": "BLOCKED_INPUT",
+    "dq_021_status": "BLOCKED_INPUT",
+    "full_pr_g2_ready": false,
+    "production_ready": false,
+    "release_authorized": false,
+    "deployment_authorized": false
+  },
+  "next_required_action": "NATIVE_LINUX_X86_64_VALIDATION_THEN_PACKET_ATTESTATION_AND_HUMAN_SECURITY_REVIEW",
+  "effects": {
+    "pr_created": false,
+    "merge_performed": false,
+    "main_modified": false,
+    "release_created": false,
+    "deployment_performed": false,
+    "collector_created": false,
+    "listener_created": false,
+    "production_database_created": false,
+    "agent_created": false,
+    "runtime_created": false,
+    "entity_created": false,
+    "permission_granted": false,
+    "canonical_evidence_created": false,
+    "saee_output_created": false,
+    "gate_approved": false
+  }
+}

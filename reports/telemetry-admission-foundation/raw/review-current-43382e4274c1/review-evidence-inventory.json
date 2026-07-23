@@ -1,0 +1,85 @@
+{
+  "canonical_evidence_created": false,
+  "entries": [
+    {
+      "bytes": 3082,
+      "path": "all-tests.json",
+      "sha256": "6253c8e88f14a5cf6938a9da17f9bfe367a7b194f23f18a102334fb7bfc9d91a"
+    },
+    {
+      "bytes": 230,
+      "path": "focused-telemetry-tests.json",
+      "sha256": "33e4d7e3785f41106f2dd0b88194f2f7592b3f1a60238e422b4d4df3cdb73f3c"
+    },
+    {
+      "bytes": 24432,
+      "path": "validator-aggregate.json",
+      "sha256": "0727bb041649aef8b9dee86c067dff4083ae5548f1dc9473c61e7754ed18acf9"
+    },
+    {
+      "bytes": 1738,
+      "path": "telemetry-admission-validator.json",
+      "sha256": "51ea03aa1f46a28a1fd71f182ef2bdea9a2eb4a32c35c07acfa2b67a46c449bd"
+    },
+    {
+      "bytes": 82838,
+      "path": "otel-conformance.json",
+      "sha256": "40edf83cd23971aa2ae85d346afa4f4be5046df9f4d98aeabc7b1282de5060dc"
+    },
+    {
+      "bytes": 3010,
+      "path": "rollback-drill.json",
+      "sha256": "81bc4d47cc94aa6040fde8b54c2bfe8639098d571d57ea08b297c7e22c3bdeb8"
+    },
+    {
+      "bytes": 2,
+      "path": "ruff.json",
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "bytes": 27,
+      "path": "ruff-format.txt",
+      "sha256": "b986f72e5fee819de817a2ad854b3a4e9213a918167065625b92daa2002369f0"
+    },
+    {
+      "bytes": 5930,
+      "path": "bandit.json",
+      "sha256": "6f9eff5c74c00760f9a7ae85a4e9925220d68e392e20abe0e08371ad96d93e4e"
+    },
+    {
+      "bytes": 452,
+      "path": "pip-audit.json",
+      "sha256": "77465c752cfedf5ffa51c035aafd3907e302ea163eaff0a13b5e64330265e37a"
+    },
+    {
+      "bytes": 11680,
+      "path": "source-manifest.json",
+      "sha256": "4e92dd05ea0ee6bf5ed9caa27ebc480654b088c349cb4f0665d19ccf561898bd"
+    },
+    {
+      "bytes": 462,
+      "path": "supply-chain-receipt.json",
+      "sha256": "2f231f70dd2bfa3c99acaed240043c7fb82756a04917c6707495e52777dd8cf2"
+    },
+    {
+      "bytes": 210,
+      "path": "wheel-install-smoke.json",
+      "sha256": "c5da087646d58cce4e8cf8071db9faa24c42f9042b779658fd3ce17af8211277"
+    },
+    {
+      "bytes": 563,
+      "path": "environment.json",
+      "sha256": "895e863d0c33a9dff88053bd6a56abe838f783e24e529ad9b60aee08381cc385"
+    },
+    {
+      "bytes": 3626,
+      "path": "delta-review.json",
+      "sha256": "d6ab322ee7400ce100090bd4bc3ea3117054fe0bff74071b5af5badf08842720"
+    }
+  ],
+  "entry_count": 15,
+  "inventory_id": "DBOS-PR-2A-CURRENT-SOURCE-REVIEW-INVENTORY-20260723-001",
+  "production_ready": false,
+  "schema_version": "0.1",
+  "source_commit": "23c8f0878058f29e733b6f164572ac157c6c7d1c"
+}

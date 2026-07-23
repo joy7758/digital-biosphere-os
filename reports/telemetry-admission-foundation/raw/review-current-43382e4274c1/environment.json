@@ -1,0 +1,23 @@
+{
+  "observed_at": "2026-07-23T02:31:07Z",
+  "execution_mode": "NATIVE_MACOS_ARM64_CLEAN_REMOTE_CLONE",
+  "os": {
+    "name": "macOS",
+    "version": "26.5.2",
+    "architecture": "arm64"
+  },
+  "python": "Python 3.12.13",
+  "tools": {
+    "ruff": "ruff 0.14.10",
+    "bandit": "bandit 1.9.4",
+    "pip_audit": "pip-audit 2.10.1"
+  },
+  "network_use": [
+    "REMOTE_GIT_CLONE",
+    "PINNED_AUDIT_TOOL_DOWNLOAD",
+    "VULNERABILITY_DATABASE_QUERY"
+  ],
+  "incoming_listener_created": false,
+  "production_data_used": false,
+  "canonical_evidence_created": false
+}
