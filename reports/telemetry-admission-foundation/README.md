@@ -6,12 +6,14 @@ review_gate=PR-G2A
 source_commit=23c8f0878058f29e733b6f164572ac157c6c7d1c
 implementation_manifest=sha256:43382e4274c19ef6b10ee6e76f36ddddc18f05b7dfaedfdca43ddd8d3f2abc8c
 clean_clone_result=PASS
-x86_64_execution_mode=EMULATED_LINUX_AMD64_ON_ARM64_HOST
-x86_64_p003_result=PASS_OBSERVER_EFFECT_HARDENED_NATIVE_VALIDATION_STILL_REQUIRED
+x86_64_execution_mode=NATIVE_LINUX_X86_64_IMMUTABLE_CONTAINER_NETWORK_NONE
+x86_64_p003_result=PASS_19200_OPERATIONS_0_ERRORS_OBSERVER_EFFECT_CONTROL_ACTIVE
 current_source_full_ta_p001_to_ta_p005_rebase_complete=true
 pr_g2a_current_source_packet_refresh_required=false
 pr_g2a_current_source_packet_refresh_complete=true
-pr_g2a_current_source_packet_status=WAITING_NATIVE_LINUX_X86_64
+native_linux_x86_64_direct_validation=PASS
+native_receipt_remote_attested=false
+pr_g2a_current_source_packet_status=NATIVE_VALIDATED_RECEIPT_PENDING_REMOTE_ATTESTATION_AND_HUMAN_SECURITY_REVIEW
 pr_g2a_current_source_independent_agent_review_complete=true
 pr_g2a_ready_for_human_review=false
 pr_g2a_human_review_approved=false
@@ -21,17 +23,18 @@ production_ready=false
 
 ## Agent Reading Order（智能体读取顺序）
 
-1. [`DBOS-PR-2A-PR-G2A-CURRENT-SOURCE-REVIEW-PACKET-2026-07-23.json`](DBOS-PR-2A-PR-G2A-CURRENT-SOURCE-REVIEW-PACKET-2026-07-23.json)：current source 的 fail-closed packet 入口；状态是 `WAITING_NATIVE_LINUX_X86_64`，不是 Human Review Ready；
-2. [`DBOS-PR-2A-CURRENT-SOURCE-INDEPENDENT-TECHNICAL-REVIEW-2026-07-23.json`](DBOS-PR-2A-CURRENT-SOURCE-INDEPENDENT-TECHNICAL-REVIEW-2026-07-23.json)：clean remote clone 独立增量复核、测试、OpenTelemetry、恢复、静态质量、供应链与剩余 blocker；
-3. [`DBOS-PR-2A-CURRENT-SOURCE-LOAD-REBASE-2026-07-23.json`](DBOS-PR-2A-CURRENT-SOURCE-LOAD-REBASE-2026-07-23.json)：当前精确源码 `23c8f08…` 的 TA-P001—TA-P005 完整模拟重基线、raw digest、边界和剩余原生平台缺口；
-4. [`DBOS-PR-2A-P003-OBSERVER-EFFECT-HARDENING-2026-07-23.json`](DBOS-PR-2A-P003-OBSERVER-EFFECT-HARDENING-2026-07-23.json)：同一源码的 TA-P003 observer-effect 根因、受控对比和 predecessor 失败保留；
-5. [`DBOS-PR-2A-LINUX-X86-64-EMULATED-COMPATIBILITY-VALIDATION-2026-07-23.json`](DBOS-PR-2A-LINUX-X86-64-EMULATED-COMPATIBILITY-VALIDATION-2026-07-23.json)：predecessor `d62b411…` 的五项模拟兼容基线和 426 个保留错误；
-6. [`DBOS-PR-2A-LINUX-ARM64-CROSS-PLATFORM-VALIDATION-2026-07-22.json`](DBOS-PR-2A-LINUX-ARM64-CROSS-PLATFORM-VALIDATION-2026-07-22.json)：predecessor `57c7b9e…` 的原生 Linux arm64 固定参考验证；
-7. [`DBOS-PR-2A-STREAMING-INTEGRITY-HARDENING-2026-07-22.json`](DBOS-PR-2A-STREAMING-INTEGRITY-HARDENING-2026-07-22.json)：predecessor 流式完整性修复和 macOS arm64 验证；
-8. [`DBOS-PR-2A-PR-G2A-REVIEW-PACKET-2026-07-22.json`](DBOS-PR-2A-PR-G2A-REVIEW-PACKET-2026-07-22.json) 与 [`DBOS-PR-2A-INDEPENDENT-TECHNICAL-REVIEW-2026-07-22.json`](DBOS-PR-2A-INDEPENDENT-TECHNICAL-REVIEW-2026-07-22.json)：predecessor packet 和独立审查，仅作历史材料；
-9. [`DBOS-PR-2A-CLEAN-CLONE-VALIDATION-2026-07-22.json`](DBOS-PR-2A-CLEAN-CLONE-VALIDATION-2026-07-22.json)：predecessor 精确远端源码、测试、OTel、恢复、供应链和 wheel；
-10. [`DBOS-PR-2A-SBOM.cdx.json`](DBOS-PR-2A-SBOM.cdx.json)：依赖拓扑 SBOM；不代表签名或发布；
-11. `fdda745c…`、`9a8c3546…`、`f09e99…` 及旧 `PR-G2` 文件：仅历史／已被替代回执。
+1. [`DBOS-PR-2A-LINUX-X86-64-NATIVE-CURRENT-SOURCE-VALIDATION-2026-07-23.json`](DBOS-PR-2A-LINUX-X86-64-NATIVE-CURRENT-SOURCE-VALIDATION-2026-07-23.json)：current source 原生 x86_64 直接验证；回执尚未远端 attested，Human Security Review 仍开放；
+2. [`DBOS-PR-2A-PR-G2A-CURRENT-SOURCE-REVIEW-PACKET-2026-07-23.json`](DBOS-PR-2A-PR-G2A-CURRENT-SOURCE-REVIEW-PACKET-2026-07-23.json)：native 验证前的 fail-closed packet 历史快照；
+3. [`DBOS-PR-2A-CURRENT-SOURCE-INDEPENDENT-TECHNICAL-REVIEW-2026-07-23.json`](DBOS-PR-2A-CURRENT-SOURCE-INDEPENDENT-TECHNICAL-REVIEW-2026-07-23.json)：clean remote clone 独立增量复核、测试、OpenTelemetry、恢复、静态质量和供应链；
+4. [`DBOS-PR-2A-CURRENT-SOURCE-LOAD-REBASE-2026-07-23.json`](DBOS-PR-2A-CURRENT-SOURCE-LOAD-REBASE-2026-07-23.json)：当前精确源码 `23c8f08…` 的 TA-P001—TA-P005 完整模拟重基线；
+5. [`DBOS-PR-2A-P003-OBSERVER-EFFECT-HARDENING-2026-07-23.json`](DBOS-PR-2A-P003-OBSERVER-EFFECT-HARDENING-2026-07-23.json)：同一源码的 TA-P003 observer-effect 根因、受控对比和 predecessor 失败保留；
+6. [`DBOS-PR-2A-LINUX-X86-64-EMULATED-COMPATIBILITY-VALIDATION-2026-07-23.json`](DBOS-PR-2A-LINUX-X86-64-EMULATED-COMPATIBILITY-VALIDATION-2026-07-23.json)：predecessor `d62b411…` 的模拟兼容基线和 426 个保留错误；
+7. [`DBOS-PR-2A-LINUX-ARM64-CROSS-PLATFORM-VALIDATION-2026-07-22.json`](DBOS-PR-2A-LINUX-ARM64-CROSS-PLATFORM-VALIDATION-2026-07-22.json)：predecessor `57c7b9e…` 的原生 Linux arm64 固定参考验证；
+8. [`DBOS-PR-2A-STREAMING-INTEGRITY-HARDENING-2026-07-22.json`](DBOS-PR-2A-STREAMING-INTEGRITY-HARDENING-2026-07-22.json)：predecessor 流式完整性修复和 macOS arm64 验证；
+9. [`DBOS-PR-2A-PR-G2A-REVIEW-PACKET-2026-07-22.json`](DBOS-PR-2A-PR-G2A-REVIEW-PACKET-2026-07-22.json) 与 [`DBOS-PR-2A-INDEPENDENT-TECHNICAL-REVIEW-2026-07-22.json`](DBOS-PR-2A-INDEPENDENT-TECHNICAL-REVIEW-2026-07-22.json)：predecessor packet 和独立审查，仅作历史材料；
+10. [`DBOS-PR-2A-CLEAN-CLONE-VALIDATION-2026-07-22.json`](DBOS-PR-2A-CLEAN-CLONE-VALIDATION-2026-07-22.json)：predecessor 精确远端源码、测试、OTel、恢复、供应链和 wheel；
+11. [`DBOS-PR-2A-SBOM.cdx.json`](DBOS-PR-2A-SBOM.cdx.json)：依赖拓扑 SBOM；不代表签名或发布；
+12. `fdda745c…`、`9a8c3546…`、`f09e99…` 及旧 `PR-G2` 文件：仅历史／已被替代回执。
 
 ## Current Boundary（当前边界）
 
@@ -40,15 +43,16 @@ production_ready=false
 Evidence、Agent、Runtime、Entity、Capability、Permission、Execution、Verification 或 SAEE
 调用。DQ-020 的 23 个部署用例没有执行。
 
-当前源码修正了并发 `tracemalloc` 对 QEMU 下 `TA-P003` 的观察者效应，并已在同一
-manifest/contract 上完成 `TA-P001`—`TA-P005` 全套重基线；五项 integrity/source binding
-均为 `PASS`。真实 Linux x86_64 原生平台仍未验证，所以当前 PR-G2A packet 仍需刷新。
+当前源码修正了并发 `tracemalloc` 对 QEMU 下 `TA-P003` 的观察者效应，并已在原生 Linux
+x86_64 上完成 exact-hash lock、534 tests、OTel 授权子集、TA-P001—TA-P005、rollback 与
+reproducible wheel 直接验证。TA-P003 完成 19,200 operations、0 errors，五项
+integrity/source binding 均为 `PASS`。
 
-当前 source 的 packet refresh 与 independent Agent review 已形成，但 packet 状态是
-`WAITING_NATIVE_LINUX_X86_64`。predecessor packet 只保留为历史审查材料；当前 source 在
-原生 x86_64 证据形成并完成远端 attestation 前不标记为 review ready。
-任何 packet ready 状态也不等于 Human Approval、完整 `PR-G2`、merge、release、deployment
-或 Production Ready。
+native direct-validation blocker 已关闭，但本回执尚未提交、推送和远端 attested，Human
+Security Review 也未完成。当前状态是
+`NATIVE_VALIDATED_RECEIPT_PENDING_REMOTE_ATTESTATION_AND_HUMAN_SECURITY_REVIEW`，仍不是 Human
+Review Ready 或 Approved。任何 packet/receipt 状态也不等于完整 `PR-G2`、merge、release、
+deployment、SLO 或 Production Ready。
 
 ## Historical Boundary（历史边界）
 
@@ -60,4 +64,6 @@ SLO 声明。当前 P003 修正材料从
 [`raw/p003-observer-effect-43382e4274c1/`](raw/p003-observer-effect-43382e4274c1/)
 读取；完整五项模拟 predecessor 从
 [`raw/linux-amd64-emulated-6d1bcbbfc2cb/`](raw/linux-amd64-emulated-6d1bcbbfc2cb/)
+读取；当前原生 x86_64 回执从
+[`raw/linux-x86_64-native-43382e4274c1/`](raw/linux-x86_64-native-43382e4274c1/)
 读取；`raw/current-b6c03faf50bf/` 保留为 predecessor macOS arm64 参考材料。

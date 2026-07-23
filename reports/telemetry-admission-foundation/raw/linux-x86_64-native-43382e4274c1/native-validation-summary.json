@@ -1,0 +1,72 @@
+{
+  "report_schema_version": "0.1",
+  "report_id": "DBOS-DQ018-NATIVE-LINUX-X86-64-CURRENT-SOURCE-20260723-001",
+  "observed_at": "2026-07-23T12:24:04+08:00",
+  "decision_reference": "DQ-018",
+  "review_gate": "PR-G2A",
+  "execution": {
+    "mode": "NATIVE_LINUX_X86_64_IMMUTABLE_CONTAINER_NETWORK_NONE",
+    "host_architecture": "x86_64",
+    "container_architecture": "amd64",
+    "python": "3.12.13",
+    "sqlite": "3.40.1",
+    "base_image_digest": "sha256:72d3d75f2639ab82b34b29390ad3d6e0827c775befee94edda8e9976818f488d",
+    "runtime_dependencies_installed_from_exact_hash_lock": true,
+    "build_dependencies_installed_from_exact_hash_lock": true,
+    "test_network_mode": "none"
+  },
+  "exact_source": {
+    "commit": "23c8f0878058f29e733b6f164572ac157c6c7d1c",
+    "tree": "27703ed64d6e885a2933a5a39139a59bab83c3c1",
+    "manifest_sha256": "43382e4274c19ef6b10ee6e76f36ddddc18f05b7dfaedfdca43ddd8d3f2abc8c",
+    "manifest_file_count": 58,
+    "manifest_bytes": 726068,
+    "source_stable_for_all_loads": true,
+    "checkout_clean_after_validation": true
+  },
+  "results": {
+    "runtime_lock_install": "PASS",
+    "pip_check": "PASS",
+    "full_tests": "534/534 PASS",
+    "focused_telemetry_tests": "200/200 PASS",
+    "validators": "30 PASS + 5 EXPECTED_EXTERNAL_SOURCE_FAIL_CLOSED + 0 UNEXPECTED",
+    "telemetry_validator": "25/25 PASS",
+    "otel_semantic_authorized_subset": "32/32 PASS",
+    "otel_schema_resource_authorized_subset": "36/36 PASS",
+    "otel_deployment_cases": "23 BLOCKED_NOT_AUTHORIZED",
+    "ta_p001": "PASS",
+    "ta_p002": "PASS",
+    "ta_p003": "PASS_19200_OPERATIONS_0_ERRORS_OBSERVER_EFFECT_CONTROL_ACTIVE",
+    "ta_p004": "PASS_10_OF_10_BACKUP_RESTORE",
+    "ta_p005": "PASS_3600_SECONDS_16787_OPERATIONS_59_PERIODIC_INTEGRITY_CHECKS_0_ERRORS",
+    "rollback": "PASS_25_RECEIPTS_0_MISMATCH_FAILED_SOURCE_RETAINED_NO_AUTOMATIC_SWITCH",
+    "reproducible_wheel": "PASS_BYTE_IDENTICAL_SHA256_0319007826990d53addee8392be257d68966565c2242cde71e66b01ade155af9",
+    "isolated_wheel_install": "PASS"
+  },
+  "gate_interpretation": {
+    "native_linux_x86_64_direct_validation": "PASS",
+    "human_security_review_complete": false,
+    "pr_g2a_ready_for_human_review": false,
+    "pr_g2a_human_review_approved": false,
+    "full_pr_g2_ready": false,
+    "production_ready": false,
+    "next_gate": "REMOTE_RECEIPT_ATTESTATION_THEN_HUMAN_SECURITY_REVIEW"
+  },
+  "effects": {
+    "pr_created": false,
+    "merge_performed": false,
+    "main_modified": false,
+    "release_created": false,
+    "deployment_performed": false,
+    "collector_created": false,
+    "listener_created": false,
+    "production_database_created": false,
+    "agent_created": false,
+    "runtime_created": false,
+    "entity_created": false,
+    "permission_granted": false,
+    "canonical_evidence_created": false,
+    "saee_output_created": false,
+    "gate_approved": false
+  }
+}

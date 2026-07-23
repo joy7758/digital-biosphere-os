@@ -1,0 +1,19 @@
+authorization_registry 34 PASS
+candidate_registration 27 PASS
+conformance 18 PASS
+developer_quickstart 8 PASS
+entity_registration 27 PASS
+entity_support 77 PASS
+execution_chain 4 PASS
+mcp_adapter 21 PASS
+mcp_reference_demo 15 PASS
+multi_agent_trust_demo 11 PASS
+package_preview 6 PASS
+schema_validator 33 PASS
+sdk 29 PASS
+telemetry_admission 200 PASS
+test_tooling 3 PASS
+validation_result_contract 21 PASS
+directories=16
+tests=534
+status=PASS

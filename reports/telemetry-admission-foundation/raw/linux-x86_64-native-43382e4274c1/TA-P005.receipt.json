@@ -1,0 +1,27 @@
+{
+  "authority_effects": {
+    "agent_created": false,
+    "capability_created": false,
+    "collector_created": false,
+    "entity_created": false,
+    "evidence_created": false,
+    "execution_created": false,
+    "gate_state_changed": false,
+    "network_endpoint_created": false,
+    "permission_created": false,
+    "production_ready_declared": false,
+    "runtime_created": false,
+    "saee_called": false,
+    "verification_created": false
+  },
+  "case_id": "TA-P005",
+  "integrity_status": "PASS",
+  "result_artifact": {
+    "digest": "sha256:5a634993d2b2c336ed0fd348153ee8fa6cf9a136a5463a4a623ef4e01bef5298",
+    "mode": "0o600",
+    "overwrite_permitted": false,
+    "path": "/artifacts/TA-P005.json",
+    "size_bytes": 49756
+  },
+  "source_binding_result": "PASS"
+}

@@ -1,0 +1,24 @@
+{
+  "schema_version": "0.1",
+  "execution_mode": "NATIVE_LINUX_X86_64_IMMUTABLE_CONTAINER_NETWORK_NONE",
+  "result": "PASS_WITH_EXPECTED_EXTERNAL_SOURCE_FAIL_CLOSED",
+  "validator_count": 35,
+  "passed": 30,
+  "expected_fail_closed": 5,
+  "unexpected_failures": 0,
+  "expected_fail_closed_results": [
+    {"validator": "capability_claim_validator", "failure_class": "EXTERNAL_SOURCE_PATHS_UNAVAILABLE_IN_ISOLATED_CHECKOUT"},
+    {"validator": "capability_validator", "failure_class": "EXTERNAL_SOURCE_PATHS_UNAVAILABLE_IN_ISOLATED_CHECKOUT"},
+    {"validator": "evidence_validator", "failure_class": "EXTERNAL_SOURCE_PATHS_UNAVAILABLE_IN_ISOLATED_CHECKOUT"},
+    {"validator": "federation_validator", "failure_class": "EXTERNAL_SOURCE_PATHS_UNAVAILABLE_IN_ISOLATED_CHECKOUT"},
+    {"validator": "identity_validator", "failure_class": "EXTERNAL_SOURCE_PATHS_UNAVAILABLE_IN_ISOLATED_CHECKOUT"}
+  ],
+  "interpretation": "FAIL_CLOSED_IS_EXPECTED; NO EXTERNAL SOURCE WAS FABRICATED OR BYPASSED",
+  "effects": {
+    "agent_created": false,
+    "runtime_created": false,
+    "entity_created": false,
+    "permission_granted": false,
+    "governed_state_modified": false
+  }
+}

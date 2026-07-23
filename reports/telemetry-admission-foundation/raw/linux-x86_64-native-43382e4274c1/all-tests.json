@@ -1,0 +1,33 @@
+{
+  "schema_version": "0.1",
+  "runner": "python -m unittest discover -s <test-directory> -v",
+  "execution_mode": "NATIVE_LINUX_X86_64_IMMUTABLE_CONTAINER_NETWORK_NONE",
+  "status": "PASS",
+  "test_directory_count": 16,
+  "test_count": 534,
+  "results": [
+    {"test_directory": "tests/authorization_registry", "test_count": 34, "status": "PASS"},
+    {"test_directory": "tests/candidate_registration", "test_count": 27, "status": "PASS"},
+    {"test_directory": "tests/conformance", "test_count": 18, "status": "PASS"},
+    {"test_directory": "tests/developer_quickstart", "test_count": 8, "status": "PASS"},
+    {"test_directory": "tests/entity_registration", "test_count": 27, "status": "PASS"},
+    {"test_directory": "tests/entity_support", "test_count": 77, "status": "PASS"},
+    {"test_directory": "tests/execution_chain", "test_count": 4, "status": "PASS"},
+    {"test_directory": "tests/mcp_adapter", "test_count": 21, "status": "PASS"},
+    {"test_directory": "tests/mcp_reference_demo", "test_count": 15, "status": "PASS"},
+    {"test_directory": "tests/multi_agent_trust_demo", "test_count": 11, "status": "PASS"},
+    {"test_directory": "tests/package_preview", "test_count": 6, "status": "PASS"},
+    {"test_directory": "tests/schema_validator", "test_count": 33, "status": "PASS"},
+    {"test_directory": "tests/sdk", "test_count": 29, "status": "PASS"},
+    {"test_directory": "tests/telemetry_admission", "test_count": 200, "status": "PASS"},
+    {"test_directory": "tests/test_tooling", "test_count": 3, "status": "PASS"},
+    {"test_directory": "tests/validation_result_contract", "test_count": 21, "status": "PASS"}
+  ],
+  "effects": {
+    "agent_created": false,
+    "runtime_created": false,
+    "entity_created": false,
+    "permission_granted": false,
+    "governed_state_modified": false
+  }
+}

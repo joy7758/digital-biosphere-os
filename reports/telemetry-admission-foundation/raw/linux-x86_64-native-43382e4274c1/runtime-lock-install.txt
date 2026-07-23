@@ -1,0 +1,11 @@
+Looking in links: /wheelhouse
+Processing /wheelhouse/attrs-26.1.0-py3-none-any.whl (from -r requirements/telemetry-admission-runtime-py312-linux-x86_64.lock (line 11))
+Processing /wheelhouse/jsonschema-4.26.0-py3-none-any.whl (from -r requirements/telemetry-admission-runtime-py312-linux-x86_64.lock (line 13))
+Processing /wheelhouse/jsonschema_specifications-2025.9.1-py3-none-any.whl (from -r requirements/telemetry-admission-runtime-py312-linux-x86_64.lock (line 15))
+Processing /wheelhouse/pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (from -r requirements/telemetry-admission-runtime-py312-linux-x86_64.lock (line 17))
+Processing /wheelhouse/referencing-0.37.0-py3-none-any.whl (from -r requirements/telemetry-admission-runtime-py312-linux-x86_64.lock (line 19))
+Processing /wheelhouse/rpds_py-2026.6.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (from -r requirements/telemetry-admission-runtime-py312-linux-x86_64.lock (line 21))
+Processing /wheelhouse/typing_extensions-4.16.0-py3-none-any.whl (from -r requirements/telemetry-admission-runtime-py312-linux-x86_64.lock (line 23))
+Installing collected packages: typing-extensions, rpds-py, PyYAML, attrs, referencing, jsonschema-specifications, jsonschema
+Successfully installed PyYAML-6.0.3 attrs-26.1.0 jsonschema-4.26.0 jsonschema-specifications-2025.9.1 referencing-0.37.0 rpds-py-2026.6.3 typing-extensions-4.16.0
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.

@@ -1,0 +1,171 @@
+{
+  "canonical_entries_sha256": "4967bc673b5b50df9f7e29ae0207d508ef05628a4dc8729b5f3c1a30407f8f28",
+  "canonical_evidence_created": false,
+  "entries": [
+    {
+      "path": "README.md",
+      "sha256": "dda414661236eb4c75acc0cab12710b9e0e84f62b9cf5a9f2b6ebd6dd0872e1c",
+      "size_bytes": 3119
+    },
+    {
+      "path": "TA-P001.json",
+      "sha256": "7d948905ef107944fa783eefcf6d60cc71da3c109d00d3646e31009e9b753846",
+      "size_bytes": 28849
+    },
+    {
+      "path": "TA-P001.receipt.json",
+      "sha256": "c4484d988728a92b6f026568c15875fb78d0df8faecbf067d13f568102977c20",
+      "size_bytes": 777
+    },
+    {
+      "path": "TA-P002.json",
+      "sha256": "262b246a4d7e3ec35bc31696189d2a543d3a7a9171b8b9c6dc7abaccc0c18723",
+      "size_bytes": 29127
+    },
+    {
+      "path": "TA-P002.receipt.json",
+      "sha256": "dcf508ff4e0e5a4a562cf53bb2c71702634384269a05865686e17ae47eba7847",
+      "size_bytes": 777
+    },
+    {
+      "path": "TA-P003.json",
+      "sha256": "6046451db83e1ef9732c6da8cf8d946eb1611a69d62609d56d30eaf95bf1f977",
+      "size_bytes": 29055
+    },
+    {
+      "path": "TA-P003.receipt.json",
+      "sha256": "dab80ca124864d0eca89d630b796e51962857dfd220a003a8ef8790efda89707",
+      "size_bytes": 777
+    },
+    {
+      "path": "TA-P004.json",
+      "sha256": "56ffd69c44aa390459f7a776149c4113e921429dace394699ed3b54852861ef6",
+      "size_bytes": 28928
+    },
+    {
+      "path": "TA-P004.receipt.json",
+      "sha256": "c8809936b963b547aa0370724ff2a5d97a799bb18183e70858ae65de334b8cd1",
+      "size_bytes": 777
+    },
+    {
+      "path": "TA-P005.json",
+      "sha256": "5a634993d2b2c336ed0fd348153ee8fa6cf9a136a5463a4a623ef4e01bef5298",
+      "size_bytes": 49756
+    },
+    {
+      "path": "TA-P005.receipt.json",
+      "sha256": "dd9bfd1a8c7977a895e3a21dfb0b7e303c777ac6b66d0e68521fa42377cc2377",
+      "size_bytes": 777
+    },
+    {
+      "path": "all-tests-summary.txt",
+      "sha256": "cd9ea55eb2ffbbdd94c297a8ef71016bd7c5117d105a7554fa924edd84f00b39",
+      "size_bytes": 443
+    },
+    {
+      "path": "all-tests.json",
+      "sha256": "0dce8b54afea394c1d9f73a4e02515d7bf9db2a9ef2b0bd5faac09b369f19d77",
+      "size_bytes": 1821
+    },
+    {
+      "path": "attempt-1-focused-telemetry-tests.txt",
+      "sha256": "253d729d3373d2f52b78879bdda773c00e1f5437c59d8176a9b8f40530c52bc1",
+      "size_bytes": 1033
+    },
+    {
+      "path": "attempt-history.json",
+      "sha256": "d06697f63c5c9c9f24856dfbcfb81cbdd70713c3b9382d7c6c3b4ecfcdaad23a",
+      "size_bytes": 1721
+    },
+    {
+      "path": "build-lock-install.txt",
+      "sha256": "f31fa7b046fe5cfbda5fd8516ba6fe26a07a3b76a9bf4f557f02ff1f259a1119",
+      "size_bytes": 1179
+    },
+    {
+      "path": "environment.json",
+      "sha256": "ca8bf79c3fa3b2c49af55fbfe9a7b53edfa5c6c0878f8c45f9686aacbe747ca0",
+      "size_bytes": 376
+    },
+    {
+      "path": "focused-telemetry-tests.txt",
+      "sha256": "a1f8e820dc29fb8c33442e138f29dec5f68e4fcb0d6942e9b34c4b32da602a1e",
+      "size_bytes": 31968
+    },
+    {
+      "path": "isolated-pip-check.txt",
+      "sha256": "9261363b733079a641c2e4cc9bc46ffa1d8336945a87f807b6cf68847dbc9b09",
+      "size_bytes": 30
+    },
+    {
+      "path": "native-validation-summary.json",
+      "sha256": "34b1024c3c3692983fd273c08ad037dde33a69ba83c04c7faf6e13fab06808b5",
+      "size_bytes": 2888
+    },
+    {
+      "path": "otel-conformance.json",
+      "sha256": "1bdadb0199d98dbcdef68da72ec0686aa85b32604beffe7c784311602157faf9",
+      "size_bytes": 82854
+    },
+    {
+      "path": "pip-check.txt",
+      "sha256": "9261363b733079a641c2e4cc9bc46ffa1d8336945a87f807b6cf68847dbc9b09",
+      "size_bytes": 30
+    },
+    {
+      "path": "pip-version.txt",
+      "sha256": "9b8b208baf5016c06decf2283bcb313c286a1578942785733075381ba38a7edd",
+      "size_bytes": 74
+    },
+    {
+      "path": "python-version.txt",
+      "sha256": "8e301d53189bab29462d4407bfaa6b40d4fb58dda0053396422304677a016ef2",
+      "size_bytes": 58
+    },
+    {
+      "path": "rollback-drill.json",
+      "sha256": "ad4504effe8f4cf10bba5ba0adf9965a57f4687e3220757f0b12190499c4be51",
+      "size_bytes": 3026
+    },
+    {
+      "path": "runtime-lock-install.txt",
+      "sha256": "d160e53d21dbe4e58628ef2d17d3faf3cbe085418454d3cb793ba64adaa9860d",
+      "size_bytes": 1803
+    },
+    {
+      "path": "source-manifest.json",
+      "sha256": "4e92dd05ea0ee6bf5ed9caa27ebc480654b088c349cb4f0665d19ccf561898bd",
+      "size_bytes": 11680
+    },
+    {
+      "path": "telemetry-admission-validator.txt",
+      "sha256": "34d3bb2833ccf3a06e21092ab94a93e8b1a857616765fd15d7edd448d827bc9a",
+      "size_bytes": 50
+    },
+    {
+      "path": "validator-aggregate.json",
+      "sha256": "6a5442c7a1a4b5f867447cc009ed0699157eacfc4f17e78e54ecf5715ebce250",
+      "size_bytes": 1169
+    },
+    {
+      "path": "validator-summary.txt",
+      "sha256": "a09426e4df4d4215605a9bc730dd44873fb7cdb49b38cc1a4504e30a5ca8a5bb",
+      "size_bytes": 1123
+    },
+    {
+      "path": "wheel-hashes.txt",
+      "sha256": "aea9cc6bf34a2485001fcba449382c0ebc34d70775bcb81fd5a6f60d7a2d089a",
+      "size_bytes": 282
+    },
+    {
+      "path": "wheel-install-smoke.json",
+      "sha256": "0f814dd6d0e687813b8e7d5848421edda26e4e0fc07a20962bf7dfc0b64ee748",
+      "size_bytes": 204
+    }
+  ],
+  "entry_count": 32,
+  "inventory_id": "DBOS-DQ018-NATIVE-LINUX-X86-64-CURRENT-SOURCE-INVENTORY-20260723-001",
+  "production_ready": false,
+  "schema_version": "0.1",
+  "total_bytes": 316531
+}

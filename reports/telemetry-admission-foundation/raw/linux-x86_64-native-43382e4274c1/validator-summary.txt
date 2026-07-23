@@ -1,0 +1,37 @@
+attestation_validator PASS
+authorization_registry_validator PASS
+candidate_registration_validator PASS
+capability_claim_validator FAIL rc=1
+capability_validator FAIL rc=1
+capture_readiness_validator PASS
+digital_entity_infrastructure_validator PASS
+entity_support_validator PASS
+environment_collector_validator PASS
+environment_evidence_capture_validator PASS
+environment_qualification_validator PASS
+environment_validator PASS
+event_integrity_validator PASS
+event_validator PASS
+evidence_validator FAIL rc=1
+execution_chain_validator PASS
+execution_context_validator PASS
+executor_identity_validator PASS
+executor_validator PASS
+experimental_protocol_validator PASS
+federation_validator FAIL rc=1
+freeze_validator PASS
+genesis_experiment_validator PASS
+governance_evidence_validator PASS
+governance_validator PASS
+identity_validator FAIL rc=1
+organism_validator PASS
+readiness_validator PASS
+registration_execution_validator PASS
+runner_validator PASS
+saee_validator PASS
+snapshot_capture_validator PASS
+telemetry_admission_validator PASS
+verification_network_validator PASS
+verification_validator PASS
+passed=30
+failed=5

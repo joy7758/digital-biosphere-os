@@ -1,0 +1,11 @@
+{
+  "base_image_digest": "sha256:72d3d75f2639ab82b34b29390ad3d6e0827c775befee94edda8e9976818f488d",
+  "cpu_count": 2,
+  "execution_mode": "NATIVE_LINUX_X86_64_IMMUTABLE_CONTAINER",
+  "machine": "x86_64",
+  "network_mode": "none",
+  "platform": "Linux-6.8.0-71-generic-x86_64-with-glibc2.36",
+  "python": "3.12.13",
+  "python_implementation": "CPython",
+  "sqlite": "3.40.1"
+}

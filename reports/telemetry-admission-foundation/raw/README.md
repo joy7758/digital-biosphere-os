@@ -3,6 +3,7 @@
 ```text
 current_exact_source_full_load_rebase_receipt=current-source-rebase-43382e4274c1/
 current_exact_source_p003_observer_effect_receipt=p003-observer-effect-43382e4274c1/
+current_exact_source_native_linux_x86_64_receipt=linux-x86_64-native-43382e4274c1/
 predecessor_full_emulated_amd64_receipt=linux-amd64-emulated-6d1bcbbfc2cb/
 latest_native_linux_arm64_reference_receipt=linux-arm64-d0951d6c6252/
 predecessor_macos_arm64_reference_receipt=current-b6c03faf50bf/
@@ -12,6 +13,18 @@ production_ready=false
 ```
 
 ## Current Exact Source（当前精确源码）
+
+当前远端源码 `23c8f08…` 的原生 Linux x86_64 direct validation（直接验证）入口是：
+
+- [`linux-x86_64-native-43382e4274c1/`](linux-x86_64-native-43382e4274c1/)
+- source commit `23c8f0878058f29e733b6f164572ac157c6c7d1c` / tree `27703ed…d3c1`
+- manifest `sha256:43382e4274c19ef6b10ee6e76f36ddddc18f05b7dfaedfdca43ddd8d3f2abc8c`
+- immutable Python 3.12.13 amd64 image、exact-hash locks、test network `none`
+- 534/534 tests；200/200 telemetry tests；25/25 telemetry validator
+- 30 validators `PASS` + 5 expected external-source fail closed；0 unexpected
+- OTel authorized subset 32/32 + 36/36；23 deployment cases `BLOCKED`
+- TA-P001—TA-P005、rollback、byte-identical wheel、isolated install `PASS`
+- native direct validation `PASS`，但不是 SLO、Human Review、gate approval 或 Production Ready
 
 当前远端源码 `23c8f08…` 的完整 load rebase（负载重基线）入口是：
 

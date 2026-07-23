@@ -1,0 +1,56 @@
+{
+  "schema_version": "0.1",
+  "attempts": [
+    {
+      "attempt_id": "FOUNDATION-001",
+      "result": "ORCHESTRATION_FAILED_BEFORE_TEST_EXECUTION",
+      "failure_class": "UNITTEST_DISCOVERY_TOP_LEVEL_ARGUMENT_INCOMPATIBLE_WITH_NAMESPACE_PACKAGE",
+      "test_count": 0,
+      "source_or_product_failure": false,
+      "retained_log": "attempt-1-focused-telemetry-tests.txt"
+    },
+    {
+      "attempt_id": "FOUNDATION-002",
+      "result": "PASS",
+      "correction": "REMOVE_INCOMPATIBLE_TOP_LEVEL_ARGUMENT_ONLY",
+      "focused_test_count": 200,
+      "telemetry_validator_checks": 25
+    },
+    {
+      "attempt_id": "TA-P003-SUMMARY-001",
+      "result": "POST_PROCESSING_FAILED_AFTER_WORKLOAD_PASS",
+      "failure_class": "SUMMARY_FIELD_LOOKUP_KEY_ERROR",
+      "workload_rerun": false,
+      "retained_result": "TA-P003.json",
+      "retained_receipt": "TA-P003.receipt.json"
+    },
+    {
+      "attempt_id": "VALIDATORS-ORCHESTRATION-001",
+      "result": "NOT_EXECUTED",
+      "failure_class": "LOCAL_SHELL_QUOTING_ERROR",
+      "validator_count": 0
+    },
+    {
+      "attempt_id": "VALIDATORS-ORCHESTRATION-002",
+      "result": "NOT_EXECUTED",
+      "failure_class": "CONTAINER_STDIN_NOT_ATTACHED",
+      "validator_count": 0
+    },
+    {
+      "attempt_id": "VALIDATORS-EXECUTION-003",
+      "result": "PASS_WITH_EXPECTED_EXTERNAL_SOURCE_FAIL_CLOSED",
+      "passed": 30,
+      "expected_fail_closed": 5,
+      "unexpected_failures": 0
+    }
+  ],
+  "failures_deleted": false,
+  "successful_workload_overwritten": false,
+  "authority_effects": {
+    "agent_created": false,
+    "runtime_created": false,
+    "entity_created": false,
+    "permission_granted": false,
+    "gate_state_changed": false
+  }
+}
