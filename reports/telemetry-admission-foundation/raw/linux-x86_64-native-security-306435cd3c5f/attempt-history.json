@@ -1,0 +1,32 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "failure": "rollback work directory was pre-created although the tool requires a nonexistent path",
+      "preserved_artifacts": [
+        "attempt-1-rollback-drill-empty.json",
+        "attempt-1-rollback-orchestration.json"
+      ],
+      "product_failure": false,
+      "status": "FAILED_ORCHESTRATION",
+      "step": "NATIVE_BATCH_ROLLBACK"
+    },
+    {
+      "attempt": 2,
+      "automatic_switch_performed": false,
+      "failed_source_retained": true,
+      "status": "PASS",
+      "step": "NATIVE_ROLLBACK"
+    },
+    {
+      "attempt": 2,
+      "expected_external_source_fail_closed": 5,
+      "passed": 30,
+      "status": "PASS_WITH_EXPECTED_EXTERNAL_SOURCE_FAIL_CLOSED",
+      "step": "VALIDATOR_CLASSIFICATION",
+      "unexpected_failures": 0
+    }
+  ],
+  "failure_history_deleted": false,
+  "history_schema_version": "0.1"
+}

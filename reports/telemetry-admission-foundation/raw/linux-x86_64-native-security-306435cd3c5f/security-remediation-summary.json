@@ -1,0 +1,38 @@
+{
+  "automated_result_ne_human_review": true,
+  "exact_source_commit": "ee90c0c84964f1f3e4dbeb8dffaf888f9822b6a5",
+  "exact_source_manifest": "sha256:306435cd3c5fc65e46995f0e2a57b1322f950889af350f1b0bcbd13c35644fd9",
+  "findings": {
+    "HSR-PRE-001": {
+      "control": "DIRECT_PARENT_MUST_BE_CURRENT_USER_OWNED_AND_NOT_GROUP_OR_WORLD_WRITABLE",
+      "native_test": "test_hsr_pre_001_world_writable_direct_parent_is_rejected",
+      "prior_severity": "HIGH",
+      "status": "CLOSED_BY_REMEDIATION_PENDING_INDEPENDENT_ATTESTATION"
+    },
+    "HSR-PRE-002": {
+      "control": "GENERATED_REFERENCES_AND_TIMESTAMPS_REVALIDATED_BEFORE_PERSISTENCE_WITH_STABLE_NON_REFLECTING_ERROR",
+      "native_tests": [
+        "test_hsr_pre_002_generated_reference_is_revalidated_before_persistence",
+        "test_hsr_pre_002_generated_timestamp_is_revalidated_before_persistence",
+        "test_hsr_pre_002_callback_exception_is_not_reflected_or_persisted"
+      ],
+      "prior_severity": "HIGH",
+      "status": "CLOSED_BY_REMEDIATION_PENDING_INDEPENDENT_ATTESTATION"
+    },
+    "HSR-PRE-003": {
+      "boundary": "DIGEST_IS_NOT_SIGNATURE_DQ_019_PR_G2B",
+      "severity": "MEDIUM",
+      "status": "OPEN_SCOPED_RESIDUAL"
+    },
+    "HSR-PRE-004": {
+      "boundary": "PRE_PARSE_AND_DECOMPRESSION_BUDGET_BEFORE_DQ_020_LISTENER",
+      "severity": "MEDIUM",
+      "status": "OPEN_SCOPED_RESIDUAL"
+    }
+  },
+  "human_security_review_complete": false,
+  "native_focused_tests": "204/204 PASS",
+  "pr_g2a_human_review_approved": false,
+  "production_ready": false,
+  "summary_schema_version": "0.1"
+}

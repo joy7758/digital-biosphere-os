@@ -1,0 +1,7 @@
+{
+  "attempt": 1,
+  "failure": "rollback work directory was pre-created although tool requires a nonexistent path",
+  "history_preserved": true,
+  "product_failure": false,
+  "status": "FAILED_ORCHESTRATION"
+}

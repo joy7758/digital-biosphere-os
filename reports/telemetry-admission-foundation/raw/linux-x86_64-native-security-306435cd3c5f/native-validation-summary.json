@@ -1,0 +1,88 @@
+{
+  "decision_reference": "DQ-018",
+  "effects": {
+    "agent_created": false,
+    "canonical_evidence_created": false,
+    "collector_created": false,
+    "deployment_performed": false,
+    "entity_created": false,
+    "gate_approved": false,
+    "listener_created": false,
+    "main_modified": false,
+    "merge_performed": false,
+    "permission_granted": false,
+    "pr_created": false,
+    "production_database_created": false,
+    "release_created": false,
+    "runtime_created": false,
+    "saee_output_created": false
+  },
+  "exact_source": {
+    "bundle_sha256": "4953419967eb45180be133c8734582470698399248325e6e45a4f647d6347563",
+    "checkout_clean_after_validation": true,
+    "commit": "ee90c0c84964f1f3e4dbeb8dffaf888f9822b6a5",
+    "manifest_bytes": 730759,
+    "manifest_file_count": 58,
+    "manifest_sha256": "306435cd3c5fc65e46995f0e2a57b1322f950889af350f1b0bcbd13c35644fd9",
+    "source_stable_for_all_loads": true,
+    "tree": "a8f2768b707c467607d4939d3e797327af4e9d31"
+  },
+  "execution": {
+    "base_image_digest": "sha256:72d3d75f2639ab82b34b29390ad3d6e0827c775befee94edda8e9976818f488d",
+    "build_dependencies_installed_from_exact_hash_lock": true,
+    "container_architecture": "amd64",
+    "host_architecture": "x86_64",
+    "mode": "NATIVE_LINUX_X86_64_IMMUTABLE_CONTAINER_NETWORK_NONE",
+    "python": "3.12.13",
+    "runtime_dependencies_installed_from_exact_hash_lock": true,
+    "sqlite": "3.40.1",
+    "test_network_mode": "none"
+  },
+  "gate_interpretation": {
+    "full_pr_g2_ready": false,
+    "human_security_review_complete": false,
+    "native_linux_x86_64_direct_validation": "PASS",
+    "next_gate": "REMOTE_RECEIPT_ATTESTATION_AND_INDEPENDENT_REMEDIATION_REVIEW",
+    "pr_g2a_human_review_approved": false,
+    "pr_g2a_ready_for_human_review": false,
+    "production_ready": false
+  },
+  "observed_at": "2026-07-23T06:27:11.933513+00:00",
+  "report_id": "DBOS-DQ018-NATIVE-LINUX-X86-64-SECURITY-REMEDIATION-20260723-001",
+  "report_schema_version": "0.1",
+  "results": {
+    "focused_telemetry_tests": "204/204 PASS",
+    "full_tests": "538/538 PASS",
+    "hsr_pre_001": "REMEDIATED_NATIVE_NEGATIVE_TEST_PASS",
+    "hsr_pre_002": "REMEDIATED_THREE_NATIVE_NEGATIVE_TESTS_PASS",
+    "isolated_wheel_install": "PASS",
+    "otel_deployment_cases": "23 BLOCKED_NOT_AUTHORIZED",
+    "otel_schema_resource_authorized_subset": "36/36 PASS",
+    "otel_semantic_authorized_subset": "32/32 PASS",
+    "pip_check": "PASS",
+    "reproducible_wheel": "PASS_BYTE_IDENTICAL_SHA256_18679ffc1fdfef620b595b4d76bcf65a46797071d8320f5f8bb77cf7427a928d",
+    "rollback": "PASS_25_RECEIPTS_0_MISMATCH_FAILED_SOURCE_RETAINED_NO_AUTOMATIC_SWITCH",
+    "runtime_lock_install": "PASS",
+    "ta_p001": "PASS_10000_UNIQUE_ADMISSIONS",
+    "ta_p002": "PASS_1000_ORIGINALS_10000_CONFIRMED_RETRIES_ACCURACY_1_0",
+    "ta_p003": "PASS_19199_OPERATIONS_0_ERRORS_OBSERVER_EFFECT_CONTROL_ACTIVE",
+    "ta_p004": "PASS_10_OF_10_BACKUP_RESTORE",
+    "ta_p005": "PASS_3600_SECONDS_16797_OPERATIONS_59_PERIODIC_INTEGRITY_CHECKS_0_ERRORS",
+    "telemetry_validator": "25/25 PASS",
+    "validators": "30 PASS + 5 EXPECTED_EXTERNAL_SOURCE_FAIL_CLOSED + 0 UNEXPECTED"
+  },
+  "review_gate": "PR-G2A",
+  "security_interpretation": {
+    "digest_is_signature": false,
+    "high_findings_closed_by_direct_remediation": [
+      "HSR-PRE-001",
+      "HSR-PRE-002"
+    ],
+    "independent_remediation_review_complete": false,
+    "listener_or_decoder_authorized": false,
+    "open_medium_residuals": [
+      "HSR-PRE-003",
+      "HSR-PRE-004"
+    ]
+  }
+}

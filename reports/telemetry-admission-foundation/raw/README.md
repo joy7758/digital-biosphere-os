@@ -1,9 +1,10 @@
 # Raw and Historical Receipt Index
 
 ```text
-current_exact_source_full_load_rebase_receipt=current-source-rebase-43382e4274c1/
-current_exact_source_p003_observer_effect_receipt=p003-observer-effect-43382e4274c1/
-current_exact_source_native_linux_x86_64_receipt=linux-x86_64-native-43382e4274c1/
+current_exact_source_native_linux_x86_64_receipt=linux-x86_64-native-security-306435cd3c5f/
+pre_remediation_full_load_rebase_receipt=current-source-rebase-43382e4274c1/
+pre_remediation_p003_observer_effect_receipt=p003-observer-effect-43382e4274c1/
+pre_remediation_native_linux_x86_64_receipt=linux-x86_64-native-43382e4274c1/
 predecessor_full_emulated_amd64_receipt=linux-amd64-emulated-6d1bcbbfc2cb/
 latest_native_linux_arm64_reference_receipt=linux-arm64-d0951d6c6252/
 predecessor_macos_arm64_reference_receipt=current-b6c03faf50bf/
@@ -14,7 +15,19 @@ production_ready=false
 
 ## Current Exact Source（当前精确源码）
 
-当前远端源码 `23c8f08…` 的原生 Linux x86_64 direct validation（直接验证）入口是：
+当前远端源码 `ee90c0c…` 的安全修复与原生 Linux x86_64 direct validation（直接验证）入口是：
+
+- [`linux-x86_64-native-security-306435cd3c5f/`](linux-x86_64-native-security-306435cd3c5f/)
+- source commit `ee90c0c84964f1f3e4dbeb8dffaf888f9822b6a5` / tree `a8f2768…9d31`
+- manifest `sha256:306435cd3c5fc65e46995f0e2a57b1322f950889af350f1b0bcbd13c35644fd9`
+- HSR-PRE-001/002 代码修复 + 4 个原生负向测试
+- 538/538 tests；204/204 telemetry tests；25/25 telemetry validator
+- 30 validators `PASS` + 5 expected external-source fail closed；0 unexpected
+- OTel authorized subset 32/32 + 36/36；23 deployment cases `BLOCKED`
+- TA-P001—TA-P005、rollback、byte-identical wheel、isolated install `PASS`
+- 等待 remote attestation 与 independent remediation review；不是 Human Review 或 Production Ready
+
+pre-remediation 源码 `23c8f08…` 的原生 Linux x86_64 入口保留为：
 
 - [`linux-x86_64-native-43382e4274c1/`](linux-x86_64-native-43382e4274c1/)
 - source commit `23c8f0878058f29e733b6f164572ac157c6c7d1c` / tree `27703ed…d3c1`

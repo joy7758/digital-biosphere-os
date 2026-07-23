@@ -1,0 +1,32 @@
+{
+  "authority_effects": {
+    "agent_created": false,
+    "capability_created": false,
+    "collector_created": false,
+    "entity_created": false,
+    "evidence_created": false,
+    "execution_created": false,
+    "gate_state_changed": false,
+    "network_endpoint_created": false,
+    "permission_created": false,
+    "production_ready_declared": false,
+    "runtime_created": false,
+    "saee_called": false,
+    "verification_created": false
+  },
+  "case_id": "TA-P002",
+  "exact_source": {
+    "commit": "ee90c0c84964f1f3e4dbeb8dffaf888f9822b6a5",
+    "manifest_digest": "sha256:306435cd3c5fc65e46995f0e2a57b1322f950889af350f1b0bcbd13c35644fd9",
+    "tree": "a8f2768b707c467607d4939d3e797327af4e9d31"
+  },
+  "integrity_status": "PASS",
+  "result_artifact": {
+    "digest": "sha256:5e9eb9a741a4dbf2b0b6b5bd02ecd7ac426cf8392adfe44fb588e8e83121c70e",
+    "mode": "0o600",
+    "overwrite_permitted": false,
+    "path": "/artifacts/TA-P002.json",
+    "size_bytes": 29089
+  },
+  "source_binding_result": "PASS"
+}

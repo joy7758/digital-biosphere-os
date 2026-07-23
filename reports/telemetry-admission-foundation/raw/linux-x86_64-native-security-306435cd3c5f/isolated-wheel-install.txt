@@ -1,0 +1,3 @@
+Processing /artifacts/dist-a/digital_biosphere_os_preview-0.1.0.dev0-py3-none-any.whl
+Installing collected packages: digital-biosphere-os-preview
+Successfully installed digital-biosphere-os-preview-0.1.0.dev0

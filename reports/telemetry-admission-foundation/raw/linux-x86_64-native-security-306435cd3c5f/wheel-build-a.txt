@@ -1,0 +1,240 @@
+running egg_info
+creating digital_biosphere_os_preview.egg-info
+writing digital_biosphere_os_preview.egg-info/PKG-INFO
+writing dependency_links to digital_biosphere_os_preview.egg-info/dependency_links.txt
+writing entry points to digital_biosphere_os_preview.egg-info/entry_points.txt
+writing requirements to digital_biosphere_os_preview.egg-info/requires.txt
+writing top-level names to digital_biosphere_os_preview.egg-info/top_level.txt
+writing manifest file 'digital_biosphere_os_preview.egg-info/SOURCES.txt'
+reading manifest file 'digital_biosphere_os_preview.egg-info/SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file 'digital_biosphere_os_preview.egg-info/SOURCES.txt'
+running bdist_wheel
+running build
+running build_py
+creating build/lib/validator
+copying validator/object_schema_validator.py -> build/lib/validator
+copying validator/reference_consistency_validator.py -> build/lib/validator
+copying validator/validation_result_model.py -> build/lib/validator
+copying validator/__init__.py -> build/lib/validator
+copying validator/governance_constraint_validator.py -> build/lib/validator
+creating build/lib/adapters
+copying adapters/__init__.py -> build/lib/adapters
+creating build/lib/sdk
+copying sdk/__init__.py -> build/lib/sdk
+creating build/lib/schemas
+copying schemas/__init__.py -> build/lib/schemas
+creating build/lib/dbos
+copying dbos/__init__.py -> build/lib/dbos
+creating build/lib/adapters/mcp
+copying adapters/mcp/tool_call_adapter.py -> build/lib/adapters/mcp
+copying adapters/mcp/__init__.py -> build/lib/adapters/mcp
+copying adapters/mcp/mapping.py -> build/lib/adapters/mcp
+copying adapters/mcp/errors.py -> build/lib/adapters/mcp
+creating build/lib/sdk/validation
+copying sdk/validation/bridge.py -> build/lib/sdk/validation
+copying sdk/validation/__init__.py -> build/lib/sdk/validation
+creating build/lib/sdk/serialization
+copying sdk/serialization/__init__.py -> build/lib/sdk/serialization
+copying sdk/serialization/serializer.py -> build/lib/sdk/serialization
+creating build/lib/sdk/errors
+copying sdk/errors/validation.py -> build/lib/sdk/errors
+copying sdk/errors/__init__.py -> build/lib/sdk/errors
+creating build/lib/sdk/objects
+copying sdk/objects/base.py -> build/lib/sdk/objects
+copying sdk/objects/entity.py -> build/lib/sdk/objects
+copying sdk/objects/verification.py -> build/lib/sdk/objects
+copying sdk/objects/__init__.py -> build/lib/sdk/objects
+copying sdk/objects/evidence_reference.py -> build/lib/sdk/objects
+copying sdk/objects/capability.py -> build/lib/sdk/objects
+copying sdk/objects/execution.py -> build/lib/sdk/objects
+creating build/lib/dbos/telemetry_admission
+copying dbos/telemetry_admission/references.py -> build/lib/dbos/telemetry_admission
+copying dbos/telemetry_admission/models.py -> build/lib/dbos/telemetry_admission
+copying dbos/telemetry_admission/provenance.py -> build/lib/dbos/telemetry_admission
+copying dbos/telemetry_admission/contracts.py -> build/lib/dbos/telemetry_admission
+copying dbos/telemetry_admission/service.py -> build/lib/dbos/telemetry_admission
+copying dbos/telemetry_admission/__init__.py -> build/lib/dbos/telemetry_admission
+copying dbos/telemetry_admission/store.py -> build/lib/dbos/telemetry_admission
+copying dbos/telemetry_admission/validator.py -> build/lib/dbos/telemetry_admission
+copying dbos/telemetry_admission/metrics.py -> build/lib/dbos/telemetry_admission
+copying dbos/telemetry_admission/semantic.py -> build/lib/dbos/telemetry_admission
+creating build/lib/dbos/telemetry_admission/migrations
+copying dbos/telemetry_admission/migrations/__init__.py -> build/lib/dbos/telemetry_admission/migrations
+creating build/lib/dbos/telemetry_admission/profiles
+copying dbos/telemetry_admission/profiles/__init__.py -> build/lib/dbos/telemetry_admission/profiles
+running egg_info
+writing digital_biosphere_os_preview.egg-info/PKG-INFO
+writing dependency_links to digital_biosphere_os_preview.egg-info/dependency_links.txt
+writing entry points to digital_biosphere_os_preview.egg-info/entry_points.txt
+writing requirements to digital_biosphere_os_preview.egg-info/requires.txt
+writing top-level names to digital_biosphere_os_preview.egg-info/top_level.txt
+reading manifest file 'digital_biosphere_os_preview.egg-info/SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file 'digital_biosphere_os_preview.egg-info/SOURCES.txt'
+copying schemas/capability-object-schema.yaml -> build/lib/schemas
+copying schemas/common-object-schema.yaml -> build/lib/schemas
+copying schemas/entity-object-schema.yaml -> build/lib/schemas
+copying schemas/evidence-reference-object-schema.yaml -> build/lib/schemas
+copying schemas/execution-object-schema.yaml -> build/lib/schemas
+copying schemas/project-manifest.schema.yaml -> build/lib/schemas
+copying schemas/telemetry-admission-record-schema.yaml -> build/lib/schemas
+copying schemas/telemetry-observation-envelope-schema.yaml -> build/lib/schemas
+copying schemas/verification-object-schema.yaml -> build/lib/schemas
+copying dbos/telemetry_admission/migrations/0000_prior_compatible.fixture.sql -> build/lib/dbos/telemetry_admission/migrations
+copying dbos/telemetry_admission/migrations/0001_initial.sql -> build/lib/dbos/telemetry_admission/migrations
+copying dbos/telemetry_admission/migrations/0001_compatibility.sql -> build/lib/dbos/telemetry_admission/migrations
+copying dbos/telemetry_admission/profiles/opentelemetry-schema-resource-conformance-cases.v0.1.json -> build/lib/dbos/telemetry_admission/profiles
+copying dbos/telemetry_admission/profiles/opentelemetry-semantic-conformance-result-set.schema.v0.1.json -> build/lib/dbos/telemetry_admission/profiles
+copying dbos/telemetry_admission/profiles/opentelemetry-semantic-conformance-cases.v0.1.json -> build/lib/dbos/telemetry_admission/profiles
+copying dbos/telemetry_admission/profiles/opentelemetry-schema-resource-conformance-result-set.schema.v0.1.json -> build/lib/dbos/telemetry_admission/profiles
+copying dbos/telemetry_admission/profiles/opentelemetry-semantic-mapping.v0.1.json -> build/lib/dbos/telemetry_admission/profiles
+copying dbos/telemetry_admission/profiles/THIRD_PARTY_NOTICES.md -> build/lib/dbos/telemetry_admission/profiles
+copying dbos/telemetry_admission/profiles/README.md -> build/lib/dbos/telemetry_admission/profiles
+copying dbos/telemetry_admission/profiles/opentelemetry-schema-1.43.0.yaml -> build/lib/dbos/telemetry_admission/profiles
+installing to build/bdist.linux-x86_64/wheel
+running install
+running install_lib
+creating build/bdist.linux-x86_64/wheel
+creating build/bdist.linux-x86_64/wheel/validator
+copying build/lib/validator/object_schema_validator.py -> build/bdist.linux-x86_64/wheel/./validator
+copying build/lib/validator/reference_consistency_validator.py -> build/bdist.linux-x86_64/wheel/./validator
+copying build/lib/validator/validation_result_model.py -> build/bdist.linux-x86_64/wheel/./validator
+copying build/lib/validator/__init__.py -> build/bdist.linux-x86_64/wheel/./validator
+copying build/lib/validator/governance_constraint_validator.py -> build/bdist.linux-x86_64/wheel/./validator
+creating build/bdist.linux-x86_64/wheel/adapters
+copying build/lib/adapters/__init__.py -> build/bdist.linux-x86_64/wheel/./adapters
+creating build/bdist.linux-x86_64/wheel/adapters/mcp
+copying build/lib/adapters/mcp/tool_call_adapter.py -> build/bdist.linux-x86_64/wheel/./adapters/mcp
+copying build/lib/adapters/mcp/__init__.py -> build/bdist.linux-x86_64/wheel/./adapters/mcp
+copying build/lib/adapters/mcp/mapping.py -> build/bdist.linux-x86_64/wheel/./adapters/mcp
+copying build/lib/adapters/mcp/errors.py -> build/bdist.linux-x86_64/wheel/./adapters/mcp
+creating build/bdist.linux-x86_64/wheel/sdk
+creating build/bdist.linux-x86_64/wheel/sdk/validation
+copying build/lib/sdk/validation/bridge.py -> build/bdist.linux-x86_64/wheel/./sdk/validation
+copying build/lib/sdk/validation/__init__.py -> build/bdist.linux-x86_64/wheel/./sdk/validation
+copying build/lib/sdk/__init__.py -> build/bdist.linux-x86_64/wheel/./sdk
+creating build/bdist.linux-x86_64/wheel/sdk/serialization
+copying build/lib/sdk/serialization/__init__.py -> build/bdist.linux-x86_64/wheel/./sdk/serialization
+copying build/lib/sdk/serialization/serializer.py -> build/bdist.linux-x86_64/wheel/./sdk/serialization
+creating build/bdist.linux-x86_64/wheel/sdk/errors
+copying build/lib/sdk/errors/validation.py -> build/bdist.linux-x86_64/wheel/./sdk/errors
+copying build/lib/sdk/errors/__init__.py -> build/bdist.linux-x86_64/wheel/./sdk/errors
+creating build/bdist.linux-x86_64/wheel/sdk/objects
+copying build/lib/sdk/objects/base.py -> build/bdist.linux-x86_64/wheel/./sdk/objects
+copying build/lib/sdk/objects/entity.py -> build/bdist.linux-x86_64/wheel/./sdk/objects
+copying build/lib/sdk/objects/verification.py -> build/bdist.linux-x86_64/wheel/./sdk/objects
+copying build/lib/sdk/objects/__init__.py -> build/bdist.linux-x86_64/wheel/./sdk/objects
+copying build/lib/sdk/objects/evidence_reference.py -> build/bdist.linux-x86_64/wheel/./sdk/objects
+copying build/lib/sdk/objects/capability.py -> build/bdist.linux-x86_64/wheel/./sdk/objects
+copying build/lib/sdk/objects/execution.py -> build/bdist.linux-x86_64/wheel/./sdk/objects
+creating build/bdist.linux-x86_64/wheel/schemas
+copying build/lib/schemas/common-object-schema.yaml -> build/bdist.linux-x86_64/wheel/./schemas
+copying build/lib/schemas/project-manifest.schema.yaml -> build/bdist.linux-x86_64/wheel/./schemas
+copying build/lib/schemas/capability-object-schema.yaml -> build/bdist.linux-x86_64/wheel/./schemas
+copying build/lib/schemas/__init__.py -> build/bdist.linux-x86_64/wheel/./schemas
+copying build/lib/schemas/telemetry-observation-envelope-schema.yaml -> build/bdist.linux-x86_64/wheel/./schemas
+copying build/lib/schemas/execution-object-schema.yaml -> build/bdist.linux-x86_64/wheel/./schemas
+copying build/lib/schemas/entity-object-schema.yaml -> build/bdist.linux-x86_64/wheel/./schemas
+copying build/lib/schemas/telemetry-admission-record-schema.yaml -> build/bdist.linux-x86_64/wheel/./schemas
+copying build/lib/schemas/verification-object-schema.yaml -> build/bdist.linux-x86_64/wheel/./schemas
+copying build/lib/schemas/evidence-reference-object-schema.yaml -> build/bdist.linux-x86_64/wheel/./schemas
+creating build/bdist.linux-x86_64/wheel/dbos
+creating build/bdist.linux-x86_64/wheel/dbos/telemetry_admission
+copying build/lib/dbos/telemetry_admission/references.py -> build/bdist.linux-x86_64/wheel/./dbos/telemetry_admission
+copying build/lib/dbos/telemetry_admission/models.py -> build/bdist.linux-x86_64/wheel/./dbos/telemetry_admission
+copying build/lib/dbos/telemetry_admission/provenance.py -> build/bdist.linux-x86_64/wheel/./dbos/telemetry_admission
+copying build/lib/dbos/telemetry_admission/contracts.py -> build/bdist.linux-x86_64/wheel/./dbos/telemetry_admission
+creating build/bdist.linux-x86_64/wheel/dbos/telemetry_admission/migrations
+copying build/lib/dbos/telemetry_admission/migrations/0000_prior_compatible.fixture.sql -> build/bdist.linux-x86_64/wheel/./dbos/telemetry_admission/migrations
+copying build/lib/dbos/telemetry_admission/migrations/__init__.py -> build/bdist.linux-x86_64/wheel/./dbos/telemetry_admission/migrations
+copying build/lib/dbos/telemetry_admission/migrations/0001_initial.sql -> build/bdist.linux-x86_64/wheel/./dbos/telemetry_admission/migrations
+copying build/lib/dbos/telemetry_admission/migrations/0001_compatibility.sql -> build/bdist.linux-x86_64/wheel/./dbos/telemetry_admission/migrations
+copying build/lib/dbos/telemetry_admission/service.py -> build/bdist.linux-x86_64/wheel/./dbos/telemetry_admission
+copying build/lib/dbos/telemetry_admission/__init__.py -> build/bdist.linux-x86_64/wheel/./dbos/telemetry_admission
+copying build/lib/dbos/telemetry_admission/store.py -> build/bdist.linux-x86_64/wheel/./dbos/telemetry_admission
+copying build/lib/dbos/telemetry_admission/validator.py -> build/bdist.linux-x86_64/wheel/./dbos/telemetry_admission
+copying build/lib/dbos/telemetry_admission/metrics.py -> build/bdist.linux-x86_64/wheel/./dbos/telemetry_admission
+copying build/lib/dbos/telemetry_admission/semantic.py -> build/bdist.linux-x86_64/wheel/./dbos/telemetry_admission
+creating build/bdist.linux-x86_64/wheel/dbos/telemetry_admission/profiles
+copying build/lib/dbos/telemetry_admission/profiles/THIRD_PARTY_NOTICES.md -> build/bdist.linux-x86_64/wheel/./dbos/telemetry_admission/profiles
+copying build/lib/dbos/telemetry_admission/profiles/opentelemetry-schema-resource-conformance-cases.v0.1.json -> build/bdist.linux-x86_64/wheel/./dbos/telemetry_admission/profiles
+copying build/lib/dbos/telemetry_admission/profiles/__init__.py -> build/bdist.linux-x86_64/wheel/./dbos/telemetry_admission/profiles
+copying build/lib/dbos/telemetry_admission/profiles/opentelemetry-semantic-conformance-result-set.schema.v0.1.json -> build/bdist.linux-x86_64/wheel/./dbos/telemetry_admission/profiles
+copying build/lib/dbos/telemetry_admission/profiles/opentelemetry-semantic-conformance-cases.v0.1.json -> build/bdist.linux-x86_64/wheel/./dbos/telemetry_admission/profiles
+copying build/lib/dbos/telemetry_admission/profiles/opentelemetry-schema-resource-conformance-result-set.schema.v0.1.json -> build/bdist.linux-x86_64/wheel/./dbos/telemetry_admission/profiles
+copying build/lib/dbos/telemetry_admission/profiles/opentelemetry-semantic-mapping.v0.1.json -> build/bdist.linux-x86_64/wheel/./dbos/telemetry_admission/profiles
+copying build/lib/dbos/telemetry_admission/profiles/opentelemetry-schema-1.43.0.yaml -> build/bdist.linux-x86_64/wheel/./dbos/telemetry_admission/profiles
+copying build/lib/dbos/telemetry_admission/profiles/README.md -> build/bdist.linux-x86_64/wheel/./dbos/telemetry_admission/profiles
+copying build/lib/dbos/__init__.py -> build/bdist.linux-x86_64/wheel/./dbos
+running install_egg_info
+Copying digital_biosphere_os_preview.egg-info to build/bdist.linux-x86_64/wheel/./digital_biosphere_os_preview-0.1.0.dev0-py3.12.egg-info
+running install_scripts
+creating build/bdist.linux-x86_64/wheel/digital_biosphere_os_preview-0.1.0.dev0.dist-info/WHEEL
+creating '/artifacts/dist-a/.tmp-i3oc0mpz/digital_biosphere_os_preview-0.1.0.dev0-py3-none-any.whl' and adding 'build/bdist.linux-x86_64/wheel' to it
+adding 'adapters/__init__.py'
+adding 'adapters/mcp/__init__.py'
+adding 'adapters/mcp/errors.py'
+adding 'adapters/mcp/mapping.py'
+adding 'adapters/mcp/tool_call_adapter.py'
+adding 'dbos/__init__.py'
+adding 'dbos/telemetry_admission/__init__.py'
+adding 'dbos/telemetry_admission/contracts.py'
+adding 'dbos/telemetry_admission/metrics.py'
+adding 'dbos/telemetry_admission/models.py'
+adding 'dbos/telemetry_admission/provenance.py'
+adding 'dbos/telemetry_admission/references.py'
+adding 'dbos/telemetry_admission/semantic.py'
+adding 'dbos/telemetry_admission/service.py'
+adding 'dbos/telemetry_admission/store.py'
+adding 'dbos/telemetry_admission/validator.py'
+adding 'dbos/telemetry_admission/migrations/0000_prior_compatible.fixture.sql'
+adding 'dbos/telemetry_admission/migrations/0001_compatibility.sql'
+adding 'dbos/telemetry_admission/migrations/0001_initial.sql'
+adding 'dbos/telemetry_admission/migrations/__init__.py'
+adding 'dbos/telemetry_admission/profiles/README.md'
+adding 'dbos/telemetry_admission/profiles/THIRD_PARTY_NOTICES.md'
+adding 'dbos/telemetry_admission/profiles/__init__.py'
+adding 'dbos/telemetry_admission/profiles/opentelemetry-schema-1.43.0.yaml'
+adding 'dbos/telemetry_admission/profiles/opentelemetry-schema-resource-conformance-cases.v0.1.json'
+adding 'dbos/telemetry_admission/profiles/opentelemetry-schema-resource-conformance-result-set.schema.v0.1.json'
+adding 'dbos/telemetry_admission/profiles/opentelemetry-semantic-conformance-cases.v0.1.json'
+adding 'dbos/telemetry_admission/profiles/opentelemetry-semantic-conformance-result-set.schema.v0.1.json'
+adding 'dbos/telemetry_admission/profiles/opentelemetry-semantic-mapping.v0.1.json'
+adding 'digital_biosphere_os_preview-0.1.0.dev0.dist-info/licenses/LICENSE'
+adding 'schemas/__init__.py'
+adding 'schemas/capability-object-schema.yaml'
+adding 'schemas/common-object-schema.yaml'
+adding 'schemas/entity-object-schema.yaml'
+adding 'schemas/evidence-reference-object-schema.yaml'
+adding 'schemas/execution-object-schema.yaml'
+adding 'schemas/project-manifest.schema.yaml'
+adding 'schemas/telemetry-admission-record-schema.yaml'
+adding 'schemas/telemetry-observation-envelope-schema.yaml'
+adding 'schemas/verification-object-schema.yaml'
+adding 'sdk/__init__.py'
+adding 'sdk/errors/__init__.py'
+adding 'sdk/errors/validation.py'
+adding 'sdk/objects/__init__.py'
+adding 'sdk/objects/base.py'
+adding 'sdk/objects/capability.py'
+adding 'sdk/objects/entity.py'
+adding 'sdk/objects/evidence_reference.py'
+adding 'sdk/objects/execution.py'
+adding 'sdk/objects/verification.py'
+adding 'sdk/serialization/__init__.py'
+adding 'sdk/serialization/serializer.py'
+adding 'sdk/validation/__init__.py'
+adding 'sdk/validation/bridge.py'
+adding 'validator/__init__.py'
+adding 'validator/governance_constraint_validator.py'
+adding 'validator/object_schema_validator.py'
+adding 'validator/reference_consistency_validator.py'
+adding 'validator/validation_result_model.py'
+adding 'digital_biosphere_os_preview-0.1.0.dev0.dist-info/METADATA'
+adding 'digital_biosphere_os_preview-0.1.0.dev0.dist-info/WHEEL'
+adding 'digital_biosphere_os_preview-0.1.0.dev0.dist-info/entry_points.txt'
+adding 'digital_biosphere_os_preview-0.1.0.dev0.dist-info/top_level.txt'
+adding 'digital_biosphere_os_preview-0.1.0.dev0.dist-info/RECORD'
+removing build/bdist.linux-x86_64/wheel
+Successfully built digital_biosphere_os_preview-0.1.0.dev0-py3-none-any.whl

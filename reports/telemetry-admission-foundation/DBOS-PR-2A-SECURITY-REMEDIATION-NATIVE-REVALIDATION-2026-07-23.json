@@ -1,0 +1,126 @@
+{
+  "schema_version": "0.1",
+  "receipt_id": "DBOS-PR-2A-SECURITY-REMEDIATION-NATIVE-REVALIDATION-20260723-001",
+  "observed_at": "2026-07-23T06:27:11.933513+00:00",
+  "decision_reference": "DQ-018",
+  "review_gate": "PR-G2A",
+  "result_semantics": "EXACT_SOURCE_NATIVE_SECURITY_REMEDIATION_VALIDATION_NOT_HUMAN_REVIEW_NOT_PRODUCTION_READY",
+  "source_binding": {
+    "repository": "https://github.com/joy7758/digital-biosphere-os.git",
+    "branch": "codex/telemetry-admission-foundation",
+    "commit": "ee90c0c84964f1f3e4dbeb8dffaf888f9822b6a5",
+    "tree": "a8f2768b707c467607d4939d3e797327af4e9d31",
+    "bundle_sha256": "4953419967eb45180be133c8734582470698399248325e6e45a4f647d6347563",
+    "manifest_sha256": "306435cd3c5fc65e46995f0e2a57b1322f950889af350f1b0bcbd13c35644fd9",
+    "manifest_file_count": 58,
+    "manifest_bytes": 730759,
+    "source_stable_during_runs": true
+  },
+  "environment": {
+    "execution_mode": "NATIVE_LINUX_X86_64_IMMUTABLE_CONTAINER_NETWORK_NONE",
+    "python": "3.12.13",
+    "sqlite": "3.40.1",
+    "base_image_digest": "sha256:72d3d75f2639ab82b34b29390ad3d6e0827c775befee94edda8e9976818f488d",
+    "runtime_lock_exact_hash": true,
+    "build_lock_exact_hash": true
+  },
+  "security_findings": {
+    "HSR-PRE-001": {
+      "prior_severity": "HIGH",
+      "state": "CLOSED_BY_REMEDIATION_PENDING_INDEPENDENT_ATTESTATION",
+      "control": "DIRECT_PARENT_CURRENT_USER_OWNED_AND_NOT_GROUP_OR_WORLD_WRITABLE",
+      "native_negative_tests": 1
+    },
+    "HSR-PRE-002": {
+      "prior_severity": "HIGH",
+      "state": "CLOSED_BY_REMEDIATION_PENDING_INDEPENDENT_ATTESTATION",
+      "control": "GENERATED_REFERENCE_AND_TIMESTAMP_REVALIDATION_WITH_NON_REFLECTING_STABLE_ERROR",
+      "native_negative_tests": 3
+    },
+    "HSR-PRE-003": {
+      "severity": "MEDIUM",
+      "state": "OPEN_SCOPED_RESIDUAL",
+      "boundary": "DIGEST_IS_NOT_SIGNATURE_DQ_019_PR_G2B"
+    },
+    "HSR-PRE-004": {
+      "severity": "MEDIUM",
+      "state": "OPEN_SCOPED_RESIDUAL",
+      "boundary": "PRE_PARSE_AND_DECOMPRESSION_BUDGET_BEFORE_DQ_020_LISTENER"
+    }
+  },
+  "validation": {
+    "full_tests": "538/538 PASS",
+    "test_directories": 16,
+    "focused_telemetry_tests": "204/204 PASS",
+    "validators": {
+      "passed": 30,
+      "expected_external_source_fail_closed": 5,
+      "unexpected_failures": 0
+    },
+    "telemetry_validator": "25/25 PASS",
+    "otel_semantic_authorized_subset": "32/32 PASS",
+    "otel_schema_resource_authorized_subset": "36/36 PASS",
+    "otel_deployment_cases": "23 BLOCKED_NOT_AUTHORIZED",
+    "ta_p001": "PASS_10000_UNIQUE_ADMISSIONS",
+    "ta_p002": "PASS_1000_ORIGINALS_10000_CONFIRMED_RETRIES_ACCURACY_1_0",
+    "ta_p003": "PASS_19199_OPERATIONS_0_ERRORS",
+    "ta_p004": "PASS_10_OF_10_BACKUP_RESTORE",
+    "ta_p005": "PASS_3600_SECONDS_16797_OPERATIONS_59_PERIODIC_INTEGRITY_CHECKS_0_ERRORS",
+    "rollback": "PASS_25_RECEIPTS_0_MISMATCH_FAILED_SOURCE_RETAINED_NO_AUTOMATIC_SWITCH",
+    "reproducible_wheel_sha256": "18679ffc1fdfef620b595b4d76bcf65a46797071d8320f5f8bb77cf7427a928d",
+    "isolated_install": "PASS",
+    "ruff_findings": 0,
+    "ruff_formatted_files": 34,
+    "bandit": {
+      "version": "1.9.4",
+      "loc": 5422,
+      "findings": 0,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "pip_audit": {
+      "version": "2.10.1",
+      "locked_runtime_dependencies": 7,
+      "known_vulnerabilities": 0
+    }
+  },
+  "failure_retention": [
+    "FIRST_ROLLBACK_INVOCATION_PRECREATED_REQUIRED_NONEXISTENT_PATH",
+    "DETAILED_VALIDATOR_ABSOLUTE_PATH_OUTPUT_RETAINED_OUTSIDE_PUBLIC_GIT",
+    "FIVE_EXPECTED_EXTERNAL_SOURCE_FAILURES_NOT_RELABELED_AS_PASS"
+  ],
+  "agent_recommendation": {
+    "status": "CONDITIONALLY_RECOMMENDED",
+    "recommended_as": "EXACT_SOURCE_SECURITY_REMEDIATION_READY_FOR_REMOTE_ATTESTATION",
+    "not_recommended_as": "HUMAN_SECURITY_APPROVED_PR_G2A_APPROVED_FULL_PR_G2_OR_PRODUCTION_READY"
+  },
+  "decision_state": {
+    "decided_by_ref": "zhangbin",
+    "independent_remediation_review_complete": false,
+    "human_security_review_complete": false,
+    "pr_g2a_ready_for_human_review": false,
+    "pr_g2a_human_review_approved": false,
+    "dq_019_status": "BLOCKED_INPUT",
+    "dq_020_status": "BLOCKED_INPUT",
+    "dq_021_status": "BLOCKED_INPUT",
+    "full_pr_g2_ready": false,
+    "production_ready": false
+  },
+  "effects": {
+    "pr_created": false,
+    "merge_performed": false,
+    "main_modified": false,
+    "release_created": false,
+    "deployment_performed": false,
+    "collector_created": false,
+    "listener_created": false,
+    "production_database_created": false,
+    "agent_created": false,
+    "runtime_created": false,
+    "entity_created": false,
+    "permission_granted": false,
+    "canonical_evidence_created": false,
+    "saee_output_created": false,
+    "gate_approved": false
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "absolute_host_paths_published": false,
+  "expected_external_source_fail_closed": 5,
+  "expected_external_source_validators": [
+    "validation/capability_claim_validator.py",
+    "validation/capability_validator.py",
+    "validation/evidence_validator.py",
+    "validation/federation_validator.py",
+    "validation/identity_validator.py"
+  ],
+  "passed": 30,
+  "status": "PASS_WITH_EXPECTED_EXTERNAL_SOURCE_FAIL_CLOSED",
+  "total": 35,
+  "unexpected_failures": []
+}
