@@ -6,11 +6,11 @@ from typing import Any
 
 from sdk import (
     CapabilityObject,
-    EntityObject,
     EvidenceReferenceObject,
     ExecutionObject,
     VerificationObject,
 )
+from sdk.objects import EntityObject
 
 
 def source(source_id: str) -> dict[str, str]:

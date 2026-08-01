@@ -12,7 +12,6 @@ production compatibility promise until a separate release record says so.
 from sdk import (
     BaseObject,
     CapabilityObject,
-    EntityObject,
     EvidenceReferenceObject,
     ExecutionObject,
     VerificationObject,
@@ -20,6 +19,7 @@ from sdk import (
     object_to_json,
     validate_object,
 )
+from sdk.objects import EntityObject
 from validator import (
     SchemaReference,
     ValidationIssue,
