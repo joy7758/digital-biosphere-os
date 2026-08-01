@@ -42,10 +42,12 @@ class AdapterError:
     resolution_hint: str
 
     def __post_init__(self) -> None:
-        for name in ("message", "field_reference", "resolution_hint"):
-            value = getattr(self, name)
-            if not isinstance(value, str) or not value:
-                raise ValueError(f"{name} must be a non-empty string")
+        if not isinstance(self.message, str) or not self.message:
+            raise ValueError("message must be a non-empty string")
+        if not isinstance(self.field_reference, str) or not self.field_reference:
+            raise ValueError("field_reference must be a non-empty string")
+        if not isinstance(self.resolution_hint, str) or not self.resolution_hint:
+            raise ValueError("resolution_hint must be a non-empty string")
 
     def to_validation_issue(self, *, result_code: str | None = None) -> ValidationIssue:
         """Project this adapter diagnostic into the shared result contract."""
