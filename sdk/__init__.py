@@ -6,7 +6,6 @@ Runtimes, permissions, authority, or execution side effects.
 """
 
 from sdk.objects import (
-    BaseObject,
     CapabilityObject,
     EntityObject,
     EvidenceReferenceObject,
@@ -17,7 +16,6 @@ from sdk.serialization import object_to_dict, object_to_json
 from sdk.validation import validate_object
 
 __all__ = [
-    "BaseObject",
     "CapabilityObject",
     "EntityObject",
     "EvidenceReferenceObject",

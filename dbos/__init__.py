@@ -10,7 +10,6 @@ production compatibility promise until a separate release record says so.
 """
 
 from sdk import (
-    BaseObject,
     CapabilityObject,
     EntityObject,
     EvidenceReferenceObject,
@@ -30,7 +29,6 @@ from validator import (
 __version__ = "0.1.0.dev0"
 
 __all__ = [
-    "BaseObject",
     "CapabilityObject",
     "EntityObject",
     "EvidenceReferenceObject",
