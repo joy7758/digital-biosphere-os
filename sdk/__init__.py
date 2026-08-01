@@ -13,7 +13,7 @@ from sdk.objects import (
     ExecutionObject,
     VerificationObject,
 )
-from sdk.serialization import object_to_dict, object_to_json
+from sdk.serialization import object_to_dict
 from sdk.validation import validate_object
 
 __all__ = [
@@ -24,6 +24,5 @@ __all__ = [
     "ExecutionObject",
     "VerificationObject",
     "object_to_dict",
-    "object_to_json",
     "validate_object",
 ]

@@ -17,7 +17,8 @@
 ## Local Example（本地示例）
 
 ```python
-from sdk import EntityObject, object_to_json, validate_object
+from sdk import EntityObject, validate_object
+from sdk.serialization import object_to_json
 
 entity_id = "dbio://repository/example/v0.1"
 source_id = "registry/entities.yaml"
