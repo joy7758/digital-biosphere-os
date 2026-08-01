@@ -498,7 +498,7 @@ def validate(docs: dict[str, dict[str, Any]], texts: dict[str, str], root: Path)
             if token not in texts[text_name]:
                 errors.append(f"{text_name} missing required boundary token: {token}")
 
-    evolution_ids = [int(value) for value in EVOLUTION_ID_RE.findall(texts["evolution_ledger"])]
+    evolution_ids = [int(match.group(1)) for match in EVOLUTION_ID_RE.finditer(texts["evolution_ledger"])]
     if (
         not evolution_ids
         or len(evolution_ids) != len(set(evolution_ids))
