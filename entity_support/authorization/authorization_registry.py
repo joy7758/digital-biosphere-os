@@ -26,9 +26,6 @@ import fcntl
 from entity_support.authorization.authorization_record import (
     validate_authorization_record,
 )
-from entity_support.authorization.authorization_validator import (
-    validate_authorization_for_registration,
-)
 
 AUTHORIZATION_REGISTRY_SCHEMA_VERSION = "0.1"
 AUTHORIZATION_REGISTRY_KIND = "DigitalEntityRegistrationAuthorizationRegistry"
@@ -220,21 +217,6 @@ class AuthorizationRegistry:
             document["authorization_records"].append(stored)
             _atomic_write_json(self.path, document)
         return deepcopy(stored)
-
-    def resolve_for_registration(
-        self,
-        authorization_id: str,
-        *,
-        at_time: str | None = None,
-    ) -> dict[str, Any]:
-        record = self.get(authorization_id)
-        if record is None:
-            raise ValueError(f"unknown authorization_id: {authorization_id}")
-        errors = validate_authorization_for_registration(record, at_time=at_time)
-        if errors:
-            raise ValueError("; ".join(errors))
-        return record
-
 
 __all__ = [
     "AUTHORIZATION_REGISTRY_KIND",
