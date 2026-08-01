@@ -14,11 +14,11 @@ from typing import Any
 
 from dbos import (
     EntityObject,
-    EvidenceReferenceObject,
     ExecutionObject,
     object_to_dict,
     validate_object,
 )
+from sdk.objects.evidence_reference import EvidenceReferenceObject
 
 DEMO_ID = "DBOS-MULTI-AGENT-TRUST-DEMO-V0.1"
 SOURCE_ID = "examples/multi_agent_trust_demo/demo.py"
