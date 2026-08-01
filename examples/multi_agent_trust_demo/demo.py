@@ -12,11 +12,11 @@ from __future__ import annotations
 from collections.abc import Mapping
 from typing import Any
 
+from sdk.serialization import object_to_dict
 from dbos import (
     EntityObject,
     EvidenceReferenceObject,
     ExecutionObject,
-    object_to_dict,
     validate_object,
 )
 

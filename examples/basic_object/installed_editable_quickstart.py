@@ -10,7 +10,8 @@ from __future__ import annotations
 
 import json
 
-from dbos import EntityObject, object_to_dict, validate_object
+from dbos import EntityObject, validate_object
+from sdk.serialization import object_to_dict
 
 
 ENTITY_ID = "dbio://repository/installed-editable-preview/v0.1"

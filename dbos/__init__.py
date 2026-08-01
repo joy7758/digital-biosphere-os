@@ -9,6 +9,7 @@ locally built wheel candidate. It is not a published distribution or a stable
 production compatibility promise until a separate release record says so.
 """
 
+from sdk.serialization import object_to_dict
 from sdk import (
     BaseObject,
     CapabilityObject,
@@ -16,7 +17,6 @@ from sdk import (
     EvidenceReferenceObject,
     ExecutionObject,
     VerificationObject,
-    object_to_dict,
     object_to_json,
     validate_object,
 )
