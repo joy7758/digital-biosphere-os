@@ -327,12 +327,6 @@ class ObjectSchemaValidator:
             raise SchemaRegistryError("The local DBOS v0.1 schema set is incomplete or unexpected.")
         return schemas, digests
 
-    @property
-    def schema_ids(self) -> tuple[str, ...]:
-        """Return the exact offline schema identifiers; no mutable latest alias exists."""
-
-        return tuple(sorted(self._schemas))
-
     def validate(
         self, target: Mapping[str, Any] | Any, *, schema_id: str | None = None
     ) -> ValidationResult:
