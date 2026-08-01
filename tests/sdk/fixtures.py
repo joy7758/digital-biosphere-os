@@ -8,9 +8,9 @@ from sdk import (
     CapabilityObject,
     EntityObject,
     EvidenceReferenceObject,
-    ExecutionObject,
     VerificationObject,
 )
+from sdk.objects.execution import ExecutionObject
 
 
 def source(source_id: str) -> dict[str, str]:

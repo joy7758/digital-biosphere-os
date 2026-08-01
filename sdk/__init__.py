@@ -10,7 +10,6 @@ from sdk.objects import (
     CapabilityObject,
     EntityObject,
     EvidenceReferenceObject,
-    ExecutionObject,
     VerificationObject,
 )
 from sdk.serialization import object_to_dict, object_to_json
@@ -21,7 +20,6 @@ __all__ = [
     "CapabilityObject",
     "EntityObject",
     "EvidenceReferenceObject",
-    "ExecutionObject",
     "VerificationObject",
     "object_to_dict",
     "object_to_json",
