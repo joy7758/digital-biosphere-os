@@ -7,6 +7,7 @@ import unittest
 
 from fixtures import all_objects, capability_object, entity_object
 from sdk.serialization import object_to_dict, object_to_json
+from sdk.serialization.serializer import _json_value
 
 
 class SerializationTests(unittest.TestCase):
@@ -42,6 +43,11 @@ class SerializationTests(unittest.TestCase):
     def test_rejects_non_sdk_input(self) -> None:
         with self.assertRaises(TypeError):
             object_to_dict({"object_type": "ENTITY"})  # type: ignore[arg-type]
+
+    def test_json_value_parses_lists_and_tuples(self) -> None:
+        self.assertEqual(_json_value((1, 2, 3)), [1, 2, 3])
+        self.assertEqual(_json_value([1, 2, 3]), [1, 2, 3])
+        self.assertEqual(_json_value({1, 2, 3}), [1, 2, 3])
 
 
 if __name__ == "__main__":
