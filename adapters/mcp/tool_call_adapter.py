@@ -5,8 +5,6 @@ connects to MCP, invokes a tool, repairs input, resolves references, writes
 evidence, or creates governance authority.
 """
 
-from __future__ import annotations
-
 from collections.abc import Iterator, Mapping
 from typing import Any
 
