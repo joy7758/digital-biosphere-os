@@ -67,19 +67,8 @@ def validate_authorization_for_registration(
     return errors
 
 
-def is_authorization_effective(
-    record: Mapping[str, Any],
-    *,
-    at_time: str | None = None,
-) -> bool:
-    """Return True only for a currently usable registration authorization."""
-
-    return not validate_authorization_for_registration(record, at_time=at_time)
-
-
 __all__ = [
     "REQUIRED_REGISTRATION_SCOPE",
-    "is_authorization_effective",
     "validate_authorization_for_registration",
 ]
 
