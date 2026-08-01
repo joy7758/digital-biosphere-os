@@ -20,7 +20,6 @@ class PublicFacadeTests(unittest.TestCase):
             "ValidationIssue",
             "ValidationResult",
             "ValidationStatus",
-            "VerificationObject",
             "object_to_dict",
             "object_to_json",
             "validate_object",
