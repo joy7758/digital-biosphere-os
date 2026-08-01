@@ -9,8 +9,8 @@ from sdk import (
     EntityObject,
     EvidenceReferenceObject,
     ExecutionObject,
-    VerificationObject,
 )
+from sdk.objects import VerificationObject
 
 
 def source(source_id: str) -> dict[str, str]:
