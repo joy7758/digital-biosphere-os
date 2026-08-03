@@ -18,7 +18,7 @@ from sdk import (
     VerificationObject,
     object_to_dict,
     object_to_json,
-    validate_object,
+
 )
 from validator import (
     SchemaReference,
@@ -42,5 +42,5 @@ __all__ = [
     "VerificationObject",
     "object_to_dict",
     "object_to_json",
-    "validate_object",
+
 ]

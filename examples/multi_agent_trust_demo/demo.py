@@ -12,12 +12,13 @@ from __future__ import annotations
 from collections.abc import Mapping
 from typing import Any
 
+from validator import validate_object
 from dbos import (
     EntityObject,
     EvidenceReferenceObject,
     ExecutionObject,
     object_to_dict,
-    validate_object,
+
 )
 
 DEMO_ID = "DBOS-MULTI-AGENT-TRUST-DEMO-V0.1"
@@ -164,7 +165,7 @@ def build_step_objects(role_id: str, step_number: int) -> tuple[ExecutionObject,
 
 
 def validation_record(target: Any) -> dict[str, Any]:
-    result = validate_object(target)
+    result = validate_object(object_to_dict(target))
     return result.to_dict()
 
 

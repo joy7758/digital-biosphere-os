@@ -12,11 +12,12 @@ if str(REPOSITORY_ROOT) not in sys.path:
     sys.path.insert(0, str(REPOSITORY_ROOT))
 
 from create_entity_object import build_synthetic_entity_object  # noqa: E402
-from sdk import validate_object  # noqa: E402
+from validator import validate_object  # noqa: E402
 
 
 def main() -> int:
-    result = validate_object(build_synthetic_entity_object())
+    from dbos import object_to_dict
+    result = validate_object(object_to_dict(build_synthetic_entity_object()))
     print(json.dumps(result.to_dict(), ensure_ascii=False, indent=2, sort_keys=True))
     return 0 if result.passed else 1
 
