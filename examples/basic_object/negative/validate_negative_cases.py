@@ -20,7 +20,8 @@ for path in (REPOSITORY_ROOT, BASIC_EXAMPLE_ROOT):
         sys.path.insert(0, str(path))
 
 from create_entity_object import build_synthetic_entity_object  # noqa: E402
-from sdk import CapabilityObject, object_to_dict  # noqa: E402
+from sdk.objects import CapabilityObject
+from sdk import object_to_dict  # noqa: E402
 from validator import ValidationStatus, validate_object  # noqa: E402
 
 

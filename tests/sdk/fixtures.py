@@ -4,8 +4,8 @@ from __future__ import annotations
 
 from typing import Any
 
+from sdk.objects import CapabilityObject
 from sdk import (
-    CapabilityObject,
     EntityObject,
     EvidenceReferenceObject,
     ExecutionObject,
