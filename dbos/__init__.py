@@ -16,10 +16,10 @@ from sdk import (
     EvidenceReferenceObject,
     ExecutionObject,
     VerificationObject,
-    object_to_dict,
     object_to_json,
     validate_object,
 )
+from sdk.serialization import object_to_dict
 from validator import (
     SchemaReference,
     ValidationIssue,

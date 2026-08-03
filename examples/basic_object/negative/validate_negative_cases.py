@@ -8,10 +8,9 @@ record and is never persisted.
 from __future__ import annotations
 
 import json
-from pathlib import Path
 import sys
+from pathlib import Path
 from typing import Any
-
 
 REPOSITORY_ROOT = Path(__file__).resolve().parents[3]
 BASIC_EXAMPLE_ROOT = Path(__file__).resolve().parents[1]
@@ -20,7 +19,9 @@ for path in (REPOSITORY_ROOT, BASIC_EXAMPLE_ROOT):
         sys.path.insert(0, str(path))
 
 from create_entity_object import build_synthetic_entity_object  # noqa: E402
-from sdk import CapabilityObject, object_to_dict  # noqa: E402
+
+from sdk import CapabilityObject  # noqa: E402
+from sdk.serialization import object_to_dict  # noqa: E402
 from validator import ValidationStatus, validate_object  # noqa: E402
 
 
