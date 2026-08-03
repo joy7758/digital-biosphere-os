@@ -64,6 +64,21 @@ class ValidationBridgeTests(unittest.TestCase):
                 self.assertEqual(failure.code, expected)
                 self.assertFalse(failure.auto_repair_performed)
 
+
+    def test_unmapped_base_object_fails_validation(self) -> None:
+        from sdk.objects.base import BaseObject
+
+        target = BaseObject(
+            object_id="dbio://repository/unmapped/v0.1",
+            source={},
+            status="ACTIVE",
+            limitations=["none"],
+        )
+        result = validate_object(target)
+        self.assertEqual(result.result, ValidationStatus.FAIL)
+        self.assertEqual(result.errors[0].code, "INVALID")
+        self.assertEqual(result.errors[0].path, "$.object_type")
+
     def test_rejects_raw_mapping_to_prevent_bridge_bypass(self) -> None:
         with self.assertRaises(TypeError):
             validate_object({"object_type": "ENTITY"})  # type: ignore[arg-type]
