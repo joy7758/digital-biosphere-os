@@ -68,6 +68,24 @@ class ValidationBridgeTests(unittest.TestCase):
         with self.assertRaises(TypeError):
             validate_object({"object_type": "ENTITY"})  # type: ignore[arg-type]
 
+    def test_rejects_unmapped_base_object_type(self) -> None:
+        from sdk.objects.base import BaseObject
+
+        # BaseObject sets object_type="UNKNOWN" by default.
+        target = BaseObject(
+            object_id="dbio://test/invalid/v0.1",
+            source={"namespace": "dbio", "source_id": "test", "version": "v0.1", "status": "DECLARED"},
+            status="DECLARED",
+            limitations=[],
+        )
+        result = validate_object(target)
+        self.assertEqual(result.result, ValidationStatus.FAIL)
+
+        # Verify that we correctly get an error complaining about $.object_type
+        object_type_errors = [e for e in result.errors if e.path == "$.object_type"]
+        self.assertGreater(len(object_type_errors), 0, "Expected an error pointing to $.object_type")
+        self.assertEqual(object_type_errors[0].code, "INVALID")
+
 
 if __name__ == "__main__":
     unittest.main()
