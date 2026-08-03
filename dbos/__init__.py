@@ -16,7 +16,6 @@ from sdk import (
     EvidenceReferenceObject,
     ExecutionObject,
     object_to_dict,
-    object_to_json,
     validate_object,
 )
 from validator import (
@@ -39,6 +38,5 @@ __all__ = [
     "ValidationResult",
     "ValidationStatus",
     "object_to_dict",
-    "object_to_json",
     "validate_object",
 ]

@@ -21,7 +21,6 @@ class PublicFacadeTests(unittest.TestCase):
             "ValidationResult",
             "ValidationStatus",
             "object_to_dict",
-            "object_to_json",
             "validate_object",
         }
         self.assertEqual(set(dbos.__all__), expected)
