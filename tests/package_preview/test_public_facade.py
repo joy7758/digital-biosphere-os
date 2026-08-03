@@ -12,7 +12,6 @@ class PublicFacadeTests(unittest.TestCase):
     def test_facade_exports_only_bounded_object_and_validation_symbols(self) -> None:
         expected = {
             "BaseObject",
-            "CapabilityObject",
             "EntityObject",
             "EvidenceReferenceObject",
             "ExecutionObject",

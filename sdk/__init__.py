@@ -7,7 +7,6 @@ Runtimes, permissions, authority, or execution side effects.
 
 from sdk.objects import (
     BaseObject,
-    CapabilityObject,
     EntityObject,
     EvidenceReferenceObject,
     ExecutionObject,
@@ -17,7 +16,6 @@ from sdk.validation import validate_object
 
 __all__ = [
     "BaseObject",
-    "CapabilityObject",
     "EntityObject",
     "EvidenceReferenceObject",
     "ExecutionObject",
