@@ -126,5 +126,12 @@ class ValidationBridgeTests(unittest.TestCase):
         self.assertEqual(object_type_errors[0].code, "INVALID")
 
 
+
+    def test_schema_id_is_passed_to_validator(self) -> None:
+        target = entity_object()
+        result = validate_object(target, schema_id="dbio://schema/capability-object/v0.1")
+        self.assertEqual(result.result, ValidationStatus.CONFLICT)
+
+
 if __name__ == "__main__":
     unittest.main()
