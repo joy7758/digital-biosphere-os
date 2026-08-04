@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import unittest
+from enum import Enum
 
 from fixtures import all_objects, capability_object, entity_object
 from sdk.serialization import object_to_dict, object_to_json
@@ -49,6 +50,39 @@ class SerializationTests(unittest.TestCase):
         self.assertEqual(_json_value([1, 2, 3]), [1, 2, 3])
         self.assertEqual(_json_value({1, 2, 3}), [1, 2, 3])
 
+    def test_object_to_dict_with_enums_and_sets(self) -> None:
+        class Color(Enum):
+            RED = "red"
+            BLUE = "blue"
+
+        # Create a mock BaseObject subclass to test complex types
+        from sdk.objects.base import BaseObject
+        from dataclasses import dataclass
+
+        # We need a proper frozen dataclass that inherits from BaseObject
+        @dataclass(frozen=True, slots=True, kw_only=True)
+        class ComplexObject(BaseObject):
+            colors: set[str]
+            color_enum: Color
+            nested_dict: dict[str, dict[str, int]]
+            object_type: str = "COMPLEX"
+
+        target = ComplexObject(
+            object_id="test-id",
+            source={"namespace": "test", "version": "v1"},
+            status="TESTING",
+            limitations=[],
+            colors={"b", "a"},
+            color_enum=Color.RED,
+            nested_dict={"level1": {"level2": 42}},
+        )
+
+        result = object_to_dict(target)
+
+        self.assertEqual(result["object_type"], "COMPLEX")
+        self.assertEqual(result["colors"], ["a", "b"])  # Sorted list
+        self.assertEqual(result["color_enum"], "red")   # Enum value
+        self.assertEqual(result["nested_dict"], {"level1": {"level2": 42}})
 
 if __name__ == "__main__":
     unittest.main()
