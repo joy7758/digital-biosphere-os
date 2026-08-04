@@ -10,7 +10,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
-from collections.abc import Mapping
+from collections.abc import Iterator, Mapping
 from datetime import datetime
 from functools import lru_cache
 from pathlib import Path
@@ -102,7 +102,11 @@ def _json_path(error: ValidationError) -> str:
 
 def _schema_error_to_issue(error: ValidationError) -> ValidationIssue:
     path = _json_path(error)
-    code = "VERSION_MISMATCH" if path == "$.version" and error.validator == "const" else "INVALID"
+    code = (
+        "VERSION_MISMATCH"
+        if path == "$.version" and error.validator == "const"
+        else "INVALID"
+    )
     return ValidationIssue(
         code=code,
         path=path,
@@ -154,81 +158,101 @@ def _parse_timestamp(value: Any) -> datetime | None:
     return parsed if parsed.tzinfo is not None else None
 
 
-def _semantic_invariant_issues(target: Mapping[str, Any]) -> tuple[ValidationIssue, ...]:
-    issues: list[ValidationIssue] = []
-    object_type = target.get("object_type")
+def _check_id_consistency(
+    target: Mapping[str, Any], object_type: Any
+) -> Iterator[ValidationIssue]:
     id_field = TYPE_SPECIFIC_ID.get(str(object_type))
-    if id_field and id_field in target and target.get("object_id") != target.get(id_field):
-        issues.append(
-            ValidationIssue(
-                code="CONFLICT",
-                path=f"$.{id_field}",
-                message="The type-specific identifier conflicts with object_id.",
-                rule="object_id_equals_type_specific_id",
-            )
+    if (
+        id_field
+        and id_field in target
+        and target.get("object_id") != target.get(id_field)
+    ):
+        yield ValidationIssue(
+            code="CONFLICT",
+            path=f"$.{id_field}",
+            message="The type-specific identifier conflicts with object_id.",
+            rule="object_id_equals_type_specific_id",
         )
 
+
+def _check_timestamp_ordering(target: Mapping[str, Any]) -> Iterator[ValidationIssue]:
     created_at = _parse_timestamp(target.get("created_at"))
     updated_at = _parse_timestamp(target.get("updated_at"))
     if created_at is not None and updated_at is not None and updated_at < created_at:
-        issues.append(
-            ValidationIssue(
-                code="INVALID",
-                path="$.updated_at",
-                message="updated_at cannot be earlier than created_at.",
-                rule="updated_at_not_before_created_at",
-            )
+        yield ValidationIssue(
+            code="INVALID",
+            path="$.updated_at",
+            message="updated_at cannot be earlier than created_at.",
+            rule="updated_at_not_before_created_at",
         )
 
+
+def _check_limitations(target: Mapping[str, Any]) -> Iterator[ValidationIssue]:
     limitations = target.get("limitations")
     if isinstance(limitations, list) and not limitations:
-        issues.append(
-            ValidationIssue(
-                code="UNKNOWN",
-                path="$.limitations",
-                message="An empty limitations list lacks attributable support in local validation.",
-                rule="empty_limitations_require_attributed_source_assertion",
-            )
+        yield ValidationIssue(
+            code="UNKNOWN",
+            path="$.limitations",
+            message="An empty limitations list lacks attributable support in local validation.",
+            rule="empty_limitations_require_attributed_source_assertion",
         )
 
+
+def _check_entity_lifecycle_state(
+    target: Mapping[str, Any], object_type: Any
+) -> Iterator[ValidationIssue]:
     if object_type == "ENTITY" and target.get("lifecycle_state") in {
         "ACTIVE",
         "VERIFIED",
         "EVALUATED",
         "ADAPTED",
     }:
-        issues.append(
-            ValidationIssue(
-                code="UNKNOWN",
-                path="$.lifecycle_state",
-                message="An elevated lifecycle claim requires external lifecycle evidence.",
-                rule="active_is_source_assertion_only",
-            )
+        yield ValidationIssue(
+            code="UNKNOWN",
+            path="$.lifecycle_state",
+            message="An elevated lifecycle claim requires external lifecycle evidence.",
+            rule="active_is_source_assertion_only",
         )
 
+
+def _check_verification_invariants(
+    target: Mapping[str, Any], object_type: Any
+) -> Iterator[ValidationIssue]:
     if object_type == "VERIFICATION" and target.get("verification_status") in {
         "PASS",
         "FAIL",
         "INCONCLUSIVE",
         "REVOKED",
     }:
-        issues.append(
-            ValidationIssue(
-                code="UNKNOWN",
-                path="$.verification_status",
-                message="A non-pending result requires an external verification record.",
-                rule="non_pending_results_require_resolvable_verification_record",
-            )
+        yield ValidationIssue(
+            code="UNKNOWN",
+            path="$.verification_status",
+            message="A non-pending result requires an external verification record.",
+            rule="non_pending_results_require_resolvable_verification_record",
         )
-    if object_type == "VERIFICATION" and target.get("verification_type") == "INDEPENDENT_VERIFICATION":
-        issues.append(
-            ValidationIssue(
-                code="UNKNOWN",
-                path="$.verification_type",
-                message="Independent verification requires external independence evidence.",
-                rule="independent_type_requires_independence_evidence",
-            )
+    if (
+        object_type == "VERIFICATION"
+        and target.get("verification_type") == "INDEPENDENT_VERIFICATION"
+    ):
+        yield ValidationIssue(
+            code="UNKNOWN",
+            path="$.verification_type",
+            message="Independent verification requires external independence evidence.",
+            rule="independent_type_requires_independence_evidence",
         )
+
+
+def _semantic_invariant_issues(
+    target: Mapping[str, Any],
+) -> tuple[ValidationIssue, ...]:
+    issues: list[ValidationIssue] = []
+    object_type = target.get("object_type")
+
+    issues.extend(_check_id_consistency(target, object_type))
+    issues.extend(_check_timestamp_ordering(target))
+    issues.extend(_check_limitations(target))
+    issues.extend(_check_entity_lifecycle_state(target, object_type))
+    issues.extend(_check_verification_invariants(target, object_type))
 
     return tuple(issues)
 
@@ -306,7 +330,9 @@ class ObjectSchemaValidator:
                 raw_schema = path.read_bytes()
                 schema = json.loads(raw_schema.decode("utf-8"))
             except (OSError, UnicodeError, json.JSONDecodeError) as exc:
-                raise SchemaRegistryError(f"Cannot load local schema: {filename}") from exc
+                raise SchemaRegistryError(
+                    f"Cannot load local schema: {filename}"
+                ) from exc
             if not isinstance(schema, dict) or not isinstance(schema.get("$id"), str):
                 raise SchemaRegistryError(f"Schema has no stable $id: {filename}")
             schema_id = schema["$id"]
@@ -322,9 +348,14 @@ class ObjectSchemaValidator:
             schemas[schema_id] = schema
             digests[schema_id] = f"sha256:{hashlib.sha256(raw_schema).hexdigest()}"
 
-        expected_ids = {"dbio://schema/common-object/v0.1", *SCHEMA_ID_BY_OBJECT_TYPE.values()}
+        expected_ids = {
+            "dbio://schema/common-object/v0.1",
+            *SCHEMA_ID_BY_OBJECT_TYPE.values(),
+        }
         if set(schemas) != expected_ids:
-            raise SchemaRegistryError("The local DBOS v0.1 schema set is incomplete or unexpected.")
+            raise SchemaRegistryError(
+                "The local DBOS v0.1 schema set is incomplete or unexpected."
+            )
         return schemas, digests
 
     @property
@@ -424,9 +455,7 @@ class ObjectSchemaValidator:
                 )
             )
 
-        deduplicated = {
-            (issue.code, issue.path, issue.rule): issue for issue in issues
-        }
+        deduplicated = {(issue.code, issue.path, issue.rule): issue for issue in issues}
         ordered = tuple(sorted(deduplicated.values(), key=_issue_sort_key))
         return ValidationResult(
             validator_version=VALIDATOR_VERSION,
@@ -456,7 +485,9 @@ def validate_object(
 def main(argv: list[str] | None = None) -> int:
     """Read one JSON file, print a diagnostic envelope, and never rewrite it."""
 
-    parser = argparse.ArgumentParser(description="Validate one DBOS v0.1 object JSON file.")
+    parser = argparse.ArgumentParser(
+        description="Validate one DBOS v0.1 object JSON file."
+    )
     parser.add_argument("object_file", type=Path)
     parser.add_argument("--schema-id", default=None)
     args = parser.parse_args(argv)
@@ -464,7 +495,7 @@ def main(argv: list[str] | None = None) -> int:
     try:
         target = json.loads(args.object_file.read_text(encoding="utf-8"))
         result = validate_object(target, schema_id=args.schema_id)
-    except (OSError, UnicodeError, json.JSONDecodeError) as exc:
+    except (OSError, UnicodeError, json.JSONDecodeError):
         issue = ValidationIssue(
             code="INVALID",
             path="$",
