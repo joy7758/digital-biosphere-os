@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import unittest
+import copy
 
 from entity_support.candidate.candidate_proposal import build_candidate_proposal
 from entity_support.candidate.candidate_registration_request import (
@@ -67,10 +68,15 @@ def build_authorization() -> dict[str, object]:
 
 
 class AuthorizedRegistrationTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.base_candidate = build_candidate()
+        cls.base_authorization = build_authorization()
+
     def execute(self, **kwargs: object) -> dict[str, object]:
         return execute_entity_registration(
-            candidate=build_candidate(),
-            authorization=build_authorization(),
+            candidate=copy.deepcopy(self.base_candidate),
+            authorization=copy.deepcopy(self.base_authorization),
             registered_at=TIMESTAMP,
             **kwargs,
         )
