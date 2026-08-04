@@ -49,6 +49,24 @@ class SerializationTests(unittest.TestCase):
         self.assertEqual(_json_value([1, 2, 3]), [1, 2, 3])
         self.assertEqual(_json_value({1, 2, 3}), [1, 2, 3])
 
+    def test_object_to_json_default_indent(self) -> None:
+        target = entity_object()
+        json_str = object_to_json(target)
+        self.assertTrue(json_str.startswith("{\n  \""))
+        self.assertEqual(json.loads(json_str), object_to_dict(target))
+
+    def test_object_to_json_no_indent(self) -> None:
+        target = entity_object()
+        json_str = object_to_json(target, indent=None)
+        self.assertNotIn("\n", json_str)
+        self.assertEqual(json.loads(json_str), object_to_dict(target))
+
+    def test_object_to_json_custom_indent(self) -> None:
+        target = entity_object()
+        json_str = object_to_json(target, indent=4)
+        self.assertTrue(json_str.startswith("{\n    \""))
+        self.assertEqual(json.loads(json_str), object_to_dict(target))
+
 
 if __name__ == "__main__":
     unittest.main()
