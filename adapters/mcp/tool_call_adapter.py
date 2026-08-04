@@ -287,15 +287,6 @@ class MCPToolCallAdapter:
                 message="Only the isolated DBOS synthetic source namespace is accepted.",
                 rule="synthetic_source_namespace_isolation",
             )
-        if (
-            not isinstance(source_reference.get("source_id"), str)
-            or not source_reference.get("source_id")
-        ):
-            return _invalid(
-                field_path="$.source_reference.source_id",
-                message="The synthetic source descriptor requires a non-empty source_id.",
-                rule="synthetic_source_descriptor_shape",
-            )
 
         expected_reference_types = {
             "arguments_reference": "INPUT",
