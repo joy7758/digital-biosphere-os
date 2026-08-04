@@ -464,7 +464,7 @@ def main(argv: list[str] | None = None) -> int:
     try:
         target = json.loads(args.object_file.read_text(encoding="utf-8"))
         result = validate_object(target, schema_id=args.schema_id)
-    except (OSError, UnicodeError, json.JSONDecodeError) as exc:
+    except (OSError, UnicodeError, json.JSONDecodeError):
         issue = ValidationIssue(
             code="INVALID",
             path="$",
