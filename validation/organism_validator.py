@@ -308,18 +308,14 @@ def validate(
         evidence_refs = qualification.get("evidence_refs")
         qualified_evidence = False
         if isinstance(evidence_refs, list):
-            for evidence_id in evidence_refs:
-                evidence = evidence_by_id.get(evidence_id)
-                claim = claim_by_id.get(evidence.get("claim_id")) if evidence else None
-                if (
-                    evidence is not None
-                    and claim is not None
-                    and claim.get("entity_id") == entity_id
-                    and E_RANK.get(evidence.get("evidence_type"), -1) >= E_RANK["E3"]
-                    and evidence.get("status") not in {"invalid", "revoked", "pending"}
-                ):
-                    qualified_evidence = True
-                    break
+            qualified_evidence = any(
+                (evidence := evidence_by_id.get(evidence_id)) is not None
+                and evidence.get("status") not in {"invalid", "revoked", "pending"}
+                and E_RANK.get(evidence.get("evidence_type"), -1) >= E_RANK["E3"]
+                and (claim := claim_by_id.get(evidence.get("claim_id"))) is not None
+                and claim.get("entity_id") == entity_id
+                for evidence_id in evidence_refs
+            )
         if not qualified_evidence:
             missing.append("evidence_level_at_least_E3")
 
