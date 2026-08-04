@@ -106,6 +106,11 @@ class ValidationResult:
     timestamp: str | None = None
 
     def __post_init__(self) -> None:
+        self._validate_strings()
+        self._validate_diagnostics()
+        self._validate_timestamp()
+
+    def _validate_strings(self) -> None:
         if not isinstance(self.validator_version, str) or not self.validator_version:
             raise ValueError("validator_version must be a non-empty string")
         if self.validation_id is not None and (
@@ -116,6 +121,8 @@ class ValidationResult:
             not isinstance(self.target_reference, str) or not self.target_reference
         ):
             raise ValueError("target_reference must be null or a non-empty string")
+
+    def _validate_diagnostics(self) -> None:
         if self.result is ValidationStatus.PASS and self.errors:
             raise ValueError("PASS must not contain errors")
         if self.result is not ValidationStatus.PASS and not self.errors:
@@ -128,6 +135,8 @@ class ValidationResult:
             not isinstance(item, str) or not item for item in self.limitations
         ):
             raise ValueError("limitations must contain at least one non-empty string")
+
+    def _validate_timestamp(self) -> None:
         if self.timestamp is not None:
             if not isinstance(self.timestamp, str) or not self.timestamp:
                 raise ValueError("timestamp must be null or a non-empty RFC 3339 string")
