@@ -203,6 +203,16 @@ def validate(
         if review.get("decision") == "approved"
     }
 
+    verified_claim_by_entity = {
+        entity_id: any(
+            C_RANK.get(claim.get("maturity_level"), -1) >= C_RANK["C3"]
+            and claim.get("status") in {"verified", "governed", "autonomous"}
+            and claim.get("claim_id") in approved_claim_ids
+            for claim in claims
+        )
+        for entity_id, claims in claims_by_entity.items()
+    }
+
     for runtime_id, runtime in runtime_by_id.items():
         match = RUNTIME_ID_RE.match(runtime_id)
         if not match:
@@ -296,30 +306,21 @@ def validate(
             and bool(capability_ids)
             and all(capability_id in capability_by_id for capability_id in capability_ids)
         )
-        verified_claim_exists = any(
-            C_RANK.get(claim.get("maturity_level"), -1) >= C_RANK["C3"]
-            and claim.get("status") in {"verified", "governed", "autonomous"}
-            and claim.get("claim_id") in approved_claim_ids
-            for claim in claims_by_entity.get(entity_id, [])
-        )
+        verified_claim_exists = verified_claim_by_entity.get(entity_id, False)
         if not (capability_records_exist and verified_claim_exists):
             missing.append("capability_verified")
 
         evidence_refs = qualification.get("evidence_refs")
         qualified_evidence = False
         if isinstance(evidence_refs, list):
-            for evidence_id in evidence_refs:
-                evidence = evidence_by_id.get(evidence_id)
-                claim = claim_by_id.get(evidence.get("claim_id")) if evidence else None
-                if (
-                    evidence is not None
-                    and claim is not None
-                    and claim.get("entity_id") == entity_id
-                    and E_RANK.get(evidence.get("evidence_type"), -1) >= E_RANK["E3"]
-                    and evidence.get("status") not in {"invalid", "revoked", "pending"}
-                ):
-                    qualified_evidence = True
-                    break
+            qualified_evidence = any(
+                (evidence := evidence_by_id.get(evidence_id)) is not None
+                and evidence.get("status") not in {"invalid", "revoked", "pending"}
+                and E_RANK.get(evidence.get("evidence_type"), -1) >= E_RANK["E3"]
+                and (claim := claim_by_id.get(evidence.get("claim_id"))) is not None
+                and claim.get("entity_id") == entity_id
+                for evidence_id in evidence_refs
+            )
         if not qualified_evidence:
             missing.append("evidence_level_at_least_E3")
 

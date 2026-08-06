@@ -5,8 +5,6 @@ connects to MCP, invokes a tool, repairs input, resolves references, writes
 evidence, or creates governance authority.
 """
 
-from __future__ import annotations
-
 from collections.abc import Iterator, Mapping
 from typing import Any
 
@@ -21,7 +19,6 @@ from adapters.mcp.mapping import (
 )
 from sdk.validation import validate_object
 from validator import ValidationIssue, ValidationResult, ValidationStatus
-
 
 PREFLIGHT_VALIDATOR_VERSION = "mcp-tool-call-adapter-preflight/v0.1"
 
@@ -183,9 +180,7 @@ def _version_mismatch(field: str, observed: Any) -> ToolCallMappingResult:
 class MCPToolCallAdapter:
     """Deterministic synthetic Tool Call mapper with no external I/O."""
 
-    def adapt(self, value: Mapping[str, Any] | Any) -> ToolCallMappingResult:
-        """Map one strict synthetic fixture and invoke the existing Validator."""
-
+    def _validate_basic_structure(self, value: Mapping[str, Any] | Any) -> ToolCallMappingResult | None:
         if not isinstance(value, Mapping):
             return _invalid(
                 field_path="$",
@@ -214,7 +209,9 @@ class MCPToolCallAdapter:
                 message="Unknown Tool Call fixture fields are rejected fail-closed.",
                 rule="synthetic_tool_call_field_allowlist",
             )
+        return None
 
+    def _validate_required_fields(self, value: Mapping[str, Any]) -> ToolCallMappingResult | None:
         for field in ("source_reference", "context_reference", "protocol_revision"):
             if (
                 field not in value
@@ -248,15 +245,18 @@ class MCPToolCallAdapter:
                     message=f"{field} must be a typed reference mapping.",
                     rule="synthetic_tool_call_reference_shape",
                 )
+        return None
 
+    def _validate_versions(self, value: Mapping[str, Any]) -> ToolCallMappingResult | None:
         if value.get("protocol_revision") != SYNTHETIC_PROTOCOL_REVISION:
             return _version_mismatch("protocol_revision", value.get("protocol_revision"))
         if value.get("mapping_profile_version") != SYNTHETIC_MAPPING_PROFILE_VERSION:
             return _version_mismatch(
                 "mapping_profile_version", value.get("mapping_profile_version")
             )
+        return None
 
-        source_reference = value["source_reference"]
+    def _validate_source_reference(self, source_reference: Mapping[str, Any]) -> ToolCallMappingResult | None:
         missing_source_fields = sorted(SOURCE_DESCRIPTOR_FIELDS - set(source_reference))
         if missing_source_fields:
             return _invalid(
@@ -287,7 +287,9 @@ class MCPToolCallAdapter:
                 message="Only the isolated DBOS synthetic source namespace is accepted.",
                 rule="synthetic_source_namespace_isolation",
             )
+        return None
 
+    def _validate_references(self, value: Mapping[str, Any]) -> ToolCallMappingResult | None:
         expected_reference_types = {
             "arguments_reference": "INPUT",
             "context_reference": "CONTEXT",
@@ -330,6 +332,30 @@ class MCPToolCallAdapter:
                     message=f"{field} must use reference_type={expected_type}.",
                     rule="synthetic_reference_role_consistency",
                 )
+        return None
+
+    def adapt(self, value: Mapping[str, Any] | Any) -> ToolCallMappingResult:
+        """Map one strict synthetic fixture and invoke the existing Validator."""
+
+        error = self._validate_basic_structure(value)
+        if error:
+            return error
+
+        error = self._validate_required_fields(value)
+        if error:
+            return error
+
+        error = self._validate_versions(value)
+        if error:
+            return error
+
+        error = self._validate_source_reference(value["source_reference"])
+        if error:
+            return error
+
+        error = self._validate_references(value)
+        if error:
+            return error
 
         fixture = SyntheticMCPToolCall(
             tool_call_id=value["tool_call_id"],

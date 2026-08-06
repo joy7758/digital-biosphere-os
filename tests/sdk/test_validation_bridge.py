@@ -48,7 +48,9 @@ class ValidationBridgeTests(unittest.TestCase):
         self.assertEqual(result.result, ValidationStatus.VERSION_MISMATCH)
 
     def test_pass_maps_to_no_failure(self) -> None:
-        self.assertIsNone(validation_failure_from_result(validate_object(entity_object())))
+        self.assertIsNone(
+            validation_failure_from_result(validate_object(entity_object()))
+        )
 
     def test_non_pass_statuses_map_without_auto_repair(self) -> None:
         cases = (
@@ -64,6 +66,21 @@ class ValidationBridgeTests(unittest.TestCase):
                 self.assertEqual(failure.code, expected)
                 self.assertFalse(failure.auto_repair_performed)
 
+    def test_bridge_passes_schema_id_explicitly(self) -> None:
+        target = entity_object()
+
+        # 1. Matching schema_id explicitly
+        result_match = validate_object(
+            target, schema_id="dbio://schema/entity-object/v0.1"
+        )
+        self.assertEqual(result_match.result, ValidationStatus.PASS)
+
+        # 2. Conflicting schema_id explicitly
+        result_conflict = validate_object(
+            target, schema_id="dbio://schema/capability-object/v0.1"
+        )
+        self.assertEqual(result_conflict.result, ValidationStatus.CONFLICT)
+        self.assertTrue(any(e.code == "CONFLICT" for e in result_conflict.errors))
 
     def test_unmapped_base_object_fails_validation(self) -> None:
         from sdk.objects.base import BaseObject
@@ -89,7 +106,12 @@ class ValidationBridgeTests(unittest.TestCase):
         # BaseObject sets object_type="UNKNOWN" by default.
         target = BaseObject(
             object_id="dbio://test/invalid/v0.1",
-            source={"namespace": "dbio", "source_id": "test", "version": "v0.1", "status": "DECLARED"},
+            source={
+                "namespace": "dbio",
+                "source_id": "test",
+                "version": "v0.1",
+                "status": "DECLARED",
+            },
             status="DECLARED",
             limitations=[],
         )
@@ -98,8 +120,17 @@ class ValidationBridgeTests(unittest.TestCase):
 
         # Verify that we correctly get an error complaining about $.object_type
         object_type_errors = [e for e in result.errors if e.path == "$.object_type"]
-        self.assertGreater(len(object_type_errors), 0, "Expected an error pointing to $.object_type")
+        self.assertGreater(
+            len(object_type_errors), 0, "Expected an error pointing to $.object_type"
+        )
         self.assertEqual(object_type_errors[0].code, "INVALID")
+
+
+
+    def test_schema_id_is_passed_to_validator(self) -> None:
+        target = entity_object()
+        result = validate_object(target, schema_id="dbio://schema/capability-object/v0.1")
+        self.assertEqual(result.result, ValidationStatus.CONFLICT)
 
 
 if __name__ == "__main__":

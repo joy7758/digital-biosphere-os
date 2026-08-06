@@ -50,6 +50,52 @@ class EntityRegistrationTests(unittest.TestCase):
         )
         self.assertTrue(any("unexpected fields" in error for error in errors))
 
+    def test_validation_reports_missing_fields(self) -> None:
+        errors = validate_entity_registration(
+            {
+                "entity_id": "fixture-entity",
+                "lifecycle_state": "PROPOSED",
+            }
+        )
+        self.assertTrue(any("missing fields" in error for error in errors))
+
+    def test_validation_rejects_empty_entity_id(self) -> None:
+        errors = validate_entity_registration(
+            {
+                "entity_id": "   ",
+                "entity_type": "service",
+                "owner_reference": "fixture-owner",
+                "lifecycle_state": "PROPOSED",
+            }
+        )
+        self.assertTrue(any("entity_id must be a non-empty string" in error for error in errors))
+
+    def test_validation_rejects_empty_owner_reference(self) -> None:
+        errors = validate_entity_registration(
+            {
+                "entity_id": "fixture-entity",
+                "entity_type": "service",
+                "owner_reference": "",
+                "lifecycle_state": "PROPOSED",
+            }
+        )
+        self.assertTrue(any("owner_reference must be a non-empty string" in error for error in errors))
+
+    def test_validation_accumulates_multiple_errors(self) -> None:
+        errors = validate_entity_registration(
+            {
+                "entity_id": "",
+                "entity_type": "invalid_type",
+                "owner_reference": "  ",
+                "lifecycle_state": "ACTIVE",
+            }
+        )
+        self.assertEqual(len(errors), 4)
+        self.assertTrue(any("entity_id must be a non-empty string" in error for error in errors))
+        self.assertTrue(any("entity_type must use" in error for error in errors))
+        self.assertTrue(any("owner_reference must be a non-empty string" in error for error in errors))
+        self.assertTrue(any("registration support requires lifecycle_state=PROPOSED" in error for error in errors))
+
 
 if __name__ == "__main__":
     unittest.main()
