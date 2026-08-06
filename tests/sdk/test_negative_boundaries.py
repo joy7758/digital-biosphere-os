@@ -8,7 +8,8 @@ from pathlib import Path
 import unittest
 
 import sdk
-from fixtures import capability_object, entity_object, evidence_reference_object, execution_object
+from fixtures import capability_object, entity_object, execution_object
+from fixtures import evidence_reference_object
 from sdk.objects import CapabilityObject
 from sdk.serialization import object_to_dict
 from sdk.validation import validate_object

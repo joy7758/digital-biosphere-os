@@ -14,7 +14,6 @@ class PublicFacadeTests(unittest.TestCase):
             "BaseObject",
             "CapabilityObject",
             "EntityObject",
-            "EvidenceReferenceObject",
             "ExecutionObject",
             "SchemaReference",
             "ValidationIssue",

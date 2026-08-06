@@ -9,7 +9,6 @@ from sdk.objects import (
     BaseObject,
     CapabilityObject,
     EntityObject,
-    EvidenceReferenceObject,
     ExecutionObject,
     VerificationObject,
 )
@@ -20,7 +19,6 @@ __all__ = [
     "BaseObject",
     "CapabilityObject",
     "EntityObject",
-    "EvidenceReferenceObject",
     "ExecutionObject",
     "VerificationObject",
     "object_to_dict",

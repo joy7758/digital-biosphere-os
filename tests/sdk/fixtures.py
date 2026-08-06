@@ -7,10 +7,10 @@ from typing import Any
 from sdk import (
     CapabilityObject,
     EntityObject,
-    EvidenceReferenceObject,
     ExecutionObject,
     VerificationObject,
 )
+from sdk.objects.evidence_reference import EvidenceReferenceObject
 
 
 def source(source_id: str) -> dict[str, str]:
