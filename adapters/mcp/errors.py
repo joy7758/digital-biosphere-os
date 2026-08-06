@@ -9,8 +9,6 @@ from __future__ import annotations
 from dataclasses import dataclass
 from enum import Enum
 
-from validator import ValidationIssue
-
 
 class AdapterErrorCode(str, Enum):
     """The five error codes frozen by the MCP Adapter v0.1 specification."""
@@ -48,17 +46,6 @@ class AdapterError:
             raise ValueError("field_reference must be a non-empty string")
         if not isinstance(self.resolution_hint, str) or not self.resolution_hint:
             raise ValueError("resolution_hint must be a non-empty string")
-
-    def to_validation_issue(self, *, result_code: str | None = None) -> ValidationIssue:
-        """Project this adapter diagnostic into the shared result contract."""
-
-        return ValidationIssue(
-            code=result_code or self.code.value,
-            path=self.field_reference,
-            message=self.message,
-            rule=f"mcp_adapter_{self.code.value.lower()}",
-            resolution_hint=self.resolution_hint,
-        )
 
     def to_dict(self) -> dict[str, str]:
         """Return a detached serializable diagnostic."""
