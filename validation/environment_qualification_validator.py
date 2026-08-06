@@ -499,13 +499,15 @@ def validate(docs: dict[str, dict[str, Any]], texts: dict[str, str], root: Path)
                 errors.append(f"{text_name} missing required boundary token: {token}")
 
     evolution_ids = [int(match.group(1)) for match in EVOLUTION_ID_RE.finditer(texts["evolution_ledger"])]
+    num_ids = len(evolution_ids)
     if (
-        not evolution_ids
-        or len(evolution_ids) != len(set(evolution_ids))
-        or sorted(evolution_ids) != list(range(1, max(evolution_ids) + 1))
-        or max(evolution_ids) < 30
+        not num_ids
+        or num_ids != len(set(evolution_ids))
+        or min(evolution_ids) != 1
+        or max(evolution_ids) != num_ids
+        or num_ids < 30
         or 30 not in evolution_ids
-        or evolution_ids[-1] != max(evolution_ids)
+        or evolution_ids[-1] != num_ids
     ):
         errors.append("evolution ledger must preserve unique contiguous IDs, retain DBOS-EVO-0030, and append the latest ID last")
     if "runner_environment_qualification_layer_v0.1" not in texts["evolution_ledger"]:
