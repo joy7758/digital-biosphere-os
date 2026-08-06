@@ -7,7 +7,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from tools.run_tests import run_test_directory
+from tools.run_tests import discover_test_directories, run, run_test_directory
 
 
 class RunTestsToolingTests(unittest.TestCase):
@@ -54,6 +54,45 @@ class RunTestsToolingTests(unittest.TestCase):
         self.assertEqual(result["status"], "FAIL")
         self.assertEqual(result["test_count"], 1)
         self.assertIn("UNITTEST_EXIT_1", result["errors"])
+
+    def test_discover_test_directories_no_tests_dir(self) -> None:
+        directories = discover_test_directories(self.test_directory)
+        self.assertEqual(directories, [])
+
+    def test_discover_test_directories_ignores_empty(self) -> None:
+        tests_dir = self.test_directory / "tests"
+        tests_dir.mkdir()
+        empty_subdir = tests_dir / "empty"
+        empty_subdir.mkdir()
+
+        directories = discover_test_directories(self.test_directory)
+        self.assertEqual(directories, [])
+
+    def test_discover_test_directories_finds_tests(self) -> None:
+        tests_dir = self.test_directory / "tests"
+        tests_dir.mkdir()
+        valid_subdir = tests_dir / "valid"
+        valid_subdir.mkdir()
+        (valid_subdir / "test_something.py").write_text("", encoding="utf-8")
+
+        directories = discover_test_directories(self.test_directory)
+        self.assertEqual(directories, [valid_subdir])
+
+    def test_run_empty_directories(self) -> None:
+        result = run(self.root, [], verbose=False)
+        self.assertEqual(result["status"], "FAIL")
+        self.assertEqual(result["test_directory_count"], 0)
+        self.assertEqual(result["test_count"], 0)
+        self.assertIn("NO_TEST_DIRECTORIES", result["errors"])
+        self.assertIn("NO_TESTS_DISCOVERED", result["errors"])
+
+    def test_run_discovery_failure(self) -> None:
+        result = run(self.root, [self.test_directory], verbose=False)
+        self.assertEqual(result["status"], "FAIL")
+        self.assertEqual(result["test_directory_count"], 1)
+        self.assertEqual(result["test_count"], 0)
+        self.assertIn("ONE_OR_MORE_TEST_DIRECTORIES_FAILED", result["errors"])
+        self.assertIn("NO_TESTS_DISCOVERED", result["errors"])
 
 
 if __name__ == "__main__":
