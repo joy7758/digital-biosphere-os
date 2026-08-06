@@ -203,6 +203,16 @@ def validate(
         if review.get("decision") == "approved"
     }
 
+    verified_claim_by_entity = {
+        entity_id: any(
+            C_RANK.get(claim.get("maturity_level"), -1) >= C_RANK["C3"]
+            and claim.get("status") in {"verified", "governed", "autonomous"}
+            and claim.get("claim_id") in approved_claim_ids
+            for claim in claims
+        )
+        for entity_id, claims in claims_by_entity.items()
+    }
+
     for runtime_id, runtime in runtime_by_id.items():
         match = RUNTIME_ID_RE.match(runtime_id)
         if not match:
@@ -296,12 +306,7 @@ def validate(
             and bool(capability_ids)
             and all(capability_id in capability_by_id for capability_id in capability_ids)
         )
-        verified_claim_exists = any(
-            C_RANK.get(claim.get("maturity_level"), -1) >= C_RANK["C3"]
-            and claim.get("status") in {"verified", "governed", "autonomous"}
-            and claim.get("claim_id") in approved_claim_ids
-            for claim in claims_by_entity.get(entity_id, [])
-        )
+        verified_claim_exists = verified_claim_by_entity.get(entity_id, False)
         if not (capability_records_exist and verified_claim_exists):
             missing.append("capability_verified")
 
