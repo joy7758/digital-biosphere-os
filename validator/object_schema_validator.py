@@ -358,12 +358,6 @@ class ObjectSchemaValidator:
             )
         return schemas, digests
 
-    @property
-    def schema_ids(self) -> tuple[str, ...]:
-        """Return the exact offline schema identifiers; no mutable latest alias exists."""
-
-        return tuple(sorted(self._schemas))
-
     def validate(
         self, target: Mapping[str, Any] | Any, *, schema_id: str | None = None
     ) -> ValidationResult:
