@@ -194,12 +194,6 @@ class ReceiptStore:
     def count(self) -> int:
         return len(self._read()["receipt_records"])
 
-    def get_by_registration(self, registration_id: str) -> dict[str, Any] | None:
-        for receipt in self._read()["receipt_records"]:
-            if receipt["registration_id"] == registration_id:
-                return deepcopy(receipt)
-        return None
-
     def append(
         self,
         receipt: Mapping[str, Any],
