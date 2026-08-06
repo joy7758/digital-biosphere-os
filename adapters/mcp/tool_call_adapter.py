@@ -5,8 +5,6 @@ connects to MCP, invokes a tool, repairs input, resolves references, writes
 evidence, or creates governance authority.
 """
 
-from __future__ import annotations
-
 from collections.abc import Iterator, Mapping
 from typing import Any
 
@@ -21,7 +19,6 @@ from adapters.mcp.mapping import (
 )
 from sdk.validation import validate_object
 from validator import ValidationIssue, ValidationResult, ValidationStatus
-
 
 PREFLIGHT_VALIDATOR_VERSION = "mcp-tool-call-adapter-preflight/v0.1"
 
