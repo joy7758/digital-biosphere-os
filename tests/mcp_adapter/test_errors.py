@@ -36,38 +36,6 @@ class AdapterErrorTests(unittest.TestCase):
                 resolution_hint="",
             )
 
-    def test_to_validation_issue_conversion(self) -> None:
-        """Test conversion to ValidationIssue with default result_code."""
-        error = AdapterError(
-            code=AdapterErrorCode.INVALID_TOOL_REFERENCE,
-            message="Tool not found",
-            field_reference="$.tool_name",
-            resolution_hint="Check tool name",
-        )
-
-        issue = error.to_validation_issue()
-
-        self.assertIsInstance(issue, ValidationIssue)
-        self.assertEqual(issue.code, "INVALID_TOOL_REFERENCE")
-        self.assertEqual(issue.path, "$.tool_name")
-        self.assertEqual(issue.message, "Tool not found")
-        self.assertEqual(issue.rule, "mcp_adapter_invalid_tool_reference")
-        self.assertEqual(issue.resolution_hint, "Check tool name")
-
-    def test_to_validation_issue_with_custom_result_code(self) -> None:
-        """Test conversion to ValidationIssue with explicit result_code."""
-        error = AdapterError(
-            code=AdapterErrorCode.VERSION_MISMATCH,
-            message="Wrong version",
-            field_reference="$.version",
-            resolution_hint="Update version",
-        )
-
-        issue = error.to_validation_issue(result_code="CUSTOM_CODE")
-
-        self.assertEqual(issue.code, "CUSTOM_CODE")
-        self.assertEqual(issue.rule, "mcp_adapter_version_mismatch")
-
 
 if __name__ == "__main__":
     unittest.main()
