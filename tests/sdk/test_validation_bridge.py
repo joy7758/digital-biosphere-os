@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import unittest
+from unittest.mock import patch
 
 from fixtures import all_objects, entity_object
 from sdk.errors import SDKErrorCode, validation_failure_from_result
@@ -131,6 +132,36 @@ class ValidationBridgeTests(unittest.TestCase):
         target = entity_object()
         result = validate_object(target, schema_id="dbio://schema/capability-object/v0.1")
         self.assertEqual(result.result, ValidationStatus.CONFLICT)
+
+
+class ValidationBridgeIntegrationTests(unittest.TestCase):
+    @patch("sdk.validation.bridge.validate_serialized_object")
+    @patch("sdk.validation.bridge.object_to_dict")
+    def test_bridge_pipeline_wiring(self, mock_object_to_dict, mock_validate_serialized_object) -> None:
+        """Verify that the bridge successfully links serialization and validation."""
+        mock_object_to_dict.return_value = {"mock": "payload"}
+        mock_validate_serialized_object.return_value = "mock_result"
+
+        target = entity_object()
+        result = validate_object(target, schema_id="mock_schema_id")
+
+        mock_object_to_dict.assert_called_once_with(target)
+        mock_validate_serialized_object.assert_called_once_with(
+            {"mock": "payload"}, schema_id="mock_schema_id"
+        )
+        self.assertEqual(result, "mock_result")  # type: ignore[comparison-overlap]
+
+    def test_validate_object_integration_end_to_end(self) -> None:
+        """Verify full end-to-end integration without mocks."""
+        # Test a clean object mapping to PASS
+        clean_target = entity_object()
+        pass_result = validate_object(clean_target)
+        self.assertEqual(pass_result.result, ValidationStatus.PASS)
+
+        # Test an object with a conflict mapping to CONFLICT
+        conflict_target = entity_object(entity_id="dbio://repository/conflict/v0.1")
+        conflict_result = validate_object(conflict_target)
+        self.assertEqual(conflict_result.result, ValidationStatus.CONFLICT)
 
 
 if __name__ == "__main__":
