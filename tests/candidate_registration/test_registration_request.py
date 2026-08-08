@@ -9,6 +9,7 @@ from entity_support.candidate.candidate_registration_request import (
     CANDIDATE_REGISTRATION_REQUEST_FIELDS,
     REGISTRATION_REQUEST_STATUSES,
     build_candidate_registration_request,
+    validate_candidate_registration_request,
 )
 from entity_support.candidate.candidate_registry import build_candidate_registry_record
 from entity_support.candidate.candidate_review import build_candidate_review
@@ -96,6 +97,24 @@ class RegistrationRequestTests(unittest.TestCase):
                 review=self._review(),
                 registration_request=request,
             )
+
+    def test_validate_missing_fields(self) -> None:
+        request = self._request()
+        del request["request_id"]
+        errors = validate_candidate_registration_request(request)
+        self.assertTrue(any("missing fields" in e and "request_id" in e for e in errors))
+
+    def test_validate_extra_fields(self) -> None:
+        request = self._request()
+        request["extra_field"] = "value"
+        errors = validate_candidate_registration_request(request)
+        self.assertTrue(any("unexpected fields" in e and "extra_field" in e for e in errors))
+
+    def test_validate_unsupported_status(self) -> None:
+        request = self._request()
+        request["status"] = "UNSUPPORTED_STATUS"
+        errors = validate_candidate_registration_request(request)
+        self.assertTrue(any("status is not supported" in e for e in errors))
 
 
 if __name__ == "__main__":
