@@ -39,6 +39,16 @@ class CapabilityValidationEdgeCaseTests(unittest.TestCase):
         errors = validate_capability_record(record)
         self.assertTrue(any("unexpected fields" in e and "unknown_field" in e for e in errors))
 
+    def test_unexpected_mixed_type_fields(self) -> None:
+        record = self._valid_record()
+        record[123] = "numeric key"
+        record[None] = "none key"
+
+        # This would previously raise TypeError during sorting mixed types
+        errors = validate_capability_record(record)
+        self.assertTrue(any("unexpected fields" in e and "123" in e for e in errors))
+        self.assertTrue(any("unexpected fields" in e and "None" in e for e in errors))
+
     def test_empty_string_fields(self) -> None:
         for field in ("capability_id", "entity_id", "capability_name"):
             record = self._valid_record()

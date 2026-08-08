@@ -44,7 +44,7 @@ def validate_capability_record(record: Mapping[str, Any]) -> list[str]:
 
     errors: list[str] = []
     missing = [field for field in CAPABILITY_RECORD_FIELDS if field not in record]
-    extra = sorted(set(record) - set(CAPABILITY_RECORD_FIELDS))
+    extra = sorted(set(record) - set(CAPABILITY_RECORD_FIELDS), key=str)
     if missing:
         errors.append(f"missing fields: {missing}")
     if extra:
