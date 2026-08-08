@@ -5,6 +5,36 @@ from validator.reference_consistency_validator import (
 )
 
 class TestReferenceConsistencyValidator(unittest.TestCase):
+    def test_validate_reference_consistency_invalid_shape(self):
+        """Test that a reference field must be a Mapping or null via public entrypoint."""
+        target = {
+            "object_type": "ENTITY",
+            "source_reference": "invalid-reference-shape"
+        }
+        issues = validate_reference_consistency(target)
+
+        self.assertEqual(len(issues), 1)
+        self.assertEqual(issues[0].code, "INVALID")
+        self.assertEqual(issues[0].rule, "reference_object_shape")
+        self.assertEqual(issues[0].path, "$.source_reference")
+
+    def test_validate_reference_consistency_missing_required_fields(self):
+        """Test that missing required fields in a reference object trigger an error via public entrypoint."""
+        target = {
+            "object_type": "ENTITY",
+            "source_reference": {
+                "reference_id": "ref-1",
+                "reference_type": "ENTITY"
+                # Missing namespace, version, source, status
+            }
+        }
+        issues = validate_reference_consistency(target)
+
+        self.assertEqual(len(issues), 1)
+        self.assertEqual(issues[0].code, "INVALID")
+        self.assertEqual(issues[0].rule, "reference_required_fields")
+        self.assertEqual(issues[0].path, "$.source_reference")
+
     def test_dbio_reference_type_allowlist_invalid(self):
         """Test that a dbio namespace reference must have a known reference type."""
         reference = {
