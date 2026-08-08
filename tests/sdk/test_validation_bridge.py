@@ -132,6 +132,14 @@ class ValidationBridgeTests(unittest.TestCase):
         result = validate_object(target, schema_id="dbio://schema/capability-object/v0.1")
         self.assertEqual(result.result, ValidationStatus.CONFLICT)
 
+    def test_bridge_integration_schema_validation_failure(self) -> None:
+        target = entity_object(lifecycle_state="INVALID_STATE")
+        result = validate_object(target)
+        self.assertEqual(result.result, ValidationStatus.FAIL)
+        # Verify that the error correctly points to the structural schema invalidation
+        # and has been bubbled up from the validator to the bridge wrapper.
+        self.assertTrue(any(e.code == "INVALID" and e.path == "$.lifecycle_state" for e in result.errors))
+
 
 if __name__ == "__main__":
     unittest.main()
