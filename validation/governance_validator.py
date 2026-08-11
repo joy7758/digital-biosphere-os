@@ -181,7 +181,12 @@ def require_none_effects(metadata: Any, label: str, errors: list[str]) -> None:
     if not isinstance(metadata, dict):
         errors.append(f"{label} metadata must be a mapping")
         return
-    for field in ("identity_effect", "capability_effect", "permission_effect", "authority_effect"):
+    for field in (
+        "identity_effect",
+        "capability_effect",
+        "permission_effect",
+        "authority_effect",
+    ):
         if field in metadata and metadata.get(field) != "none":
             errors.append(f"{label}.{field} must remain none")
     for field in (
@@ -195,32 +200,16 @@ def require_none_effects(metadata: Any, label: str, errors: list[str]) -> None:
             errors.append(f"{label}.{field} must remain zero")
 
 
-def validate(
+def _validate_archetypes(
     archetype_doc: dict[str, Any],
-    binding_doc: dict[str, Any],
-    transition_doc: dict[str, Any],
-    evaluation_doc: dict[str, Any],
-    entity_doc: dict[str, Any],
-    capability_doc: dict[str, Any],
-    claim_doc: dict[str, Any],
-    evidence_doc: dict[str, Any],
-    verification_doc: dict[str, Any],
-    runtime_doc: dict[str, Any],
-    candidate_doc: dict[str, Any],
-    ecological_doc: dict[str, Any],
-    federation_doc: dict[str, Any],
-    root: Path,
-) -> dict[str, Any]:
-    """Validate taxonomy, empty application state, and cross-layer boundaries."""
-    errors: list[str] = []
-    entity_by_id = index_records(entity_doc.get("entities"), "entity_id", "entities", errors)
+    errors: list[str],
+) -> tuple[dict[str, dict[str, Any]], Counter[str]]:
     archetype_by_id = index_records(
         archetype_doc.get("governance_archetypes"),
         "archetype_id",
         "governance_archetypes",
         errors,
     )
-
     archetype_name_counts: Counter[str] = Counter()
     for archetype_id, archetype in archetype_by_id.items():
         missing = REQUIRED_ARCHETYPE_FIELDS - set(archetype)
@@ -236,15 +225,21 @@ def validate(
         expected = ARCHETYPE_MODELS[name]
         for field, expected_value in expected.items():
             if archetype.get(field) != expected_value:
-                errors.append(f"{archetype_id}: {field} differs from the v0.1 definition")
-        if not isinstance(archetype.get("description"), str) or not archetype.get("description"):
+                errors.append(
+                    f"{archetype_id}: {field} differs from the v0.1 definition"
+                )
+        if not isinstance(archetype.get("description"), str) or not archetype.get(
+            "description"
+        ):
             errors.append(f"{archetype_id}: description must be non-empty")
         reject_governance_authority_fields(archetype, archetype_id, errors)
 
     if tuple(archetype_name_counts) != ARCHETYPE_NAMES:
         errors.append("archetypes must preserve federation, hierarchy, ecology order")
     if any(archetype_name_counts.get(name, 0) != 1 for name in ARCHETYPE_NAMES):
-        errors.append("exactly one definition is required for each governance archetype")
+        errors.append(
+            "exactly one definition is required for each governance archetype"
+        )
     archetype_meta = archetype_doc.get("metadata", {})
     if archetype_meta.get("archetype_count") != len(archetype_by_id):
         errors.append("archetype metadata count mismatch")
@@ -254,7 +249,15 @@ def validate(
     if archetype_meta.get("binding_count") != 0:
         errors.append("archetype definition metadata cannot claim a binding")
     require_none_effects(archetype_meta, "archetype", errors)
+    return archetype_by_id, archetype_name_counts
 
+
+def _validate_bindings(
+    binding_doc: dict[str, Any],
+    entity_by_id: dict[str, dict[str, Any]],
+    archetype_by_id: dict[str, dict[str, Any]],
+    errors: list[str],
+) -> tuple[dict[str, dict[str, Any]], Counter[str]]:
     bindings = binding_doc.get("governance_bindings")
     binding_by_id = index_records(bindings, "binding_id", "governance_bindings", errors)
     binding_status_counts: Counter[str] = Counter()
@@ -267,7 +270,9 @@ def validate(
         if binding.get("entity_id") not in entity_by_id:
             errors.append(f"{binding_id}: unknown entity {binding.get('entity_id')!r}")
         if binding.get("archetype_id") not in archetype_by_id:
-            errors.append(f"{binding_id}: unknown archetype {binding.get('archetype_id')!r}")
+            errors.append(
+                f"{binding_id}: unknown archetype {binding.get('archetype_id')!r}"
+            )
         status = binding.get("status")
         if status not in BINDING_STATUSES:
             errors.append(f"{binding_id}: invalid binding status {status!r}")
@@ -285,14 +290,25 @@ def validate(
     binding_meta = binding_doc.get("metadata", {})
     if binding_meta.get("binding_count") != len(binding_by_id):
         errors.append("binding metadata count mismatch")
-    if binding_meta.get("pending_binding_count") != binding_status_counts.get("pending", 0):
+    if binding_meta.get("pending_binding_count") != binding_status_counts.get(
+        "pending", 0
+    ):
         errors.append("pending binding metadata count mismatch")
-    if binding_meta.get("active_binding_count") != binding_status_counts.get("active", 0):
+    if binding_meta.get("active_binding_count") != binding_status_counts.get(
+        "active", 0
+    ):
         errors.append("active binding metadata count mismatch")
     if binding_by_id:
         errors.append("v0.1 baseline must not automatically bind current entities")
     require_none_effects(binding_meta, "binding", errors)
+    return binding_by_id, binding_status_counts
 
+
+def _validate_transitions(
+    transition_doc: dict[str, Any],
+    archetype_by_id: dict[str, dict[str, Any]],
+    errors: list[str],
+) -> tuple[dict[str, dict[str, Any]], list[Any]]:
     transition_definitions = transition_doc.get("transition_definitions")
     transition_by_id = index_records(
         transition_definitions,
@@ -316,7 +332,9 @@ def validate(
         if source == target:
             errors.append(f"{transition_id}: source and target must differ")
         if set(transition.get("trigger", [])) != EXPECTED_TRANSITION_TRIGGERS:
-            errors.append(f"{transition_id}: transition triggers cannot bypass evidence, interaction, or runtime verification")
+            errors.append(
+                f"{transition_id}: transition triggers cannot bypass evidence, interaction, or runtime verification"
+            )
         if not REQUIRED_TRANSITION_EXECUTION_FIELDS.issubset(
             set(transition.get("requirements", []))
         ):
@@ -324,9 +342,13 @@ def validate(
         if transition.get("status") not in TRANSITION_STATUSES:
             errors.append(f"{transition_id}: invalid transition status")
         if transition.get("status") != "defined_not_executed":
-            errors.append(f"{transition_id}: v0.1 transition definition must remain unexecuted")
+            errors.append(
+                f"{transition_id}: v0.1 transition definition must remain unexecuted"
+            )
         if transition.get("authority_effect") != "none":
-            errors.append(f"{transition_id}: transition definition cannot create authority")
+            errors.append(
+                f"{transition_id}: transition definition cannot create authority"
+            )
         reject_governance_authority_fields(transition, transition_id, errors)
 
     executed = transition_doc.get("executed_transitions")
@@ -341,7 +363,13 @@ def validate(
     if transition_meta.get("executed_transition_count") != len(executed):
         errors.append("executed transition metadata count mismatch")
     require_none_effects(transition_meta, "transition", errors)
+    return transition_by_id, executed
 
+
+def _validate_evaluations(
+    evaluation_doc: dict[str, Any],
+    errors: list[str],
+) -> dict[str, dict[str, Any]]:
     dimensions = evaluation_doc.get("evaluation_dimensions")
     dimension_by_id = index_records(
         dimensions, "dimension_id", "evaluation_dimensions", errors
@@ -349,7 +377,9 @@ def validate(
     if tuple(dimension_by_id) != EVALUATION_DIMENSIONS:
         errors.append("evaluation dimensions must preserve the five ordered dimensions")
     for dimension_id, dimension in dimension_by_id.items():
-        if not isinstance(dimension.get("description"), str) or not dimension.get("description"):
+        if not isinstance(dimension.get("description"), str) or not dimension.get(
+            "description"
+        ):
             errors.append(f"{dimension_id}: description must be non-empty")
         if dimension.get("score") is not None:
             errors.append(f"{dimension_id}: score must remain null")
@@ -371,13 +401,33 @@ def validate(
     if evaluation_meta.get("fitness_effect") != "none":
         errors.append("governance evaluation cannot modify ecological fitness")
     require_none_effects(evaluation_meta, "evaluation", errors)
+    return dimension_by_id
 
+
+def _validate_preservation_rules(
+    federation_doc: dict[str, Any],
+    capability_doc: dict[str, Any],
+    claim_doc: dict[str, Any],
+    evidence_doc: dict[str, Any],
+    verification_doc: dict[str, Any],
+    runtime_doc: dict[str, Any],
+    candidate_doc: dict[str, Any],
+    ecological_doc: dict[str, Any],
+    entity_by_id: dict[str, dict[str, Any]],
+    errors: list[str],
+) -> tuple[list[Any], list[Any], list[Any]]:
     federation_members = federation_doc.get("members")
     if not isinstance(federation_members, list):
         errors.append("federation members must be a list")
         federation_members = []
-    if any("archetype_id" in member or "governance_binding" in member for member in federation_members if isinstance(member, dict)):
-        errors.append("federation membership cannot automatically create a governance binding")
+    if any(
+        "archetype_id" in member or "governance_binding" in member
+        for member in federation_members
+        if isinstance(member, dict)
+    ):
+        errors.append(
+            "federation membership cannot automatically create a governance binding"
+        )
 
     capabilities = capability_doc.get("capabilities")
     if not isinstance(capabilities, list) or capabilities:
@@ -388,16 +438,28 @@ def validate(
         errors.append("claims must be a list")
         claims = []
     for claim in claims:
-        if not isinstance(claim, dict) or claim.get("maturity_level") != "C1" or claim.get("status") != "pending":
-            errors.append("governance archetypes must preserve every claim at C1/pending")
+        if (
+            not isinstance(claim, dict)
+            or claim.get("maturity_level") != "C1"
+            or claim.get("status") != "pending"
+        ):
+            errors.append(
+                "governance archetypes must preserve every claim at C1/pending"
+            )
             break
     evidence_records = evidence_doc.get("evidence")
     if not isinstance(evidence_records, list):
         errors.append("evidence must be a list")
         evidence_records = []
     for evidence in evidence_records:
-        if not isinstance(evidence, dict) or evidence.get("evidence_type") != "E1" or evidence.get("status") != "pending":
-            errors.append("governance archetypes must preserve every evidence record at E1/pending")
+        if (
+            not isinstance(evidence, dict)
+            or evidence.get("evidence_type") != "E1"
+            or evidence.get("status") != "pending"
+        ):
+            errors.append(
+                "governance archetypes must preserve every evidence record at E1/pending"
+            )
             break
     verification_records = verification_doc.get("verification_records")
     if not isinstance(verification_records, list):
@@ -410,7 +472,9 @@ def validate(
             or verification.get("status") != "pending"
             or verification.get("decision") != "pending"
         ):
-            errors.append("governance archetypes must preserve every verification at V0/pending")
+            errors.append(
+                "governance archetypes must preserve every verification at V0/pending"
+            )
             break
     runtimes = runtime_doc.get("runtime_instances")
     if not isinstance(runtimes, list) or runtimes:
@@ -428,16 +492,33 @@ def validate(
         if not isinstance(ecological_entity, dict):
             errors.append("ecological entity must be a mapping")
             continue
-        if ecological_entity.get("ecological_type") in {"Runtime", "Candidate Organism", "Digital Organism"}:
-            errors.append("governance archetypes cannot promote runtime or organism status")
+        if ecological_entity.get("ecological_type") in {
+            "Runtime",
+            "Candidate Organism",
+            "Digital Organism",
+        }:
+            errors.append(
+                "governance archetypes cannot promote runtime or organism status"
+            )
         if ecological_entity.get("evolution_stage") != "pre-organism":
             errors.append("governance archetypes cannot change evolution stage")
-        if ecological_entity.get("fitness_status") != "unknown" or ecological_entity.get("fitness_score") is not None:
+        if (
+            ecological_entity.get("fitness_status") != "unknown"
+            or ecological_entity.get("fitness_score") is not None
+        ):
             errors.append("governance archetypes cannot change fitness")
     if any(entity.get("entity_type") == "agent" for entity in entity_by_id.values()):
         errors.append("governance archetypes must not create an Agent entity")
+    return capabilities, runtimes, candidates
 
-    governance_constitution = root / "constitution" / "governance-archetype-constitution.yaml"
+
+def _validate_constitutions(
+    root: Path,
+    errors: list[str],
+) -> None:
+    governance_constitution = (
+        root / "constitution" / "governance-archetype-constitution.yaml"
+    )
     federation_constitution = root / "constitution" / "federation-constitution.yaml"
     saee_constitution = root / "constitution" / "saee-constitution.yaml"
     for path in (governance_constitution, federation_constitution, saee_constitution):
@@ -445,16 +526,74 @@ def validate(
             errors.append(f"missing constitution reference: {path}")
     if federation_constitution.is_file():
         federation_text = federation_constitution.read_text(encoding="utf-8")
-        if 'governance_archetype_constitution: "governance-archetype-constitution.yaml"' not in federation_text:
-            errors.append("federation constitution does not reference the governance archetype layer")
-        if 'exclusive_governance_mode: false' not in federation_text:
-            errors.append("federation constitution must state that federation is not the exclusive governance mode")
+        if (
+            'governance_archetype_constitution: "governance-archetype-constitution.yaml"'
+            not in federation_text
+        ):
+            errors.append(
+                "federation constitution does not reference the governance archetype layer"
+            )
+        if "exclusive_governance_mode: false" not in federation_text:
+            errors.append(
+                "federation constitution must state that federation is not the exclusive governance mode"
+            )
     if saee_constitution.is_file():
         saee_text = saee_constitution.read_text(encoding="utf-8")
-        if 'governance_archetype_constitution: "governance-archetype-constitution.yaml"' not in saee_text:
-            errors.append("SAEE constitution does not reference the governance archetype layer")
+        if (
+            'governance_archetype_constitution: "governance-archetype-constitution.yaml"'
+            not in saee_text
+        ):
+            errors.append(
+                "SAEE constitution does not reference the governance archetype layer"
+            )
         if 'authority_effect: "none"' not in saee_text:
-            errors.append("SAEE governance adaptation strategy must retain authority_effect=none")
+            errors.append(
+                "SAEE governance adaptation strategy must retain authority_effect=none"
+            )
+
+
+def validate(
+    archetype_doc: dict[str, Any],
+    binding_doc: dict[str, Any],
+    transition_doc: dict[str, Any],
+    evaluation_doc: dict[str, Any],
+    entity_doc: dict[str, Any],
+    capability_doc: dict[str, Any],
+    claim_doc: dict[str, Any],
+    evidence_doc: dict[str, Any],
+    verification_doc: dict[str, Any],
+    runtime_doc: dict[str, Any],
+    candidate_doc: dict[str, Any],
+    ecological_doc: dict[str, Any],
+    federation_doc: dict[str, Any],
+    root: Path,
+) -> dict[str, Any]:
+    """Validate taxonomy, empty application state, and cross-layer boundaries."""
+    errors: list[str] = []
+    entity_by_id = index_records(
+        entity_doc.get("entities"), "entity_id", "entities", errors
+    )
+    archetype_by_id, archetype_name_counts = _validate_archetypes(archetype_doc, errors)
+    binding_by_id, binding_status_counts = _validate_bindings(
+        binding_doc, entity_by_id, archetype_by_id, errors
+    )
+    transition_by_id, executed = _validate_transitions(
+        transition_doc, archetype_by_id, errors
+    )
+    dimension_by_id = _validate_evaluations(evaluation_doc, errors)
+    capabilities, runtimes, candidates = _validate_preservation_rules(
+        federation_doc,
+        capability_doc,
+        claim_doc,
+        evidence_doc,
+        verification_doc,
+        runtime_doc,
+        candidate_doc,
+        ecological_doc,
+        entity_by_id,
+        errors,
+    )
+    _validate_constitutions(root, errors)
 
     return {
         "status": "FAIL" if errors else "PASS",
@@ -486,19 +625,59 @@ def validate(
 def main() -> int:
     root = Path(__file__).resolve().parents[1]
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--archetypes", type=Path, default=root / "registry" / "governance-archetypes.yaml")
-    parser.add_argument("--bindings", type=Path, default=root / "registry" / "governance-bindings.yaml")
-    parser.add_argument("--transitions", type=Path, default=root / "registry" / "governance-transitions.yaml")
-    parser.add_argument("--evaluation", type=Path, default=root / "registry" / "governance-evaluation.yaml")
-    parser.add_argument("--entities", type=Path, default=root / "registry" / "entities.yaml")
-    parser.add_argument("--capabilities", type=Path, default=root / "registry" / "capabilities.yaml")
-    parser.add_argument("--claims", type=Path, default=root / "registry" / "capability-claims.yaml")
-    parser.add_argument("--evidence", type=Path, default=root / "registry" / "capability-evidence.yaml")
-    parser.add_argument("--verification", type=Path, default=root / "registry" / "verification-records.yaml")
-    parser.add_argument("--runtimes", type=Path, default=root / "registry" / "runtime-instances.yaml")
-    parser.add_argument("--candidates", type=Path, default=root / "registry" / "organism-candidates.yaml")
-    parser.add_argument("--ecological", type=Path, default=root / "registry" / "ecological-entities.yaml")
-    parser.add_argument("--federation-members", type=Path, default=root / "registry" / "federation-members.yaml")
+    parser.add_argument(
+        "--archetypes",
+        type=Path,
+        default=root / "registry" / "governance-archetypes.yaml",
+    )
+    parser.add_argument(
+        "--bindings", type=Path, default=root / "registry" / "governance-bindings.yaml"
+    )
+    parser.add_argument(
+        "--transitions",
+        type=Path,
+        default=root / "registry" / "governance-transitions.yaml",
+    )
+    parser.add_argument(
+        "--evaluation",
+        type=Path,
+        default=root / "registry" / "governance-evaluation.yaml",
+    )
+    parser.add_argument(
+        "--entities", type=Path, default=root / "registry" / "entities.yaml"
+    )
+    parser.add_argument(
+        "--capabilities", type=Path, default=root / "registry" / "capabilities.yaml"
+    )
+    parser.add_argument(
+        "--claims", type=Path, default=root / "registry" / "capability-claims.yaml"
+    )
+    parser.add_argument(
+        "--evidence", type=Path, default=root / "registry" / "capability-evidence.yaml"
+    )
+    parser.add_argument(
+        "--verification",
+        type=Path,
+        default=root / "registry" / "verification-records.yaml",
+    )
+    parser.add_argument(
+        "--runtimes", type=Path, default=root / "registry" / "runtime-instances.yaml"
+    )
+    parser.add_argument(
+        "--candidates",
+        type=Path,
+        default=root / "registry" / "organism-candidates.yaml",
+    )
+    parser.add_argument(
+        "--ecological",
+        type=Path,
+        default=root / "registry" / "ecological-entities.yaml",
+    )
+    parser.add_argument(
+        "--federation-members",
+        type=Path,
+        default=root / "registry" / "federation-members.yaml",
+    )
     parser.add_argument("--format", choices=("json", "text"), default="json")
     args = parser.parse_args()
     try:
