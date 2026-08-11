@@ -196,26 +196,14 @@ def require_none_effects(metadata: Any, label: str, errors: list[str]) -> None:
 
 
 def validate(
-    archetype_doc: dict[str, Any],
-    binding_doc: dict[str, Any],
-    transition_doc: dict[str, Any],
-    evaluation_doc: dict[str, Any],
-    entity_doc: dict[str, Any],
-    capability_doc: dict[str, Any],
-    claim_doc: dict[str, Any],
-    evidence_doc: dict[str, Any],
-    verification_doc: dict[str, Any],
-    runtime_doc: dict[str, Any],
-    candidate_doc: dict[str, Any],
-    ecological_doc: dict[str, Any],
-    federation_doc: dict[str, Any],
+    docs: dict[str, dict[str, Any]],
     root: Path,
 ) -> dict[str, Any]:
     """Validate taxonomy, empty application state, and cross-layer boundaries."""
     errors: list[str] = []
-    entity_by_id = index_records(entity_doc.get("entities"), "entity_id", "entities", errors)
+    entity_by_id = index_records(docs["entities"].get("entities"), "entity_id", "entities", errors)
     archetype_by_id = index_records(
-        archetype_doc.get("governance_archetypes"),
+        docs["archetypes"].get("governance_archetypes"),
         "archetype_id",
         "governance_archetypes",
         errors,
@@ -245,7 +233,7 @@ def validate(
         errors.append("archetypes must preserve federation, hierarchy, ecology order")
     if any(archetype_name_counts.get(name, 0) != 1 for name in ARCHETYPE_NAMES):
         errors.append("exactly one definition is required for each governance archetype")
-    archetype_meta = archetype_doc.get("metadata", {})
+    archetype_meta = docs["archetypes"].get("metadata", {})
     if archetype_meta.get("archetype_count") != len(archetype_by_id):
         errors.append("archetype metadata count mismatch")
     for name in ARCHETYPE_NAMES:
@@ -255,7 +243,7 @@ def validate(
         errors.append("archetype definition metadata cannot claim a binding")
     require_none_effects(archetype_meta, "archetype", errors)
 
-    bindings = binding_doc.get("governance_bindings")
+    bindings = docs["bindings"].get("governance_bindings")
     binding_by_id = index_records(bindings, "binding_id", "governance_bindings", errors)
     binding_status_counts: Counter[str] = Counter()
     for binding_id, binding in binding_by_id.items():
@@ -282,7 +270,7 @@ def validate(
             errors.append(f"{binding_id}: evidence_ref must be a non-empty string")
         reject_governance_authority_fields(binding, binding_id, errors)
 
-    binding_meta = binding_doc.get("metadata", {})
+    binding_meta = docs["bindings"].get("metadata", {})
     if binding_meta.get("binding_count") != len(binding_by_id):
         errors.append("binding metadata count mismatch")
     if binding_meta.get("pending_binding_count") != binding_status_counts.get("pending", 0):
@@ -293,7 +281,7 @@ def validate(
         errors.append("v0.1 baseline must not automatically bind current entities")
     require_none_effects(binding_meta, "binding", errors)
 
-    transition_definitions = transition_doc.get("transition_definitions")
+    transition_definitions = docs["transitions"].get("transition_definitions")
     transition_by_id = index_records(
         transition_definitions,
         "transition_id",
@@ -329,20 +317,20 @@ def validate(
             errors.append(f"{transition_id}: transition definition cannot create authority")
         reject_governance_authority_fields(transition, transition_id, errors)
 
-    executed = transition_doc.get("executed_transitions")
+    executed = docs["transitions"].get("executed_transitions")
     if not isinstance(executed, list):
         errors.append("executed_transitions must be a list")
         executed = []
     if executed:
         errors.append("v0.1 baseline cannot contain an executed governance transition")
-    transition_meta = transition_doc.get("metadata", {})
+    transition_meta = docs["transitions"].get("metadata", {})
     if transition_meta.get("transition_definition_count") != len(transition_by_id):
         errors.append("transition definition metadata count mismatch")
     if transition_meta.get("executed_transition_count") != len(executed):
         errors.append("executed transition metadata count mismatch")
     require_none_effects(transition_meta, "transition", errors)
 
-    dimensions = evaluation_doc.get("evaluation_dimensions")
+    dimensions = docs["evaluation"].get("evaluation_dimensions")
     dimension_by_id = index_records(
         dimensions, "dimension_id", "evaluation_dimensions", errors
     )
@@ -354,12 +342,12 @@ def validate(
         if dimension.get("score") is not None:
             errors.append(f"{dimension_id}: score must remain null")
         reject_governance_authority_fields(dimension, dimension_id, errors)
-    if evaluation_doc.get("aggregate_score") is not None:
+    if docs["evaluation"].get("aggregate_score") is not None:
         errors.append("aggregate governance evaluation score must remain null")
-    evaluations = evaluation_doc.get("evaluations")
+    evaluations = docs["evaluation"].get("evaluations")
     if not isinstance(evaluations, list) or evaluations:
         errors.append("v0.1 governance evaluations must remain an empty list")
-    evaluation_meta = evaluation_doc.get("metadata", {})
+    evaluation_meta = docs["evaluation"].get("metadata", {})
     if evaluation_meta.get("evaluation_dimension_count") != len(dimension_by_id):
         errors.append("evaluation dimension metadata count mismatch")
     if evaluation_meta.get("non_null_score_count") != 0:
@@ -372,18 +360,18 @@ def validate(
         errors.append("governance evaluation cannot modify ecological fitness")
     require_none_effects(evaluation_meta, "evaluation", errors)
 
-    federation_members = federation_doc.get("members")
+    federation_members = docs["federation_members"].get("members")
     if not isinstance(federation_members, list):
         errors.append("federation members must be a list")
         federation_members = []
     if any("archetype_id" in member or "governance_binding" in member for member in federation_members if isinstance(member, dict)):
         errors.append("federation membership cannot automatically create a governance binding")
 
-    capabilities = capability_doc.get("capabilities")
+    capabilities = docs["capabilities"].get("capabilities")
     if not isinstance(capabilities, list) or capabilities:
         errors.append("governance archetypes must not create a capability")
         capabilities = []
-    claims = claim_doc.get("claims")
+    claims = docs["claims"].get("claims")
     if not isinstance(claims, list):
         errors.append("claims must be a list")
         claims = []
@@ -391,7 +379,7 @@ def validate(
         if not isinstance(claim, dict) or claim.get("maturity_level") != "C1" or claim.get("status") != "pending":
             errors.append("governance archetypes must preserve every claim at C1/pending")
             break
-    evidence_records = evidence_doc.get("evidence")
+    evidence_records = docs["evidence"].get("evidence")
     if not isinstance(evidence_records, list):
         errors.append("evidence must be a list")
         evidence_records = []
@@ -399,7 +387,7 @@ def validate(
         if not isinstance(evidence, dict) or evidence.get("evidence_type") != "E1" or evidence.get("status") != "pending":
             errors.append("governance archetypes must preserve every evidence record at E1/pending")
             break
-    verification_records = verification_doc.get("verification_records")
+    verification_records = docs["verification"].get("verification_records")
     if not isinstance(verification_records, list):
         errors.append("verification_records must be a list")
         verification_records = []
@@ -412,15 +400,15 @@ def validate(
         ):
             errors.append("governance archetypes must preserve every verification at V0/pending")
             break
-    runtimes = runtime_doc.get("runtime_instances")
+    runtimes = docs["runtimes"].get("runtime_instances")
     if not isinstance(runtimes, list) or runtimes:
         errors.append("governance archetypes must not create a runtime")
         runtimes = []
-    candidates = candidate_doc.get("organism_candidates")
+    candidates = docs["candidates"].get("organism_candidates")
     if not isinstance(candidates, list) or candidates:
         errors.append("governance archetypes must not create an organism candidate")
         candidates = []
-    ecological_entities = ecological_doc.get("ecological_entities")
+    ecological_entities = docs["ecological"].get("ecological_entities")
     if not isinstance(ecological_entities, list):
         errors.append("ecological_entities must be a list")
         ecological_entities = []
@@ -502,22 +490,22 @@ def main() -> int:
     parser.add_argument("--format", choices=("json", "text"), default="json")
     args = parser.parse_args()
     try:
-        result = validate(
-            load_json_yaml(args.archetypes),
-            load_json_yaml(args.bindings),
-            load_json_yaml(args.transitions),
-            load_json_yaml(args.evaluation),
-            load_json_yaml(args.entities),
-            load_json_yaml(args.capabilities),
-            load_json_yaml(args.claims),
-            load_json_yaml(args.evidence),
-            load_json_yaml(args.verification),
-            load_json_yaml(args.runtimes),
-            load_json_yaml(args.candidates),
-            load_json_yaml(args.ecological),
-            load_json_yaml(args.federation_members),
-            root,
-        )
+        docs = {
+            "archetypes": load_json_yaml(args.archetypes),
+            "bindings": load_json_yaml(args.bindings),
+            "transitions": load_json_yaml(args.transitions),
+            "evaluation": load_json_yaml(args.evaluation),
+            "entities": load_json_yaml(args.entities),
+            "capabilities": load_json_yaml(args.capabilities),
+            "claims": load_json_yaml(args.claims),
+            "evidence": load_json_yaml(args.evidence),
+            "verification": load_json_yaml(args.verification),
+            "runtimes": load_json_yaml(args.runtimes),
+            "candidates": load_json_yaml(args.candidates),
+            "ecological": load_json_yaml(args.ecological),
+            "federation_members": load_json_yaml(args.federation_members),
+        }
+        result = validate(docs, root)
     except (OSError, ValueError) as exc:
         result = {"status": "FAIL", "errors": [str(exc)]}
     if args.format == "json":
