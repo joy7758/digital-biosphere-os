@@ -162,29 +162,8 @@ def valid_timestamp(value: Any) -> bool:
     return parsed.tzinfo is not None
 
 
-def validate(
-    type_doc: dict[str, Any],
-    event_doc: dict[str, Any],
-    stream_doc: dict[str, Any],
-    observation_doc: dict[str, Any],
-    entity_doc: dict[str, Any],
-    capability_doc: dict[str, Any],
-    claim_doc: dict[str, Any],
-    evidence_doc: dict[str, Any],
-    verification_doc: dict[str, Any],
-    runtime_doc: dict[str, Any],
-    candidate_doc: dict[str, Any],
-    ecological_doc: dict[str, Any],
-    governance_binding_doc: dict[str, Any],
-    governance_claim_doc: dict[str, Any],
-    governance_evidence_doc: dict[str, Any],
-    governance_observation_doc: dict[str, Any],
-    mapping_doc: dict[str, Any],
-    root: Path,
-) -> dict[str, Any]:
-    """Validate event taxonomy, empty fact state, streams, and boundaries."""
-    errors: list[str] = []
-    entity_by_id = index_records(entity_doc.get("entities"), "entity_id", "entities", errors)
+
+def _validate_types(type_doc: dict[str, Any], errors: list[str]) -> dict[str, dict[str, Any]]:
     type_by_name = index_records(type_doc.get("event_types"), "event_type", "event_types", errors)
     if tuple(type_by_name) != EVENT_TYPES:
         errors.append("event types must preserve all eight ordered definitions")
@@ -208,7 +187,12 @@ def validate(
     for field in ("authority_effect", "capability_effect", "permission_effect", "automatic_level_effect"):
         if type_meta.get(field) != "none":
             errors.append(f"event type metadata {field} must remain none")
+    return type_by_name
 
+
+def _validate_streams(
+    stream_doc: dict[str, Any], entity_by_id: dict[str, dict[str, Any]], errors: list[str]
+) -> tuple[dict[str, dict[str, Any]], dict[str, dict[str, Any]], Counter[str]]:
     streams = stream_doc.get("event_streams")
     stream_by_id = index_records(streams, "stream_id", "event_streams", errors)
     stream_by_entity: dict[str, dict[str, Any]] = {}
@@ -254,7 +238,16 @@ def validate(
     if stream_meta.get("streamed_event_count") != 0:
         errors.append("defined streams cannot claim streamed events")
     require_zero_metadata(stream_meta, "event stream", errors)
+    return stream_by_id, stream_by_entity, stream_status_counts
 
+
+def _validate_events(
+    event_doc: dict[str, Any],
+    entity_by_id: dict[str, dict[str, Any]],
+    stream_by_entity: dict[str, dict[str, Any]],
+    type_by_name: dict[str, dict[str, Any]],
+    errors: list[str],
+) -> tuple[dict[str, dict[str, Any]], Counter[str]]:
     events = event_doc.get("events")
     event_by_id = index_records(events, "event_id", "events", errors)
     event_status_counts: Counter[str] = Counter()
@@ -312,7 +305,12 @@ def validate(
     require_zero_metadata(event_meta, "event", errors)
     if event_by_id:
         errors.append("v0.1 baseline must not fabricate factual events")
+    return event_by_id, event_status_counts
 
+
+def _validate_observations(
+    observation_doc: dict[str, Any], event_by_id: dict[str, dict[str, Any]], errors: list[str]
+) -> dict[str, dict[str, Any]]:
     observations = observation_doc.get("event_observations")
     observation_by_id = index_records(
         observations, "observation_id", "event_observations", errors
@@ -343,7 +341,10 @@ def validate(
     require_zero_metadata(observation_meta, "event observation", errors)
     if observation_by_id:
         errors.append("v0.1 baseline must not fabricate event observations")
+    return observation_by_id
 
+
+def _validate_mappings(mapping_doc: dict[str, Any], errors: list[str]) -> None:
     mappings = mapping_doc.get("mappings")
     mapping_by_layer = index_records(mappings, "layer", "SAEE mappings", errors)
     event_mapping = mapping_by_layer.get("Event")
@@ -366,6 +367,14 @@ def validate(
     if mapping_doc.get("metadata", {}).get("mapping_count") != len(mapping_by_layer):
         errors.append("SAEE mapping metadata count mismatch")
 
+
+def _validate_capabilities(
+    capability_doc: dict[str, Any],
+    claim_doc: dict[str, Any],
+    evidence_doc: dict[str, Any],
+    verification_doc: dict[str, Any],
+    errors: list[str],
+) -> list[Any]:
     capabilities = capability_doc.get("capabilities")
     if not isinstance(capabilities, list) or capabilities:
         errors.append("event layer must not create a capability")
@@ -399,6 +408,15 @@ def validate(
         ):
             errors.append("event layer must preserve verification at V0/pending")
             break
+    return capabilities
+
+
+def _validate_infrastructure(
+    runtime_doc: dict[str, Any],
+    candidate_doc: dict[str, Any],
+    ecological_doc: dict[str, Any],
+    errors: list[str],
+) -> tuple[list[Any], list[Any]]:
     runtimes = runtime_doc.get("runtime_instances")
     if not isinstance(runtimes, list) or runtimes:
         errors.append("event layer must not create a runtime")
@@ -421,6 +439,16 @@ def validate(
             errors.append("event layer cannot change evolution stage")
         if ecological_entity.get("fitness_status") != "unknown" or ecological_entity.get("fitness_score") is not None:
             errors.append("event layer cannot calculate fitness")
+    return runtimes, candidates
+
+
+def _validate_governance(
+    governance_binding_doc: dict[str, Any],
+    governance_claim_doc: dict[str, Any],
+    governance_evidence_doc: dict[str, Any],
+    governance_observation_doc: dict[str, Any],
+    errors: list[str],
+) -> None:
     governance_bindings = governance_binding_doc.get("governance_bindings")
     if not isinstance(governance_bindings, list) or governance_bindings:
         errors.append("event layer cannot create governance bindings")
@@ -447,6 +475,52 @@ def validate(
         ):
             errors.append("event layer cannot populate governance observations")
             break
+
+def validate(
+    type_doc: dict[str, Any],
+    event_doc: dict[str, Any],
+    stream_doc: dict[str, Any],
+    observation_doc: dict[str, Any],
+    entity_doc: dict[str, Any],
+    capability_doc: dict[str, Any],
+    claim_doc: dict[str, Any],
+    evidence_doc: dict[str, Any],
+    verification_doc: dict[str, Any],
+    runtime_doc: dict[str, Any],
+    candidate_doc: dict[str, Any],
+    ecological_doc: dict[str, Any],
+    governance_binding_doc: dict[str, Any],
+    governance_claim_doc: dict[str, Any],
+    governance_evidence_doc: dict[str, Any],
+    governance_observation_doc: dict[str, Any],
+    mapping_doc: dict[str, Any],
+    root: Path,
+) -> dict[str, Any]:
+    """Validate event taxonomy, empty fact state, streams, and boundaries."""
+    errors: list[str] = []
+
+    entity_by_id = index_records(entity_doc.get("entities"), "entity_id", "entities", errors)
+    type_by_name = _validate_types(type_doc, errors)
+    stream_by_id, stream_by_entity, stream_status_counts = _validate_streams(
+        stream_doc, entity_by_id, errors
+    )
+    event_by_id, event_status_counts = _validate_events(
+        event_doc, entity_by_id, stream_by_entity, type_by_name, errors
+    )
+    observation_by_id = _validate_observations(observation_doc, event_by_id, errors)
+
+    _validate_mappings(mapping_doc, errors)
+
+    capabilities = _validate_capabilities(
+        capability_doc, claim_doc, evidence_doc, verification_doc, errors
+    )
+    runtimes, candidates = _validate_infrastructure(
+        runtime_doc, candidate_doc, ecological_doc, errors
+    )
+    _validate_governance(
+        governance_binding_doc, governance_claim_doc, governance_evidence_doc, governance_observation_doc, errors
+    )
+
     if any(entity.get("entity_type") == "agent" for entity in entity_by_id.values()):
         errors.append("event layer must not create an Agent entity")
 
