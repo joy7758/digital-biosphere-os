@@ -155,17 +155,19 @@ def has_organism_qualification(record: dict[str, Any], target: str) -> bool:
 
 
 def validate(
-    ecological_doc: dict[str, Any],
-    entities_doc: dict[str, Any],
-    principles_doc: dict[str, Any],
-    fitness_doc: dict[str, Any],
-    mapping_doc: dict[str, Any],
-    capabilities_doc: dict[str, Any],
-    claims_doc: dict[str, Any],
-    evidence_doc: dict[str, Any],
-    verification_doc: dict[str, Any],
+    docs: dict[str, dict[str, Any]],
     root: Path,
 ) -> dict[str, Any]:
+    ecological_doc = docs.get("ecological_entities", {})
+    entities_doc = docs.get("entities", {})
+    principles_doc = docs.get("principles", {})
+    fitness_doc = docs.get("fitness", {})
+    mapping_doc = docs.get("mapping", {})
+    capabilities_doc = docs.get("capabilities", {})
+    claims_doc = docs.get("claims", {})
+    evidence_doc = docs.get("evidence", {})
+    verification_doc = docs.get("verification", {})
+
     errors: list[str] = []
     entity_by_id = index_records(entities_doc.get("entities"), "entity_id", "entities", errors)
     ecological_by_id = index_records(
@@ -447,18 +449,18 @@ def main() -> int:
     parser.add_argument("--format", choices=("json", "text"), default="json")
     args = parser.parse_args()
     try:
-        result = validate(
-            load_json_yaml(args.ecological_entities),
-            load_json_yaml(args.entities),
-            load_json_yaml(args.principles),
-            load_json_yaml(args.fitness),
-            load_json_yaml(args.mapping),
-            load_json_yaml(args.capabilities),
-            load_json_yaml(args.claims),
-            load_json_yaml(args.evidence),
-            load_json_yaml(args.verification),
-            root,
-        )
+        docs = {
+            "ecological_entities": load_json_yaml(args.ecological_entities),
+            "entities": load_json_yaml(args.entities),
+            "principles": load_json_yaml(args.principles),
+            "fitness": load_json_yaml(args.fitness),
+            "mapping": load_json_yaml(args.mapping),
+            "capabilities": load_json_yaml(args.capabilities),
+            "claims": load_json_yaml(args.claims),
+            "evidence": load_json_yaml(args.evidence),
+            "verification": load_json_yaml(args.verification),
+        }
+        result = validate(docs, root)
     except (OSError, ValueError) as exc:
         result = {"status": "FAIL", "errors": [str(exc)]}
     if args.format == "json":
