@@ -20,5 +20,15 @@ class TestValidationResultModel(unittest.TestCase):
         )
         self.assertFalse(result.passed)
 
+    def test_timestamp_invalid_format(self):
+        with self.assertRaisesRegex(ValueError, "timestamp must be an RFC 3339 string"):
+            ValidationResult(
+                validator_version="v0.1",
+                target_reference="dbio://target/test",
+                result=ValidationStatus.PASS,
+                errors=(),
+                timestamp="invalid-timestamp"
+            )
+
 if __name__ == '__main__':
     unittest.main()
