@@ -223,30 +223,29 @@ def require_zero_effect_metadata(metadata: Any, label: str, errors: list[str]) -
             errors.append(f"{label} metadata {field} must remain zero")
 
 
-def validate(
-    experiment_doc: dict[str, Any],
-    procedure_doc: dict[str, Any],
-    requirement_doc: dict[str, Any],
-    observation_doc: dict[str, Any],
-    entity_doc: dict[str, Any],
-    environment_doc: dict[str, Any],
-    context_doc: dict[str, Any],
-    input_doc: dict[str, Any],
-    output_doc: dict[str, Any],
-    event_doc: dict[str, Any],
-    event_observation_doc: dict[str, Any],
-    attestation_doc: dict[str, Any],
-    capability_doc: dict[str, Any],
-    claim_doc: dict[str, Any],
-    evidence_doc: dict[str, Any],
-    verification_doc: dict[str, Any],
-    runtime_doc: dict[str, Any],
-    candidate_doc: dict[str, Any],
-    ecological_doc: dict[str, Any],
-    mapping_doc: dict[str, Any],
-    root: Path,
-) -> dict[str, Any]:
+def validate(docs: dict[str, dict[str, Any]], root: Path) -> dict[str, Any]:
     """Validate experiment protocol taxonomy, empty fact state, and boundaries."""
+    experiment_doc = docs["experiments"]
+    procedure_doc = docs["procedures"]
+    requirement_doc = docs["requirements"]
+    observation_doc = docs["observations"]
+    entity_doc = docs["entities"]
+    environment_doc = docs["environments"]
+    context_doc = docs["contexts"]
+    input_doc = docs["inputs"]
+    output_doc = docs["outputs"]
+    event_doc = docs["events"]
+    event_observation_doc = docs["event_observations"]
+    attestation_doc = docs["attestations"]
+    capability_doc = docs["capabilities"]
+    claim_doc = docs["claims"]
+    evidence_doc = docs["evidence"]
+    verification_doc = docs["verification"]
+    runtime_doc = docs["runtimes"]
+    candidate_doc = docs["candidates"]
+    ecological_doc = docs["ecological"]
+    mapping_doc = docs["mapping"]
+
     errors: list[str] = []
     entities = index_records(entity_doc.get("entities"), "entity_id", "entities", errors)
     environments = index_records(
@@ -677,29 +676,29 @@ def main() -> int:
     if delegated is not None:
         return delegated
     try:
-        result = validate(
-            load_json_yaml(args.experiments),
-            load_json_yaml(args.procedures),
-            load_json_yaml(args.requirements),
-            load_json_yaml(args.observations),
-            load_json_yaml(args.entities),
-            load_json_yaml(args.environments),
-            load_json_yaml(args.contexts),
-            load_json_yaml(args.inputs),
-            load_json_yaml(args.outputs),
-            load_json_yaml(args.events),
-            load_json_yaml(args.event_observations),
-            load_json_yaml(args.attestations),
-            load_json_yaml(args.capabilities),
-            load_json_yaml(args.claims),
-            load_json_yaml(args.evidence),
-            load_json_yaml(args.verification),
-            load_json_yaml(args.runtimes),
-            load_json_yaml(args.candidates),
-            load_json_yaml(args.ecological),
-            load_json_yaml(args.mapping),
-            root,
-        )
+        docs = {
+            "experiments": load_json_yaml(args.experiments),
+            "procedures": load_json_yaml(args.procedures),
+            "requirements": load_json_yaml(args.requirements),
+            "observations": load_json_yaml(args.observations),
+            "entities": load_json_yaml(args.entities),
+            "environments": load_json_yaml(args.environments),
+            "contexts": load_json_yaml(args.contexts),
+            "inputs": load_json_yaml(args.inputs),
+            "outputs": load_json_yaml(args.outputs),
+            "events": load_json_yaml(args.events),
+            "event_observations": load_json_yaml(args.event_observations),
+            "attestations": load_json_yaml(args.attestations),
+            "capabilities": load_json_yaml(args.capabilities),
+            "claims": load_json_yaml(args.claims),
+            "evidence": load_json_yaml(args.evidence),
+            "verification": load_json_yaml(args.verification),
+            "runtimes": load_json_yaml(args.runtimes),
+            "candidates": load_json_yaml(args.candidates),
+            "ecological": load_json_yaml(args.ecological),
+            "mapping": load_json_yaml(args.mapping),
+        }
+        result = validate(docs, root)
     except (OSError, ValueError) as exc:
         result = {"status": "FAIL", "errors": [str(exc)]}
     if args.format == "json":
