@@ -131,39 +131,23 @@ def index_records(
     return indexed
 
 
-def reject_authority_fields(record: dict[str, Any], where: str, errors: list[str]) -> None:
+def reject_authority_fields(
+    record: dict[str, Any], where: str, errors: list[str]
+) -> None:
     present = FORBIDDEN_AUTHORITY_FIELDS & set(record)
     if present:
-        errors.append(f"{where}: forbidden authority or identity-merge fields {sorted(present)}")
+        errors.append(
+            f"{where}: forbidden authority or identity-merge fields {sorted(present)}"
+        )
 
 
-def validate(
+def _validate_members(
     member_doc: dict[str, Any],
-    manifest_doc: dict[str, Any],
-    graph_doc: dict[str, Any],
-    rules_doc: dict[str, Any],
-    map_doc: dict[str, Any],
-    schema_doc: dict[str, Any],
-    entity_doc: dict[str, Any],
-    capability_doc: dict[str, Any],
-    claim_doc: dict[str, Any],
-    evidence_doc: dict[str, Any],
-    verification_doc: dict[str, Any],
-    runtime_doc: dict[str, Any],
-    candidate_doc: dict[str, Any],
-    ecological_doc: dict[str, Any],
+    member_by_id: dict[str, dict[str, Any]],
+    entity_by_id: dict[str, dict[str, Any]],
     root: Path,
-) -> dict[str, Any]:
-    errors: list[str] = []
-    entity_by_id = index_records(entity_doc.get("entities"), "entity_id", "entities", errors)
-    member_by_id = index_records(member_doc.get("members"), "member_id", "members", errors)
-    manifest_by_id = index_records(
-        manifest_doc.get("manifests"), "manifest_id", "manifests", errors
-    )
-    role_by_entity = index_records(
-        map_doc.get("federation_map"), "entity_id", "federation_map", errors
-    )
-
+    errors: list[str],
+) -> tuple[dict[str, dict[str, Any]], Counter[str]]:
     member_by_entity: dict[str, dict[str, Any]] = {}
     member_status_counts: Counter[str] = Counter()
     for member_id, member in member_by_id.items():
@@ -178,9 +162,13 @@ def validate(
             errors.append(f"{member_id}: unknown entity {entity_id!r}")
         else:
             if member.get("repository") != entity.get("repository"):
-                errors.append(f"{member_id}: repository differs from canonical identity")
+                errors.append(
+                    f"{member_id}: repository differs from canonical identity"
+                )
             if member.get("entity_type") != entity.get("entity_type"):
-                errors.append(f"{member_id}: entity_type differs from canonical identity")
+                errors.append(
+                    f"{member_id}: entity_type differs from canonical identity"
+                )
         if entity_id in member_by_entity:
             errors.append(f"duplicate federation member for entity {entity_id!r}")
         elif isinstance(entity_id, str):
@@ -193,10 +181,14 @@ def validate(
         if status != "proposed":
             errors.append(f"{member_id}: v0.1 member must remain proposed")
         if member.get("manifest_status") != "pending":
-            errors.append(f"{member_id}: proposed member manifest_status must remain pending")
+            errors.append(
+                f"{member_id}: proposed member manifest_status must remain pending"
+            )
         constitution_ref = member.get("constitution_ref")
         if constitution_ref != "constitution/constitution.yaml":
-            errors.append(f"{member_id}: constitution_ref must name the shared constitution")
+            errors.append(
+                f"{member_id}: constitution_ref must name the shared constitution"
+            )
         elif not (root / constitution_ref).is_file():
             errors.append(f"{member_id}: shared constitution reference does not exist")
         reject_authority_fields(member, member_id, errors)
@@ -213,13 +205,25 @@ def validate(
     if member_meta.get("member_count") != len(member_by_id):
         errors.append("member metadata count mismatch")
     for status in MEMBER_STATUSES:
-        if member_meta.get(f"{status}_member_count") != member_status_counts.get(status, 0):
+        if member_meta.get(f"{status}_member_count") != member_status_counts.get(
+            status, 0
+        ):
             errors.append(f"member status metadata mismatch for {status}")
     if member_meta.get("project_local_manifest_adoption_count") != 0:
         errors.append("project-local manifest adoption count must remain zero")
     if member_meta.get("repository_merge_count") != 0:
         errors.append("repository merge count must remain zero")
+    return member_by_entity, member_status_counts
 
+
+def _validate_manifests(
+    manifest_doc: dict[str, Any],
+    manifest_by_id: dict[str, dict[str, Any]],
+    entity_by_id: dict[str, dict[str, Any]],
+    member_by_entity: dict[str, dict[str, Any]],
+    role_by_entity: dict[str, dict[str, Any]],
+    errors: list[str],
+) -> Counter[str]:
     manifest_by_entity: dict[str, dict[str, Any]] = {}
     manifest_status_counts: Counter[str] = Counter()
     for manifest_id, manifest in manifest_by_id.items():
@@ -232,10 +236,14 @@ def validate(
         entity = entity_by_id.get(entity_id)
         member = member_by_entity.get(entity_id)
         if entity is None or member is None:
-            errors.append(f"{manifest_id}: manifest entity is not a current proposed member")
+            errors.append(
+                f"{manifest_id}: manifest entity is not a current proposed member"
+            )
         else:
             if manifest.get("repository") != entity.get("repository"):
-                errors.append(f"{manifest_id}: repository differs from canonical identity")
+                errors.append(
+                    f"{manifest_id}: repository differs from canonical identity"
+                )
         if entity_id in manifest_by_entity:
             errors.append(f"duplicate project manifest for entity {entity_id!r}")
         elif isinstance(entity_id, str):
@@ -271,12 +279,16 @@ def validate(
         reject_authority_fields(manifest, manifest_id, errors)
 
     if set(manifest_by_entity) != set(member_by_entity):
-        errors.append("every proposed member must have exactly one central pending manifest")
+        errors.append(
+            "every proposed member must have exactly one central pending manifest"
+        )
     manifest_meta = manifest_doc.get("metadata", {})
     if manifest_meta.get("manifest_count") != len(manifest_by_id):
         errors.append("manifest metadata count mismatch")
     for status in ("pending", "submitted", "accepted"):
-        if manifest_meta.get(f"{status}_manifest_count") != manifest_status_counts.get(status, 0):
+        if manifest_meta.get(f"{status}_manifest_count") != manifest_status_counts.get(
+            status, 0
+        ):
             errors.append(f"manifest status metadata mismatch for {status}")
     for zero_field in (
         "project_local_manifest_count",
@@ -286,10 +298,17 @@ def validate(
     ):
         if manifest_meta.get(zero_field) != 0:
             errors.append(f"manifest metadata {zero_field} must remain zero")
+    return manifest_status_counts
 
+
+def _validate_schema(schema_doc: dict[str, Any], errors: list[str]) -> None:
     schema_required = schema_doc.get("required")
-    if not isinstance(schema_required, list) or not REQUIRED_MANIFEST_FIELDS.issubset(schema_required):
-        errors.append("project-manifest schema does not require every federation manifest field")
+    if not isinstance(schema_required, list) or not REQUIRED_MANIFEST_FIELDS.issubset(
+        schema_required
+    ):
+        errors.append(
+            "project-manifest schema does not require every federation manifest field"
+        )
     schema_properties = schema_doc.get("properties")
     if not isinstance(schema_properties, dict):
         errors.append("project-manifest schema properties must be a mapping")
@@ -301,6 +320,12 @@ def validate(
         if constitution_const != "constitution/constitution.yaml":
             errors.append("project-manifest schema shared constitution mismatch")
 
+
+def _validate_graph(
+    graph_doc: dict[str, Any],
+    entity_by_id: dict[str, dict[str, Any]],
+    errors: list[str],
+) -> tuple[dict[str, dict[str, Any]], dict[str, dict[str, Any]], Counter[str]]:
     nodes = graph_doc.get("nodes")
     node_by_entity = index_records(nodes, "entity_id", "dependency_graph.nodes", errors)
     if set(node_by_entity) != set(entity_by_id):
@@ -323,7 +348,9 @@ def validate(
         if target not in node_by_entity:
             errors.append(f"{relation_id}: unknown target entity {target!r}")
         if source == target:
-            errors.append(f"{relation_id}: self-relations cannot establish federation evidence")
+            errors.append(
+                f"{relation_id}: self-relations cannot establish federation evidence"
+            )
         relation_type = relationship.get("relation_type")
         if relation_type not in RELATION_TYPES:
             errors.append(f"{relation_id}: invalid relation_type {relation_type!r}")
@@ -340,9 +367,13 @@ def validate(
             if not isinstance(locator, str) or not locator:
                 errors.append(f"{relation_id}: evidence locator must be non-empty")
         if relationship.get("status") in {"verified", "compatible", "active"}:
-            errors.append(f"{relation_id}: relationship cannot claim verified interoperability")
+            errors.append(
+                f"{relation_id}: relationship cannot claim verified interoperability"
+            )
         if relationship.get("governance_effect") != "none":
-            errors.append(f"{relation_id}: dependency relation cannot grant governance authority")
+            errors.append(
+                f"{relation_id}: dependency relation cannot grant governance authority"
+            )
         reject_authority_fields(relationship, relation_id, errors)
 
     graph_meta = graph_doc.get("metadata", {})
@@ -352,9 +383,13 @@ def validate(
         errors.append("dependency graph relationship metadata count mismatch")
     for relation_type in RELATION_TYPES:
         actual = relation_type_counts.get(relation_type, 0)
-        recorded = graph_meta.get("relationship_type_distribution", {}).get(relation_type, 0)
+        recorded = graph_meta.get("relationship_type_distribution", {}).get(
+            relation_type, 0
+        )
         if actual != recorded:
-            errors.append(f"dependency relationship distribution mismatch for {relation_type}")
+            errors.append(
+                f"dependency relationship distribution mismatch for {relation_type}"
+            )
     for zero_field in (
         "verified_interoperability_count",
         "identity_merge_count",
@@ -363,7 +398,10 @@ def validate(
     ):
         if graph_meta.get(zero_field) != 0:
             errors.append(f"dependency graph metadata {zero_field} must remain zero")
+    return node_by_entity, relationship_by_id, relation_type_counts
 
+
+def _validate_rules(rules_doc: dict[str, Any], errors: list[str]) -> None:
     rules = rules_doc.get("rules")
     rule_by_id = index_records(rules, "rule_id", "interoperability_rules", errors)
     if tuple(rule_by_id) != EXPECTED_RULES:
@@ -377,6 +415,13 @@ def validate(
             errors.append(f"{rule_id}: constraint must be non-empty")
         reject_authority_fields(rule, rule_id, errors)
 
+
+def _validate_federation_map(
+    map_doc: dict[str, Any],
+    role_by_entity: dict[str, dict[str, Any]],
+    entity_by_id: dict[str, dict[str, Any]],
+    errors: list[str],
+) -> Counter[str]:
     role_counts: Counter[str] = Counter()
     for entity_id, role_record in role_by_entity.items():
         if entity_id not in entity_by_id:
@@ -386,7 +431,9 @@ def validate(
             errors.append(f"{entity_id}: invalid federation role {role!r}")
         else:
             role_counts[role] += 1
-        if not isinstance(role_record.get("basis"), str) or not role_record.get("basis"):
+        if not isinstance(role_record.get("basis"), str) or not role_record.get(
+            "basis"
+        ):
             errors.append(f"{entity_id}: federation role requires evidence basis")
         if role == "unknown" and role_record.get("role_status") != "unresolved":
             errors.append(f"{entity_id}: unknown role must remain unresolved")
@@ -399,11 +446,26 @@ def validate(
     if map_meta.get("entity_count") != len(role_by_entity):
         errors.append("federation map entity metadata count mismatch")
     for role in FEDERATION_ROLES:
-        if map_meta.get("role_distribution", {}).get(role, 0) != role_counts.get(role, 0):
+        if map_meta.get("role_distribution", {}).get(role, 0) != role_counts.get(
+            role, 0
+        ):
             errors.append(f"federation role distribution mismatch for {role}")
     if tuple(map_doc.get("valid_roles", [])) != FEDERATION_ROLES:
         errors.append("federation valid roles must preserve the ordered role taxonomy")
+    return role_counts
 
+
+def _validate_registry_state(
+    capability_doc: dict[str, Any],
+    claim_doc: dict[str, Any],
+    evidence_doc: dict[str, Any],
+    verification_doc: dict[str, Any],
+    runtime_doc: dict[str, Any],
+    candidate_doc: dict[str, Any],
+    ecological_doc: dict[str, Any],
+    entity_by_id: dict[str, dict[str, Any]],
+    errors: list[str],
+) -> tuple[int, int, int]:
     capabilities = capability_doc.get("capabilities")
     if not isinstance(capabilities, list) or capabilities:
         errors.append("federation must not create or register a capability")
@@ -412,7 +474,11 @@ def validate(
         errors.append("claims must be a list")
         claims = []
     for claim in claims:
-        if not isinstance(claim, dict) or claim.get("maturity_level") != "C1" or claim.get("status") != "pending":
+        if (
+            not isinstance(claim, dict)
+            or claim.get("maturity_level") != "C1"
+            or claim.get("status") != "pending"
+        ):
             errors.append("federation must preserve every claim at C1/pending")
             break
     evidence_records = evidence_doc.get("evidence")
@@ -420,8 +486,14 @@ def validate(
         errors.append("evidence must be a list")
         evidence_records = []
     for evidence in evidence_records:
-        if not isinstance(evidence, dict) or evidence.get("evidence_type") != "E1" or evidence.get("status") != "pending":
-            errors.append("federation must preserve every evidence record at E1/pending")
+        if (
+            not isinstance(evidence, dict)
+            or evidence.get("evidence_type") != "E1"
+            or evidence.get("status") != "pending"
+        ):
+            errors.append(
+                "federation must preserve every evidence record at E1/pending"
+            )
             break
     verification_records = verification_doc.get("verification_records")
     if not isinstance(verification_records, list):
@@ -450,14 +522,97 @@ def validate(
         if not isinstance(ecological_entity, dict):
             errors.append("ecological entity must be a mapping")
             continue
-        if ecological_entity.get("ecological_type") in {"Runtime", "Candidate Organism", "Digital Organism"}:
-            errors.append("federation cannot promote runtime or organism ecological status")
+        if ecological_entity.get("ecological_type") in {
+            "Runtime",
+            "Candidate Organism",
+            "Digital Organism",
+        }:
+            errors.append(
+                "federation cannot promote runtime or organism ecological status"
+            )
         if ecological_entity.get("evolution_stage") != "pre-organism":
             errors.append("federation cannot change evolution stage")
-        if ecological_entity.get("fitness_status") != "unknown" or ecological_entity.get("fitness_score") is not None:
+        if (
+            ecological_entity.get("fitness_status") != "unknown"
+            or ecological_entity.get("fitness_score") is not None
+        ):
             errors.append("federation cannot change fitness")
     if any(entity.get("entity_type") == "agent" for entity in entity_by_id.values()):
         errors.append("federation must not create an Agent entity")
+
+    cap_len = len(capabilities) if isinstance(capabilities, list) else 0
+    run_len = len(runtimes) if isinstance(runtimes, list) else 0
+    cand_len = len(candidates) if isinstance(candidates, list) else 0
+    return cap_len, run_len, cand_len
+
+
+def validate(
+    member_doc: dict[str, Any],
+    manifest_doc: dict[str, Any],
+    graph_doc: dict[str, Any],
+    rules_doc: dict[str, Any],
+    map_doc: dict[str, Any],
+    schema_doc: dict[str, Any],
+    entity_doc: dict[str, Any],
+    capability_doc: dict[str, Any],
+    claim_doc: dict[str, Any],
+    evidence_doc: dict[str, Any],
+    verification_doc: dict[str, Any],
+    runtime_doc: dict[str, Any],
+    candidate_doc: dict[str, Any],
+    ecological_doc: dict[str, Any],
+    root: Path,
+) -> dict[str, Any]:
+    errors: list[str] = []
+    entity_by_id = index_records(
+        entity_doc.get("entities"), "entity_id", "entities", errors
+    )
+    member_by_id = index_records(
+        member_doc.get("members"), "member_id", "members", errors
+    )
+    manifest_by_id = index_records(
+        manifest_doc.get("manifests"), "manifest_id", "manifests", errors
+    )
+    role_by_entity = index_records(
+        map_doc.get("federation_map"), "entity_id", "federation_map", errors
+    )
+
+    member_by_entity, member_status_counts = _validate_members(
+        member_doc, member_by_id, entity_by_id, root, errors
+    )
+
+    manifest_status_counts = _validate_manifests(
+        manifest_doc,
+        manifest_by_id,
+        entity_by_id,
+        member_by_entity,
+        role_by_entity,
+        errors,
+    )
+
+    _validate_schema(schema_doc, errors)
+
+    node_by_entity, relationship_by_id, relation_type_counts = _validate_graph(
+        graph_doc, entity_by_id, errors
+    )
+
+    _validate_rules(rules_doc, errors)
+
+    role_counts = _validate_federation_map(
+        map_doc, role_by_entity, entity_by_id, errors
+    )
+
+    cap_len, run_len, cand_len = _validate_registry_state(
+        capability_doc,
+        claim_doc,
+        evidence_doc,
+        verification_doc,
+        runtime_doc,
+        candidate_doc,
+        ecological_doc,
+        entity_by_id,
+        errors,
+    )
 
     return {
         "status": "FAIL" if errors else "PASS",
@@ -482,11 +637,11 @@ def validate(
         },
         "verified_interoperability_count": 0,
         "repository_merge_count": 0,
-        "capability_count": len(capabilities) if isinstance(capabilities, list) else 0,
+        "capability_count": cap_len,
         "permission_grant_count": 0,
         "agent_created_count": 0,
-        "runtime_instance_count": len(runtimes) if isinstance(runtimes, list) else 0,
-        "organism_candidate_count": len(candidates) if isinstance(candidates, list) else 0,
+        "runtime_instance_count": run_len,
+        "organism_candidate_count": cand_len,
         "digital_organism_count": 0,
         "c_e_v_level_change_count": 0,
         "errors": errors,
@@ -494,22 +649,57 @@ def validate(
 
 
 def main() -> int:
+
     root = Path(__file__).resolve().parents[1]
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--members", type=Path, default=root / "registry" / "federation-members.yaml")
-    parser.add_argument("--manifests", type=Path, default=root / "registry" / "project-manifests.yaml")
-    parser.add_argument("--graph", type=Path, default=root / "registry" / "dependency-graph.yaml")
-    parser.add_argument("--rules", type=Path, default=root / "registry" / "interoperability-rules.yaml")
-    parser.add_argument("--federation-map", type=Path, default=root / "registry" / "federation-map.yaml")
-    parser.add_argument("--schema", type=Path, default=root / "schemas" / "project-manifest.schema.yaml")
-    parser.add_argument("--entities", type=Path, default=root / "registry" / "entities.yaml")
-    parser.add_argument("--capabilities", type=Path, default=root / "registry" / "capabilities.yaml")
-    parser.add_argument("--claims", type=Path, default=root / "registry" / "capability-claims.yaml")
-    parser.add_argument("--evidence", type=Path, default=root / "registry" / "capability-evidence.yaml")
-    parser.add_argument("--verification", type=Path, default=root / "registry" / "verification-records.yaml")
-    parser.add_argument("--runtimes", type=Path, default=root / "registry" / "runtime-instances.yaml")
-    parser.add_argument("--candidates", type=Path, default=root / "registry" / "organism-candidates.yaml")
-    parser.add_argument("--ecological", type=Path, default=root / "registry" / "ecological-entities.yaml")
+    parser.add_argument(
+        "--members", type=Path, default=root / "registry" / "federation-members.yaml"
+    )
+    parser.add_argument(
+        "--manifests", type=Path, default=root / "registry" / "project-manifests.yaml"
+    )
+    parser.add_argument(
+        "--graph", type=Path, default=root / "registry" / "dependency-graph.yaml"
+    )
+    parser.add_argument(
+        "--rules", type=Path, default=root / "registry" / "interoperability-rules.yaml"
+    )
+    parser.add_argument(
+        "--federation-map", type=Path, default=root / "registry" / "federation-map.yaml"
+    )
+    parser.add_argument(
+        "--schema", type=Path, default=root / "schemas" / "project-manifest.schema.yaml"
+    )
+    parser.add_argument(
+        "--entities", type=Path, default=root / "registry" / "entities.yaml"
+    )
+    parser.add_argument(
+        "--capabilities", type=Path, default=root / "registry" / "capabilities.yaml"
+    )
+    parser.add_argument(
+        "--claims", type=Path, default=root / "registry" / "capability-claims.yaml"
+    )
+    parser.add_argument(
+        "--evidence", type=Path, default=root / "registry" / "capability-evidence.yaml"
+    )
+    parser.add_argument(
+        "--verification",
+        type=Path,
+        default=root / "registry" / "verification-records.yaml",
+    )
+    parser.add_argument(
+        "--runtimes", type=Path, default=root / "registry" / "runtime-instances.yaml"
+    )
+    parser.add_argument(
+        "--candidates",
+        type=Path,
+        default=root / "registry" / "organism-candidates.yaml",
+    )
+    parser.add_argument(
+        "--ecological",
+        type=Path,
+        default=root / "registry" / "ecological-entities.yaml",
+    )
     parser.add_argument("--format", choices=("json", "text"), default="json")
     args = parser.parse_args()
     try:
