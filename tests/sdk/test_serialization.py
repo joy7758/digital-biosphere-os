@@ -25,6 +25,46 @@ class SerializationTests(unittest.TestCase):
             ["Synthetic in-memory SDK test fixture only."],
         )
 
+    def test_object_to_dict_exact_output_format(self) -> None:
+        target = entity_object()
+        expected = {
+            "object_id": "dbio://repository/synthetic-sdk-fixture/v0.1",
+            "source": {
+                "namespace": "dbio",
+                "source_id": "registry/entities.yaml",
+                "version": "v0.1",
+                "status": "DECLARED"
+            },
+            "status": "DECLARED",
+            "limitations": [
+                "Synthetic in-memory SDK test fixture only."
+            ],
+            "version": "v0.1",
+            "created_at": "2026-01-01T00:00:00Z",
+            "updated_at": "2026-01-01T00:00:00Z",
+            "object_type": "ENTITY",
+            "entity_id": "dbio://repository/synthetic-sdk-fixture/v0.1",
+            "entity_type": "repository",
+            "owner_reference": {
+                "reference_id": "dbio://entity/synthetic-owner/v0.1",
+                "reference_type": "ENTITY",
+                "namespace": "dbio",
+                "version": "v0.1",
+                "source": "registry/entities.yaml",
+                "status": "DECLARED"
+            },
+            "lifecycle_state": "PROPOSED",
+            "source_reference": {
+                "reference_id": "dbio://repository/synthetic-sdk-fixture/v0.1",
+                "reference_type": "ENTITY",
+                "namespace": "dbio",
+                "version": "v0.1",
+                "source": "registry/entities.yaml",
+                "status": "DECLARED"
+            }
+        }
+        self.assertEqual(object_to_dict(target), expected)
+
     def test_json_round_trip_preserves_serialized_object(self) -> None:
         target = capability_object()
         self.assertEqual(json.loads(object_to_json(target)), object_to_dict(target))
@@ -48,6 +88,15 @@ class SerializationTests(unittest.TestCase):
         self.assertEqual(_json_value((1, 2, 3)), [1, 2, 3])
         self.assertEqual(_json_value([1, 2, 3]), [1, 2, 3])
         self.assertEqual(_json_value({1, 2, 3}), [1, 2, 3])
+
+    def test_json_value_parses_enums(self) -> None:
+        from enum import Enum
+
+        class TestEnum(Enum):
+            A = "a"
+            B = "b"
+
+        self.assertEqual(_json_value(TestEnum.A), "a")
 
     def test_object_to_json_default_indent(self) -> None:
         target = entity_object()
