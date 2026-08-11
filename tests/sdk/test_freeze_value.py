@@ -68,5 +68,23 @@ class FreezeValueTests(unittest.TestCase):
         self.assertIsInstance(frozen["dict"]["b"], tuple)
         self.assertEqual(frozen["dict"]["b"], (8, 9))
 
+
+    def test_freeze_frozenset(self) -> None:
+        fs = frozenset({1, 2, 3})
+        self.assertEqual(freeze_value(fs), frozenset({1, 2, 3}))
+
+    def test_freeze_bytes(self) -> None:
+        b = b"hello"
+        self.assertEqual(freeze_value(b), b"hello")
+
+
+    def test_freeze_custom_object(self) -> None:
+        class CustomObj:
+            def __init__(self, val: int) -> None:
+                self.val = val
+
+        obj = CustomObj(42)
+        self.assertEqual(freeze_value(obj), obj)
+
 if __name__ == "__main__":
     unittest.main()
