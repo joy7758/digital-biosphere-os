@@ -140,57 +140,43 @@ def approved_qualification_review(review: Any) -> bool:
     )
 
 
-def validate(
-    runtime_doc: dict[str, Any],
-    resource_doc: dict[str, Any],
-    trace_doc: dict[str, Any],
-    candidate_doc: dict[str, Any],
-    entities_doc: dict[str, Any],
-    capabilities_doc: dict[str, Any],
-    claims_doc: dict[str, Any],
-    reviews_doc: dict[str, Any],
-    evidence_doc: dict[str, Any],
-    verification_doc: dict[str, Any],
-    ecological_doc: dict[str, Any],
-    mapping_doc: dict[str, Any],
-    ledger_text: str,
-) -> dict[str, Any]:
+def validate(docs: dict[str, dict[str, Any]], texts: dict[str, str]) -> dict[str, Any]:
     errors: list[str] = []
-    entity_by_id = index_records(entities_doc.get("entities"), "entity_id", "entities", errors)
+    entity_by_id = index_records(docs["entities"].get("entities"), "entity_id", "entities", errors)
     capability_by_id = index_records(
-        capabilities_doc.get("capabilities"), "capability_id", "capabilities", errors
+        docs["capabilities"].get("capabilities"), "capability_id", "capabilities", errors
     )
-    claim_by_id = index_records(claims_doc.get("claims"), "claim_id", "claims", errors)
-    review_by_id = index_records(reviews_doc.get("reviews"), "review_id", "reviews", errors)
-    evidence_by_id = index_records(evidence_doc.get("evidence"), "evidence_id", "evidence", errors)
+    claim_by_id = index_records(docs["claims"].get("claims"), "claim_id", "claims", errors)
+    review_by_id = index_records(docs["reviews"].get("reviews"), "review_id", "reviews", errors)
+    evidence_by_id = index_records(docs["evidence"].get("evidence"), "evidence_id", "evidence", errors)
     verification_by_id = index_records(
-        verification_doc.get("verification_records"),
+        docs["verification"].get("verification_records"),
         "verification_id",
         "verification_records",
         errors,
     )
     ecological_by_id = index_records(
-        ecological_doc.get("ecological_entities"),
+        docs["ecological"].get("ecological_entities"),
         "entity_id",
         "ecological_entities",
         errors,
     )
     runtime_by_id = index_records(
-        runtime_doc.get("runtime_instances"), "runtime_id", "runtime_instances", errors
+        docs["runtimes"].get("runtime_instances"), "runtime_id", "runtime_instances", errors
     )
     resource_by_id = index_records(
-        resource_doc.get("resource_flows"), "resource_flow_id", "resource_flows", errors
+        docs["resource_flows"].get("resource_flows"), "resource_flow_id", "resource_flows", errors
     )
     trace_by_id = index_records(
-        trace_doc.get("behavior_traces"), "trace_id", "behavior_traces", errors
+        docs["behavior_traces"].get("behavior_traces"), "trace_id", "behavior_traces", errors
     )
     candidate_by_id = index_records(
-        candidate_doc.get("organism_candidates"),
+        docs["candidates"].get("organism_candidates"),
         "candidate_id",
         "organism_candidates",
         errors,
     )
-    evolution_subject_by_id = ledger_subjects(ledger_text)
+    evolution_subject_by_id = ledger_subjects(texts["ledger"])
 
     claims_by_entity: defaultdict[str, list[dict[str, Any]]] = defaultdict(list)
     for claim in claim_by_id.values():
@@ -410,10 +396,10 @@ def validate(
         if candidate.get("permission_status", "not_granted") != "not_granted":
             errors.append(f"{candidate_id}: Genesis cannot grant permission")
 
-    runtime_meta = runtime_doc.get("metadata", {})
-    resource_meta = resource_doc.get("metadata", {})
-    trace_meta = trace_doc.get("metadata", {})
-    candidate_meta = candidate_doc.get("metadata", {})
+    runtime_meta = docs["runtimes"].get("metadata", {})
+    resource_meta = docs["resource_flows"].get("metadata", {})
+    trace_meta = docs["behavior_traces"].get("metadata", {})
+    candidate_meta = docs["candidates"].get("metadata", {})
     if runtime_meta.get("runtime_instance_count") != len(runtime_by_id):
         errors.append("runtime metadata count mismatch")
     if runtime_meta.get("active_runtime_count") != sum(
@@ -446,10 +432,10 @@ def validate(
     for requirement in QUALIFICATION_REQUIREMENTS:
         if candidate_meta.get("baseline_missing_requirement_counts", {}).get(requirement) != aggregate_missing_counts.get(requirement, 0):
             errors.append(f"baseline missing-requirement count mismatch for {requirement}")
-    if tuple(candidate_doc.get("qualification_requirements", [])) != QUALIFICATION_REQUIREMENTS:
+    if tuple(docs["candidates"].get("qualification_requirements", [])) != QUALIFICATION_REQUIREMENTS:
         errors.append("qualification requirements must preserve all eight ordered criteria")
 
-    transitions = mapping_doc.get("genesis_transitions")
+    transitions = docs["mapping"].get("genesis_transitions")
     if not isinstance(transitions, list) or len(transitions) != 1:
         errors.append("SAEE mapping must contain one Genesis transition")
     else:
@@ -522,21 +508,24 @@ def main() -> int:
     parser.add_argument("--format", choices=("json", "text"), default="json")
     args = parser.parse_args()
     try:
-        result = validate(
-            load_json_yaml(args.runtimes),
-            load_json_yaml(args.resource_flows),
-            load_json_yaml(args.behavior_traces),
-            load_json_yaml(args.candidates),
-            load_json_yaml(args.entities),
-            load_json_yaml(args.capabilities),
-            load_json_yaml(args.claims),
-            load_json_yaml(args.reviews),
-            load_json_yaml(args.evidence),
-            load_json_yaml(args.verification),
-            load_json_yaml(args.ecological),
-            load_json_yaml(args.mapping),
-            args.ledger.read_text(encoding="utf-8"),
-        )
+        docs = {
+            "runtimes": load_json_yaml(args.runtimes),
+            "resource_flows": load_json_yaml(args.resource_flows),
+            "behavior_traces": load_json_yaml(args.behavior_traces),
+            "candidates": load_json_yaml(args.candidates),
+            "entities": load_json_yaml(args.entities),
+            "capabilities": load_json_yaml(args.capabilities),
+            "claims": load_json_yaml(args.claims),
+            "reviews": load_json_yaml(args.reviews),
+            "evidence": load_json_yaml(args.evidence),
+            "verification": load_json_yaml(args.verification),
+            "ecological": load_json_yaml(args.ecological),
+            "mapping": load_json_yaml(args.mapping),
+        }
+        texts = {
+            "ledger": args.ledger.read_text(encoding="utf-8"),
+        }
+        result = validate(docs, texts)
     except (OSError, ValueError) as exc:
         result = {"status": "FAIL", "errors": [str(exc)]}
     if args.format == "json":
