@@ -164,53 +164,8 @@ def list_field(record: dict[str, Any], field: str, label: str, errors: list[str]
     return value
 
 
-def validate(docs: dict[str, dict[str, Any]], texts: dict[str, str], root: Path) -> dict[str, Any]:
-    """Validate capture references, material integrity, privacy, and zero-effect boundaries."""
-    errors: list[str] = []
 
-    ecological_environments = index_records(
-        docs["ecological_environments"].get("environments"), "environment_id", "ecological_environments", errors
-    )
-    environment_identities = index_records(
-        docs["environment_identities"].get("environment_identities"),
-        "environment_id",
-        "environment_identities",
-        errors,
-    )
-    runner_environments = index_records(
-        docs["runner_environments"].get("runner_environments"), "environment_id", "runner_environments", errors
-    )
-    collectors = index_records(
-        docs["capture_collectors"].get("capture_collectors"), "collector_id", "capture_collectors", errors
-    )
-    captures = index_records(
-        docs["captures"].get("environment_evidence_captures"),
-        "capture_id",
-        "environment_evidence_captures",
-        errors,
-    )
-    facts = index_records(docs["facts"].get("environment_facts"), "fact_id", "environment_facts", errors)
-    digests = index_records(docs["digests"].get("environment_digests"), "digest_id", "environment_digests", errors)
-    collection_evidence = index_records(
-        docs["collection_evidence"].get("environment_collection_evidence"),
-        "evidence_id",
-        "environment_collection_evidence",
-        errors,
-    )
-    qualification_evidence = index_records(
-        docs["qualification_evidence"].get("environment_evidence"),
-        "evidence_id",
-        "qualification_environment_evidence",
-        errors,
-    )
-    qualifications = index_records(
-        docs["qualifications"].get("environment_qualifications"),
-        "qualification_id",
-        "environment_qualifications",
-        errors,
-    )
-    locks = index_records(docs["environment_locks"].get("environment_locks"), "lock_id", "environment_locks", errors)
-
+def _validate_environment_identities(environment_identities: dict[str, Any], ecological_environments: dict[str, Any], errors: list[str]) -> None:
     if tuple(environment_identities) != (RUNNER_ENVIRONMENT_ID,):
         errors.append("capture layer requires exactly the existing Runner environment identity")
     identity = environment_identities.get(RUNNER_ENVIRONMENT_ID, {})
@@ -224,6 +179,8 @@ def validate(docs: dict[str, dict[str, Any]], texts: dict[str, str], root: Path)
     if identity.get("authority_effect") != "none":
         errors.append("environment identity cannot create authority")
 
+
+def _validate_runner_environments(runner_environments: dict[str, Any], errors: list[str]) -> None:
     if tuple(runner_environments) != (RUNNER_ENVIRONMENT_ID,):
         errors.append("capture layer requires exactly the existing Runner environment slot")
     runner_environment = runner_environments.get(RUNNER_ENVIRONMENT_ID, {})
@@ -235,6 +192,17 @@ def validate(docs: dict[str, dict[str, Any]], texts: dict[str, str], root: Path)
     if runner_environment.get("dependencies") != [] or runner_environment.get("evidence_refs") != []:
         errors.append("environment collection model cannot populate Runner dependencies or evidence")
 
+
+def _validate_captures(
+    captures: dict[str, Any],
+    collectors: dict[str, Any],
+    environment_identities: dict[str, Any],
+    facts: dict[str, Any],
+    digests: dict[str, Any],
+    collection_evidence: dict[str, Any],
+    qualification_evidence: dict[str, Any],
+    errors: list[str],
+) -> None:
     if tuple(captures) != (CAPTURE_ID,):
         errors.append("capture registry must contain exactly one pending request")
     capture = captures.get(CAPTURE_ID, {})
@@ -285,6 +253,10 @@ def validate(docs: dict[str, dict[str, Any]], texts: dict[str, str], root: Path)
     if any((fact_refs, digest_refs, collection_evidence_refs, qualification_evidence_refs)):
         errors.append("v0.1 pending capture cannot claim collected material")
 
+
+def _validate_facts(
+    facts: dict[str, Any], environment_identities: dict[str, Any], captures: dict[str, Any], errors: list[str]
+) -> Counter[str]:
     fact_type_counts: Counter[str] = Counter()
     for fact_id, fact in facts.items():
         environment_id = fact.get("environment_id")
@@ -313,7 +285,12 @@ def validate(docs: dict[str, dict[str, Any]], texts: dict[str, str], root: Path)
         reject_authority_keys(fact, f"Environment fact {fact_id}", errors)
     if facts:
         errors.append("v0.1 environment fact registry must remain empty because collection was not performed")
+    return fact_type_counts
 
+
+def _validate_digests(
+    digests: dict[str, Any], environment_identities: dict[str, Any], captures: dict[str, Any], facts: dict[str, Any], errors: list[str]
+) -> Counter[str]:
     digest_type_counts: Counter[str] = Counter()
     for digest_id, digest in digests.items():
         environment_id = digest.get("environment_id")
@@ -352,7 +329,12 @@ def validate(docs: dict[str, dict[str, Any]], texts: dict[str, str], root: Path)
         reject_authority_keys(digest, f"Environment digest {digest_id}", errors)
     if digests:
         errors.append("v0.1 environment digest registry must remain empty because collection was not performed")
+    return digest_type_counts
 
+
+def _validate_collection_evidence(
+    collection_evidence: dict[str, Any], captures: dict[str, Any], facts: dict[str, Any], digests: dict[str, Any], errors: list[str]
+) -> None:
     for evidence_id, evidence in collection_evidence.items():
         capture_ref = evidence.get("capture_id")
         parent_capture = captures.get(capture_ref)
@@ -389,6 +371,10 @@ def validate(docs: dict[str, dict[str, Any]], texts: dict[str, str], root: Path)
     if collection_evidence:
         errors.append("v0.1 collection evidence registry must remain empty because collection was not performed")
 
+
+def _validate_qualifications_and_locks(
+    qualification_evidence: dict[str, Any], qualifications: dict[str, Any], locks: dict[str, Any], errors: list[str]
+) -> None:
     if qualification_evidence:
         errors.append("capture governance cannot populate qualification evidence automatically")
     if tuple(qualifications) != (QUALIFICATION_ID,):
@@ -422,6 +408,8 @@ def validate(docs: dict[str, dict[str, Any]], texts: dict[str, str], root: Path)
     if lock.get("authority_effect") != "none":
         errors.append("environment lock cannot create authority")
 
+
+def _validate_metadata(docs: dict[str, dict[str, Any]], errors: list[str]) -> None:
     capture_meta = docs["captures"].get("metadata", {})
     if capture_meta.get("capture_count") != 1 or capture_meta.get("capture_status_distribution", {}).get("pending") != 1:
         errors.append("capture metadata must report one pending request")
@@ -439,6 +427,8 @@ def validate(docs: dict[str, dict[str, Any]], texts: dict[str, str], root: Path)
         errors.append("collection evidence metadata must remain zero")
     require_zero(collection_meta, ("verified_collection_evidence_count", "qualification_evidence_created_count", "environment_qualification_count", "permission_grant_count"), "Collection evidence", errors)
 
+
+def _validate_prohibited_entities(docs: dict[str, dict[str, Any]], entities: dict[str, Any], errors: list[str]) -> None:
     if docs["runners"].get("runners") != []:
         errors.append("environment capture layer cannot create a Runner")
     if docs["runner_executions"].get("runner_executions") != []:
@@ -466,11 +456,12 @@ def validate(docs: dict[str, dict[str, Any]], texts: dict[str, str], root: Path)
     verification_records = docs["verification_records"].get("verification_records")
     if not isinstance(verification_records, list) or len(verification_records) != 78 or any(not isinstance(item, dict) or item.get("status") != "pending" or item.get("decision") != "pending" or item.get("verification_level") != "V0" for item in verification_records):
         errors.append("environment capture layer must preserve 78 pending V0 verification records")
-    entities = index_records(docs["entities"].get("entities"), "entity_id", "entities", errors)
     agent_count = sum(1 for entity in entities.values() if entity.get("entity_type") == "agent")
     if agent_count != 0:
         errors.append("environment capture layer cannot create or convert an Agent")
 
+
+def _validate_manifest_and_inputs(docs: dict[str, dict[str, Any]], root: Path, errors: list[str]) -> None:
     expected_validators = sorted(str(path.relative_to(root)) for path in (root / "validation").glob("*_validator.py"))
     manifests = docs["validator_manifests"].get("validator_manifests")
     if not isinstance(manifests, list) or len(manifests) != 1:
@@ -488,6 +479,8 @@ def validate(docs: dict[str, dict[str, Any]], texts: dict[str, str], root: Path)
     if len(validator_inputs) != 1 or validator_inputs[0].get("value") != expected_validators or validator_inputs[0].get("status") != "pending":
         errors.append("experiment validator-list input must match the live suite and remain pending")
 
+
+def _validate_texts(texts: dict[str, str], errors: list[str]) -> None:
     required_tokens = {
         "capture_constitution": [
             "evidence_collection:",
@@ -520,6 +513,71 @@ def validate(docs: dict[str, dict[str, Any]], texts: dict[str, str], root: Path)
         errors.append("evolution ledger must preserve unique contiguous IDs, retain DBOS-EVO-0031, and append the latest ID last")
     if "environment_evidence_capture_layer_v0.1" not in texts["evolution_ledger"]:
         errors.append("evolution ledger must contain the Environment Evidence Capture record")
+
+
+def validate(docs: dict[str, dict[str, Any]], texts: dict[str, str], root: Path) -> dict[str, Any]:
+    """Validate capture references, material integrity, privacy, and zero-effect boundaries."""
+    errors: list[str] = []
+
+    ecological_environments = index_records(
+        docs["ecological_environments"].get("environments"), "environment_id", "ecological_environments", errors
+    )
+    environment_identities = index_records(
+        docs["environment_identities"].get("environment_identities"),
+        "environment_id",
+        "environment_identities",
+        errors,
+    )
+    runner_environments = index_records(
+        docs["runner_environments"].get("runner_environments"), "environment_id", "runner_environments", errors
+    )
+    collectors = index_records(
+        docs["capture_collectors"].get("capture_collectors"), "collector_id", "capture_collectors", errors
+    )
+    captures = index_records(
+        docs["captures"].get("environment_evidence_captures"),
+        "capture_id",
+        "environment_evidence_captures",
+        errors,
+    )
+    facts = index_records(docs["facts"].get("environment_facts"), "fact_id", "environment_facts", errors)
+    digests = index_records(docs["digests"].get("environment_digests"), "digest_id", "environment_digests", errors)
+    collection_evidence = index_records(
+        docs["collection_evidence"].get("environment_collection_evidence"),
+        "evidence_id",
+        "environment_collection_evidence",
+        errors,
+    )
+    qualification_evidence = index_records(
+        docs["qualification_evidence"].get("environment_evidence"),
+        "evidence_id",
+        "qualification_environment_evidence",
+        errors,
+    )
+    qualifications = index_records(
+        docs["qualifications"].get("environment_qualifications"),
+        "qualification_id",
+        "environment_qualifications",
+        errors,
+    )
+    locks = index_records(docs["environment_locks"].get("environment_locks"), "lock_id", "environment_locks", errors)
+    entities = index_records(docs["entities"].get("entities"), "entity_id", "entities", errors)
+
+    _validate_environment_identities(environment_identities, ecological_environments, errors)
+    _validate_runner_environments(runner_environments, errors)
+    _validate_captures(
+        captures, collectors, environment_identities, facts, digests, collection_evidence, qualification_evidence, errors
+    )
+    fact_type_counts = _validate_facts(facts, environment_identities, captures, errors)
+    digest_type_counts = _validate_digests(digests, environment_identities, captures, facts, errors)
+    _validate_collection_evidence(collection_evidence, captures, facts, digests, errors)
+    _validate_qualifications_and_locks(qualification_evidence, qualifications, locks, errors)
+    _validate_metadata(docs, errors)
+    _validate_prohibited_entities(docs, entities, errors)
+    _validate_manifest_and_inputs(docs, root, errors)
+    _validate_texts(texts, errors)
+
+    agent_count = sum(1 for entity in entities.values() if entity.get("entity_type") == "agent")
 
     return {
         "status": "PASS" if not errors else "FAIL",
@@ -560,7 +618,6 @@ def validate(docs: dict[str, dict[str, Any]], texts: dict[str, str], root: Path)
             "authority_effect": "none",
         },
     }
-
 
 def load_inputs(root: Path) -> tuple[dict[str, dict[str, Any]], dict[str, str]]:
     registry = root / "registry"
