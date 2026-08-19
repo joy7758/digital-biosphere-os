@@ -53,8 +53,20 @@ REQUIRED_EVENT_FIELDS = {
     "evidence_ref",
     "status",
 }
-REQUIRED_STREAM_FIELDS = {"stream_id", "entity_id", "event_types", "retention", "status"}
-REQUIRED_OBSERVATION_FIELDS = {"observation_id", "event_id", "metric", "value", "timestamp"}
+REQUIRED_STREAM_FIELDS = {
+    "stream_id",
+    "entity_id",
+    "event_types",
+    "retention",
+    "status",
+}
+REQUIRED_OBSERVATION_FIELDS = {
+    "observation_id",
+    "event_id",
+    "metric",
+    "value",
+    "timestamp",
+}
 EVENT_ID_RE = re.compile(r"^dbio:event:([a-z0-9][a-z0-9.-]*):[0-9]{3}$")
 STREAM_ID_RE = re.compile(
     r"^dbio://event-stream/([a-z0-9][a-z0-9.-]*)/v[0-9][A-Za-z0-9._-]*$"
@@ -123,7 +135,9 @@ def index_records(
     return indexed
 
 
-def reject_authority_fields(record: dict[str, Any], where: str, errors: list[str]) -> None:
+def reject_authority_fields(
+    record: dict[str, Any], where: str, errors: list[str]
+) -> None:
     """Reject fields that would grant authority or create governed state."""
     present = FORBIDDEN_AUTHORITY_FIELDS & set(record)
     if present:
@@ -163,49 +177,69 @@ def valid_timestamp(value: Any) -> bool:
 
 
 def validate(
-    type_doc: dict[str, Any],
-    event_doc: dict[str, Any],
-    stream_doc: dict[str, Any],
-    observation_doc: dict[str, Any],
-    entity_doc: dict[str, Any],
-    capability_doc: dict[str, Any],
-    claim_doc: dict[str, Any],
-    evidence_doc: dict[str, Any],
-    verification_doc: dict[str, Any],
-    runtime_doc: dict[str, Any],
-    candidate_doc: dict[str, Any],
-    ecological_doc: dict[str, Any],
-    governance_binding_doc: dict[str, Any],
-    governance_claim_doc: dict[str, Any],
-    governance_evidence_doc: dict[str, Any],
-    governance_observation_doc: dict[str, Any],
-    mapping_doc: dict[str, Any],
+    docs: dict[str, dict[str, Any]],
+    texts: dict[str, str],
     root: Path,
 ) -> dict[str, Any]:
     """Validate event taxonomy, empty fact state, streams, and boundaries."""
+    type_doc = docs.get("event_types", {})
+    event_doc = docs.get("events", {})
+    stream_doc = docs.get("event_streams", {})
+    observation_doc = docs.get("event_observations", {})
+    entity_doc = docs.get("entities", {})
+    capability_doc = docs.get("capabilities", {})
+    claim_doc = docs.get("capability_claims", {})
+    evidence_doc = docs.get("capability_evidence", {})
+    verification_doc = docs.get("verification_records", {})
+    runtime_doc = docs.get("runtime_instances", {})
+    candidate_doc = docs.get("organism_candidates", {})
+    ecological_doc = docs.get("ecological_entities", {})
+    governance_binding_doc = docs.get("governance_bindings", {})
+    governance_claim_doc = docs.get("governance_claims", {})
+    governance_evidence_doc = docs.get("governance_evidence", {})
+    governance_observation_doc = docs.get("governance_observations", {})
+    mapping_doc = docs.get("evolution_mapping", {})
+
     errors: list[str] = []
-    entity_by_id = index_records(entity_doc.get("entities"), "entity_id", "entities", errors)
-    type_by_name = index_records(type_doc.get("event_types"), "event_type", "event_types", errors)
+    entity_by_id = index_records(
+        entity_doc.get("entities"), "entity_id", "entities", errors
+    )
+    type_by_name = index_records(
+        type_doc.get("event_types"), "event_type", "event_types", errors
+    )
     if tuple(type_by_name) != EVENT_TYPES:
         errors.append("event types must preserve all eight ordered definitions")
     for event_type, record in type_by_name.items():
         missing = REQUIRED_TYPE_FIELDS - set(record)
         if missing:
             errors.append(f"{event_type}: missing type fields {sorted(missing)}")
-        if not isinstance(record.get("description"), str) or not record.get("description"):
+        if not isinstance(record.get("description"), str) or not record.get(
+            "description"
+        ):
             errors.append(f"{event_type}: description must be non-empty")
         linkage = record.get("minimum_linkage")
-        if not isinstance(linkage, list) or not {"entity_id", "source", "evidence_ref"}.issubset(linkage):
+        if not isinstance(linkage, list) or not {
+            "entity_id",
+            "source",
+            "evidence_ref",
+        }.issubset(linkage):
             errors.append(f"{event_type}: minimum linkage is incomplete")
         if record.get("authority_effect") != "none":
             errors.append(f"{event_type}: event type cannot create authority")
-        if not isinstance(record.get("state_effect"), str) or not record.get("state_effect", "").startswith("none"):
+        if not isinstance(record.get("state_effect"), str) or not record.get(
+            "state_effect", ""
+        ).startswith("none"):
             errors.append(f"{event_type}: event type cannot create state automatically")
         reject_authority_fields(record, event_type, errors)
     type_meta = type_doc.get("metadata", {})
     if type_meta.get("event_type_count") != len(type_by_name):
         errors.append("event type metadata count mismatch")
-    for field in ("authority_effect", "capability_effect", "permission_effect", "automatic_level_effect"):
+    for field in (
+        "authority_effect",
+        "capability_effect",
+        "permission_effect",
+        "automatic_level_effect",
+    ):
         if type_meta.get(field) != "none":
             errors.append(f"event type metadata {field} must remain none")
 
@@ -231,7 +265,9 @@ def validate(
             stream_by_entity[entity_id] = stream
         event_types = stream.get("event_types")
         if (tuple(event_types) if isinstance(event_types, list) else ()) != EVENT_TYPES:
-            errors.append(f"{stream_id}: stream event types must preserve all registered types")
+            errors.append(
+                f"{stream_id}: stream event types must preserve all registered types"
+            )
         status = stream.get("status")
         if status not in STREAM_STATUSES:
             errors.append(f"{stream_id}: invalid stream status {status!r}")
@@ -243,11 +279,15 @@ def validate(
             errors.append(f"{stream_id}: stream retention must remain append-only")
         reject_authority_fields(stream, stream_id, errors)
     if set(stream_by_entity) != set(entity_by_id):
-        errors.append("every canonical entity must have exactly one defined event stream")
+        errors.append(
+            "every canonical entity must have exactly one defined event stream"
+        )
     stream_meta = stream_doc.get("metadata", {})
     if stream_meta.get("stream_count") != len(stream_by_id):
         errors.append("event stream metadata count mismatch")
-    if stream_meta.get("defined_stream_count") != stream_status_counts.get("defined", 0):
+    if stream_meta.get("defined_stream_count") != stream_status_counts.get(
+        "defined", 0
+    ):
         errors.append("defined event stream metadata count mismatch")
     if stream_meta.get("active_stream_count") != stream_status_counts.get("active", 0):
         errors.append("active event stream metadata count mismatch")
@@ -285,7 +325,9 @@ def validate(
             if not isinstance(source.get(field), str) or not source.get(field):
                 errors.append(f"{event_id}: source.{field} must be a non-empty string")
         if not valid_timestamp(source.get("collected_at")):
-            errors.append(f"{event_id}: source.collected_at must be ISO 8601 with timezone")
+            errors.append(
+                f"{event_id}: source.collected_at must be ISO 8601 with timezone"
+            )
         evidence_ref = event.get("evidence_ref")
         if not isinstance(evidence_ref, str) or not evidence_ref:
             errors.append(f"{event_id}: evidence_ref must be non-empty")
@@ -305,7 +347,9 @@ def validate(
     event_meta = event_doc.get("metadata", {})
     if event_meta.get("event_count") != len(event_by_id):
         errors.append("event metadata count mismatch")
-    if event_meta.get("validated_event_count") != event_status_counts.get("validated", 0):
+    if event_meta.get("validated_event_count") != event_status_counts.get(
+        "validated", 0
+    ):
         errors.append("validated event metadata count mismatch")
     if event_meta.get("event_created_evidence_count") != 0:
         errors.append("events cannot create evidence automatically")
@@ -320,7 +364,9 @@ def validate(
     for observation_id, observation in observation_by_id.items():
         missing = REQUIRED_OBSERVATION_FIELDS - set(observation)
         if missing:
-            errors.append(f"{observation_id}: missing observation fields {sorted(missing)}")
+            errors.append(
+                f"{observation_id}: missing observation fields {sorted(missing)}"
+            )
         match = OBSERVATION_ID_RE.match(observation_id)
         if not match:
             errors.append(f"{observation_id}: malformed observation_id")
@@ -329,8 +375,12 @@ def validate(
         if event is None:
             errors.append(f"{observation_id}: unknown event {event_id!r}")
         elif match and event.get("entity_id") != match.group(1):
-            errors.append(f"{observation_id}: observation entity does not match event entity")
-        if not isinstance(observation.get("metric"), str) or not observation.get("metric"):
+            errors.append(
+                f"{observation_id}: observation entity does not match event entity"
+            )
+        if not isinstance(observation.get("metric"), str) or not observation.get(
+            "metric"
+        ):
             errors.append(f"{observation_id}: metric must be non-empty")
         if observation.get("value") is None:
             errors.append(f"{observation_id}: observation value cannot be null")
@@ -361,8 +411,14 @@ def validate(
             if event_mapping.get(field) != expected:
                 errors.append(f"Event SAEE mapping {field} mismatch")
         function = event_mapping.get("ecological_function")
-        if not isinstance(function, str) or "observation" not in function or "evolution" not in function:
-            errors.append("Event SAEE mapping must describe observation and evolution boundaries")
+        if (
+            not isinstance(function, str)
+            or "observation" not in function
+            or "evolution" not in function
+        ):
+            errors.append(
+                "Event SAEE mapping must describe observation and evolution boundaries"
+            )
     if mapping_doc.get("metadata", {}).get("mapping_count") != len(mapping_by_layer):
         errors.append("SAEE mapping metadata count mismatch")
 
@@ -375,7 +431,11 @@ def validate(
         errors.append("capability claims must be a list")
         claims = []
     for claim in claims:
-        if not isinstance(claim, dict) or claim.get("maturity_level") != "C1" or claim.get("status") != "pending":
+        if (
+            not isinstance(claim, dict)
+            or claim.get("maturity_level") != "C1"
+            or claim.get("status") != "pending"
+        ):
             errors.append("event layer must preserve capability claims at C1/pending")
             break
     evidence_records = evidence_doc.get("evidence")
@@ -383,7 +443,11 @@ def validate(
         errors.append("capability evidence must be a list")
         evidence_records = []
     for evidence in evidence_records:
-        if not isinstance(evidence, dict) or evidence.get("evidence_type") != "E1" or evidence.get("status") != "pending":
+        if (
+            not isinstance(evidence, dict)
+            or evidence.get("evidence_type") != "E1"
+            or evidence.get("status") != "pending"
+        ):
             errors.append("event layer must preserve capability evidence at E1/pending")
             break
     verification_records = verification_doc.get("verification_records")
@@ -415,11 +479,18 @@ def validate(
         if not isinstance(ecological_entity, dict):
             errors.append("ecological entity must be a mapping")
             continue
-        if ecological_entity.get("ecological_type") in {"Runtime", "Candidate Organism", "Digital Organism"}:
+        if ecological_entity.get("ecological_type") in {
+            "Runtime",
+            "Candidate Organism",
+            "Digital Organism",
+        }:
             errors.append("event layer cannot promote runtime or organism status")
         if ecological_entity.get("evolution_stage") != "pre-organism":
             errors.append("event layer cannot change evolution stage")
-        if ecological_entity.get("fitness_status") != "unknown" or ecological_entity.get("fitness_score") is not None:
+        if (
+            ecological_entity.get("fitness_status") != "unknown"
+            or ecological_entity.get("fitness_score") is not None
+        ):
             errors.append("event layer cannot calculate fitness")
     governance_bindings = governance_binding_doc.get("governance_bindings")
     if not isinstance(governance_bindings, list) or governance_bindings:
@@ -480,50 +551,101 @@ def validate(
 def main() -> int:
     root = Path(__file__).resolve().parents[1]
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--event-types", type=Path, default=root / "registry" / "event-types.yaml")
-    parser.add_argument("--events", type=Path, default=root / "registry" / "events.yaml")
-    parser.add_argument("--streams", type=Path, default=root / "registry" / "event-streams.yaml")
-    parser.add_argument("--observations", type=Path, default=root / "registry" / "event-observations.yaml")
-    parser.add_argument("--entities", type=Path, default=root / "registry" / "entities.yaml")
-    parser.add_argument("--capabilities", type=Path, default=root / "registry" / "capabilities.yaml")
-    parser.add_argument("--claims", type=Path, default=root / "registry" / "capability-claims.yaml")
-    parser.add_argument("--evidence", type=Path, default=root / "registry" / "capability-evidence.yaml")
-    parser.add_argument("--verification", type=Path, default=root / "registry" / "verification-records.yaml")
-    parser.add_argument("--runtimes", type=Path, default=root / "registry" / "runtime-instances.yaml")
-    parser.add_argument("--candidates", type=Path, default=root / "registry" / "organism-candidates.yaml")
-    parser.add_argument("--ecological", type=Path, default=root / "registry" / "ecological-entities.yaml")
-    parser.add_argument("--governance-bindings", type=Path, default=root / "registry" / "governance-bindings.yaml")
-    parser.add_argument("--governance-claims", type=Path, default=root / "registry" / "governance-claims.yaml")
-    parser.add_argument("--governance-evidence", type=Path, default=root / "registry" / "governance-evidence.yaml")
-    parser.add_argument("--governance-observations", type=Path, default=root / "registry" / "governance-observations.yaml")
-    parser.add_argument("--mapping", type=Path, default=root / "registry" / "evolution-mapping.yaml")
+    parser.add_argument(
+        "--event-types", type=Path, default=root / "registry" / "event-types.yaml"
+    )
+    parser.add_argument(
+        "--events", type=Path, default=root / "registry" / "events.yaml"
+    )
+    parser.add_argument(
+        "--streams", type=Path, default=root / "registry" / "event-streams.yaml"
+    )
+    parser.add_argument(
+        "--observations",
+        type=Path,
+        default=root / "registry" / "event-observations.yaml",
+    )
+    parser.add_argument(
+        "--entities", type=Path, default=root / "registry" / "entities.yaml"
+    )
+    parser.add_argument(
+        "--capabilities", type=Path, default=root / "registry" / "capabilities.yaml"
+    )
+    parser.add_argument(
+        "--claims", type=Path, default=root / "registry" / "capability-claims.yaml"
+    )
+    parser.add_argument(
+        "--evidence", type=Path, default=root / "registry" / "capability-evidence.yaml"
+    )
+    parser.add_argument(
+        "--verification",
+        type=Path,
+        default=root / "registry" / "verification-records.yaml",
+    )
+    parser.add_argument(
+        "--runtimes", type=Path, default=root / "registry" / "runtime-instances.yaml"
+    )
+    parser.add_argument(
+        "--candidates",
+        type=Path,
+        default=root / "registry" / "organism-candidates.yaml",
+    )
+    parser.add_argument(
+        "--ecological",
+        type=Path,
+        default=root / "registry" / "ecological-entities.yaml",
+    )
+    parser.add_argument(
+        "--governance-bindings",
+        type=Path,
+        default=root / "registry" / "governance-bindings.yaml",
+    )
+    parser.add_argument(
+        "--governance-claims",
+        type=Path,
+        default=root / "registry" / "governance-claims.yaml",
+    )
+    parser.add_argument(
+        "--governance-evidence",
+        type=Path,
+        default=root / "registry" / "governance-evidence.yaml",
+    )
+    parser.add_argument(
+        "--governance-observations",
+        type=Path,
+        default=root / "registry" / "governance-observations.yaml",
+    )
+    parser.add_argument(
+        "--mapping", type=Path, default=root / "registry" / "evolution-mapping.yaml"
+    )
     parser.add_argument("--format", choices=("json", "text"), default="json")
     args = parser.parse_args()
     from execution_chain_compat import delegate_if_advanced
+
     delegated = delegate_if_advanced(root, args.format)
     if delegated is not None:
         return delegated
     try:
-        result = validate(
-            load_json_yaml(args.event_types),
-            load_json_yaml(args.events),
-            load_json_yaml(args.streams),
-            load_json_yaml(args.observations),
-            load_json_yaml(args.entities),
-            load_json_yaml(args.capabilities),
-            load_json_yaml(args.claims),
-            load_json_yaml(args.evidence),
-            load_json_yaml(args.verification),
-            load_json_yaml(args.runtimes),
-            load_json_yaml(args.candidates),
-            load_json_yaml(args.ecological),
-            load_json_yaml(args.governance_bindings),
-            load_json_yaml(args.governance_claims),
-            load_json_yaml(args.governance_evidence),
-            load_json_yaml(args.governance_observations),
-            load_json_yaml(args.mapping),
-            root,
-        )
+        docs = {
+            "event_types": load_json_yaml(args.event_types),
+            "events": load_json_yaml(args.events),
+            "event_streams": load_json_yaml(args.streams),
+            "event_observations": load_json_yaml(args.observations),
+            "entities": load_json_yaml(args.entities),
+            "capabilities": load_json_yaml(args.capabilities),
+            "capability_claims": load_json_yaml(args.claims),
+            "capability_evidence": load_json_yaml(args.evidence),
+            "verification_records": load_json_yaml(args.verification),
+            "runtime_instances": load_json_yaml(args.runtimes),
+            "organism_candidates": load_json_yaml(args.candidates),
+            "ecological_entities": load_json_yaml(args.ecological),
+            "governance_bindings": load_json_yaml(args.governance_bindings),
+            "governance_claims": load_json_yaml(args.governance_claims),
+            "governance_evidence": load_json_yaml(args.governance_evidence),
+            "governance_observations": load_json_yaml(args.governance_observations),
+            "evolution_mapping": load_json_yaml(args.mapping),
+        }
+        result = validate(docs, {}, root)
     except (OSError, ValueError) as exc:
         result = {"status": "FAIL", "errors": [str(exc)]}
     if args.format == "json":
