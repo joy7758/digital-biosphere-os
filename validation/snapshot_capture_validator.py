@@ -114,7 +114,9 @@ def reject_effect_fields(record: Any, label: str, errors: list[str]) -> None:
     if isinstance(record, dict):
         present = sorted(FORBIDDEN_EFFECT_KEYS.intersection(record))
         if present:
-            errors.append(f"{label}: capture cannot contain authority or result fields {present}")
+            errors.append(
+                f"{label}: capture cannot contain authority or result fields {present}"
+            )
         for key, value in record.items():
             reject_effect_fields(value, f"{label}.{key}", errors)
     elif isinstance(record, list):
@@ -122,7 +124,9 @@ def reject_effect_fields(record: Any, label: str, errors: list[str]) -> None:
             reject_effect_fields(value, f"{label}[{index}]", errors)
 
 
-def require_zero(metadata: Any, fields: tuple[str, ...], label: str, errors: list[str]) -> None:
+def require_zero(
+    metadata: Any, fields: tuple[str, ...], label: str, errors: list[str]
+) -> None:
     """Require zero-effect metadata in this non-executing baseline."""
     if not isinstance(metadata, dict):
         errors.append(f"{label} metadata must be a mapping")
@@ -133,42 +137,37 @@ def require_zero(metadata: Any, fields: tuple[str, ...], label: str, errors: lis
 
 
 def validate(
-    experiment_doc: dict[str, Any],
-    snapshot_doc: dict[str, Any],
-    capture_doc: dict[str, Any],
-    digest_doc: dict[str, Any],
-    capture_evidence_doc: dict[str, Any],
-    source_doc: dict[str, Any],
-    freeze_doc: dict[str, Any],
-    authorization_doc: dict[str, Any],
-    event_doc: dict[str, Any],
-    context_doc: dict[str, Any],
-    runtime_doc: dict[str, Any],
-    candidate_doc: dict[str, Any],
-    ecological_doc: dict[str, Any],
-    entity_doc: dict[str, Any],
-    capability_doc: dict[str, Any],
-    claim_doc: dict[str, Any],
-    capability_evidence_doc: dict[str, Any],
-    verification_doc: dict[str, Any],
+    docs: dict[str, dict[str, Any]],
     root: Path,
 ) -> dict[str, Any]:
     """Validate the one pending capture and empty material registries."""
     errors: list[str] = []
 
     experiments = index_records(
-        experiment_doc.get("experiments"), "experiment_id", "experiments", errors
+        docs["experiments"].get("experiments"), "experiment_id", "experiments", errors
     )
     if tuple(experiments) != (EXPERIMENT_ID,):
         errors.append("snapshot capture requires exactly DBOS-EXP-0001")
     experiment = experiments.get(EXPERIMENT_ID, {})
-    if experiment.get("status") != "registered" or experiment.get("execution_status") != "not_executed":
+    if (
+        experiment.get("status") != "registered"
+        or experiment.get("execution_status") != "not_executed"
+    ):
         errors.append("snapshot capture cannot authorize or execute DBOS-EXP-0001")
-    if experiment.get("execution_context_ref") is not None or experiment.get("runtime_ref") is not None or experiment.get("run_ref") is not None:
-        errors.append("snapshot capture cannot attach context, runtime, or run references")
+    if (
+        experiment.get("execution_context_ref") is not None
+        or experiment.get("runtime_ref") is not None
+        or experiment.get("run_ref") is not None
+    ):
+        errors.append(
+            "snapshot capture cannot attach context, runtime, or run references"
+        )
 
     snapshots = index_records(
-        snapshot_doc.get("experiment_snapshots"), "snapshot_id", "experiment_snapshots", errors
+        docs["snapshots"].get("experiment_snapshots"),
+        "snapshot_id",
+        "experiment_snapshots",
+        errors,
     )
     snapshot = snapshots.get(SNAPSHOT_ID)
     if snapshot is None:
@@ -183,7 +182,7 @@ def validate(
     if snapshot.get("status") != "pending":
         errors.append(f"{SNAPSHOT_ID}: snapshot must remain pending and unfrozen")
 
-    source_records = source_doc.get("snapshot_sources")
+    source_records = docs["sources"].get("snapshot_sources")
     if not isinstance(source_records, list):
         errors.append("snapshot_sources must be a list")
         source_records = []
@@ -206,20 +205,32 @@ def validate(
         if not nonempty_string(source.get("verification_method")):
             errors.append(f"{source_type}: verification_method must be non-empty")
     if tuple(source_types) != SOURCE_TYPES:
-        errors.append("snapshot source registry must preserve all four ordered source types")
-    source_meta = source_doc.get("metadata", {})
+        errors.append(
+            "snapshot source registry must preserve all four ordered source types"
+        )
+    source_meta = docs["sources"].get("metadata", {})
     if source_meta.get("source_type_count") != 4:
         errors.append("source type metadata count must be four")
     for source_type in SOURCE_TYPES:
         if source_meta.get("source_type_distribution", {}).get(source_type) != 1:
             errors.append(f"source type distribution must report one {source_type}")
-    require_zero(source_meta, ("source_instance_count", "access_authority_count"), "snapshot source", errors)
+    require_zero(
+        source_meta,
+        ("source_instance_count", "access_authority_count"),
+        "snapshot source",
+        errors,
+    )
 
     captures = index_records(
-        capture_doc.get("snapshot_captures"), "capture_id", "snapshot_captures", errors
+        docs["captures"].get("snapshot_captures"),
+        "capture_id",
+        "snapshot_captures",
+        errors,
     )
     if tuple(captures) != (CAPTURE_ID,):
-        errors.append("capture registry must contain exactly DBOS-EXP-0001-CAPTURE-0001")
+        errors.append(
+            "capture registry must contain exactly DBOS-EXP-0001-CAPTURE-0001"
+        )
     capture = captures.get(CAPTURE_ID, {})
     expected_capture = {
         "experiment_id": EXPERIMENT_ID,
@@ -242,7 +253,7 @@ def validate(
         errors.append(f"{CAPTURE_ID}: invalid capture status {capture_status!r}")
 
     digests = index_records(
-        digest_doc.get("artifact_digests"), "digest_id", "artifact_digests", errors
+        docs["digests"].get("artifact_digests"), "digest_id", "artifact_digests", errors
     )
     digest_paths: set[tuple[str, str]] = set()
     for digest_id, digest in digests.items():
@@ -269,7 +280,7 @@ def validate(
             errors.append(f"{digest_id}: captured_at must be timezone-aware")
 
     evidence_records = index_records(
-        capture_evidence_doc.get("capture_evidence"),
+        docs["capture_evidence"].get("capture_evidence"),
         "evidence_id",
         "capture_evidence",
         errors,
@@ -286,7 +297,13 @@ def validate(
         if not isinstance(result, dict):
             errors.append(f"{evidence_id}: result must be a mapping")
         else:
-            required_result_fields = {"status", "captured_count", "failed_count", "excluded_count", "errors"}
+            required_result_fields = {
+                "status",
+                "captured_count",
+                "failed_count",
+                "excluded_count",
+                "errors",
+            }
             missing = required_result_fields - set(result)
             if missing:
                 errors.append(f"{evidence_id}: result missing fields {sorted(missing)}")
@@ -294,25 +311,43 @@ def validate(
             errors.append(f"{evidence_id}: timestamp must be timezone-aware")
 
     if capture_status == "pending":
-        if capture.get("collector") is not None or capture.get("captured_at") is not None:
-            errors.append(f"{CAPTURE_ID}: pending capture requires collector=null and captured_at=null")
-        if capture.get("artifact_digest_refs") != [] or capture.get("evidence_refs") != []:
-            errors.append(f"{CAPTURE_ID}: pending capture requires empty digest and evidence references")
+        if (
+            capture.get("collector") is not None
+            or capture.get("captured_at") is not None
+        ):
+            errors.append(
+                f"{CAPTURE_ID}: pending capture requires collector=null and captured_at=null"
+            )
+        if (
+            capture.get("artifact_digest_refs") != []
+            or capture.get("evidence_refs") != []
+        ):
+            errors.append(
+                f"{CAPTURE_ID}: pending capture requires empty digest and evidence references"
+            )
     if capture_status in {"captured", "validated"}:
         if not nonempty_string(capture.get("collector")):
-            errors.append(f"{CAPTURE_ID}: {capture_status} capture requires attributable collector")
+            errors.append(
+                f"{CAPTURE_ID}: {capture_status} capture requires attributable collector"
+            )
         if not valid_timestamp(capture.get("captured_at")):
-            errors.append(f"{CAPTURE_ID}: {capture_status} capture requires captured_at")
+            errors.append(
+                f"{CAPTURE_ID}: {capture_status} capture requires captured_at"
+            )
         digest_refs = capture.get("artifact_digest_refs")
         if not isinstance(digest_refs, list) or not digest_refs:
-            errors.append(f"{CAPTURE_ID}: captured status requires non-empty artifact digests")
+            errors.append(
+                f"{CAPTURE_ID}: captured status requires non-empty artifact digests"
+            )
             digest_refs = []
         for digest_ref in digest_refs:
             digest = digests.get(digest_ref)
             if digest is None:
                 errors.append(f"{CAPTURE_ID}: missing digest reference {digest_ref}")
             elif digest.get("snapshot_id") != SNAPSHOT_ID:
-                errors.append(f"{CAPTURE_ID}: digest {digest_ref} does not belong to the capture snapshot")
+                errors.append(
+                    f"{CAPTURE_ID}: digest {digest_ref} does not belong to the capture snapshot"
+                )
         evidence_refs = capture.get("evidence_refs")
         if not isinstance(evidence_refs, list) or not evidence_refs:
             errors.append(f"{CAPTURE_ID}: captured status requires capture evidence")
@@ -320,44 +355,87 @@ def validate(
         for evidence_ref in evidence_refs:
             evidence = evidence_records.get(evidence_ref)
             if evidence is None:
-                errors.append(f"{CAPTURE_ID}: missing capture evidence reference {evidence_ref}")
+                errors.append(
+                    f"{CAPTURE_ID}: missing capture evidence reference {evidence_ref}"
+                )
             elif evidence.get("capture_id") != CAPTURE_ID:
-                errors.append(f"{CAPTURE_ID}: evidence {evidence_ref} belongs to another capture")
+                errors.append(
+                    f"{CAPTURE_ID}: evidence {evidence_ref} belongs to another capture"
+                )
     if capture_status != "pending":
-        errors.append("v0.1 snapshot capture must remain pending and cannot claim material capture")
+        errors.append(
+            "v0.1 snapshot capture must remain pending and cannot claim material capture"
+        )
     if digests:
-        errors.append("v0.1 artifact digest registry must remain empty until a real capture occurs")
+        errors.append(
+            "v0.1 artifact digest registry must remain empty until a real capture occurs"
+        )
     if evidence_records:
-        errors.append("v0.1 capture evidence registry must remain empty until a real capture occurs")
+        errors.append(
+            "v0.1 capture evidence registry must remain empty until a real capture occurs"
+        )
 
-    capture_meta = capture_doc.get("metadata", {})
-    if capture_meta.get("capture_count") != 1 or capture_meta.get("capture_status_distribution", {}).get("pending") != 1:
+    capture_meta = docs["captures"].get("metadata", {})
+    if (
+        capture_meta.get("capture_count") != 1
+        or capture_meta.get("capture_status_distribution", {}).get("pending") != 1
+    ):
         errors.append("capture metadata must report one pending capture")
     if capture_meta.get("source_type_usage_distribution", {}).get("filesystem") != 1:
         errors.append("capture usage distribution must report one filesystem capture")
     require_zero(
         capture_meta,
-        ("captured_material_count", "artifact_digest_count", "capture_evidence_count", "execution_authority_count", "event_created_count", "runtime_created_count", "agent_created_count", "organism_created_count", "capability_effect_count", "permission_grant_count", "c_e_v_level_change_count"),
+        (
+            "captured_material_count",
+            "artifact_digest_count",
+            "capture_evidence_count",
+            "execution_authority_count",
+            "event_created_count",
+            "runtime_created_count",
+            "agent_created_count",
+            "organism_created_count",
+            "capability_effect_count",
+            "permission_grant_count",
+            "c_e_v_level_change_count",
+        ),
         "snapshot capture",
         errors,
     )
-    digest_meta = digest_doc.get("metadata", {})
+    digest_meta = docs["digests"].get("metadata", {})
     require_zero(
         digest_meta,
-        ("artifact_digest_count", "sha256_digest_count", "nonempty_hash_count", "retained_artifact_count", "event_created_count", "permission_grant_count"),
+        (
+            "artifact_digest_count",
+            "sha256_digest_count",
+            "nonempty_hash_count",
+            "retained_artifact_count",
+            "event_created_count",
+            "permission_grant_count",
+        ),
         "artifact digest",
         errors,
     )
-    capture_evidence_meta = capture_evidence_doc.get("metadata", {})
+    capture_evidence_meta = docs["capture_evidence"].get("metadata", {})
     require_zero(
         capture_evidence_meta,
-        ("capture_evidence_count", "successful_capture_evidence_count", "verified_capture_evidence_count", "event_created_count", "trust_grant_count", "permission_grant_count", "c_e_v_level_change_count"),
+        (
+            "capture_evidence_count",
+            "successful_capture_evidence_count",
+            "verified_capture_evidence_count",
+            "event_created_count",
+            "trust_grant_count",
+            "permission_grant_count",
+            "c_e_v_level_change_count",
+        ),
         "capture evidence",
         errors,
     )
 
     freeze_manifests = index_records(
-        freeze_doc.get("freeze_manifests"), "freeze_id", "freeze_manifests", errors
+        docs["freeze_manifests"].get("freeze_manifests"),
+        "freeze_id",
+        "freeze_manifests",
+        errors,
     )
     freeze_manifest = freeze_manifests.get(FREEZE_ID)
     if freeze_manifest is None:
@@ -372,12 +450,17 @@ def validate(
         "current_status": "pending",
     }
     if requirement != expected_requirement:
-        errors.append(f"{FREEZE_ID}: snapshot_capture_requirement must remain pending and exact")
-    if freeze_manifest.get("status") != "pending" or freeze_manifest.get("frozen_at") is not None:
+        errors.append(
+            f"{FREEZE_ID}: snapshot_capture_requirement must remain pending and exact"
+        )
+    if (
+        freeze_manifest.get("status") != "pending"
+        or freeze_manifest.get("frozen_at") is not None
+    ):
         errors.append("snapshot capture cannot freeze the experiment")
 
     authorizations = index_records(
-        authorization_doc.get("experiment_authorizations"),
+        docs["authorizations"].get("experiment_authorizations"),
         "authorization_id",
         "experiment_authorizations",
         errors,
@@ -386,24 +469,30 @@ def validate(
     if authorization is None:
         errors.append("snapshot capture requires the existing authorization record")
         authorization = {}
-    if authorization.get("status") != "pending" or authorization.get("authorized_by") is not None or authorization.get("decision_at") is not None:
+    if (
+        authorization.get("status") != "pending"
+        or authorization.get("authorized_by") is not None
+        or authorization.get("decision_at") is not None
+    ):
         errors.append("snapshot capture cannot grant experiment authorization")
 
-    if event_doc.get("events") != []:
+    if docs["events"].get("events") != []:
         errors.append("snapshot capture cannot generate an event")
-    if context_doc.get("execution_contexts") != []:
+    if docs["contexts"].get("execution_contexts") != []:
         errors.append("snapshot capture cannot create an execution context")
-    if runtime_doc.get("runtime_instances") != []:
+    if docs["runtimes"].get("runtime_instances") != []:
         errors.append("snapshot capture cannot create a runtime")
-    if candidate_doc.get("organism_candidates") != []:
+    if docs["candidates"].get("organism_candidates") != []:
         errors.append("snapshot capture cannot create an organism candidate")
-    if capability_doc.get("capabilities") != []:
+    if docs["capabilities"].get("capabilities") != []:
         errors.append("snapshot capture cannot create a capability")
 
-    entities = index_records(entity_doc.get("entities"), "entity_id", "entities", errors)
+    entities = index_records(
+        docs["entities"].get("entities"), "entity_id", "entities", errors
+    )
     if any(entity.get("entity_type") == "agent" for entity in entities.values()):
         errors.append("snapshot capture cannot create an Agent entity")
-    ecological_entities = ecological_doc.get("ecological_entities")
+    ecological_entities = docs["ecological"].get("ecological_entities")
     if not isinstance(ecological_entities, list):
         errors.append("ecological_entities must be a list")
         ecological_entities = []
@@ -411,45 +500,65 @@ def validate(
         if not isinstance(record, dict):
             errors.append("ecological entity records must be mappings")
             continue
-        if record.get("ecological_type") in {"Runtime", "Candidate Organism", "Digital Organism"}:
+        if record.get("ecological_type") in {
+            "Runtime",
+            "Candidate Organism",
+            "Digital Organism",
+        }:
             errors.append("snapshot capture cannot promote ecological type")
         if record.get("evolution_stage") != "pre-organism":
             errors.append("snapshot capture cannot change evolution stage")
 
-    claims = index_records(claim_doc.get("claims"), "claim_id", "claims", errors)
+    claims = index_records(docs["claims"].get("claims"), "claim_id", "claims", errors)
     capability_evidence = index_records(
-        capability_evidence_doc.get("evidence"), "evidence_id", "evidence", errors
+        docs["capability_evidence"].get("evidence"), "evidence_id", "evidence", errors
     )
     verifications = index_records(
-        verification_doc.get("verification_records"),
+        docs["verification"].get("verification_records"),
         "verification_id",
         "verification_records",
         errors,
     )
     for claim_id, claim in claims.items():
         if claim.get("status") != "pending" or claim.get("maturity_level") != "C1":
-            errors.append(f"{claim_id}: snapshot capture must preserve claims at pending/C1")
+            errors.append(
+                f"{claim_id}: snapshot capture must preserve claims at pending/C1"
+            )
             break
     for evidence_id, evidence in capability_evidence.items():
         if evidence.get("status") != "pending" or evidence.get("evidence_type") != "E1":
-            errors.append(f"{evidence_id}: snapshot capture must preserve capability evidence at pending/E1")
+            errors.append(
+                f"{evidence_id}: snapshot capture must preserve capability evidence at pending/E1"
+            )
             break
     for verification_id, verification in verifications.items():
-        if verification.get("status") != "pending" or verification.get("decision") != "pending" or verification.get("verification_level") != "V0":
-            errors.append(f"{verification_id}: snapshot capture must preserve verification at pending/V0")
+        if (
+            verification.get("status") != "pending"
+            or verification.get("decision") != "pending"
+            or verification.get("verification_level") != "V0"
+        ):
+            errors.append(
+                f"{verification_id}: snapshot capture must preserve verification at pending/V0"
+            )
             break
 
-    reject_effect_fields(capture_doc, "snapshot capture registry", errors)
-    reject_effect_fields(digest_doc, "artifact digest registry", errors)
-    reject_effect_fields(capture_evidence_doc, "capture evidence registry", errors)
-    reject_effect_fields(source_doc, "snapshot source registry", errors)
+    reject_effect_fields(docs["captures"], "snapshot capture registry", errors)
+    reject_effect_fields(docs["digests"], "artifact digest registry", errors)
+    reject_effect_fields(docs["capture_evidence"], "capture evidence registry", errors)
+    reject_effect_fields(docs["sources"], "snapshot source registry", errors)
 
     capture_constitution = root / "constitution" / "snapshot-capture-constitution.yaml"
     freeze_constitution = root / "constitution" / "experiment-freeze-constitution.yaml"
     for path, tokens in (
         (
             capture_constitution,
-            ("capture_scope:", "source_types:", "digest_rules:", "capture_evidence:", "retention:"),
+            (
+                "capture_scope:",
+                "source_types:",
+                "digest_rules:",
+                "capture_evidence:",
+                "retention:",
+            ),
         ),
         (
             freeze_constitution,
@@ -467,7 +576,9 @@ def validate(
         text = path.read_text(encoding="utf-8")
         for token in tokens:
             if token not in text:
-                errors.append(f"{path.name}: missing snapshot capture integration token {token}")
+                errors.append(
+                    f"{path.name}: missing snapshot capture integration token {token}"
+                )
 
     remaining_gaps = [
         "pending capture has collector=null and captured_at=null",
@@ -487,68 +598,71 @@ def validate(
         "artifact_digest_count": len(digests),
         "capture_evidence_count": len(evidence_records),
         "source_type_count": len(source_types),
-        "source_type_distribution": {source_type: 1 if source_type in source_types else 0 for source_type in SOURCE_TYPES},
-        "capture_source_type_distribution": dict(Counter(record.get("source_type") for record in captures.values())),
+        "source_type_distribution": {
+            source_type: 1 if source_type in source_types else 0
+            for source_type in SOURCE_TYPES
+        },
+        "capture_source_type_distribution": dict(
+            Counter(record.get("source_type") for record in captures.values())
+        ),
         "capture_status": capture_status,
         "freeze_status": freeze_manifest.get("status"),
         "authorization_status": authorization.get("status"),
         "execution_status": experiment.get("execution_status"),
-        "event_count": len(event_doc.get("events", [])) if isinstance(event_doc.get("events"), list) else None,
-        "runtime_count": len(runtime_doc.get("runtime_instances", [])) if isinstance(runtime_doc.get("runtime_instances"), list) else None,
+        "event_count": len(docs["events"].get("events", []))
+        if isinstance(docs["events"].get("events"), list)
+        else None,
+        "runtime_count": len(docs["runtimes"].get("runtime_instances", []))
+        if isinstance(docs["runtimes"].get("runtime_instances"), list)
+        else None,
         "remaining_pre_execution_gaps": remaining_gaps,
         "errors": errors,
     }
 
 
+def load_inputs(root: Path) -> tuple[dict[str, dict[str, Any]], dict[str, str]]:
+    registry = root / "registry"
+    paths = {
+        "experiments": registry / "experiments.yaml",
+        "snapshots": registry / "experiment-snapshots.yaml",
+        "captures": registry / "snapshot-captures.yaml",
+        "digests": registry / "artifact-digests.yaml",
+        "capture_evidence": registry / "capture-evidence.yaml",
+        "sources": registry / "snapshot-sources.yaml",
+        "freeze_manifests": registry / "freeze-manifests.yaml",
+        "authorizations": registry / "experiment-authorizations.yaml",
+        "events": registry / "events.yaml",
+        "contexts": registry / "execution-contexts.yaml",
+        "runtimes": registry / "runtime-instances.yaml",
+        "candidates": registry / "organism-candidates.yaml",
+        "ecological": registry / "ecological-entities.yaml",
+        "entities": registry / "entities.yaml",
+        "capabilities": registry / "capabilities.yaml",
+        "claims": registry / "capability-claims.yaml",
+        "capability_evidence": registry / "capability-evidence.yaml",
+        "verification": registry / "verification-records.yaml",
+    }
+    docs = {name: load_json_yaml(path) for name, path in paths.items()}
+
+    return docs, {}
+
+
 def main() -> int:
-    root = Path(__file__).resolve().parents[1]
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--experiments", type=Path, default=root / "registry" / "experiments.yaml")
-    parser.add_argument("--snapshots", type=Path, default=root / "registry" / "experiment-snapshots.yaml")
-    parser.add_argument("--captures", type=Path, default=root / "registry" / "snapshot-captures.yaml")
-    parser.add_argument("--digests", type=Path, default=root / "registry" / "artifact-digests.yaml")
-    parser.add_argument("--capture-evidence", type=Path, default=root / "registry" / "capture-evidence.yaml")
-    parser.add_argument("--sources", type=Path, default=root / "registry" / "snapshot-sources.yaml")
-    parser.add_argument("--freeze-manifests", type=Path, default=root / "registry" / "freeze-manifests.yaml")
-    parser.add_argument("--authorizations", type=Path, default=root / "registry" / "experiment-authorizations.yaml")
-    parser.add_argument("--events", type=Path, default=root / "registry" / "events.yaml")
-    parser.add_argument("--contexts", type=Path, default=root / "registry" / "execution-contexts.yaml")
-    parser.add_argument("--runtimes", type=Path, default=root / "registry" / "runtime-instances.yaml")
-    parser.add_argument("--candidates", type=Path, default=root / "registry" / "organism-candidates.yaml")
-    parser.add_argument("--ecological", type=Path, default=root / "registry" / "ecological-entities.yaml")
-    parser.add_argument("--entities", type=Path, default=root / "registry" / "entities.yaml")
-    parser.add_argument("--capabilities", type=Path, default=root / "registry" / "capabilities.yaml")
-    parser.add_argument("--claims", type=Path, default=root / "registry" / "capability-claims.yaml")
-    parser.add_argument("--capability-evidence", type=Path, default=root / "registry" / "capability-evidence.yaml")
-    parser.add_argument("--verification", type=Path, default=root / "registry" / "verification-records.yaml")
+    parser.add_argument(
+        "--root", type=Path, default=Path(__file__).resolve().parents[1]
+    )
     parser.add_argument("--format", choices=("json", "text"), default="json")
     args = parser.parse_args()
+    root = args.root.resolve()
     from execution_chain_compat import delegate_if_advanced
+
     delegated = delegate_if_advanced(root, args.format)
     if delegated is not None:
         return delegated
     try:
-        result = validate(
-            load_json_yaml(args.experiments),
-            load_json_yaml(args.snapshots),
-            load_json_yaml(args.captures),
-            load_json_yaml(args.digests),
-            load_json_yaml(args.capture_evidence),
-            load_json_yaml(args.sources),
-            load_json_yaml(args.freeze_manifests),
-            load_json_yaml(args.authorizations),
-            load_json_yaml(args.events),
-            load_json_yaml(args.contexts),
-            load_json_yaml(args.runtimes),
-            load_json_yaml(args.candidates),
-            load_json_yaml(args.ecological),
-            load_json_yaml(args.entities),
-            load_json_yaml(args.capabilities),
-            load_json_yaml(args.claims),
-            load_json_yaml(args.capability_evidence),
-            load_json_yaml(args.verification),
-            root,
-        )
+        docs, _ = load_inputs(root)
+        result = validate(docs, root)
     except (OSError, ValueError) as exc:
         result = {"status": "FAIL", "errors": [str(exc)]}
     if args.format == "json":
