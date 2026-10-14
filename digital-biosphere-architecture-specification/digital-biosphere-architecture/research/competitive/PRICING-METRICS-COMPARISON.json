@@ -1,0 +1,12 @@
+{
+  "version":"1.0",
+  "access_date":"2026-08-03",
+  "verified_metrics":[
+    {"vendor":"Permit.io","metrics":["monthly active human and agentic identities","tenants","environments","audit retention"]},
+    {"vendor":"LangSmith","metrics":["seats","base traces","extended traces","compute units","storage units","deployment resources"]},
+    {"vendor":"Alibaba AgentLoop","metrics":["AI credits","dataset storage entries and duration","execution count"]}
+  ],
+  "titmas_candidate_metrics":["active agents","Gate evaluations","Monitor evaluations","Receipts created","Receipt verifications","retention days","audit storage","exports","support hours"],
+  "first_offer":"FIXED_FEE_PRIVATE_MONITOR_PILOT",
+  "public_price":false
+}

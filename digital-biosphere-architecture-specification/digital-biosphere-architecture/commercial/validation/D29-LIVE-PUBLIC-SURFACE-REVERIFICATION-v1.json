@@ -1,0 +1,105 @@
+{
+  "schema_version": "1.0",
+  "observation_id": "TITMAS-D29-LIVE-PUBLIC-SURFACE-20260808-001",
+  "observed_at": "2026-08-08T23:27:26+08:00",
+  "source_repository": "joy7758/digital-biosphere-architecture-specification",
+  "source_branch": "main",
+  "source_revision": "add393f88a9c6983df6d1de02858aaf857e56ad2",
+  "base_url": "https://redcrag.cn",
+  "result": "FAIL_CLOSED_PARTIAL_DEPLOYMENT_MACHINE_STATUS_INCONSISTENT",
+  "catalog_routes": [
+    {
+      "path": "/product-catalog.json",
+      "http_status": 200,
+      "source_sha256": "5a31896fcd2eac4fff87fe621a9d7cdb6676836517095e657cc0befc8f9387b0",
+      "live_sha256": "5a31896fcd2eac4fff87fe621a9d7cdb6676836517095e657cc0befc8f9387b0",
+      "byte_identical": true
+    },
+    {
+      "path": "/solution-catalog.json",
+      "http_status": 200,
+      "source_sha256": "616b2d7c179aea709b083c4a961a3a5daccbf90696dddac8bbddf943874e9a1c",
+      "live_sha256": "616b2d7c179aea709b083c4a961a3a5daccbf90696dddac8bbddf943874e9a1c",
+      "byte_identical": true
+    },
+    {
+      "path": "/proof-catalog.json",
+      "http_status": 200,
+      "source_sha256": "a6e5060d5c72d0dc6d79e05bdfd6af79fbbf1ae3de50eba4f3f851a49e4a6559",
+      "live_sha256": "a6e5060d5c72d0dc6d79e05bdfd6af79fbbf1ae3de50eba4f3f851a49e4a6559",
+      "byte_identical": true
+    },
+    {
+      "path": "/recommendation-policy.json",
+      "http_status": 200,
+      "source_sha256": "862b8484ab6abbe5b6fa613eff757a379c6d0b63f619cd2b24795f317ad81782",
+      "live_sha256": "862b8484ab6abbe5b6fa613eff757a379c6d0b63f619cd2b24795f317ad81782",
+      "byte_identical": true
+    },
+    {
+      "path": "/commercial-offerings.json",
+      "http_status": 200,
+      "source_sha256": "de032873f376d5498460f282a93e1f78a79e264485b3ef66261bcb8db89aa719",
+      "live_sha256": "de032873f376d5498460f282a93e1f78a79e264485b3ef66261bcb8db89aa719",
+      "byte_identical": true
+    },
+    {
+      "path": "/deployment-options.json",
+      "http_status": 200,
+      "source_sha256": "084fda200b190cfa0ec0bc8f06d3772c638cacae40df3b971adfbf17e51ec630",
+      "live_sha256": "084fda200b190cfa0ec0bc8f06d3772c638cacae40df3b971adfbf17e51ec630",
+      "byte_identical": true
+    },
+    {
+      "path": "/status.json",
+      "http_status": 200,
+      "source_sha256": "56cb470a04005acb2edcd71f932fcbfe13375a5db23f3faa0d61154f5c74f78d",
+      "live_sha256": "f3654605859f9eb0ef2d32f6f81aab53b261f7463140a2d8bdee183f51b4bf81",
+      "byte_identical": false,
+      "finding": "LIVE_STATUS_JSON_IS_STALE_AND_CONFLICTS_WITH_CURRENT_COMMERCIAL_PRIVATE_IDENTITY"
+    }
+  ],
+  "human_routes": {
+    "required_commercial_routes_checked": 10,
+    "required_commercial_routes_http_200": 10,
+    "required_commercial_route_results": {
+      "/design-partner/": 200,
+      "/private-evaluation/": 200,
+      "/monitor-pilot/": 200,
+      "/enforce-pilot/": 200,
+      "/request-access/": 200,
+      "/security/": 200,
+      "/trust-center/": 200,
+      "/status/": 200,
+      "/privacy/": 200,
+      "/terms/": 200
+    },
+    "product_detail_routes_checked": 4,
+    "product_detail_routes_http_200": 4,
+    "product_detail_route_results": {
+      "/products/gate/": 200,
+      "/products/receipt/": 200,
+      "/products/audit/": 200,
+      "/products/health/": 200
+    },
+    "collection_routes_checked": 4,
+    "collection_routes_http_200": 0,
+    "collection_route_results": {
+      "/platform/": 404,
+      "/products/": 403,
+      "/solutions/": 404,
+      "/proof/": 404
+    }
+  },
+  "historical_d29_validation": {
+    "live_public_network_discovery": "FAIL_404_RETAINED",
+    "rewritten": false
+  },
+  "boundaries": {
+    "direct_known_url_reachability_is_open_web_discovery": false,
+    "http_200_is_commercial_availability": false,
+    "public_catalog_is_offer_authorization": false,
+    "status_mismatch_requires_fail_closed_correction": true,
+    "deployment_or_server_change_executed_by_this_observation": false
+  }
+}

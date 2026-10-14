@@ -1,0 +1,24 @@
+# Tencent Cloud Agent Gateway
+
+- Source URLs: https://cloud.tencent.com/product/agw
+- Source access time: 2026-08-03
+- Page title: Agent 网关服务
+- Product status: public product and console entry.
+- Target customer / buyer / user: enterprise AI platform teams; cloud architects, developers and operations teams.
+- Pricing status: vendor page mentions token/call-oriented cost governance; an exact public price baseline was not verified.
+- Architecture summary: unified traffic control plane for models, MCP tools and multi-Agent collaboration.
+- Control plane / data plane: Tencent Cloud console manages gateway instances; exact metadata and raw-data boundaries require service-specific documentation.
+- Enforcement point: gateway ingress/egress for model, MCP and A2A traffic.
+- Integration: OpenAI-compatible and MCP protocols, model routing and legacy-service protocol conversion.
+- Tenant / workspace / identity: cloud-account/resource-instance pattern; detailed Agent principal contract is not verified.
+- Policy / approval / decision: traffic and governance controls are described; transaction-specific Human approval binding is not verified.
+- Event / receipt / audit / retention: full-link observability is described; portable signed receipts and offline verification are not verified.
+- Monitor / enforce: traffic control exists; explicit shadow Monitor versus Enforce contract is not verified.
+- Deployment modes: Tencent Cloud managed gateway; customer-VPC/on-prem matrix is `NOT_ASSESSED`.
+- Console navigation and UI: resource list, gateway instance, model/tool routing, observability and cost controls are expected cloud-console surfaces; screen-level details remain partially assessed.
+- Commercial funnel: console activation and documentation quick start.
+- Strengths: protocol breadth, managed high availability and Chinese enterprise cloud integration.
+- Weaknesses relative to TITMAS: general traffic/gateway platform rather than authorization-bound portable accountability.
+- Applicable lessons: integration catalog, gateway instance health, usage/cost visibility and protocol-first onboarding.
+- Non-applicable lessons: competing as a multi-model router or general Agent gateway.
+- Uncertainties: pricing, retention, data residency and private deployment require primary contract evidence.

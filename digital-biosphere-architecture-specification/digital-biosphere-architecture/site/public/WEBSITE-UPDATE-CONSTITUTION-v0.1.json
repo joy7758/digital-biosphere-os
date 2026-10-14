@@ -1,0 +1,88 @@
+{
+  "schema_version": "0.1",
+  "document_id": "TITMAS-WEBSITE-UPDATE-CONSTITUTION-0.1",
+  "title": "TITMAS Website Update Constitution",
+  "title_zh": "TITMAS 网站更新宪法",
+  "document_status": "SITE_GOVERNANCE_BASELINE",
+  "effective_date": "2026-07-28",
+  "based_on_source_commit": "6a30da9c3e4ea52885ba911da50320a06191fd6f",
+  "authority_scope": "WEBSITE_INFORMATION_ARCHITECTURE_EDITORIAL_AND_PUBLICATION_WORKFLOW",
+  "default_decision_rule": "WHEN_WEBSITE_CHOICE_IS_REQUIRED_REFER_TO_OPENAI_AND_OPENTELEMETRY_FIRST",
+  "reference_roles": {
+    "openai": {
+      "role": "AUDIENCE_INFORMATION_ARCHITECTURE_AND_RELEASE_COMMUNICATION_REFERENCE",
+      "applies_to": [
+        "top_level_navigation",
+        "research_overview_and_index",
+        "newsroom_categories",
+        "release_notes",
+        "developer_updates",
+        "progressive_disclosure",
+        "concise_announcement_copy"
+      ],
+      "official_sources": [
+        "https://openai.com/research/",
+        "https://openai.com/news/company-announcements/",
+        "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+        "https://developers.openai.com/"
+      ]
+    },
+    "opentelemetry": {
+      "role": "OPEN_SPECIFICATION_MATURITY_VERSIONING_AND_CONTRIBUTION_REFERENCE",
+      "applies_to": [
+        "announcement_dates_and_expiry",
+        "document_level_maturity",
+        "specification_implementation_contrib_separation",
+        "versioning_and_stability",
+        "deprecation_and_removal",
+        "last_modified_and_source_provenance",
+        "documentation_contribution_workflow"
+      ],
+      "official_sources": [
+        "https://opentelemetry.io/site/build/announcements/",
+        "https://opentelemetry.io/docs/specs/otel/document-status/",
+        "https://opentelemetry.io/docs/specs/otel/versioning-and-stability/",
+        "https://opentelemetry.io/docs/contributing/"
+      ]
+    }
+  },
+  "decision_procedure": [
+    "CLASSIFY_THE_WEBSITE_CHANGE",
+    "VERIFY_CURRENT_TITMAS_TRUTH",
+    "CHECK_OPENAI_INFORMATION_ARCHITECTURE_PATTERN",
+    "CHECK_OPENTELEMETRY_MATURITY_VERSIONING_AND_ANNOUNCEMENT_RULES",
+    "PRESERVE_TITMAS_AUTHORITY_AND_NON_EQUIVALENCE_BOUNDARIES",
+    "RECORD_SOURCE_DATE_STATUS_AND_LIMITATIONS",
+    "RUN_BILINGUAL_AND_MACHINE_READABLE_VALIDATION"
+  ],
+  "conflict_rule": "TITMAS_VERIFIED_TRUTH_AND_GOVERNANCE_BOUNDARIES_OVERRIDE_REFERENCE_STYLE",
+  "human_gate_required_for": [
+    "NEW_PRODUCT_OR_COMMERCIAL_OFFERING_CLAIM",
+    "PRODUCTION_OR_CERTIFICATION_CLAIM",
+    "AUTHORITY_PERMISSION_OR_EXECUTION_CHANGE",
+    "BREAKING_STABLE_PUBLIC_INTERFACE",
+    "LEGAL_SECURITY_OR_PRIVACY_COMMITMENT"
+  ],
+  "hard_boundaries": [
+    "REFERENCE_NE_ADOPTION",
+    "REFERENCE_NE_ENDORSEMENT",
+    "REFERENCE_NE_AFFILIATION",
+    "DOCUMENT_STATUS_NE_PROJECT_STATUS",
+    "SPECIFICATION_NE_IMPLEMENTATION",
+    "DEMO_NE_PRODUCT",
+    "ANNOUNCEMENT_NE_RELEASE_AUTHORIZATION",
+    "EVIDENCE_NE_TRUTH",
+    "RECOMMENDATION_NE_DECISION",
+    "DECISION_NE_EXECUTION"
+  ],
+  "effects": {
+    "openai_affiliation": false,
+    "openai_endorsement": false,
+    "opentelemetry_affiliation": false,
+    "opentelemetry_endorsement": false,
+    "runtime_authority": false,
+    "release_authorization": false,
+    "commercial_offering": false,
+    "production_readiness": false
+  }
+}

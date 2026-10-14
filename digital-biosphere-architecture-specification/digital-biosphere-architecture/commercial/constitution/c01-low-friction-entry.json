@@ -1,0 +1,60 @@
+{
+  "contract_format": "TITMAS-COMMERCIAL-PRINCIPLE-1.0",
+  "principle_id": "TITMAS-COMMERCIAL-C01",
+  "name": "LOW_FRICTION_ENTRY_AND_PROGRESSIVE_VALUE",
+  "name_zh": "低门槛进入与渐进式价值原则",
+  "normative_status": "FROZEN_COMMERCIAL_CONSTITUTION",
+  "display_order": 1,
+  "decision_reference": "TITMAS-COMMERCIAL-CONSTITUTION-C01-LOW-FRICTION-ENTRY-D29-INTEGRATION",
+  "principle": "TITMAS must provide verifiable initial value before requiring customers to understand the full architecture, surrender production control, disclose unnecessary sensitive data, deploy complex infrastructure, or commit to a high-cost commercial arrangement.",
+  "principle_zh": "TITMAS必须在要求客户理解完整架构、交出生产控制权、披露不必要的敏感数据、部署复杂基础设施或承担高成本商业承诺之前，先提供一个真实、可解释、可验证的初始价值结果。",
+  "one_line_freeze_zh": "先让客户看见价值，再要求客户承担集成和控制成本。",
+  "requirements": {
+    "first_value_before_enforcement": true,
+    "monitor_before_enforce": true,
+    "minimum_necessary_data": true,
+    "reversible_entry": true,
+    "clear_upgrade_path": true,
+    "explanation_before_configuration": true,
+    "proof_before_purchase_expansion": true,
+    "first_value_without_core_source_access": true,
+    "first_value_without_production_write_permission": true,
+    "first_value_without_automatic_enforcement": true
+  },
+  "safety_invariants": {
+    "lower_entry_ne_lower_safety": true,
+    "lower_entry_ne_default_allow": true,
+    "lower_entry_ne_weak_authorization": true,
+    "lower_entry_ne_unverified_evidence": true,
+    "lower_entry_ne_public_core_source": true,
+    "lower_entry_ne_unnecessary_raw_data_collection": true,
+    "lower_entry_ne_automatic_production_access": true,
+    "simplicity_does_not_weaken_authority": true,
+    "simplicity_does_not_weaken_evidence": true,
+    "simplicity_does_not_hide_limitations": true,
+    "simplicity_does_not_remove_human_authorization": true
+  },
+  "drift_invariants": {
+    "no_new_trace_platform": true,
+    "no_new_runtime": true,
+    "no_new_control_plane": true,
+    "no_new_truth_source": true,
+    "no_duplicate_verification": true,
+    "no_public_core_disclosure": true,
+    "no_customer_data_disclosure": true,
+    "no_secret_disclosure": true,
+    "no_automatic_customer_contact": true,
+    "no_automatic_enforcement": true,
+    "no_automatic_production_deployment": true,
+    "no_p0_10_reopen": true,
+    "no_d04_reopen": true
+  },
+  "non_effects": {
+    "implementation_authorized": false,
+    "console_implementation_authorized": false,
+    "website_implementation_authorized": false,
+    "observer_runtime_implemented": false,
+    "public_launch_authorized": false,
+    "commercial_customer_created": false
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "dbio://schema/capability-object/v0.1",
+  "title": "DBOS Capability Object Schema v0.1",
+  "description": "Machine-readable structural contract for a Capability boundary declaration. Validation does not create a capability instance, capability grant, execution authority, or permission.",
+  "x-dbios-schema-version": "v0.1",
+  "x-dbios-object-contract-version": "v0.1",
+  "allOf": [
+    {"$ref": "dbio://schema/common-object/v0.1"},
+    {
+      "type": "object",
+      "required": [
+        "capability_id",
+        "entity_reference",
+        "capability_name",
+        "scope",
+        "constraints",
+        "verification_status"
+      ],
+      "properties": {
+        "object_type": {"const": "CAPABILITY"},
+        "status": {
+          "enum": ["UNKNOWN", "DECLARED", "SUPERSEDED", "REVOKED"]
+        },
+        "capability_id": {
+          "$ref": "dbio://schema/common-object/v0.1#/$defs/nonEmptyString"
+        },
+        "entity_reference": {
+          "allOf": [
+            {"$ref": "dbio://schema/common-object/v0.1#/$defs/referenceObject"},
+            {"properties": {"reference_type": {"const": "ENTITY"}}}
+          ]
+        },
+        "capability_name": {
+          "$ref": "dbio://schema/common-object/v0.1#/$defs/nonEmptyString"
+        },
+        "scope": {
+          "oneOf": [
+            {"type": "object", "minProperties": 1},
+            {"type": "array", "minItems": 1}
+          ]
+        },
+        "constraints": {
+          "oneOf": [
+            {"type": "object", "minProperties": 1},
+            {"type": "array", "minItems": 1}
+          ]
+        },
+        "verification_status": {
+          "enum": ["UNKNOWN", "UNVERIFIED", "PENDING"]
+        }
+      }
+    }
+  ],
+  "unevaluatedProperties": false,
+  "x-dbios-invariants": [
+    {
+      "name": "object_id_equals_capability_id",
+      "left": "$.object_id",
+      "operator": "EQUALS",
+      "right": "$.capability_id",
+      "validator_required": true,
+      "error": "CONFLICT"
+    },
+    {
+      "name": "verified_requires_external_verification_object",
+      "validator_required": true,
+      "note": "v0.1 schema intentionally excludes VERIFIED from standalone structural values"
+    }
+  ],
+  "x-dbios-prohibited-fields": [
+    "permission",
+    "permission_granted",
+    "capability_grant",
+    "capability_assigned",
+    "execution_authority"
+  ],
+  "x-dbios-boundaries": {
+    "capability_instance_effect": "NONE",
+    "capability_grant_effect": "NONE",
+    "execution_effect": "NONE",
+    "authority_effect": "NONE",
+    "permission_effect": "NONE"
+  }
+}

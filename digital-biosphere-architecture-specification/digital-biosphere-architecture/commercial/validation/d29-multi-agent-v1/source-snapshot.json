@@ -1,0 +1,28 @@
+{
+  "schema_version": "0.1",
+  "source_commit": "1eeb84e85069fcba41471b6cae10f1e3ae43a49f",
+  "observed_at": "2026-08-04T04:50:00+08:00",
+  "customer_data": false,
+  "credential_content_included": false,
+  "sanitized_packet_reference": "validation-plan.json",
+  "sanitized_packet_sha256": "ed6d88eb9bedbe2bc237b88e20472f66fca52c33ad541bae03c86eb7bb7fc2c8",
+  "reference_hash_semantics": "SOURCE_HASH_AT_VALIDATION_PREPARATION_NOT_CURRENT_HEAD_ASSERTION",
+  "entry_surfaces": {
+    "HUMAN_PRODUCT_BRIEF": [
+      {"path": "commercial/sales/TITMAS-ONE-PAGER-ZH.md", "frozen_path": "commercial/validation/d29-multi-agent-v1/source-materials/commercial/sales/TITMAS-ONE-PAGER-ZH.md", "sha256": "e88703b223603a4dd154cc563dcdb3fca14b95dceb8f11e65b0d3f009790db79"},
+      {"path": "commercial/sales/MONITOR-PILOT-PROPOSAL-ZH.md", "frozen_path": "commercial/validation/d29-multi-agent-v1/source-materials/commercial/sales/MONITOR-PILOT-PROPOSAL-ZH.md", "sha256": "780f0d2918d6dafe06cfdac9d1445b5eadef9a9b3386ca8e96baaee320660caf"},
+      {"path": "commercial/sales/SECURITY-FAQ-ZH.md", "frozen_path": "commercial/validation/d29-multi-agent-v1/source-materials/commercial/sales/SECURITY-FAQ-ZH.md", "sha256": "50ecda41a269926a77f1110d04de84963bcd073d2aca6f42844816cade18e1b5"}
+    ],
+    "MACHINE_STATUS": [
+      {"path": "commercial/agent-index.json", "frozen_path": "commercial/validation/d29-multi-agent-v1/source-materials/commercial/agent-index.json", "sha256": "80ef37aeddd77a56f18923d77d0190d653acf5168bff4a749b7d450c52c73525"},
+      {"path": "commercial/D29-COMMERCIAL-DELIVERY-FOUNDATION-STATUS.json", "frozen_path": "commercial/validation/d29-multi-agent-v1/source-materials/commercial/D29-COMMERCIAL-DELIVERY-FOUNDATION-STATUS.json", "sha256": "3e1f6bca07b9d289816e5f4be098e920d1a7e229014731fa657ee523e1819fe8"},
+      {"path": "commercial/discovery/recommendation-policy.json", "frozen_path": "commercial/validation/d29-multi-agent-v1/source-materials/commercial/discovery/recommendation-policy.json", "sha256": "7cdd6b9c1b0ed3d323499e81ac66caca84f8d4dce99727a9582e0705833df67e"}
+    ],
+    "TECHNICAL_CONTRACT": [
+      {"path": "commercial/entry/first-value-contract.schema.json", "frozen_path": "commercial/validation/d29-multi-agent-v1/source-materials/commercial/entry/first-value-contract.schema.json", "sha256": "18d9a95fd866bd0966781d1a199832612e05940aa8e4bbda0cafd3ed49d7fddd"},
+      {"path": "commercial/entry/first-value-examples.json", "frozen_path": "commercial/validation/d29-multi-agent-v1/source-materials/commercial/entry/first-value-examples.json", "sha256": "07ee7df436b2e90d820b9bb63d3fbad942dfc1ce7764bcc5701547c0e00a42e5"},
+      {"path": "site/public/proof-catalog.json", "frozen_path": "commercial/validation/d29-multi-agent-v1/source-materials/site/public/proof-catalog.json", "sha256": "a6e5060d5c72d0dc6d79e05bdfd6af79fbbf1ae3de50eba4f3f851a49e4a6559"},
+      {"path": "commercial/discovery/known-limitations.json", "frozen_path": "commercial/validation/d29-multi-agent-v1/source-materials/commercial/discovery/known-limitations.json", "sha256": "999fbc07d537119cd6f6d0d7368b980ad3be4d3f365d9bd076f3765461913179"}
+    ]
+  }
+}

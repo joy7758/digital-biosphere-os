@@ -1,0 +1,38 @@
+{
+  "contract_format": "TITMAS-ENTRY-LAYER-1.0",
+  "schema_version": "1.0.0",
+  "entry_layers": [
+    {
+      "entry_layer_id": "TITMAS_OBSERVER",
+      "name": "TITMAS Observer",
+      "name_zh": "TITMAS智能体观察入口",
+      "type": "CUSTOMER_ENTRY_LAYER",
+      "is_product": false,
+      "public_product_count_effect": 0,
+      "purpose": [
+        "discover which Agents are present",
+        "explain what actions Agents are attempting",
+        "identify actions with external side effects",
+        "identify missing identity, evidence, authorization or approval",
+        "show bounded shadow Gate outcomes"
+      ],
+      "data_role": {
+        "observation_only": true,
+        "evidence_truth": false,
+        "authority_effect": "NONE",
+        "enforcement_effect": "NONE"
+      },
+      "forbidden_roles": [
+        "FIFTH_PRODUCT",
+        "TRACE_SEMANTIC_OWNER",
+        "EVIDENCE_SEMANTIC_OWNER",
+        "GENERAL_OBSERVABILITY_PLATFORM",
+        "AUTOMATIC_ACTION_BLOCKER",
+        "PERMISSION_MUTATOR",
+        "TRUTH_AUTHORITY"
+      ],
+      "product_mappings": ["TITMAS_GATE", "TITMAS_RECEIPT", "TITMAS_AUDIT", "TITMAS_HEALTH"],
+      "implementation_status": "ARCHITECTURE_DEFINED_RUNTIME_NOT_IMPLEMENTED"
+    }
+  ]
+}

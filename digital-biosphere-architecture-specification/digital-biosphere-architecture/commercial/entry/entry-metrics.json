@@ -1,0 +1,30 @@
+{
+  "contract_format": "TITMAS-ENTRY-METRICS-1.0",
+  "metric_set_id": "TITMAS-FIRST-VALUE-DESIGN-METRICS-v1",
+  "design_targets_not_product_claims": true,
+  "currently_achieved": false,
+  "metrics": [
+    "TIME_TO_FIRST_VALUE",
+    "STEPS_TO_FIRST_RESULT",
+    "DATA_REQUIRED_FOR_FIRST_VALUE",
+    "PRODUCTION_PERMISSION_REQUIRED",
+    "RAW_TRACE_REQUIRED",
+    "MONITOR_FIRST_AVAILABLE",
+    "EXPLANATION_COMPLETENESS",
+    "REVERSIBILITY",
+    "DELETION_AVAILABLE",
+    "UPGRADE_PATH_CLARITY",
+    "AGENT_DISCOVERABILITY",
+    "AGENT_APPLICABILITY_ACCURACY"
+  ],
+  "design_targets": {
+    "synthetic_demo_time_to_first_value": "10_MINUTES_OR_LESS",
+    "monitor_sandbox_time_to_first_value": "30_MINUTES_OR_LESS",
+    "production_write_permission_for_first_value": false,
+    "automatic_enforcement_for_first_value": false,
+    "core_source_access_for_first_value": false,
+    "raw_trace_upload_default": false,
+    "metadata_only_entry_available": true
+  },
+  "measurement_evidence": "NOT_ASSESSED"
+}

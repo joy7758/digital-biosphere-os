@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "dbio://schema/entity-object/v0.1",
+  "title": "DBOS Entity Object Schema v0.1",
+  "description": "Machine-readable structural contract for an Entity Object projection. A structurally valid object is not an active Entity, Agent, Runtime, or authority.",
+  "x-dbios-schema-version": "v0.1",
+  "x-dbios-object-contract-version": "v0.1",
+  "allOf": [
+    {"$ref": "dbio://schema/common-object/v0.1"},
+    {
+      "type": "object",
+      "required": [
+        "entity_id",
+        "entity_type",
+        "owner_reference",
+        "lifecycle_state",
+        "source_reference"
+      ],
+      "properties": {
+        "object_type": {"const": "ENTITY"},
+        "status": {
+          "enum": ["UNKNOWN", "DECLARED", "SUPERSEDED", "REVOKED"]
+        },
+        "entity_id": {
+          "$ref": "dbio://schema/common-object/v0.1#/$defs/nonEmptyString"
+        },
+        "entity_type": {
+          "enum": [
+            "agent",
+            "protocol",
+            "repository",
+            "service",
+            "artifact",
+            "governance_system",
+            "UNKNOWN"
+          ]
+        },
+        "owner_reference": {
+          "$ref": "dbio://schema/common-object/v0.1#/$defs/referenceObject"
+        },
+        "lifecycle_state": {
+          "enum": [
+            "UNKNOWN",
+            "PROPOSED",
+            "REGISTERED",
+            "VERIFIED",
+            "ACTIVE",
+            "EVALUATED",
+            "ADAPTED",
+            "RETIRED"
+          ]
+        },
+        "source_reference": {
+          "allOf": [
+            {"$ref": "dbio://schema/common-object/v0.1#/$defs/referenceObject"},
+            {"properties": {"reference_type": {"const": "ENTITY"}}}
+          ]
+        }
+      }
+    }
+  ],
+  "unevaluatedProperties": false,
+  "x-dbios-invariants": [
+    {
+      "name": "object_id_equals_entity_id",
+      "left": "$.object_id",
+      "operator": "EQUALS",
+      "right": "$.entity_id",
+      "validator_required": true,
+      "error": "CONFLICT"
+    },
+    {
+      "name": "active_is_source_assertion_only",
+      "when": "$.lifecycle_state == ACTIVE",
+      "required": "resolvable source_reference and lifecycle evidence outside structural validation",
+      "validator_required": true,
+      "error": "UNRESOLVED_REFERENCE"
+    }
+  ],
+  "x-dbios-prohibited-fields": [
+    "permission_granted",
+    "capability_assigned",
+    "runtime_started",
+    "agent_created"
+  ],
+  "x-dbios-boundaries": {
+    "entity_creation_effect": "NONE",
+    "entity_activation_effect": "NONE",
+    "agent_creation_effect": "NONE",
+    "runtime_effect": "NONE",
+    "authority_effect": "NONE",
+    "permission_effect": "NONE"
+  }
+}

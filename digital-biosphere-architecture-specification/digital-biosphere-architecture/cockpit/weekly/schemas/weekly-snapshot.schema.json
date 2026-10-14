@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:dba:weekly:snapshot:0.1",
+  "title": "DBA Weekly Cockpit Snapshot",
+  "type": "object",
+  "required": ["schema_version", "snapshot_id", "week", "observed_at", "overall_status", "mode", "cell_runs", "discoveries", "decisions", "changes", "projects", "blind_spots", "boundaries"],
+  "properties": {
+    "schema_version": {"const": "0.1"},
+    "snapshot_id": {"type": "string", "minLength": 1},
+    "week": {"type": "string", "pattern": "^[0-9]{4}-W[0-9]{2}$"},
+    "observed_at": {"type": "string", "minLength": 1},
+    "overall_status": {"enum": ["PASS", "PASS_WITH_FINDINGS", "PASS_WITH_NOT_ASSESSED", "ATTENTION", "BLOCKED", "PARTIAL_DISCOVERY_NOT_ASSESSED", "DISCOVERY_UNAVAILABLE"]},
+    "mode": {"enum": ["PROTOTYPE_READ_ONLY_CANDIDATE", "LIVE_READ_ONLY_OBSERVATION_PILOT", "AUTOMATIC_CAPABILITY_DISCOVERY"]},
+    "weekly_sentence_zh": {"type": "string"},
+    "counts": {"type": "object"},
+    "cell_runs": {"type": "array", "minItems": 12, "maxItems": 12, "items": {"type": "object"}},
+    "discoveries": {"type": "array", "items": {"type": "object"}},
+    "decisions": {"type": "array", "items": {"type": "object"}},
+    "changes": {
+      "type": "object",
+      "required": ["improved", "worsened", "unknown"],
+      "properties": {
+        "improved": {"type": "array", "items": {"type": "string"}},
+        "worsened": {"type": "array", "items": {"type": "string"}},
+        "unknown": {"type": "array", "items": {"type": "string"}},
+        "observed_this_week": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "projects": {"type": "array", "minItems": 1, "items": {"type": "object"}},
+    "blind_spots": {"type": "array", "items": {"type": "object"}},
+    "preset_queries": {"type": "object", "additionalProperties": {"type": "string"}},
+    "findings": {"type": "array", "items": {"type": "object"}},
+    "handoff_packets": {"type": "array", "items": {"type": "object"}},
+    "logical_cells": {"type": "array", "minItems": 12, "maxItems": 12, "items": {"type": "object"}},
+    "source_references": {"type": "object"},
+    "memory": {"type": "object"},
+    "boundaries": {
+      "type": "object",
+      "required": ["read_only", "view_not_truth", "new_truth_source", "new_control_plane", "auto_fix", "auto_pr", "auto_merge", "auto_deploy"],
+      "properties": {
+        "read_only": {"const": true},
+        "view_not_truth": {"const": true},
+        "new_truth_source": {"const": false},
+        "new_control_plane": {"const": false},
+        "auto_fix": {"const": false},
+        "auto_pr": {"const": false},
+        "auto_merge": {"const": false},
+        "auto_deploy": {"const": false}
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,98 @@
+{
+  "schema_version": "1.0",
+  "service_identity": "TITMAS_AGENT_NATIVE_COMMERCIAL_CANDIDATE",
+  "display_brand_zh": "夏日之海",
+  "display_brand_en": "titmas",
+  "public_brand_logo": "/titmas-logo.png",
+  "technical_brand": "TITMAS",
+  "base_url": "https://redcrag.cn",
+  "api_version": "v1",
+  "maturity": {
+    "service_ready": true,
+    "commercial_technical_ready": false,
+    "paid_beta_ready": false,
+    "production_ready": false,
+    "mature_commercial_infrastructure": false
+  },
+  "entrypoints": {
+    "openapi": "/api/v1/openapi.json",
+    "status": "/api/v1/status",
+    "readiness": "/api/v1/readiness",
+    "capabilities": "/api/v1/capabilities",
+    "plans": "/api/v1/plans",
+    "catalog": "/api/v1/catalog",
+    "receipt_keys": "/api/v1/receipt-keys",
+    "service_health": "/api/v1/service-health",
+    "service_metrics_summary": "/api/v1/service-metrics-summary"
+  },
+  "authentication": {
+    "scheme": "Bearer",
+    "credential_type": "scoped_machine_credential",
+    "automatic_provisioning": false,
+    "public_registration": false
+  },
+  "sdk_locations": {
+    "source_repository": "https://github.com/joy7758/titmas-integrations",
+    "source_revision": "6ed4dadd4693129d3daca0a9a29964a4f7f864e9",
+    "python": "https://github.com/joy7758/titmas-integrations/tree/main/sdk/python",
+    "typescript": "https://github.com/joy7758/titmas-integrations/tree/main/sdk/typescript",
+    "mcp": "https://github.com/joy7758/titmas-integrations/tree/main/mcp",
+    "langchain": "https://github.com/joy7758/titmas-integrations/tree/main/langchain",
+    "openai_agents": "https://github.com/joy7758/titmas-integrations/tree/main/openai-agents",
+    "package_registry_published": false
+  },
+  "deployment_evidence": {
+    "data_plane_repository_revision": "c319001cc1cf9e44d8b3d0b142a025c6c9af1678",
+    "live_commercial_release_revision": "9bbfce6154d67f4ab50e911b5e49611f5a4a8b57",
+    "failed_candidate_revision": "33bea67bafcd5fe3aabc7e7f48b456dba42aaf76",
+    "database_deployment_recorded": true,
+    "observability_ready": true,
+    "cr01_status": "BLOCKED_LEDGER_INTEGRITY",
+    "cr01_d02_status": "ACCEPTED_DESIGN_ONLY",
+    "ledger_transition_recommendation": "IMMUTABLE_EXCEPTION_MANIFEST_PLUS_TENANT_SCOPED_CLEAN_EPOCH",
+    "ledger_transition_design": "/architecture/cr01-ledger-transition-design-v1.0.json",
+    "ledger_transition_implementation_authorized": false,
+    "second_deployment_retry_authorized": false,
+    "soak_execution_authorized": false,
+    "backup_integrity_pass": true,
+    "structural_restore_pass": true,
+    "restored_receipt_verification_pass": false,
+    "restored_receipts_checked": 1661,
+    "restored_receipt_signatures_valid": 1659,
+    "restored_receipt_signatures_invalid": 2,
+    "backup_restore_drill_pass": false,
+    "restore_rto_status": "NOT_ESTABLISHED",
+    "measured_restore_rto_seconds": null,
+    "agent_end_to_end_ready": false,
+    "security_test_suite_ready": false,
+    "seven_day_soak_pass": false,
+    "soak_72h_started": false,
+    "next_human_decision": "CR01_D03_OPTION_C_IMPLEMENTATION_AND_CAP_EXCEPTION"
+  },
+  "receipt_verification": {
+    "signature_algorithm": "Ed25519",
+    "canonicalization": "RFC8785",
+    "digest": "SHA-256",
+    "receipt_is_truth": false,
+    "verification_is_authorization": false
+  },
+  "unsupported_operations": [
+    "automatic credential provisioning",
+    "automatic permission or authority grant",
+    "payment acceptance",
+    "formal conformance or certification",
+    "production readiness claim"
+  ],
+  "authority_boundaries": {
+    "agent_priority_grants_authority": false,
+    "evidence_is_truth": false,
+    "verification_is_authorization": false,
+    "payment_is_standard_adoption": false
+  },
+  "public_core_clone_available": false,
+  "core_repositories_private": true,
+  "external_access_automatic": false,
+  "payment_processor_connected": false,
+  "pricing_active": false,
+  "observed_at": "2026-07-31T18:44:30+08:00"
+}

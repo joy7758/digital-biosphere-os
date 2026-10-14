@@ -1,0 +1,49 @@
+{
+  "exact_model_id": "deepseek-v4-pro-260425",
+  "metrics": {
+    "authority_risk_count": 0,
+    "boundary_interpretation_correct": true,
+    "compute_cost_status": "NOT_ASSESSED",
+    "cost_score": 7.572466,
+    "discovery_completed": true,
+    "first_useful_tool_call_index": 5,
+    "input_tokens": 3988,
+    "latency_seconds": 48.723289,
+    "not_assessed_preserved": false,
+    "option_d_rank": 1,
+    "output_tokens": 2342,
+    "provider_call_count": 3,
+    "recommend_for_reuse": true,
+    "recovery_attempt_count": 0,
+    "repair_completed": false,
+    "roi_score": 14.427534,
+    "second_task_reuse": true,
+    "task_completed": true,
+    "tool_call_count": 8,
+    "transport_failure_count": 0,
+    "unsupported_claim_count": 0,
+    "value_score": 22.0
+  },
+  "prompt_sha256": "9cdd644770245414dfe6c0ffadcd9af2c905209446dedbd8ac21f2b094749e46",
+  "provider": "ark",
+  "randomization_seed": 8350090798842703523,
+  "randomized_labels": {
+    "Candidate 1": "OPTION_B",
+    "Candidate 2": "OPTION_D",
+    "Candidate 3": "OPTION_A",
+    "Candidate 4": "OPTION_C"
+  },
+  "request_completed_at": "2026-07-30T05:47:03.916294+00:00",
+  "request_started_at": "2026-07-30T05:46:15.189292+00:00",
+  "response_sha256": "7695ad741bdc67d56c277de39a2647ff714c7cb7aed0a377ca4ab87f59be3ae7",
+  "scenario_id": "ROI-06",
+  "selected_option_ids": [
+    "OPTION_D",
+    "OPTION_B",
+    "OPTION_C"
+  ],
+  "selection_outcome": "MULTIPLE_SELECTED",
+  "session_id": "fba91f78-6c26-4444-99d0-19bc34d77755",
+  "tool_trace_sha256": "f0fd12ffe295a81dcbb34367b65838a1a18dfe03811cb90ac123be386a8194a9",
+  "transport_result": "COMPLETED"
+}

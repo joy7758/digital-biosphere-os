@@ -1,0 +1,24 @@
+# Inntris
+
+- Source URLs: https://www.inntris.com/
+- Source access time: 2026-08-03
+- Page title: Inntris — Authorisation and proof for agentic payments
+- Product status: public product surface and pilot funnel; operational adoption is not independently verified.
+- Target customer / buyer / user: organizations controlling high-risk Agent payments; finance, security and platform teams.
+- Pricing status: 14-day pilot funnel; exact price not verified.
+- Architecture summary: exact proposed payment is evaluated against current organization policy before execution; signed result is checked at the execution boundary.
+- Control plane / data plane: decision/proof layer does not hold funds or replace payment rails; detailed hosted/private boundary not verified.
+- Enforcement point: immediately before the payment rail, fail closed on missing, invalid, expired or mismatched decisions.
+- Integration: x402 reference and announced AP2/A2A follow-on profiles.
+- Tenant / workspace / identity: organization, Agent identity, action and policy context; formal tenant contract not assessed.
+- Policy / approval / decision: ALLOW, BLOCK, REQUIRE_APPROVAL, current-policy reevaluation and immutable supersession.
+- Event / receipt / audit / retention: Ed25519 signed action-bound decisions and evidence-pack anchoring are vendor claims.
+- Monitor / enforce: enforce is explicit; Monitor mode not verified.
+- Deployment modes: `NOT_ASSESSED`.
+- Console navigation and UI: problem-to-flow explanation, inspect blocked payment and pilot CTA.
+- Commercial funnel: scope a bounded pilot.
+- Strengths: clear pre-side-effect boundary, current-policy binding and payment-rail separation.
+- Weaknesses relative to TITMAS: payment-first domain and limited public evidence of cross-Agent/cross-runtime breadth.
+- Applicable lessons: exact-action binding, expiry, supersession and executor-check pattern.
+- Non-applicable lessons: entering regulated payment execution or claiming settlement authority.
+- Uncertainties: pricing, deployment, active customers and independent verifier implementation.

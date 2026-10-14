@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:dba:weekly:reference-absorption-registry:0.2",
+  "title": "DBA AC-1 Reference Absorption Registry",
+  "type": "object",
+  "required": ["schema", "registry_id", "registry_revision", "updated_at", "current_registry_digest", "record_role", "absorption_policy", "entries", "run_effects", "next_gate"],
+  "properties": {
+    "schema": {"const": "dba.reference_absorption_registry.v0.2"},
+    "registry_id": {"type": "string", "minLength": 1},
+    "registry_revision": {"type": "integer", "minimum": 1},
+    "updated_at": {"type": "string", "minLength": 1},
+    "current_registry_digest": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "record_role": {"const": "STATE_VIEW_AND_REFERENCE_INDEX_NOT_IMPLEMENTATION_STATE"},
+    "absorption_policy": {"const": "AC-1_REFERENCE_ONLY"},
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["candidate_id", "candidate_fingerprint_sha256", "canonical_identity", "source_identities", "source_digests", "absorption_status", "implementation_status", "ac2_readiness_status"],
+        "properties": {
+          "implementation_status": {"const": "NOT_ADOPTED"},
+          "external_code_executed": {"const": false},
+          "dependency_installed": {"const": false},
+          "runtime_modified": {"const": false}
+        },
+        "additionalProperties": true
+      }
+    },
+    "run_effects": {"type": "object"},
+    "next_gate": {"type": "object"}
+  },
+  "additionalProperties": true
+}

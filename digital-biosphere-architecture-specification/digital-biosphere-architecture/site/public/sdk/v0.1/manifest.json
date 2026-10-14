@@ -1,0 +1,37 @@
+{
+  "schema_version": "0.1",
+  "surface_id": "TITMAS_PUBLIC_SAFE_SDK_SURFACE_v0.1",
+  "status": "PUBLIC_SAFE_DEVELOPER_PREVIEW",
+  "public_protocol_release": false,
+  "formal_standard_change": false,
+  "package": {
+    "manifest": "/dbos-public-package-manifest.json",
+    "download": "/downloads/digital_biosphere_os_preview-0.1.0.dev0-py3-none-any.whl",
+    "sha256": "edf92e548860384b1416a612a7e319e0d994bb324f8621847d0d154624ae8f09"
+  },
+  "schemas": [
+    {"path": "schemas/capability-object-schema.yaml", "sha256": "882e46bf7b2a862fb7e65c9e554c7bdf73772c89c6a65dde66de979651443fe2"},
+    {"path": "schemas/common-object-schema.yaml", "sha256": "fa0a469158dedf54d6cc9628f18f755088a0985e0ea1008cc705c0cf215cbc6b"},
+    {"path": "schemas/entity-object-schema.yaml", "sha256": "e2b183fd38796e1e561679708add4686f0871c2491ae94b18fa98bc2cb968311"},
+    {"path": "schemas/evidence-reference-object-schema.yaml", "sha256": "e4c58ac178f4e2fbe8039773a9e23dd74bc7ea2d47596964f2ac992698fd8f18"},
+    {"path": "schemas/execution-object-schema.yaml", "sha256": "87c3a00bceef7cd3547c011abf5e475c717c541904f428bbaf266424f2ac66ca"},
+    {"path": "schemas/project-manifest.schema.yaml", "sha256": "15be68cd8374e078f1f5c6c6538bfb78d23bdd296a321492041e0c6af54213b5"},
+    {"path": "schemas/verification-object-schema.yaml", "sha256": "80e81ec55f49c52f74bb211b44eca3a3b26176b15705ea1e57521858978ba161"}
+  ],
+  "synthetic_examples": [
+    {
+      "path": "examples/synthetic-entity.json",
+      "expected_validation_result": "PASS",
+      "creates_entity": false,
+      "grants_permission": false
+    }
+  ],
+  "boundaries": [
+    "Conformance != Certification",
+    "Conformance != Adoption",
+    "Evidence != Truth",
+    "Evaluation != Authority",
+    "Recommendation != Decision",
+    "Decision != Execution"
+  ]
+}

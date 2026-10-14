@@ -1,0 +1,254 @@
+{
+  "schema_version": "0.1",
+  "catalog_id": "TITMAS-PUBLIC-SITE-CATALOG-0.1",
+  "public_brand": {
+    "zh": "夏日之海",
+    "en": "titmas",
+    "display_name_zh": "夏日之海",
+    "display_name_en": "titmas",
+    "logo": "/titmas-logo.png",
+    "technical_project_identifier": "TITMAS"
+  },
+  "website_operator": {
+    "legal_name": "山西游骑兵电子商务有限公司",
+    "filed_website_name": "山西游骑兵电子商务有限公司",
+    "icp_record_number": "晋ICP备2026006409号-1",
+    "icp_query_url": "https://beian.miit.gov.cn"
+  },
+  "information_architecture": "COMMERCIAL_PLATFORM_PRODUCTS_SOLUTIONS_PROOF_AND_TRUST",
+  "current_stage": "TITMAS_AGENT_NATIVE_COMMERCIAL_MATURITY_PROGRAM",
+  "agent_front_door": {
+    "status": "EMBEDDED_IN_BILINGUAL_HOMEPAGE",
+    "position": "DEDICATED_HUMAN_AND_MACHINE_COMMERCIAL_ENTRY",
+    "entry_zh": "/#agent-start",
+    "entry_en": "/en/#agent-start",
+    "machine_entries": [
+      "/.well-known/titmas.json",
+      "/llms.txt",
+      "/agent-index.json",
+      "/site-catalog.json",
+      "/product-catalog.json",
+      "/solution-catalog.json",
+      "/proof-catalog.json",
+      "/recommendation-policy.json"
+    ],
+    "javascript_required": false,
+    "runtime_effect": false,
+    "authority_effect": false
+  },
+  "public_surfaces": {
+    "research": {
+      "enabled": true,
+      "overview_zh": "/research/",
+      "overview_en": "/en/research/",
+      "index_zh": "/research/index/",
+      "index_en": "/en/research/index/"
+    },
+    "applications": {
+      "enabled": true,
+      "index_zh": "/applications/",
+      "index_en": "/en/applications/"
+    },
+    "demos": {
+      "enabled": true,
+      "index_zh": "/demos/",
+      "index_en": "/en/demos/"
+    },
+    "media_evidence": {
+      "enabled": true,
+      "type": "MEDIA_EVIDENCE_PROFILE",
+      "status": "LOCAL_SYNTHETIC_REFERENCE_IMPLEMENTATION",
+      "application_zh": "/industry/media-evidence/",
+      "application_en": "/en/industry/media-evidence/",
+      "demo_zh": "/demo/media-evidence/",
+      "demo_en": "/en/demo/media-evidence/",
+      "machine_profile": "/media-evidence-profile.json",
+      "data_policy": "SYNTHETIC_DATA_ONLY",
+      "truth_verification": false,
+      "identity_authentication": false,
+      "legal_evidence": false,
+      "production_ready": false
+    },
+    "developers": {
+      "enabled": true,
+      "status": "HISTORICAL_NON_CURRENT",
+      "entry_zh": "/community/",
+      "entry_en": "/en/community/"
+    },
+    "agent_native_evidence": {
+      "enabled": true,
+      "stage": "TITMAS_STAGE_5_7_AGENT_NATIVE_SELECTION_AND_ROI_BENCHMARK",
+      "aggregate": "/evidence/stage5-7/aggregate-results.json",
+      "audit": "/evidence/stage5-7/agent-selection-audit.json",
+      "manifest": "/evidence/stage5-7/evidence-manifest.json",
+      "sessions": "/evidence/stage5-7/sessions/",
+      "public_safe_session_count": 24,
+      "raw_evidence_public": false
+    },
+    "updates": {
+      "enabled": true,
+      "index_zh": "/updates/",
+      "index_en": "/en/updates/",
+      "machine_entry": "/updates.json",
+      "constitution_zh": "/updates/constitution/",
+      "constitution_en": "/en/updates/constitution/"
+    },
+    "products": {
+      "enabled": true,
+      "public_navigation": true,
+      "sitemap_visible": true,
+      "available_products": 0,
+      "published_information_pages": 4,
+      "collection_zh": "/products/",
+      "collection_en": "/en/products/",
+      "catalog": "/product-catalog.json",
+      "activation_gate": "INFORMATION_PAGES_DO_NOT_ESTABLISH_AVAILABILITY"
+    },
+    "commercial_entry": {
+      "enabled": true,
+      "available_offering_count": 0,
+      "request_access_status": "INFORMATION_ONLY_INTAKE_NOT_ACTIVE",
+      "design_partner_zh": "/design-partner/",
+      "design_partner_en": "/en/design-partner/",
+      "private_evaluation_zh": "/private-evaluation/",
+      "private_evaluation_en": "/en/private-evaluation/",
+      "monitor_pilot_zh": "/monitor-pilot/",
+      "monitor_pilot_en": "/en/monitor-pilot/",
+      "enforce_pilot_zh": "/enforce-pilot/",
+      "enforce_pilot_en": "/en/enforce-pilot/",
+      "request_access_zh": "/request-access/",
+      "request_access_en": "/en/request-access/",
+      "security_zh": "/security/",
+      "security_en": "/en/security/",
+      "trust_center_zh": "/trust-center/",
+      "trust_center_en": "/en/trust-center/"
+    }
+  },
+  "extension_interfaces": {
+    "research": {
+      "route_template": "/research/{slug}/",
+      "required_metadata": ["id", "title", "status", "source", "limitations"]
+    },
+    "applications": {
+      "route_template": "/industry/{slug}/",
+      "required_metadata": ["id", "title", "status", "infrastructure_role", "industry_role", "non_goals"]
+    },
+    "demos": {
+      "route_template": "/demo/{slug}/",
+      "required_metadata": ["id", "title", "status", "data_policy", "validation_boundary", "production_boundary"]
+    },
+    "updates": {
+      "route_template": "/updates/{slug}/",
+      "required_metadata": ["slug", "category", "status", "audience", "effective_date", "expires_at", "source_commit", "truth_boundaries"],
+      "active_announcement_rule": "SEVERITY_DESC_THEN_EXPIRES_AT_ASC_THEN_EFFECTIVE_DATE_DESC"
+    },
+    "products": {
+      "route_template": "/products/{slug}/",
+      "required_metadata": ["id", "title", "availability", "delivery_model", "support_boundary", "production_status"],
+      "publication_precondition": "PUBLIC_INFORMATION_PAGE_MUST_DECLARE_NON_AVAILABILITY"
+    }
+  },
+  "published_items": {
+    "research": [
+      {
+        "id": "digital-biosphere",
+        "status": "PUBLISHED_ARCHITECTURE_BASELINE",
+        "href": "/research/index/#digital-biosphere"
+      },
+      {
+        "id": "evidence-governance",
+        "status": "PUBLISHED_RESEARCH_DIRECTION",
+        "href": "/research/index/#evidence-governance"
+      },
+      {
+        "id": "titmas-trust-infrastructure",
+        "status": "DEVELOPER_PREVIEW_RELEASED",
+        "href": "/research/index/#titmas-trust-infrastructure"
+      }
+    ],
+    "applications": [
+      {
+        "id": "media-evidence",
+        "status": "LOCAL_SYNTHETIC_REFERENCE_IMPLEMENTATION",
+        "href": "/industry/media-evidence/",
+        "href_en": "/en/industry/media-evidence/",
+        "machine_entry": "/media-evidence-profile.json",
+        "data_policy": "SYNTHETIC_DATA_ONLY",
+        "truth_verification": false,
+        "identity_authentication": false,
+        "legal_evidence": false,
+        "production_ready": false
+      },
+      {
+        "id": "medical-evidence",
+        "status": "PUBLISHED_DIRECTION",
+        "href": "/industry/medical-evidence/",
+        "independent_medical_platform": false
+      },
+      {
+        "id": "manufacturing-agent-ecosystem",
+        "status": "PUBLISHED_EXAMPLE",
+        "href": "/industries/",
+        "industry_solution_offering": false
+      },
+      {
+        "id": "space-agent-evidence",
+        "status": "PUBLISHED_RESEARCH_PROFILE",
+        "href": "/industry/space-agent-evidence/",
+        "machine_entry": "/space-agent-evidence-profile.json",
+        "base_profile": "EEOAP@0.1",
+        "evidence_origin": "synthetic",
+        "flight_certified": false,
+        "nasa_adopted": false,
+        "esa_adopted": false,
+        "fdo_adopted": false,
+        "industrial_deployment": false,
+        "mission_safety_guarantee": false,
+        "production_ready": false
+      }
+    ],
+    "demos": [
+      {
+        "id": "media-evidence",
+        "status": "FRONTEND_ONLY_LOCAL_DEMO",
+        "href": "/demo/media-evidence/",
+        "href_en": "/en/demo/media-evidence/",
+        "synthetic_data": true,
+        "uploads_media": false,
+        "external_api": false,
+        "persists_user_data": false,
+        "production_review_service": false
+      },
+      {
+        "id": "digital-cell",
+        "status": "REFERENCE_COMPLETE",
+        "href": "/digital-cell/",
+        "production_claim": false
+      },
+      {
+        "id": "udi-dicom-evidence",
+        "status": "STATIC_SYNTHETIC_UI_DEMO",
+        "href": "/demo/medical-evidence/",
+        "synthetic_data": true,
+        "clinical_validation": false,
+        "real_registry_lookup": false
+      }
+    ]
+  },
+  "commercial_evaluation": {
+    "href": "/commercial-evaluation/",
+    "engagement_type": "consultation",
+    "product": false,
+    "available_offering": false,
+    "production_ready": false
+  },
+  "truth": {
+    "available_products": 0,
+    "available_commercial_offering": false,
+    "production_ready": false,
+    "future_placeholder_items_published": 0,
+    "website_update_constitution_status": "SITE_GOVERNANCE_BASELINE",
+    "openai_affiliation": false,
+    "opentelemetry_affiliation": false
+  }
+}

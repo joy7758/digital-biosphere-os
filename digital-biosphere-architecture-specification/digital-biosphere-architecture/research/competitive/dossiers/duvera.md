@@ -1,0 +1,24 @@
+# Duvera
+
+- Source URLs: https://duvera.ai/
+- Source access time: 2026-08-03
+- Page title: Duvera — Audit-ready governance for AI agents that act
+- Product status: public website, live-demo claims, free Personal and paid enterprise positioning; customer adoption is not independently verified.
+- Target customer / buyer / user: individuals, enterprise Agent fleets, security and audit teams.
+- Pricing status: Personal is described as free and enterprise as paid; exact price not public in reviewed page.
+- Architecture summary: governance layer in front of Agent tool egress with policy, Human approval, signed receipts, search and exports.
+- Control plane / data plane: one governance layer across desktop and unattended Agents; precise hosted/private data boundary requires contract evidence.
+- Enforcement point: MCP/tool egress before writes or irreversible actions.
+- Integration: Claude, Cursor, ChatGPT, custom harness and MCP ecosystem.
+- Tenant / workspace / identity: humans and bots are first-class principals; exact tenant/workspace schema not verified.
+- Policy / approval / decision: read/write policy, spend cap, kill switch and Human approval are vendor-described.
+- Event / receipt / audit / retention: signed receipts, pinned policy digests, reconciliation ledger and SIEM/Excel/PowerBI exports.
+- Monitor / enforce: blocking and approval are explicit; a shadow Monitor contract is not verified.
+- Deployment modes: personal local gateway and enterprise offering; VPC/on-prem details not verified.
+- Console navigation and UI: live governed actions wall, audit search, export and proof chain.
+- Commercial funnel: free live trial, personal entry and sales contact.
+- Strengths: close action-control/proof category match and strong live-demo narrative.
+- Weaknesses relative to TITMAS: public claims are broad; independent proof of data boundary, tenant isolation and customer adoption is incomplete.
+- Applicable lessons: read-versus-write demo, Human approval, evidence export and explicit agent/human principals.
+- Non-applicable lessons: copy its gateway, branding, receipt language or live-action wall.
+- Uncertainties: pricing, deployment, independent security evaluation and retention.

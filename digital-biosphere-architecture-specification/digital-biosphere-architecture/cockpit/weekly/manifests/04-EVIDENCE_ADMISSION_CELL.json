@@ -1,0 +1,40 @@
+{
+  "cell_id": "EVIDENCE_ADMISSION_CELL",
+  "version": "0.1",
+  "name": "EVIDENCE_ADMISSION_CELL",
+  "niche": "bounded weekly cockpit observation",
+  "module": "cells.evidence_admission",
+  "class": "Evidence_Admission_CellCell",
+  "inputs": [
+    "discovery-signals"
+  ],
+  "outputs": [
+    "admitted-observations",
+    "rejected-signals"
+  ],
+  "source_dependencies": [
+    "existing-source-semantics"
+  ],
+  "evidence_requirements": [
+    "source-reference",
+    "observed-at",
+    "source-authority"
+  ],
+  "freshness_policy": "REJECT_STALE",
+  "authority_boundaries": {
+    "can_write_source_project": false,
+    "can_create_pull_request": false,
+    "can_merge": false,
+    "can_deploy": false,
+    "can_authorize": false,
+    "can_change_project_priority": false
+  },
+  "failure_policy": {
+    "status": "NOT_ASSESSED",
+    "preserve_other_cells": true
+  },
+  "replacement": {
+    "replaceable": true,
+    "interface_version": "0.1"
+  }
+}

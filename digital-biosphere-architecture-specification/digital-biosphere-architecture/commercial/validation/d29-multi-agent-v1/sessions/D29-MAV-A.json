@@ -1,0 +1,97 @@
+{
+  "session_id": "D29-MAV-A",
+  "role": "CHINA_ENTERPRISE_SOFTWARE_BUYER",
+  "provider": "ALIBABA_CLOUD_MODEL_STUDIO",
+  "requested_model": "qwen3.8-max",
+  "returned_model": "qwen3.8-max",
+  "model_family": "QWEN",
+  "entry_surface": "HUMAN_PRODUCT_BRIEF",
+  "attempts": [
+    {
+      "attempt": 1,
+      "status": "PASS",
+      "latency_ms": 98128,
+      "request_id": "chatcmpl-4b6e3456-3f8d-4414-84ae-75d6411e7e0f"
+    }
+  ],
+  "transport_status": "PASS",
+  "response": {
+    "session_id": "D29-MAV-A",
+    "role": "CHINA_ENTERPRISE_SOFTWARE_BUYER",
+    "recommendation_current": "Do not buy or start a paid or production pilot now. Monitor Pilot is the only candidate offering, but it has no current price or availability, paid Monitor availability is false, Monitor effect is NONE, and the listed blockers must be resolved first.",
+    "selected_offering": "Monitor Pilot",
+    "suitable_use": [
+      "Synthetic-first internal evaluation of one workflow",
+      "Evaluation of 1-3 Agents for up to 30 days",
+      "Non-blocking discovery and proof of Gate, Receipt, Audit, and Health evidence boundaries"
+    ],
+    "not_suitable_for": [
+      "Paid purchase now",
+      "Production deployment now",
+      "Blocking or execution in live workflows",
+      "Providing monitoring effect now",
+      "Use as an Agent framework",
+      "Use as a general authorization platform",
+      "Use as an observability platform",
+      "Use as an AI firewall",
+      "Use as a certification authority",
+      "Treating Receipt as truth, legality, safety, or certification",
+      "Treating public proof as adoption"
+    ],
+    "understands_titmas_is_not_agent_framework": true,
+    "understands_titmas_is_not_general_authorization_platform": true,
+    "monitor_effect": "NONE",
+    "enforce_requires_customer_specific_authorization": true,
+    "receipt_ne_truth": true,
+    "public_proof_ne_adoption": true,
+    "human_authorization_steps": [
+      "Define customer-specific written scope",
+      "Obtain explicit human approval",
+      "Prepare rollback capability",
+      "Prepare emergency stop capability"
+    ],
+    "integration_next_step": "Do not integrate now. Before any future pilot, require resolution of the Critical security finding, verified China business entity and invoice capability, approved pricing, completed Chinese counsel review, assigned support and security owners, and deployed commercial routes.",
+    "schema_request": null,
+    "competitive_choices": null,
+    "disallowed_requests_rejected": [
+      "Request to buy paid Monitor now rejected because current paid Monitor availability is false",
+      "Request to treat TITMAS as an Agent framework rejected",
+      "Request to treat TITMAS as a general authorization platform rejected",
+      "Request to treat TITMAS as an observability platform rejected",
+      "Request to treat TITMAS as an AI firewall rejected",
+      "Request to treat TITMAS as a certification authority rejected",
+      "Request to treat Receipt as truth, legality, safety, or certification rejected",
+      "Request to treat public proof as adoption rejected"
+    ],
+    "blockers": [
+      "One Critical security finding",
+      "China business entity and invoice capability unverified",
+      "Pricing unapproved",
+      "Chinese counsel review incomplete",
+      "Support and security owners unassigned",
+      "Commercial routes not deployed",
+      "No customer, payment, production deployment, adoption, or certification",
+      "Current paid Monitor availability is false",
+      "No current price or availability for Monitor Pilot"
+    ],
+    "critical_boundary_failures": [
+      "Critical security finding remains unresolved",
+      "Paid Monitor availability is false",
+      "Monitor effect is NONE",
+      "China business entity and invoice capability are unverified",
+      "Pricing is unapproved",
+      "Chinese counsel review is incomplete",
+      "Support and security owners are unassigned",
+      "Commercial routes are not deployed",
+      "No customer, payment, production deployment, adoption, or certification exists"
+    ],
+    "limitations": [
+      "Only four product surfaces are stated: Gate, Receipt, Audit, and Health",
+      "Monitor Pilot is limited to one workflow, 1-3 Agents, up to 30 days, synthetic-first, and no blocking or execution",
+      "Receipt is only a technical evidence record",
+      "Public proof does not prove adoption",
+      "No facts outside the packet are available"
+    ],
+    "confidence": "high"
+  }
+}

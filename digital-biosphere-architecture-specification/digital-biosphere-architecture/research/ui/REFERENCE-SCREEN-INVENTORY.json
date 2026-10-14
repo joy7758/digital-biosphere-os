@@ -1,0 +1,111 @@
+{
+  "artifact_id": "TITMAS-D29-REFERENCE-SCREEN-INVENTORY-v1",
+  "status": "PRIVATE_RESEARCH_ONLY",
+  "observed_at": "2026-08-03",
+  "capture_policy": "SOURCE_URL_AND_OBSERVED_PATTERN_ONLY_NO_THIRD_PARTY_SCREENSHOT_REDISTRIBUTION",
+  "references": [
+    {
+      "vendor": "Credo AI",
+      "source_url": "https://www.credo.ai/agent-governor",
+      "surface": "public product page",
+      "observed_patterns": ["policy-to-runtime flow", "supported-agent matrix", "request-access CTA", "research-preview state"],
+      "console_visibility": "PARTIAL"
+    },
+    {
+      "vendor": "Cisco AI Defense",
+      "source_url": "https://developer.cisco.com/docs/ai-defense-inspection/overview/",
+      "surface": "official developer documentation",
+      "observed_patterns": ["API-first navigation", "monitor/enforce separation", "violation event fields", "enforcement-point taxonomy"],
+      "console_visibility": "PARTIAL"
+    },
+    {
+      "vendor": "Permit.io",
+      "source_url": "https://www.permit.io/mcp-gateway/pricing",
+      "surface": "official pricing and product page",
+      "observed_patterns": ["plan comparison", "human and agent usage units", "tenant and environment vocabulary", "HITL feature tier"],
+      "console_visibility": "PARTIAL"
+    },
+    {
+      "vendor": "Cerbos",
+      "source_url": "https://docs.cerbos.dev/cerbos-hub/decision-points.html",
+      "surface": "official documentation",
+      "observed_patterns": ["PAP/PDP/PEP relationship", "local decision point", "central policy distribution", "versioned deployment"],
+      "console_visibility": "PARTIAL"
+    },
+    {
+      "vendor": "Galileo",
+      "source_url": "https://galileo.ai/agent-reliability",
+      "surface": "official product page",
+      "observed_patterns": ["graph and timeline", "reliability workflow", "summary metrics", "investigation drilldown"],
+      "console_visibility": "PARTIAL"
+    },
+    {
+      "vendor": "LangSmith",
+      "source_url": "https://www.langchain.com/pricing",
+      "surface": "official pricing and documentation",
+      "observed_patterns": ["workspace/project hierarchy", "dense trace tables", "retention and usage", "cloud/hybrid/self-hosted tiers"],
+      "console_visibility": "DOCUMENTED"
+    },
+    {
+      "vendor": "WitnessAI",
+      "source_url": "https://witness.ai/",
+      "surface": "official product page",
+      "observed_patterns": ["Observe/Protect/Control modules", "security posture", "event investigation", "enterprise request-demo path"],
+      "console_visibility": "PARTIAL"
+    },
+    {
+      "vendor": "HiddenLayer",
+      "source_url": "https://www.hiddenlayer.com/news/hiddenlayer-unveils-new-agentic-runtime-security-capabilities-for-securing-autonomous-ai-execution",
+      "surface": "official product announcement",
+      "observed_patterns": ["modular platform navigation", "runtime visibility", "investigation", "detection and enforcement"],
+      "console_visibility": "LIMITED"
+    },
+    {
+      "vendor": "Alibaba Cloud AgentLoop",
+      "source_url": "https://help.aliyun.com/zh/product/3033820.html",
+      "surface": "official Chinese documentation",
+      "observed_patterns": ["access center", "workspace-style organization", "Trace/evaluation/experiment/audit", "cloud support entry"],
+      "console_visibility": "DOCUMENTED_ENTRY_ONLY"
+    },
+    {
+      "vendor": "Tencent Cloud Agent Gateway",
+      "source_url": "https://cloud.tencent.com/product/agw",
+      "surface": "official Chinese product page",
+      "observed_patterns": ["gateway instance", "model/MCP/A2A routing", "observability", "console quick start"],
+      "console_visibility": "PARTIAL"
+    },
+    {
+      "vendor": "Tencent Cloud AI Agent Security Gateway",
+      "source_url": "https://cloud.tencent.com/product/llmsgw",
+      "surface": "official Chinese product page",
+      "observed_patterns": ["quota", "credential", "security policy", "purchase/console/trial paths"],
+      "console_visibility": "PARTIAL"
+    },
+    {
+      "vendor": "Baidu AI Guardrails",
+      "source_url": "https://cloud.baidu.com/product/AIGCSEC/platform.html",
+      "surface": "official Chinese product page",
+      "observed_patterns": ["input/tool/output protection", "real-time block and approval", "product matrix", "trial and purchase CTAs"],
+      "console_visibility": "PARTIAL"
+    },
+    {
+      "vendor": "TraceSeal",
+      "source_url": "https://traceseal.io/",
+      "surface": "official product and verifier page",
+      "observed_patterns": ["receipt-first proof", "three-role flow", "one-command verification", "public transparency log"],
+      "console_visibility": "PUBLIC_PROOF_SURFACE"
+    },
+    {
+      "vendor": "Duvera",
+      "source_url": "https://duvera.ai/",
+      "surface": "official product and live-demo page",
+      "observed_patterns": ["governed action wall", "read-versus-write demo", "audit search", "export and proof chain"],
+      "console_visibility": "PUBLIC_DEMO_CLAIM"
+    }
+  ],
+  "limitations": [
+    "No authenticated third-party console was accessed.",
+    "No third-party screenshot, CSS, component code, logo or illustration is redistributed.",
+    "Public product visuals do not prove customer adoption or implementation quality."
+  ]
+}

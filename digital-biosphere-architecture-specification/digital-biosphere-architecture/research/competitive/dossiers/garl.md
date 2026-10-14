@@ -1,0 +1,24 @@
+# GARL Protocol
+
+- Source URLs: https://garl.ai/
+- Source access time: 2026-08-03
+- Page title: GARL Protocol — Cryptographic verification for AI code
+- Product status: public website with SDK/MCP/REST/GitHub Action claims; counters and adoption are vendor claims.
+- Target customer / buyer / user: Agent developers, code teams and reviewers wanting signed activity records.
+- Pricing status: `NOT_VERIFIED`.
+- Architecture summary: SDK/MCP/REST producers, signed receipts, PostgreSQL ledger and Base-mainnet Merkle anchoring.
+- Control plane / data plane: hosted API plus client integrations; local/offline verifier is claimed.
+- Enforcement point: primarily post-action logging/proof; exact pre-action customer policy control is not verified.
+- Integration: Python, JavaScript, MCP, REST, GitHub Action and A2A card.
+- Tenant / workspace / identity: Agent identifiers and API keys exist; enterprise tenant isolation is not verified.
+- Policy / approval / decision: no bounded Human approval model verified.
+- Event / receipt / audit / retention: ECDSA-secp256k1, SHA-256, immutable-ledger and on-chain anchoring claims.
+- Monitor / enforce: action observation is explicit; customer-side enforce mode is not verified.
+- Deployment modes: hosted protocol plus SDKs; self-hosted control plane not verified.
+- Console navigation and UI: live receipt/profile, integration choices and verification stack.
+- Commercial funnel: developer and Agent onboarding paths.
+- Strengths: broad integration surfaces and independent verification narrative.
+- Weaknesses relative to TITMAS: proof/anchoring is emphasized; authority separation and customer-specific pre-action decision are not established.
+- Applicable lessons: agent-readable onboarding, multiple transports and visible verification key.
+- Non-applicable lessons: blockchain anchoring as mandatory architecture or certification language.
+- Uncertainties: current maintenance, pricing, customer adoption, privacy controls and enterprise isolation.

@@ -1,0 +1,15 @@
+{
+  "schema_version": "0.1",
+  "project_id": "TITMAS-DIGITAL-CELL-DEMO",
+  "release_version": "v0.1.0",
+  "status": "REFERENCE_COMPLETE",
+  "positioning": "A minimal reference implementation showing how an AI agent can become observable, verifiable, and health-assessable.",
+  "page": "https://redcrag.cn/digital-cell/",
+  "repository": "https://github.com/joy7758/titmas-demo",
+  "release": "https://github.com/joy7758/titmas-demo/releases/tag/v0.1.0",
+  "license": "Apache-2.0",
+  "objects": ["Identity", "Boundary", "Evidence", "Health", "Memory", "Reputation"],
+  "verification": {"tests_passed": 7, "deterministic_replay": "PASS", "evidence_records": 12, "sha256_integrity": "PASS"},
+  "boundaries": {"reference_demo_only": true, "production_claim": false, "certification_claim": false, "digital_life_claim": false, "consciousness_claim": false},
+  "observed_at": "2026-07-26"
+}

@@ -1,0 +1,24 @@
+# Volcengine AIPP
+
+- Source URLs: https://www.volcengine.com/product/aipp
+- Source access time: 2026-08-03
+- Page title: AIPP (JavaScript-rendered official product page)
+- Product status: official product surface exists; detailed public content was not machine-readable in this pass.
+- Target customer / buyer / user: enterprise AI security and platform teams are a reasoned hypothesis, not a verified fact.
+- Pricing status: `NOT_VERIFIED`.
+- Architecture summary: `NOT_ASSESSED_FROM_PRIMARY_TEXT`.
+- Control plane / data plane: `NOT_ASSESSED`.
+- Enforcement point: `NOT_ASSESSED`.
+- Integration: `NOT_ASSESSED`.
+- Tenant / workspace / identity: `NOT_ASSESSED`.
+- Policy / approval / decision: `NOT_ASSESSED`.
+- Event / receipt / audit / retention: no portable signed receipt claim was verified.
+- Monitor / enforce: `NOT_ASSESSED`.
+- Deployment modes: `NOT_ASSESSED`.
+- Console navigation and UI: JavaScript shell only; no protected or third-party visual asset was copied.
+- Commercial funnel: official page exists; exact funnel not verified.
+- Strengths: domestic vendor integration potential.
+- Weaknesses relative to TITMAS: insufficient machine-readable primary evidence.
+- Applicable lessons: preserve an explicit `NOT_ASSESSED` state and request authenticated vendor material only if commercially necessary.
+- Non-applicable lessons: do not treat AIPP as proof of a directly comparable TITMAS capability.
+- Uncertainties: all detailed product claims remain open.

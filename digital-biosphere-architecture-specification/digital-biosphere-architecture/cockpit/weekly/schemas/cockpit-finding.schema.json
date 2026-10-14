@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:dba:weekly:cockpit-finding:0.1",
+  "title": "DBA Weekly Cockpit Finding",
+  "type": "object",
+  "required": ["finding_id", "project_id", "severity", "category", "title", "human_explanation", "source_reference", "observed_at"],
+  "properties": {
+    "finding_id": {"type": "string", "minLength": 1},
+    "project_id": {"type": "string", "minLength": 1},
+    "severity": {"enum": ["NORMAL", "ATTENTION", "BLOCKED", "NOT_ASSESSED"]},
+    "category": {"type": "string", "minLength": 1},
+    "title": {"type": "string", "minLength": 1},
+    "human_explanation": {"type": "string", "minLength": 1},
+    "source_reference": {"type": "string", "minLength": 1},
+    "observed_at": {"type": "string", "minLength": 1},
+    "runtime_binding": {"type": "string"},
+    "exploitability": {"type": "string"},
+    "authorization": {"type": "string"},
+    "version_change_recommended": {"type": "boolean"}
+  },
+  "additionalProperties": false
+}

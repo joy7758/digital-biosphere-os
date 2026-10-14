@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+
+# macOS Finder metadata.
+.DS_Store
+**/.DS_Store
+
+# Local generated validation and publication work products. Canonical source
+# artifacts must be committed from their owning directories or repositories.
+/artifacts/
+/out/

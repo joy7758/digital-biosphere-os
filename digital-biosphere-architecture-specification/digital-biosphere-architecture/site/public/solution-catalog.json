@@ -1,0 +1,31 @@
+{
+  "contract_format": "TITMAS-PUBLIC-SOLUTION-CATALOG-1.0",
+  "catalog_id": "TITMAS-PUBLIC-SOLUTION-CATALOG-v1",
+  "observed_at": "2026-08-04",
+  "solutions": [
+    {
+      "solution_id": "SOFTWARE_DELIVERY_ACTION_CONTROL",
+      "name": "Software Delivery Action Control",
+      "name_zh": "软件交付行动控制",
+      "priority": "PRIMARY_CHINA_PILOT_CANDIDATE",
+      "target_actions": ["CODE_MERGE", "RELEASE", "PRODUCTION_CONFIGURATION_CHANGE", "EXTERNAL_SEND"],
+      "monitor_status": "SYNTHETIC_REFERENCE_PROOF_IMPLEMENTED_NOT_DEPLOYED",
+      "enforce_status": "SYNTHETIC_REFERENCE_ONLY_CUSTOMER_AUTHORIZATION_COUNT_0",
+      "customer_data_required": false,
+      "entry": "/monitor-pilot/",
+      "entry_en": "/en/monitor-pilot/"
+    },
+    {
+      "solution_id": "MEDIA_EVIDENCE_WORKFLOW",
+      "name": "Media Evidence Workflow",
+      "name_zh": "媒体证据工作流",
+      "priority": "RESEARCH_PREVIEW",
+      "current_status": "LOCAL_SYNTHETIC_REFERENCE_IMPLEMENTATION",
+      "production_ready": false,
+      "entry": "/industry/media-evidence/",
+      "entry_en": "/en/industry/media-evidence/"
+    }
+  ],
+  "not_initial_production_targets": ["MEDICAL_DIAGNOSIS", "REAL_FINANCIAL_TRANSACTION", "INDUSTRIAL_CONTROL", "CRITICAL_INFRASTRUCTURE"],
+  "industry_solution_ne_new_platform": true
+}

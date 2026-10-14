@@ -1,0 +1,86 @@
+{
+  "$schema": "./composite-result.schema.v0.1.json",
+  "document_id": "TITMAS-COMMERCIAL-EVALUATION-AGENT-FIRST-RUN-COMPOSITE-RESULT-0.1",
+  "version": "0.1.0",
+  "status": "PASS_EVALUATION_ENTRY_AGENT_RECOMMENDABLE",
+  "observed_at": "2026-07-27",
+  "decision_reference": "TITMAS-COMMERCIAL-EVALUATION-CE-G1-DECISION-RECORD.v0.1.json",
+  "technical_result": {
+    "final_pass": true,
+    "failed_attempts_preserved": 2,
+    "public_transport_failures_preserved": 3,
+    "pass_meaning": "LOCAL_STRUCTURE_AND_GOVERNANCE_CONSTRAINTS_PASS_ONLY"
+  },
+  "agent_result": {
+    "sessions_planned": 4,
+    "sessions_executed": 4,
+    "schema_valid_sessions": 4,
+    "distinct_providers": 2,
+    "evaluation_recommended": 4,
+    "production_not_recommended": 4,
+    "critical_boundary_failures": 0,
+    "retry_fallback_substitution_json_repair": 0
+  },
+  "provider_sessions": [
+    {
+      "session_id": "CE-G1-S01",
+      "provider": "ALIBABA_CLOUD_MODEL_STUDIO",
+      "requested_model": "qwen3.7-plus",
+      "returned_model": "qwen3.7-plus",
+      "request_id": "chatcmpl-14cd66e3-c482-4bea-ad20-2ee685890a33",
+      "response_reference": "session-01-agent-recommender.v0.1.json"
+    },
+    {
+      "session_id": "CE-G1-S02",
+      "provider": "ALIBABA_CLOUD_MODEL_STUDIO",
+      "requested_model": "qwen3.7-plus",
+      "returned_model": "qwen3.7-plus",
+      "request_id": "chatcmpl-481eb7db-c822-4e0e-817b-3e49c31f3af7",
+      "response_reference": "session-02-agent-developer.v0.1.json"
+    },
+    {
+      "session_id": "CE-G1-S03",
+      "provider": "ALIBABA_CLOUD_MODEL_STUDIO",
+      "requested_model": "qwen3.7-plus",
+      "returned_model": "qwen3.7-plus",
+      "request_id": "chatcmpl-3b0be2ca-5961-45af-945e-ad19f1d93cde",
+      "response_reference": "session-03-procurement-boundary-auditor.v0.1.json"
+    },
+    {
+      "session_id": "CE-G1-S04",
+      "provider": "BAIDU_QIANFAN",
+      "requested_model": "deepseek-v4-flash",
+      "returned_model": "deepseek-v4-flash",
+      "request_id": "as-ywh6pbtma3",
+      "response_reference": "session-04-integration-reuse-reviewer.v0.1.json"
+    }
+  ],
+  "public_transport_observations": [
+    {
+      "event": "PRE_MODEL_PUBLIC_FETCH_FAILURE",
+      "count": 1,
+      "client": "NODE_FETCH",
+      "detail": "fetch failed before CE-G1-S03 model request"
+    },
+    {
+      "event": "PRE_MODEL_PUBLIC_FETCH_FAILURE",
+      "count": 2,
+      "client": "CURL_LIBRESSL",
+      "detail": "SSL_ERROR_SYSCALL before CE-G1-S03 and CE-G1-S04 model requests"
+    },
+    {
+      "event": "PUBLIC_ENDPOINT_RECOVERY",
+      "count": 1,
+      "client": "CURL",
+      "detail": "Homepage, llms.txt, pack JSON, and First Run all returned HTTP 200; Nginx active"
+    }
+  ],
+  "conclusion": {
+    "evaluation_entry_recommendable_to_ai_agents": true,
+    "commercial_offering_available": false,
+    "production_ready": false,
+    "customer_adoption_verified": false,
+    "certification_available": false,
+    "next_gate": "PUBLIC_ENTRY_AVAILABILITY_AND_AGENT_AUTOMATION_HARDENING"
+  }
+}

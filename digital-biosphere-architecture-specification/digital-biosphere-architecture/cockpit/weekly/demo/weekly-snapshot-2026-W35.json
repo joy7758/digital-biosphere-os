@@ -1,0 +1,553 @@
+{
+  "admission_summary": {
+    "admitted_count": 1,
+    "discovered_count": 6,
+    "pending_count": 3,
+    "rejected_count": 2,
+    "rejected_or_pending_count": 5
+  },
+  "blind_spots": [
+    {
+      "blind_spot_id": "SCOUT_STATUS_STALE",
+      "impact_zh": "当前周检不能确认其最新检查、版本与运行状态。",
+      "project_id": "TITMAC_SCOUT",
+      "source_reference": "cockpit/projections/titmac-scout.json",
+      "status": "NOT_ASSESSED",
+      "title_zh": "TITMAC Scout 的只读状态尚未刷新"
+    },
+    {
+      "blind_spot_id": "DEPENDENCY_RUNTIME_BINDING_UNKNOWN",
+      "impact_zh": "当前只能确认扫描候选与历史记录冲突，不能确认这些包是否进入实际远端运行路径。",
+      "project_id": "DBA_COCKPIT",
+      "source_reference": "cockpit/weekly/inputs/live-dependency-audit-candidate-2026-08-29.json",
+      "status": "NOT_ASSESSED",
+      "title_zh": "依赖漏洞的远端运行绑定未观察"
+    }
+  ],
+  "boundaries": {
+    "auto_deploy": false,
+    "auto_fix": false,
+    "auto_merge": false,
+    "auto_pr": false,
+    "new_control_plane": false,
+    "new_truth_source": false,
+    "pilot_only": false,
+    "prototype_only": true,
+    "read_only": true,
+    "schedule_enabled": false,
+    "source_mutation": false,
+    "view_not_truth": true
+  },
+  "cell_runs": [
+    {
+      "cell_id": "PROJECT_DISCOVERY_CELL",
+      "duration_ms": 0,
+      "status": "PASS",
+      "summary": "Registered project identities and one adjacent candidate were discovered without admission."
+    },
+    {
+      "cell_id": "ENVIRONMENT_DISCOVERY_CELL",
+      "duration_ms": 0,
+      "status": "PASS_WITH_CANDIDATES",
+      "summary": "Current environment candidates were recorded without authority escalation."
+    },
+    {
+      "cell_id": "RELATIONSHIP_DISCOVERY_CELL",
+      "duration_ms": 0,
+      "status": "PASS",
+      "summary": "Declared relationships were recorded as references, not vulnerabilities."
+    },
+    {
+      "cell_id": "EVIDENCE_ADMISSION_CELL",
+      "duration_ms": 0,
+      "status": "PASS_WITH_REJECTIONS",
+      "summary": "Discovery signals were separated from evidence admission."
+    },
+    {
+      "cell_id": "SECURITY_CELL",
+      "duration_ms": 0,
+      "status": "PASS_WITH_OBSERVATION",
+      "summary": "Security interpretation consumed admitted observations only."
+    },
+    {
+      "cell_id": "UPGRADE_CELL",
+      "duration_ms": 0,
+      "status": "NOT_ASSESSED",
+      "summary": "Rejected or stale signals did not become upgrade recommendations."
+    },
+    {
+      "cell_id": "QUALITY_CELL",
+      "duration_ms": 0,
+      "status": "PASS",
+      "summary": "Bounded quality evidence was interpreted without a composite score."
+    },
+    {
+      "cell_id": "DRIFT_CELL",
+      "duration_ms": 0,
+      "status": "ATTENTION",
+      "summary": "A canonical-versus-live dependency audit conflict requires review."
+    },
+    {
+      "cell_id": "MEMORY_CELL",
+      "duration_ms": 0,
+      "status": "NOT_ASSESSED",
+      "summary": "Memory preserved temporal boundaries without inventing week-over-week change."
+    },
+    {
+      "cell_id": "HANDOFF_CELL",
+      "duration_ms": 0,
+      "status": "PASS",
+      "summary": "Human decision items were generated from bounded findings and blind spots."
+    },
+    {
+      "cell_id": "HUMAN_VIEW_CELL",
+      "duration_ms": 0,
+      "status": "PASS",
+      "summary": "Standalone HTML and Markdown were rendered from the standardized snapshot only."
+    },
+    {
+      "cell_id": "WEEKLY_COORDINATOR_CELL",
+      "duration_ms": 0,
+      "status": "PASS"
+    }
+  ],
+  "changes": {
+    "improved": [],
+    "observed_this_week": [
+      "依赖安全状态出现待复核冲突",
+      "红岩公文与 DBA 驾驶舱的声明关系",
+      "TITMAS 支撑层与数字细胞演示的声明关系"
+    ],
+    "unknown": [
+      "首次快照，尚不能判断这些信号是否相对于上周新增。"
+    ],
+    "worsened": []
+  },
+  "counts": {
+    "admitted_count": 1,
+    "attention": 1,
+    "blind_spot": 1,
+    "blind_spots": 2,
+    "decisions": 2,
+    "discovered_count": 6,
+    "live_source_success": 0,
+    "not_assessed": 1,
+    "projects": 5,
+    "rejected_or_pending_count": 5,
+    "source_not_assessed": 0,
+    "stable": 2
+  },
+  "decisions": [
+    {
+      "authority": "HUMAN_DECISION_REQUIRED",
+      "decision_id": "DECISION-DEPENDENCY-SECURITY-REVIEW",
+      "evidence_references": [
+        "FINDING-DEPENDENCY-AUDIT-STATE-CONFLICT-2026-W35"
+      ],
+      "priority": "HIGH",
+      "project_id": "DBA_COCKPIT",
+      "source_cell_id": "HANDOFF_CELL",
+      "title_zh": "是否启动依赖安全专项复核",
+      "why_zh": "历史记录2个，本周扫描4个，当前存在状态冲突。"
+    },
+    {
+      "authority": "HUMAN_DECISION_REQUIRED",
+      "decision_id": "DECISION-SCOUT-READ-ONLY-REFRESH",
+      "evidence_references": [
+        "SCOUT_STATUS_STALE"
+      ],
+      "priority": "MEDIUM",
+      "project_id": "TITMAC_SCOUT",
+      "source_cell_id": "HANDOFF_CELL",
+      "title_zh": "是否授权刷新 TITMAC Scout 的只读状态",
+      "why_zh": "当前状态来源缺少足够新鲜度；刷新仍需单独、只读、限定范围的人工授权。"
+    }
+  ],
+  "decisions_source": "HANDOFF_CELL",
+  "dependency_audit_state": {
+    "auto_reconciliation": false,
+    "canonical_high_count": 2,
+    "exploitability": "NOT_ASSESSED",
+    "live_candidate_high_count": 4,
+    "live_high_packages": [
+      "image-size",
+      "js-yaml",
+      "nanoid",
+      "vinext"
+    ],
+    "runtime_binding": "NOT_ESTABLISHED",
+    "status": "CONFLICT_REQUIRES_REVIEW"
+  },
+  "discoveries": [
+    {
+      "admission_label_zh": "待人工确认候选",
+      "admission_reason": "CANDIDATE_NOT_ADMITTED",
+      "admission_status": "NOT_ADMITTED",
+      "authority": "DISCOVERY_ONLY",
+      "candidate_id": "candidate-openbao-2026-W35",
+      "current_state": "DISCOVERED",
+      "details_zh": "OpenBao（机密与密钥管理组件）仍是待确认候选；应先刷新当前版本与安全事实。",
+      "discovered_at": "2026-08-29T00:30:00+08:00",
+      "display_name": "OpenBao（机密与密钥管理组件）候选",
+      "freshness": "UNKNOWN",
+      "kind": "ADJACENT_PROJECT_CANDIDATE",
+      "lifecycle": "CANDIDATE",
+      "monitoring_status": "NOT_MONITORED",
+      "note": "Discovery does not grant evidence admission, monitoring, or scan authority.",
+      "observed_at": "2026-08-29T00:30:00+08:00",
+      "observed_state": "DISCOVERED",
+      "private_content_scanned": false,
+      "project_id": "openbao-adjacent-signal",
+      "read_only": true,
+      "scan_authorized": false,
+      "signal_id": "DISCOVERY-OPENBAO-CANDIDATE",
+      "source_reference": "project-discovery:public-adjacent-candidate",
+      "subject": "OpenBao",
+      "title_zh": "OpenBao（机密与密钥管理组件）候选"
+    },
+    {
+      "admission_label_zh": "已通过证据准入",
+      "admission_reason": "CURRENT_SOURCE_BOUND_CANDIDATE",
+      "admission_status": "ADMITTED",
+      "authority": "CANDIDATE_OBSERVATION",
+      "canonical_high_count": 2,
+      "current_state": "DISCOVERED",
+      "details_zh": "本周实时扫描报告4个高危依赖包，历史权威记录仍为2个；候选包为image-size, js-yaml, nanoid, vinext。",
+      "exploitability": "NOT_ASSESSED",
+      "freshness": "CURRENT",
+      "kind": "DEPENDENCY_SECURITY_CONFLICT_CANDIDATE",
+      "live_candidate_high_count": 4,
+      "live_high_packages": [
+        "image-size",
+        "js-yaml",
+        "nanoid",
+        "vinext"
+      ],
+      "observed_at": "2026-08-29T01:36:35+08:00",
+      "observed_state": "CONFLICT_CANDIDATE",
+      "runtime_binding": "NOT_ESTABLISHED",
+      "signal_id": "DISCOVERY-DEPENDENCY-AUDIT-CONFLICT",
+      "source_reference": "cockpit/weekly/inputs/live-dependency-audit-candidate-2026-08-29.json",
+      "subject": "DBA dependency audit state",
+      "title_zh": "依赖安全状态出现待复核冲突"
+    },
+    {
+      "admission_label_zh": "未通过准入或来源过期",
+      "admission_reason": "STALE_OR_UNKNOWN",
+      "admission_status": "REJECTED",
+      "authority": "DISCOVERY_ONLY",
+      "current_state": "DISCOVERED",
+      "details_zh": "现有组件矩阵不能自动获得本周当前状态权威。",
+      "freshness": "STALE",
+      "kind": "COMPONENT_STATUS_SIGNAL",
+      "observed_at": "2026-08-29T00:30:00+08:00",
+      "observed_state": "STALE",
+      "signal_id": "DISCOVERY-TITMAS-MATRIX-STALE",
+      "source_reference": "titmas-component-adoption-matrix-v1.0.json",
+      "subject": "TITMAS component matrix",
+      "title_zh": "TITMAS 组件矩阵状态待刷新"
+    },
+    {
+      "admission_label_zh": "未通过准入或来源过期",
+      "admission_reason": "STALE_OR_UNKNOWN",
+      "admission_status": "REJECTED",
+      "authority": "DISCOVERY_ONLY",
+      "current_state": "DISCOVERED",
+      "details_zh": "现有投影没有提供足够新鲜度，不能推断当前状态。",
+      "freshness": "UNKNOWN",
+      "kind": "PROJECT_STATUS_SIGNAL",
+      "observed_at": "2026-08-29T00:30:00+08:00",
+      "observed_state": "UNKNOWN",
+      "signal_id": "DISCOVERY-SCOUT-STATUS-STALE",
+      "source_reference": "cockpit/projections/titmac-scout.json",
+      "subject": "TITMAC Scout read-only status",
+      "title_zh": "TITMAC Scout 当前只读状态待刷新"
+    },
+    {
+      "admission_label_zh": "待人工确认候选",
+      "admission_reason": "OUTSIDE_AUTOMATIC_ADMISSION_SCOPE",
+      "admission_status": "PENDING",
+      "authority": "RELATIONSHIP_REFERENCE_ONLY",
+      "current_state": "DISCOVERED",
+      "details_zh": "这是已声明的项目关系，不是新漏洞，也不授予跨项目控制权。",
+      "freshness": "CURRENT",
+      "kind": "DECLARED_PROJECT_RELATIONSHIP",
+      "observed_at": "2026-08-29T00:30:00+08:00",
+      "observed_state": "DECLARED",
+      "signal_id": "RELATIONSHIP-RED-YAN-DBA",
+      "source_reference": "cockpit/source-registry.json",
+      "subject": "红岩公文与 DBA 驾驶舱",
+      "title_zh": "红岩公文与 DBA 驾驶舱的声明关系"
+    },
+    {
+      "admission_label_zh": "待人工确认候选",
+      "admission_reason": "OUTSIDE_AUTOMATIC_ADMISSION_SCOPE",
+      "admission_status": "PENDING",
+      "authority": "RELATIONSHIP_REFERENCE_ONLY",
+      "current_state": "DISCOVERED",
+      "details_zh": "这是引用关系，不代表部署、认证、运行绑定或新的安全事实。",
+      "freshness": "CURRENT",
+      "kind": "DECLARED_PROJECT_RELATIONSHIP",
+      "observed_at": "2026-08-29T00:30:00+08:00",
+      "observed_state": "DECLARED",
+      "signal_id": "RELATIONSHIP-TITMAS-DIGITAL-CELL",
+      "source_reference": "cockpit/source-registry.json",
+      "subject": "TITMAS 支撑层与数字细胞演示",
+      "title_zh": "TITMAS 支撑层与数字细胞演示的声明关系"
+    }
+  ],
+  "discovery_failure_count": 0,
+  "discovery_state": "AVAILABLE",
+  "findings": [
+    {
+      "authorization": "NONE",
+      "canonical_high_count": 2,
+      "category": "SECURITY_DRIFT",
+      "exploitability": "NOT_ASSESSED",
+      "finding_id": "FINDING-DEPENDENCY-AUDIT-STATE-CONFLICT-2026-W35",
+      "finding_type": "DEPENDENCY_AUDIT_STATE_CONFLICT",
+      "human_explanation": "本周实时扫描报告4个高危依赖包，而驾驶舱历史权威记录仍为2个。两者尚未对齐，需要核对锁文件、扫描范围和是否进入实际运行环境。",
+      "live_candidate_high_count": 4,
+      "live_high_packages": [
+        "image-size",
+        "js-yaml",
+        "nanoid",
+        "vinext"
+      ],
+      "observed_at": "2026-08-29T01:36:35+08:00",
+      "project_id": "DBA_COCKPIT",
+      "reconciliation_required": true,
+      "runtime_binding": "NOT_ESTABLISHED",
+      "severity": "ATTENTION",
+      "source_reference": "cockpit/weekly/inputs/live-dependency-audit-candidate-2026-08-29.json",
+      "title": "历史与实时依赖审计状态冲突",
+      "title_zh": "历史与实时依赖审计状态冲突",
+      "version_change_recommended": false
+    }
+  ],
+  "handoff_packets": [
+    {
+      "authority": "NONE",
+      "decision_needed": "是否启动依赖安全专项复核",
+      "evidence_references": [
+        "FINDING-DEPENDENCY-AUDIT-STATE-CONFLICT-2026-W35"
+      ],
+      "execution_commands": [],
+      "handoff_id": "HANDOFF-DEPENDENCY-SECURITY-REVIEW",
+      "project_id": "DBA_COCKPIT",
+      "recipient_role": "HUMAN_REVIEWER",
+      "suggested_next_review": "核对锁文件、扫描范围、运行绑定与权威状态来源。"
+    },
+    {
+      "authority": "NONE",
+      "decision_needed": "是否授权刷新 TITMAC Scout 的只读状态",
+      "evidence_references": [
+        "SCOUT_STATUS_STALE"
+      ],
+      "execution_commands": [],
+      "handoff_id": "HANDOFF-SCOUT-READ-ONLY-REFRESH",
+      "project_id": "TITMAC_SCOUT",
+      "recipient_role": "HUMAN_REVIEWER",
+      "suggested_next_review": "如批准，仅刷新声明来源的只读状态，不扩大扫描范围。"
+    }
+  ],
+  "logical_cells": [
+    {
+      "cell_id": "PROJECT_DISCOVERY_CELL",
+      "duration_ms": 0,
+      "status": "PASS",
+      "summary": "Registered project identities and one adjacent candidate were discovered without admission."
+    },
+    {
+      "cell_id": "ENVIRONMENT_DISCOVERY_CELL",
+      "duration_ms": 0,
+      "status": "PASS_WITH_CANDIDATES",
+      "summary": "Current environment candidates were recorded without authority escalation."
+    },
+    {
+      "cell_id": "RELATIONSHIP_DISCOVERY_CELL",
+      "duration_ms": 0,
+      "status": "PASS",
+      "summary": "Declared relationships were recorded as references, not vulnerabilities."
+    },
+    {
+      "cell_id": "EVIDENCE_ADMISSION_CELL",
+      "duration_ms": 0,
+      "status": "PASS_WITH_REJECTIONS",
+      "summary": "Discovery signals were separated from evidence admission."
+    },
+    {
+      "cell_id": "SECURITY_CELL",
+      "duration_ms": 0,
+      "status": "PASS_WITH_OBSERVATION",
+      "summary": "Security interpretation consumed admitted observations only."
+    },
+    {
+      "cell_id": "UPGRADE_CELL",
+      "duration_ms": 0,
+      "status": "NOT_ASSESSED",
+      "summary": "Rejected or stale signals did not become upgrade recommendations."
+    },
+    {
+      "cell_id": "QUALITY_CELL",
+      "duration_ms": 0,
+      "status": "PASS",
+      "summary": "Bounded quality evidence was interpreted without a composite score."
+    },
+    {
+      "cell_id": "DRIFT_CELL",
+      "duration_ms": 0,
+      "status": "ATTENTION",
+      "summary": "A canonical-versus-live dependency audit conflict requires review."
+    },
+    {
+      "cell_id": "MEMORY_CELL",
+      "duration_ms": 0,
+      "status": "NOT_ASSESSED",
+      "summary": "Memory preserved temporal boundaries without inventing week-over-week change."
+    },
+    {
+      "cell_id": "HANDOFF_CELL",
+      "duration_ms": 0,
+      "status": "PASS",
+      "summary": "Human decision items were generated from bounded findings and blind spots."
+    },
+    {
+      "cell_id": "HUMAN_VIEW_CELL",
+      "duration_ms": 0,
+      "status": "PASS",
+      "summary": "Standalone HTML and Markdown were rendered from the standardized snapshot only."
+    },
+    {
+      "cell_id": "WEEKLY_COORDINATOR_CELL",
+      "duration_ms": 0,
+      "status": "PASS"
+    }
+  ],
+  "memory": {
+    "ARTIFACT_FROM_CURRENT_RUN_REJECTED": null,
+    "FAILED_OR_EXPIRED_ARTIFACT_REJECTED": null,
+    "MEMORY_COMPARISON_EXECUTED": false,
+    "PREVIOUS_LIVE_ARTIFACT_LOADED": false,
+    "note_zh": "首次快照，尚不能判断这些信号是否相对于上周新增。",
+    "previous_snapshot_reference": null,
+    "status": "NOT_ASSESSED_NO_PREVIOUS_SNAPSHOT",
+    "trend_claim_allowed": false
+  },
+  "mode": "PROTOTYPE_READ_ONLY_CANDIDATE",
+  "observed_at": "2026-08-29T00:30:00+08:00",
+  "overall_status": "PASS_WITH_NOT_ASSESSED",
+  "preset_queries": {
+    "哪些事项仍是盲区？": "当前登记2项盲区；未评估不等于正常。",
+    "本周收集到多少信号？": "共记录6项发现信号，准入状态分别保留。",
+    "本周需要决定什么？": "当前有2项待人工决定；具体内容来自交接 Cell。"
+  },
+  "projects": [
+    {
+      "attention_zh": "候选包：image-size, js-yaml, nanoid, vinext；可利用性尚未评估。",
+      "display_name_zh": "DBA 驾驶舱",
+      "lifecycle_mode": "ACTIVE",
+      "owner_conversation": "DBA 专用对话",
+      "project_id": "DBA_COCKPIT",
+      "source_access_mode": "GITHUB_API_CURRENT_REPOSITORY_READ_ONLY",
+      "source_label": "RETAINED_SNAPSHOT",
+      "source_observation_status": "RETAINED_SNAPSHOT",
+      "source_reference": "CURRENT-PROJECT-DIRECTION-2026-08-28.md",
+      "status": "ATTENTION",
+      "status_zh": "依赖审计状态待复核",
+      "technical_evidence": [
+        "cockpit/weekly/inputs/live-dependency-audit-candidate-2026-08-29.json"
+      ],
+      "why_zh": "本周实时扫描报告4个高危依赖包，而驾驶舱历史权威记录仍为2个。两者尚未对齐，需要核对锁文件、扫描范围和是否进入实际运行环境。"
+    },
+    {
+      "attention_zh": "该视图不替代红岩专用对话中的项目判断。",
+      "display_name_zh": "红岩公文",
+      "lifecycle_mode": "ACTIVE",
+      "owner_conversation": "红岩公文专用对话",
+      "project_id": "RED_YAN_OFFICIAL_DOCUMENT",
+      "source_access_mode": "CROSS_REPOSITORY_CREDENTIAL_GATED_READ_ONLY",
+      "source_label": "RETAINED_SNAPSHOT",
+      "source_observation_status": "RETAINED_SNAPSHOT",
+      "source_reference": "RED-YAN-REMOTE-RUNTIME-EVIDENCE-SNAPSHOT-2026-08-28.json",
+      "status": "STABLE",
+      "status_zh": "当前主线稳定",
+      "technical_evidence": [
+        "RED-YAN-REMOTE-RUNTIME-EVIDENCE-SNAPSHOT-2026-08-28.json"
+      ],
+      "why_zh": "现有权威快照可读取，本周驾驶舱未修改红岩项目。"
+    },
+    {
+      "attention_zh": "需要新的只读证据后再评估。",
+      "display_name_zh": "TITMAS 支撑层",
+      "lifecycle_mode": "SUPPORTING",
+      "owner_conversation": "TITMAS 专用对话",
+      "project_id": "TITMAS_SUPPORTING_LAYER",
+      "source_access_mode": "GITHUB_API_PUBLIC_REPOSITORY_READ_ONLY",
+      "source_label": "RETAINED_SNAPSHOT",
+      "source_observation_status": "RETAINED_SNAPSHOT",
+      "source_reference": "PROJECT-STATE-RECONCILIATION-2026-08-28.md",
+      "status": "NOT_ASSESSED",
+      "status_zh": "升级状态未评估",
+      "technical_evidence": [
+        "PROJECT-STATE-RECONCILIATION-2026-08-28.md"
+      ],
+      "why_zh": "组件状态来源已过期，不能转化为本周升级建议。"
+    },
+    {
+      "attention_zh": "该状态不构成生产就绪或认证。",
+      "display_name_zh": "数字细胞演示",
+      "lifecycle_mode": "FROZEN",
+      "owner_conversation": "Digital Cell Demo 专用对话",
+      "project_id": "DIGITAL_CELL_DEMO",
+      "source_access_mode": "GITHUB_API_PUBLIC_REPOSITORY_READ_ONLY",
+      "source_label": "RETAINED_SNAPSHOT",
+      "source_observation_status": "RETAINED_SNAPSHOT",
+      "source_reference": "CURRENT-PROJECT-DIRECTION-2026-08-28.md",
+      "status": "STABLE",
+      "status_zh": "参考演示稳定",
+      "technical_evidence": [
+        "titmas-commercial-product-convergence-status-v1.0.json"
+      ],
+      "why_zh": "冻结参考演示及其既有验证记录可读取；本周未授权新增执行。"
+    },
+    {
+      "attention_zh": "如需刷新，必须获得单独只读授权。",
+      "display_name_zh": "TITMAC 侦察",
+      "lifecycle_mode": "SUPPORTING",
+      "owner_conversation": "TITMAC Scout 专用对话",
+      "project_id": "TITMAC_SCOUT",
+      "source_access_mode": "EXISTING_READ_ONLY_STATUS_ADAPTER",
+      "source_label": "RETAINED_SNAPSHOT",
+      "source_observation_status": "RETAINED_SNAPSHOT",
+      "source_reference": "cockpit/source-registry.json#titmac-scout",
+      "status": "BLIND_SPOT",
+      "status_zh": "检查盲区",
+      "technical_evidence": [
+        "cockpit/source-registry.json#titmac-scout"
+      ],
+      "why_zh": "当前只读状态来源缺少足够新鲜度，不能据此判定项目正常或异常。"
+    }
+  ],
+  "run_identity": {},
+  "schema_version": "0.1",
+  "snapshot_id": "DBA-WEEKLY-2026-W35",
+  "source_observation_summary": {
+    "live_source_success_count": 0,
+    "not_assessed_count": 0,
+    "source_mode": "RETAINED_SNAPSHOT"
+  },
+  "source_references": {
+    "component_matrix": "titmas-component-adoption-matrix-v1.0.json",
+    "convergence": "titmas-commercial-product-convergence-status-v1.0.json",
+    "direction": "CURRENT-PROJECT-DIRECTION-2026-08-28.md",
+    "live_dependency_audit": "cockpit/weekly/inputs/live-dependency-audit-candidate-2026-08-29.json",
+    "read_only_adapter": "cockpit/read_only_status_adapter.py",
+    "reconciliation": "PROJECT-STATE-RECONCILIATION-2026-08-28.md",
+    "redyan": "RED-YAN-REMOTE-RUNTIME-EVIDENCE-SNAPSHOT-2026-08-28.json",
+    "scout_projection": "cockpit/projections/titmac-scout.json",
+    "source_registry": "cockpit/source-registry.json"
+  },
+  "week": "2026-W35",
+  "weekly_sentence_zh": "本周共纳入5个项目视图：2个稳定，1个需关注，1个盲区，1个尚未评估。共收集6项信号，其中1项已通过证据准入，5项被拒绝或待确认；有2项需要人工决定。"
+}

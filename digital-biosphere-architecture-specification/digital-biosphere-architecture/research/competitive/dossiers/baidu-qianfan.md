@@ -1,0 +1,24 @@
+# Baidu Intelligent Cloud Qianfan
+
+- Source URLs: https://cloud.baidu.com/product/qianfan.html
+- Source access time: 2026-08-03
+- Page title: 百度智能云千帆大模型平台
+- Product status: public commercial cloud platform.
+- Target customer / buyer / user: enterprise model and application teams; developers, ML teams and cloud procurement.
+- Pricing status: price and free-quota entry links exist; normalized customer price is not adopted for TITMAS.
+- Architecture summary: model access, application/plugin orchestration, data lifecycle, tuning and deployment platform.
+- Control plane / data plane: Baidu Cloud console and managed model/application services; private delivery options are vendor claims.
+- Enforcement point: model/application request layer, not a verified exact-action control point.
+- Integration: Baidu and third-party models, plugins and application tooling.
+- Tenant / workspace / identity: cloud-account/resource organization; detailed Agent principal semantics not verified.
+- Policy / approval / decision: authentication, traffic control and content filtering exist; authorization-bound action decisions are not verified.
+- Event / receipt / audit / retention: no portable signed receipt or independent offline verification was verified.
+- Monitor / enforce: security filtering exists; shadow Monitor contract is not verified.
+- Deployment modes: public cloud, dedicated resources and vendor-described private software/hardware delivery.
+- Console navigation and UI: model catalog, training, application, dataset, deployment, usage and pricing surfaces.
+- Commercial funnel: free quota, console activation, online consultation and enterprise support.
+- Strengths: broad domestic model platform and private-delivery options.
+- Weaknesses relative to TITMAS: foundation-model and Agent application platform, not portable accountability infrastructure.
+- Applicable lessons: free quota, clear delivery-mode comparison, Chinese support and console entry.
+- Non-applicable lessons: model hosting, tuning, plugin orchestration and content-generation application building.
+- Uncertainties: exact private deployment boundary, data retention and Agent governance semantics.

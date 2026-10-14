@@ -1,0 +1,41 @@
+{
+  "cell_id": "WEEKLY_COORDINATOR_CELL",
+  "version": "0.1",
+  "name": "WEEKLY_COORDINATOR_CELL",
+  "niche": "bounded weekly cockpit observation",
+  "module": "coordinator",
+  "class": "Weekly_Coordinator_CellCell",
+  "inputs": [
+    "cell-registry"
+  ],
+  "outputs": [
+    "weekly-snapshot",
+    "cell-run-summary",
+    "source-observation-summary",
+    "pilot-boundary-report"
+  ],
+  "source_dependencies": [
+    "all-registered-cells"
+  ],
+  "evidence_requirements": [
+    "cell-result-references",
+    "read-only-source-results"
+  ],
+  "freshness_policy": "FAIL_CLOSED",
+  "authority_boundaries": {
+    "can_write_source_project": false,
+    "can_create_pull_request": false,
+    "can_merge": false,
+    "can_deploy": false,
+    "can_authorize": false,
+    "can_change_project_priority": false
+  },
+  "failure_policy": {
+    "status": "NOT_ASSESSED",
+    "preserve_other_cells": true
+  },
+  "replacement": {
+    "replaceable": true,
+    "interface_version": "0.1"
+  }
+}

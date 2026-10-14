@@ -1,0 +1,781 @@
+{
+  "document_id": "DBA-LEGACY-MATERIAL-RECONCILIATION-MANIFEST-1.0",
+  "observed_at": "2026-07-31",
+  "source_scope": "75 dirty-path entries plus one tracked constitutional decision referenced by current main",
+  "source_checkout_role": "legacy_candidate_source_only",
+  "canonical_base_revision": "e848ade1f937c7a36cc90308c7af63f20c131d7e",
+  "source_files_observed": 76,
+  "source_files_copied_verbatim": 2,
+  "canonical_control_documents_replaced_wholesale": 0,
+  "dispositions": {
+    "NOT_IMPORTED_STALE_CONTROL_PROJECTION": 4,
+    "EXTRACTED_CURRENT_CONTENT_ONLY": 2,
+    "RETAINED_IN_LEGACY_NOT_IMPORTED": 60,
+    "SUPERSEDED_NOT_IMPORTED": 6,
+    "PROMOTED_CURRENT": 2,
+    "NOT_IMPORTED": 2
+  },
+  "authority_effect": "NONE",
+  "entries": [
+    {
+      "path": "AGENTS.md",
+      "source_status": "M",
+      "sha256": "f4e82947f29e2704dff613a82df3b769736eba7e7023cd45e6bc29e79a198c07",
+      "bytes": 10373,
+      "category": "tracked_control_document",
+      "disposition": "NOT_IMPORTED_STALE_CONTROL_PROJECTION",
+      "target": null,
+      "reason": "current main contains newer canonical governance and commercial state"
+    },
+    {
+      "path": "PROGRAM-CHARTER.md",
+      "source_status": " M",
+      "sha256": "abf720c374155bcfded496c8b1a89f7abace7fd0d211d2cc590eb400e35b1b1c",
+      "bytes": 14610,
+      "category": "tracked_control_document",
+      "disposition": "EXTRACTED_CURRENT_CONTENT_ONLY",
+      "target": "PROGRAM-CHARTER.md",
+      "reason": "only compositional-scale and attention amendments were retained; stale projections were rejected"
+    },
+    {
+      "path": "PROGRAM-STATUS.md",
+      "source_status": " M",
+      "sha256": "e4757a3b87e446acdbbda5e7e458b8ba554a3606324179231949ab31ece0a55b",
+      "bytes": 43824,
+      "category": "tracked_control_document",
+      "disposition": "NOT_IMPORTED_STALE_CONTROL_PROJECTION",
+      "target": null,
+      "reason": "current main contains newer canonical governance and commercial state"
+    },
+    {
+      "path": "README.md",
+      "source_status": " M",
+      "sha256": "10954aa8a523ca32ae5ecf724c4249cb26e4499cc2f21f26d710d24216576a40",
+      "bytes": 138663,
+      "category": "tracked_control_document",
+      "disposition": "NOT_IMPORTED_STALE_CONTROL_PROJECTION",
+      "target": null,
+      "reason": "current main contains newer canonical governance and commercial state"
+    },
+    {
+      "path": "RISK-AND-BLOCKER-REGISTER.md",
+      "source_status": " M",
+      "sha256": "b837ecb2b485442505963ab0256280589863cbc622490b935b058ffcab75dee3",
+      "bytes": 37379,
+      "category": "tracked_control_document",
+      "disposition": "NOT_IMPORTED_STALE_CONTROL_PROJECTION",
+      "target": null,
+      "reason": "current main contains newer canonical governance and commercial state"
+    },
+    {
+      "path": "architecture/open-infrastructure-strategy-constitution.md",
+      "source_status": " M",
+      "sha256": "c29b53849e6ff2b8d4dad24dca6c6ce2ff11825a75b6d9395d66bea77d7bf1a7",
+      "bytes": 23081,
+      "category": "tracked_control_document",
+      "disposition": "EXTRACTED_CURRENT_CONTENT_ONLY",
+      "target": "architecture/open-infrastructure-strategy-constitution.md",
+      "reason": "only compositional-scale and attention amendments were retained; stale projections were rejected"
+    },
+    {
+      "path": "architecture/titmas-capability-map-v0.1.md",
+      "source_status": " M",
+      "sha256": "16d41eec8acaf3e85deb7db45030b8204f41a91b045353f7860ed5d3cbefe730",
+      "bytes": 28701,
+      "category": "legacy_architecture_candidate",
+      "disposition": "RETAINED_IN_LEGACY_NOT_IMPORTED",
+      "target": null,
+      "reason": "candidate or review material requires a separate current-source decision before canonical adoption"
+    },
+    {
+      "path": "DBA-INTELLIGENCE-BRIEF-2026-07-24.md",
+      "source_status": "??",
+      "sha256": "7d1429e481bba05c80110bd3a7e4e0d01ccf470690a9d4b6ea0bd7fea4ef942b",
+      "bytes": 16695,
+      "category": "historical_intelligence",
+      "disposition": "SUPERSEDED_NOT_IMPORTED",
+      "target": "intelligence/2026-07-29/intelligence-brief.md",
+      "reason": "later primary-source-corrected intelligence brief is canonical"
+    },
+    {
+      "path": "DBA-INTELLIGENCE-BRIEF-2026-07-25.md",
+      "source_status": "??",
+      "sha256": "a129d479044be67a3fdc11f44f5d1b52c988db88ee6b5ca70f10b3ef00381b20",
+      "bytes": 12345,
+      "category": "historical_intelligence",
+      "disposition": "SUPERSEDED_NOT_IMPORTED",
+      "target": "intelligence/2026-07-29/intelligence-brief.md",
+      "reason": "later primary-source-corrected intelligence brief is canonical"
+    },
+    {
+      "path": "DBA-INTELLIGENCE-BRIEF-2026-07-26.md",
+      "source_status": "??",
+      "sha256": "474d57ef926fd377c313cbad5b48759b1ca5f029afc5bf4a14836a5fa3cbf661",
+      "bytes": 9495,
+      "category": "historical_intelligence",
+      "disposition": "SUPERSEDED_NOT_IMPORTED",
+      "target": "intelligence/2026-07-29/intelligence-brief.md",
+      "reason": "later primary-source-corrected intelligence brief is canonical"
+    },
+    {
+      "path": "DBA-INTELLIGENCE-BRIEF-2026-07-27.md",
+      "source_status": "??",
+      "sha256": "28762ac6e4dd130c6053707b5ec44235ffec0ff829cab0f818daedf776a85df3",
+      "bytes": 6747,
+      "category": "historical_intelligence",
+      "disposition": "SUPERSEDED_NOT_IMPORTED",
+      "target": "intelligence/2026-07-29/intelligence-brief.md",
+      "reason": "later primary-source-corrected intelligence brief is canonical"
+    },
+    {
+      "path": "DEB-001-ALPHA-EXECUTION-DECISION-v0.1.md",
+      "source_status": "??",
+      "sha256": "87039d6aea91851d867db748264a49099f9263dcf5d1d24e41521462c42e84b9",
+      "bytes": 2315,
+      "category": "legacy_research_design",
+      "disposition": "RETAINED_IN_LEGACY_NOT_IMPORTED",
+      "target": "TITMAS/research/agent-native-ecology-box-001/README.md",
+      "reason": "pre-execution or theory artifacts lack current canonical lineage; current research archive preserves bounded conclusions"
+    },
+    {
+      "path": "DEB-001-ALPHA-EXECUTION-PLAN-v0.1.md",
+      "source_status": "??",
+      "sha256": "43b4f0cec4999d0cacfc2f54f81b55fb2e332164eae5a2918bac83581dc2898a",
+      "bytes": 4531,
+      "category": "legacy_research_design",
+      "disposition": "RETAINED_IN_LEGACY_NOT_IMPORTED",
+      "target": "TITMAS/research/agent-native-ecology-box-001/README.md",
+      "reason": "pre-execution or theory artifacts lack current canonical lineage; current research archive preserves bounded conclusions"
+    },
+    {
+      "path": "DEB-001-ALPHA-EXECUTION-READINESS-REMEDIATION-v0.1.md",
+      "source_status": "??",
+      "sha256": "cfe9d07ab6f47ba62e4c8762ba4953429b810c51453476d23685c704c5452adf",
+      "bytes": 3679,
+      "category": "legacy_research_design",
+      "disposition": "RETAINED_IN_LEGACY_NOT_IMPORTED",
+      "target": "TITMAS/research/agent-native-ecology-box-001/README.md",
+      "reason": "pre-execution or theory artifacts lack current canonical lineage; current research archive preserves bounded conclusions"
+    },
+    {
+      "path": "DEB-001-ALPHA-EXECUTION-READINESS-REVIEW-v0.1.md",
+      "source_status": "??",
+      "sha256": "87bfa3d200dd8de980bbf7209122d0a563eccfd83ead2310d3ba7d23e0a3c89e",
+      "bytes": 6315,
+      "category": "legacy_research_design",
+      "disposition": "RETAINED_IN_LEGACY_NOT_IMPORTED",
+      "target": "TITMAS/research/agent-native-ecology-box-001/README.md",
+      "reason": "pre-execution or theory artifacts lack current canonical lineage; current research archive preserves bounded conclusions"
+    },
+    {
+      "path": "DEB-001-ALPHA-REMEDIATION-STATUS-v0.1.md",
+      "source_status": "??",
+      "sha256": "971531f7f7fb7a027adf02e5351e70289e80eb75675ab5c8a4e0df4665f67a58",
+      "bytes": 3525,
+      "category": "legacy_research_design",
+      "disposition": "RETAINED_IN_LEGACY_NOT_IMPORTED",
+      "target": "TITMAS/research/agent-native-ecology-box-001/README.md",
+      "reason": "pre-execution or theory artifacts lack current canonical lineage; current research archive preserves bounded conclusions"
+    },
+    {
+      "path": "DEB-001-CLOSURE-PLAN-v0.1.md",
+      "source_status": "??",
+      "sha256": "2ff789520f0391497e2effa5f71ad7fb1c780fbd00a8e549551acdbffd3569ac",
+      "bytes": 5405,
+      "category": "legacy_research_design",
+      "disposition": "RETAINED_IN_LEGACY_NOT_IMPORTED",
+      "target": "TITMAS/research/agent-native-ecology-box-001/README.md",
+      "reason": "pre-execution or theory artifacts lack current canonical lineage; current research archive preserves bounded conclusions"
+    },
+    {
+      "path": "DEB-001-CLOSURE-STATUS-UPDATE-v0.1.md",
+      "source_status": "??",
+      "sha256": "47a854401c292416c74544be62caafd0716fa637eba4c9f3cab194252366e0fc",
+      "bytes": 3704,
+      "category": "legacy_research_design",
+      "disposition": "RETAINED_IN_LEGACY_NOT_IMPORTED",
+      "target": "TITMAS/research/agent-native-ecology-box-001/README.md",
+      "reason": "pre-execution or theory artifacts lack current canonical lineage; current research archive preserves bounded conclusions"
+    },
+    {
+      "path": "DEB-001-CONFIGURATION-SNAPSHOT-v0.1.md",
+      "source_status": "??",
+      "sha256": "55a1f9760e84571b68a5cb7dad33c6e439afdff928b3a732f67a7a951f71de56",
+      "bytes": 3227,
+      "category": "legacy_research_design",
+      "disposition": "RETAINED_IN_LEGACY_NOT_IMPORTED",
+      "target": "TITMAS/research/agent-native-ecology-box-001/README.md",
+      "reason": "pre-execution or theory artifacts lack current canonical lineage; current research archive preserves bounded conclusions"
+    },
+    {
+      "path": "DEB-001-EXPERIMENTAL-ALIGNMENT-CHECKLIST-v0.1.md",
+      "source_status": "??",
+      "sha256": "ee90b7a48f9bbcdc75aea3c72140243cc392b65f0935406fae88c29156611702",
+      "bytes": 5836,
+      "category": "legacy_research_design",
+      "disposition": "RETAINED_IN_LEGACY_NOT_IMPORTED",
+      "target": "TITMAS/research/agent-native-ecology-box-001/README.md",
+      "reason": "pre-execution or theory artifacts lack current canonical lineage; current research archive preserves bounded conclusions"
+    },
+    {
+      "path": "DEB-001-FROZEN-CONFIGURATION-REVIEW-v0.1.md",
+      "source_status": "??",
+      "sha256": "50f53740e88d3759e2c4329aa6b3e1d781c3db3de31d765741d6f77985dc35d0",
+      "bytes": 3258,
+      "category": "legacy_research_design",
+      "disposition": "RETAINED_IN_LEGACY_NOT_IMPORTED",
+      "target": "TITMAS/research/agent-native-ecology-box-001/README.md",
+      "reason": "pre-execution or theory artifacts lack current canonical lineage; current research archive preserves bounded conclusions"
+    },
+    {
+      "path": "DEB-001-FROZEN-CONFIGURATION-SET-v0.1.md",
+      "source_status": "??",
+      "sha256": "35fa98a6d6603e83dbf49595388e250de13d031209b3381478fcaa8e70e77aeb",
+      "bytes": 2932,
+      "category": "legacy_research_design",
+      "disposition": "RETAINED_IN_LEGACY_NOT_IMPORTED",
+      "target": "TITMAS/research/agent-native-ecology-box-001/README.md",
+      "reason": "pre-execution or theory artifacts lack current canonical lineage; current research archive preserves bounded conclusions"
+    },
+    {
+      "path": "DEB-001-HASH-CLOSURE-CHECKLIST-v0.1.md",
+      "source_status": "??",
+      "sha256": "9c7d3628e5c12bab2d7f1a735ae877f2934a5c3c2c7a7cb3343473879ac7177d",
+      "bytes": 3452,
+      "category": "legacy_research_design",
+      "disposition": "RETAINED_IN_LEGACY_NOT_IMPORTED",
+      "target": "TITMAS/research/agent-native-ecology-box-001/README.md",
+      "reason": "pre-execution or theory artifacts lack current canonical lineage; current research archive preserves bounded conclusions"
+    },
+    {
+      "path": "DEB-001-HASH-CLOSURE-STATE-v0.1.md",
+      "source_status": "??",
+      "sha256": "93e7cdfe07839bf707c2bedde195d62369ba7e10b9a9c55ebb9aba49453e5f83",
+      "bytes": 2742,
+      "category": "legacy_research_design",
+      "disposition": "RETAINED_IN_LEGACY_NOT_IMPORTED",
+      "target": "TITMAS/research/agent-native-ecology-box-001/README.md",
+      "reason": "pre-execution or theory artifacts lack current canonical lineage; current research archive preserves bounded conclusions"
+    },
+    {
+      "path": "DEB-001-HASH-MANIFEST-v0.1.md",
+      "source_status": "??",
+      "sha256": "a1894f15634a696b9a9f78ae323e0dd02a4836e176ae4dfee91f06f57b05d04a",
+      "bytes": 2903,
+      "category": "legacy_research_design",
+      "disposition": "RETAINED_IN_LEGACY_NOT_IMPORTED",
+      "target": "TITMAS/research/agent-native-ecology-box-001/README.md",
+      "reason": "pre-execution or theory artifacts lack current canonical lineage; current research archive preserves bounded conclusions"
+    },
+    {
+      "path": "DEB-001-LITE-ALPHA-DECISION-ONE-PAGER-v0.1.md",
+      "source_status": "??",
+      "sha256": "f9dd3614727ac113cfe606462ed1801cf29ce4e99e02c2a6bcea1666e6c11e84",
+      "bytes": 1678,
+      "category": "legacy_research_design",
+      "disposition": "RETAINED_IN_LEGACY_NOT_IMPORTED",
+      "target": "TITMAS/research/agent-native-ecology-box-001/README.md",
+      "reason": "pre-execution or theory artifacts lack current canonical lineage; current research archive preserves bounded conclusions"
+    },
+    {
+      "path": "DEB-001-LITE-DESIGN-v0.1.md",
+      "source_status": "??",
+      "sha256": "d270b92d90b1a0f383e98bfdb9b8c77d73017edfd5362599cfa4e759e5e36955",
+      "bytes": 4958,
+      "category": "legacy_research_design",
+      "disposition": "RETAINED_IN_LEGACY_NOT_IMPORTED",
+      "target": "TITMAS/research/agent-native-ecology-box-001/README.md",
+      "reason": "pre-execution or theory artifacts lack current canonical lineage; current research archive preserves bounded conclusions"
+    },
+    {
+      "path": "DEB-001-LITE-DRY-RUN-CHECKLIST-RESULTS-v0.1.md",
+      "source_status": "??",
+      "sha256": "4c0b74e6c157fc7105c133de00cc2cb1d1c920aea102c57d284559c3a7f92545",
+      "bytes": 1122,
+      "category": "legacy_research_design",
+      "disposition": "RETAINED_IN_LEGACY_NOT_IMPORTED",
+      "target": "TITMAS/research/agent-native-ecology-box-001/README.md",
+      "reason": "pre-execution or theory artifacts lack current canonical lineage; current research archive preserves bounded conclusions"
+    },
+    {
+      "path": "DEB-001-LITE-DRY-RUN-CHECKLIST-v0.1.md",
+      "source_status": "??",
+      "sha256": "65de034950bb92849b123bd200ebf2ad4318bb6aebab09a02e3d00fb87327988",
+      "bytes": 3774,
+      "category": "legacy_research_design",
+      "disposition": "RETAINED_IN_LEGACY_NOT_IMPORTED",
+      "target": "TITMAS/research/agent-native-ecology-box-001/README.md",
+      "reason": "pre-execution or theory artifacts lack current canonical lineage; current research archive preserves bounded conclusions"
+    },
+    {
+      "path": "DEB-001-LITE-DRY-RUN-EVENT-RECORD-v0.1.md",
+      "source_status": "??",
+      "sha256": "8d3da80580fa3c6ff4618031c25f8ba3831dba34abc7068cfc7967d2f2e68aca",
+      "bytes": 1597,
+      "category": "legacy_research_design",
+      "disposition": "RETAINED_IN_LEGACY_NOT_IMPORTED",
+      "target": "TITMAS/research/agent-native-ecology-box-001/README.md",
+      "reason": "pre-execution or theory artifacts lack current canonical lineage; current research archive preserves bounded conclusions"
+    },
+    {
+      "path": "DEB-001-LITE-DRY-RUN-INSTANCE-v0.1.md",
+      "source_status": "??",
+      "sha256": "1136a4bfd641bbdbcbc7931303f0767d036388b7717c32f36c22c72541de1de0",
+      "bytes": 1967,
+      "category": "legacy_research_design",
+      "disposition": "RETAINED_IN_LEGACY_NOT_IMPORTED",
+      "target": "TITMAS/research/agent-native-ecology-box-001/README.md",
+      "reason": "pre-execution or theory artifacts lack current canonical lineage; current research archive preserves bounded conclusions"
+    },
+    {
+      "path": "DEB-001-LITE-DRY-RUN-PLAN-v0.1.md",
+      "source_status": "??",
+      "sha256": "d2f6b73efd33b66e3cd8bc135a32d3a6ce7b063d2f1c4728fe90ff7420ab1ab5",
+      "bytes": 2473,
+      "category": "legacy_research_design",
+      "disposition": "RETAINED_IN_LEGACY_NOT_IMPORTED",
+      "target": "TITMAS/research/agent-native-ecology-box-001/README.md",
+      "reason": "pre-execution or theory artifacts lack current canonical lineage; current research archive preserves bounded conclusions"
+    },
+    {
+      "path": "DEB-001-LITE-DRY-RUN-RESULT-REPORT-v0.1.md",
+      "source_status": "??",
+      "sha256": "f5058930c07d6736961be1506d907343b19ef615021966201f4a2cc980efba00",
+      "bytes": 1669,
+      "category": "legacy_research_design",
+      "disposition": "RETAINED_IN_LEGACY_NOT_IMPORTED",
+      "target": "TITMAS/research/agent-native-ecology-box-001/README.md",
+      "reason": "pre-execution or theory artifacts lack current canonical lineage; current research archive preserves bounded conclusions"
+    },
+    {
+      "path": "DEB-001-LITE-EXECUTION-PROTOCOL-v0.1.md",
+      "source_status": "??",
+      "sha256": "a37e403c8cbe90c5f715a31f765ae256c182bf444d0240298243b40606b31034",
+      "bytes": 4986,
+      "category": "legacy_research_design",
+      "disposition": "RETAINED_IN_LEGACY_NOT_IMPORTED",
+      "target": "TITMAS/research/agent-native-ecology-box-001/README.md",
+      "reason": "pre-execution or theory artifacts lack current canonical lineage; current research archive preserves bounded conclusions"
+    },
+    {
+      "path": "DEB-001-LITE-MINIMAL-RESULT-v0.1.md",
+      "source_status": "??",
+      "sha256": "3b1e22701e898ee2b2cf5756804561eeb4121343723bdb4f5428fc19ed4e63b0",
+      "bytes": 2607,
+      "category": "legacy_research_design",
+      "disposition": "RETAINED_IN_LEGACY_NOT_IMPORTED",
+      "target": "TITMAS/research/agent-native-ecology-box-001/README.md",
+      "reason": "pre-execution or theory artifacts lack current canonical lineage; current research archive preserves bounded conclusions"
+    },
+    {
+      "path": "DEB-001-LITE-RUN-CONFIG-v0.1.md",
+      "source_status": "??",
+      "sha256": "c5476e8d96ac6bb14696de27d7d712eea26d142b18f89189bf8f29eb312601d0",
+      "bytes": 3251,
+      "category": "legacy_research_design",
+      "disposition": "RETAINED_IN_LEGACY_NOT_IMPORTED",
+      "target": "TITMAS/research/agent-native-ecology-box-001/README.md",
+      "reason": "pre-execution or theory artifacts lack current canonical lineage; current research archive preserves bounded conclusions"
+    },
+    {
+      "path": "DEB-001-PILOT-PACKAGE-v0.1.md",
+      "source_status": "??",
+      "sha256": "7e6d85fb08cba0371655dbc85737fe1395f0df3beb08c78976be6241d6fbeb66",
+      "bytes": 5810,
+      "category": "legacy_research_design",
+      "disposition": "RETAINED_IN_LEGACY_NOT_IMPORTED",
+      "target": "TITMAS/research/agent-native-ecology-box-001/README.md",
+      "reason": "pre-execution or theory artifacts lack current canonical lineage; current research archive preserves bounded conclusions"
+    },
+    {
+      "path": "DEB-001-PREREGISTRATION-v0.1.md",
+      "source_status": "??",
+      "sha256": "731130f3bdd5da1701d2ee251f9e1e1238f8eab34f02cb089572fac1268bfed2",
+      "bytes": 5808,
+      "category": "legacy_research_design",
+      "disposition": "RETAINED_IN_LEGACY_NOT_IMPORTED",
+      "target": "TITMAS/research/agent-native-ecology-box-001/README.md",
+      "reason": "pre-execution or theory artifacts lack current canonical lineage; current research archive preserves bounded conclusions"
+    },
+    {
+      "path": "DEB-001-STRATEGY-BASELINE-v0.1.md",
+      "source_status": "??",
+      "sha256": "24e186fc097a79bd04f00bbb9ff732c617bce5f9c1939fa089dd59407dbb27f3",
+      "bytes": 8416,
+      "category": "legacy_research_design",
+      "disposition": "RETAINED_IN_LEGACY_NOT_IMPORTED",
+      "target": "TITMAS/research/agent-native-ecology-box-001/README.md",
+      "reason": "pre-execution or theory artifacts lack current canonical lineage; current research archive preserves bounded conclusions"
+    },
+    {
+      "path": "DEB-EXPERIMENT-SUBMISSION-WORKFLOW-v0.1.md",
+      "source_status": "??",
+      "sha256": "89388823f6af09911cb7dcedc612e73339e3d18fa4668110577c8136cbca45ba",
+      "bytes": 5190,
+      "category": "legacy_research_design",
+      "disposition": "RETAINED_IN_LEGACY_NOT_IMPORTED",
+      "target": "TITMAS/research/agent-native-ecology-box-001/README.md",
+      "reason": "pre-execution or theory artifacts lack current canonical lineage; current research archive preserves bounded conclusions"
+    },
+    {
+      "path": "DEB-READINESS-STATUS-MATRIX-v0.1.yaml.md",
+      "source_status": "??",
+      "sha256": "0e9cff03926425736a00ee280e0f21f96714fb1ce02ad65a7ee45dacb452a644",
+      "bytes": 7301,
+      "category": "legacy_research_design",
+      "disposition": "RETAINED_IN_LEGACY_NOT_IMPORTED",
+      "target": "TITMAS/research/agent-native-ecology-box-001/README.md",
+      "reason": "pre-execution or theory artifacts lack current canonical lineage; current research archive preserves bounded conclusions"
+    },
+    {
+      "path": "Digital-Survival-Theory-Foundation-v0.1.md",
+      "source_status": "??",
+      "sha256": "ac6d61822109e56b88b622b6781a0c89921b626f3eee3ecf4c72fc89aa7089ba",
+      "bytes": 13863,
+      "category": "legacy_research_design",
+      "disposition": "RETAINED_IN_LEGACY_NOT_IMPORTED",
+      "target": "TITMAS/research/agent-native-ecology-box-001/README.md",
+      "reason": "pre-execution or theory artifacts lack current canonical lineage; current research archive preserves bounded conclusions"
+    },
+    {
+      "path": "architecture/ADR-033-attention-principle-for-dynamic-coordination.md",
+      "source_status": "??",
+      "sha256": "7f38ccbb2a2e02f3701d350f1991299a5ebc36517cfe7219bbc34fdb474aedbb",
+      "bytes": 8370,
+      "category": "constitutional_decision",
+      "disposition": "PROMOTED_CURRENT",
+      "target": "architecture/ADR-033-attention-principle-for-dynamic-coordination.md",
+      "reason": "accepted bounded principle remains consistent with current authority boundaries"
+    },
+    {
+      "path": "architecture/ADR-DIGITAL-BIOSPHERE-LABORATORY-CHARTER-002.md",
+      "source_status": "??",
+      "sha256": "66f0dab3d50921493d30cd78001b0bf884f5c4bd71108242c530dd7a9a63eb3a",
+      "bytes": 6964,
+      "category": "legacy_research_design",
+      "disposition": "RETAINED_IN_LEGACY_NOT_IMPORTED",
+      "target": "TITMAS/research/agent-native-ecology-box-001/README.md",
+      "reason": "pre-execution or theory artifacts lack current canonical lineage; current research archive preserves bounded conclusions"
+    },
+    {
+      "path": "architecture/ADR-DIGITAL-SURVIVAL-DYNAMICS-001.md",
+      "source_status": "??",
+      "sha256": "626fc15749f6ff7cd3df164e529c4b39762a26502ec6cb4cb243b5c3ea3fc019",
+      "bytes": 7140,
+      "category": "legacy_research_design",
+      "disposition": "RETAINED_IN_LEGACY_NOT_IMPORTED",
+      "target": "TITMAS/research/agent-native-ecology-box-001/README.md",
+      "reason": "pre-execution or theory artifacts lack current canonical lineage; current research archive preserves bounded conclusions"
+    },
+    {
+      "path": "architecture/ADR-DIGITAL-SURVIVAL-DYNAMICS-CONSISTENCY-MAP-001.md",
+      "source_status": "??",
+      "sha256": "252da364f801b7d116ed8ff1477e90b67356288a63bc0ea07bbb785858f6109c",
+      "bytes": 6215,
+      "category": "legacy_research_design",
+      "disposition": "RETAINED_IN_LEGACY_NOT_IMPORTED",
+      "target": "TITMAS/research/agent-native-ecology-box-001/README.md",
+      "reason": "pre-execution or theory artifacts lack current canonical lineage; current research archive preserves bounded conclusions"
+    },
+    {
+      "path": "architecture/ADR-DIGITAL-SURVIVAL-DYNAMICS-THEORY-001.md",
+      "source_status": "??",
+      "sha256": "581683f9ad29f629029c86eb31d3c9494fc3d1e2a7538300b7f34fdae5c2d85a",
+      "bytes": 9458,
+      "category": "legacy_research_design",
+      "disposition": "RETAINED_IN_LEGACY_NOT_IMPORTED",
+      "target": "TITMAS/research/agent-native-ecology-box-001/README.md",
+      "reason": "pre-execution or theory artifacts lack current canonical lineage; current research archive preserves bounded conclusions"
+    },
+    {
+      "path": "architecture/ADR-DIGITAL-SURVIVAL-THEORY-FREEZE-001.md",
+      "source_status": "??",
+      "sha256": "334535f377aa8623535976b8a9b3f8d0ee4891f7d4a3e5bf88258595a4a71bf5",
+      "bytes": 3974,
+      "category": "legacy_research_design",
+      "disposition": "RETAINED_IN_LEGACY_NOT_IMPORTED",
+      "target": "TITMAS/research/agent-native-ecology-box-001/README.md",
+      "reason": "pre-execution or theory artifacts lack current canonical lineage; current research archive preserves bounded conclusions"
+    },
+    {
+      "path": "architecture/ADR-TITMAS-SELECTION-DYNAMICS-FREEZE-001.md",
+      "source_status": "??",
+      "sha256": "12da8fc7c11c49fbb136ec0e68090f04c1ee31b3ec5fd12b997d7d9e3bf3034e",
+      "bytes": 6775,
+      "category": "legacy_research_design",
+      "disposition": "RETAINED_IN_LEGACY_NOT_IMPORTED",
+      "target": "TITMAS/research/agent-native-ecology-box-001/README.md",
+      "reason": "pre-execution or theory artifacts lack current canonical lineage; current research archive preserves bounded conclusions"
+    },
+    {
+      "path": "architecture/ATTENTION_PRINCIPLE_REVIEW_v0.1.md",
+      "source_status": "??",
+      "sha256": "0c1e7db34dbdacd28aef0b2c2a56b4361acf4d43bb565b435a8ef92e7260d4bd",
+      "bytes": 30047,
+      "category": "legacy_architecture_candidate",
+      "disposition": "RETAINED_IN_LEGACY_NOT_IMPORTED",
+      "target": null,
+      "reason": "candidate or review material requires a separate current-source decision before canonical adoption"
+    },
+    {
+      "path": "architecture/Digital_Cell_Specification_v0.1.md",
+      "source_status": "??",
+      "sha256": "56655cd625f313e7863166b070615a1b325017cea8c35a91126ba46a531357fc",
+      "bytes": 13831,
+      "category": "legacy_architecture_candidate",
+      "disposition": "RETAINED_IN_LEGACY_NOT_IMPORTED",
+      "target": null,
+      "reason": "candidate or review material requires a separate current-source decision before canonical adoption"
+    },
+    {
+      "path": "architecture/Digital_Immune_Response_Protocol_v0.1.md",
+      "source_status": "??",
+      "sha256": "2f0586f5148f0a61f1c2e72002f202c6fad63041206aeb84f025dfe3487d1b63",
+      "bytes": 11589,
+      "category": "legacy_architecture_candidate",
+      "disposition": "RETAINED_IN_LEGACY_NOT_IMPORTED",
+      "target": null,
+      "reason": "candidate or review material requires a separate current-source decision before canonical adoption"
+    },
+    {
+      "path": "architecture/SPEC-DIGITAL-ECOLOGY-BOX-EXPERIMENT-v0.1.md",
+      "source_status": "??",
+      "sha256": "796829d1fdbd18450491675a4792d5ad7c921749a7c24634e2da1f5727cae904",
+      "bytes": 10768,
+      "category": "legacy_research_design",
+      "disposition": "RETAINED_IN_LEGACY_NOT_IMPORTED",
+      "target": "TITMAS/research/agent-native-ecology-box-001/README.md",
+      "reason": "pre-execution or theory artifacts lack current canonical lineage; current research archive preserves bounded conclusions"
+    },
+    {
+      "path": "architecture/SPEC-DIGITAL-ECOLOGY-BOX-GOVERNANCE-v0.1.md",
+      "source_status": "??",
+      "sha256": "8e736a4ce139f03a84071133a046215c4b81760c17bb2adaaff3c4a122ca5171",
+      "bytes": 4875,
+      "category": "legacy_research_design",
+      "disposition": "RETAINED_IN_LEGACY_NOT_IMPORTED",
+      "target": "TITMAS/research/agent-native-ecology-box-001/README.md",
+      "reason": "pre-execution or theory artifacts lack current canonical lineage; current research archive preserves bounded conclusions"
+    },
+    {
+      "path": "architecture/SPEC-DIGITAL-ECOLOGY-BOX-RESULT-v0.1.md",
+      "source_status": "??",
+      "sha256": "2792e778cf6c9ba239df98dd3fca36adbffcc2348395c447574a4a8e6f9d4848",
+      "bytes": 8972,
+      "category": "legacy_research_design",
+      "disposition": "RETAINED_IN_LEGACY_NOT_IMPORTED",
+      "target": "TITMAS/research/agent-native-ecology-box-001/README.md",
+      "reason": "pre-execution or theory artifacts lack current canonical lineage; current research archive preserves bounded conclusions"
+    },
+    {
+      "path": "architecture/SPEC-DIGITAL-ECOLOGY-BOX-v0.2.md",
+      "source_status": "??",
+      "sha256": "b723d10c347eb3c5551d7fa1d5963784bb693ad06e5509ae4262944fc6cb034b",
+      "bytes": 7778,
+      "category": "legacy_research_design",
+      "disposition": "RETAINED_IN_LEGACY_NOT_IMPORTED",
+      "target": "TITMAS/research/agent-native-ecology-box-001/README.md",
+      "reason": "pre-execution or theory artifacts lack current canonical lineage; current research archive preserves bounded conclusions"
+    },
+    {
+      "path": "architecture/TITMAS_ARCHITECTURE_DECISION_RECORD_v0.1.md",
+      "source_status": "??",
+      "sha256": "29758017d5928b1673ba9633bbf219eb3930fd1ed9abd30c7351a61a96d70d78",
+      "bytes": 26552,
+      "category": "legacy_architecture_candidate",
+      "disposition": "RETAINED_IN_LEGACY_NOT_IMPORTED",
+      "target": null,
+      "reason": "candidate or review material requires a separate current-source decision before canonical adoption"
+    },
+    {
+      "path": "architecture/TITMAS_CONSTITUTION_REVISION_PROPOSAL_v1.1.md",
+      "source_status": "??",
+      "sha256": "dcc98d803e9e46f85ad5df69a6780072dedfe07acd7f7f13c546d9ba7629976e",
+      "bytes": 30549,
+      "category": "legacy_architecture_candidate",
+      "disposition": "RETAINED_IN_LEGACY_NOT_IMPORTED",
+      "target": null,
+      "reason": "candidate or review material requires a separate current-source decision before canonical adoption"
+    },
+    {
+      "path": "architecture/TITMAS_GOVERNANCE_CONSISTENCY_REVIEW_v0.1.md",
+      "source_status": "??",
+      "sha256": "0ff1a815ea8d0b32ae9e66546b97f3dd72be34f557c1cd16bbbec52bc1e35c29",
+      "bytes": 28328,
+      "category": "legacy_architecture_candidate",
+      "disposition": "RETAINED_IN_LEGACY_NOT_IMPORTED",
+      "target": null,
+      "reason": "candidate or review material requires a separate current-source decision before canonical adoption"
+    },
+    {
+      "path": "architecture/TITMAS_INTERFACE_BOUNDARY_MAP_v0.1.md",
+      "source_status": "??",
+      "sha256": "241899a8a75b38471c827db8321e64f91dc2def04880f41dc9ddbdfdafe751be",
+      "bytes": 38174,
+      "category": "legacy_architecture_candidate",
+      "disposition": "RETAINED_IN_LEGACY_NOT_IMPORTED",
+      "target": null,
+      "reason": "candidate or review material requires a separate current-source decision before canonical adoption"
+    },
+    {
+      "path": "architecture/TITMAS_OPEN_SOURCE_LEARNING_REVIEW_v0.1.md",
+      "source_status": "??",
+      "sha256": "4de6095ecb3ad7f3f99dbdc8b45a25f5f9e4810acd40fda86d9ba4552da59012",
+      "bytes": 44934,
+      "category": "legacy_architecture_candidate",
+      "disposition": "RETAINED_IN_LEGACY_NOT_IMPORTED",
+      "target": null,
+      "reason": "candidate or review material requires a separate current-source decision before canonical adoption"
+    },
+    {
+      "path": "architecture/TITMAS_Object_Model_v0.1.md",
+      "source_status": "??",
+      "sha256": "612b3b9b344ee2a4e707866e5b7adfe9c67b060e6540a670f952be755f623205",
+      "bytes": 13219,
+      "category": "legacy_architecture_candidate",
+      "disposition": "RETAINED_IN_LEGACY_NOT_IMPORTED",
+      "target": null,
+      "reason": "candidate or review material requires a separate current-source decision before canonical adoption"
+    },
+    {
+      "path": "architecture/TITMAS_PROJECT_CONSTITUTION_IMMUNE_ALIGNMENT_REVIEW_v0.1.md",
+      "source_status": "??",
+      "sha256": "400c4bec9ac409b52b28f05ef7493bf5522b125dfacea8eb48ba1ca24cd004ac",
+      "bytes": 26607,
+      "category": "legacy_architecture_candidate",
+      "disposition": "RETAINED_IN_LEGACY_NOT_IMPORTED",
+      "target": null,
+      "reason": "candidate or review material requires a separate current-source decision before canonical adoption"
+    },
+    {
+      "path": "architecture/TITMAS_SELF_GOVERNANCE_COHORT_EVIDENCE_RECONCILIATION_v0.1.md",
+      "source_status": "??",
+      "sha256": "5661ecc6438c6f2cca6f9db02a2496f8cf2f8d9286a8a6c9812830067ff09936",
+      "bytes": 39441,
+      "category": "legacy_architecture_candidate",
+      "disposition": "RETAINED_IN_LEGACY_NOT_IMPORTED",
+      "target": null,
+      "reason": "candidate or review material requires a separate current-source decision before canonical adoption"
+    },
+    {
+      "path": "architecture/TITMAS_SELF_GOVERNANCE_COHORT_PROPOSAL_v0.1.md",
+      "source_status": "??",
+      "sha256": "88edd47590c2550787a6aba822d364ebd6418cb13821f87da7f155b2fab30ed7",
+      "bytes": 38940,
+      "category": "legacy_architecture_candidate",
+      "disposition": "RETAINED_IN_LEGACY_NOT_IMPORTED",
+      "target": null,
+      "reason": "candidate or review material requires a separate current-source decision before canonical adoption"
+    },
+    {
+      "path": "architecture/TITMAS_SELF_GOVERNANCE_EXPERIMENT_DESIGN_v0.1.md",
+      "source_status": "??",
+      "sha256": "394876046ce663390ec7956d6a4aff1daeba868fa79730e20adc3f2303cfed3d",
+      "bytes": 32205,
+      "category": "legacy_architecture_candidate",
+      "disposition": "RETAINED_IN_LEGACY_NOT_IMPORTED",
+      "target": null,
+      "reason": "candidate or review material requires a separate current-source decision before canonical adoption"
+    },
+    {
+      "path": "architecture/TITMAS_SELF_GOVERNANCE_EXPERIMENT_PROTOCOL_v0.1.md",
+      "source_status": "??",
+      "sha256": "2704cd172f0f23860b93ca0c6dfa0b1b421510bc7e2b143c55137e594aae046f",
+      "bytes": 37879,
+      "category": "legacy_architecture_candidate",
+      "disposition": "RETAINED_IN_LEGACY_NOT_IMPORTED",
+      "target": null,
+      "reason": "candidate or review material requires a separate current-source decision before canonical adoption"
+    },
+    {
+      "path": "architecture/TITMAS_SELF_GOVERNANCE_PRE_EXECUTION_REVIEW_v0.1.md",
+      "source_status": "??",
+      "sha256": "a96c7c82d585e069eab87419adfbad40c97b4b2115e17f949bb52e48d2ca9c08",
+      "bytes": 23695,
+      "category": "legacy_architecture_candidate",
+      "disposition": "RETAINED_IN_LEGACY_NOT_IMPORTED",
+      "target": null,
+      "reason": "candidate or review material requires a separate current-source decision before canonical adoption"
+    },
+    {
+      "path": "architecture/TITMAS_STRATEGIC_GUARDRAILS_REVIEW_v0.1.md",
+      "source_status": "??",
+      "sha256": "2d7304d751942b15bb400465cd0a39cfe26f1d0a4811eaf0c9dbb6ba8641bafc",
+      "bytes": 29446,
+      "category": "legacy_architecture_candidate",
+      "disposition": "RETAINED_IN_LEGACY_NOT_IMPORTED",
+      "target": null,
+      "reason": "candidate or review material requires a separate current-source decision before canonical adoption"
+    },
+    {
+      "path": "architecture/capability-provenance-reassessment-profile-v0.1.md",
+      "source_status": "??",
+      "sha256": "4a8ac2c0c7baa86b60dd108e36b240cefc1decbed7383ee31648246223746679",
+      "bytes": 9645,
+      "category": "historical_intelligence",
+      "disposition": "SUPERSEDED_NOT_IMPORTED",
+      "target": "intelligence/2026-07-29/capability-provenance-reassessment-profile.md",
+      "reason": "later primary-source-corrected profile is canonical"
+    },
+    {
+      "path": "architecture/evaluation-operator-control-and-third-party-claim-evidence-matrix-v0.1.md",
+      "source_status": "??",
+      "sha256": "2a4743fd85bf2b9d0445f54309e99d7e87a0dfa535019ffee8da90d65092f30c",
+      "bytes": 10154,
+      "category": "legacy_architecture_candidate",
+      "disposition": "RETAINED_IN_LEGACY_NOT_IMPORTED",
+      "target": null,
+      "reason": "candidate or review material requires a separate current-source decision before canonical adoption"
+    },
+    {
+      "path": "architecture/mcp-2026-07-28-trust-impact-matrix-v0.1.md",
+      "source_status": "??",
+      "sha256": "1d8e0ab966493520ad1b6f9a71478425dbda0f583d286f0102fdb5d5a9d91586",
+      "bytes": 7099,
+      "category": "historical_intelligence",
+      "disposition": "SUPERSEDED_NOT_IMPORTED",
+      "target": "intelligence/2026-07-29/intelligence-brief.md",
+      "reason": "later brief corrects MCP release status and keeps adoption false"
+    },
+    {
+      "path": "architecture/monitor-evidence-profile-and-gap-matrix-v0.1.md",
+      "source_status": "??",
+      "sha256": "a1a75d9d34160273ff3db96f8a717303907f9686c312c744b6a223532a928f07",
+      "bytes": 5298,
+      "category": "legacy_architecture_candidate",
+      "disposition": "RETAINED_IN_LEGACY_NOT_IMPORTED",
+      "target": null,
+      "reason": "candidate or review material requires a separate current-source decision before canonical adoption"
+    },
+    {
+      "path": "architecture/titmas-architecture-charter-v0.2.md",
+      "source_status": "??",
+      "sha256": "0a175a76b8c4d572025e7baae8ecf05abaf6f864906b7cd79c1d60cba83bc077",
+      "bytes": 18600,
+      "category": "superseded_charter_candidate",
+      "disposition": "NOT_IMPORTED",
+      "target": "architecture/titmas-architecture-charter-v1.0.md",
+      "reason": "current constitutional baseline explicitly excludes the untracked v0.2 candidate"
+    },
+    {
+      "path": "architecture/titmas-digital-immune-constitution-v1.0.md",
+      "source_status": "??",
+      "sha256": "24affeae6e2526eecc5b616ae4a7a108c737671d24efe385b3cb517b56276a45",
+      "bytes": 14652,
+      "category": "explanatory_constitution_candidate",
+      "disposition": "NOT_IMPORTED",
+      "target": "architecture/titmas-architecture-charter-v1.0.md",
+      "reason": "digital immune remains an explanatory layer and must not create a second core constitution"
+    },
+    {
+      "path": "architecture/ADR-032-compositional-scale-over-unbounded-center.md",
+      "source_status": "L0",
+      "sha256": "24c1fd63b08b849e4f244a96ec2708c4a0e252af8c18b3199a0ff71cba457365",
+      "bytes": 4840,
+      "category": "constitutional_decision",
+      "disposition": "PROMOTED_CURRENT",
+      "target": "architecture/ADR-032-compositional-scale-over-unbounded-center.md",
+      "reason": "accepted bounded principle remains consistent with current authority boundaries"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "contract_format": "TITMAS-HUMAN-AND-AGENT-ENTRY-1.0",
+  "surfaces": {
+    "HUMAN": {
+      "locale_profile": {
+        "market_profile": "CHINA",
+        "default_human_locale": "zh-CN",
+        "china_market_ui_default": "SIMPLIFIED_CHINESE",
+        "critical_status_requires_chinese_explanation": true,
+        "english_reason_code_may_be_retained": true,
+        "english_reason_code_requires_chinese_explanation": true,
+        "global_multilingual_expansion_implemented": false,
+        "authority_effect": "NONE"
+      },
+      "first_questions": ["AGENT_INVENTORY", "ACTION_ACTIVITY", "ATTENTION_REQUIRED", "SHADOW_GATE_OUTCOME", "PERMISSIONS_REQUIRED", "DATA_LOCATION", "EXIT_PATH"],
+      "first_flow_forbidden_concepts": ["DBA", "DBOS", "EEOAP", "ARO", "SAEE", "AUTHORITY_MODEL", "EVIDENCE_ADMISSION", "DIGITAL_BIOSPHERE", "DIGITAL_IMMUNE_ARCHITECTURE"]
+    },
+    "AGENT": {
+      "actions": ["discover", "evaluate_applicability", "read_products", "read_non_claims", "read_access_modes", "read_required_inputs", "read_data_boundary", "run_synthetic_example", "submit_monitor_request", "interpret_result", "verify_public_proof", "abstain_when_not_applicable"],
+      "catalog_refs": ["portfolio/product-catalog.internal.json", "portfolio/solution-catalog.internal.json", "commercial/discovery/recommendation-policy.json", "commercial/discovery/commercial-offerings.json", "commercial/discovery/deployment-options.json", "commercial/discovery/known-limitations.json", "commercial/discovery/status.json"],
+      "allowed_recommendations": ["RECOMMENDED", "CONDITIONALLY_RECOMMENDED", "NOT_RECOMMENDED", "NOT_APPLICABLE", "NOT_ASSESSED"],
+      "universal_recommendation": false
+    }
+  }
+}

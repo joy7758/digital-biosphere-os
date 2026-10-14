@@ -1,0 +1,88 @@
+{
+  "artifact_type": "saep_public_site_release_evidence",
+  "schema_version": "0.1",
+  "publication_status": "LIVE",
+  "deployment_date": "2026-07-29",
+  "sites_version": 15,
+  "production_commit": "4475e48a3dad4ea8f3613e526c8dee38c1553e4f",
+  "source_branch": "feat/saep-industry-profile-site",
+  "saep": {
+    "version": "v0.1",
+    "status": "RESEARCH_PROTOTYPE",
+    "architecture_position": [
+      "TITMAS",
+      "INDUSTRY_APPLICATION_PROFILE",
+      "SAEP",
+      "EEOAP",
+      "RUNTIME_VERIFICATION"
+    ],
+    "titmas_owns_agent_evidence_specification_authority": false,
+    "spacecraft_control_system": false
+  },
+  "public_endpoints": {
+    "zh": "https://redcrag.cn/industry/space-agent-evidence/",
+    "en": "https://redcrag.cn/en/industry/space-agent-evidence/",
+    "machine": "https://redcrag.cn/space-agent-evidence-profile.json"
+  },
+  "research_artifacts": {
+    "github": "https://github.com/joy7758/agent-evidence/tree/main/extensions/space",
+    "version_doi": "10.5281/zenodo.21393369",
+    "concept_doi": "10.5281/zenodo.19334061",
+    "version_doi_url": "https://doi.org/10.5281/zenodo.21393369",
+    "concept_doi_url": "https://doi.org/10.5281/zenodo.19334061"
+  },
+  "validation": {
+    "tests_pass": true,
+    "test_count": 23,
+    "static_export_pass": true,
+    "content_parity_pass": true,
+    "truth_boundary_pass": true,
+    "internal_links_pass": true,
+    "seo_metadata_pass": true,
+    "build_pass": true,
+    "git_diff_check_pass": true,
+    "browser_verification_pass": true,
+    "mobile_verification_pass": true,
+    "eslint_errors": 0,
+    "existing_img_warnings": 4,
+    "doi_resolved_to_zenodo_record": true,
+    "npm_ci_existing_high_advisories": 9
+  },
+  "claims": {
+    "research_prototype": true,
+    "synthetic_validation_completed": true,
+    "doi_archived": true,
+    "nasa_adopted": false,
+    "esa_adopted": false,
+    "fdo_adopted": false,
+    "flight_certified": false,
+    "space_qualified": false,
+    "industrial_deployment": false,
+    "mission_safety_guarantee": false,
+    "real_spacecraft_validation": false
+  },
+  "rollback": {
+    "active_release": "PRIVATE_SERVER_LOCAL_RELEASE_REF_REDACTED",
+    "target": "PRIVATE_SERVER_LOCAL_RELEASE_REF_REDACTED",
+    "source_commit": "05bd697517acd4252e59b644b2c8bd537fe01e50",
+    "entry_symlink": "PRIVATE_SERVER_LOCAL_POINTER_REDACTED",
+    "public_redaction": "SERVER_LOCAL_PATHS_REMOVED_ONLY",
+    "target_resolved": true,
+    "executed_in_this_task": false
+  },
+  "known_follow_up_items": [
+    "ENGLISH_PAGE_ROOT_HTML_LANG_IS_ZH_CN",
+    "EXISTING_DEPENDENCIES_REPORT_9_HIGH_ADVISORIES",
+    "SOURCE_BRANCH_NOT_MERGED_TO_DEFAULT_BRANCH_BY_PULL_REQUEST"
+  ],
+  "effects": {
+    "website_function_changed": false,
+    "agent_evidence_repository_changed": false,
+    "protocol_changed": false,
+    "schema_changed": false,
+    "validator_changed": false,
+    "api_changed": false,
+    "dependency_changed": false,
+    "deployment_performed_in_this_task": false
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "schema_version": "0.1.0",
+  "shared_core_reuse_target": 0.7,
+  "target_is_management_assessment": true,
+  "target_is_standard": false,
+  "target_is_scientific_law": false,
+  "difference_budget_reference": {"adapter": 0.1, "policy_configuration": 0.1, "ui_and_report": 0.1},
+  "duplicate_core_prohibited": true,
+  "results": ["PASS_PORTFOLIO_EXTENSION", "REVIEW_REQUIRED", "NOT_A_TITMAS_PORTFOLIO_EXTENSION"],
+  "result_grants_implementation_or_authority": false
+}

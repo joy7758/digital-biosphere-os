@@ -1,0 +1,178 @@
+{
+  "harness_commit": "a39917f870b53b055006a264c6fdfb1b59261c6e",
+  "manifest_id": "STAGE-5.7-EVIDENCE-MANIFEST-v0.1",
+  "option_catalog_sha256": "3acfb2eb3c54673a11d63a02070b300919e35461e242572c1ea8837da79519d5",
+  "outcomes_rewritten": 0,
+  "scenario_catalog_sha256": "758c58c0427657e29ac09dfe3bb1f94ae97f19157d78e0388075d001e2fd4185",
+  "scoring_policy_sha256": "f68cf3961e7592bfe13422188d554bb92f66f3d1d094412648cd465e54a27e3c",
+  "sessions": [
+    {
+      "exact_model_id": "qwen3.7-max",
+      "provider": "dashscope",
+      "result_sha256": "8b159f121999169bd95b6c2d5a8980de2eb08769aee3cfb3d6077b98e7047ead",
+      "scenario_id": "ROI-01",
+      "session_id": "b83f93af-1079-41e8-8362-235e0db4bb17"
+    },
+    {
+      "exact_model_id": "qwen3.7-max",
+      "provider": "dashscope",
+      "result_sha256": "f3b851c3573ee5f1907fc721f738923e390ee2ceb4d37329c17de7ae2bceb788",
+      "scenario_id": "ROI-02",
+      "session_id": "0c84637c-f6bc-4bde-82bf-3ee0db0b3890"
+    },
+    {
+      "exact_model_id": "qwen3.7-max",
+      "provider": "dashscope",
+      "result_sha256": "26a7cfc84ac199036723ed26bfbded75965190d1e489ba10fe23c3e3f1506d17",
+      "scenario_id": "ROI-03",
+      "session_id": "60cce093-a99d-4a9c-8d7b-0d2d1e0ebda5"
+    },
+    {
+      "exact_model_id": "qwen3.7-max",
+      "provider": "dashscope",
+      "result_sha256": "a4734b1f876d209bb19fca4a97369f53d4c6efe2b98fa7c82989d93d6619c6a7",
+      "scenario_id": "ROI-04",
+      "session_id": "2e041049-37d7-4602-96e5-9e5b069c7b66"
+    },
+    {
+      "exact_model_id": "qwen3.7-max",
+      "provider": "dashscope",
+      "result_sha256": "7a8029467e958fd50d81d1d0f5f1a14b226c0fba9caafc76233004abea23f474",
+      "scenario_id": "ROI-05",
+      "session_id": "2fd1567c-51ff-4383-9eeb-d1b1ab897f67"
+    },
+    {
+      "exact_model_id": "qwen3.7-max",
+      "provider": "dashscope",
+      "result_sha256": "1c8e4b7e73a6d7108f3757df43be50f0285b91d57f95025b55bc062e7a4d0682",
+      "scenario_id": "ROI-06",
+      "session_id": "08deb6a4-a0ae-4798-aa92-97a4865049c3"
+    },
+    {
+      "exact_model_id": "qwen3.8-max-preview",
+      "provider": "dashscope",
+      "result_sha256": "b98866a34bc461585dc8bd2a783c593ccfe31ea65bb672b70836e166325031d7",
+      "scenario_id": "ROI-01",
+      "session_id": "2594f04d-f15a-4736-83b1-189abd48fcbd"
+    },
+    {
+      "exact_model_id": "qwen3.8-max-preview",
+      "provider": "dashscope",
+      "result_sha256": "86d0a42fd02e0cb7140ca4b9b4ca8a7bd7b600efc6f2d05555e6f672dba726f4",
+      "scenario_id": "ROI-02",
+      "session_id": "7591cdcc-2d33-405d-ad20-3aa4d427f5d2"
+    },
+    {
+      "exact_model_id": "qwen3.8-max-preview",
+      "provider": "dashscope",
+      "result_sha256": "c59e4551912485668211ac4cfc73ec09d6279bc86c32442fab1c899ce3e34c9b",
+      "scenario_id": "ROI-03",
+      "session_id": "ce61784f-693d-4ccf-9010-ade313d7a3c3"
+    },
+    {
+      "exact_model_id": "qwen3.8-max-preview",
+      "provider": "dashscope",
+      "result_sha256": "ec74b76e73af8188484513a49c17ba1929ba325bd0000ae1fc4154a95d162f1d",
+      "scenario_id": "ROI-04",
+      "session_id": "8b8281cf-73a8-4853-af10-4c4bfe872b37"
+    },
+    {
+      "exact_model_id": "qwen3.8-max-preview",
+      "provider": "dashscope",
+      "result_sha256": "c21f6ff9c5c8b60c9a98a861361a8d0524ed2916e4de574e15a125bc9f4f36cd",
+      "scenario_id": "ROI-05",
+      "session_id": "348e043a-122e-4eef-9df1-d1242409da1d"
+    },
+    {
+      "exact_model_id": "qwen3.8-max-preview",
+      "provider": "dashscope",
+      "result_sha256": "2b7f2dea8a68ce4e9feb3ae405a16b0510850dae894e2ed43f68d6805527abf5",
+      "scenario_id": "ROI-06",
+      "session_id": "d5a9e0e1-276c-4d26-ba43-f3dc96713aef"
+    },
+    {
+      "exact_model_id": "ernie-5.1",
+      "provider": "qianfan",
+      "result_sha256": "8a1203697db327caad08e4ef723c3192f0bec8ec42df4b0f8f2b4ff085bd0cb8",
+      "scenario_id": "ROI-01",
+      "session_id": "414ceed0-6068-4191-81b1-167ea2c7899f"
+    },
+    {
+      "exact_model_id": "ernie-5.1",
+      "provider": "qianfan",
+      "result_sha256": "6c455063df7e721ce25b9cfa1dd86480a707b489d5f1e2f88ea026a0b90c1c5a",
+      "scenario_id": "ROI-02",
+      "session_id": "a5323fd3-9b3a-40da-801b-5f8614a537ee"
+    },
+    {
+      "exact_model_id": "ernie-5.1",
+      "provider": "qianfan",
+      "result_sha256": "20794ff3c048bc905113f8c756c50a79d2d16dd1527d81f11a070d63681d9a2d",
+      "scenario_id": "ROI-03",
+      "session_id": "b7169885-37ac-4fea-98ce-17aa6f3de75d"
+    },
+    {
+      "exact_model_id": "ernie-5.1",
+      "provider": "qianfan",
+      "result_sha256": "f7ce458958348681c14aa40e73ca7e1134b969558bf070f93442a35a661ddbc5",
+      "scenario_id": "ROI-04",
+      "session_id": "806e59a4-3689-4a86-a6d3-0c87adb12bce"
+    },
+    {
+      "exact_model_id": "ernie-5.1",
+      "provider": "qianfan",
+      "result_sha256": "e2766e4ca5d26004b8b2529ee0c81c53bb0f986fb2265c76feab716e25d931f4",
+      "scenario_id": "ROI-05",
+      "session_id": "9cf2d43b-122c-4ead-b89b-644c5d453e20"
+    },
+    {
+      "exact_model_id": "ernie-5.1",
+      "provider": "qianfan",
+      "result_sha256": "87790c73ebb9402cd5a678b5b8932f37bd110e5e4aa544c23a40f523a76c2974",
+      "scenario_id": "ROI-06",
+      "session_id": "f0e508ed-3114-4347-bfff-79c38dfd71cd"
+    },
+    {
+      "exact_model_id": "deepseek-v4-pro-260425",
+      "provider": "ark",
+      "result_sha256": "3787f60e5ba0d05bd73ff181d83bfb4fbbdb439915c16d74778bac782f228c98",
+      "scenario_id": "ROI-01",
+      "session_id": "82e57c04-bcff-4aab-8c2d-5bdc12b77684"
+    },
+    {
+      "exact_model_id": "deepseek-v4-pro-260425",
+      "provider": "ark",
+      "result_sha256": "8f89305310bbebefedd58b66d93f0b5c6761d782d6928b4b92fb81ddd8021dec",
+      "scenario_id": "ROI-02",
+      "session_id": "d2d6c7d2-2c27-41fb-8d43-38d4fe9cca72"
+    },
+    {
+      "exact_model_id": "deepseek-v4-pro-260425",
+      "provider": "ark",
+      "result_sha256": "13506dd3a05d2e0667f10968cf0d8631e220fdf9685250987bfbdbe66f500778",
+      "scenario_id": "ROI-03",
+      "session_id": "91ef4e9c-1549-4768-a0c9-fb9420ad0f07"
+    },
+    {
+      "exact_model_id": "deepseek-v4-pro-260425",
+      "provider": "ark",
+      "result_sha256": "80ad86d327cf36adf51d001db4c372e873ab1b775af43f16cd83c152f4bc537c",
+      "scenario_id": "ROI-04",
+      "session_id": "8787ce52-ca7f-4a1f-a8eb-72aa09ff2431"
+    },
+    {
+      "exact_model_id": "deepseek-v4-pro-260425",
+      "provider": "ark",
+      "result_sha256": "aaf146796647720b8b0e9177603d6bf4d5a48b4378aad7fcf6ec26a93464aed2",
+      "scenario_id": "ROI-05",
+      "session_id": "d52e78f8-8ee2-4f38-8e02-d6ad39857e6a"
+    },
+    {
+      "exact_model_id": "deepseek-v4-pro-260425",
+      "provider": "ark",
+      "result_sha256": "5f307d551a3f62f7239c7cefb853216ebdf73f79cb151249c8049ca1d2115b7d",
+      "scenario_id": "ROI-06",
+      "session_id": "fba91f78-6c26-4444-99d0-19bc34d77755"
+    }
+  ]
+}

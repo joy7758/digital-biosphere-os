@@ -1,0 +1,142 @@
+name: TITMAS developer standards conformance
+
+on:
+  push:
+    paths:
+      - "digital-biosphere-architecture/TITMAS/**"
+      - "digital-biosphere-architecture/docs/**"
+      - "digital-biosphere-architecture/portfolio/**"
+      - "digital-biosphere-architecture/agent-index.json"
+      - "digital-biosphere-architecture/cockpit/**"
+      - "digital-biosphere-architecture/architecture/ADR-040-titmac-scout-canonical-identity-and-read-only-progress-bridge.md"
+      - "digital-biosphere-architecture/llms.txt"
+      - "digital-biosphere-architecture/architecture/ADR-034-titmas-agent-native-standards-community-direction.md"
+      - "digital-biosphere-architecture/architecture/open-infrastructure-strategy-constitution.md"
+      - "digital-biosphere-architecture/architecture/titmas-agent-native-*.md"
+      - "digital-biosphere-architecture/TITMAS-AGENT-NATIVE-*.md"
+      - "digital-biosphere-architecture/architecture/titmas-architecture-charter-v1.0.md"
+      - "digital-biosphere-architecture/architecture/titmas-developer-infrastructure-positioning-v1.0.md"
+      - "digital-biosphere-architecture/TITMAS/community/github-activation-templates/**"
+      - ".github/ISSUE_TEMPLATE/**"
+      - ".github/pull_request_template.md"
+      - ".github/workflows/titmas-community-conformance.yml"
+  pull_request:
+    paths:
+      - "digital-biosphere-architecture/TITMAS/**"
+      - "digital-biosphere-architecture/docs/**"
+      - "digital-biosphere-architecture/portfolio/**"
+      - "digital-biosphere-architecture/agent-index.json"
+      - "digital-biosphere-architecture/cockpit/**"
+      - "digital-biosphere-architecture/architecture/ADR-040-titmac-scout-canonical-identity-and-read-only-progress-bridge.md"
+      - "digital-biosphere-architecture/llms.txt"
+      - "digital-biosphere-architecture/architecture/ADR-034-titmas-agent-native-standards-community-direction.md"
+      - "digital-biosphere-architecture/architecture/open-infrastructure-strategy-constitution.md"
+      - "digital-biosphere-architecture/architecture/titmas-agent-native-*.md"
+      - "digital-biosphere-architecture/TITMAS-AGENT-NATIVE-*.md"
+      - "digital-biosphere-architecture/architecture/titmas-architecture-charter-v1.0.md"
+      - "digital-biosphere-architecture/architecture/titmas-developer-infrastructure-positioning-v1.0.md"
+      - "digital-biosphere-architecture/TITMAS/community/github-activation-templates/**"
+      - ".github/ISSUE_TEMPLATE/**"
+      - ".github/pull_request_template.md"
+      - ".github/workflows/titmas-community-conformance.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+          # Candidate Grounding resolves an exact frozen origin/main commit.
+          # A shallow PR checkout can omit that object and must fail closed.
+          fetch-depth: 0
+
+      - name: Parse JSON and YAML assets
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          roots = (Path("digital-biosphere-architecture/TITMAS"),)
+          paths = []
+          for root in roots:
+              paths.extend(root.rglob("*.json") if root.is_dir() else [root])
+          paths.extend(Path("digital-biosphere-architecture/TITMAS/specifications").glob("*.yaml"))
+          for path in sorted(set(paths)):
+              json.loads(path.read_text(encoding="utf-8"))
+          PY
+          ruby - <<'RB'
+          require "yaml"
+          paths = (
+            Dir[".github/**/*.{yml,yaml}"] +
+            Dir["digital-biosphere-architecture/TITMAS/community/github-activation-templates/**/*.{yml,yaml}"]
+          ).sort
+          paths.each do |path|
+            content = File.read(path)
+            begin
+              YAML.safe_load(
+                content,
+                permitted_classes: [],
+                permitted_symbols: [],
+                aliases: false
+              )
+            rescue ArgumentError
+              YAML.safe_load(content, [], [], false)
+            end
+          end
+          RB
+
+      - name: Validate registries, schemas, links, terms and fixtures
+        working-directory: digital-biosphere-architecture
+        run: python3 TITMAS/conformance/harness.py
+
+      - name: Test conformance harness
+        working-directory: digital-biosphere-architecture
+        run: python3 -m unittest discover -s TITMAS/conformance/tests -v
+
+      - name: Test read-only cockpit source bridge
+        working-directory: digital-biosphere-architecture
+        run: python3 -m unittest discover -s cockpit/tests -v
+
+      - name: Test agent-native local protocol
+        working-directory: digital-biosphere-architecture
+        run: python3 -m unittest discover -s TITMAS/agent-native/tests -v
+
+      - name: Test private governance boundaries
+        working-directory: digital-biosphere-architecture
+        run: python3 -m unittest discover -s TITMAS/private-governance/tests -v
+
+      - name: Test private evaluation Gateway
+        working-directory: digital-biosphere-architecture
+        run: python3 -m unittest discover -s TITMAS/private-customer-evaluation/gateway/tests -v
+
+      - name: Test private Stage 5 SDK
+        working-directory: digital-biosphere-architecture
+        run: python3 -m unittest discover -s TITMAS/private-stage5-sdk/python/tests -v
+
+      - name: Test private Stage 5 pilot
+        working-directory: digital-biosphere-architecture
+        run: python3 -m unittest discover -s TITMAS/private-stage5-pilot/tests -v
+
+      - name: Test Stage 5.1 private trial reconstruction
+        working-directory: digital-biosphere-architecture
+        run: python3 -m unittest discover -s TITMAS/private-stage5-1-trial/tests -v
+
+      - name: Test minimal reference
+        working-directory: digital-biosphere-architecture
+        run: python3 -m unittest discover -s TITMAS/reference/minimal-python/tests -v
+
+      - name: Check deterministic reference output
+        working-directory: digital-biosphere-architecture
+        run: |
+          python3 TITMAS/reference/minimal-python/titmas_reference.py \
+            TITMAS/reference/minimal-python/example-input.json > /tmp/titmas-output.json
+          cmp /tmp/titmas-output.json TITMAS/reference/minimal-python/expected-output.json
+
+      - name: Check whitespace
+        run: git diff --check HEAD^ HEAD

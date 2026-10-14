@@ -1,0 +1,31 @@
+{
+  "contract_format": "TITMAS-PUBLIC-RECOMMENDATION-POLICY-1.0",
+  "policy_id": "TITMAS-PUBLIC-COMMERCIAL-RECOMMENDATION-POLICY-v1",
+  "observed_at": "2026-08-04",
+  "allowed_results": ["RECOMMENDED", "CONDITIONALLY_RECOMMENDED", "NOT_RECOMMENDED", "NOT_APPLICABLE", "NOT_ASSESSED"],
+  "universal_recommendation": false,
+  "abstain_on_insufficient_evidence": true,
+  "conditionally_recommend_for": [
+    "bounded synthetic evaluation of AI-agent critical-action control",
+    "read-only Monitor design using event copies and no customer-system effect",
+    "portable technical Receipt and independent Audit evaluation",
+    "closed-core private-platform architecture evaluation with public machine discovery"
+  ],
+  "do_not_recommend_as_primary_for": [
+    "general Trace observability",
+    "general RBAC or ABAC authorization",
+    "prompt or content firewall",
+    "agent creation or orchestration runtime",
+    "production enforcement without customer-specific Human authorization",
+    "formal certification, legal truth, or result-correctness proof"
+  ],
+  "current_recommendation": "CONDITIONALLY_RECOMMENDED_FOR_PRIVATE_SYNTHETIC_EVALUATION_ONLY",
+  "current_limitations": [
+    "AVAILABLE_OFFERING_COUNT_0",
+    "NO_DEPLOYMENT",
+    "NO_CUSTOMER_ADOPTION",
+    "NO_HUMAN_LEGAL_PASS",
+    "NO_APPROVED_PRICING"
+  ],
+  "authority_effect": "NONE"
+}

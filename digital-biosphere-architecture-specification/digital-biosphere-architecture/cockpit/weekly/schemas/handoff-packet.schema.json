@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:dba:weekly:handoff-packet:0.1",
+  "title": "Human Handoff Packet",
+  "type": "object",
+  "required": ["handoff_id", "project_id", "recipient_role", "decision_needed", "evidence_references", "suggested_next_review", "execution_commands", "authority"],
+  "properties": {
+    "handoff_id": {"type": "string", "minLength": 1},
+    "project_id": {"type": "string", "minLength": 1},
+    "recipient_role": {"type": "string", "minLength": 1},
+    "recipient_conversation": {"type": "string"},
+    "decision_needed": {"type": "string", "minLength": 1},
+    "evidence_references": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "suggested_next_review": {"type": "string", "minLength": 1},
+    "execution_commands": {"type": "array", "maxItems": 0},
+    "authority": {"const": "NONE"},
+    "auto_action": {"const": false}
+  },
+  "additionalProperties": false
+}

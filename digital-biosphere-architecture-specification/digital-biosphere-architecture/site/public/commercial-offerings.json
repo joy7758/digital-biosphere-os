@@ -1,0 +1,41 @@
+{
+  "contract_format": "TITMAS-PUBLIC-COMMERCIAL-OFFERINGS-1.0",
+  "catalog_id": "TITMAS-PUBLIC-COMMERCIAL-OFFERINGS-v1",
+  "observed_at": "2026-08-04",
+  "available_offering_count": 0,
+  "public_self_service_sales": false,
+  "online_payment": false,
+  "automatic_key_provisioning": false,
+  "offerings": [
+    {
+      "offering_id": "HEALTH_SNAPSHOT",
+      "status": "PROFILE_DEFINED_NOT_AVAILABLE_OFFERING",
+      "human_entry": "/products/health/"
+    },
+    {
+      "offering_id": "MONITOR_PILOT",
+      "status": "SYNTHETIC_REFERENCE_PROOF_IMPLEMENTED_NOT_AVAILABLE_OFFERING",
+      "enforcement_effect": "NONE",
+      "human_entry": "/monitor-pilot/"
+    },
+    {
+      "offering_id": "CUSTOMER_SPECIFIC_ENFORCE_PILOT",
+      "status": "SYNTHETIC_REFERENCE_ONLY_NOT_CUSTOMER_AUTHORIZED",
+      "real_customer_authorization_count": 0,
+      "separate_human_authorization_required": true,
+      "human_entry": "/enforce-pilot/"
+    },
+    {
+      "offering_id": "ENTERPRISE_PRIVATE_DEPLOYMENT",
+      "status": "NOT_AUTHORIZED",
+      "contract_and_deployment_decision_required": true
+    }
+  ],
+  "request_access": {
+    "status": "INFORMATION_ONLY_INTAKE_NOT_ACTIVE",
+    "human_review_required": true,
+    "automatic_fulfillment": false,
+    "entry": "/request-access/"
+  },
+  "non_claims": ["NO_CUSTOMER_CREATED", "NO_CONTRACT_SIGNED", "NO_PAYMENT_COLLECTED", "NO_PUBLIC_LAUNCH", "REFERENCE_IMPLEMENTATION_NE_AVAILABLE_OFFERING"]
+}

@@ -1,0 +1,21 @@
+{
+  "contract_format": "TITMAS-CUSTOMER-EXIT-CONTROLS-1.0",
+  "disconnect": {"contract_defined": true, "runtime_available": false, "path": "CUSTOMER_CONTROLLED_CONNECTION_REMOVAL"},
+  "key_revocation": {"contract_defined": true, "runtime_available": false, "path": "SCOPED_KEY_REVOCATION_REQUEST"},
+  "deletion_request": {
+    "contract_defined": true,
+    "source_implementation": "PASS_SOURCE_AND_EPHEMERAL_POSTGRES_CI_NOT_DEPLOYED",
+    "runtime_available": false,
+    "path": "BOUNDED_DATA_DELETION_REQUEST",
+    "source_revision": "ddbbb724b6a74eca81cf96773bbc9a6a772ae814"
+  },
+  "retention_lifecycle": {
+    "contract_defined": true,
+    "source_implementation": "PASS_SOURCE_AND_EPHEMERAL_POSTGRES_CI_NOT_DEPLOYED",
+    "runtime_available": false,
+    "managed_policy_days": [7, 30, 90],
+    "source_revision": "ddbbb724b6a74eca81cf96773bbc9a6a772ae814"
+  },
+  "immutable_evidence_rewritten": false,
+  "d04_history_rewritten": false
+}

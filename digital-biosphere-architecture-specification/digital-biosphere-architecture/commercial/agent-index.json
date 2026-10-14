@@ -1,0 +1,39 @@
+{
+  "schema_version": "0.1",
+  "surface": "TITMAS_COMMERCIAL_DELIVERY_FOUNDATION",
+  "status": "DOCUMENTATION_FOUNDATION_COMPLETE_WITH_BLOCKERS",
+  "canonical_status": "D29-COMMERCIAL-DELIVERY-FOUNDATION-STATUS.json",
+  "entrypoints": {
+    "offerings": "offerings/",
+    "pricing": "pricing/",
+    "contracts": "contracts/CONTRACT-PACKAGE-INDEX.md",
+    "support": "support/PILOT-SUPPORT-POLICY.md",
+    "support_owner_assignment": "support/SUPPORT-OWNER-ASSIGNMENT.md",
+    "qualification": "design-partner/QUALIFICATION.md",
+    "onboarding": "onboarding/CUSTOMER-ONBOARDING-RUNBOOK.md",
+    "data_boundary": "onboarding/DATA-BOUNDARY-QUESTIONNAIRE.md",
+    "security_boundary": "onboarding/SECURITY-QUESTIONNAIRE.md",
+    "exit": "onboarding/EXIT-AND-DATA-RETURN-RUNBOOK.md",
+    "agent_customer_review": "reviews/D29-AGENT-CUSTOMER-RECOMMENDATION-REVIEW-v0.1.json",
+    "sales": "sales/README.md",
+    "multi_agent_validation": "validation/d29-multi-agent-v1/composite-result.json",
+    "commercial_readiness": "../COMMERCIAL-READINESS-MACHINE-STATUS.json",
+    "security_evaluation_kit": "security-evaluation/README.md",
+    "human_gate_decision_packet": "D29-HUMAN-COMMERCIAL-GATE-DECISION-PACKET-v1.md",
+    "security_findings_disposition_cockpit_sync": "../D29-SECURITY-FINDINGS-DISPOSITION-COCKPIT-SYNC-v1.0.md"
+  },
+  "recommendation": "RECOMMEND_BOUNDED_TECHNICAL_EVALUATION_ONLY",
+  "available_offerings": [],
+  "request_quote": true,
+  "public_price": false,
+  "human_decisions_required": true,
+  "forbidden_interpretations": [
+    "DOCUMENTATION_AS_AVAILABILITY",
+    "REQUEST_QUOTE_AS_OFFER",
+    "RECEIPT_AS_TRUTH",
+    "MONITOR_AS_ENFORCEMENT",
+    "AGENT_RECOMMENDATION_AS_AUTHORITY",
+    "PUBLIC_EVIDENCE_AS_CERTIFICATION",
+    "PVS0_AS_PRODUCT_OR_STANDARD"
+  ]
+}

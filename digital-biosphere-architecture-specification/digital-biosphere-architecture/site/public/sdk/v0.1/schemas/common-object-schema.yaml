@@ -1,0 +1,166 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "dbio://schema/common-object/v0.1",
+  "title": "DBOS Common Object Schema v0.1",
+  "description": "Composable common-field contract for all DBOS core objects. Structural validation does not create an object, verify facts, grant authority, grant permission, execute work, or call SAEE.",
+  "$comment": "x-dbios-schema-version and the object field version are separate version axes even when both are v0.1 in this release.",
+  "x-dbios-schema-version": "v0.1",
+  "x-dbios-object-contract-version": "v0.1",
+  "x-dbios-schema-role": "composable_common_contract",
+  "type": "object",
+  "required": [
+    "object_id",
+    "object_type",
+    "version",
+    "source",
+    "status",
+    "created_at",
+    "updated_at",
+    "limitations"
+  ],
+  "properties": {
+    "object_id": {
+      "$ref": "#/$defs/nonEmptyString",
+      "description": "Stable domain identifier. A type schema must require equality with its type-specific identifier through the x-dbios invariant."
+    },
+    "object_type": {
+      "enum": [
+        "ENTITY",
+        "CAPABILITY",
+        "EXECUTION",
+        "EVIDENCE_REFERENCE",
+        "VERIFICATION"
+      ]
+    },
+    "version": {
+      "type": "string",
+      "const": "v0.1",
+      "description": "Object Contract representation version, not the schema revision or a domain object lifecycle version."
+    },
+    "source": {
+      "$ref": "#/$defs/sourceDescriptor"
+    },
+    "status": {
+      "$ref": "#/$defs/nonEmptyString",
+      "description": "Type-specific record status. It is not a resolution result and has no state-transition effect."
+    },
+    "created_at": {
+      "oneOf": [
+        {"type": "string", "format": "date-time"},
+        {"type": "null"}
+      ],
+      "description": "Source-attributed creation time. null preserves unknown and must not be replaced by validation time."
+    },
+    "updated_at": {
+      "oneOf": [
+        {"type": "string", "format": "date-time"},
+        {"type": "null"}
+      ],
+      "description": "Source-attributed update time. A future semantic validator must enforce updated_at >= created_at when both are present."
+    },
+    "limitations": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/nonEmptyString"},
+      "uniqueItems": true,
+      "description": "Required limitations surface. An empty list is only structurally valid; a future semantic validator must require attributable support for an empty list."
+    }
+  },
+  "$defs": {
+    "nonEmptyString": {
+      "type": "string",
+      "minLength": 1
+    },
+    "namespace": {
+      "type": "string",
+      "pattern": "^(dbio|external:[A-Za-z0-9][A-Za-z0-9._-]*|extension:[A-Za-z0-9][A-Za-z0-9._-]*)$"
+    },
+    "sourceDescriptor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "namespace",
+        "source_id",
+        "version",
+        "status"
+      ],
+      "properties": {
+        "namespace": {"$ref": "#/$defs/namespace"},
+        "source_id": {"$ref": "#/$defs/nonEmptyString"},
+        "version": {"$ref": "#/$defs/nonEmptyString"},
+        "status": {
+          "enum": ["DECLARED", "SUPERSEDED", "REVOKED", "UNKNOWN"]
+        }
+      },
+      "description": "Declares the semantic owner of an object projection. It is not an authority or truth assertion."
+    },
+    "referenceObject": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "reference_id",
+        "reference_type",
+        "namespace",
+        "version",
+        "source",
+        "status"
+      ],
+      "properties": {
+        "reference_id": {"$ref": "#/$defs/nonEmptyString"},
+        "reference_type": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$"
+        },
+        "namespace": {"$ref": "#/$defs/namespace"},
+        "version": {"$ref": "#/$defs/nonEmptyString"},
+        "source": {"$ref": "#/$defs/nonEmptyString"},
+        "status": {
+          "enum": ["DECLARED", "SUPERSEDED", "REVOKED", "UNKNOWN"]
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "required": ["namespace"],
+            "properties": {"namespace": {"const": "dbio"}}
+          },
+          "then": {
+            "properties": {
+              "reference_type": {
+                "enum": [
+                  "ENTITY",
+                  "CANDIDATE",
+                  "AUTHORIZATION",
+                  "REGISTRATION",
+                  "EXECUTION",
+                  "EVIDENCE",
+                  "VERIFICATION"
+                ]
+              }
+            }
+          }
+        }
+      ],
+      "description": "Canonical reference envelope. External and extension namespaces may declare non-core types; the dbio namespace is restricted to the seven canonical v0.1 reference types."
+    }
+  },
+  "x-dbios-invariants": [
+    {
+      "name": "updated_at_not_before_created_at",
+      "validator_required": true,
+      "error": "INVALID"
+    },
+    {
+      "name": "empty_limitations_require_attributed_source_assertion",
+      "validator_required": true,
+      "error": "UNKNOWN"
+    }
+  ],
+  "x-dbios-boundaries": {
+    "schema_creates_instance": false,
+    "validation_equals_verification": false,
+    "authority_effect": "NONE",
+    "permission_effect": "NONE",
+    "execution_effect": "NONE",
+    "saee_effect": "NONE"
+  }
+}

@@ -1,0 +1,227 @@
+{
+  "schema_id": "RED-YAN-REMOTE-RUNTIME-EVIDENCE-SNAPSHOT",
+  "schema_version": "1.0",
+  "record_id": "RED-YAN-REMOTE-RUNTIME-EVIDENCE-SNAPSHOT-2026-08-28",
+  "observed_at": "2026-08-28T23:00:19+08:00",
+  "primary_repository": {
+    "name": "joy7758/digital-biosphere-architecture-specification",
+    "role": "PROGRAM_GOVERNANCE_COCKPIT",
+    "baseline_commit": "6a3ecce6e1f916be91a1caaf5fdc16304c566498"
+  },
+  "product_repository": {
+    "name": "joy7758/hongyan-official-document",
+    "role": "CANONICAL_PRODUCT_AND_RUNTIME_SOURCE",
+    "observed_origin_main": "667bf94ab0dfca561822b96c2eba80f47336b162"
+  },
+  "investigation": {
+    "mode": "READ_ONLY_WITH_DISCLOSED_TRANSIENT_OBSERVATION_FILE",
+    "secrets_redacted": true,
+    "runtime_mutation_authorized": false,
+    "auto_remediation_authorized": false
+  },
+  "remote_host": {
+    "alias": "hongyan-4cj",
+    "hostname": "ls7CbUxrNU",
+    "service_user": "hongyan-v1",
+    "service_uid": 1000
+  },
+  "runtime_identity": {
+    "expected_commit_prefix": "4c98ba8",
+    "observed_commit": "4c98ba8a09eb1ae2d1a5dbdc5c66f8b4131848dd",
+    "commit_match": true,
+    "release_path": "/srv/hongyan-v1/releases/4c98ba8a09eb1ae2d1a5dbdc5c66f8b4131848dd",
+    "application_version": "1.0.0-rc.1",
+    "application_image_id": "d5ce874f23a120b69886b0f25ecfcd179f07b4f783a4f4999cad7cab78b61a1c",
+    "application_image_digest": "sha256:58fa548a1954c5c38ad67609fd10c8e6576b5cbe008f553c6a129e56278562e0",
+    "running_container_count": 10,
+    "containers_with_nonzero_restart_count": 0,
+    "current_runtime_drift": false
+  },
+  "runtime_configuration_hashes": {
+    "podman_compose_sha256": "bf250e7d30f702dfe652c5307fc248d086a23a43f4cc58ad52330e06f5d53370",
+    "nginx_sha256": "cb9a2b0f93dd59e05c4e4a47ba9c111933b2f12756d77b4f72b5d145ec08386a",
+    "nginx_internal_sha256": "c0130265a9f6d4d16fae9ef6263e3bc84203b5fe3e9876ae90deef5a5afa7add",
+    "public_proxy_sha256": "ac7107a6226f55dd6fbb3636e9f525a90dab19fba79358dc4b00a2e4bf451273"
+  },
+  "http_observations": {
+    "public_root": {
+      "status": 302,
+      "redirect_target": "/pilot"
+    },
+    "public_pilot_status": 200,
+    "public_health_status": 200,
+    "public_ready_status": 200,
+    "public_status_endpoint_status": 404,
+    "dedicated_discovery_paths": [
+      {
+        "path": "/.well-known/digital-cell.json",
+        "status": 404
+      },
+      {
+        "path": "/.well-known/titmas.json",
+        "status": 404
+      },
+      {
+        "path": "/digital-cell.json",
+        "status": 404
+      },
+      {
+        "path": "/titmas.json",
+        "status": 404
+      },
+      {
+        "path": "/agent-index.json",
+        "status": 404
+      }
+    ],
+    "health_boundary": {
+      "status": "UP",
+      "component": "hongyan-controlled-commercial-pilot-api",
+      "r2_status": "BLOCKED_INTERNAL_CONFIRMATION_REQUIRED",
+      "r2_raw_ledger_access": false,
+      "grok_aligned_dcell_runtime": true,
+      "production_ready": false
+    },
+    "ready_boundary": {
+      "status": "READY",
+      "core_tables": 153,
+      "dbos_tables": 12,
+      "postgresql_version": "16.10"
+    }
+  },
+  "migration_state": {
+    "observed_range": "001-035",
+    "head": "035_primary_practice_retrieval_scope_step.sql",
+    "head_sha256": "2703dcbfefd3e6a474ba2ba544167b31de3aec43ad76c6b39b097a6fcfbe0f6c",
+    "ledger_digest": "sha256:1c932f1ea8d333fd8825fe55f6615886c8486af5d4aa5146824ebd4a32ee03e1",
+    "schema_digest_excluding_r2": "sha256:bb69b166a5728227daf18f49a4fa780da10435e765455a6c445ab1d82e6d9f86"
+  },
+  "current_pointers": {
+    "canonical_user_pointer": {
+      "path": "/home/hongyan-v1/hongyan-v1/current",
+      "target": "/srv/hongyan-v1/releases/4c98ba8a09eb1ae2d1a5dbdc5c66f8b4131848dd",
+      "classification": "ACTIVE_CONTROL_POINTER"
+    },
+    "legacy_srv_pointer": {
+      "path": "/srv/hongyan-v1/current",
+      "target": "/srv/hongyan-v1/releases/4c98ba8a09eb1ae2d1a5dbdc5c66f8b4131848dd",
+      "historical_stale_target": "/srv/hongyan-v1/releases/1e990d5380de83d0048c4ee881ed126b4835d029",
+      "corrected_at": "2026-08-28T21:24:30+08:00",
+      "historical_classification": "STALE_METADATA_ONLY",
+      "current_status": "CORRECTED_COMPATIBILITY_ALIAS_NO_CURRENT_DRIFT"
+    }
+  },
+  "base_container_label_drift": {
+    "affected_roles": [
+      "postgres",
+      "object-store",
+      "guacd",
+      "guacamole"
+    ],
+    "affected_count": 4,
+    "stale_working_directory": "/srv/hongyan-v1/releases/4c98ba81c11dcf4ef0869f09b97c38aa78914e63/deploy/v1",
+    "shared_config_hash": "b7089faf28a65f775bc81ca3aa72ff85fbc79a5a5bc3c0dd5174e63bd0b77e9f",
+    "classification": "LABEL_NOT_AUTHORITATIVE",
+    "runtime_drift": false,
+    "rebuild_required_to_correct": true,
+    "rebuild_performed": false
+  },
+  "brand_deployment_lineage": {
+    "event_id": "HONGYAN-V1.1-BRAND-VISUAL-DCELL-NET-DEPLOYMENT-20260828",
+    "receipt_reference": "governance/receipts/V1.1-brand-visual-dcell-net-deployment-receipt.json",
+    "deployment_index_reference": "governance/runtime/AUTHORIZED-DEPLOYMENT-INDEX.json",
+    "receipt_sha256": "sha256:ed898935f446eda6cbe727084fe726f39b1081bcf6fafec0f1f4051121414d37",
+    "receipt_integration_commit_prefix": "471acaa",
+    "pushed_evidence_branch": "origin/goal/hongyan-v1-remote-control-metadata-convergence-r1-20260828T130102Z",
+    "repository_evidence_present": true,
+    "product_main_contains_lineage": false,
+    "remote_release_contains_lineage": false,
+    "classification": "PARTIAL_LINEAGE",
+    "remote_binding": "MISSING_REMOTE_BINDING"
+  },
+  "officecli_p1": {
+    "github_open_issue_count": 0,
+    "records_are_github_issues": false,
+    "candidate_state": "QUARANTINED_SHADOW_ONLY",
+    "customer_visible": false,
+    "current_runtime_blocker_count": 0,
+    "candidate_promotion_blocker_count": 3,
+    "items": [
+      {
+        "id": "P1_OFFICECLI_001_REMOTE_RUNTIME_DRIFT",
+        "current_status": "PARTIALLY_CORRECTED_MAINTENANCE_DEBT_REMAINS",
+        "current_pilot_classification": "QUALITY_DEBT_NOT_CURRENT_RUNTIME_BLOCKER",
+        "candidate_promotion_classification": "RELEASE_BLOCKER",
+        "reexecuted_in_this_investigation": false
+      },
+      {
+        "id": "P1_OFFICECLI_002_MACOS_SCREENSHOT",
+        "current_status": "PRESERVED_NOT_TOUCHED",
+        "current_pilot_classification": "NOT_CURRENT_RUNTIME_BLOCKER",
+        "candidate_promotion_classification": "RELEASE_BLOCKER",
+        "reexecuted_in_this_investigation": false
+      },
+      {
+        "id": "P1_OFFICECLI_003_DOCUMENT_TOOLCHAIN_LOCK",
+        "current_status": "PRESERVED_NOT_TOUCHED",
+        "current_pilot_classification": "NOT_CURRENT_RUNTIME_BLOCKER",
+        "candidate_promotion_classification": "RELEASE_BLOCKER",
+        "reexecuted_in_this_investigation": false
+      }
+    ]
+  },
+  "dependency_finding": {
+    "finding": "postcss -> nanoid <3.3.18",
+    "separate_workstream": true,
+    "dependency_class": "BUILD_AND_DEVELOPMENT_TOOLCHAIN",
+    "installed_tree_status": "INVALID_OR_STALE_RELATIVE_TO_MANIFEST_OVERRIDES",
+    "observed_installed_versions": {
+      "postcss": "8.5.22",
+      "nanoid": "3.3.16"
+    },
+    "manifest_override_versions": {
+      "postcss": "8.5.25",
+      "nanoid": "3.3.17"
+    },
+    "remote_runtime_binding_observed": false,
+    "exploitability": "NOT_ASSESSED",
+    "fix_status": "NOT_CLAIMED"
+  },
+  "agent_recommendation_gate": {
+    "decision": "CONDITIONALLY_RECOMMENDED",
+    "recommended_scope": "CONTROLLED_NON_CONFIDENTIAL_PILOT_ONLY",
+    "production_recommendation": "NOT_RECOMMENDED",
+    "blocking_reasons_for_broader_recommendation": [
+      "deployment lineage is not canonicalized in product main or bound into the remote release",
+      "four stale non-authoritative base-container labels remain",
+      "three OfficeCLI candidate promotion P1 records remain open",
+      "the separate DBA dependency finding is not closed"
+    ]
+  },
+  "decision": {
+    "overall": "METADATA_ONLY_REMEDIATION_READY",
+    "remote_runtime_rebaseline_required": false,
+    "product_p1_remediation_required": false,
+    "next_single_executable_milestone": "CANONICALIZE_VERIFIED_CONTROL_METADATA_AND_DEPLOYMENT_LINEAGE_WITHOUT_RUNTIME_CHANGE"
+  },
+  "limitations": [
+    "OfficeCLI P1-002 and P1-003 were not re-executed against the remote host",
+    "dependency exploitability and production bundle reachability were not assessed",
+    "live observations are timestamp-bounded",
+    "repository branch evidence does not prove mainline integration or remote archival"
+  ],
+  "scope_audit": {
+    "remote_runtime_modified": false,
+    "remote_service_restarted": false,
+    "remote_container_recreated": false,
+    "remote_database_modified": false,
+    "remote_migration_executed": false,
+    "remote_feature_flag_changed": false,
+    "remote_persistent_file_modified": false,
+    "remote_observation_temp_file_created_and_removed": true,
+    "product_source_code_modified": false,
+    "dependencies_modified": false,
+    "secrets_recorded": false,
+    "auto_remediation_executed": false
+  }
+}

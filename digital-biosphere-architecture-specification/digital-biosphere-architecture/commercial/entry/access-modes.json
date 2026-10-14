@@ -1,0 +1,27 @@
+{
+  "contract_format": "TITMAS-ACCESS-MODES-1.0",
+  "modes": {
+    "OBSERVER": {
+      "outputs": ["AGENT_INVENTORY", "ACTION_INVENTORY", "EVIDENCE_GAPS"],
+      "authority_effect": "NONE",
+      "enforcement_effect": "NONE",
+      "can_block": false,
+      "can_change_permission": false
+    },
+    "MONITOR": {
+      "outputs": ["WOULD_ALLOW", "WOULD_BLOCK", "WOULD_NEED_APPROVAL", "NOT_ASSESSED"],
+      "authority_effect": "NONE",
+      "enforcement_effect": "NONE",
+      "can_block": false,
+      "can_change_permission": false
+    },
+    "ENFORCE": {
+      "outputs": ["ALLOW", "BLOCK", "NEEDS_APPROVAL", "NOT_ASSESSED"],
+      "requires_separate_human_authorization": true,
+      "authorization_status": "NOT_AUTHORIZED",
+      "authorization_ref": null,
+      "inherited_from_c01": false,
+      "unknown_to_allow": false
+    }
+  }
+}

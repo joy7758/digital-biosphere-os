@@ -1,0 +1,49 @@
+{
+  "schema_version": "0.1",
+  "decision_reference": "TITMAS-CHINA-COMMERCIAL-PRIVATE-PLATFORM-AND-PAID-PILOT-D29",
+  "status": "EXECUTED_SYNTHETIC_EXTERNAL_MODEL_VALIDATION",
+  "common_packet": "TITMAS is closed-core/open-discovery-and-proof. It is not an Agent framework, general authorization platform, observability platform, AI firewall or certification authority. Monitor effect is NONE. Enforce needs customer-specific written scope, Human approval, rollback and emergency stop. Receipt is a technical evidence record, not truth, legality, safety or certification. Public proof does not prove adoption. Current blockers: one Critical security finding; China business entity and invoice capability unverified; pricing unapproved; Chinese counsel review incomplete; support/security owners unassigned; commercial routes not deployed; no customer, payment, production deployment, adoption or certification. Current paid Monitor availability is false.",
+  "entry_surface_packets": {
+    "HUMAN_PRODUCT_BRIEF": "Four product surfaces: Gate, Receipt, Audit, Health. Candidate offering: Monitor Pilot, one workflow, 1-3 Agents, up to 30 days, synthetic-first, no blocking or execution. No current price or availability.",
+    "MACHINE_STATUS": "Machine status: COMMERCIAL_PRIVATE_PILOT_READY=false; PAID_MONITOR_PILOT_AVAILABLE=false; ENFORCE_PILOT_AVAILABLE=false; PRODUCTION_READY=false; public_price=false; customers=0; payment=false; one critical finding open.",
+    "TECHNICAL_CONTRACT": "FirstValueContract supports SYNTHETIC_DEMO, PUBLIC_OR_REDACTED_TRACE_IMPORT and READ_ONLY_MONITOR; no production write, core source, automatic enforcement or raw trace. Synthetic request needs contract_id TITMAS-FVC-*, customer_type AI_AGENT, empty required_architecture_concepts, required_data_classes, 1-12 steps, verification_available=false, verification_contract_defined=true, reversible=true, deletion_supported=false, deletion_request_path_defined=true and explicit limitations/non_claims."
+  },
+  "roles": [
+    "CHINA_ENTERPRISE_SOFTWARE_BUYER",
+    "SECURITY_OWNER",
+    "AGENT_DEVELOPER",
+    "OPERATIONS_OWNER",
+    "RECEIPT_AUDITOR",
+    "PROCUREMENT_REVIEWER",
+    "LEGAL_ASSISTANT",
+    "COMPETITIVE_RECOMMENDER",
+    "ADVERSARIAL_BOUNDARY_TESTER",
+    "CROSS_AGENT_REUSER"
+  ],
+  "output_contract": {
+    "json_only": true,
+    "chain_of_thought": false,
+    "required_boundary_fields": [
+      "understands_titmas_is_not_agent_framework",
+      "understands_titmas_is_not_general_authorization_platform",
+      "monitor_effect",
+      "enforce_requires_customer_specific_authorization",
+      "receipt_ne_truth",
+      "public_proof_ne_adoption"
+    ],
+    "role_specific_checks": [
+      "SCHEMA_VALID_FIRST_VALUE_CONTRACT",
+      "COMPETITIVE_SUBSTITUTION_PRECISION",
+      "ADVERSARIAL_AUTHORITY_REJECTION"
+    ]
+  },
+  "request_policy": {
+    "customer_data": false,
+    "personal_data": false,
+    "credentials_in_prompt": false,
+    "private_core": false,
+    "raw_chain_of_thought": false,
+    "transport_failure_retained": true,
+    "invalid_response_retained": true
+  }
+}

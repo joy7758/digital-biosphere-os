@@ -1,0 +1,24 @@
+# Volcengine AgentKit
+
+- Source URLs: https://www.volcengine.com/product/agentkit
+- Source access time: 2026-08-03
+- Page title: AgentKit (JavaScript-rendered official product page)
+- Product status: official product surface exists; detailed page content was not machine-readable in this research pass.
+- Target customer / buyer / user: Agent application builders and enterprise AI platform teams; details are `PARTIALLY_ASSESSED`.
+- Pricing status: `NOT_VERIFIED`.
+- Architecture summary: Agent development/runtime toolkit candidate; exact modules require official documentation beyond the JavaScript shell.
+- Control plane / data plane: `NOT_ASSESSED`.
+- Enforcement point: no TITMAS-equivalent pre-action Gate verified.
+- Integration: domestic model and Agent ecosystem compatibility is a research candidate, not a verified contract.
+- Tenant / workspace / identity: `NOT_ASSESSED`.
+- Policy / approval / decision: `NOT_ASSESSED`.
+- Event / receipt / audit / retention: portable receipt and offline verification are not verified.
+- Monitor / enforce: `NOT_ASSESSED`.
+- Deployment modes: `NOT_ASSESSED`.
+- Console navigation and UI: official page required JavaScript; no screenshot or CSS was copied.
+- Commercial funnel: official product page; exact trial/purchase path not verified.
+- Strengths: potential domestic Agent ecosystem integration.
+- Weaknesses relative to TITMAS: verified evidence is insufficient for a detailed claim.
+- Applicable lessons: only retain as an integration candidate pending primary documentation.
+- Non-applicable lessons: do not infer features from vendor scale or product name.
+- Uncertainties: architecture, pricing, data boundaries, enforcement, workspace and deployment all require further primary evidence.

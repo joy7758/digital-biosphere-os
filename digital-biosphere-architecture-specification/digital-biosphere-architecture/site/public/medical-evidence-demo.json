@@ -1,0 +1,71 @@
+{
+  "schema_version": "0.1",
+  "demo_id": "TITMAS-MEDICAL-EVIDENCE-DEMO-0.1",
+  "name": "UDI-DICOM Evidence Manifest and Validator",
+  "name_zh": "UDI-DICOM 医疗设备影像证据清单与验证器",
+  "status": "STATIC_SYNTHETIC_UI_DEMO",
+  "synthetic_data": true,
+  "maturity": "Development",
+  "direction_status": "DEVELOPMENT_DIRECTION",
+  "vertical_development_direction": true,
+  "independent_medical_platform": false,
+  "source": {
+    "repository": "https://github.com/joy7758/titmas",
+    "branch": "codex/medical-evidence-direction",
+    "revision": "292e83aaafa4ada5a6089bcde7bbebf0e70045b4"
+  },
+  "sample_identifier": "999.TEST.UDI.DICOM.0001",
+  "purpose": "Explain structural evidence-chain closure across device identity, an imaging object, and external evidence.",
+  "entrypoints": {
+    "industry_zh": "/industry/medical-evidence/",
+    "industry_en": "/en/industry/medical-evidence/",
+    "demo_zh": "/demo/medical-evidence/",
+    "demo_en": "/en/demo/medical-evidence/",
+    "compatibility_zh": "/medical-evidence/",
+    "compatibility_en": "/en/medical-evidence/"
+  },
+  "application_positioning": "TITMAS_INDUSTRY_APPLICATION_NOT_MEDICAL_SOFTWARE",
+  "roadmap": [
+    {
+      "stage": "UDI_DICOM_EVIDENCE_PROFILE",
+      "question": "WHICH_DEVICE",
+      "site_status": "REFERENCE_DEMO"
+    },
+    {
+      "stage": "MEDICAL_DEVICE_OPERATION_EVIDENCE",
+      "question": "WHAT_DID_THE_DEVICE_DO",
+      "site_status": "DIRECTION_ONLY"
+    },
+    {
+      "stage": "MEDICAL_AGENT_EVIDENCE",
+      "question": "WHY_DID_THE_AI_DECIDE_THIS",
+      "site_status": "DIRECTION_ONLY"
+    }
+  ],
+  "chain": [
+    "Identity",
+    "Imaging",
+    "Evidence"
+  ],
+  "data_policy": {
+    "synthetic_input_only": true,
+    "patient_data_used": false,
+    "hospital_data_used": false,
+    "input_uploaded": false,
+    "real_registry_lookup": false
+  },
+  "boundaries": {
+    "validator_implemented_here": false,
+    "real_medical_data_allowed": false,
+    "clinical_validation": false,
+    "device_safety_claim": false,
+    "clinical_safety_claim": false,
+    "regulatory_certification_claim": false,
+    "medical_diagnosis": false,
+    "real_hospital_deployment_claim": false,
+    "production_ready": false,
+    "authority_effect": false,
+    "permission_effect": false,
+    "evidence_truth_effect": false
+  }
+}

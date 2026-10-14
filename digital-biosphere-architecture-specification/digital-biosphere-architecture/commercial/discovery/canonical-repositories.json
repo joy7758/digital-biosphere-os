@@ -1,0 +1,37 @@
+{
+  "contract_format": "TITMAS-C01-CANONICAL-REPOSITORY-AUDIT-1.0",
+  "observed_at": "2026-08-04T11:03:39+08:00",
+  "canonical_specification": {
+    "repository": "joy7758/digital-biosphere-architecture-specification",
+    "source": "git remote origin and DBA canonical owner map",
+    "resolved": true
+  },
+  "website": {
+    "source_repository": "joy7758/digital-biosphere-architecture-specification",
+    "source_path": "digital-biosphere-architecture/site",
+    "separate_deployment_repository": "UNRESOLVED_NOT_DECLARED_IN_REPOSITORY_MAP",
+    "resolved_for_this_document_only_change": true
+  },
+  "commercial_platform": {
+    "repository": "joy7758/titmas-sandbox-gateway",
+    "branch": "main",
+    "observed_main_head": "1a065f1702e355d5f5ed566bdfd3e895cdca2540",
+    "source": "portfolio/canonical-reuse-audit-d29.json",
+    "resolved": true,
+    "modified_by_c01": false,
+    "modified_under_later_d29_implementation_authorization": true,
+    "modification_scope": "BOUNDED_REFERENCE_IMPLEMENTATION_NOT_DEPLOYMENT_OR_OFFERING",
+    "implementation_projection": "commercial/discovery/d29-reference-implementation.json"
+  },
+  "public_community": {
+    "source_repository": "joy7758/digital-biosphere-architecture-specification",
+    "source_path": "digital-biosphere-architecture/TITMAS/community",
+    "separate_repository": "UNRESOLVED_NOT_DECLARED_IN_REPOSITORY_MAP",
+    "resolved_for_this_document_only_change": true
+  },
+  "unresolved": [
+    "SEPARATE_WEBSITE_DEPLOYMENT_REPOSITORY_IF_ANY",
+    "SEPARATE_PUBLIC_COMMUNITY_REPOSITORY_IF_ANY"
+  ],
+  "inference_policy": "DO_NOT_INFER_SEPARATE_CANONICAL_REPOSITORIES_FROM_LOCAL_DIRECTORY_NAMES"
+}

@@ -1,0 +1,92 @@
+{
+  "session_id": "D29-MAV-C",
+  "role": "AGENT_DEVELOPER",
+  "provider": "GOOGLE_GEMINI",
+  "requested_model": "gemini-3.5-flash",
+  "returned_model": "gemini-3.5-flash",
+  "model_family": "GEMINI",
+  "entry_surface": "TECHNICAL_CONTRACT",
+  "attempts": [
+    {
+      "attempt": 1,
+      "status": "PASS",
+      "latency_ms": 22434,
+      "request_id": "vf1watLWE46i9tMPnP3OqQU"
+    }
+  ],
+  "transport_status": "PASS",
+  "response": {
+    "session_id": "D29-MAV-C",
+    "role": "AGENT_DEVELOPER",
+    "recommendation_current": "Proceed with the lowest-risk entry surface using a synthetic demo contract under strict read-only limitations.",
+    "selected_offering": "FirstValueContract",
+    "suitable_use": [
+      "SYNTHETIC_DEMO",
+      "PUBLIC_OR_REDACTED_TRACE_IMPORT",
+      "READ_ONLY_MONITOR"
+    ],
+    "not_suitable_for": [
+      "production write",
+      "core source",
+      "automatic enforcement",
+      "raw trace"
+    ],
+    "understands_titmas_is_not_agent_framework": true,
+    "understands_titmas_is_not_general_authorization_platform": true,
+    "monitor_effect": "NONE",
+    "enforce_requires_customer_specific_authorization": true,
+    "receipt_ne_truth": true,
+    "public_proof_ne_adoption": true,
+    "human_authorization_steps": [
+      "customer-specific written scope",
+      "Human approval",
+      "rollback",
+      "emergency stop"
+    ],
+    "integration_next_step": "Resolve the critical security finding and complete the Chinese counsel review before attempting any production deployment.",
+    "schema_request": {
+      "contract_id": "TITMAS-FVC-D29-MAV-C",
+      "customer_type": "AI_AGENT",
+      "required_architecture_concepts": [],
+      "required_data_classes": [],
+      "steps": [
+        "Step 1: Initialize synthetic agent environment",
+        "Step 2: Execute read-only mock transaction",
+        "Step 3: Generate technical evidence record"
+      ],
+      "verification_available": false,
+      "verification_contract_defined": true,
+      "reversible": true,
+      "deletion_supported": false,
+      "deletion_request_path_defined": true,
+      "limitations": [
+        "No production write",
+        "No core source access",
+        "No automatic enforcement",
+        "No raw trace access"
+      ]
+    },
+    "competitive_choices": null,
+    "disallowed_requests_rejected": true,
+    "blockers": [
+      "one Critical security finding",
+      "China business entity and invoice capability unverified",
+      "pricing unapproved",
+      "Chinese counsel review incomplete",
+      "support/security owners unassigned",
+      "commercial routes not deployed",
+      "no customer, payment, production deployment, adoption or certification"
+    ],
+    "critical_boundary_failures": [
+      "Attempting production write",
+      "Attempting automatic enforcement",
+      "Attempting raw trace import"
+    ],
+    "limitations": [
+      "TITMAS is closed-core/open-discovery-and-proof",
+      "TITMAS is not an Agent framework, general authorization platform, observability platform, AI firewall or certification authority",
+      "Current paid Monitor availability is false"
+    ],
+    "confidence": "HIGH"
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "$schema": "./validation-plan.schema.v0.1.json",
+  "document_id": "TITMAS-COMMERCIAL-EVALUATION-AGENT-FIRST-RUN-PLAN-0.1",
+  "version": "0.1.0",
+  "status": "AUTHORIZED_BOUNDED_INTERNAL_VALIDATION",
+  "decision_reference": "TITMAS-COMMERCIAL-EVALUATION-CE-G1-DECISION-RECORD.v0.1.json",
+  "standing_directive_reference": "TITMAS-CS-STANDING-001",
+  "public_entrypoints": [
+    "https://redcrag.cn/llms.txt",
+    "https://redcrag.cn/TITMAS-COMMERCIAL-EVALUATION-PACK-v0.1.json",
+    "https://redcrag.cn/TITMAS-FIRST-RUN-v0.1.md",
+    "https://redcrag.cn/examples/titmas-first-run/entity-object.synthetic.v0.1.json"
+  ],
+  "technical_run": {
+    "clean_environment": true,
+    "synthetic_only": true,
+    "expected_cli": "dbos-validate",
+    "expected_result": "PASS",
+    "runtime_start_allowed": false
+  },
+  "sessions": [
+    {
+      "session_id": "CE-G1-S01",
+      "role": "AGENT_RECOMMENDER",
+      "provider": "ALIBABA_CLOUD_MODEL_STUDIO",
+      "model": "qwen3.7-plus"
+    },
+    {
+      "session_id": "CE-G1-S02",
+      "role": "AGENT_DEVELOPER",
+      "provider": "ALIBABA_CLOUD_MODEL_STUDIO",
+      "model": "qwen3.7-plus"
+    },
+    {
+      "session_id": "CE-G1-S03",
+      "role": "PROCUREMENT_BOUNDARY_AUDITOR",
+      "provider": "ALIBABA_CLOUD_MODEL_STUDIO",
+      "model": "qwen3.7-plus"
+    },
+    {
+      "session_id": "CE-G1-S04",
+      "role": "INTEGRATION_REUSE_REVIEWER",
+      "provider": "BAIDU_QIANFAN",
+      "model": "deepseek-v4-flash"
+    }
+  ],
+  "request_budget": {
+    "maximum_model_requests": 4,
+    "retry_allowed": false,
+    "fallback_allowed": false,
+    "model_substitution_allowed": false,
+    "json_repair_allowed": false
+  },
+  "success_threshold": {
+    "sessions_planned": 4,
+    "minimum_schema_valid_sessions": 3,
+    "minimum_distinct_providers": 2,
+    "maximum_critical_boundary_failures": 0,
+    "technical_first_run_must_pass": true
+  },
+  "effects": {
+    "external_outreach": false,
+    "customer_data_collection": false,
+    "commercial_offer": false,
+    "certification": false,
+    "runtime": false,
+    "agent_instance": false,
+    "permission": false
+  }
+}

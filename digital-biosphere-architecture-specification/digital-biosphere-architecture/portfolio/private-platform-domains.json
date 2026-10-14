@@ -1,0 +1,19 @@
+{
+  "schema_version": "0.1.0",
+  "decision_reference": "TITMAS-CLOSED-CORE-OPEN-DISCOVERY-PROOF-PUBLIC-BETA-D28-V3",
+  "one_private_platform_core": true,
+  "domain_count": 8,
+  "domains": [
+    {"domain_id": "IDENTITY_AND_TENANCY", "name_zh": "身份与租户内核", "public_product": null},
+    {"domain_id": "EVIDENCE_AND_PROVENANCE", "name_zh": "证据与来源内核", "public_product": "SHARED_INPUT"},
+    {"domain_id": "POLICY_AND_APPROVAL", "name_zh": "策略与审批内核", "public_product": "TITMAS_GATE"},
+    {"domain_id": "ACTION_GATE", "name_zh": "行动闸门内核", "public_product": "TITMAS_GATE"},
+    {"domain_id": "RECEIPT_AND_ISSUANCE", "name_zh": "回执与签发内核", "public_product": "TITMAS_RECEIPT"},
+    {"domain_id": "AUDIT_AND_REPLAY", "name_zh": "审计与重放内核", "public_product": "TITMAS_AUDIT"},
+    {"domain_id": "HEALTH_AND_EVALUATION", "name_zh": "健康与评估内核", "public_product": "TITMAS_HEALTH"},
+    {"domain_id": "ADAPTERS_AND_CONNECTORS", "name_zh": "适配器与连接器内核", "public_product": "SHARED_ADAPTER"}
+  ],
+  "industry_specific_core": false,
+  "product_specific_duplicate_core": false,
+  "public_core_source": false
+}

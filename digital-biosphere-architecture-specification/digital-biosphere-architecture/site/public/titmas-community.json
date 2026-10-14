@@ -1,0 +1,49 @@
+{
+  "schema_version": "0.2",
+  "document_id": "TITMAS-HISTORICAL-COMMUNITY-MATERIAL-0.2",
+  "observed_at": "2026-08-04",
+  "brand": "titmas",
+  "brand_zh": "夏日之海",
+  "brand_logo": "/titmas-logo.png",
+  "technical_project_identifier": "TITMAS",
+  "current": false,
+  "status": "HISTORICAL_NON_CURRENT",
+  "historical_direction_recorded": true,
+  "community_established": false,
+  "public_contribution_enabled": false,
+  "open_core": false,
+  "foundation_in_scope": false,
+  "current_direction": {
+    "positioning": "COMMERCIAL_AGENT_INFRASTRUCTURE",
+    "platform_model": "CLOSED_CORE_OPEN_DISCOVERY_AND_BOUNDED_PROOF",
+    "public_products": ["TITMAS_GATE", "TITMAS_RECEIPT", "TITMAS_AUDIT", "TITMAS_HEALTH"],
+    "human_entry": "/private-evaluation/",
+    "agent_entry": "/product-catalog.json"
+  },
+  "historical_material": {
+    "human_entry_zh": "/community/",
+    "human_entry_en": "/en/community/",
+    "purpose": "Preserve an earlier developer-community design for traceability without representing it as the current operating model.",
+    "authority_effect": "NONE",
+    "permission_effect": "NONE",
+    "contribution_invitation": false
+  },
+  "hard_boundaries": [
+    "HISTORICAL_MATERIAL_NE_CURRENT_DIRECTION",
+    "COMMUNITY_REVIEW_NE_ARCHITECTURE_DECISION",
+    "CONTRIBUTION_NE_AUTHORITY",
+    "CONFORMANCE_NE_ADOPTION",
+    "SPECIFICATION_NE_IMPLEMENTATION"
+  ],
+  "effects": {
+    "authority": false,
+    "permission": false,
+    "runtime": false,
+    "agent": false,
+    "organization_creation": false,
+    "repository_transfer": false,
+    "public_contribution": false,
+    "production_readiness": false,
+    "customer_adoption": false
+  }
+}

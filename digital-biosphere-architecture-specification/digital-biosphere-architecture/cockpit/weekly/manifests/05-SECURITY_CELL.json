@@ -1,0 +1,37 @@
+{
+  "cell_id": "SECURITY_CELL",
+  "version": "0.1",
+  "name": "SECURITY_CELL",
+  "niche": "bounded weekly cockpit observation",
+  "module": "cells.security",
+  "class": "Security_CellCell",
+  "inputs": [
+    "admitted-observations"
+  ],
+  "outputs": [
+    "security-findings"
+  ],
+  "source_dependencies": [
+    "existing-audit-evidence"
+  ],
+  "evidence_requirements": [
+    "admitted-observation"
+  ],
+  "freshness_policy": "INHERIT_ADMISSION",
+  "authority_boundaries": {
+    "can_write_source_project": false,
+    "can_create_pull_request": false,
+    "can_merge": false,
+    "can_deploy": false,
+    "can_authorize": false,
+    "can_change_project_priority": false
+  },
+  "failure_policy": {
+    "status": "NOT_ASSESSED",
+    "preserve_other_cells": true
+  },
+  "replacement": {
+    "replaceable": true,
+    "interface_version": "0.1"
+  }
+}

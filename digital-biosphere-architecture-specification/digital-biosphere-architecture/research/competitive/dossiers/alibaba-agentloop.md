@@ -1,0 +1,24 @@
+# Alibaba Cloud AgentLoop
+
+- Source URLs: https://help.aliyun.com/zh/product/3033820.html
+- Source access time: 2026-08-03
+- Page title: Agent 观测与优化 AgentLoop
+- Product status: public cloud product surface; operational performance is not independently assessed.
+- Target customer / buyer / user: enterprise Agent teams; engineering, evaluation and operations users; cloud-account purchasing principal.
+- Pricing status: metered billing is described in official documentation; exact customer cost depends on service configuration and is not copied into TITMAS pricing.
+- Architecture summary: workspace-oriented Agent observation, audit, evaluation, experiment and optimization platform forming a Trace-to-dataset improvement loop.
+- Control plane / data plane: Alibaba Cloud console and managed services; precise customer-data residency and private data-plane boundaries require account-specific confirmation.
+- Enforcement point: not verified as a pre-side-effect TITMAS-equivalent Gate; primary positioning is observation, evaluation and optimization.
+- Integration: cloud console, Agent application instrumentation and Alibaba Cloud ecosystem.
+- Tenant / workspace / identity: cloud-account and workspace patterns are visible; detailed machine-identity and tenant semantics are not fully public in the reviewed entry page.
+- Policy / approval / decision: audit and evaluation are present; exact-action approval binding is not verified.
+- Event / receipt / audit / retention: Trace, audit and experiment records are described; portable independently verifiable Receipt is not verified.
+- Monitor / enforce: observation is verified from vendor documentation; enforce semantics are not verified.
+- Deployment modes: managed Alibaba Cloud; private or customer-VPC equivalence is `NOT_ASSESSED`.
+- Console navigation and UI: access center, observation, evaluation, experiment, audit and asset-management patterns; dense Chinese cloud-console layout.
+- Commercial funnel: account activation, console entry, documentation and cloud support.
+- Strengths: integrated enterprise Agent data flywheel, Chinese support and cloud-account operations.
+- Weaknesses relative to TITMAS: broader observability/evaluation platform; no verified portable receipt or independent offline proof boundary.
+- Applicable lessons: Chinese workspace vocabulary, usage visibility, audit navigation, support entry and a clear observe-to-improve flow.
+- Non-applicable lessons: rebuilding Trace, evaluation, experiment or model optimization as TITMAS core.
+- Uncertainties: exact pricing units, data retention, private deployment, tenant identity and enforcement details need authenticated-console or contract evidence.

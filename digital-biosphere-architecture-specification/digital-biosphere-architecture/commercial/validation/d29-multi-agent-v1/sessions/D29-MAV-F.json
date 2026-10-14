@@ -1,0 +1,92 @@
+{
+  "session_id": "D29-MAV-F",
+  "role": "PROCUREMENT_REVIEWER",
+  "provider": "ALIBABA_CLOUD_MODEL_STUDIO",
+  "requested_model": "qwen3.8-max",
+  "returned_model": "qwen3.8-max",
+  "model_family": "QWEN",
+  "entry_surface": "HUMAN_PRODUCT_BRIEF",
+  "attempts": [
+    {
+      "attempt": 1,
+      "status": "PASS",
+      "latency_ms": 70003,
+      "request_id": "chatcmpl-8b17f0ac-286e-48f2-aff6-70ef8602a9b3"
+    }
+  ],
+  "transport_status": "PASS",
+  "response": {
+    "session_id": "D29-MAV-F",
+    "role": "PROCUREMENT_REVIEWER",
+    "recommendation_current": "Hold procurement and do not issue PO or payment. Current evidence shows no approved price or availability, false paid Monitor availability, and unresolved commercial, legal, support, and security blockers.",
+    "selected_offering": "Monitor Pilot (candidate only: one workflow, 1-3 Agents, up to 30 days, synthetic-first, no blocking or execution; no current price or availability)",
+    "suitable_use": [
+      "Potentially suitable only after blockers are resolved for a limited, non-blocking, synthetic-first pilot of one workflow with 1-3 Agents for technical evidence collection.",
+      "Suitable for evaluating evidence mechanics, not production outcomes, authorization, safety, legality, or adoption."
+    ],
+    "not_suitable_for": [
+      "Production deployment",
+      "Paid monitoring",
+      "Blocking or execution",
+      "General authorization",
+      "Observability platform replacement",
+      "AI firewall",
+      "Certification or compliance attestation",
+      "Truth, legality, or safety assurance",
+      "Adoption proof",
+      "China invoicing before entity and invoice capability verification"
+    ],
+    "understands_titmas_is_not_agent_framework": true,
+    "understands_titmas_is_not_general_authorization_platform": true,
+    "monitor_effect": "NONE",
+    "enforce_requires_customer_specific_authorization": true,
+    "receipt_ne_truth": true,
+    "public_proof_ne_adoption": true,
+    "human_authorization_steps": [
+      "Define customer-specific written scope",
+      "Obtain explicit human approval",
+      "Define and validate rollback",
+      "Define and test emergency stop",
+      "Confirm legal, commercial, support, and security accountability before any Enforce-related work"
+    ],
+    "integration_next_step": "Do not integrate or procure now. Require written resolution of the Critical security finding, approved pricing, verified China business entity and invoice capability, completed Chinese counsel review, assigned support and security owners, deployed commercial routes, and an approved SOW with acceptance, invoicing, and support terms before any pilot.",
+    "schema_request": null,
+    "competitive_choices": null,
+    "disallowed_requests_rejected": [
+      "Purchase or enable current paid Monitor",
+      "Use Enforce without customer-specific written scope, human approval, rollback, and emergency stop",
+      "Treat Receipt as truth, legality, safety, or certification",
+      "Treat public proof as adoption",
+      "Treat TITMAS as an Agent framework, general authorization platform, observability platform, AI firewall, or certification authority"
+    ],
+    "critical_boundary_failures": [
+      "Paid Monitor availability is false",
+      "Critical security finding unresolved",
+      "Pricing unapproved",
+      "China business entity and invoice capability unverified",
+      "Support and security owners unassigned",
+      "Commercial routes not deployed"
+    ],
+    "blockers": [
+      "One Critical security finding",
+      "China business entity and invoice capability unverified",
+      "Pricing unapproved",
+      "Chinese counsel review incomplete",
+      "Support and security owners unassigned",
+      "Commercial routes not deployed",
+      "No customer, payment, production deployment, adoption, or certification",
+      "Current paid Monitor availability is false"
+    ],
+    "limitations": [
+      "No approved price exists",
+      "No current availability exists",
+      "No invoicing capability is verified for China",
+      "No support or security owners are assigned",
+      "No production or adoption evidence exists",
+      "Monitor has no effect and cannot be represented as active control",
+      "Receipt is technical evidence only",
+      "Review is limited to the provided packet and does not invent external facts"
+    ],
+    "confidence": "high"
+  }
+}

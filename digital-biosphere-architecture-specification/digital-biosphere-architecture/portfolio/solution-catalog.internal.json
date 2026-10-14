@@ -1,0 +1,13 @@
+{
+  "schema_version": "0.1.0",
+  "solutions": [
+    {"solution_id": "SOFTWARE_DELIVERY", "product_bundle": ["TITMAS_GATE", "TITMAS_RECEIPT", "TITMAS_AUDIT"], "status": "PRIMARY_CONTROLLED_SYNTHETIC_PROOF", "shared_core_reuse_estimate": 0.8},
+    {"solution_id": "MEDIA_EVIDENCE", "product_bundle": ["TITMAS_RECEIPT", "TITMAS_AUDIT", "TITMAS_HEALTH"], "status": "SECONDARY_CONFIGURATION", "shared_core_reuse_estimate": 0.75},
+    {"solution_id": "MEDICAL_IMAGING", "product_bundle": ["TITMAS_RECEIPT", "TITMAS_AUDIT"], "status": "DIRECTION_ONLY", "shared_core_reuse_estimate": null},
+    {"solution_id": "SMART_MANUFACTURING", "product_bundle": ["TITMAS_GATE", "TITMAS_RECEIPT", "TITMAS_AUDIT"], "status": "DIRECTION_ONLY", "shared_core_reuse_estimate": null},
+    {"solution_id": "FINANCIAL_ACTION_CONTROL", "product_bundle": ["TITMAS_GATE", "TITMAS_RECEIPT", "TITMAS_AUDIT"], "status": "DIRECTION_ONLY", "shared_core_reuse_estimate": null},
+    {"solution_id": "AUTONOMOUS_SPACE_RESEARCH", "product_bundle": ["TITMAS_GATE", "TITMAS_RECEIPT", "TITMAS_AUDIT", "TITMAS_HEALTH"], "status": "DIRECTION_ONLY", "shared_core_reuse_estimate": null}
+  ],
+  "allowed_differences": ["INDUSTRY_ADAPTER", "INDUSTRY_POLICY_CONFIGURATION", "INDUSTRY_WORKFLOW", "INDUSTRY_UI", "INDUSTRY_REPORT_TEMPLATE"],
+  "forbidden_duplicate_cores": ["IDENTITY", "EVIDENCE", "RECEIPT", "AUDIT", "TENANT", "ISSUANCE"]
+}

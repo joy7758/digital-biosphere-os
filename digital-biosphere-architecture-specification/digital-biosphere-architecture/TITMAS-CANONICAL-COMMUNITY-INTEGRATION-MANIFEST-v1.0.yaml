@@ -1,0 +1,3029 @@
+{
+  "manifest_version": "1.0.0",
+  "document_id": "TITMAS-CANONICAL-COMMUNITY-INTEGRATION-MANIFEST-1.0",
+  "status": "CANONICAL_INTEGRATION_CANDIDATE",
+  "base_branch": "main",
+  "base_commit": "ba6d51f60c12f1ac954dd67947451821fd5a3eb6",
+  "integration_branch": "codex/titmas-agent-native-open-standards-community-canonical-integration-v1",
+  "generated_at": "2026-07-29",
+  "whole_branch_merge": false,
+  "whole_branch_cherry_pick": false,
+  "entries": [
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": ".github/ISSUE_TEMPLATE/bug.yml",
+      "destination_path": "digital-biosphere-architecture/TITMAS/community/github-activation-templates/ISSUE_TEMPLATE/bug.yml",
+      "original_active_destination": ".github/ISSUE_TEMPLATE/bug.yml",
+      "dormant_destination": "digital-biosphere-architecture/TITMAS/community/github-activation-templates/ISSUE_TEMPLATE/bug.yml",
+      "future_active_destination": ".github/ISSUE_TEMPLATE/bug.yml",
+      "content_hash": "sha256:1e059d4930b9e8ac6d8f719c8276e4504793fe31427528f4864fcf27e8d26906",
+      "category": "CANONICAL_COMMUNITY_CORE",
+      "disposition": "PORT_AS_DORMANT_ACTIVATION_ASSET",
+      "activation_decision_required": "COMMUNITY-HD-03=ACCEPT",
+      "security_transport_required": true,
+      "activation_pr_required": true,
+      "reason": "Template history is retained outside GitHub auto-discovery until a separate activation decision and PR.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": ".github/ISSUE_TEMPLATE/config.yml",
+      "destination_path": "digital-biosphere-architecture/TITMAS/community/github-activation-templates/ISSUE_TEMPLATE/config.yml",
+      "original_active_destination": ".github/ISSUE_TEMPLATE/config.yml",
+      "dormant_destination": "digital-biosphere-architecture/TITMAS/community/github-activation-templates/ISSUE_TEMPLATE/config.yml",
+      "future_active_destination": ".github/ISSUE_TEMPLATE/config.yml",
+      "content_hash": "sha256:bd11fe80c16914ac30b79a91abea56bf12933294dd667ff79c6fd21c8a4325f1",
+      "category": "CANONICAL_COMMUNITY_CORE",
+      "disposition": "PORT_AS_DORMANT_ACTIVATION_ASSET",
+      "activation_decision_required": "COMMUNITY-HD-03=ACCEPT",
+      "security_transport_required": true,
+      "activation_pr_required": true,
+      "reason": "Template history is retained outside GitHub auto-discovery until a separate activation decision and PR.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": ".github/ISSUE_TEMPLATE/integration.yml",
+      "destination_path": "digital-biosphere-architecture/TITMAS/community/github-activation-templates/ISSUE_TEMPLATE/integration.yml",
+      "original_active_destination": ".github/ISSUE_TEMPLATE/integration.yml",
+      "dormant_destination": "digital-biosphere-architecture/TITMAS/community/github-activation-templates/ISSUE_TEMPLATE/integration.yml",
+      "future_active_destination": ".github/ISSUE_TEMPLATE/integration.yml",
+      "content_hash": "sha256:d4f5e106a0505224f8144a218a2a894f313a4b0602dd8ed6358807483964846c",
+      "category": "CANONICAL_COMMUNITY_CORE",
+      "disposition": "PORT_AS_DORMANT_ACTIVATION_ASSET",
+      "activation_decision_required": "COMMUNITY-HD-03=ACCEPT",
+      "security_transport_required": true,
+      "activation_pr_required": true,
+      "reason": "Template history is retained outside GitHub auto-discovery until a separate activation decision and PR.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": ".github/ISSUE_TEMPLATE/proposal.yml",
+      "destination_path": "digital-biosphere-architecture/TITMAS/community/github-activation-templates/ISSUE_TEMPLATE/proposal.yml",
+      "original_active_destination": ".github/ISSUE_TEMPLATE/proposal.yml",
+      "dormant_destination": "digital-biosphere-architecture/TITMAS/community/github-activation-templates/ISSUE_TEMPLATE/proposal.yml",
+      "future_active_destination": ".github/ISSUE_TEMPLATE/proposal.yml",
+      "content_hash": "sha256:ca55a329b9dae84694001c944e5f61ca187e9da0f5a4231a000a4bddde128503",
+      "category": "CANONICAL_COMMUNITY_CORE",
+      "disposition": "PORT_AS_DORMANT_ACTIVATION_ASSET",
+      "activation_decision_required": "COMMUNITY-HD-03=ACCEPT",
+      "security_transport_required": true,
+      "activation_pr_required": true,
+      "reason": "Template history is retained outside GitHub auto-discovery until a separate activation decision and PR.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": ".github/pull_request_template.md",
+      "destination_path": "digital-biosphere-architecture/TITMAS/community/github-activation-templates/pull_request_template.md",
+      "original_active_destination": ".github/pull_request_template.md",
+      "dormant_destination": "digital-biosphere-architecture/TITMAS/community/github-activation-templates/pull_request_template.md",
+      "future_active_destination": ".github/pull_request_template.md",
+      "content_hash": "sha256:6f8ead3b9003e216b9761ade845133cb5e154668aba0b2b825debd9d48a1203b",
+      "category": "CANONICAL_COMMUNITY_CORE",
+      "disposition": "PORT_AS_DORMANT_ACTIVATION_ASSET",
+      "activation_decision_required": "COMMUNITY-HD-03=ACCEPT",
+      "security_transport_required": true,
+      "activation_pr_required": true,
+      "reason": "Template was moved outside GitHub auto-discovery and received only the required Security-link path correction.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "main",
+      "source_commit": "ba6d51f60c12f1ac954dd67947451821fd5a3eb6",
+      "source_path": ".github/workflows/datadog-synthetics.yml",
+      "destination_path": ".github/workflows/datadog-synthetics.yml",
+      "content_hash": "sha256:6bcc19f91da7a564e84e177cd8602f329d5f63a9d59450c12b0d7db1ef069848",
+      "category": "GOVERNANCE_ENTRY",
+      "disposition": "MERGE_CONTENT",
+      "reason": "Existing optional external CI was made explicit and fail-closed when repository secrets are unavailable.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "WORKFLOW_YAML_PARSE",
+        "GITHUB_ACTIONS"
+      ],
+      "conflicts": [
+        "DATADOG_REPOSITORY_SECRETS_ABSENT"
+      ],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-open-standards-community-canonical-integration-v1",
+      "source_commit": "ba6d51f60c12f1ac954dd67947451821fd5a3eb6",
+      "source_path": ".github/workflows/titmas-community-conformance.yml",
+      "destination_path": ".github/workflows/titmas-community-conformance.yml",
+      "content_hash": "sha256:0b4d6378748f2248165b461b9d311cff020a8b511a792c3d6f952e2e93a13764",
+      "category": "CONFORMANCE_CORE",
+      "disposition": "MERGE_CONTENT",
+      "reason": "Content reconciled or created for the canonical integration candidate.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "TITMAS_CONFORMANCE",
+        "PYTHON_UNIT_TESTS"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-open-standards-community-canonical-integration-v1",
+      "source_commit": "ba6d51f60c12f1ac954dd67947451821fd5a3eb6",
+      "source_path": ".gitignore",
+      "destination_path": ".gitignore",
+      "content_hash": "sha256:6feaded4e28ea86e001a6751b4e3d960e8b7c31b9616ff9936b79297086e809b",
+      "category": "GOVERNANCE_ENTRY",
+      "disposition": "MERGE_CONTENT",
+      "reason": "Content reconciled or created for the canonical integration candidate.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-open-standards-community-canonical-integration-v1",
+      "source_commit": "ba6d51f60c12f1ac954dd67947451821fd5a3eb6",
+      "source_path": "digital-biosphere-architecture/agent-index.json",
+      "destination_path": "digital-biosphere-architecture/agent-index.json",
+      "content_hash": "sha256:87ace9e79171f4d6bc24c2dfcd1b6d9108247259e3ece488cee126d75e89bf4c",
+      "category": "MACHINE_ENTRY",
+      "disposition": "MERGE_CONTENT",
+      "reason": "Content reconciled or created for the canonical integration candidate.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": [
+        "TITMAS-CONTRIBUTOR-ENTRY-v0.1.json AS CANONICAL ENTRY"
+      ]
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-open-standards-community-canonical-integration-v1",
+      "source_commit": "ba6d51f60c12f1ac954dd67947451821fd5a3eb6",
+      "source_path": "digital-biosphere-architecture/AGENTS.md",
+      "destination_path": "digital-biosphere-architecture/AGENTS.md",
+      "content_hash": "sha256:2a83c5009576dfc61bc5ae022a88d32098a1b6e3c74976aa7017bc9babc279e4",
+      "category": "GOVERNANCE_ENTRY",
+      "disposition": "MERGE_CONTENT",
+      "reason": "Content reconciled or created for the canonical integration candidate.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-open-standards-community-canonical-integration-v1",
+      "source_commit": "ba6d51f60c12f1ac954dd67947451821fd5a3eb6",
+      "source_path": "digital-biosphere-architecture/architecture/ADR-029-titmas-infrastructure-developer-community-direction.md",
+      "destination_path": "digital-biosphere-architecture/architecture/ADR-029-titmas-infrastructure-developer-community-direction.md",
+      "content_hash": "sha256:02bafd67179f52bc2670359e6dbc673158259384eeafdbf00d883ba2c3f4efa0",
+      "category": "GOVERNANCE_ENTRY",
+      "disposition": "MERGE_CONTENT",
+      "reason": "Content reconciled or created for the canonical integration candidate.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/architecture/ADR-034-titmas-agent-native-standards-community-direction.md",
+      "destination_path": "digital-biosphere-architecture/architecture/ADR-034-titmas-agent-native-standards-community-direction.md",
+      "content_hash": "sha256:0e425400cf39295e2b489da830ee5b09290b3132e50e22cdf5b81a58639cc1ed",
+      "category": "GOVERNANCE_ENTRY",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-open-standards-community-canonical-integration-v1",
+      "source_commit": "ba6d51f60c12f1ac954dd67947451821fd5a3eb6",
+      "source_path": "digital-biosphere-architecture/architecture/titmas-agent-native-community-constitutional-baseline-v1.1.md",
+      "destination_path": "digital-biosphere-architecture/architecture/titmas-agent-native-community-constitutional-baseline-v1.1.md",
+      "content_hash": "sha256:e7765f0404805074114b3fc41f2ec6caeaf8068c498dd1e0d58dbc3ce887f8c5",
+      "category": "GOVERNANCE_ENTRY",
+      "disposition": "MERGE_CONTENT",
+      "reason": "Content reconciled or created for the canonical integration candidate.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/architecture/titmas-agent-native-standards-community-launch-readiness-v1.1.md",
+      "destination_path": "digital-biosphere-architecture/architecture/titmas-agent-native-standards-community-launch-readiness-v1.1.md",
+      "content_hash": "sha256:4038822b72207abe2e2d1c2beb64f39530c845805f6e65bfa1aca1c273185ef3",
+      "category": "GOVERNANCE_ENTRY",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/architecture/titmas-architecture-charter-v1.0.md",
+      "destination_path": "digital-biosphere-architecture/architecture/titmas-architecture-charter-v1.0.md",
+      "content_hash": "sha256:c112e2d87476b0ec94043dfb2ae03df58e1263a4999421c667ce6bd5efdf8fd9",
+      "category": "GOVERNANCE_ENTRY",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-open-standards-community-canonical-integration-v1",
+      "source_commit": "ba6d51f60c12f1ac954dd67947451821fd5a3eb6",
+      "source_path": "digital-biosphere-architecture/architecture/titmas-canonical-community-integration-plan-v1.0.md",
+      "destination_path": "digital-biosphere-architecture/architecture/titmas-canonical-community-integration-plan-v1.0.md",
+      "content_hash": "sha256:add39dd2dd83b165d3667503827927997f42ad3fc172a064bc33fb3887ccd639",
+      "category": "GOVERNANCE_ENTRY",
+      "disposition": "MERGE_CONTENT",
+      "reason": "Content reconciled or created for the canonical integration candidate.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/architecture/titmas-contribution-proposal-template-v0.1.md",
+      "destination_path": "digital-biosphere-architecture/architecture/titmas-contribution-proposal-template-v0.1.md",
+      "content_hash": "sha256:9a8822bf719fcbbfe1c140b0ed4d66212fd2bdd4e083afddbcb7750af2848382",
+      "category": "GOVERNANCE_ENTRY",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/architecture/titmas-developer-infrastructure-positioning-v1.0.md",
+      "destination_path": "digital-biosphere-architecture/architecture/titmas-developer-infrastructure-positioning-v1.0.md",
+      "content_hash": "sha256:e56d519020243a792daccf878e7e565098af5852e9c635300542cf5f71c8adc7",
+      "category": "GOVERNANCE_ENTRY",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/architecture/titmas-document-maturity-policy-v0.1.md",
+      "destination_path": "digital-biosphere-architecture/architecture/titmas-document-maturity-policy-v0.1.md",
+      "content_hash": "sha256:7f0754e0c456694cab25172a81f5f10e5dc6407d776bc8432d9fbca6cd2b5289",
+      "category": "GOVERNANCE_ENTRY",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-open-standards-community-canonical-integration-v1",
+      "source_commit": "ba6d51f60c12f1ac954dd67947451821fd5a3eb6",
+      "source_path": "digital-biosphere-architecture/architecture/titmas-infrastructure-developer-community-strategy-v0.1.md",
+      "destination_path": "digital-biosphere-architecture/architecture/titmas-infrastructure-developer-community-strategy-v0.1.md",
+      "content_hash": "sha256:eb2d1eedc87ea6c34af24d261f4ec0ef0d155f3e7c7b14147fbad289e7a7cfd8",
+      "category": "GOVERNANCE_ENTRY",
+      "disposition": "MERGE_CONTENT",
+      "reason": "Content reconciled or created for the canonical integration candidate.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-open-standards-community-canonical-integration-v1",
+      "source_commit": "ba6d51f60c12f1ac954dd67947451821fd5a3eb6",
+      "source_path": "digital-biosphere-architecture/CODE_OF_CONDUCT.md",
+      "destination_path": "digital-biosphere-architecture/CODE_OF_CONDUCT.md",
+      "content_hash": "sha256:639222cfce07a5b1a866fb53dbf58de495982b10249de445400c5b4629485168",
+      "category": "CANONICAL_COMMUNITY_CORE",
+      "disposition": "MERGE_CONTENT",
+      "reason": "Content reconciled or created for the canonical integration candidate.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/CONTRIBUTING.md",
+      "destination_path": "digital-biosphere-architecture/CONTRIBUTING.md",
+      "content_hash": "sha256:ef9a7d5a83cdc14ce056b42be5f2aa81fb74e81807e368151b4ccb45569b3ed4",
+      "category": "CANONICAL_COMMUNITY_CORE",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-open-standards-community-canonical-integration-v1",
+      "source_commit": "ba6d51f60c12f1ac954dd67947451821fd5a3eb6",
+      "source_path": "digital-biosphere-architecture/DECISION-QUEUE.md",
+      "destination_path": "digital-biosphere-architecture/DECISION-QUEUE.md",
+      "content_hash": "sha256:bfa0cd9ea1f08f0eb22a4922ca5eacc5707f8dbc1d88e9951c3fbf2844c6a760",
+      "category": "GOVERNANCE_ENTRY",
+      "disposition": "MERGE_CONTENT",
+      "reason": "Content reconciled or created for the canonical integration candidate.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-open-standards-community-canonical-integration-v1",
+      "source_commit": "ba6d51f60c12f1ac954dd67947451821fd5a3eb6",
+      "source_path": "digital-biosphere-architecture/llms.txt",
+      "destination_path": "digital-biosphere-architecture/llms.txt",
+      "content_hash": "sha256:c6fcac806961639c25a6c106ff25b7500f5d076269a0a26639a2e5ea0bb62c67",
+      "category": "MACHINE_ENTRY",
+      "disposition": "MERGE_CONTENT",
+      "reason": "Content reconciled or created for the canonical integration candidate.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-open-standards-community-canonical-integration-v1",
+      "source_commit": "ba6d51f60c12f1ac954dd67947451821fd5a3eb6",
+      "source_path": "digital-biosphere-architecture/MASTER-ROADMAP.md",
+      "destination_path": "digital-biosphere-architecture/MASTER-ROADMAP.md",
+      "content_hash": "sha256:251e60c9e23cff05270ee6be06798a6a5ff56f82e5162c5ed02b1cb226e03b08",
+      "category": "GOVERNANCE_ENTRY",
+      "disposition": "MERGE_CONTENT",
+      "reason": "Content reconciled or created for the canonical integration candidate.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-open-standards-community-canonical-integration-v1",
+      "source_commit": "ba6d51f60c12f1ac954dd67947451821fd5a3eb6",
+      "source_path": "digital-biosphere-architecture/PROGRAM-STATUS.md",
+      "destination_path": "digital-biosphere-architecture/PROGRAM-STATUS.md",
+      "content_hash": "sha256:af4655bfcd482390f4778ea831fa506b47d6b11b531c52dbf096e4a9aedf87ec",
+      "category": "GOVERNANCE_ENTRY",
+      "disposition": "MERGE_CONTENT",
+      "reason": "Content reconciled or created for the canonical integration candidate.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-open-standards-community-canonical-integration-v1",
+      "source_commit": "ba6d51f60c12f1ac954dd67947451821fd5a3eb6",
+      "source_path": "digital-biosphere-architecture/README.md",
+      "destination_path": "digital-biosphere-architecture/README.md",
+      "content_hash": "sha256:a981b2676fe14ddad02e71a6677e55f3077502d8436ce6f4871f060a10e1982d",
+      "category": "GOVERNANCE_ENTRY",
+      "disposition": "MERGE_CONTENT",
+      "reason": "Content reconciled or created for the canonical integration candidate.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-open-standards-community-canonical-integration-v1",
+      "source_commit": "ba6d51f60c12f1ac954dd67947451821fd5a3eb6",
+      "source_path": "digital-biosphere-architecture/RISK-AND-BLOCKER-REGISTER.md",
+      "destination_path": "digital-biosphere-architecture/RISK-AND-BLOCKER-REGISTER.md",
+      "content_hash": "sha256:91fc0785b9f7c0366206404447efe7ccd77cb61e5a054d56debafd4ca244c79b",
+      "category": "GOVERNANCE_ENTRY",
+      "disposition": "MERGE_CONTENT",
+      "reason": "Content reconciled or created for the canonical integration candidate.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-open-standards-community-canonical-integration-v1",
+      "source_commit": "ba6d51f60c12f1ac954dd67947451821fd5a3eb6",
+      "source_path": "digital-biosphere-architecture/SECURITY.md",
+      "destination_path": "digital-biosphere-architecture/SECURITY.md",
+      "content_hash": "sha256:ddba51d2606a32ecfa5fc35df718e9a319f80f98610e205270b53557bea0c932",
+      "category": "CANONICAL_COMMUNITY_CORE",
+      "disposition": "MERGE_CONTENT",
+      "reason": "Content reconciled or created for the canonical integration candidate.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-open-standards-community-canonical-integration-v1",
+      "source_commit": "ba6d51f60c12f1ac954dd67947451821fd5a3eb6",
+      "source_path": "digital-biosphere-architecture/TITMAS-AGENT-NATIVE-OPEN-STANDARDS-COMMUNITY-HUMAN-MERGE-AND-LAUNCH-DECISION-PACKET-v1.0.md",
+      "destination_path": "digital-biosphere-architecture/TITMAS-AGENT-NATIVE-OPEN-STANDARDS-COMMUNITY-HUMAN-MERGE-AND-LAUNCH-DECISION-PACKET-v1.0.md",
+      "content_hash": "sha256:92cb14c546958365acc66bd54e148cd850b8304b0c634583b7ed9c93b12208dc",
+      "category": "GOVERNANCE_ENTRY",
+      "disposition": "MERGE_CONTENT",
+      "reason": "Content reconciled or created for the canonical integration candidate.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-open-standards-community-canonical-integration-v1",
+      "source_commit": "ba6d51f60c12f1ac954dd67947451821fd5a3eb6",
+      "source_path": "digital-biosphere-architecture/TITMAS-CANONICAL-COMMUNITY-INTEGRATION-MANIFEST-v1.0.yaml",
+      "destination_path": "digital-biosphere-architecture/TITMAS-CANONICAL-COMMUNITY-INTEGRATION-MANIFEST-v1.0.yaml",
+      "content_hash": "SELF_REFERENTIAL_NOT_APPLICABLE",
+      "category": "GOVERNANCE_ENTRY",
+      "disposition": "MERGE_CONTENT",
+      "reason": "Content reconciled or created for the canonical integration candidate.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [
+        "SELF_HASH_CANNOT_BE_REPRESENTED_WITHOUT_RECURSION"
+      ],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-open-standards-community-canonical-integration-v1",
+      "source_commit": "ba6d51f60c12f1ac954dd67947451821fd5a3eb6",
+      "source_path": "digital-biosphere-architecture/TITMAS-CONTRIBUTOR-ENTRY-v0.1.json",
+      "destination_path": "digital-biosphere-architecture/TITMAS-CONTRIBUTOR-ENTRY-v0.1.json",
+      "content_hash": "sha256:338183cd8509fb4ecfc71e381d54eb657730db922385427671726e8b1fd6a229",
+      "category": "MACHINE_ENTRY",
+      "disposition": "CREATE_COMPATIBILITY_POINTER",
+      "reason": "Legacy machine path retained only as a non-canonical pointer.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/TITMAS/adapters/README.md",
+      "destination_path": "digital-biosphere-architecture/TITMAS/adapters/README.md",
+      "content_hash": "sha256:b599ed22bc1c64fd64fd222511229bf9e1287c5c75920ea8409fd28806881eb0",
+      "category": "ADAPTER_ENTRY",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/TITMAS/adapters/template.md",
+      "destination_path": "digital-biosphere-architecture/TITMAS/adapters/template.md",
+      "content_hash": "sha256:a8e17d021548983a6e59552276236280e380b6ee589a782b431933a5444c6981",
+      "category": "ADAPTER_ENTRY",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/TITMAS/agent-native/claims.json",
+      "destination_path": "digital-biosphere-architecture/TITMAS/agent-native/claims.json",
+      "content_hash": "sha256:9c561f3ef9b0fc773f27182ce7ee3cf12f11a0889f290682c981a32f505bc72a",
+      "category": "AGENT_NATIVE_CORE",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/TITMAS/agent-native/community_cli.py",
+      "destination_path": "digital-biosphere-architecture/TITMAS/agent-native/community_cli.py",
+      "content_hash": "sha256:66ae69a6f17601f7fc692ede959f9f5ea26c7265a0e4bb8d854bf0305bb71b5e",
+      "category": "AGENT_NATIVE_CORE",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-open-standards-community-canonical-integration-v1",
+      "source_commit": "ba6d51f60c12f1ac954dd67947451821fd5a3eb6",
+      "source_path": "digital-biosphere-architecture/TITMAS/agent-native/community-manifest.json",
+      "destination_path": "digital-biosphere-architecture/TITMAS/agent-native/community-manifest.json",
+      "content_hash": "sha256:2ab063183bcfcb12b9b1198dcb5bf6a14811d4887d16d7db7d27232cb523dc97",
+      "category": "AGENT_NATIVE_CORE",
+      "disposition": "MERGE_CONTENT",
+      "reason": "Content reconciled or created for the canonical integration candidate.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-open-standards-community-canonical-integration-v1",
+      "source_commit": "ba6d51f60c12f1ac954dd67947451821fd5a3eb6",
+      "source_path": "digital-biosphere-architecture/TITMAS/agent-native/contributions/example-contribution-package.json",
+      "destination_path": "digital-biosphere-architecture/TITMAS/agent-native/contributions/example-contribution-package.json",
+      "content_hash": "sha256:1a9a84501545d2f9f4ffd68f11e780d69c579116d091225782c5775a4d268fc8",
+      "category": "AGENT_NATIVE_CORE",
+      "disposition": "MERGE_CONTENT",
+      "reason": "Content reconciled or created for the canonical integration candidate.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-open-standards-community-canonical-integration-v1",
+      "source_commit": "d914131a60def11738c901018d28a31d07ae84b1",
+      "source_path": "digital-biosphere-architecture/TITMAS/agent-native/contributions/internal-cycle-001.json",
+      "destination_path": "digital-biosphere-architecture/TITMAS/agent-native/contributions/internal-cycle-001.json",
+      "content_hash": "sha256:393e09f99df1313edf281a0def5b59d2f090065161bf87b292ec88f7e83fdbb4",
+      "category": "AGENT_NATIVE_CORE",
+      "disposition": "MERGE_CONTENT",
+      "reason": "Content reconciled or created for the canonical integration candidate.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/TITMAS/agent-native/contributions/README.md",
+      "destination_path": "digital-biosphere-architecture/TITMAS/agent-native/contributions/README.md",
+      "content_hash": "sha256:bdd8f0e6e48ab1710704799c54fa929a75c1685fb6cf7819e23e35bde5d47588",
+      "category": "AGENT_NATIVE_CORE",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-open-standards-community-canonical-integration-v1",
+      "source_commit": "ba6d51f60c12f1ac954dd67947451821fd5a3eb6",
+      "source_path": "digital-biosphere-architecture/TITMAS/agent-native/current-state.json",
+      "destination_path": "digital-biosphere-architecture/TITMAS/agent-native/current-state.json",
+      "content_hash": "sha256:57786ae6316d792699d2433ff2484e4b671652f6935f21bc614496b30d58bd7a",
+      "category": "AGENT_NATIVE_CORE",
+      "disposition": "MERGE_CONTENT",
+      "reason": "Content reconciled or created for the canonical integration candidate.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/TITMAS/agent-native/guides/agent-in-60-seconds.md",
+      "destination_path": "digital-biosphere-architecture/TITMAS/agent-native/guides/agent-in-60-seconds.md",
+      "content_hash": "sha256:ec6ac80e05a42fe0da7ef63a42dc0218953bc2d54fc0ba6d68c8c4891ae6ac76",
+      "category": "AGENT_NATIVE_CORE",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/TITMAS/agent-native/guides/how-agents-review-each-other.md",
+      "destination_path": "digital-biosphere-architecture/TITMAS/agent-native/guides/how-agents-review-each-other.md",
+      "content_hash": "sha256:264bc80bb30c0f636e254e1cbba653865210cadb22175b5e090c3ebc3ed51f56",
+      "category": "AGENT_NATIVE_CORE",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/TITMAS/agent-native/guides/how-an-agent-contributes.md",
+      "destination_path": "digital-biosphere-architecture/TITMAS/agent-native/guides/how-an-agent-contributes.md",
+      "content_hash": "sha256:af43620ede8abf2fa42077780ac8f7f7d1905be6e42f42ca432887811f33fb42",
+      "category": "AGENT_NATIVE_CORE",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/TITMAS/agent-native/guides/how-an-agent-finds-work.md",
+      "destination_path": "digital-biosphere-architecture/TITMAS/agent-native/guides/how-an-agent-finds-work.md",
+      "content_hash": "sha256:61853d33039b58b694f78d9339eb4704659a6d21853c44e406bf58e3963b4896",
+      "category": "AGENT_NATIVE_CORE",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/TITMAS/agent-native/guides/how-an-agent-joins.md",
+      "destination_path": "digital-biosphere-architecture/TITMAS/agent-native/guides/how-an-agent-joins.md",
+      "content_hash": "sha256:30ea2d1481dd3f2101dc60a5f4bc64489f8523323e7c8652c09c81558eed563d",
+      "category": "AGENT_NATIVE_CORE",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/TITMAS/agent-native/guides/how-an-agent-reuses-work.md",
+      "destination_path": "digital-biosphere-architecture/TITMAS/agent-native/guides/how-an-agent-reuses-work.md",
+      "content_hash": "sha256:8a42382953853cc976545639cbf59a57023f41067b3816c03e37cb3ff6561779",
+      "category": "AGENT_NATIVE_CORE",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/TITMAS/agent-native/guides/human-exception-and-appeal-path.md",
+      "destination_path": "digital-biosphere-architecture/TITMAS/agent-native/guides/human-exception-and-appeal-path.md",
+      "content_hash": "sha256:b06fbc51a2d9500b6d421b564f32d40c75bb78d195a8dff37faa2c9870dc5602",
+      "category": "AGENT_NATIVE_CORE",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/TITMAS/agent-native/guides/when-an-agent-must-not-recommend-titmas.md",
+      "destination_path": "digital-biosphere-architecture/TITMAS/agent-native/guides/when-an-agent-must-not-recommend-titmas.md",
+      "content_hash": "sha256:be391c9d415f2a3f690b15d144079430e8c285c50503dc380e20304d2a76629c",
+      "category": "AGENT_NATIVE_CORE",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/TITMAS/agent-native/guides/when-an-agent-should-recommend-titmas.md",
+      "destination_path": "digital-biosphere-architecture/TITMAS/agent-native/guides/when-an-agent-should-recommend-titmas.md",
+      "content_hash": "sha256:83f516779cf4aa6c04dc322562b139b7c10929d46e903934ca2c4d02a257089d",
+      "category": "AGENT_NATIVE_CORE",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/TITMAS/agent-native/handoff/example-handoff-package.json",
+      "destination_path": "digital-biosphere-architecture/TITMAS/agent-native/handoff/example-handoff-package.json",
+      "content_hash": "sha256:7f615fc7da3b157cc09ef3196552c3b9d7da38873df0fe05abc58aaee27522a3",
+      "category": "AGENT_NATIVE_CORE",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/TITMAS/agent-native/handoff/README.md",
+      "destination_path": "digital-biosphere-architecture/TITMAS/agent-native/handoff/README.md",
+      "content_hash": "sha256:ef58ff635a4b6228376038632d429c5e2cf96eb1ff41e0cc4a6f36b791b99f50",
+      "category": "AGENT_NATIVE_CORE",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/TITMAS/agent-native/human-exception-queue.json",
+      "destination_path": "digital-biosphere-architecture/TITMAS/agent-native/human-exception-queue.json",
+      "content_hash": "sha256:c7eb0fbcce2daffd95e63971bcaa1238fc367ff031f6d945af69c48b03e20034",
+      "category": "AGENT_NATIVE_CORE",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-open-standards-community-canonical-integration-v1",
+      "source_commit": "ba6d51f60c12f1ac954dd67947451821fd5a3eb6",
+      "source_path": "digital-biosphere-architecture/TITMAS/agent-native/maintenance/example-maintenance-report.json",
+      "destination_path": "digital-biosphere-architecture/TITMAS/agent-native/maintenance/example-maintenance-report.json",
+      "content_hash": "sha256:15ca7541d89c2b33aa0ce943223da6d23c07b73b5f88563e4bc1f507bd7c297d",
+      "category": "AGENT_NATIVE_CORE",
+      "disposition": "MERGE_CONTENT",
+      "reason": "Content reconciled or created for the canonical integration candidate.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/TITMAS/agent-native/maintenance/README.md",
+      "destination_path": "digital-biosphere-architecture/TITMAS/agent-native/maintenance/README.md",
+      "content_hash": "sha256:b2e0d2a9f0ca3135a6d29c86f9ab4771e91a02af54abbe35a7d2b45bc4dd70bf",
+      "category": "AGENT_NATIVE_CORE",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-open-standards-community-canonical-integration-v1",
+      "source_commit": "ba6d51f60c12f1ac954dd67947451821fd5a3eb6",
+      "source_path": "digital-biosphere-architecture/TITMAS/agent-native/participants/authority-registry.json",
+      "destination_path": "digital-biosphere-architecture/TITMAS/agent-native/participants/authority-registry.json",
+      "content_hash": "sha256:0e533a09e2b4485ed1e2e8e0fa16aa2e4829b1078ea5bb700c51505b29ec4008",
+      "category": "AGENT_NATIVE_CORE",
+      "disposition": "MERGE_CONTENT",
+      "reason": "Content reconciled or created for the canonical integration candidate.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/TITMAS/agent-native/participants/example-capability-declaration.json",
+      "destination_path": "digital-biosphere-architecture/TITMAS/agent-native/participants/example-capability-declaration.json",
+      "content_hash": "sha256:58d272d1585c46197fbb5e68dec2e9c0fab3947566c358ce96c52e838386bb80",
+      "category": "AGENT_NATIVE_CORE",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/TITMAS/agent-native/participants/example-expiry-record.json",
+      "destination_path": "digital-biosphere-architecture/TITMAS/agent-native/participants/example-expiry-record.json",
+      "content_hash": "sha256:800e38253b4be402e3596bf6b59a9f2b47167d33f08eadcdc46a89e3d05d7c9c",
+      "category": "AGENT_NATIVE_CORE",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/TITMAS/agent-native/participants/example-revocation-record.json",
+      "destination_path": "digital-biosphere-architecture/TITMAS/agent-native/participants/example-revocation-record.json",
+      "content_hash": "sha256:6f489e69a3f316baed90e1816b0e5432b6c787ce7f3e44cbebfac59d4536cee9",
+      "category": "AGENT_NATIVE_CORE",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/TITMAS/agent-native/participants/example-role-assignment.json",
+      "destination_path": "digital-biosphere-architecture/TITMAS/agent-native/participants/example-role-assignment.json",
+      "content_hash": "sha256:76132201d65903b7a7fbfa0c8c3741715ba2bfd299957c4fbe46fae9090406d2",
+      "category": "AGENT_NATIVE_CORE",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-open-standards-community-canonical-integration-v1",
+      "source_commit": "ba6d51f60c12f1ac954dd67947451821fd5a3eb6",
+      "source_path": "digital-biosphere-architecture/TITMAS/agent-native/participants/participant-registry.json",
+      "destination_path": "digital-biosphere-architecture/TITMAS/agent-native/participants/participant-registry.json",
+      "content_hash": "sha256:449aa15cebbe3b4a3826d61ef2d481a42f1f735ec7d90615a20c5b1048cb0ffc",
+      "category": "AGENT_NATIVE_CORE",
+      "disposition": "MERGE_CONTENT",
+      "reason": "Content reconciled or created for the canonical integration candidate.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/TITMAS/agent-native/participants/role-registry.json",
+      "destination_path": "digital-biosphere-architecture/TITMAS/agent-native/participants/role-registry.json",
+      "content_hash": "sha256:feea46eab3ce35e854da4f751621733eea07bb7c2cd26f6a2cd0929103e13e5c",
+      "category": "AGENT_NATIVE_CORE",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-open-standards-community-canonical-integration-v1",
+      "source_commit": "ba6d51f60c12f1ac954dd67947451821fd5a3eb6",
+      "source_path": "digital-biosphere-architecture/TITMAS/agent-native/README.md",
+      "destination_path": "digital-biosphere-architecture/TITMAS/agent-native/README.md",
+      "content_hash": "sha256:2aff6c23dbbd3a66e0bfa9012b52e55546c6625832653a16583da3d9a78c9868",
+      "category": "AGENT_NATIVE_CORE",
+      "disposition": "MERGE_CONTENT",
+      "reason": "Content reconciled or created for the canonical integration candidate.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/TITMAS/agent-native/recommendations/calibration-cases.json",
+      "destination_path": "digital-biosphere-architecture/TITMAS/agent-native/recommendations/calibration-cases.json",
+      "content_hash": "sha256:561e15a76ee757040ecf2615c05739a02cf9bb322bcddfe735515bc9516181ee",
+      "category": "AGENT_NATIVE_CORE",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/TITMAS/agent-native/recommendations/example-recommendation-package.json",
+      "destination_path": "digital-biosphere-architecture/TITMAS/agent-native/recommendations/example-recommendation-package.json",
+      "content_hash": "sha256:e1d5f26e337b69d235c7190265c3aa30d2367e76b8d5b0e2f5d292fc40536ac8",
+      "category": "AGENT_NATIVE_CORE",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/TITMAS/agent-native/recommendations/README.md",
+      "destination_path": "digital-biosphere-architecture/TITMAS/agent-native/recommendations/README.md",
+      "content_hash": "sha256:a0480a3ed7330833e631c5d05914557160383eb44e77114c8db3a6a08fc946a3",
+      "category": "AGENT_NATIVE_CORE",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/TITMAS/agent-native/reviews/review-protocol.json",
+      "destination_path": "digital-biosphere-architecture/TITMAS/agent-native/reviews/review-protocol.json",
+      "content_hash": "sha256:60361aae15329b3b0349c59fc25290b5b60d70e5d2e817eed0715476bed8cbfa",
+      "category": "AGENT_NATIVE_CORE",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/TITMAS/agent-native/schemas/agent-index.schema.json",
+      "destination_path": "digital-biosphere-architecture/TITMAS/agent-native/schemas/agent-index.schema.json",
+      "content_hash": "sha256:0decaa3274275b7b03a748b11d5e639bca567edb0df5f59d10da59cd3bdb00e9",
+      "category": "AGENT_NATIVE_CORE",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-open-standards-community-canonical-integration-v1",
+      "source_commit": "ba6d51f60c12f1ac954dd67947451821fd5a3eb6",
+      "source_path": "digital-biosphere-architecture/TITMAS/agent-native/schemas/authority-registry.schema.json",
+      "destination_path": "digital-biosphere-architecture/TITMAS/agent-native/schemas/authority-registry.schema.json",
+      "content_hash": "sha256:92c643607a8a4c5cff45162d3a894ff5fcdf7c672cbf9dcfde6834adb706fa8a",
+      "category": "AGENT_NATIVE_CORE",
+      "disposition": "MERGE_CONTENT",
+      "reason": "Content reconciled or created for the canonical integration candidate.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/TITMAS/agent-native/schemas/capability-declaration.schema.json",
+      "destination_path": "digital-biosphere-architecture/TITMAS/agent-native/schemas/capability-declaration.schema.json",
+      "content_hash": "sha256:e5747e6a5ae1e4ca2acbe54361355184bd25a71807f5ed15083af63e291713fa",
+      "category": "AGENT_NATIVE_CORE",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-open-standards-community-canonical-integration-v1",
+      "source_commit": "ba6d51f60c12f1ac954dd67947451821fd5a3eb6",
+      "source_path": "digital-biosphere-architecture/TITMAS/agent-native/schemas/community-manifest.schema.json",
+      "destination_path": "digital-biosphere-architecture/TITMAS/agent-native/schemas/community-manifest.schema.json",
+      "content_hash": "sha256:328cccc8d6a159ebb6ca21581bb8eacf6d47d4971d6cb7b6b3cc77471ddbdd1f",
+      "category": "AGENT_NATIVE_CORE",
+      "disposition": "MERGE_CONTENT",
+      "reason": "Content reconciled or created for the canonical integration candidate.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/TITMAS/agent-native/schemas/contribution-package.schema.json",
+      "destination_path": "digital-biosphere-architecture/TITMAS/agent-native/schemas/contribution-package.schema.json",
+      "content_hash": "sha256:9eeaef7874981e2c8e17184d9c60ea1cd7a4c0dece4ad9e3e6be9e2e647b884f",
+      "category": "AGENT_NATIVE_CORE",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-open-standards-community-canonical-integration-v1",
+      "source_commit": "ba6d51f60c12f1ac954dd67947451821fd5a3eb6",
+      "source_path": "digital-biosphere-architecture/TITMAS/agent-native/schemas/current-state.schema.json",
+      "destination_path": "digital-biosphere-architecture/TITMAS/agent-native/schemas/current-state.schema.json",
+      "content_hash": "sha256:69cbd692cf65d55c0933850f5e313c26f22de0d6c6fc32d98a7927433f89f5c6",
+      "category": "AGENT_NATIVE_CORE",
+      "disposition": "MERGE_CONTENT",
+      "reason": "Content reconciled or created for the canonical integration candidate.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/TITMAS/agent-native/schemas/expiry-record.schema.json",
+      "destination_path": "digital-biosphere-architecture/TITMAS/agent-native/schemas/expiry-record.schema.json",
+      "content_hash": "sha256:f460940f6a7e35eb5d08ff602f02e6b76cc3673297021c0a3c51bbd2e0d95a30",
+      "category": "AGENT_NATIVE_CORE",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/TITMAS/agent-native/schemas/handoff-package.schema.json",
+      "destination_path": "digital-biosphere-architecture/TITMAS/agent-native/schemas/handoff-package.schema.json",
+      "content_hash": "sha256:edda7e55a3af75291a7e52a28aa29aa70f1c70f10d8c8f30a63e40b2d9b479d8",
+      "category": "AGENT_NATIVE_CORE",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/TITMAS/agent-native/schemas/maintenance-report.schema.json",
+      "destination_path": "digital-biosphere-architecture/TITMAS/agent-native/schemas/maintenance-report.schema.json",
+      "content_hash": "sha256:b12c244700a6ffa53f6c5c338b6503cf5cbddc18fcc9d2ad99b0b360c98030a8",
+      "category": "AGENT_NATIVE_CORE",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/TITMAS/agent-native/schemas/participant.schema.json",
+      "destination_path": "digital-biosphere-architecture/TITMAS/agent-native/schemas/participant.schema.json",
+      "content_hash": "sha256:f5204cdfc62b3fa8038adc34438005cfbd257a3519aa88049d6a4eb0279646c6",
+      "category": "AGENT_NATIVE_CORE",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/TITMAS/agent-native/schemas/README.md",
+      "destination_path": "digital-biosphere-architecture/TITMAS/agent-native/schemas/README.md",
+      "content_hash": "sha256:ae672cfb615e36ebdb41289c1a8da51531b9394c704d675688ca190beb94ea5b",
+      "category": "AGENT_NATIVE_CORE",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/TITMAS/agent-native/schemas/recommendation-package.schema.json",
+      "destination_path": "digital-biosphere-architecture/TITMAS/agent-native/schemas/recommendation-package.schema.json",
+      "content_hash": "sha256:de0b24b95020d7ccfd2db4b05eeebf4235b0c7687853d56331f735ef8a4982f9",
+      "category": "AGENT_NATIVE_CORE",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/TITMAS/agent-native/schemas/review-receipt.schema.json",
+      "destination_path": "digital-biosphere-architecture/TITMAS/agent-native/schemas/review-receipt.schema.json",
+      "content_hash": "sha256:7048ed4e885aeaae7b8fb7f54b4c39d0eadb3369fc96837d7a14e54bbca05c53",
+      "category": "AGENT_NATIVE_CORE",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/TITMAS/agent-native/schemas/revocation-record.schema.json",
+      "destination_path": "digital-biosphere-architecture/TITMAS/agent-native/schemas/revocation-record.schema.json",
+      "content_hash": "sha256:3160f51638d0fff31a149eccb6747ae0e38393891da1ba32c417716023a05f38",
+      "category": "AGENT_NATIVE_CORE",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/TITMAS/agent-native/schemas/role-assignment.schema.json",
+      "destination_path": "digital-biosphere-architecture/TITMAS/agent-native/schemas/role-assignment.schema.json",
+      "content_hash": "sha256:5a3dcd8225164e06beec1c74561a06a054a1409ee8071ecd4f5d666f4358df36",
+      "category": "AGENT_NATIVE_CORE",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/TITMAS/agent-native/schemas/scope-lease.schema.json",
+      "destination_path": "digital-biosphere-architecture/TITMAS/agent-native/schemas/scope-lease.schema.json",
+      "content_hash": "sha256:ae8da724858666c9ee4f6d3a0ddcdc89ff0e94a66db21b538c5f6998aeb53ddd",
+      "category": "AGENT_NATIVE_CORE",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/TITMAS/agent-native/schemas/task.schema.json",
+      "destination_path": "digital-biosphere-architecture/TITMAS/agent-native/schemas/task.schema.json",
+      "content_hash": "sha256:334cdf55262ddfbafbbc560b410328833aedf4726dbb3f78ad8a84eacf014a92",
+      "category": "AGENT_NATIVE_CORE",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/TITMAS/agent-native/security/adversarial-cases.json",
+      "destination_path": "digital-biosphere-architecture/TITMAS/agent-native/security/adversarial-cases.json",
+      "content_hash": "sha256:d6400d8f174433165a8abfd7d32e7ccb8449aa353a06355c331f88d55065e16d",
+      "category": "AGENT_NATIVE_CORE",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/TITMAS/agent-native/security/threat-model.md",
+      "destination_path": "digital-biosphere-architecture/TITMAS/agent-native/security/threat-model.md",
+      "content_hash": "sha256:3060113c891b07da21d5505a4e1d99271ce5707ebefc32ac731b3a615850b8c7",
+      "category": "AGENT_NATIVE_CORE",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/TITMAS/agent-native/tasks/example-scope-lease.json",
+      "destination_path": "digital-biosphere-architecture/TITMAS/agent-native/tasks/example-scope-lease.json",
+      "content_hash": "sha256:8a2a59a187d34e1e9ecb827c23a8aca58306fc35fe15f39086bc90a78d3f1c27",
+      "category": "AGENT_NATIVE_CORE",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-open-standards-community-canonical-integration-v1",
+      "source_commit": "ba6d51f60c12f1ac954dd67947451821fd5a3eb6",
+      "source_path": "digital-biosphere-architecture/TITMAS/agent-native/tasks/task-registry.json",
+      "destination_path": "digital-biosphere-architecture/TITMAS/agent-native/tasks/task-registry.json",
+      "content_hash": "sha256:bb944522edea02b81e7a99cfcd809085c095c150cc40fe059241127ee3e6da6f",
+      "category": "AGENT_NATIVE_CORE",
+      "disposition": "MERGE_CONTENT",
+      "reason": "Content reconciled or created for the canonical integration candidate.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/TITMAS/agent-native/tests/test_community_cli.py",
+      "destination_path": "digital-biosphere-architecture/TITMAS/agent-native/tests/test_community_cli.py",
+      "content_hash": "sha256:92948350b6e3cc800197cfb04dc6c7783d29b858e6530be9c63a91e1d87b310e",
+      "category": "AGENT_NATIVE_CORE",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/TITMAS/community/AI_ASSISTED_CONTRIBUTIONS.md",
+      "destination_path": "digital-biosphere-architecture/TITMAS/community/AI_ASSISTED_CONTRIBUTIONS.md",
+      "content_hash": "sha256:fc7de33c6fe9f44e9a92a7de69fcde2ffa4898340fef80e64a327506b6d8b3f9",
+      "category": "CANONICAL_COMMUNITY_CORE",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-open-standards-community-canonical-integration-v1",
+      "source_commit": "ba6d51f60c12f1ac954dd67947451821fd5a3eb6",
+      "source_path": "digital-biosphere-architecture/TITMAS/community/CODE_OF_CONDUCT.md",
+      "destination_path": "digital-biosphere-architecture/TITMAS/community/CODE_OF_CONDUCT.md",
+      "content_hash": "sha256:17a9bb9817e9b36c466a2c5a95b52fce2798fe2c18d78e8f87d190b4311e6f0e",
+      "category": "CANONICAL_COMMUNITY_CORE",
+      "disposition": "MERGE_CONTENT",
+      "reason": "Content reconciled or created for the canonical integration candidate.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-open-standards-community-canonical-integration-v1",
+      "source_commit": "ba6d51f60c12f1ac954dd67947451821fd5a3eb6",
+      "source_path": "digital-biosphere-architecture/TITMAS/community/community-status.json",
+      "destination_path": "digital-biosphere-architecture/TITMAS/community/community-status.json",
+      "content_hash": "sha256:6d7ded18ee79414b058bc7c5aed7d56d7b2b4347ef1fc0072969ec9463930a0a",
+      "category": "CANONICAL_COMMUNITY_CORE",
+      "disposition": "MERGE_CONTENT",
+      "reason": "Content reconciled or created for the canonical integration candidate.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/TITMAS/community/CONTRIBUTING.md",
+      "destination_path": "digital-biosphere-architecture/TITMAS/community/CONTRIBUTING.md",
+      "content_hash": "sha256:5f825035c599da71d779f34dfdd22651d561f458c9f213da009bd384b01a667a",
+      "category": "CANONICAL_COMMUNITY_CORE",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/TITMAS/community/DEPRECATION_CHECKLIST.md",
+      "destination_path": "digital-biosphere-architecture/TITMAS/community/DEPRECATION_CHECKLIST.md",
+      "content_hash": "sha256:a2e9091b0061f00a05d6bd6c96aa2ae3a19403cf0806d9e34d83e156ad247206",
+      "category": "CANONICAL_COMMUNITY_CORE",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-open-standards-community-canonical-integration-v1",
+      "source_commit": "ba6d51f60c12f1ac954dd67947451821fd5a3eb6",
+      "source_path": "digital-biosphere-architecture/TITMAS/community/GOVERNANCE.md",
+      "destination_path": "digital-biosphere-architecture/TITMAS/community/GOVERNANCE.md",
+      "content_hash": "sha256:958e49a93d72b7a5353f52836558a33b5ff4d2659c155d6cf913e5e13405c9bd",
+      "category": "CANONICAL_COMMUNITY_CORE",
+      "disposition": "MERGE_CONTENT",
+      "reason": "Content reconciled or created for the canonical integration candidate.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-open-standards-community-canonical-integration-v1",
+      "source_commit": "ba6d51f60c12f1ac954dd67947451821fd5a3eb6",
+      "source_path": "digital-biosphere-architecture/TITMAS/community/interim-role-assignments.json",
+      "destination_path": "digital-biosphere-architecture/TITMAS/community/interim-role-assignments.json",
+      "content_hash": "sha256:e569a66735c4d62e23515b09c4e7b0fc1ce29c7991e8f223a4133e6319da3f84",
+      "category": "CANONICAL_COMMUNITY_CORE",
+      "disposition": "MERGE_CONTENT",
+      "reason": "Content reconciled or created for the canonical integration candidate.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/TITMAS/community/MEMBERSHIP.md",
+      "destination_path": "digital-biosphere-architecture/TITMAS/community/MEMBERSHIP.md",
+      "content_hash": "sha256:8442fc806304a0a159fb3a229a881184540411e7da78fb225658eea379131bb7",
+      "category": "CANONICAL_COMMUNITY_CORE",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/TITMAS/community/RELEASE_CHECKLIST.md",
+      "destination_path": "digital-biosphere-architecture/TITMAS/community/RELEASE_CHECKLIST.md",
+      "content_hash": "sha256:cacca4dd549c12b99880154d12c4d7af0dc42bc12b3a8d00853711f6dc76f023",
+      "category": "CANONICAL_COMMUNITY_CORE",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/TITMAS/community/REVIEW_CHECKLIST.md",
+      "destination_path": "digital-biosphere-architecture/TITMAS/community/REVIEW_CHECKLIST.md",
+      "content_hash": "sha256:a686b105818c2105f89635d73ff95d4bb65b1cefe0d5ebb420dbb2a64a31a347",
+      "category": "CANONICAL_COMMUNITY_CORE",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/TITMAS/community/REVIEW_PROCESS.md",
+      "destination_path": "digital-biosphere-architecture/TITMAS/community/REVIEW_PROCESS.md",
+      "content_hash": "sha256:df67ab329bd0f7d1ae55391052d6c2cb6e6878552f54d5a97957f7c8d672bea3",
+      "category": "CANONICAL_COMMUNITY_CORE",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-open-standards-community-canonical-integration-v1",
+      "source_commit": "ba6d51f60c12f1ac954dd67947451821fd5a3eb6",
+      "source_path": "digital-biosphere-architecture/TITMAS/community/SECURITY.md",
+      "destination_path": "digital-biosphere-architecture/TITMAS/community/SECURITY.md",
+      "content_hash": "sha256:b8c126fac83cde34aac54be12391df17d5e30d1b820664dc4cb1f7892923648f",
+      "category": "CANONICAL_COMMUNITY_CORE",
+      "disposition": "MERGE_CONTENT",
+      "reason": "Content reconciled or created for the canonical integration candidate.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-open-standards-community-canonical-integration-v1",
+      "source_commit": "ba6d51f60c12f1ac954dd67947451821fd5a3eb6",
+      "source_path": "digital-biosphere-architecture/TITMAS/community/STARTER_TASKS.md",
+      "destination_path": "digital-biosphere-architecture/TITMAS/community/STARTER_TASKS.md",
+      "content_hash": "sha256:56e4f2cc092450386074692b37632f49c47e9c47d10f4935f7e21e3b28bcc4f5",
+      "category": "CANONICAL_COMMUNITY_CORE",
+      "disposition": "MERGE_CONTENT",
+      "reason": "Content reconciled or created for the canonical integration candidate.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/TITMAS/conformance/fixtures/negative/semantic-elevation-cases.json",
+      "destination_path": "digital-biosphere-architecture/TITMAS/conformance/fixtures/negative/semantic-elevation-cases.json",
+      "content_hash": "sha256:d9f7a592c94dbef596ff64cec655748d7f612d4a0849bcd200ebbcd5bdd58806",
+      "category": "CONFORMANCE_CORE",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/TITMAS/conformance/fixtures/positive/core-synthetic-valid.json",
+      "destination_path": "digital-biosphere-architecture/TITMAS/conformance/fixtures/positive/core-synthetic-valid.json",
+      "content_hash": "sha256:2d148709ee0f50384f2bde0379379d450dced8935b2a3727cfb1b409a2d98cda",
+      "category": "CONFORMANCE_CORE",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-open-standards-community-canonical-integration-v1",
+      "source_commit": "ba6d51f60c12f1ac954dd67947451821fd5a3eb6",
+      "source_path": "digital-biosphere-architecture/TITMAS/conformance/grounding/candidate_preflight.py",
+      "destination_path": "digital-biosphere-architecture/TITMAS/conformance/grounding/candidate_preflight.py",
+      "content_hash": "sha256:76d0737620d0072cade9102b48735ea346241b492d7211702b2ef8646c3519e9",
+      "category": "CONFORMANCE_CORE",
+      "disposition": "MERGE_CONTENT",
+      "reason": "Content reconciled or created for the canonical integration candidate.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-open-standards-community-canonical-integration-v1",
+      "source_commit": "ba6d51f60c12f1ac954dd67947451821fd5a3eb6",
+      "source_path": "digital-biosphere-architecture/TITMAS/conformance/grounding/local_resource_resolver.py",
+      "destination_path": "digital-biosphere-architecture/TITMAS/conformance/grounding/local_resource_resolver.py",
+      "content_hash": "sha256:77f388224b2b27b6bdc0d55fb2d2d695318e468be485c3fa7751df14f66d3815",
+      "category": "CONFORMANCE_CORE",
+      "disposition": "MERGE_CONTENT",
+      "reason": "Content reconciled or created for the canonical integration candidate.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-open-standards-community-canonical-integration-v1",
+      "source_commit": "d914131a60def11738c901018d28a31d07ae84b1",
+      "source_path": "digital-biosphere-architecture/TITMAS/conformance/grounding/README.md",
+      "destination_path": "digital-biosphere-architecture/TITMAS/conformance/grounding/README.md",
+      "content_hash": "sha256:4fbecfa1dd919cb4f2ef3322e86a415d219b8cdce02a9e07868630c86c0051b4",
+      "category": "CONFORMANCE_CORE",
+      "disposition": "MERGE_CONTENT",
+      "reason": "Content reconciled or created for the canonical integration candidate.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-open-standards-community-canonical-integration-v1",
+      "source_commit": "ba6d51f60c12f1ac954dd67947451821fd5a3eb6",
+      "source_path": "digital-biosphere-architecture/TITMAS/conformance/harness.py",
+      "destination_path": "digital-biosphere-architecture/TITMAS/conformance/harness.py",
+      "content_hash": "sha256:3fb6b83eb16f3882ba4a8a5a7221c75c1e2e61bb0b40937e40ffee78c1509406",
+      "category": "CONFORMANCE_CORE",
+      "disposition": "MERGE_CONTENT",
+      "reason": "Content reconciled or created for the canonical integration candidate.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-open-standards-community-canonical-integration-v1",
+      "source_commit": "ba6d51f60c12f1ac954dd67947451821fd5a3eb6",
+      "source_path": "digital-biosphere-architecture/TITMAS/conformance/README.md",
+      "destination_path": "digital-biosphere-architecture/TITMAS/conformance/README.md",
+      "content_hash": "sha256:09bd7ae4f0c6066e3c16ca734c0b1a89fc245ae1b1b0fa3f575644e5479ee1bf",
+      "category": "CONFORMANCE_CORE",
+      "disposition": "MERGE_CONTENT",
+      "reason": "Content reconciled or created for the canonical integration candidate.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-open-standards-community-canonical-integration-v1",
+      "source_commit": "ba6d51f60c12f1ac954dd67947451821fd5a3eb6",
+      "source_path": "digital-biosphere-architecture/TITMAS/conformance/reports/latest.json",
+      "destination_path": "digital-biosphere-architecture/TITMAS/conformance/reports/latest.json",
+      "content_hash": "sha256:5363e07846b65521c9be4ded9985d658df772ab759cf883b604dc52afa420cd8",
+      "category": "CONFORMANCE_CORE",
+      "disposition": "MERGE_CONTENT",
+      "reason": "Content reconciled or created for the canonical integration candidate.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-open-standards-community-canonical-integration-v1",
+      "source_commit": "ba6d51f60c12f1ac954dd67947451821fd5a3eb6",
+      "source_path": "digital-biosphere-architecture/TITMAS/conformance/schemas/community-status.schema.json",
+      "destination_path": "digital-biosphere-architecture/TITMAS/conformance/schemas/community-status.schema.json",
+      "content_hash": "sha256:7ea63ae7dafc39ac1a0f1cebc2eef5d8f16f72375094f9921639ad5513ebb910",
+      "category": "CONFORMANCE_CORE",
+      "disposition": "MERGE_CONTENT",
+      "reason": "Content reconciled or created for the canonical integration candidate.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/TITMAS/conformance/schemas/core-developer-surface.schema.json",
+      "destination_path": "digital-biosphere-architecture/TITMAS/conformance/schemas/core-developer-surface.schema.json",
+      "content_hash": "sha256:160e3c59d2d68d51b97f2e3da45fae257ccc7a93a2f2091c6fdcb3457d93d59f",
+      "category": "CONFORMANCE_CORE",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/TITMAS/conformance/schemas/registry-entry.schema.json",
+      "destination_path": "digital-biosphere-architecture/TITMAS/conformance/schemas/registry-entry.schema.json",
+      "content_hash": "sha256:a074f3cd204a8bc6d788a2d4cf556725f98052a6f6124fe3a9fcd3fe862aa7c1",
+      "category": "CONFORMANCE_CORE",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-open-standards-community-canonical-integration-v1",
+      "source_commit": "ba6d51f60c12f1ac954dd67947451821fd5a3eb6",
+      "source_path": "digital-biosphere-architecture/TITMAS/conformance/tests/test_contribution_grounding.py",
+      "destination_path": "digital-biosphere-architecture/TITMAS/conformance/tests/test_contribution_grounding.py",
+      "content_hash": "sha256:3eadcd2d5324f9498093d616e65434b7c7184c8b7a7ad114365c8144025794eb",
+      "category": "CONFORMANCE_CORE",
+      "disposition": "MERGE_CONTENT",
+      "reason": "Content reconciled or created for the canonical integration candidate.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-open-standards-community-canonical-integration-v1",
+      "source_commit": "ba6d51f60c12f1ac954dd67947451821fd5a3eb6",
+      "source_path": "digital-biosphere-architecture/TITMAS/conformance/tests/test_harness.py",
+      "destination_path": "digital-biosphere-architecture/TITMAS/conformance/tests/test_harness.py",
+      "content_hash": "sha256:f5a1dd4783c613483086ea93f4630bfd7828adb32814dd0aa953db146755d1d6",
+      "category": "CONFORMANCE_CORE",
+      "disposition": "MERGE_CONTENT",
+      "reason": "Content reconciled or created for the canonical integration candidate.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-open-standards-community-canonical-integration-v1",
+      "source_commit": "ba6d51f60c12f1ac954dd67947451821fd5a3eb6",
+      "source_path": "digital-biosphere-architecture/TITMAS/conformance/tests/test_review_metrics.py",
+      "destination_path": "digital-biosphere-architecture/TITMAS/conformance/tests/test_review_metrics.py",
+      "content_hash": "sha256:ae0ab7eef3f5d98181745eccd9b858923701620ed4bc5d5d128b2e15ef4a8670",
+      "category": "CONFORMANCE_CORE",
+      "disposition": "MERGE_CONTENT",
+      "reason": "Content reconciled or created for the canonical integration candidate.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/TITMAS/FIRST_CONTRIBUTION.md",
+      "destination_path": "digital-biosphere-architecture/TITMAS/FIRST_CONTRIBUTION.md",
+      "content_hash": "sha256:af75cd7dc303a85abaa56b56060d337dd066b8558d66f189749b1b041e0e0c70",
+      "category": "GOVERNANCE_ENTRY",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/TITMAS/QUICKSTART.md",
+      "destination_path": "digital-biosphere-architecture/TITMAS/QUICKSTART.md",
+      "content_hash": "sha256:6407d78aaddc5f5d5cf9c1bc190b19a946fb664fee0b09d63e972733aac836ef",
+      "category": "GOVERNANCE_ENTRY",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-open-standards-community-canonical-integration-v1",
+      "source_commit": "ba6d51f60c12f1ac954dd67947451821fd5a3eb6",
+      "source_path": "digital-biosphere-architecture/TITMAS/README.md",
+      "destination_path": "digital-biosphere-architecture/TITMAS/README.md",
+      "content_hash": "sha256:4513a49ac5cf1ff17b685d02b888fa15822892586b6fae01e726d93ab8bbf7ac",
+      "category": "GOVERNANCE_ENTRY",
+      "disposition": "MERGE_CONTENT",
+      "reason": "Content reconciled or created for the canonical integration candidate.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/TITMAS/reference/examples/README.md",
+      "destination_path": "digital-biosphere-architecture/TITMAS/reference/examples/README.md",
+      "content_hash": "sha256:f901eec03dc4c3885e5debb0ee8fd5c56b3e30372d42d05874a828e6706eb422",
+      "category": "REFERENCE_IMPLEMENTATION",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/TITMAS/reference/minimal-python/example-input.json",
+      "destination_path": "digital-biosphere-architecture/TITMAS/reference/minimal-python/example-input.json",
+      "content_hash": "sha256:ce3459479402319ce77c69b38b6e19518388a08c6f6f37b5e33cc27fec0e06ae",
+      "category": "REFERENCE_IMPLEMENTATION",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/TITMAS/reference/minimal-python/expected-output.json",
+      "destination_path": "digital-biosphere-architecture/TITMAS/reference/minimal-python/expected-output.json",
+      "content_hash": "sha256:e3c44f06049932d928efedc49b700233fda7df1f99f94ea029c81b0390f64862",
+      "category": "REFERENCE_IMPLEMENTATION",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/TITMAS/reference/minimal-python/README.md",
+      "destination_path": "digital-biosphere-architecture/TITMAS/reference/minimal-python/README.md",
+      "content_hash": "sha256:4e589f4aadca01b7335bba3074cec5ab27f8d57b8f5d14b29c23198899aaabb5",
+      "category": "REFERENCE_IMPLEMENTATION",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/TITMAS/reference/minimal-python/tests/test_reference.py",
+      "destination_path": "digital-biosphere-architecture/TITMAS/reference/minimal-python/tests/test_reference.py",
+      "content_hash": "sha256:4c171331eb3a72ad0584b96ed980cfb5eab083ac7cf950d3bb785e1dc0a61d36",
+      "category": "REFERENCE_IMPLEMENTATION",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/TITMAS/reference/minimal-python/titmas_reference.py",
+      "destination_path": "digital-biosphere-architecture/TITMAS/reference/minimal-python/titmas_reference.py",
+      "content_hash": "sha256:0709ed1d841c65ea0fe116d4ba464b3a686eb6f7a8bf465ada91ffce6d9dc324",
+      "category": "REFERENCE_IMPLEMENTATION",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/TITMAS/reference/README.md",
+      "destination_path": "digital-biosphere-architecture/TITMAS/reference/README.md",
+      "content_hash": "sha256:ddb43a3822dffad58e4423cbf98dbb8209df5699ae498c23562a835dcfedab66",
+      "category": "REFERENCE_IMPLEMENTATION",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-open-standards-community-canonical-integration-v1",
+      "source_commit": "ba6d51f60c12f1ac954dd67947451821fd5a3eb6",
+      "source_path": "digital-biosphere-architecture/TITMAS/research/agent-native-ecology-box-001/README.md",
+      "destination_path": "digital-biosphere-architecture/TITMAS/research/agent-native-ecology-box-001/README.md",
+      "content_hash": "sha256:81701a47f2fcfa578d017894abec9064ee33fc396e50967ef7f6205c9c095209",
+      "category": "RESEARCH_ARCHIVE_INDEX",
+      "disposition": "REFERENCE_BY_IMMUTABLE_COMMIT",
+      "reason": "Research history represented by one immutable-reference index, not copied operations.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-open-standards-community-canonical-integration-v1",
+      "source_commit": "d914131a60def11738c901018d28a31d07ae84b1",
+      "source_path": "digital-biosphere-architecture/TITMAS/reviews/integration-agent-native-usability.json",
+      "destination_path": "digital-biosphere-architecture/TITMAS/reviews/integration-agent-native-usability.json",
+      "content_hash": "sha256:5b53e59d7ba47c45f9845c4538b0eb658aaaedaea1eae2af72035992df646983",
+      "category": "GOVERNANCE_ENTRY",
+      "disposition": "MERGE_CONTENT",
+      "reason": "Created or reconciled in the canonical integration candidate under the Human D01 scope.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-open-standards-community-canonical-integration-v1",
+      "source_commit": "d914131a60def11738c901018d28a31d07ae84b1",
+      "source_path": "digital-biosphere-architecture/TITMAS/reviews/integration-canonical-architecture.json",
+      "destination_path": "digital-biosphere-architecture/TITMAS/reviews/integration-canonical-architecture.json",
+      "content_hash": "sha256:96a2073de763e121ba205f5a98b4ea51d83021498fde4fd64aa33148dc225322",
+      "category": "GOVERNANCE_ENTRY",
+      "disposition": "MERGE_CONTENT",
+      "reason": "Created or reconciled in the canonical integration candidate under the Human D01 scope.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-open-standards-community-canonical-integration-v1",
+      "source_commit": "d914131a60def11738c901018d28a31d07ae84b1",
+      "source_path": "digital-biosphere-architecture/TITMAS/reviews/integration-open-standards-conformance.json",
+      "destination_path": "digital-biosphere-architecture/TITMAS/reviews/integration-open-standards-conformance.json",
+      "content_hash": "sha256:5c8a614253c3b46b0db731511ef2b773f54da17ee7bb2e29da943b3b36301069",
+      "category": "GOVERNANCE_ENTRY",
+      "disposition": "MERGE_CONTENT",
+      "reason": "Created or reconciled in the canonical integration candidate under the Human D01 scope.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-open-standards-community-canonical-integration-v1",
+      "source_commit": "d914131a60def11738c901018d28a31d07ae84b1",
+      "source_path": "digital-biosphere-architecture/TITMAS/reviews/integration-security-claims.json",
+      "destination_path": "digital-biosphere-architecture/TITMAS/reviews/integration-security-claims.json",
+      "content_hash": "sha256:9fc7dde4c09d2bfa7f70f2eefb2551bb1438d55155fefd2db3a1bca6adcdff7f",
+      "category": "GOVERNANCE_ENTRY",
+      "disposition": "MERGE_CONTENT",
+      "reason": "Created or reconciled in the canonical integration candidate under the Human D01 scope.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/TITMAS/specifications/candidate/README.md",
+      "destination_path": "digital-biosphere-architecture/TITMAS/specifications/candidate/README.md",
+      "content_hash": "sha256:cf5d5e18dbc0993c7c7ebb455f257e6c35a8cee13a4e327799dc8bba7e062609",
+      "category": "SPECIFICATION_CORE",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/TITMAS/specifications/deprecated/README.md",
+      "destination_path": "digital-biosphere-architecture/TITMAS/specifications/deprecated/README.md",
+      "content_hash": "sha256:fc54326bcef3ebc3ea23880dad50669a3f3e6423ef6803488c03fe42d794326c",
+      "category": "SPECIFICATION_CORE",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/TITMAS/specifications/experimental/README.md",
+      "destination_path": "digital-biosphere-architecture/TITMAS/specifications/experimental/README.md",
+      "content_hash": "sha256:68c7638e97eda236417060d1996610f32cd3c8d9c8f079319e49e40f8ffbf852",
+      "category": "SPECIFICATION_CORE",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/TITMAS/specifications/lifecycle.md",
+      "destination_path": "digital-biosphere-architecture/TITMAS/specifications/lifecycle.md",
+      "content_hash": "sha256:879eaeb192a2e6f9d29f41b47d432429689029e6a86dc0cf4e0c37556fa25ea0",
+      "category": "SPECIFICATION_CORE",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/TITMAS/specifications/maturity-registry.yaml",
+      "destination_path": "digital-biosphere-architecture/TITMAS/specifications/maturity-registry.yaml",
+      "content_hash": "sha256:65c1550ed490e5d8a75e4ea77d7dcf88667655d82b47a4455d57ef108ed4965c",
+      "category": "SPECIFICATION_CORE",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/TITMAS/specifications/proposal-registry.yaml",
+      "destination_path": "digital-biosphere-architecture/TITMAS/specifications/proposal-registry.yaml",
+      "content_hash": "sha256:2ed2ff593f403dbf93b107bf86d621f3db248b1bd0f462441ad58ddbea02467a",
+      "category": "SPECIFICATION_CORE",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/TITMAS/specifications/proposals/titmas-core-developer-interoperability-surface-v0.1.md",
+      "destination_path": "digital-biosphere-architecture/TITMAS/specifications/proposals/titmas-core-developer-interoperability-surface-v0.1.md",
+      "content_hash": "sha256:29ec7ff950e9484ceaf390390f09eb9dd226c4f0c6330bfd7da3bebc4436623a",
+      "category": "SPECIFICATION_CORE",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/TITMAS/specifications/README.md",
+      "destination_path": "digital-biosphere-architecture/TITMAS/specifications/README.md",
+      "content_hash": "sha256:1b4d31edf015962f26794cf03f89904bbd43d62128dbeb980f863c03461b9d79",
+      "category": "SPECIFICATION_CORE",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/TITMAS/specifications/registry.yaml",
+      "destination_path": "digital-biosphere-architecture/TITMAS/specifications/registry.yaml",
+      "content_hash": "sha256:6b8983d2c71a9428d166f87fc00f03b889907cd06be4ab6be92c36c53576cb4c",
+      "category": "SPECIFICATION_CORE",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/TITMAS/specifications/role-registry.yaml",
+      "destination_path": "digital-biosphere-architecture/TITMAS/specifications/role-registry.yaml",
+      "content_hash": "sha256:9c8008c136d2904b72d21416b36384416dd0dae543316520d8779565798d668d",
+      "category": "SPECIFICATION_CORE",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/TITMAS/specifications/stable/README.md",
+      "destination_path": "digital-biosphere-architecture/TITMAS/specifications/stable/README.md",
+      "content_hash": "sha256:ef28cc961000cd68ca89652ba8dec50c1b6376c3b1dbd60de05f371def39bf44",
+      "category": "SPECIFICATION_CORE",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-candidate-grounding-v0-1",
+      "source_commit": "3fb0b1496d295be60b740980d2b9d6ad291b86bf",
+      "source_path": "digital-biosphere-architecture/TITMAS/specifications/templates/proposal.md",
+      "destination_path": "digital-biosphere-architecture/TITMAS/specifications/templates/proposal.md",
+      "content_hash": "sha256:433a9d80611d199cbccf93efef89ebcf20823a7854ed72049616df9211741c53",
+      "category": "SPECIFICATION_CORE",
+      "disposition": "PORT",
+      "reason": "Exact attributable source asset selected for canonical integration.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-ecology-box-001-package-v0-1",
+      "source_commit": "b92a9a8c0553b51afc832e549d9ad5af271443f2",
+      "source_path": "TITMAS/agent-native/ecology-box-001/**",
+      "destination_path": "NOT_PORTED",
+      "content_hash": "NOT_APPLICABLE_PATH_SET",
+      "category": "EXCLUDE_UNRELATED",
+      "disposition": "EXCLUDE",
+      "reason": "Operational or experimental assets are outside the open-standards community core; only immutable research references are retained.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Experimental",
+      "normative": false,
+      "tests": [
+        "SOURCE_COMMIT_VERIFIED"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-ecology-box-001-operational-calibration-v0-1",
+      "source_commit": "70f626d41ef4746f0f23c588324267cae090ca7b",
+      "source_path": "TITMAS/agent-native/ecology-box-001/calibration-v0.1/**",
+      "destination_path": "NOT_PORTED",
+      "content_hash": "NOT_APPLICABLE_PATH_SET",
+      "category": "HISTORICAL_REFERENCE",
+      "disposition": "REFERENCE_BY_IMMUTABLE_COMMIT",
+      "reason": "Operational or experimental assets are outside the open-standards community core; only immutable research references are retained.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Experimental",
+      "normative": false,
+      "tests": [
+        "SOURCE_COMMIT_VERIFIED"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-ecology-box-001-operational-calibration-v0-2",
+      "source_commit": "ecd5d7f041fc3ff2213cb87a85be49f46e8d9399",
+      "source_path": "TITMAS/agent-native/ecology-box-001/calibration-v0.2/**",
+      "destination_path": "NOT_PORTED",
+      "content_hash": "NOT_APPLICABLE_PATH_SET",
+      "category": "HISTORICAL_REFERENCE",
+      "disposition": "REFERENCE_BY_IMMUTABLE_COMMIT",
+      "reason": "Operational or experimental assets are outside the open-standards community core; only immutable research references are retained.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Experimental",
+      "normative": false,
+      "tests": [
+        "SOURCE_COMMIT_VERIFIED"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-ecology-box-001-execution-readiness-v0-1",
+      "source_commit": "3c7aff595dde3c8bc4db2ace4a6ec52df8cb7403",
+      "source_path": "TITMAS/agent-native/ecology-box-001/readiness/**",
+      "destination_path": "NOT_PORTED",
+      "content_hash": "NOT_APPLICABLE_PATH_SET",
+      "category": "EXCLUDE_UNRELATED",
+      "disposition": "EXCLUDE",
+      "reason": "Operational or experimental assets are outside the open-standards community core; only immutable research references are retained.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Experimental",
+      "normative": false,
+      "tests": [
+        "SOURCE_COMMIT_VERIFIED"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-value-validation-v0-1",
+      "source_commit": "5ac9647a9bc784a4ccfdfe033ea73998d216829c",
+      "source_path": "TITMAS/agent-native/value-validation/**",
+      "destination_path": "NOT_PORTED",
+      "content_hash": "NOT_APPLICABLE_PATH_SET",
+      "category": "DEFER",
+      "disposition": "DEFER",
+      "reason": "Operational or experimental assets are outside the open-standards community core; only immutable research references are retained.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Experimental",
+      "normative": false,
+      "tests": [
+        "SOURCE_COMMIT_VERIFIED"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-open-standards-community-canonical-integration-v1",
+      "source_commit": "ba6d51f60c12f1ac954dd67947451821fd5a3eb6",
+      "source_path": "README.md",
+      "destination_path": "README.md",
+      "content_hash": "sha256:56c619f0dd4c5f0bf7d600fad98654707177d26f8fd68373781ecaa2e039dd11",
+      "category": "GOVERNANCE_ENTRY",
+      "disposition": "MERGE_CONTENT",
+      "reason": "Content reconciled or created for the canonical integration candidate.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN"
+      ],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-open-standards-community-canonical-integration-v1",
+      "source_commit": "acdab281fab454510d211a623bd0ea8138ec5c05",
+      "source_path": "digital-biosphere-architecture/TITMAS-AGENT-NATIVE-OPEN-STANDARDS-COMMUNITY-CANONICAL-INTEGRATION-REPORT-v1.0.md",
+      "destination_path": "digital-biosphere-architecture/TITMAS-AGENT-NATIVE-OPEN-STANDARDS-COMMUNITY-CANONICAL-INTEGRATION-REPORT-v1.0.md",
+      "content_hash": "sha256:f51f99c728eaf8e56281fcbaa5de7590fac3241e0f479a5ac2e371c9145b87aa",
+      "category": "GOVERNANCE_ENTRY",
+      "disposition": "MERGE_CONTENT",
+      "reason": "Final candidate report records the validated content head, Draft PR, tests, review lineage, blockers, and non-authorizations.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": [
+        "LOCAL_LINKS",
+        "SEMANTIC_ELEVATION_SCAN",
+        "MANIFEST_HASH_CHECK"
+      ],
+      "conflicts": [
+        "The report cannot contain the commit hash that contains itself; the final remote head is verified separately."
+      ],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-open-standards-community-canonical-integration-v1",
+      "source_commit": "06ad2375d79a805d30933c7fb9d829d485657b6c",
+      "source_path": "digital-biosphere-architecture/TITMAS-PR41-HUMAN-MERGE-REVIEW-CHECKLIST-v0.1.md",
+      "destination_path": "digital-biosphere-architecture/TITMAS-PR41-HUMAN-MERGE-REVIEW-CHECKLIST-v0.1.md",
+      "content_hash": "sha256:e198c099bb070631f3be534064e0327b82ddd197730d0caf7f8c78ec5843aab5",
+      "category": "GOVERNANCE_ENTRY",
+      "disposition": "MERGE_CONTENT",
+      "reason": "Prepared six-lane Human merge review without assigning or simulating a reviewer.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": ["LOCAL_LINKS", "HUMAN_REVIEW_FIELDS_NOT_REVIEWED"],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-open-standards-community-canonical-integration-v1",
+      "source_commit": "06ad2375d79a805d30933c7fb9d829d485657b6c",
+      "source_path": "digital-biosphere-architecture/TITMAS-PR41-MERGE-ADMISSION-REMEDIATION-REPORT-v0.1.md",
+      "destination_path": "digital-biosphere-architecture/TITMAS-PR41-MERGE-ADMISSION-REMEDIATION-REPORT-v0.1.md",
+      "content_hash": "sha256:420c5f3334003692a8ae6f1365f6990320c26e2cb16a0da371703200fe76c777",
+      "category": "GOVERNANCE_ENTRY",
+      "disposition": "MERGE_CONTENT",
+      "reason": "Records the bounded stage-boundary correction, deterministic evidence and remaining Human gates.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": ["LOCAL_LINKS", "SEMANTIC_ELEVATION_SCAN", "MANIFEST_HASH_CHECK"],
+      "conflicts": [
+        "The report records the immutable remediation content head; the final seal head is verified separately."
+      ],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-open-standards-community-canonical-integration-v1",
+      "source_commit": "06ad2375d79a805d30933c7fb9d829d485657b6c",
+      "source_path": "digital-biosphere-architecture/TITMAS/community/github-activation-templates/PUBLIC-CONTRIBUTION-ACTIVATION-CHECKLIST.md",
+      "destination_path": "digital-biosphere-architecture/TITMAS/community/github-activation-templates/PUBLIC-CONTRIBUTION-ACTIVATION-CHECKLIST.md",
+      "content_hash": "sha256:90d6fdc1d7e2defa8b8a8fbadc240e525005d2dc5b992b3cebc3f21cd9409a09",
+      "category": "CANONICAL_COMMUNITY_CORE",
+      "disposition": "MERGE_CONTENT",
+      "reason": "Prepares a fail-closed future activation gate without activating contribution.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": ["LOCAL_LINKS", "ACTIVATION_BLOCKED_CHECK"],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-open-standards-community-canonical-integration-v1",
+      "source_commit": "06ad2375d79a805d30933c7fb9d829d485657b6c",
+      "source_path": "digital-biosphere-architecture/TITMAS/community/github-activation-templates/README.md",
+      "destination_path": "digital-biosphere-architecture/TITMAS/community/github-activation-templates/README.md",
+      "content_hash": "sha256:06f9b1c545b0ea952101e99eb55978c3c8a9e3b6bab479f278272f989f50b479",
+      "category": "CANONICAL_COMMUNITY_CORE",
+      "disposition": "MERGE_CONTENT",
+      "reason": "Defines dormant-template non-claims and the separate activation path.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": ["LOCAL_LINKS", "DORMANT_PATH_CHECK"],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-open-standards-community-canonical-integration-v1",
+      "source_commit": "06ad2375d79a805d30933c7fb9d829d485657b6c",
+      "source_path": "digital-biosphere-architecture/TITMAS/community/github-activation-templates/SECURITY-TRANSPORT-ACTIVATION-CHECKLIST.md",
+      "destination_path": "digital-biosphere-architecture/TITMAS/community/github-activation-templates/SECURITY-TRANSPORT-ACTIVATION-CHECKLIST.md",
+      "content_hash": "sha256:312959741fb1688b3a859cbcc1d3a59e863d4b530b3a2123b7159f1bd0fe2133",
+      "category": "CANONICAL_COMMUNITY_CORE",
+      "disposition": "MERGE_CONTENT",
+      "reason": "Prepares but does not execute a future private security transport activation review.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": ["LOCAL_LINKS", "NOT_EXECUTED_STATE_CHECK"],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-open-standards-community-canonical-integration-v1",
+      "source_commit": "06ad2375d79a805d30933c7fb9d829d485657b6c",
+      "source_path": "digital-biosphere-architecture/TITMAS/community/github-activation-templates/activation-manifest.json",
+      "destination_path": "digital-biosphere-architecture/TITMAS/community/github-activation-templates/activation-manifest.json",
+      "content_hash": "sha256:fdb6789a397bb3f3c1eb3ba7e2e3b0de0e260205692771f2d8e193b5bf2bf20f",
+      "category": "CANONICAL_COMMUNITY_CORE",
+      "disposition": "MERGE_CONTENT",
+      "reason": "Machine-records five dormant templates, hashes, future destinations and activation blockers.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": ["JSON_PARSE", "DORMANT_TEMPLATE_HASH_CHECK", "ACTIVE_PATH_ABSENCE_CHECK"],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-open-standards-community-canonical-integration-v1",
+      "source_commit": "06ad2375d79a805d30933c7fb9d829d485657b6c",
+      "source_path": "digital-biosphere-architecture/TITMAS/conformance/fixtures/merge-admission/negative.json",
+      "destination_path": "digital-biosphere-architecture/TITMAS/conformance/fixtures/merge-admission/negative.json",
+      "content_hash": "sha256:68a24ee23f11ac81781859830d89fdfc6301334c113024663667b58e0cf181c8",
+      "category": "CONFORMANCE_CORE",
+      "disposition": "MERGE_CONTENT",
+      "reason": "Defines deterministic fail-closed stage-elevation cases for SC-01 and SC-06 through SC-14.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": ["JSON_PARSE", "NEGATIVE_FIXTURE_REJECTION"],
+      "conflicts": [],
+      "supersedes": []
+    },
+    {
+      "source_branch": "codex/titmas-agent-native-open-standards-community-canonical-integration-v1",
+      "source_commit": "06ad2375d79a805d30933c7fb9d829d485657b6c",
+      "source_path": "digital-biosphere-architecture/TITMAS/conformance/fixtures/merge-admission/positive.json",
+      "destination_path": "digital-biosphere-architecture/TITMAS/conformance/fixtures/merge-admission/positive.json",
+      "content_hash": "sha256:dfe116584b771945cc93135773f81ab032c14ddc4b21622e2bd979deb6324f65",
+      "category": "CONFORMANCE_CORE",
+      "disposition": "MERGE_CONTENT",
+      "reason": "Proves developed does not require installed and main integration does not imply activation.",
+      "canonical_owner": "zhangbin",
+      "maturity": "Development",
+      "normative": false,
+      "tests": ["JSON_PARSE", "POSITIVE_FIXTURE_PASS"],
+      "conflicts": [],
+      "supersedes": []
+    }
+  ],
+  "file_entry_count": 153,
+  "excluded_or_deferred_entry_count": 5
+}

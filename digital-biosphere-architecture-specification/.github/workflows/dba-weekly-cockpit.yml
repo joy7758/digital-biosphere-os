@@ -1,0 +1,211 @@
+name: DBA Weekly Cockpit Candidate
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: Observation mode
+        required: true
+        default: live-read-only-pilot
+        type: choice
+        options:
+          - live-read-only-pilot
+          - demo
+          - capability-discovery-auto
+      pilot_sequence:
+        description: Authorized pilot sequence
+        required: true
+        default: first
+        type: choice
+        options:
+          - first
+          - second
+  schedule:
+    - cron: "0 1 * * *"
+    - cron: "0 1 * * 1"
+
+permissions:
+  contents: read
+  actions: read
+  issues: read
+  pull-requests: read
+  security-events: read
+
+jobs:
+  candidate:
+    # Legacy gate contract: if: github.event_name == 'workflow_dispatch' || (github.event_name == 'schedule' && vars.DBA_WEEKLY_COCKPIT_SCHEDULE_ENABLED == 'true')
+    if: (github.event_name == 'workflow_dispatch' && inputs.mode != 'capability-discovery-auto') || (github.event_name == 'schedule' && vars.DBA_WEEKLY_COCKPIT_SCHEDULE_ENABLED == 'true') && github.event.schedule == '0 1 * * *'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Checkout exact source
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Resolve execution mode
+        id: resolve
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          DISPATCH_MODE: ${{ inputs.mode }}
+          DISPATCH_SEQUENCE: ${{ inputs.pilot_sequence }}
+        run: |
+          case "$EVENT_NAME" in
+            schedule)
+              resolved_mode="live-read-only-pilot"
+              resolved_sequence="second"
+              resolved_artifact_kind="live"
+              ;;
+            workflow_dispatch)
+              case "$DISPATCH_MODE" in
+                live-read-only-pilot)
+                  resolved_mode="live-read-only-pilot"
+                  resolved_artifact_kind="live"
+                  ;;
+                demo)
+                  resolved_mode="demo"
+                  resolved_artifact_kind="demo"
+                  ;;
+                *)
+                  echo "Unsupported dispatch mode" >&2
+                  exit 1
+                  ;;
+              esac
+              case "$DISPATCH_SEQUENCE" in
+                first|second)
+                  resolved_sequence="$DISPATCH_SEQUENCE"
+                  ;;
+                *)
+                  echo "Unsupported pilot sequence" >&2
+                  exit 1
+                  ;;
+              esac
+              ;;
+            *)
+              echo "Unsupported event" >&2
+              exit 1
+              ;;
+          esac
+          {
+            echo "resolved_mode=$resolved_mode"
+            echo "resolved_sequence=$resolved_sequence"
+            echo "resolved_artifact_kind=$resolved_artifact_kind"
+          } >> "$GITHUB_OUTPUT"
+      - name: Run weekly cockpit tests
+        working-directory: digital-biosphere-architecture
+        run: python3 -m unittest discover -s cockpit/weekly/tests -v
+      - name: Generate bounded read-only bundle
+        working-directory: digital-biosphere-architecture
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DBA_COCKPIT_READ_TOKEN: ${{ secrets.DBA_COCKPIT_READ_TOKEN }}
+          COCKPIT_MODE: ${{ steps.resolve.outputs.resolved_mode }}
+          PILOT_SEQUENCE: ${{ steps.resolve.outputs.resolved_sequence }}
+        run: |
+          python3 cockpit/weekly/run_weekly.py             --mode "$COCKPIT_MODE"             --pilot-sequence "$PILOT_SEQUENCE"             --output-dir /tmp/dba-weekly-cockpit
+      - name: Write GitHub Actions Summary
+        run: cat /tmp/dba-weekly-cockpit/latest.md >> "$GITHUB_STEP_SUMMARY"
+      - name: Upload live pilot artifact bundle
+        if: steps.resolve.outputs.resolved_artifact_kind == 'live'
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: dba-weekly-cockpit-live-pilot-${{ github.run_id }}
+          path: |
+            /tmp/dba-weekly-cockpit/latest.json
+            /tmp/dba-weekly-cockpit/latest.md
+            /tmp/dba-weekly-cockpit/dashboard.html
+            /tmp/dba-weekly-cockpit/cell-run-summary.json
+            /tmp/dba-weekly-cockpit/source-observation-summary.json
+            /tmp/dba-weekly-cockpit/pilot-boundary-report.json
+          if-no-files-found: error
+          retention-days: 14
+      - name: Upload deterministic demo artifact bundle
+        if: steps.resolve.outputs.resolved_artifact_kind == 'demo'
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: dba-weekly-cockpit-demo-${{ github.run_id }}
+          path: |
+            /tmp/dba-weekly-cockpit/weekly-snapshot-2026-W35.json
+            /tmp/dba-weekly-cockpit/latest.md
+            /tmp/dba-weekly-cockpit/dashboard.html
+            /tmp/dba-weekly-cockpit/cell-run-summary.json
+          if-no-files-found: error
+          retention-days: 14
+
+  capability-discovery:
+    if: (github.event_name == 'workflow_dispatch' && github.event.inputs['mode'] == 'capability-discovery-auto') || (github.event_name == 'schedule' && github.event.schedule == '0 1 * * 1' && vars.DBA_AUTOMATIC_CAPABILITY_DISCOVERY_ENABLED == 'true')
+    permissions:
+      contents: read
+      actions: read
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Checkout exact source
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Resolve capability discovery sequence
+        id: capability
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          DISPATCH_SEQUENCE: ${{ github.event.inputs['pilot_sequence'] }}
+        run: |
+          if [ "$EVENT_NAME" = "schedule" ]; then
+            sequence="second"
+          else
+            case "$DISPATCH_SEQUENCE" in
+              first|second) sequence="$DISPATCH_SEQUENCE" ;;
+              *) echo "Unsupported discovery sequence" >&2; exit 1 ;;
+            esac
+          fi
+          echo "sequence=$sequence" >> "$GITHUB_OUTPUT"
+      - name: Run weekly cockpit tests
+        working-directory: digital-biosphere-architecture
+        run: python3 -m unittest discover -s cockpit/weekly/tests -v
+      - name: Run capability discovery tests
+        working-directory: digital-biosphere-architecture
+        run: python3 -m unittest discover -s cockpit/weekly/discovery/tests -v
+      - name: Generate bounded automatic capability discovery bundle
+        working-directory: digital-biosphere-architecture
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DISCOVERY_SEQUENCE: ${{ steps.capability.outputs.sequence }}
+          DBA_AUTOMATIC_CAPABILITY_DISCOVERY_ENABLED: ${{ vars.DBA_AUTOMATIC_CAPABILITY_DISCOVERY_ENABLED }}
+          DBA_WEEKLY_COCKPIT_SCHEDULE_ENABLED: ${{ vars.DBA_WEEKLY_COCKPIT_SCHEDULE_ENABLED }}
+        run: |
+          python3 cockpit/weekly/run_weekly.py \
+            --mode capability-discovery-auto \
+            --pilot-sequence "$DISCOVERY_SEQUENCE" \
+            --output-dir /tmp/dba-automatic-capability-discovery
+      - name: Write capability discovery summary
+        run: cat /tmp/dba-automatic-capability-discovery/latest.md >> "$GITHUB_STEP_SUMMARY"
+      - name: Upload automatic capability discovery artifact
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: dba-automatic-capability-discovery-${{ github.run_id }}
+          path: |
+            /tmp/dba-automatic-capability-discovery/latest.json
+            /tmp/dba-automatic-capability-discovery/latest.md
+            /tmp/dba-automatic-capability-discovery/dashboard.html
+            /tmp/dba-automatic-capability-discovery/cell-run-summary.json
+            /tmp/dba-automatic-capability-discovery/capability-discovery-records.json
+            /tmp/dba-automatic-capability-discovery/reference-absorption-registry.json
+            /tmp/dba-automatic-capability-discovery/discovery-delta.json
+            /tmp/dba-automatic-capability-discovery/source-evidence-manifest.json
+            /tmp/dba-automatic-capability-discovery/automatic-discovery-boundary-report.json
+            /tmp/dba-automatic-capability-discovery/AUTOMATIC-CAPABILITY-DISCOVERY-ACTIVATION-REPORT.md
+          if-no-files-found: error
+          retention-days: 30
+
+  schedule-disabled:
+    if: github.event_name == 'schedule' && vars.DBA_WEEKLY_COCKPIT_SCHEDULE_ENABLED != 'true' && github.event.schedule == '0 1 * * *'
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Record disabled schedule
+        run: echo "定时周检未启用" >> "$GITHUB_STEP_SUMMARY"
+
+  capability-discovery-schedule-disabled:
+    if: github.event_name == 'schedule' && github.event.schedule == '0 1 * * 1' && vars.DBA_AUTOMATIC_CAPABILITY_DISCOVERY_ENABLED != 'true'
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Record disabled capability discovery schedule
+        run: echo "自动能力发现定时未启用" >> "$GITHUB_STEP_SUMMARY"

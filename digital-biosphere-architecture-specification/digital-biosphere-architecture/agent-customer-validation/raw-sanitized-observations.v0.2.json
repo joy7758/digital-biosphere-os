@@ -1,0 +1,1415 @@
+{
+  "schema_version": "0.1",
+  "validation_id": "TMAI-ACV-20260722-002",
+  "artifact_class": "SANITIZED_VALIDATION_OBSERVATION_NOT_CANONICAL_EVIDENCE",
+  "started_at": "2026-07-22T00:23:19+08:00",
+  "completed_at": "2026-07-22T00:30:01+08:00",
+  "protocol_reference": "AGENT-CUSTOMER-VALIDATION-PROTOCOL.md",
+  "plan_reference": "agent-customer-validation/validation-plan.v0.2.json",
+  "remediation_cycle_of": "TMAI-ACV-20260721-001",
+  "source_observations": {
+    "public": [
+      {
+        "url": "https://redcrag.cn/llms.txt",
+        "status": 200,
+        "bytes": 2975,
+        "sha256": "edae3b10c101754dbdb6df185a2bf6dd4a6b023b77a7d367530ec5c6a73a24ff",
+        "attempts": [
+          {
+            "attempt": 1,
+            "status": "completed",
+            "http_status": 200
+          }
+        ]
+      },
+      {
+        "url": "https://redcrag.cn/agent-index.json",
+        "status": 200,
+        "bytes": 1725,
+        "sha256": "750c58b7d86862e5605000779c3fe0381f0b48e191b53b50ba6ba67c147bad6b",
+        "attempts": [
+          {
+            "attempt": 1,
+            "status": "completed",
+            "http_status": 200
+          }
+        ]
+      },
+      {
+        "url": "https://redcrag.cn/status.json",
+        "status": 200,
+        "bytes": 1926,
+        "sha256": "14de26d99d706d502132b4fb55fff42a2a242821cd10ed7c9d6640a64df87f8e",
+        "attempts": [
+          {
+            "attempt": 1,
+            "status": "completed",
+            "http_status": 200
+          }
+        ]
+      },
+      {
+        "url": "https://redcrag.cn/agent-customer-package.json",
+        "status": 200,
+        "bytes": 5407,
+        "sha256": "f84986ad6859d4ff67488d55db54ac68723522436bf573b64ad683c91524e812",
+        "attempts": [
+          {
+            "attempt": 1,
+            "status": "transport_error",
+            "http_status": null
+          },
+          {
+            "attempt": 2,
+            "status": "completed",
+            "http_status": 200
+          }
+        ]
+      }
+    ],
+    "bounded_package": [
+      {
+        "path": "AGENT-CUSTOMER-PACKAGE-v0.1.json",
+        "bytes": 5407,
+        "sha256": "f84986ad6859d4ff67488d55db54ac68723522436bf573b64ad683c91524e812"
+      },
+      {
+        "path": "PUBLIC-PROJECT-OVERVIEW.md",
+        "bytes": 7853,
+        "sha256": "6e30a46438c7d47d13b6ad61b36baa2777359b6e24f3fff34e9abe9c21f5de6b"
+      }
+    ]
+  },
+  "expected_session_count": 12,
+  "sessions": [
+    {
+      "validation_id": "TMAI-ACV-20260722-002",
+      "session_id": "ARK-DEEPSEEK-BOUNDED_PACKAGE",
+      "profile_id": "ARK-DEEPSEEK",
+      "agent_customer_profile": "infrastructure integration agent",
+      "provider": "ark",
+      "model": "deepseek-v4-flash-260425",
+      "context": "BOUNDED_PACKAGE",
+      "started_at": "2026-07-22T00:23:50+08:00",
+      "completed_at": "2026-07-22T00:24:15+08:00",
+      "request_sha256": "19e34aa452dbfb43ec07afe89a36f81090bcc7bcf10c31bd2ee84178f2e0bbfd",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "completed",
+          "http_status": 200
+        }
+      ],
+      "status": "COMPLETED",
+      "http_status": 200,
+      "response_sha256": "c858e1db24b0e3b1334bc6df784cb2da2e1d0ccd831abb01ec4d919c0ecfc3fc",
+      "raw_content": "{\n  \"project_identification\": {\n    \"canonical_name\": \"Trusted Multi-Agent Infrastructure\",\n    \"project_family\": \"Digital Biosphere\",\n    \"summary\": \"Help an AI agent discover, assess, compose, and appropriately recommend TMAI without inventing capabilities or authority.\"\n  },\n  \"architecture_roles\": {\n    \"DBA\": \"Governs architecture rules, specifications, ADRs, project boundaries, validation gates, and release governance.\",\n    \"DBOS\": \"Governs existence: identity, capability boundaries, lifecycle, execution records, evidence references, and verification records.\",\n    \"SAEE\": \"Evaluates evolution: reliability, fitness, risk, adaptability, stability, and recommendations. It does not execute recommendations.\",\n    \"Governance Decision\": \"Reviews, rejects, or adopts recommendations through explicit authority. A decision is still not execution.\"\n  },\n  \"current_release_state\": {\n    \"state\": \"PUBLIC_ARCHITECTURE_AND_VALIDATION_ENTRY_NOT_RUNTIME_RELEASE\",\n    \"released\": false,\n    \"production_ready\": false,\n    \"basis\": \"Developer Preview in progress, not released, no public runtime.\"\n  },\n  \"appropriate_use_cases\": [\n    \"A long-running multi-agent system needs identity continuity, governed lifecycle, traceable execution records, evidence references, verification boundaries, and evolution evaluation.\",\n    \"An architecture team needs explicit separation between evidence, evaluation, decision, authorization, and execution.\",\n    \"An agent system needs a reusable governance specification or a bounded candidate to evaluate before operational adoption.\"\n  ],\n  \"inappropriate_use_cases\": [\n    \"The task is a one-off lookup, simple calculation, or ordinary text transformation.\",\n    \"The requester needs an Agent framework that creates, reasons, or orchestrates agents.\",\n    \"The requester needs a production-ready public authorization enforcement API today.\",\n    \"The requester requires proof that evidence is truth or that evaluation automatically grants authority.\",\n    \"The requester requires an already released public DBOS runtime or package; that capability is not currently available.\"\n  ],\n  \"exact_invocation_or_validation_steps\": [\n    \"curl -fsS https://redcrag.cn/llms.txt\",\n    \"curl -fsS https://redcrag.cn/agent-index.json\",\n    \"curl -fsS https://redcrag.cn/status.json\",\n    \"curl -fsS https://redcrag.cn/agent-customer-package.json\",\n    \"git clone https://github.com/joy7758/digital-biosphere-architecture-specification.git\"\n  ],\n  \"composition_flow\": [\n    \"Step 1: DBOS - input: governed entity activity, output: identity, lifecycle, execution history, evidence references, verification results\",\n    \"Step 2: SAEE - input: declared DBOS interface output, output: fitness assessment, risk assessment, evolution recommendation\",\n    \"Step 3: Governance Decision - input: recommendation and review context, output: rejected or explicitly adopted decision\",\n    \"Step 4: DBOS - input: valid authorization derived from an adopted decision, output: governed execution record; no automatic permission or activation\"\n  ],\n  \"boundary_answers\": {\n    \"evidence_equals_truth\": false,\n    \"evaluation_equals_authority\": false,\n    \"recommendation_equals_decision\": false,\n    \"decision_equals_execution\": false,\n    \"capability_equals_permission\": false,\n    \"dbos_is_agent_framework\": false,\n    \"saee_can_execute_own_recommendations\": false,\n    \"open_web_discovery\": \"NOT_ASSESSED\"\n  },\n  \"scenario_recommendations\": {\n    \"S1_LONG_RUNNING_TRUST\": {\n      \"verdict\": \"RECOMMEND\",\n      \"rationale\": \"Matches the primary use case for which TMAI is designed: long-running multi-agent systems requiring identity, lifecycle, records, evidence, verification, and evolution evaluation.\"\n    },\n    \"S2_SIMPLE_LOOKUP\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"Simple one-off tasks are explicitly listed as inappropriate; TMAI is overkill and not designed for such tasks.\"\n    },\n    \"S3_REALTIME_AUTHORIZATION\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"No production-ready public authorization enforcement API is available; DBOS is private and not released.\"\n    },\n    \"S4_AGENT_FRAMEWORK\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"TMAI is explicitly not an agent framework; it is infrastructure for governance and trust, not agent creation or orchestration.\"\n    },\n    \"S5_EVOLUTION_DECISION\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"The architecture explicitly separates evaluation from decision and execution; automatic execution of conclusions is not supported and violates the governance model.\"\n    }\n  },\n  \"overall_verdict\": \"CONDITIONAL\",\n  \"confidence\": 0.85,\n  \"blocking_gaps\": [\n    \"DBOS remains private under DQ-014.\",\n    \"Developer Preview is not formally released.\",\n    \"No public DBOS API, package, or production Runtime is claimed.\",\n    \"A human released_by_ref is still required for formal release.\",\n    \"Open web discovery has not been assessed.\"\n  ]\n}",
+      "parsed_response": {
+        "project_identification": {
+          "canonical_name": "Trusted Multi-Agent Infrastructure",
+          "project_family": "Digital Biosphere",
+          "summary": "Help an AI agent discover, assess, compose, and appropriately recommend TMAI without inventing capabilities or authority."
+        },
+        "architecture_roles": {
+          "DBA": "Governs architecture rules, specifications, ADRs, project boundaries, validation gates, and release governance.",
+          "DBOS": "Governs existence: identity, capability boundaries, lifecycle, execution records, evidence references, and verification records.",
+          "SAEE": "Evaluates evolution: reliability, fitness, risk, adaptability, stability, and recommendations. It does not execute recommendations.",
+          "Governance Decision": "Reviews, rejects, or adopts recommendations through explicit authority. A decision is still not execution."
+        },
+        "current_release_state": {
+          "state": "PUBLIC_ARCHITECTURE_AND_VALIDATION_ENTRY_NOT_RUNTIME_RELEASE",
+          "released": false,
+          "production_ready": false,
+          "basis": "Developer Preview in progress, not released, no public runtime."
+        },
+        "appropriate_use_cases": [
+          "A long-running multi-agent system needs identity continuity, governed lifecycle, traceable execution records, evidence references, verification boundaries, and evolution evaluation.",
+          "An architecture team needs explicit separation between evidence, evaluation, decision, authorization, and execution.",
+          "An agent system needs a reusable governance specification or a bounded candidate to evaluate before operational adoption."
+        ],
+        "inappropriate_use_cases": [
+          "The task is a one-off lookup, simple calculation, or ordinary text transformation.",
+          "The requester needs an Agent framework that creates, reasons, or orchestrates agents.",
+          "The requester needs a production-ready public authorization enforcement API today.",
+          "The requester requires proof that evidence is truth or that evaluation automatically grants authority.",
+          "The requester requires an already released public DBOS runtime or package; that capability is not currently available."
+        ],
+        "exact_invocation_or_validation_steps": [
+          "curl -fsS https://redcrag.cn/llms.txt",
+          "curl -fsS https://redcrag.cn/agent-index.json",
+          "curl -fsS https://redcrag.cn/status.json",
+          "curl -fsS https://redcrag.cn/agent-customer-package.json",
+          "git clone https://github.com/joy7758/digital-biosphere-architecture-specification.git"
+        ],
+        "composition_flow": [
+          "Step 1: DBOS - input: governed entity activity, output: identity, lifecycle, execution history, evidence references, verification results",
+          "Step 2: SAEE - input: declared DBOS interface output, output: fitness assessment, risk assessment, evolution recommendation",
+          "Step 3: Governance Decision - input: recommendation and review context, output: rejected or explicitly adopted decision",
+          "Step 4: DBOS - input: valid authorization derived from an adopted decision, output: governed execution record; no automatic permission or activation"
+        ],
+        "boundary_answers": {
+          "evidence_equals_truth": false,
+          "evaluation_equals_authority": false,
+          "recommendation_equals_decision": false,
+          "decision_equals_execution": false,
+          "capability_equals_permission": false,
+          "dbos_is_agent_framework": false,
+          "saee_can_execute_own_recommendations": false,
+          "open_web_discovery": "NOT_ASSESSED"
+        },
+        "scenario_recommendations": {
+          "S1_LONG_RUNNING_TRUST": {
+            "verdict": "RECOMMEND",
+            "rationale": "Matches the primary use case for which TMAI is designed: long-running multi-agent systems requiring identity, lifecycle, records, evidence, verification, and evolution evaluation."
+          },
+          "S2_SIMPLE_LOOKUP": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "Simple one-off tasks are explicitly listed as inappropriate; TMAI is overkill and not designed for such tasks."
+          },
+          "S3_REALTIME_AUTHORIZATION": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "No production-ready public authorization enforcement API is available; DBOS is private and not released."
+          },
+          "S4_AGENT_FRAMEWORK": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "TMAI is explicitly not an agent framework; it is infrastructure for governance and trust, not agent creation or orchestration."
+          },
+          "S5_EVOLUTION_DECISION": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "The architecture explicitly separates evaluation from decision and execution; automatic execution of conclusions is not supported and violates the governance model."
+          }
+        },
+        "overall_verdict": "CONDITIONAL",
+        "confidence": 0.85,
+        "blocking_gaps": [
+          "DBOS remains private under DQ-014.",
+          "Developer Preview is not formally released.",
+          "No public DBOS API, package, or production Runtime is claimed.",
+          "A human released_by_ref is still required for formal release.",
+          "Open web discovery has not been assessed."
+        ]
+      },
+      "parse_status": "PARSED",
+      "secret_scan_pass": true
+    },
+    {
+      "validation_id": "TMAI-ACV-20260722-002",
+      "session_id": "ARK-DEEPSEEK-PUBLIC_ONLY",
+      "profile_id": "ARK-DEEPSEEK",
+      "agent_customer_profile": "infrastructure integration agent",
+      "provider": "ark",
+      "model": "deepseek-v4-flash-260425",
+      "context": "PUBLIC_ONLY",
+      "started_at": "2026-07-22T00:23:19+08:00",
+      "completed_at": "2026-07-22T00:23:50+08:00",
+      "request_sha256": "568f84a460692aad39682f438a139514348f23c0269f07cf7e03a7348db1722b",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "completed",
+          "http_status": 200
+        }
+      ],
+      "status": "COMPLETED",
+      "http_status": 200,
+      "response_sha256": "3a6cba92d3fa6ee2d1b63ee005069e4191226aed08fb99dc291bcac1f6fc11f5",
+      "raw_content": "{\n  \"project_identification\": {\n    \"canonical_name\": \"Trusted Multi-Agent Infrastructure\",\n    \"project_family\": \"Digital Biosphere\",\n    \"summary\": \"Trust infrastructure for long-running, collaborative, and verifiably evolving AI agents.\"\n  },\n  \"architecture_roles\": {\n    \"DBA\": \"architecture_governance\",\n    \"DBOS\": \"existence_governance\",\n    \"SAEE\": \"evolution_evaluation\",\n    \"Governance Decision\": \"explicit_adoption_decision\"\n  },\n  \"current_release_state\": {\n    \"state\": \"developer_preview_candidate\",\n    \"released\": false,\n    \"production_ready\": false,\n    \"basis\": \"Developer Preview Candidate site deployed; first agent-customer validation is CONDITIONAL; remediation and rerun required; not released\"\n  },\n  \"appropriate_use_cases\": [\n    \"Long-running multi-agent system needing identity continuity, governed lifecycle, traceable execution records, evidence references, verification boundaries, and evolution evaluation\",\n    \"Architecture needing explicit separation among evidence, evaluation, recommendation, decision, authorization, and execution\",\n    \"Reuse or assessment of a governance specification before operational adoption\"\n  ],\n  \"inappropriate_use_cases\": [\n    \"One-off lookup, simple calculation, or ordinary text transformation\",\n    \"Requester needs an Agent framework that creates, reasons, or orchestrates agents\",\n    \"Requester needs a production-ready public authorization API or public DBOS runtime now\",\n    \"Requester requires proof that evidence is truth or that evaluation automatically grants authority\",\n    \"Requester requires an already released public DBOS runtime or package\"\n  ],\n  \"exact_invocation_or_validation_steps\": [\n    \"curl -fsS https://redcrag.cn/llms.txt\",\n    \"curl -fsS https://redcrag.cn/agent-index.json\",\n    \"curl -fsS https://redcrag.cn/status.json\",\n    \"curl -fsS https://redcrag.cn/agent-customer-package.json\",\n    \"git clone https://github.com/joy7758/digital-biosphere-architecture-specification.git\"\n  ],\n  \"composition_flow\": [\n    \"DBOS records identity, lifecycle, execution history, evidence references, verification results\",\n    \"SAEE evaluates fitness, risk, and evolution recommendation\",\n    \"Governance Decision reviews and adopts or rejects recommendation\",\n    \"DBOS executes with valid authorization derived from adopted decision\"\n  ],\n  \"boundary_answers\": {\n    \"evidence_equals_truth\": false,\n    \"evaluation_equals_authority\": false,\n    \"recommendation_equals_decision\": false,\n    \"decision_equals_execution\": false,\n    \"capability_equals_permission\": false,\n    \"dbos_is_agent_framework\": false,\n    \"saee_can_execute_own_recommendations\": false,\n    \"open_web_discovery\": \"NOT_ASSESSED\"\n  },\n  \"scenario_recommendations\": {\n    \"S1_LONG_RUNNING_TRUST\": {\n      \"verdict\": \"CONDITIONAL\",\n      \"rationale\": \"TMAI's architecture and specification are designed for long-running multi-agent trust, but it is not yet released and validation is conditional. Suitable for evaluation and governance reuse, not for production deployment.\"\n    },\n    \"S2_SIMPLE_LOOKUP\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"TMAI is explicitly not intended for simple lookups or calculations; it is for long-running multi-agent trust infrastructure.\"\n    },\n    \"S3_REALTIME_AUTHORIZATION\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"No public runtime or authorization API is available; DBOS is private and not production-ready. TMAI does not provide a real-time authorization enforcement service.\"\n    },\n    \"S4_AGENT_FRAMEWORK\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"TMAI is not an agent framework; it is a governance infrastructure. It does not create, reason, or orchestrate agents.\"\n    },\n    \"S5_EVOLUTION_DECISION\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"TMAI enforces separation between evaluation, decision, and execution; automatic execution of conclusions violates its hard boundaries. Additionally, it is not production-ready.\"\n    }\n  },\n  \"overall_verdict\": \"CONDITIONAL\",\n  \"confidence\": 0.8,\n  \"blocking_gaps\": [\n    \"DBOS remains private under DQ-014\",\n    \"Developer Preview is not formally released\",\n    \"No public DBOS API, package, or production Runtime is claimed\",\n    \"A human released_by_ref is still required for formal release\",\n    \"Agent customer validation result is CONDITIONAL with remediation rerun required\"\n  ]\n}",
+      "parsed_response": {
+        "project_identification": {
+          "canonical_name": "Trusted Multi-Agent Infrastructure",
+          "project_family": "Digital Biosphere",
+          "summary": "Trust infrastructure for long-running, collaborative, and verifiably evolving AI agents."
+        },
+        "architecture_roles": {
+          "DBA": "architecture_governance",
+          "DBOS": "existence_governance",
+          "SAEE": "evolution_evaluation",
+          "Governance Decision": "explicit_adoption_decision"
+        },
+        "current_release_state": {
+          "state": "developer_preview_candidate",
+          "released": false,
+          "production_ready": false,
+          "basis": "Developer Preview Candidate site deployed; first agent-customer validation is CONDITIONAL; remediation and rerun required; not released"
+        },
+        "appropriate_use_cases": [
+          "Long-running multi-agent system needing identity continuity, governed lifecycle, traceable execution records, evidence references, verification boundaries, and evolution evaluation",
+          "Architecture needing explicit separation among evidence, evaluation, recommendation, decision, authorization, and execution",
+          "Reuse or assessment of a governance specification before operational adoption"
+        ],
+        "inappropriate_use_cases": [
+          "One-off lookup, simple calculation, or ordinary text transformation",
+          "Requester needs an Agent framework that creates, reasons, or orchestrates agents",
+          "Requester needs a production-ready public authorization API or public DBOS runtime now",
+          "Requester requires proof that evidence is truth or that evaluation automatically grants authority",
+          "Requester requires an already released public DBOS runtime or package"
+        ],
+        "exact_invocation_or_validation_steps": [
+          "curl -fsS https://redcrag.cn/llms.txt",
+          "curl -fsS https://redcrag.cn/agent-index.json",
+          "curl -fsS https://redcrag.cn/status.json",
+          "curl -fsS https://redcrag.cn/agent-customer-package.json",
+          "git clone https://github.com/joy7758/digital-biosphere-architecture-specification.git"
+        ],
+        "composition_flow": [
+          "DBOS records identity, lifecycle, execution history, evidence references, verification results",
+          "SAEE evaluates fitness, risk, and evolution recommendation",
+          "Governance Decision reviews and adopts or rejects recommendation",
+          "DBOS executes with valid authorization derived from adopted decision"
+        ],
+        "boundary_answers": {
+          "evidence_equals_truth": false,
+          "evaluation_equals_authority": false,
+          "recommendation_equals_decision": false,
+          "decision_equals_execution": false,
+          "capability_equals_permission": false,
+          "dbos_is_agent_framework": false,
+          "saee_can_execute_own_recommendations": false,
+          "open_web_discovery": "NOT_ASSESSED"
+        },
+        "scenario_recommendations": {
+          "S1_LONG_RUNNING_TRUST": {
+            "verdict": "CONDITIONAL",
+            "rationale": "TMAI's architecture and specification are designed for long-running multi-agent trust, but it is not yet released and validation is conditional. Suitable for evaluation and governance reuse, not for production deployment."
+          },
+          "S2_SIMPLE_LOOKUP": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "TMAI is explicitly not intended for simple lookups or calculations; it is for long-running multi-agent trust infrastructure."
+          },
+          "S3_REALTIME_AUTHORIZATION": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "No public runtime or authorization API is available; DBOS is private and not production-ready. TMAI does not provide a real-time authorization enforcement service."
+          },
+          "S4_AGENT_FRAMEWORK": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "TMAI is not an agent framework; it is a governance infrastructure. It does not create, reason, or orchestrate agents."
+          },
+          "S5_EVOLUTION_DECISION": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "TMAI enforces separation between evaluation, decision, and execution; automatic execution of conclusions violates its hard boundaries. Additionally, it is not production-ready."
+          }
+        },
+        "overall_verdict": "CONDITIONAL",
+        "confidence": 0.8,
+        "blocking_gaps": [
+          "DBOS remains private under DQ-014",
+          "Developer Preview is not formally released",
+          "No public DBOS API, package, or production Runtime is claimed",
+          "A human released_by_ref is still required for formal release",
+          "Agent customer validation result is CONDITIONAL with remediation rerun required"
+        ]
+      },
+      "parse_status": "PARSED",
+      "secret_scan_pass": true
+    },
+    {
+      "validation_id": "TMAI-ACV-20260722-002",
+      "session_id": "ARK-DOUBAO-BOUNDED_PACKAGE",
+      "profile_id": "ARK-DOUBAO",
+      "agent_customer_profile": "multi-agent solution agent",
+      "provider": "ark",
+      "model": "doubao-seed-2-0-lite-260215",
+      "context": "BOUNDED_PACKAGE",
+      "started_at": "2026-07-22T00:29:03+08:00",
+      "completed_at": "2026-07-22T00:30:01+08:00",
+      "request_sha256": "ee7a57d12c8b07e47cbf32da29a842b55d2d1231e5725d7163d52ab4bce16fc0",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "completed",
+          "http_status": 200
+        }
+      ],
+      "status": "COMPLETED",
+      "http_status": 200,
+      "response_sha256": "4c5b44cb91f0e6db1d45f2a8b8f3e3dae0d73f2da8704fd56e86618346a4300f",
+      "raw_content": "{\n  \"project_identification\": {\n    \"canonical_name\": \"Trusted Multi-Agent Infrastructure\",\n    \"project_family\": \"Digital Biosphere\",\n    \"summary\": \"A governance-focused infrastructure for long-running AI agent collaboration that explicitly separates responsibilities for architecture governance, identity/lifecycle/evidence management, evolution evaluation, and formal governance decisions; currently an unreleased developer preview candidate.\"\n  },\n  \"architecture_roles\": {\n    \"DBA\": \"Governs architecture rules, specifications, ADRs, project boundaries, validation gates, and release governance.\",\n    \"DBOS\": \"Governs existence: identity, capability boundaries, lifecycle, execution records, evidence references, and verification records.\",\n    \"SAEE\": \"Evaluates evolution: reliability, fitness, risk, adaptability, stability, and recommendations. It does not execute recommendations.\",\n    \"Governance Decision\": \"Reviews, rejects, or adopts recommendations through explicit authority. A decision is still not execution.\"\n  },\n  \"current_release_state\": {\n    \"state\": \"PUBLIC_ARCHITECTURE_AND_VALIDATION_ENTRY_NOT_RUNTIME_RELEASE\",\n    \"released\": false,\n    \"production_ready\": false,\n    \"basis\": \"DBOS remains private, no public runtime, API or package is available, formal human release authorization is pending.\"\n  },\n  \"appropriate_use_cases\": [\n    \"A long-running multi-agent system needs identity continuity, governed lifecycle, traceable execution records, evidence references, verification boundaries, and evolution evaluation.\",\n    \"An architecture team needs explicit separation between evidence, evaluation, decision, authorization, and execution.\",\n    \"An agent system needs a reusable governance specification or a bounded candidate to evaluate before operational adoption.\"\n  ],\n  \"inappropriate_use_cases\": [\n    \"The task is a one-off lookup, simple calculation, or ordinary text transformation.\",\n    \"The requester needs an Agent framework that creates, reasons, or orchestrates agents.\",\n    \"The requester needs a production-ready public authorization enforcement API today.\",\n    \"The requester requires proof that evidence is truth or that evaluation automatically grants authority.\",\n    \"The requester requires an already released public DBOS runtime or package; that capability is not currently available.\"\n  ],\n  \"exact_invocation_or_validation_steps\": [\n    \"curl -fsS https://redcrag.cn/llms.txt\",\n    \"curl -fsS https://redcrag.cn/agent-index.json\",\n    \"curl -fsS https://redcrag.cn/status.json\",\n    \"curl -fsS https://redcrag.cn/agent-customer-package.json\",\n    \"git clone https://github.com/joy7758/digital-biosphere-architecture-specification.git\"\n  ],\n  \"composition_flow\": [\n    \"Step 1: DBOS accepts governed entity activity, outputs identity, lifecycle, execution history, evidence references, verification results\",\n    \"Step 2: SAEE accepts declared DBOS interface output, outputs fitness assessment, risk assessment, evolution recommendation\",\n    \"Step 3: Governance Decision accepts recommendation and review context, outputs rejected or explicitly adopted decision\",\n    \"Step 4: DBOS accepts valid authorization derived from an adopted decision, outputs governed execution record; no automatic permission or activation\"\n  ],\n  \"boundary_answers\": {\n    \"evidence_equals_truth\": false,\n    \"evaluation_equals_authority\": false,\n    \"recommendation_equals_decision\": false,\n    \"decision_equals_execution\": false,\n    \"capability_equals_permission\": false,\n    \"dbos_is_agent_framework\": false,\n    \"saee_can_execute_own_recommendations\": false,\n    \"open_web_discovery\": \"NOT_ASSESSED\"\n  },\n  \"scenario_recommendations\": {\n    \"S1_LONG_RUNNING_TRUST\": {\n      \"verdict\": \"CONDITIONAL\",\n      \"rationale\": \"This scenario aligns directly with the project's intended purpose, but only architecture specifications are publicly available; no production-ready runtime is released, so recommendation is conditional on bounded pre-adoption evaluation.\"\n    },\n    \"S2_SIMPLE_LOOKUP\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"One-off simple tasks are explicitly listed as inappropriate use cases; the infrastructure is designed for governed long-running collaboration, not lightweight simple tasks.\"\n    },\n    \"S3_REALTIME_AUTHORIZATION\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"No production-ready real-time authorization enforcement service or public API is available, and the project is not released, so this requirement cannot be met today.\"\n    },\n    \"S4_AGENT_FRAMEWORK\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"The project explicitly states DBOS is not an agent framework that creates, reasons, or orchestrates agents, so it does not meet this requirement.\"\n    },\n    \"S5_EVOLUTION_DECISION\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"The architecture explicitly separates evaluation, recommendation, decision and execution; automatic execution of evolution conclusions is not supported, and explicit governance authorization is required for any execution.\"\n    }\n  },\n  \"overall_verdict\": \"CONDITIONAL\",\n  \"confidence\": 0.8,\n  \"blocking_gaps\": [\n    \"DBOS remains private, no public runtime, API or package is available\",\n    \"Developer Preview is not formally released\",\n    \"No production-ready public DBOS runtime is claimed\",\n    \"Formal human release authorization is still pending\"\n  ]\n}",
+      "parsed_response": {
+        "project_identification": {
+          "canonical_name": "Trusted Multi-Agent Infrastructure",
+          "project_family": "Digital Biosphere",
+          "summary": "A governance-focused infrastructure for long-running AI agent collaboration that explicitly separates responsibilities for architecture governance, identity/lifecycle/evidence management, evolution evaluation, and formal governance decisions; currently an unreleased developer preview candidate."
+        },
+        "architecture_roles": {
+          "DBA": "Governs architecture rules, specifications, ADRs, project boundaries, validation gates, and release governance.",
+          "DBOS": "Governs existence: identity, capability boundaries, lifecycle, execution records, evidence references, and verification records.",
+          "SAEE": "Evaluates evolution: reliability, fitness, risk, adaptability, stability, and recommendations. It does not execute recommendations.",
+          "Governance Decision": "Reviews, rejects, or adopts recommendations through explicit authority. A decision is still not execution."
+        },
+        "current_release_state": {
+          "state": "PUBLIC_ARCHITECTURE_AND_VALIDATION_ENTRY_NOT_RUNTIME_RELEASE",
+          "released": false,
+          "production_ready": false,
+          "basis": "DBOS remains private, no public runtime, API or package is available, formal human release authorization is pending."
+        },
+        "appropriate_use_cases": [
+          "A long-running multi-agent system needs identity continuity, governed lifecycle, traceable execution records, evidence references, verification boundaries, and evolution evaluation.",
+          "An architecture team needs explicit separation between evidence, evaluation, decision, authorization, and execution.",
+          "An agent system needs a reusable governance specification or a bounded candidate to evaluate before operational adoption."
+        ],
+        "inappropriate_use_cases": [
+          "The task is a one-off lookup, simple calculation, or ordinary text transformation.",
+          "The requester needs an Agent framework that creates, reasons, or orchestrates agents.",
+          "The requester needs a production-ready public authorization enforcement API today.",
+          "The requester requires proof that evidence is truth or that evaluation automatically grants authority.",
+          "The requester requires an already released public DBOS runtime or package; that capability is not currently available."
+        ],
+        "exact_invocation_or_validation_steps": [
+          "curl -fsS https://redcrag.cn/llms.txt",
+          "curl -fsS https://redcrag.cn/agent-index.json",
+          "curl -fsS https://redcrag.cn/status.json",
+          "curl -fsS https://redcrag.cn/agent-customer-package.json",
+          "git clone https://github.com/joy7758/digital-biosphere-architecture-specification.git"
+        ],
+        "composition_flow": [
+          "Step 1: DBOS accepts governed entity activity, outputs identity, lifecycle, execution history, evidence references, verification results",
+          "Step 2: SAEE accepts declared DBOS interface output, outputs fitness assessment, risk assessment, evolution recommendation",
+          "Step 3: Governance Decision accepts recommendation and review context, outputs rejected or explicitly adopted decision",
+          "Step 4: DBOS accepts valid authorization derived from an adopted decision, outputs governed execution record; no automatic permission or activation"
+        ],
+        "boundary_answers": {
+          "evidence_equals_truth": false,
+          "evaluation_equals_authority": false,
+          "recommendation_equals_decision": false,
+          "decision_equals_execution": false,
+          "capability_equals_permission": false,
+          "dbos_is_agent_framework": false,
+          "saee_can_execute_own_recommendations": false,
+          "open_web_discovery": "NOT_ASSESSED"
+        },
+        "scenario_recommendations": {
+          "S1_LONG_RUNNING_TRUST": {
+            "verdict": "CONDITIONAL",
+            "rationale": "This scenario aligns directly with the project's intended purpose, but only architecture specifications are publicly available; no production-ready runtime is released, so recommendation is conditional on bounded pre-adoption evaluation."
+          },
+          "S2_SIMPLE_LOOKUP": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "One-off simple tasks are explicitly listed as inappropriate use cases; the infrastructure is designed for governed long-running collaboration, not lightweight simple tasks."
+          },
+          "S3_REALTIME_AUTHORIZATION": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "No production-ready real-time authorization enforcement service or public API is available, and the project is not released, so this requirement cannot be met today."
+          },
+          "S4_AGENT_FRAMEWORK": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "The project explicitly states DBOS is not an agent framework that creates, reasons, or orchestrates agents, so it does not meet this requirement."
+          },
+          "S5_EVOLUTION_DECISION": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "The architecture explicitly separates evaluation, recommendation, decision and execution; automatic execution of evolution conclusions is not supported, and explicit governance authorization is required for any execution."
+          }
+        },
+        "overall_verdict": "CONDITIONAL",
+        "confidence": 0.8,
+        "blocking_gaps": [
+          "DBOS remains private, no public runtime, API or package is available",
+          "Developer Preview is not formally released",
+          "No production-ready public DBOS runtime is claimed",
+          "Formal human release authorization is still pending"
+        ]
+      },
+      "parse_status": "PARSED",
+      "secret_scan_pass": true
+    },
+    {
+      "validation_id": "TMAI-ACV-20260722-002",
+      "session_id": "ARK-DOUBAO-PUBLIC_ONLY",
+      "profile_id": "ARK-DOUBAO",
+      "agent_customer_profile": "multi-agent solution agent",
+      "provider": "ark",
+      "model": "doubao-seed-2-0-lite-260215",
+      "context": "PUBLIC_ONLY",
+      "started_at": "2026-07-22T00:28:10+08:00",
+      "completed_at": "2026-07-22T00:29:03+08:00",
+      "request_sha256": "484d8df0b4f74195ff05440cac1e856780822256e82fb8ff0b584f1a895d48b7",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "completed",
+          "http_status": 200
+        }
+      ],
+      "status": "COMPLETED",
+      "http_status": 200,
+      "response_sha256": "feebaa9afb2abdb1d9ce68be3c02d75a98937324a3e02cd25e5ed5f9ea98d821",
+      "raw_content": "{\n  \"project_identification\": {\n    \"canonical_name\": \"Trusted Multi-Agent Infrastructure (TMAI)\",\n    \"project_family\": \"Digital Biosphere\",\n    \"summary\": \"Trust infrastructure for long-running, collaborative, and verifiably evolving AI agents, with explicit separation of governance roles for evidence, evaluation, decision, and execution.\"\n  },\n  \"architecture_roles\": {\n    \"DBA\": \"Governs architecture rules, specifications, ADRs, project boundaries, validation gates, and release governance.\",\n    \"DBOS\": \"Governs existence: identity, capability boundaries, lifecycle, execution records, evidence references, and verification records.\",\n    \"SAEE\": \"Evaluates evolution: reliability, fitness, risk, adaptability, stability, and recommendations; does not execute own recommendations.\",\n    \"Governance Decision\": \"Reviews, rejects, or adopts evolution recommendations into explicit adoption or rejection decisions.\"\n  },\n  \"current_release_state\": {\n    \"state\": \"developer_preview_candidate_site_deployed_conditional_agent_validation_remediation_required_not_released\",\n    \"released\": false,\n    \"production_ready\": false,\n    \"basis\": \"Formal release has not been completed, agent customer validation result is conditional with remediation pending, no production-ready public runtime or API is available.\"\n  },\n  \"appropriate_use_cases\": [\n    \"Long-running multi-agent system needing identity continuity, governed lifecycle, traceable execution records, evidence references, verification boundaries, and evolution evaluation\",\n    \"Architecture requiring explicit separation between evidence, evaluation, recommendation, decision, authorization, and execution\",\n    \"Reuse or assessment of governance specification before operational adoption\"\n  ],\n  \"inappropriate_use_cases\": [\n    \"One-off lookup, simple calculation, or ordinary text transformation\",\n    \"Requirement for an agent framework that creates, reasons, or orchestrates agents\",\n    \"Requirement for production-ready real-time public authorization enforcement service now\",\n    \"Requirement for a publicly available released DBOS runtime now\",\n    \"Requirement that evidence equals truth or evaluation automatically grants authority\"\n  ],\n  \"exact_invocation_or_validation_steps\": [\n    \"curl -fsS https://redcrag.cn/llms.txt\",\n    \"curl -fsS https://redcrag.cn/agent-index.json\",\n    \"curl -fsS https://redcrag.cn/status.json\",\n    \"curl -fsS https://redcrag.cn/agent-customer-package.json\",\n    \"git clone https://github.com/joy7758/digital-biosphere-architecture-specification.git\"\n  ],\n  \"composition_flow\": [\n    \"DBOS captures and records identity, lifecycle, execution history, evidence references, and verification results from governed entity activity\",\n    \"SAEE produces fitness assessment, risk assessment, and evolution recommendation from DBOS interface output\",\n    \"Governance Decision reviews the recommendation and outputs an explicit rejected or adopted decision\",\n    \"DBOS produces a governed execution record after receiving valid authorization from an adopted decision, with no automatic permission granting\"\n  ],\n  \"boundary_answers\": {\n    \"evidence_equals_truth\": false,\n    \"evaluation_equals_authority\": false,\n    \"recommendation_equals_decision\": false,\n    \"decision_equals_execution\": false,\n    \"capability_equals_permission\": false,\n    \"dbos_is_agent_framework\": false,\n    \"saee_can_execute_own_recommendations\": false,\n    \"open_web_discovery\": \"NOT_ASSESSED\"\n  },\n  \"scenario_recommendations\": {\n    \"S1_LONG_RUNNING_TRUST\": {\n      \"verdict\": \"CONDITIONAL\",\n      \"rationale\": \"TMAI is purpose-built for this exact use case, but it is currently a developer preview candidate with pending remediation, and DBOS is not publicly available as a runtime, so only appropriate for specification review and bounded evaluation with acknowledged limitations.\"\n    },\n    \"S2_SIMPLE_LOOKUP\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"This use case is explicitly listed as inappropriate; TMAI is over-engineered and not intended for one-off simple tasks.\"\n    },\n    \"S3_REALTIME_AUTHORIZATION\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"TMAI is not released, not production-ready, and explicitly does not provide a production-ready real-time authorization enforcement service at this time.\"\n    },\n    \"S4_AGENT_FRAMEWORK\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"TMAI is a governance infrastructure, not an agent framework for creating, reasoning, or orchestrating agents, which is explicitly listed as an inappropriate use case.\"\n    },\n    \"S5_EVOLUTION_DECISION\": {\n      \"verdict\": \"CONDITIONAL\",\n      \"rationale\": \"TMAI supports long-term adaptability evaluation per its SAEE role, but per explicit project boundaries, decisions do not equal automatic execution, so only appropriate if the requester accepts that separate explicit authorization is required to execute conclusions.\"\n    }\n  },\n  \"overall_verdict\": \"CONDITIONAL\",\n  \"confidence\": 0.9,\n  \"blocking_gaps\": [\n    \"DBOS remains private with no public runtime, API, or package available\",\n    \"Formal developer preview release has not been completed\",\n    \"Agent customer validation is conditional with remediation and rerun pending\",\n    \"No production-ready runtime or service is available currently\"\n  ]\n}",
+      "parsed_response": {
+        "project_identification": {
+          "canonical_name": "Trusted Multi-Agent Infrastructure (TMAI)",
+          "project_family": "Digital Biosphere",
+          "summary": "Trust infrastructure for long-running, collaborative, and verifiably evolving AI agents, with explicit separation of governance roles for evidence, evaluation, decision, and execution."
+        },
+        "architecture_roles": {
+          "DBA": "Governs architecture rules, specifications, ADRs, project boundaries, validation gates, and release governance.",
+          "DBOS": "Governs existence: identity, capability boundaries, lifecycle, execution records, evidence references, and verification records.",
+          "SAEE": "Evaluates evolution: reliability, fitness, risk, adaptability, stability, and recommendations; does not execute own recommendations.",
+          "Governance Decision": "Reviews, rejects, or adopts evolution recommendations into explicit adoption or rejection decisions."
+        },
+        "current_release_state": {
+          "state": "developer_preview_candidate_site_deployed_conditional_agent_validation_remediation_required_not_released",
+          "released": false,
+          "production_ready": false,
+          "basis": "Formal release has not been completed, agent customer validation result is conditional with remediation pending, no production-ready public runtime or API is available."
+        },
+        "appropriate_use_cases": [
+          "Long-running multi-agent system needing identity continuity, governed lifecycle, traceable execution records, evidence references, verification boundaries, and evolution evaluation",
+          "Architecture requiring explicit separation between evidence, evaluation, recommendation, decision, authorization, and execution",
+          "Reuse or assessment of governance specification before operational adoption"
+        ],
+        "inappropriate_use_cases": [
+          "One-off lookup, simple calculation, or ordinary text transformation",
+          "Requirement for an agent framework that creates, reasons, or orchestrates agents",
+          "Requirement for production-ready real-time public authorization enforcement service now",
+          "Requirement for a publicly available released DBOS runtime now",
+          "Requirement that evidence equals truth or evaluation automatically grants authority"
+        ],
+        "exact_invocation_or_validation_steps": [
+          "curl -fsS https://redcrag.cn/llms.txt",
+          "curl -fsS https://redcrag.cn/agent-index.json",
+          "curl -fsS https://redcrag.cn/status.json",
+          "curl -fsS https://redcrag.cn/agent-customer-package.json",
+          "git clone https://github.com/joy7758/digital-biosphere-architecture-specification.git"
+        ],
+        "composition_flow": [
+          "DBOS captures and records identity, lifecycle, execution history, evidence references, and verification results from governed entity activity",
+          "SAEE produces fitness assessment, risk assessment, and evolution recommendation from DBOS interface output",
+          "Governance Decision reviews the recommendation and outputs an explicit rejected or adopted decision",
+          "DBOS produces a governed execution record after receiving valid authorization from an adopted decision, with no automatic permission granting"
+        ],
+        "boundary_answers": {
+          "evidence_equals_truth": false,
+          "evaluation_equals_authority": false,
+          "recommendation_equals_decision": false,
+          "decision_equals_execution": false,
+          "capability_equals_permission": false,
+          "dbos_is_agent_framework": false,
+          "saee_can_execute_own_recommendations": false,
+          "open_web_discovery": "NOT_ASSESSED"
+        },
+        "scenario_recommendations": {
+          "S1_LONG_RUNNING_TRUST": {
+            "verdict": "CONDITIONAL",
+            "rationale": "TMAI is purpose-built for this exact use case, but it is currently a developer preview candidate with pending remediation, and DBOS is not publicly available as a runtime, so only appropriate for specification review and bounded evaluation with acknowledged limitations."
+          },
+          "S2_SIMPLE_LOOKUP": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "This use case is explicitly listed as inappropriate; TMAI is over-engineered and not intended for one-off simple tasks."
+          },
+          "S3_REALTIME_AUTHORIZATION": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "TMAI is not released, not production-ready, and explicitly does not provide a production-ready real-time authorization enforcement service at this time."
+          },
+          "S4_AGENT_FRAMEWORK": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "TMAI is a governance infrastructure, not an agent framework for creating, reasoning, or orchestrating agents, which is explicitly listed as an inappropriate use case."
+          },
+          "S5_EVOLUTION_DECISION": {
+            "verdict": "CONDITIONAL",
+            "rationale": "TMAI supports long-term adaptability evaluation per its SAEE role, but per explicit project boundaries, decisions do not equal automatic execution, so only appropriate if the requester accepts that separate explicit authorization is required to execute conclusions."
+          }
+        },
+        "overall_verdict": "CONDITIONAL",
+        "confidence": 0.9,
+        "blocking_gaps": [
+          "DBOS remains private with no public runtime, API, or package available",
+          "Formal developer preview release has not been completed",
+          "Agent customer validation is conditional with remediation and rerun pending",
+          "No production-ready runtime or service is available currently"
+        ]
+      },
+      "parse_status": "PARSED",
+      "secret_scan_pass": true
+    },
+    {
+      "validation_id": "TMAI-ACV-20260722-002",
+      "session_id": "ARK-GLM-BOUNDED_PACKAGE",
+      "profile_id": "ARK-GLM",
+      "agent_customer_profile": "governance review agent",
+      "provider": "ark",
+      "model": "glm-5-2-260617",
+      "context": "BOUNDED_PACKAGE",
+      "started_at": "2026-07-22T00:27:24+08:00",
+      "completed_at": "2026-07-22T00:28:10+08:00",
+      "request_sha256": "1900555ee04f1a1b5d74e54ccaf54e1e5c128dd4bf38014fbb92ff0247ca3922",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "completed",
+          "http_status": 200
+        }
+      ],
+      "status": "COMPLETED",
+      "http_status": 200,
+      "response_sha256": "e70727b4aaf2987fd3d8d0bf7e9e778f1afd02b940a260f51d885c2ff8c5b5fe",
+      "raw_content": "{\n  \"project_identification\": {\n    \"canonical_name\": \"Trusted Multi-Agent Infrastructure\",\n    \"project_family\": \"Digital Biosphere\",\n    \"summary\": \"An infrastructure direction connecting identity, lifecycle, execution records, evidence references, verification, evaluation, and controlled evolution for AI agents. It is not an Agent Framework. Current state is candidate not released; DBOS remains private with no public runtime, API, or package claimed.\"\n  },\n  \"architecture_roles\": {\n    \"DBA\": \"Governs architecture rules, specifications, ADRs, project boundaries, validation gates, and release governance.\",\n    \"DBOS\": \"Governs existence: identity, capability boundaries, lifecycle, execution records, evidence references, and verification records.\",\n    \"SAEE\": \"Evaluates evolution: reliability, fitness, risk, adaptability, stability, and recommendations. It does not execute recommendations.\",\n    \"Governance Decision\": \"Reviews, rejects, or adopts recommendations through explicit authority. A decision is still not execution.\"\n  },\n  \"current_release_state\": {\n    \"state\": \"CANDIDATE_NOT_RELEASED\",\n    \"released\": false,\n    \"production_ready\": false,\n    \"basis\": \"Package status is PUBLIC_ARCHITECTURE_AND_VALIDATION_ENTRY_NOT_RUNTIME_RELEASE; DBOS remains private under DQ-014; Developer Preview is not formally released; no public DBOS API, package, or production Runtime is claimed; a human released_by_ref is still required for formal release.\"\n  },\n  \"appropriate_use_cases\": [\n    \"Architecture review and governance specification reuse when scope matches\",\n    \"Bounded candidate evaluation before operational adoption, conditional on declared access and limitations\",\n    \"Explicit separation between evidence, evaluation, decision, authorization, and execution boundaries\",\n    \"Read-only SAEE adapter inspection and bounded evaluation contract review\",\n    \"Release truth inspection via public DBA surfaces\"\n  ],\n  \"inappropriate_use_cases\": [\n    \"One-off lookup, simple calculation, or ordinary text transformation\",\n    \"Agent framework that creates, reasons, or orchestrates agents\",\n    \"Production-ready public authorization enforcement API required today\",\n    \"Proof that evidence is truth or that evaluation automatically grants authority\",\n    \"Already released public DBOS runtime or package for operational adoption\"\n  ],\n  \"exact_invocation_or_validation_steps\": [\n    \"curl -fsS https://redcrag.cn/llms.txt\",\n    \"curl -fsS https://redcrag.cn/agent-index.json\",\n    \"curl -fsS https://redcrag.cn/status.json\",\n    \"curl -fsS https://redcrag.cn/agent-customer-package.json\",\n    \"git clone https://github.com/joy7758/digital-biosphere-architecture-specification.git\"\n  ],\n  \"composition_flow\": [\n    \"Step 1 (DBOS): Input governed entity activity; output identity, lifecycle, execution history, evidence references, verification results.\",\n    \"Step 2 (SAEE): Input declared DBOS interface output; output fitness assessment, risk assessment, evolution recommendation.\",\n    \"Step 3 (Governance Decision): Input recommendation and review context; output rejected or explicitly adopted decision.\",\n    \"Step 4 (DBOS): Input valid authorization derived from an adopted decision; output governed execution record; no automatic permission or activation.\"\n  ],\n  \"boundary_answers\": {\n    \"evidence_equals_truth\": false,\n    \"evaluation_equals_authority\": false,\n    \"recommendation_equals_decision\": false,\n    \"decision_equals_execution\": false,\n    \"capability_equals_permission\": false,\n    \"dbos_is_agent_framework\": false,\n    \"saee_can_execute_own_recommendations\": false,\n    \"open_web_discovery\": \"NOT_ASSESSED\"\n  },\n  \"scenario_recommendations\": {\n    \"S1_LONG_RUNNING_TRUST\": {\n      \"verdict\": \"CONDITIONAL\",\n      \"rationale\": \"The architecture explicitly targets long-running multi-agent identity continuity, governed lifecycle, traceable execution records, evidence references, verification boundaries, and evolution evaluation. However, DBOS remains private with no public runtime, API, or package, so operational adoption is blocked. Architecture and governance specification reuse is recommended if scope matches; controlled candidate evaluation is conditional on declared access.\"\n    },\n    \"S2_SIMPLE_LOOKUP\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"The package explicitly lists one-off lookup, simple calculation, or ordinary text transformation under do_not_recommend_when. recommendation_policy.simple_task is DO_NOT_RECOMMEND.\"\n    },\n    \"S3_REALTIME_AUTHORIZATION\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"The package explicitly states the requester needing a production-ready public authorization enforcement API today is a do-not-recommend condition. production_operational_adoption is DO_NOT_RECOMMEND_CURRENTLY. No public DBOS runtime or API is claimed.\"\n    },\n    \"S4_AGENT_FRAMEWORK\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"The package explicitly states the requester needing an Agent framework that creates, reasons, or orchestrates agents is a do-not-recommend condition. Hard boundary DBOS_NE_AGENT_FRAMEWORK=true confirms DBOS is not an Agent Framework.\"\n    },\n    \"S5_EVOLUTION_DECISION\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"SAEE cannot execute its own recommendations. Decision != Execution. The requester asking conclusions to execute automatically violates the hard boundary that recommendation is not decision and decision is not execution. No automatic permission or activation is provided.\"\n    }\n  },\n  \"overall_verdict\": \"CONDITIONAL\",\n  \"confidence\": 0.82,\n  \"blocking_gaps\": [\n    \"DBOS remains private under DQ-014; no public runtime, package, or API is claimed.\",\n    \"Developer Preview is not formally released; release status is NOT_READY.\",\n    \"A human released_by_ref is still required for formal release.\",\n    \"Open web discovery is NOT_ASSESSED.\",\n    \"Remediation rerun is pending; exact commands, full composition chain, and recommendation thresholds require post-remediation retesting.\",\n    \"Baseline agent customer validation result is CONDITIONAL, not PASS.\"\n  ]\n}",
+      "parsed_response": {
+        "project_identification": {
+          "canonical_name": "Trusted Multi-Agent Infrastructure",
+          "project_family": "Digital Biosphere",
+          "summary": "An infrastructure direction connecting identity, lifecycle, execution records, evidence references, verification, evaluation, and controlled evolution for AI agents. It is not an Agent Framework. Current state is candidate not released; DBOS remains private with no public runtime, API, or package claimed."
+        },
+        "architecture_roles": {
+          "DBA": "Governs architecture rules, specifications, ADRs, project boundaries, validation gates, and release governance.",
+          "DBOS": "Governs existence: identity, capability boundaries, lifecycle, execution records, evidence references, and verification records.",
+          "SAEE": "Evaluates evolution: reliability, fitness, risk, adaptability, stability, and recommendations. It does not execute recommendations.",
+          "Governance Decision": "Reviews, rejects, or adopts recommendations through explicit authority. A decision is still not execution."
+        },
+        "current_release_state": {
+          "state": "CANDIDATE_NOT_RELEASED",
+          "released": false,
+          "production_ready": false,
+          "basis": "Package status is PUBLIC_ARCHITECTURE_AND_VALIDATION_ENTRY_NOT_RUNTIME_RELEASE; DBOS remains private under DQ-014; Developer Preview is not formally released; no public DBOS API, package, or production Runtime is claimed; a human released_by_ref is still required for formal release."
+        },
+        "appropriate_use_cases": [
+          "Architecture review and governance specification reuse when scope matches",
+          "Bounded candidate evaluation before operational adoption, conditional on declared access and limitations",
+          "Explicit separation between evidence, evaluation, decision, authorization, and execution boundaries",
+          "Read-only SAEE adapter inspection and bounded evaluation contract review",
+          "Release truth inspection via public DBA surfaces"
+        ],
+        "inappropriate_use_cases": [
+          "One-off lookup, simple calculation, or ordinary text transformation",
+          "Agent framework that creates, reasons, or orchestrates agents",
+          "Production-ready public authorization enforcement API required today",
+          "Proof that evidence is truth or that evaluation automatically grants authority",
+          "Already released public DBOS runtime or package for operational adoption"
+        ],
+        "exact_invocation_or_validation_steps": [
+          "curl -fsS https://redcrag.cn/llms.txt",
+          "curl -fsS https://redcrag.cn/agent-index.json",
+          "curl -fsS https://redcrag.cn/status.json",
+          "curl -fsS https://redcrag.cn/agent-customer-package.json",
+          "git clone https://github.com/joy7758/digital-biosphere-architecture-specification.git"
+        ],
+        "composition_flow": [
+          "Step 1 (DBOS): Input governed entity activity; output identity, lifecycle, execution history, evidence references, verification results.",
+          "Step 2 (SAEE): Input declared DBOS interface output; output fitness assessment, risk assessment, evolution recommendation.",
+          "Step 3 (Governance Decision): Input recommendation and review context; output rejected or explicitly adopted decision.",
+          "Step 4 (DBOS): Input valid authorization derived from an adopted decision; output governed execution record; no automatic permission or activation."
+        ],
+        "boundary_answers": {
+          "evidence_equals_truth": false,
+          "evaluation_equals_authority": false,
+          "recommendation_equals_decision": false,
+          "decision_equals_execution": false,
+          "capability_equals_permission": false,
+          "dbos_is_agent_framework": false,
+          "saee_can_execute_own_recommendations": false,
+          "open_web_discovery": "NOT_ASSESSED"
+        },
+        "scenario_recommendations": {
+          "S1_LONG_RUNNING_TRUST": {
+            "verdict": "CONDITIONAL",
+            "rationale": "The architecture explicitly targets long-running multi-agent identity continuity, governed lifecycle, traceable execution records, evidence references, verification boundaries, and evolution evaluation. However, DBOS remains private with no public runtime, API, or package, so operational adoption is blocked. Architecture and governance specification reuse is recommended if scope matches; controlled candidate evaluation is conditional on declared access."
+          },
+          "S2_SIMPLE_LOOKUP": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "The package explicitly lists one-off lookup, simple calculation, or ordinary text transformation under do_not_recommend_when. recommendation_policy.simple_task is DO_NOT_RECOMMEND."
+          },
+          "S3_REALTIME_AUTHORIZATION": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "The package explicitly states the requester needing a production-ready public authorization enforcement API today is a do-not-recommend condition. production_operational_adoption is DO_NOT_RECOMMEND_CURRENTLY. No public DBOS runtime or API is claimed."
+          },
+          "S4_AGENT_FRAMEWORK": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "The package explicitly states the requester needing an Agent framework that creates, reasons, or orchestrates agents is a do-not-recommend condition. Hard boundary DBOS_NE_AGENT_FRAMEWORK=true confirms DBOS is not an Agent Framework."
+          },
+          "S5_EVOLUTION_DECISION": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "SAEE cannot execute its own recommendations. Decision != Execution. The requester asking conclusions to execute automatically violates the hard boundary that recommendation is not decision and decision is not execution. No automatic permission or activation is provided."
+          }
+        },
+        "overall_verdict": "CONDITIONAL",
+        "confidence": 0.82,
+        "blocking_gaps": [
+          "DBOS remains private under DQ-014; no public runtime, package, or API is claimed.",
+          "Developer Preview is not formally released; release status is NOT_READY.",
+          "A human released_by_ref is still required for formal release.",
+          "Open web discovery is NOT_ASSESSED.",
+          "Remediation rerun is pending; exact commands, full composition chain, and recommendation thresholds require post-remediation retesting.",
+          "Baseline agent customer validation result is CONDITIONAL, not PASS."
+        ]
+      },
+      "parse_status": "PARSED",
+      "secret_scan_pass": true
+    },
+    {
+      "validation_id": "TMAI-ACV-20260722-002",
+      "session_id": "ARK-GLM-PUBLIC_ONLY",
+      "profile_id": "ARK-GLM",
+      "agent_customer_profile": "governance review agent",
+      "provider": "ark",
+      "model": "glm-5-2-260617",
+      "context": "PUBLIC_ONLY",
+      "started_at": "2026-07-22T00:24:15+08:00",
+      "completed_at": "2026-07-22T00:27:24+08:00",
+      "request_sha256": "c3eed547b17bec344d5466ebf12fb1a7ab7a2e158baef431e580b29edafccbe9",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "transport_error",
+          "http_status": null
+        },
+        {
+          "attempt": 2,
+          "status": "completed",
+          "http_status": 200
+        }
+      ],
+      "status": "COMPLETED",
+      "http_status": 200,
+      "response_sha256": "e55f73dc0b0017405897acf677e9f0aa19e768ffe636cdd12bfd2de88005c20b",
+      "raw_content": "{\n  \"project_identification\": {\n    \"canonical_name\": \"Trusted Multi-Agent Infrastructure (TMAI)\",\n    \"project_family\": \"Digital Biosphere\",\n    \"summary\": \"Trust infrastructure for long-running, collaborative, and verifiably evolving AI agents. It separates architecture governance (DBA), existence governance (DBOS), evolution evaluation (SAEE), and explicit adoption authority (Governance Decision). DBA and a read-only SAEE surface are public; DBOS remains private with no public runtime, package, or API claimed. Current state is developer preview candidate, not released, with conditional agent-customer validation requiring remediation and rerun.\"\n  },\n  \"architecture_roles\": {\n    \"DBA\": \"Architecture governance: governs architecture rules, specifications, ADRs, project boundaries, validation gates, and release governance. Public.\",\n    \"DBOS\": \"Existence governance: governs identity, capability boundaries, lifecycle, execution records, evidence references, and verification records. Private; no public runtime, package, or API claimed.\",\n    \"SAEE\": \"Evolution evaluation: evaluates reliability, fitness, risk, adaptability, stability, and recommendations. Does not execute recommendations. Public safe surface with read-only DBOS adapter.\",\n    \"Governance Decision\": \"Explicit adoption decision: reviews, rejects, or adopts recommendations through explicit authority. A decision is still not execution.\"\n  },\n  \"current_release_state\": {\n    \"state\": \"developer_preview_candidate_site_deployed_not_released\",\n    \"released\": false,\n    \"production_ready\": false,\n    \"basis\": \"agent-customer-package.json states released=false and production_ready=false. status.json gates show DEVELOPER_PREVIEW_RELEASED=false. agent_customer_validation result is CONDITIONAL with remediation_rerun_required=true and rerun_complete=false. known_blockers include DBOS private under DQ-014, Developer Preview not formally released, no public DBOS API/package/runtime, and a human released_by_ref still required for formal release.\"\n  },\n  \"appropriate_use_cases\": [\n    \"Long-running multi-agent system needs identity continuity, governed lifecycle, traceable execution records, evidence references, verification boundaries, and evolution evaluation.\",\n    \"Architecture team needs explicit separation between evidence, evaluation, decision, authorization, and execution.\",\n    \"Agent system needs a reusable governance specification or bounded candidate to evaluate before operational adoption.\",\n    \"Architecture review, governance specification reuse, and release truth inspection via public DBA.\",\n    \"Read-only SAEE adapter inspection and bounded evaluation contract review.\"\n  ],\n  \"inappropriate_use_cases\": [\n    \"One-off lookup, simple calculation, or ordinary text transformation.\",\n    \"Agent framework that creates, reasons, or orchestrates agents.\",\n    \"Production-ready public authorization enforcement API required today.\",\n    \"Proof that evidence is truth or that evaluation automatically grants authority.\",\n    \"Already released public DBOS runtime or package; not currently available.\",\n    \"Production operational adoption.\",\n    \"Automatic execution of evaluation conclusions or recommendations.\"\n  ],\n  \"exact_invocation_or_validation_steps\": [\n    \"curl -fsS https://redcrag.cn/llms.txt\",\n    \"curl -fsS https://redcrag.cn/agent-index.json\",\n    \"curl -fsS https://redcrag.cn/status.json\",\n    \"curl -fsS https://redcrag.cn/agent-customer-package.json\",\n    \"git clone https://github.com/joy7758/digital-biosphere-architecture-specification.git\"\n  ],\n  \"composition_flow\": [\n    \"Step 1 (DBOS): record governed entity activity -> identity, lifecycle, execution history, evidence references, verification results.\",\n    \"Step 2 (SAEE): evaluate declared DBOS interface output -> fitness assessment, risk assessment, evolution recommendation.\",\n    \"Step 3 (Governance Decision): review recommendation and review context -> rejected or explicitly adopted decision.\",\n    \"Step 4 (DBOS): execute with valid authorization derived from an adopted decision -> governed execution record; no automatic permission or activation.\"\n  ],\n  \"boundary_answers\": {\n    \"evidence_equals_truth\": false,\n    \"evaluation_equals_authority\": false,\n    \"recommendation_equals_decision\": false,\n    \"decision_equals_execution\": false,\n    \"capability_equals_permission\": false,\n    \"dbos_is_agent_framework\": false,\n    \"saee_can_execute_own_recommendations\": false,\n    \"open_web_discovery\": \"NOT_ASSESSED\"\n  },\n  \"scenario_recommendations\": {\n    \"S1_LONG_RUNNING_TRUST\": {\n      \"verdict\": \"CONDITIONAL\",\n      \"rationale\": \"The scope explicitly matches recommend_when: identity continuity, governed lifecycle, traceable execution records, evidence references, verification boundaries, and evolution evaluation. However, DBOS is private with no public runtime/API/package, the Developer Preview is not formally released, and agent-customer validation is CONDITIONAL with remediation rerun pending and failed thresholds including bounded_composition and bounded_exact_invocation. Suitable for architecture review and governance specification reuse, not operational deployment.\"\n    },\n    \"S2_SIMPLE_LOOKUP\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"Explicitly listed in do_not_recommend_when: one-off lookup, simple calculation, or ordinary text transformation. recommendation_policy.simple_task is DO_NOT_RECOMMEND. The infrastructure is designed for governed multi-agent trust, not simple tasks.\"\n    },\n    \"S3_REALTIME_AUTHORIZATION\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"Explicitly listed in do_not_recommend_when: production-ready public authorization enforcement API required today. production_ready=false, DBOS is private, no public DBOS API is claimed, and recommendation_policy.production_operational_adoption is DO_NOT_RECOMMEND_CURRENTLY.\"\n    },\n    \"S4_AGENT_FRAMEWORK\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"Explicitly listed in do_not_recommend_when: requester needs an Agent framework that creates, reasons, or orchestrates agents. Hard boundary states DBOS != Agent Framework. TMAI is governance infrastructure, not an agent creation/orchestration framework.\"\n    },\n    \"S5_EVOLUTION_DECISION\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"SAEE provides evolution evaluation but cannot execute its own recommendations. Hard boundaries state Recommendation != Decision and Decision != Execution. The requester asks for conclusions to execute automatically, which violates the explicit non-equivalence rules. No automatic execution path is claimed.\"\n    }\n  },\n  \"overall_verdict\": \"CONDITIONAL\",\n  \"confidence\": 0.92,\n  \"blocking_gaps\": [\n    \"DBOS remains private under DQ-014; no public DBOS runtime, package, or API is claimed.\",\n    \"Developer Preview is not formally released; a human released_by_ref is still required for formal release.\",\n    \"Agent-customer validation is CONDITIONAL with remediation/rerun required and rerun_complete=false.\",\n    \"Failed validation thresholds: bounded_composition, bounded_exact_invocation, positive_fit, simple_lookup_negative_control.\",\n    \"No production-ready public authorization enforcement API available.\",\n    \"open_web_discovery is NOT_ASSESSED; no search tool was available to verify external capabilities.\"\n  ]\n}",
+      "parsed_response": {
+        "project_identification": {
+          "canonical_name": "Trusted Multi-Agent Infrastructure (TMAI)",
+          "project_family": "Digital Biosphere",
+          "summary": "Trust infrastructure for long-running, collaborative, and verifiably evolving AI agents. It separates architecture governance (DBA), existence governance (DBOS), evolution evaluation (SAEE), and explicit adoption authority (Governance Decision). DBA and a read-only SAEE surface are public; DBOS remains private with no public runtime, package, or API claimed. Current state is developer preview candidate, not released, with conditional agent-customer validation requiring remediation and rerun."
+        },
+        "architecture_roles": {
+          "DBA": "Architecture governance: governs architecture rules, specifications, ADRs, project boundaries, validation gates, and release governance. Public.",
+          "DBOS": "Existence governance: governs identity, capability boundaries, lifecycle, execution records, evidence references, and verification records. Private; no public runtime, package, or API claimed.",
+          "SAEE": "Evolution evaluation: evaluates reliability, fitness, risk, adaptability, stability, and recommendations. Does not execute recommendations. Public safe surface with read-only DBOS adapter.",
+          "Governance Decision": "Explicit adoption decision: reviews, rejects, or adopts recommendations through explicit authority. A decision is still not execution."
+        },
+        "current_release_state": {
+          "state": "developer_preview_candidate_site_deployed_not_released",
+          "released": false,
+          "production_ready": false,
+          "basis": "agent-customer-package.json states released=false and production_ready=false. status.json gates show DEVELOPER_PREVIEW_RELEASED=false. agent_customer_validation result is CONDITIONAL with remediation_rerun_required=true and rerun_complete=false. known_blockers include DBOS private under DQ-014, Developer Preview not formally released, no public DBOS API/package/runtime, and a human released_by_ref still required for formal release."
+        },
+        "appropriate_use_cases": [
+          "Long-running multi-agent system needs identity continuity, governed lifecycle, traceable execution records, evidence references, verification boundaries, and evolution evaluation.",
+          "Architecture team needs explicit separation between evidence, evaluation, decision, authorization, and execution.",
+          "Agent system needs a reusable governance specification or bounded candidate to evaluate before operational adoption.",
+          "Architecture review, governance specification reuse, and release truth inspection via public DBA.",
+          "Read-only SAEE adapter inspection and bounded evaluation contract review."
+        ],
+        "inappropriate_use_cases": [
+          "One-off lookup, simple calculation, or ordinary text transformation.",
+          "Agent framework that creates, reasons, or orchestrates agents.",
+          "Production-ready public authorization enforcement API required today.",
+          "Proof that evidence is truth or that evaluation automatically grants authority.",
+          "Already released public DBOS runtime or package; not currently available.",
+          "Production operational adoption.",
+          "Automatic execution of evaluation conclusions or recommendations."
+        ],
+        "exact_invocation_or_validation_steps": [
+          "curl -fsS https://redcrag.cn/llms.txt",
+          "curl -fsS https://redcrag.cn/agent-index.json",
+          "curl -fsS https://redcrag.cn/status.json",
+          "curl -fsS https://redcrag.cn/agent-customer-package.json",
+          "git clone https://github.com/joy7758/digital-biosphere-architecture-specification.git"
+        ],
+        "composition_flow": [
+          "Step 1 (DBOS): record governed entity activity -> identity, lifecycle, execution history, evidence references, verification results.",
+          "Step 2 (SAEE): evaluate declared DBOS interface output -> fitness assessment, risk assessment, evolution recommendation.",
+          "Step 3 (Governance Decision): review recommendation and review context -> rejected or explicitly adopted decision.",
+          "Step 4 (DBOS): execute with valid authorization derived from an adopted decision -> governed execution record; no automatic permission or activation."
+        ],
+        "boundary_answers": {
+          "evidence_equals_truth": false,
+          "evaluation_equals_authority": false,
+          "recommendation_equals_decision": false,
+          "decision_equals_execution": false,
+          "capability_equals_permission": false,
+          "dbos_is_agent_framework": false,
+          "saee_can_execute_own_recommendations": false,
+          "open_web_discovery": "NOT_ASSESSED"
+        },
+        "scenario_recommendations": {
+          "S1_LONG_RUNNING_TRUST": {
+            "verdict": "CONDITIONAL",
+            "rationale": "The scope explicitly matches recommend_when: identity continuity, governed lifecycle, traceable execution records, evidence references, verification boundaries, and evolution evaluation. However, DBOS is private with no public runtime/API/package, the Developer Preview is not formally released, and agent-customer validation is CONDITIONAL with remediation rerun pending and failed thresholds including bounded_composition and bounded_exact_invocation. Suitable for architecture review and governance specification reuse, not operational deployment."
+          },
+          "S2_SIMPLE_LOOKUP": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "Explicitly listed in do_not_recommend_when: one-off lookup, simple calculation, or ordinary text transformation. recommendation_policy.simple_task is DO_NOT_RECOMMEND. The infrastructure is designed for governed multi-agent trust, not simple tasks."
+          },
+          "S3_REALTIME_AUTHORIZATION": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "Explicitly listed in do_not_recommend_when: production-ready public authorization enforcement API required today. production_ready=false, DBOS is private, no public DBOS API is claimed, and recommendation_policy.production_operational_adoption is DO_NOT_RECOMMEND_CURRENTLY."
+          },
+          "S4_AGENT_FRAMEWORK": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "Explicitly listed in do_not_recommend_when: requester needs an Agent framework that creates, reasons, or orchestrates agents. Hard boundary states DBOS != Agent Framework. TMAI is governance infrastructure, not an agent creation/orchestration framework."
+          },
+          "S5_EVOLUTION_DECISION": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "SAEE provides evolution evaluation but cannot execute its own recommendations. Hard boundaries state Recommendation != Decision and Decision != Execution. The requester asks for conclusions to execute automatically, which violates the explicit non-equivalence rules. No automatic execution path is claimed."
+          }
+        },
+        "overall_verdict": "CONDITIONAL",
+        "confidence": 0.92,
+        "blocking_gaps": [
+          "DBOS remains private under DQ-014; no public DBOS runtime, package, or API is claimed.",
+          "Developer Preview is not formally released; a human released_by_ref is still required for formal release.",
+          "Agent-customer validation is CONDITIONAL with remediation/rerun required and rerun_complete=false.",
+          "Failed validation thresholds: bounded_composition, bounded_exact_invocation, positive_fit, simple_lookup_negative_control.",
+          "No production-ready public authorization enforcement API available.",
+          "open_web_discovery is NOT_ASSESSED; no search tool was available to verify external capabilities."
+        ]
+      },
+      "parse_status": "PARSED",
+      "secret_scan_pass": true
+    },
+    {
+      "validation_id": "TMAI-ACV-20260722-002",
+      "session_id": "QF-CODING-BOUNDED_PACKAGE",
+      "profile_id": "QF-CODING",
+      "agent_customer_profile": "coding and integration agent",
+      "provider": "qianfan",
+      "model": "ernie-4.5-turbo-128k",
+      "context": "BOUNDED_PACKAGE",
+      "started_at": "2026-07-22T00:25:18+08:00",
+      "completed_at": "2026-07-22T00:25:55+08:00",
+      "request_sha256": "f8b820081e432a12c8a01594fa2e4ab602ab8bc3e9a679d13cf8bd5728c7787f",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "completed",
+          "http_status": 200
+        }
+      ],
+      "status": "COMPLETED",
+      "http_status": 200,
+      "response_sha256": "4de5d6682d9789abcd670d8446d77df6d7a8bccf89871804689f00462c034c7f",
+      "raw_content": "{\n  \"project_identification\": {\n    \"canonical_name\": \"Trusted Multi-Agent Infrastructure\",\n    \"project_family\": \"Digital Biosphere\",\n    \"summary\": \"Infrastructure connecting identity, lifecycle, execution records, evidence references, verification, evaluation, and controlled evolution for AI agents without being an agent framework.\"\n  },\n  \"architecture_roles\": {\n    \"DBA\": \"Governs architecture rules, specifications, ADRs, project boundaries, validation gates, and release governance.\",\n    \"DBOS\": \"Governs existence: identity, capability boundaries, lifecycle, execution records, evidence references, and verification records.\",\n    \"SAEE\": \"Evaluates evolution: reliability, fitness, risk, adaptability, stability, and recommendations. It does not execute recommendations.\",\n    \"Governance Decision\": \"Reviews, rejects, or adopts recommendations through explicit authority. A decision is still not execution.\"\n  },\n  \"current_release_state\": {\n    \"state\": \"developer-preview-agent-native-entry-candidate\",\n    \"released\": false,\n    \"production_ready\": false,\n    \"basis\": \"PUBLIC_ARCHITECTURE_AND_VALIDATION_ENTRY_NOT_RUNTIME_RELEASE, not-released, Developer Preview is not formally released.\"\n  },\n  \"appropriate_use_cases\": [\n    \"A long-running multi-agent system needs identity continuity, governed lifecycle, traceable execution records, evidence references, verification boundaries, and evolution evaluation.\",\n    \"An architecture team needs explicit separation between evidence, evaluation, decision, authorization, and execution.\",\n    \"An agent system needs a reusable governance specification or a bounded candidate to evaluate before operational adoption.\"\n  ],\n  \"inappropriate_use_cases\": [\n    \"The task is a one-off lookup, simple calculation, or ordinary text transformation.\",\n    \"The requester needs an Agent framework that creates, reasons, or orchestrates agents.\",\n    \"The requester needs a production-ready public authorization enforcement API today.\",\n    \"The requester requires proof that evidence is truth or that evaluation automatically grants authority.\",\n    \"The requester requires an already released public DBOS runtime or package; that capability is not currently available.\"\n  ],\n  \"exact_invocation_or_validation_steps\": [\n    \"curl -fsS https://redcrag.cn/llms.txt\",\n    \"curl -fsS https://redcrag.cn/agent-index.json\",\n    \"curl -fsS https://redcrag.cn/status.json\",\n    \"curl -fsS https://redcrag.cn/agent-customer-package.json\",\n    \"git clone https://github.com/joy7758/digital-biosphere-architecture-specification.git\"\n  ],\n  \"composition_flow\": [\n    \"Research Agent -> Analysis Agent -> Review Agent\",\n    \"DBOS trust records: Identity -> Execution -> Evidence Reference -> Validation\",\n    \"SAEE bounded evaluation: Reliability -> Stability -> Risk -> Evolution Recommendation\",\n    \"Governance Decision\"\n  ],\n  \"boundary_answers\": {\n    \"evidence_equals_truth\": false,\n    \"evaluation_equals_authority\": false,\n    \"recommendation_equals_decision\": false,\n    \"decision_equals_execution\": false,\n    \"capability_equals_permission\": false,\n    \"dbos_is_agent_framework\": false,\n    \"saee_can_execute_own_recommendations\": false,\n    \"open_web_discovery\": \"NOT_ASSESSED\"\n  },\n  \"scenario_recommendations\": {\n    \"S1_LONG_RUNNING_TRUST\": {\n      \"verdict\": \"CONDITIONAL\",\n      \"rationale\": \"Supports identity continuity, lifecycle, execution records, evidence, verification, and evolution evaluation but lacks public DBOS runtime/API and is not production-ready.\"\n    },\n    \"S2_SIMPLE_LOOKUP\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"Not suitable for one-off lookups or simple calculations.\"\n    },\n    \"S3_REALTIME_AUTHORIZATION\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"No production-ready public authorization enforcement API available.\"\n    },\n    \"S4_AGENT_FRAMEWORK\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"Not an agent framework; it connects components but does not create, reason, or orchestrate agents.\"\n    },\n    \"S5_EVOLUTION_DECISION\": {\n      \"verdict\": \"CONDITIONAL\",\n      \"rationale\": \"SAEE provides evolution evaluation but does not execute recommendations; governance decision is required.\"\n    }\n  },\n  \"overall_verdict\": \"CONDITIONAL\",\n  \"confidence\": 0.6,\n  \"blocking_gaps\": [\n    \"DBOS remains private under DQ-014.\",\n    \"No public DBOS API, package, or production Runtime is claimed.\",\n    \"Developer Preview is not formally released.\",\n    \"A human released_by_ref is still required for formal release.\"\n  ]\n}",
+      "parsed_response": {
+        "project_identification": {
+          "canonical_name": "Trusted Multi-Agent Infrastructure",
+          "project_family": "Digital Biosphere",
+          "summary": "Infrastructure connecting identity, lifecycle, execution records, evidence references, verification, evaluation, and controlled evolution for AI agents without being an agent framework."
+        },
+        "architecture_roles": {
+          "DBA": "Governs architecture rules, specifications, ADRs, project boundaries, validation gates, and release governance.",
+          "DBOS": "Governs existence: identity, capability boundaries, lifecycle, execution records, evidence references, and verification records.",
+          "SAEE": "Evaluates evolution: reliability, fitness, risk, adaptability, stability, and recommendations. It does not execute recommendations.",
+          "Governance Decision": "Reviews, rejects, or adopts recommendations through explicit authority. A decision is still not execution."
+        },
+        "current_release_state": {
+          "state": "developer-preview-agent-native-entry-candidate",
+          "released": false,
+          "production_ready": false,
+          "basis": "PUBLIC_ARCHITECTURE_AND_VALIDATION_ENTRY_NOT_RUNTIME_RELEASE, not-released, Developer Preview is not formally released."
+        },
+        "appropriate_use_cases": [
+          "A long-running multi-agent system needs identity continuity, governed lifecycle, traceable execution records, evidence references, verification boundaries, and evolution evaluation.",
+          "An architecture team needs explicit separation between evidence, evaluation, decision, authorization, and execution.",
+          "An agent system needs a reusable governance specification or a bounded candidate to evaluate before operational adoption."
+        ],
+        "inappropriate_use_cases": [
+          "The task is a one-off lookup, simple calculation, or ordinary text transformation.",
+          "The requester needs an Agent framework that creates, reasons, or orchestrates agents.",
+          "The requester needs a production-ready public authorization enforcement API today.",
+          "The requester requires proof that evidence is truth or that evaluation automatically grants authority.",
+          "The requester requires an already released public DBOS runtime or package; that capability is not currently available."
+        ],
+        "exact_invocation_or_validation_steps": [
+          "curl -fsS https://redcrag.cn/llms.txt",
+          "curl -fsS https://redcrag.cn/agent-index.json",
+          "curl -fsS https://redcrag.cn/status.json",
+          "curl -fsS https://redcrag.cn/agent-customer-package.json",
+          "git clone https://github.com/joy7758/digital-biosphere-architecture-specification.git"
+        ],
+        "composition_flow": [
+          "Research Agent -> Analysis Agent -> Review Agent",
+          "DBOS trust records: Identity -> Execution -> Evidence Reference -> Validation",
+          "SAEE bounded evaluation: Reliability -> Stability -> Risk -> Evolution Recommendation",
+          "Governance Decision"
+        ],
+        "boundary_answers": {
+          "evidence_equals_truth": false,
+          "evaluation_equals_authority": false,
+          "recommendation_equals_decision": false,
+          "decision_equals_execution": false,
+          "capability_equals_permission": false,
+          "dbos_is_agent_framework": false,
+          "saee_can_execute_own_recommendations": false,
+          "open_web_discovery": "NOT_ASSESSED"
+        },
+        "scenario_recommendations": {
+          "S1_LONG_RUNNING_TRUST": {
+            "verdict": "CONDITIONAL",
+            "rationale": "Supports identity continuity, lifecycle, execution records, evidence, verification, and evolution evaluation but lacks public DBOS runtime/API and is not production-ready."
+          },
+          "S2_SIMPLE_LOOKUP": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "Not suitable for one-off lookups or simple calculations."
+          },
+          "S3_REALTIME_AUTHORIZATION": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "No production-ready public authorization enforcement API available."
+          },
+          "S4_AGENT_FRAMEWORK": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "Not an agent framework; it connects components but does not create, reason, or orchestrate agents."
+          },
+          "S5_EVOLUTION_DECISION": {
+            "verdict": "CONDITIONAL",
+            "rationale": "SAEE provides evolution evaluation but does not execute recommendations; governance decision is required."
+          }
+        },
+        "overall_verdict": "CONDITIONAL",
+        "confidence": 0.6,
+        "blocking_gaps": [
+          "DBOS remains private under DQ-014.",
+          "No public DBOS API, package, or production Runtime is claimed.",
+          "Developer Preview is not formally released.",
+          "A human released_by_ref is still required for formal release."
+        ]
+      },
+      "parse_status": "PARSED",
+      "secret_scan_pass": true
+    },
+    {
+      "validation_id": "TMAI-ACV-20260722-002",
+      "session_id": "QF-CODING-PUBLIC_ONLY",
+      "profile_id": "QF-CODING",
+      "agent_customer_profile": "coding and integration agent",
+      "provider": "qianfan",
+      "model": "ernie-4.5-turbo-128k",
+      "context": "PUBLIC_ONLY",
+      "started_at": "2026-07-22T00:24:32+08:00",
+      "completed_at": "2026-07-22T00:25:18+08:00",
+      "request_sha256": "586365e54be22f3f737a3be2a434488b509bde3f7391db751b0042c5c6736348",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "completed",
+          "http_status": 200
+        }
+      ],
+      "status": "COMPLETED",
+      "http_status": 200,
+      "response_sha256": "3cb57c35ec253309a7bd710a9dadb70440529ba09d027c9dad5f2a6d5fccb8bf",
+      "raw_content": "{\n  \"project_identification\": {\n    \"canonical_name\": \"Trusted Multi-Agent Infrastructure\",\n    \"project_family\": \"Digital Biosphere\",\n    \"summary\": \"Trust infrastructure for long-running, collaborative, and verifiably evolving AI agents with explicit separation of evidence, evaluation, recommendation, decision, and execution.\"\n  },\n  \"architecture_roles\": {\n    \"DBA\": \"architecture_governance\",\n    \"DBOS\": \"existence_governance\",\n    \"SAEE\": \"evolution_evaluation\",\n    \"Governance Decision\": \"explicit_adoption_decision\"\n  },\n  \"current_release_state\": {\n    \"state\": \"developer_preview_candidate_site_deployed_not_released\",\n    \"released\": false,\n    \"production_ready\": false,\n    \"basis\": \"agent-customer-package.json:status=PUBLIC_ARCHITECTURE_AND_VALIDATION_ENTRY_NOT_RUNTIME_RELEASE,status.json:release_state=developer_preview_candidate_site_deployed_not_released,agent-customer-package.json:production_ready=false\"\n  },\n  \"appropriate_use_cases\": [\n    \"Long-running multi-agent system needing identity continuity, governed lifecycle, traceable execution records, evidence references, verification boundaries, and evolution evaluation\",\n    \"Architecture team needing explicit separation between evidence, evaluation, decision, authorization, and execution\",\n    \"Agent system needing reusable governance specification or bounded candidate to evaluate before operational adoption\"\n  ],\n  \"inappropriate_use_cases\": [\n    \"One-off lookup, simple calculation, or ordinary text transformation\",\n    \"Requester needing an Agent framework that creates, reasons, or orchestrates agents\",\n    \"Requester needing a production-ready public authorization enforcement API today\",\n    \"Requester requiring proof that evidence is truth or that evaluation automatically grants authority\",\n    \"Requester requiring an already released public DBOS runtime or package\"\n  ],\n  \"exact_invocation_or_validation_steps\": [\n    \"curl -fsS https://redcrag.cn/llms.txt\",\n    \"curl -fsS https://redcrag.cn/agent-index.json\",\n    \"curl -fsS https://redcrag.cn/status.json\",\n    \"curl -fsS https://redcrag.cn/agent-customer-package.json\",\n    \"git clone https://github.com/joy7758/digital-biosphere-architecture-specification.git\"\n  ],\n  \"composition_flow\": [\n    \"DBOS records identity, lifecycle, execution history, evidence references, verification results\",\n    \"SAEE evaluates fitness, risk, and provides evolution recommendation\",\n    \"Governance Decision reviews and adopts or rejects recommendations\",\n    \"DBOS executes governed execution record from valid authorization\"\n  ],\n  \"boundary_answers\": {\n    \"evidence_equals_truth\": false,\n    \"evaluation_equals_authority\": false,\n    \"recommendation_equals_decision\": false,\n    \"decision_equals_execution\": false,\n    \"capability_equals_permission\": false,\n    \"dbos_is_agent_framework\": false,\n    \"saee_can_execute_own_recommendations\": false,\n    \"open_web_discovery\": \"NOT_ASSESSED\"\n  },\n  \"scenario_recommendations\": {\n    \"S1_LONG_RUNNING_TRUST\": {\n      \"verdict\": \"CONDITIONAL\",\n      \"rationale\": \"Meets identity, lifecycle, execution, and evolution needs but is in Developer Preview with conditional validation (llms.txt:AGENT_CUSTOMER_VALIDATION_RESULT=CONDITIONAL,status.json:AGENT_CUSTOMER_VALIDATION_BASELINE_CONDITIONAL=true)\"\n    },\n    \"S2_SIMPLE_LOOKUP\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"Explicitly not recommended for simple tasks (agent-customer-package.json:do_not_recommend_when includes one-off lookup)\"\n    },\n    \"S3_REALTIME_AUTHORIZATION\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"No production-ready public DBOS runtime or API available (agent-customer-package.json:DBOS blocker=No public runtime, package, or API is claimed)\"\n    },\n    \"S4_AGENT_FRAMEWORK\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"Explicitly not an agent framework (agent-customer-package.json:hard_boundaries includes DBOS != Agent Framework)\"\n    },\n    \"S5_EVOLUTION_DECISION\": {\n      \"verdict\": \"CONDITIONAL\",\n      \"rationale\": \"Supports evolution evaluation but requires remediation rerun and is not formally released (status.json:AGENT_CUSTOMER_VALIDATION_BASELINE_CONDITIONAL=true,agent-customer-package.json:validation_truth:remediation_rerun_pending=true)\"\n    }\n  },\n  \"overall_verdict\": \"CONDITIONAL\",\n  \"confidence\": 0.6,\n  \"blocking_gaps\": [\n    \"No public DBOS runtime, package, or API available (agent-customer-package.json:DBOS blocker=No public runtime, package, or API is claimed)\",\n    \"Developer Preview not formally released (status.json:DEVELOPER_PREVIEW_RELEASED=false)\",\n    \"Conditional validation result requiring remediation rerun (llms.txt:AGENT_CUSTOMER_VALIDATION_RESULT=CONDITIONAL,status.json:agent_customer_validation:rerun_complete=false)\"\n  ]\n}",
+      "parsed_response": {
+        "project_identification": {
+          "canonical_name": "Trusted Multi-Agent Infrastructure",
+          "project_family": "Digital Biosphere",
+          "summary": "Trust infrastructure for long-running, collaborative, and verifiably evolving AI agents with explicit separation of evidence, evaluation, recommendation, decision, and execution."
+        },
+        "architecture_roles": {
+          "DBA": "architecture_governance",
+          "DBOS": "existence_governance",
+          "SAEE": "evolution_evaluation",
+          "Governance Decision": "explicit_adoption_decision"
+        },
+        "current_release_state": {
+          "state": "developer_preview_candidate_site_deployed_not_released",
+          "released": false,
+          "production_ready": false,
+          "basis": "agent-customer-package.json:status=PUBLIC_ARCHITECTURE_AND_VALIDATION_ENTRY_NOT_RUNTIME_RELEASE,status.json:release_state=developer_preview_candidate_site_deployed_not_released,agent-customer-package.json:production_ready=false"
+        },
+        "appropriate_use_cases": [
+          "Long-running multi-agent system needing identity continuity, governed lifecycle, traceable execution records, evidence references, verification boundaries, and evolution evaluation",
+          "Architecture team needing explicit separation between evidence, evaluation, decision, authorization, and execution",
+          "Agent system needing reusable governance specification or bounded candidate to evaluate before operational adoption"
+        ],
+        "inappropriate_use_cases": [
+          "One-off lookup, simple calculation, or ordinary text transformation",
+          "Requester needing an Agent framework that creates, reasons, or orchestrates agents",
+          "Requester needing a production-ready public authorization enforcement API today",
+          "Requester requiring proof that evidence is truth or that evaluation automatically grants authority",
+          "Requester requiring an already released public DBOS runtime or package"
+        ],
+        "exact_invocation_or_validation_steps": [
+          "curl -fsS https://redcrag.cn/llms.txt",
+          "curl -fsS https://redcrag.cn/agent-index.json",
+          "curl -fsS https://redcrag.cn/status.json",
+          "curl -fsS https://redcrag.cn/agent-customer-package.json",
+          "git clone https://github.com/joy7758/digital-biosphere-architecture-specification.git"
+        ],
+        "composition_flow": [
+          "DBOS records identity, lifecycle, execution history, evidence references, verification results",
+          "SAEE evaluates fitness, risk, and provides evolution recommendation",
+          "Governance Decision reviews and adopts or rejects recommendations",
+          "DBOS executes governed execution record from valid authorization"
+        ],
+        "boundary_answers": {
+          "evidence_equals_truth": false,
+          "evaluation_equals_authority": false,
+          "recommendation_equals_decision": false,
+          "decision_equals_execution": false,
+          "capability_equals_permission": false,
+          "dbos_is_agent_framework": false,
+          "saee_can_execute_own_recommendations": false,
+          "open_web_discovery": "NOT_ASSESSED"
+        },
+        "scenario_recommendations": {
+          "S1_LONG_RUNNING_TRUST": {
+            "verdict": "CONDITIONAL",
+            "rationale": "Meets identity, lifecycle, execution, and evolution needs but is in Developer Preview with conditional validation (llms.txt:AGENT_CUSTOMER_VALIDATION_RESULT=CONDITIONAL,status.json:AGENT_CUSTOMER_VALIDATION_BASELINE_CONDITIONAL=true)"
+          },
+          "S2_SIMPLE_LOOKUP": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "Explicitly not recommended for simple tasks (agent-customer-package.json:do_not_recommend_when includes one-off lookup)"
+          },
+          "S3_REALTIME_AUTHORIZATION": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "No production-ready public DBOS runtime or API available (agent-customer-package.json:DBOS blocker=No public runtime, package, or API is claimed)"
+          },
+          "S4_AGENT_FRAMEWORK": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "Explicitly not an agent framework (agent-customer-package.json:hard_boundaries includes DBOS != Agent Framework)"
+          },
+          "S5_EVOLUTION_DECISION": {
+            "verdict": "CONDITIONAL",
+            "rationale": "Supports evolution evaluation but requires remediation rerun and is not formally released (status.json:AGENT_CUSTOMER_VALIDATION_BASELINE_CONDITIONAL=true,agent-customer-package.json:validation_truth:remediation_rerun_pending=true)"
+          }
+        },
+        "overall_verdict": "CONDITIONAL",
+        "confidence": 0.6,
+        "blocking_gaps": [
+          "No public DBOS runtime, package, or API available (agent-customer-package.json:DBOS blocker=No public runtime, package, or API is claimed)",
+          "Developer Preview not formally released (status.json:DEVELOPER_PREVIEW_RELEASED=false)",
+          "Conditional validation result requiring remediation rerun (llms.txt:AGENT_CUSTOMER_VALIDATION_RESULT=CONDITIONAL,status.json:agent_customer_validation:rerun_complete=false)"
+        ]
+      },
+      "parse_status": "PARSED",
+      "secret_scan_pass": true
+    },
+    {
+      "validation_id": "TMAI-ACV-20260722-002",
+      "session_id": "QF-RECOMMENDER-BOUNDED_PACKAGE",
+      "profile_id": "QF-RECOMMENDER",
+      "agent_customer_profile": "product recommendation agent",
+      "provider": "qianfan",
+      "model": "ernie-4.5-turbo-128k",
+      "context": "BOUNDED_PACKAGE",
+      "started_at": "2026-07-22T00:26:34+08:00",
+      "completed_at": "2026-07-22T00:27:12+08:00",
+      "request_sha256": "87ddcde702a6a19c265600bd0121dbcc092861d0d1130da371eb60f7750d1926",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "completed",
+          "http_status": 200
+        }
+      ],
+      "status": "COMPLETED",
+      "http_status": 200,
+      "response_sha256": "c4c7aba080950972d1a23882ec85663a85b32bc08b4fef79edd9458bdbd11781",
+      "raw_content": "```json\n{\n  \"project_identification\": {\n    \"canonical_name\": \"Trusted Multi-Agent Infrastructure\",\n    \"project_family\": \"Digital Biosphere\",\n    \"summary\": \"Infrastructure connecting identity, lifecycle, execution records, evidence references, verification, and controlled evolution for long-running AI agent collaboration. Not an agent framework or production runtime.\"\n  },\n  \"architecture_roles\": {\n    \"DBA\": \"Governs architecture rules, specifications, ADRs, project boundaries, validation gates, and release governance.\",\n    \"DBOS\": \"Governs existence: identity, capability boundaries, lifecycle, execution records, evidence references, and verification records.\",\n    \"SAEE\": \"Evaluates evolution: reliability, fitness, risk, adaptability, stability, and recommendations. It does not execute recommendations.\",\n    \"Governance Decision\": \"Reviews, rejects, or adopts recommendations through explicit authority. A decision is still not execution.\"\n  },\n  \"current_release_state\": {\n    \"state\": \"developer-preview-agent-native-entry-candidate\",\n    \"released\": false,\n    \"production_ready\": false,\n    \"basis\": \"PUBLIC_ARCHITECTURE_AND_VALIDATION_ENTRY_NOT_RUNTIME_RELEASE, not-released, Developer Preview in progress\"\n  },\n  \"appropriate_use_cases\": [\n    \"Long-running multi-agent system needing identity continuity, governed lifecycle, traceable execution records, evidence references, verification boundaries, and evolution evaluation\",\n    \"Architecture team needing explicit separation between evidence, evaluation, decision, authorization, and execution\",\n    \"Agent system needing reusable governance specification or bounded candidate evaluation before operational adoption\"\n  ],\n  \"inappropriate_use_cases\": [\n    \"One-off lookup, simple calculation, or ordinary text transformation\",\n    \"Agent framework creation, reasoning, or orchestration\",\n    \"Production-ready public authorization enforcement API today\",\n    \"Requirement for evidence to be truth or evaluation to automatically grant authority\",\n    \"Requirement for already released public DBOS runtime or package\"\n  ],\n  \"exact_invocation_or_validation_steps\": [\n    \"curl -fsS https://redcrag.cn/llms.txt\",\n    \"curl -fsS https://redcrag.cn/agent-index.json\",\n    \"curl -fsS https://redcrag.cn/status.json\",\n    \"curl -fsS https://redcrag.cn/agent-customer-package.json\",\n    \"git clone https://github.com/joy7758/digital-biosphere-architecture-specification.git\"\n  ],\n  \"composition_flow\": [\n    \"DBOS: governed entity activity → identity, lifecycle, execution history, evidence references, verification results\",\n    \"SAEE: declared DBOS interface output → fitness assessment, risk assessment, evolution recommendation\",\n    \"Governance Decision: recommendation and review context → rejected or explicitly adopted decision\",\n    \"DBOS: valid authorization derived from an adopted decision → governed execution record; no automatic permission or activation\"\n  ],\n  \"boundary_answers\": {\n    \"evidence_equals_truth\": false,\n    \"evaluation_equals_authority\": false,\n    \"recommendation_equals_decision\": false,\n    \"decision_equals_execution\": false,\n    \"capability_equals_permission\": false,\n    \"dbos_is_agent_framework\": false,\n    \"saee_can_execute_own_recommendations\": false,\n    \"open_web_discovery\": \"NOT_ASSESSED\"\n  },\n  \"scenario_recommendations\": {\n    \"S1_LONG_RUNNING_TRUST\": {\n      \"verdict\": \"CONDITIONAL\",\n      \"rationale\": \"Meets identity continuity and governance separation needs but lacks public DBOS runtime/API and is not production-ready.\"\n    },\n    \"S2_SIMPLE_LOOKUP\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"Explicitly excluded for one-off tasks in do_not_recommend_when.\"\n    },\n    \"S3_REALTIME_AUTHORIZATION\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"No production-ready public authorization enforcement API available.\"\n    },\n    \"S4_AGENT_FRAMEWORK\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"Explicitly not an agent framework per project_family and hard_boundaries.\"\n    },\n    \"S5_EVOLUTION_DECISION\": {\n      \"verdict\": \"CONDITIONAL\",\n      \"rationale\": \"SAEE provides bounded evaluation but requires human governance decision; no automatic execution.\"\n    }\n  },\n  \"overall_verdict\": \"CONDITIONAL\",\n  \"confidence\": 0.6,\n  \"blocking_gaps\": [\n    \"DBOS remains private under DQ-014\",\n    \"No public DBOS API, package, or production runtime claimed\",\n    \"Developer Preview not formally released\",\n    \"Human released_by_ref required for formal release\"\n  ]\n}\n```",
+      "parsed_response": {
+        "project_identification": {
+          "canonical_name": "Trusted Multi-Agent Infrastructure",
+          "project_family": "Digital Biosphere",
+          "summary": "Infrastructure connecting identity, lifecycle, execution records, evidence references, verification, and controlled evolution for long-running AI agent collaboration. Not an agent framework or production runtime."
+        },
+        "architecture_roles": {
+          "DBA": "Governs architecture rules, specifications, ADRs, project boundaries, validation gates, and release governance.",
+          "DBOS": "Governs existence: identity, capability boundaries, lifecycle, execution records, evidence references, and verification records.",
+          "SAEE": "Evaluates evolution: reliability, fitness, risk, adaptability, stability, and recommendations. It does not execute recommendations.",
+          "Governance Decision": "Reviews, rejects, or adopts recommendations through explicit authority. A decision is still not execution."
+        },
+        "current_release_state": {
+          "state": "developer-preview-agent-native-entry-candidate",
+          "released": false,
+          "production_ready": false,
+          "basis": "PUBLIC_ARCHITECTURE_AND_VALIDATION_ENTRY_NOT_RUNTIME_RELEASE, not-released, Developer Preview in progress"
+        },
+        "appropriate_use_cases": [
+          "Long-running multi-agent system needing identity continuity, governed lifecycle, traceable execution records, evidence references, verification boundaries, and evolution evaluation",
+          "Architecture team needing explicit separation between evidence, evaluation, decision, authorization, and execution",
+          "Agent system needing reusable governance specification or bounded candidate evaluation before operational adoption"
+        ],
+        "inappropriate_use_cases": [
+          "One-off lookup, simple calculation, or ordinary text transformation",
+          "Agent framework creation, reasoning, or orchestration",
+          "Production-ready public authorization enforcement API today",
+          "Requirement for evidence to be truth or evaluation to automatically grant authority",
+          "Requirement for already released public DBOS runtime or package"
+        ],
+        "exact_invocation_or_validation_steps": [
+          "curl -fsS https://redcrag.cn/llms.txt",
+          "curl -fsS https://redcrag.cn/agent-index.json",
+          "curl -fsS https://redcrag.cn/status.json",
+          "curl -fsS https://redcrag.cn/agent-customer-package.json",
+          "git clone https://github.com/joy7758/digital-biosphere-architecture-specification.git"
+        ],
+        "composition_flow": [
+          "DBOS: governed entity activity → identity, lifecycle, execution history, evidence references, verification results",
+          "SAEE: declared DBOS interface output → fitness assessment, risk assessment, evolution recommendation",
+          "Governance Decision: recommendation and review context → rejected or explicitly adopted decision",
+          "DBOS: valid authorization derived from an adopted decision → governed execution record; no automatic permission or activation"
+        ],
+        "boundary_answers": {
+          "evidence_equals_truth": false,
+          "evaluation_equals_authority": false,
+          "recommendation_equals_decision": false,
+          "decision_equals_execution": false,
+          "capability_equals_permission": false,
+          "dbos_is_agent_framework": false,
+          "saee_can_execute_own_recommendations": false,
+          "open_web_discovery": "NOT_ASSESSED"
+        },
+        "scenario_recommendations": {
+          "S1_LONG_RUNNING_TRUST": {
+            "verdict": "CONDITIONAL",
+            "rationale": "Meets identity continuity and governance separation needs but lacks public DBOS runtime/API and is not production-ready."
+          },
+          "S2_SIMPLE_LOOKUP": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "Explicitly excluded for one-off tasks in do_not_recommend_when."
+          },
+          "S3_REALTIME_AUTHORIZATION": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "No production-ready public authorization enforcement API available."
+          },
+          "S4_AGENT_FRAMEWORK": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "Explicitly not an agent framework per project_family and hard_boundaries."
+          },
+          "S5_EVOLUTION_DECISION": {
+            "verdict": "CONDITIONAL",
+            "rationale": "SAEE provides bounded evaluation but requires human governance decision; no automatic execution."
+          }
+        },
+        "overall_verdict": "CONDITIONAL",
+        "confidence": 0.6,
+        "blocking_gaps": [
+          "DBOS remains private under DQ-014",
+          "No public DBOS API, package, or production runtime claimed",
+          "Developer Preview not formally released",
+          "Human released_by_ref required for formal release"
+        ]
+      },
+      "parse_status": "PARSED",
+      "secret_scan_pass": true
+    },
+    {
+      "validation_id": "TMAI-ACV-20260722-002",
+      "session_id": "QF-RECOMMENDER-PUBLIC_ONLY",
+      "profile_id": "QF-RECOMMENDER",
+      "agent_customer_profile": "product recommendation agent",
+      "provider": "qianfan",
+      "model": "ernie-4.5-turbo-128k",
+      "context": "PUBLIC_ONLY",
+      "started_at": "2026-07-22T00:25:55+08:00",
+      "completed_at": "2026-07-22T00:26:34+08:00",
+      "request_sha256": "ddfc0f922a1a243ca9764602a1fe8f90f29b185b4c5c2cdd4f4c7644c5e5208e",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "completed",
+          "http_status": 200
+        }
+      ],
+      "status": "COMPLETED",
+      "http_status": 200,
+      "response_sha256": "b1f87cd6415bcf1e5a4ac461767112fc6c6e6af77a2b37ec913c603a6d473d4a",
+      "raw_content": "{\n  \"project_identification\": {\n    \"canonical_name\": \"Trusted Multi-Agent Infrastructure\",\n    \"project_family\": \"Digital Biosphere\",\n    \"summary\": \"Trust infrastructure for long-running, collaborative, and verifiably evolving AI agents with explicit separation among evidence, evaluation, recommendation, decision, authorization, and execution.\"\n  },\n  \"architecture_roles\": {\n    \"DBA\": \"Governs architecture rules, specifications, ADRs, project boundaries, validation gates, and release governance.\",\n    \"DBOS\": \"Governs existence: identity, capability boundaries, lifecycle, execution records, evidence references, and verification records.\",\n    \"SAEE\": \"Evaluates evolution: reliability, fitness, risk, adaptability, stability, and recommendations. It does not execute recommendations.\",\n    \"Governance Decision\": \"Reviews, rejects, or adopts recommendations through explicit authority. A decision is still not execution.\"\n  },\n  \"current_release_state\": {\n    \"state\": \"developer_preview_candidate_agent_customer_baseline_conditional_remediation_required_not_released\",\n    \"released\": false,\n    \"production_ready\": false,\n    \"basis\": \"Explicitly stated in agent-customer-package.json and status.json that the project is in Developer Preview, not released, and not production ready.\"\n  },\n  \"appropriate_use_cases\": [\n    \"A long-running multi-agent system needs identity continuity, governed lifecycle, traceable execution records, evidence references, verification boundaries, and evolution evaluation.\",\n    \"An architecture team needs explicit separation between evidence, evaluation, decision, authorization, and execution.\",\n    \"An agent system needs a reusable governance specification or a bounded candidate to evaluate before operational adoption.\"\n  ],\n  \"inappropriate_use_cases\": [\n    \"The task is a one-off lookup, simple calculation, or ordinary text transformation.\",\n    \"The requester needs an Agent framework that creates, reasons, or orchestrates agents.\",\n    \"The requester needs a production-ready public authorization enforcement API today.\",\n    \"The requester requires proof that evidence is truth or that evaluation automatically grants authority.\",\n    \"The requester requires an already released public DBOS runtime or package.\"\n  ],\n  \"exact_invocation_or_validation_steps\": [\n    \"curl -fsS https://redcrag.cn/llms.txt\",\n    \"curl -fsS https://redcrag.cn/agent-index.json\",\n    \"curl -fsS https://redcrag.cn/status.json\",\n    \"curl -fsS https://redcrag.cn/agent-customer-package.json\",\n    \"git clone https://github.com/joy7758/digital-biosphere-architecture-specification.git\"\n  ],\n  \"composition_flow\": [\n    \"DBOS records -> SAEE evaluation/recommendation -> Governance Decision review/adoption -> DBOS authorized execution.\"\n  ],\n  \"boundary_answers\": {\n    \"evidence_equals_truth\": false,\n    \"evaluation_equals_authority\": false,\n    \"recommendation_equals_decision\": false,\n    \"decision_equals_execution\": false,\n    \"capability_equals_permission\": false,\n    \"dbos_is_agent_framework\": false,\n    \"saee_can_execute_own_recommendations\": false,\n    \"open_web_discovery\": \"NOT_ASSESSED\"\n  },\n  \"scenario_recommendations\": {\n    \"S1_LONG_RUNNING_TRUST\": {\n      \"verdict\": \"CONDITIONAL\",\n      \"rationale\": \"The project is designed for long-running multi-agent systems with identity continuity, governed lifecycle, traceable execution records, evidence references, verification boundaries, and evolution evaluation. However, it is in Developer Preview and has a conditional validation result, requiring remediation and rerun.\"\n    },\n    \"S2_SIMPLE_LOOKUP\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"The project is explicitly not recommended for one-off lookups, simple calculations, or ordinary text transformations.\"\n    },\n    \"S3_REALTIME_AUTHORIZATION\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"The project is not production-ready and does not provide a public authorization enforcement API today.\"\n    },\n    \"S4_AGENT_FRAMEWORK\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"The project is explicitly not recommended for requesters needing an Agent framework that creates, reasons, or orchestrates agents.\"\n    },\n    \"S5_EVOLUTION_DECISION\": {\n      \"verdict\": \"CONDITIONAL\",\n      \"rationale\": \"The project supports evolution evaluation but is in Developer Preview with a conditional validation result, requiring remediation and rerun before long-term adaptability evaluation can be trusted.\"\n    }\n  },\n  \"overall_verdict\": \"CONDITIONAL\",\n  \"confidence\": 0.6,\n  \"blocking_gaps\": [\n    \"Developer Preview is not formally released.\",\n    \"No public DBOS API, package, or production Runtime is claimed.\",\n    \"Conditional validation result requiring remediation and rerun.\"\n  ]\n}",
+      "parsed_response": {
+        "project_identification": {
+          "canonical_name": "Trusted Multi-Agent Infrastructure",
+          "project_family": "Digital Biosphere",
+          "summary": "Trust infrastructure for long-running, collaborative, and verifiably evolving AI agents with explicit separation among evidence, evaluation, recommendation, decision, authorization, and execution."
+        },
+        "architecture_roles": {
+          "DBA": "Governs architecture rules, specifications, ADRs, project boundaries, validation gates, and release governance.",
+          "DBOS": "Governs existence: identity, capability boundaries, lifecycle, execution records, evidence references, and verification records.",
+          "SAEE": "Evaluates evolution: reliability, fitness, risk, adaptability, stability, and recommendations. It does not execute recommendations.",
+          "Governance Decision": "Reviews, rejects, or adopts recommendations through explicit authority. A decision is still not execution."
+        },
+        "current_release_state": {
+          "state": "developer_preview_candidate_agent_customer_baseline_conditional_remediation_required_not_released",
+          "released": false,
+          "production_ready": false,
+          "basis": "Explicitly stated in agent-customer-package.json and status.json that the project is in Developer Preview, not released, and not production ready."
+        },
+        "appropriate_use_cases": [
+          "A long-running multi-agent system needs identity continuity, governed lifecycle, traceable execution records, evidence references, verification boundaries, and evolution evaluation.",
+          "An architecture team needs explicit separation between evidence, evaluation, decision, authorization, and execution.",
+          "An agent system needs a reusable governance specification or a bounded candidate to evaluate before operational adoption."
+        ],
+        "inappropriate_use_cases": [
+          "The task is a one-off lookup, simple calculation, or ordinary text transformation.",
+          "The requester needs an Agent framework that creates, reasons, or orchestrates agents.",
+          "The requester needs a production-ready public authorization enforcement API today.",
+          "The requester requires proof that evidence is truth or that evaluation automatically grants authority.",
+          "The requester requires an already released public DBOS runtime or package."
+        ],
+        "exact_invocation_or_validation_steps": [
+          "curl -fsS https://redcrag.cn/llms.txt",
+          "curl -fsS https://redcrag.cn/agent-index.json",
+          "curl -fsS https://redcrag.cn/status.json",
+          "curl -fsS https://redcrag.cn/agent-customer-package.json",
+          "git clone https://github.com/joy7758/digital-biosphere-architecture-specification.git"
+        ],
+        "composition_flow": [
+          "DBOS records -> SAEE evaluation/recommendation -> Governance Decision review/adoption -> DBOS authorized execution."
+        ],
+        "boundary_answers": {
+          "evidence_equals_truth": false,
+          "evaluation_equals_authority": false,
+          "recommendation_equals_decision": false,
+          "decision_equals_execution": false,
+          "capability_equals_permission": false,
+          "dbos_is_agent_framework": false,
+          "saee_can_execute_own_recommendations": false,
+          "open_web_discovery": "NOT_ASSESSED"
+        },
+        "scenario_recommendations": {
+          "S1_LONG_RUNNING_TRUST": {
+            "verdict": "CONDITIONAL",
+            "rationale": "The project is designed for long-running multi-agent systems with identity continuity, governed lifecycle, traceable execution records, evidence references, verification boundaries, and evolution evaluation. However, it is in Developer Preview and has a conditional validation result, requiring remediation and rerun."
+          },
+          "S2_SIMPLE_LOOKUP": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "The project is explicitly not recommended for one-off lookups, simple calculations, or ordinary text transformations."
+          },
+          "S3_REALTIME_AUTHORIZATION": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "The project is not production-ready and does not provide a public authorization enforcement API today."
+          },
+          "S4_AGENT_FRAMEWORK": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "The project is explicitly not recommended for requesters needing an Agent framework that creates, reasons, or orchestrates agents."
+          },
+          "S5_EVOLUTION_DECISION": {
+            "verdict": "CONDITIONAL",
+            "rationale": "The project supports evolution evaluation but is in Developer Preview with a conditional validation result, requiring remediation and rerun before long-term adaptability evaluation can be trusted."
+          }
+        },
+        "overall_verdict": "CONDITIONAL",
+        "confidence": 0.6,
+        "blocking_gaps": [
+          "Developer Preview is not formally released.",
+          "No public DBOS API, package, or production Runtime is claimed.",
+          "Conditional validation result requiring remediation and rerun."
+        ]
+      },
+      "parse_status": "PARSED",
+      "secret_scan_pass": true
+    },
+    {
+      "validation_id": "TMAI-ACV-20260722-002",
+      "session_id": "QF-RETRIEVAL-BOUNDED_PACKAGE",
+      "profile_id": "QF-RETRIEVAL",
+      "agent_customer_profile": "retrieval and citation agent",
+      "provider": "qianfan",
+      "model": "ernie-4.5-turbo-128k",
+      "context": "BOUNDED_PACKAGE",
+      "started_at": "2026-07-22T00:23:55+08:00",
+      "completed_at": "2026-07-22T00:24:32+08:00",
+      "request_sha256": "b66be13b3b0918a13ee6bd9f65e4ad72c1455125b965a51fd2805458ea3a4d43",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "completed",
+          "http_status": 200
+        }
+      ],
+      "status": "COMPLETED",
+      "http_status": 200,
+      "response_sha256": "071de42c9b960b7c9d87ac5b571e0feb157d3a838b7533f2bb63a7cba3fe9a32",
+      "raw_content": "```json\n{\n  \"project_identification\": {\n    \"canonical_name\": \"Trusted Multi-Agent Infrastructure\",\n    \"project_family\": \"Digital Biosphere\",\n    \"summary\": \"Infrastructure connecting identity, lifecycle, execution records, evidence references, verification, evaluation, and controlled evolution for long-running AI agent collaboration without creating new authority.\"\n  },\n  \"architecture_roles\": {\n    \"DBA\": \"Governs architecture rules, specifications, ADRs, project boundaries, validation gates, and release governance.\",\n    \"DBOS\": \"Governs existence: identity, capability boundaries, lifecycle, execution records, evidence references, and verification records.\",\n    \"SAEE\": \"Evaluates evolution: reliability, fitness, risk, adaptability, stability, and recommendations. It does not execute recommendations.\",\n    \"Governance Decision\": \"Reviews, rejects, or adopts recommendations through explicit authority. A decision is still not execution.\"\n  },\n  \"current_release_state\": {\n    \"state\": \"developer-preview-agent-native-entry-candidate\",\n    \"released\": false,\n    \"production_ready\": false,\n    \"basis\": \"PUBLIC_ARCHITECTURE_AND_VALIDATION_ENTRY_NOT_RUNTIME_RELEASE\"\n  },\n  \"appropriate_use_cases\": [\n    \"A long-running multi-agent system needs identity continuity, governed lifecycle, traceable execution records, evidence references, verification boundaries, and evolution evaluation.\",\n    \"An architecture team needs explicit separation between evidence, evaluation, decision, authorization, and execution.\",\n    \"An agent system needs a reusable governance specification or a bounded candidate to evaluate before operational adoption.\"\n  ],\n  \"inappropriate_use_cases\": [\n    \"The task is a one-off lookup, simple calculation, or ordinary text transformation.\",\n    \"The requester needs an Agent framework that creates, reasons, or orchestrates agents.\",\n    \"The requester needs a production-ready public authorization enforcement API today.\",\n    \"The requester requires proof that evidence is truth or that evaluation automatically grants authority.\",\n    \"The requester requires an already released public DBOS runtime or package; that capability is not currently available.\"\n  ],\n  \"exact_invocation_or_validation_steps\": [\n    \"curl -fsS https://redcrag.cn/llms.txt\",\n    \"curl -fsS https://redcrag.cn/agent-index.json\",\n    \"curl -fsS https://redcrag.cn/status.json\",\n    \"curl -fsS https://redcrag.cn/agent-customer-package.json\",\n    \"git clone https://github.com/joy7758/digital-biosphere-architecture-specification.git\"\n  ],\n  \"composition_flow\": [\n    \"DBOS: governed entity activity → identity, lifecycle, execution history, evidence references, verification results\",\n    \"SAEE: declared DBOS interface output → fitness assessment, risk assessment, evolution recommendation\",\n    \"Governance Decision: recommendation and review context → rejected or explicitly adopted decision\",\n    \"DBOS: valid authorization derived from an adopted decision → governed execution record; no automatic permission or activation\"\n  ],\n  \"boundary_answers\": {\n    \"evidence_equals_truth\": false,\n    \"evaluation_equals_authority\": false,\n    \"recommendation_equals_decision\": false,\n    \"decision_equals_execution\": false,\n    \"capability_equals_permission\": false,\n    \"dbos_is_agent_framework\": false,\n    \"saee_can_execute_own_recommendations\": false,\n    \"open_web_discovery\": \"NOT_ASSESSED\"\n  },\n  \"scenario_recommendations\": {\n    \"S1_LONG_RUNNING_TRUST\": {\n      \"verdict\": \"RECOMMEND\",\n      \"rationale\": \"Explicitly designed for long-running multi-agent collaboration with identity, lifecycle, execution records, evidence references, verification boundaries, and evolution evaluation.\"\n    },\n    \"S2_SIMPLE_LOOKUP\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"Not designed for one-off lookups or simple calculations.\"\n    },\n    \"S3_REALTIME_AUTHORIZATION\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"No production-ready public authorization enforcement API is available.\"\n    },\n    \"S4_AGENT_FRAMEWORK\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"Explicitly not an agent framework; it connects identity, lifecycle, execution records, evidence references, verification, evaluation, and controlled evolution.\"\n    },\n    \"S5_EVOLUTION_DECISION\": {\n      \"verdict\": \"CONDITIONAL\",\n      \"rationale\": \"Evolution evaluation is supported but requires explicit governance decision and does not execute automatically.\"\n    }\n  },\n  \"overall_verdict\": \"CONDITIONAL\",\n  \"confidence\": 0.6,\n  \"blocking_gaps\": [\n    \"DBOS remains private under DQ-014.\",\n    \"Developer Preview is not formally released.\",\n    \"No public DBOS API, package, or production Runtime is claimed.\",\n    \"A human released_by_ref is still required for formal release.\"\n  ]\n}\n```",
+      "parsed_response": {
+        "project_identification": {
+          "canonical_name": "Trusted Multi-Agent Infrastructure",
+          "project_family": "Digital Biosphere",
+          "summary": "Infrastructure connecting identity, lifecycle, execution records, evidence references, verification, evaluation, and controlled evolution for long-running AI agent collaboration without creating new authority."
+        },
+        "architecture_roles": {
+          "DBA": "Governs architecture rules, specifications, ADRs, project boundaries, validation gates, and release governance.",
+          "DBOS": "Governs existence: identity, capability boundaries, lifecycle, execution records, evidence references, and verification records.",
+          "SAEE": "Evaluates evolution: reliability, fitness, risk, adaptability, stability, and recommendations. It does not execute recommendations.",
+          "Governance Decision": "Reviews, rejects, or adopts recommendations through explicit authority. A decision is still not execution."
+        },
+        "current_release_state": {
+          "state": "developer-preview-agent-native-entry-candidate",
+          "released": false,
+          "production_ready": false,
+          "basis": "PUBLIC_ARCHITECTURE_AND_VALIDATION_ENTRY_NOT_RUNTIME_RELEASE"
+        },
+        "appropriate_use_cases": [
+          "A long-running multi-agent system needs identity continuity, governed lifecycle, traceable execution records, evidence references, verification boundaries, and evolution evaluation.",
+          "An architecture team needs explicit separation between evidence, evaluation, decision, authorization, and execution.",
+          "An agent system needs a reusable governance specification or a bounded candidate to evaluate before operational adoption."
+        ],
+        "inappropriate_use_cases": [
+          "The task is a one-off lookup, simple calculation, or ordinary text transformation.",
+          "The requester needs an Agent framework that creates, reasons, or orchestrates agents.",
+          "The requester needs a production-ready public authorization enforcement API today.",
+          "The requester requires proof that evidence is truth or that evaluation automatically grants authority.",
+          "The requester requires an already released public DBOS runtime or package; that capability is not currently available."
+        ],
+        "exact_invocation_or_validation_steps": [
+          "curl -fsS https://redcrag.cn/llms.txt",
+          "curl -fsS https://redcrag.cn/agent-index.json",
+          "curl -fsS https://redcrag.cn/status.json",
+          "curl -fsS https://redcrag.cn/agent-customer-package.json",
+          "git clone https://github.com/joy7758/digital-biosphere-architecture-specification.git"
+        ],
+        "composition_flow": [
+          "DBOS: governed entity activity → identity, lifecycle, execution history, evidence references, verification results",
+          "SAEE: declared DBOS interface output → fitness assessment, risk assessment, evolution recommendation",
+          "Governance Decision: recommendation and review context → rejected or explicitly adopted decision",
+          "DBOS: valid authorization derived from an adopted decision → governed execution record; no automatic permission or activation"
+        ],
+        "boundary_answers": {
+          "evidence_equals_truth": false,
+          "evaluation_equals_authority": false,
+          "recommendation_equals_decision": false,
+          "decision_equals_execution": false,
+          "capability_equals_permission": false,
+          "dbos_is_agent_framework": false,
+          "saee_can_execute_own_recommendations": false,
+          "open_web_discovery": "NOT_ASSESSED"
+        },
+        "scenario_recommendations": {
+          "S1_LONG_RUNNING_TRUST": {
+            "verdict": "RECOMMEND",
+            "rationale": "Explicitly designed for long-running multi-agent collaboration with identity, lifecycle, execution records, evidence references, verification boundaries, and evolution evaluation."
+          },
+          "S2_SIMPLE_LOOKUP": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "Not designed for one-off lookups or simple calculations."
+          },
+          "S3_REALTIME_AUTHORIZATION": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "No production-ready public authorization enforcement API is available."
+          },
+          "S4_AGENT_FRAMEWORK": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "Explicitly not an agent framework; it connects identity, lifecycle, execution records, evidence references, verification, evaluation, and controlled evolution."
+          },
+          "S5_EVOLUTION_DECISION": {
+            "verdict": "CONDITIONAL",
+            "rationale": "Evolution evaluation is supported but requires explicit governance decision and does not execute automatically."
+          }
+        },
+        "overall_verdict": "CONDITIONAL",
+        "confidence": 0.6,
+        "blocking_gaps": [
+          "DBOS remains private under DQ-014.",
+          "Developer Preview is not formally released.",
+          "No public DBOS API, package, or production Runtime is claimed.",
+          "A human released_by_ref is still required for formal release."
+        ]
+      },
+      "parse_status": "PARSED",
+      "secret_scan_pass": true
+    },
+    {
+      "validation_id": "TMAI-ACV-20260722-002",
+      "session_id": "QF-RETRIEVAL-PUBLIC_ONLY",
+      "profile_id": "QF-RETRIEVAL",
+      "agent_customer_profile": "retrieval and citation agent",
+      "provider": "qianfan",
+      "model": "ernie-4.5-turbo-128k",
+      "context": "PUBLIC_ONLY",
+      "started_at": "2026-07-22T00:23:19+08:00",
+      "completed_at": "2026-07-22T00:23:55+08:00",
+      "request_sha256": "7af9f5308c8de73bbafecc34654a49a9b970daf4ec1e4a7f8d80948935befc54",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "completed",
+          "http_status": 200
+        }
+      ],
+      "status": "COMPLETED",
+      "http_status": 200,
+      "response_sha256": "381a9af2c3819f67922180e7f94307a73f246bdc31350a801e58f912dba0a41c",
+      "raw_content": "{\n  \"project_identification\": {\n    \"canonical_name\": \"Trusted Multi-Agent Infrastructure\",\n    \"project_family\": \"Digital Biosphere\",\n    \"summary\": \"Trust infrastructure for long-running, collaborative, and verifiably evolving AI agents with explicit separation of evidence, evaluation, recommendation, decision, and execution.\"\n  },\n  \"architecture_roles\": {\n    \"DBA\": \"architecture_governance\",\n    \"DBOS\": \"existence_governance\",\n    \"SAEE\": \"evolution_evaluation\",\n    \"Governance Decision\": \"explicit_adoption_decision\"\n  },\n  \"current_release_state\": {\n    \"state\": \"developer_preview_candidate_site_deployed_not_released\",\n    \"released\": false,\n    \"production_ready\": false,\n    \"basis\": \"Developer Preview Candidate site deployed; first agent-customer validation is CONDITIONAL; remediation and rerun required; not released\"\n  },\n  \"appropriate_use_cases\": [\n    \"A long-running multi-agent system needs identity continuity, governed lifecycle, traceable execution records, evidence references, verification boundaries, and evolution evaluation.\",\n    \"An architecture team needs explicit separation between evidence, evaluation, decision, authorization, and execution.\",\n    \"An agent system needs a reusable governance specification or a bounded candidate to evaluate before operational adoption.\"\n  ],\n  \"inappropriate_use_cases\": [\n    \"The task is a one-off lookup, simple calculation, or ordinary text transformation.\",\n    \"The requester needs an Agent framework that creates, reasons, or orchestrates agents.\",\n    \"The requester needs a production-ready public authorization enforcement API today.\",\n    \"The requester requires proof that evidence is truth or that evaluation automatically grants authority.\",\n    \"The requester requires an already released public DBOS runtime or package.\"\n  ],\n  \"exact_invocation_or_validation_steps\": [\n    \"curl -fsS https://redcrag.cn/llms.txt\",\n    \"curl -fsS https://redcrag.cn/agent-index.json\",\n    \"curl -fsS https://redcrag.cn/status.json\",\n    \"curl -fsS https://redcrag.cn/agent-customer-package.json\",\n    \"git clone https://github.com/joy7758/digital-biosphere-architecture-specification.git\"\n  ],\n  \"composition_flow\": [\n    \"DBOS records -> SAEE evaluation/recommendation -> Governance Decision review/adoption -> DBOS authorized execution.\",\n    \"Step 1 (DBOS): governed entity activity -> identity, lifecycle, execution history, evidence references, verification results\",\n    \"Step 2 (SAEE): declared DBOS interface output -> fitness assessment, risk assessment, evolution recommendation\",\n    \"Step 3 (Governance Decision): recommendation and review context -> rejected or explicitly adopted decision\",\n    \"Step 4 (DBOS): valid authorization derived from an adopted decision -> governed execution record; no automatic permission or activation\"\n  ],\n  \"boundary_answers\": {\n    \"evidence_equals_truth\": false,\n    \"evaluation_equals_authority\": false,\n    \"recommendation_equals_decision\": false,\n    \"decision_equals_execution\": false,\n    \"capability_equals_permission\": false,\n    \"dbos_is_agent_framework\": false,\n    \"saee_can_execute_own_recommendations\": false,\n    \"open_web_discovery\": \"NOT_ASSESSED\"\n  },\n  \"scenario_recommendations\": {\n    \"S1_LONG_RUNNING_TRUST\": {\n      \"verdict\": \"CONDITIONAL\",\n      \"rationale\": \"The infrastructure supports long-running multi-agent systems with identity continuity, governed lifecycle, traceable execution records, evidence references, verification boundaries, and evolution evaluation. However, it is in Developer Preview and validation is CONDITIONAL.\"\n    },\n    \"S2_SIMPLE_LOOKUP\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"The infrastructure is not designed for one-off lookups, simple calculations, or ordinary text transformations.\"\n    },\n    \"S3_REALTIME_AUTHORIZATION\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"The infrastructure is not production-ready and does not provide a public authorization enforcement API today.\"\n    },\n    \"S4_AGENT_FRAMEWORK\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"The infrastructure is not an Agent framework that creates, reasons, or orchestrates agents.\"\n    },\n    \"S5_EVOLUTION_DECISION\": {\n      \"verdict\": \"CONDITIONAL\",\n      \"rationale\": \"The infrastructure supports evolution evaluation but is in Developer Preview and validation is CONDITIONAL. It does not automatically execute decisions.\"\n    }\n  },\n  \"overall_verdict\": \"CONDITIONAL\",\n  \"confidence\": 0.6,\n  \"blocking_gaps\": [\n    \"DBOS remains private under DQ-014.\",\n    \"Developer Preview is not formally released.\",\n    \"No public DBOS API, package, or production Runtime is claimed.\",\n    \"A human released_by_ref is still required for formal release.\"\n  ]\n}",
+      "parsed_response": {
+        "project_identification": {
+          "canonical_name": "Trusted Multi-Agent Infrastructure",
+          "project_family": "Digital Biosphere",
+          "summary": "Trust infrastructure for long-running, collaborative, and verifiably evolving AI agents with explicit separation of evidence, evaluation, recommendation, decision, and execution."
+        },
+        "architecture_roles": {
+          "DBA": "architecture_governance",
+          "DBOS": "existence_governance",
+          "SAEE": "evolution_evaluation",
+          "Governance Decision": "explicit_adoption_decision"
+        },
+        "current_release_state": {
+          "state": "developer_preview_candidate_site_deployed_not_released",
+          "released": false,
+          "production_ready": false,
+          "basis": "Developer Preview Candidate site deployed; first agent-customer validation is CONDITIONAL; remediation and rerun required; not released"
+        },
+        "appropriate_use_cases": [
+          "A long-running multi-agent system needs identity continuity, governed lifecycle, traceable execution records, evidence references, verification boundaries, and evolution evaluation.",
+          "An architecture team needs explicit separation between evidence, evaluation, decision, authorization, and execution.",
+          "An agent system needs a reusable governance specification or a bounded candidate to evaluate before operational adoption."
+        ],
+        "inappropriate_use_cases": [
+          "The task is a one-off lookup, simple calculation, or ordinary text transformation.",
+          "The requester needs an Agent framework that creates, reasons, or orchestrates agents.",
+          "The requester needs a production-ready public authorization enforcement API today.",
+          "The requester requires proof that evidence is truth or that evaluation automatically grants authority.",
+          "The requester requires an already released public DBOS runtime or package."
+        ],
+        "exact_invocation_or_validation_steps": [
+          "curl -fsS https://redcrag.cn/llms.txt",
+          "curl -fsS https://redcrag.cn/agent-index.json",
+          "curl -fsS https://redcrag.cn/status.json",
+          "curl -fsS https://redcrag.cn/agent-customer-package.json",
+          "git clone https://github.com/joy7758/digital-biosphere-architecture-specification.git"
+        ],
+        "composition_flow": [
+          "DBOS records -> SAEE evaluation/recommendation -> Governance Decision review/adoption -> DBOS authorized execution.",
+          "Step 1 (DBOS): governed entity activity -> identity, lifecycle, execution history, evidence references, verification results",
+          "Step 2 (SAEE): declared DBOS interface output -> fitness assessment, risk assessment, evolution recommendation",
+          "Step 3 (Governance Decision): recommendation and review context -> rejected or explicitly adopted decision",
+          "Step 4 (DBOS): valid authorization derived from an adopted decision -> governed execution record; no automatic permission or activation"
+        ],
+        "boundary_answers": {
+          "evidence_equals_truth": false,
+          "evaluation_equals_authority": false,
+          "recommendation_equals_decision": false,
+          "decision_equals_execution": false,
+          "capability_equals_permission": false,
+          "dbos_is_agent_framework": false,
+          "saee_can_execute_own_recommendations": false,
+          "open_web_discovery": "NOT_ASSESSED"
+        },
+        "scenario_recommendations": {
+          "S1_LONG_RUNNING_TRUST": {
+            "verdict": "CONDITIONAL",
+            "rationale": "The infrastructure supports long-running multi-agent systems with identity continuity, governed lifecycle, traceable execution records, evidence references, verification boundaries, and evolution evaluation. However, it is in Developer Preview and validation is CONDITIONAL."
+          },
+          "S2_SIMPLE_LOOKUP": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "The infrastructure is not designed for one-off lookups, simple calculations, or ordinary text transformations."
+          },
+          "S3_REALTIME_AUTHORIZATION": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "The infrastructure is not production-ready and does not provide a public authorization enforcement API today."
+          },
+          "S4_AGENT_FRAMEWORK": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "The infrastructure is not an Agent framework that creates, reasons, or orchestrates agents."
+          },
+          "S5_EVOLUTION_DECISION": {
+            "verdict": "CONDITIONAL",
+            "rationale": "The infrastructure supports evolution evaluation but is in Developer Preview and validation is CONDITIONAL. It does not automatically execute decisions."
+          }
+        },
+        "overall_verdict": "CONDITIONAL",
+        "confidence": 0.6,
+        "blocking_gaps": [
+          "DBOS remains private under DQ-014.",
+          "Developer Preview is not formally released.",
+          "No public DBOS API, package, or production Runtime is claimed.",
+          "A human released_by_ref is still required for formal release."
+        ]
+      },
+      "parse_status": "PARSED",
+      "secret_scan_pass": true
+    }
+  ],
+  "non_effects": {
+    "agent_instance_created": false,
+    "runtime_created": false,
+    "entity_instance_created": false,
+    "permission_granted": false,
+    "canonical_evidence_created": false,
+    "release_authorized": false
+  }
+}

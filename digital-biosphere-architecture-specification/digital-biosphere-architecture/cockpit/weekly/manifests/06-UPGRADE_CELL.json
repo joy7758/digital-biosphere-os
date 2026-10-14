@@ -1,0 +1,37 @@
+{
+  "cell_id": "UPGRADE_CELL",
+  "version": "0.1",
+  "name": "UPGRADE_CELL",
+  "niche": "bounded weekly cockpit observation",
+  "module": "cells.upgrade",
+  "class": "Upgrade_CellCell",
+  "inputs": [
+    "discovery-signals"
+  ],
+  "outputs": [
+    "upgrade-findings"
+  ],
+  "source_dependencies": [
+    "component-matrix"
+  ],
+  "evidence_requirements": [
+    "version-source-or-not-assessed"
+  ],
+  "freshness_policy": "STALE_NE_RECOMMEND",
+  "authority_boundaries": {
+    "can_write_source_project": false,
+    "can_create_pull_request": false,
+    "can_merge": false,
+    "can_deploy": false,
+    "can_authorize": false,
+    "can_change_project_priority": false
+  },
+  "failure_policy": {
+    "status": "NOT_ASSESSED",
+    "preserve_other_cells": true
+  },
+  "replacement": {
+    "replaceable": true,
+    "interface_version": "0.1"
+  }
+}

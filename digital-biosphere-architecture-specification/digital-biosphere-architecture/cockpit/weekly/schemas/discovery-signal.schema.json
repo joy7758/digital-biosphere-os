@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:dba:weekly:discovery-signal:0.1",
+  "title": "Discovery Signal",
+  "type": "object",
+  "required": ["signal_id", "kind", "subject", "observed_state", "source_reference", "observed_at", "authority"],
+  "properties": {
+    "signal_id": {"type": "string", "minLength": 1},
+    "kind": {"type": "string", "minLength": 1},
+    "subject": {"type": "string", "minLength": 1},
+    "observed_state": {"type": ["string", "number", "boolean", "null"]},
+    "source_reference": {"type": "string", "minLength": 1},
+    "observed_at": {"type": "string", "minLength": 1},
+    "freshness": {"type": "string"},
+    "authority": {"const": "OBSERVATION_ONLY"},
+    "details": {"type": "object"}
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,85 @@
+{
+  "schema_version": "1.0",
+  "evidence_id": "TITMAS-D29-WEBSITE-SOURCE-CORRECTION-EVIDENCE-20260809-001",
+  "generated_at": "2026-08-09T00:04:37+08:00",
+  "decision_reference": "TITMAS-CHINA-COMMERCIAL-PRIVATE-PLATFORM-AND-PAID-PILOT-D29",
+  "source_base": "335a868d832eb50e2be9c793c98cb5242292a701",
+  "allowlist_reference": "commercial/implementation/D29-WEBSITE-SOURCE-CORRECTION-ALLOWLIST-v1.json",
+  "github_read_only_observation": {
+    "observed_at": "2026-08-08T23:48:00+08:00",
+    "tool": "gh 2.92.0",
+    "repository_scope": "TITMAS_PRIVATE_DEVELOPER_TRIAL_E01",
+    "participant_reference": "E01_PARTICIPANT",
+    "permission": "none",
+    "pending_invitation_count": 0,
+    "participant_pull_request_count": 0,
+    "participant_issue_count": 0,
+    "visible_fork_count": 0,
+    "human_disposition": "NOT_RECORDED",
+    "limitations": [
+      "POINT_IN_TIME_GITHUB_OBSERVATION",
+      "VISIBLE_FORK_COUNT_DOES_NOT_PROVE_NO_HISTORICAL_PRIVATE_FORK",
+      "NO_OBSERVED_CONTRIBUTION_DOES_NOT_PROVE_NO_UNRECORDED_ACTIVITY"
+    ]
+  },
+  "website_validation": {
+    "node_version": "v26.0.0",
+    "npm_version": "11.12.1",
+    "site_test_cases": 62,
+    "site_test_result": "PASS",
+    "static_export_result": "PASS",
+    "static_export_files": 189,
+    "release_manifest_files": 188,
+    "local_links_checked": 3520,
+    "local_links_result": "PASS",
+    "public_output_disclosure_scan": "PASS",
+    "private_repository_url_findings": 0,
+    "server_infrastructure_disclosure_findings": 0,
+    "secret_findings": 0,
+    "private_path_findings": 0,
+    "core_source_disclosure_findings": 0,
+    "customer_data_findings": 0
+  },
+  "cockpit_validation": {
+    "dba_conformance_cases": 121,
+    "dba_conformance_result": "PASS",
+    "cockpit_test_cases": 21,
+    "cockpit_test_result": "PASS",
+    "website_allowlist_digest_result": "PASS",
+    "diff_check": "PASS"
+  },
+  "dependency_audit": {
+    "production_scope": {
+      "command": "npm audit --omit=dev --audit-level=high",
+      "high": 0,
+      "critical": 0,
+      "result": "PASS"
+    },
+    "full_development_scope": {
+      "high": 3,
+      "critical": 0,
+      "result": "FAIL_RETAINED_DEV_ONLY_FINDINGS"
+    },
+    "nanoid_remediation": {
+      "previous_version": "3.3.16",
+      "pinned_version": "3.3.17",
+      "production_high_after_remediation": 0
+    }
+  },
+  "route_contract": {
+    "new_bilingual_collection_routes": 8,
+    "collections": ["platform", "products", "solutions", "proof"],
+    "canonical_metadata_present": true,
+    "sitemap_entries_present": true,
+    "machine_entrypoints_present": true,
+    "available_offering_count": 0,
+    "production_ready": false
+  },
+  "non_claims": {
+    "source_merge_is_deployment": false,
+    "source_merge_is_commercial_availability": false,
+    "test_pass_is_security_certification": false,
+    "no_visible_contribution_is_no_historical_activity": false,
+    "model_review_is_authority": false
+  }
+}

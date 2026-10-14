@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <link rel="icon" href="data:,">
+  <title>DBA Weekly Cockpit · 周检驾驶舱</title>
+  <style>/*__STYLES__*/</style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#overview" aria-label="返回驾驶舱概览">
+      <span class="brand-mark" aria-hidden="true">DBA</span>
+      <span><strong>DBA 每周驾驶舱</strong><small>Weekly Cockpit · 只读内部视图</small></span>
+    </a>
+    <nav aria-label="驾驶舱章节">
+      <a href="#decisions">待决定</a><a href="#discoveries">发现信号</a><a href="#projects">项目</a><a href="#blindspots">盲区</a>
+    </nav>
+    <span id="pilot-indicator" class="read-only">只读视图</span>
+  </header>
+
+  <main>
+    <section id="overview" class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><strong>发现优先 · 多细胞协作</strong><small>Discovery First · Cell Composed</small></p>
+        <h1 id="hero-title">DBA 每周驾驶舱</h1>
+        <p id="weekly-sentence" class="weekly-sentence"></p>
+        <p class="lede">先看本周变化，再决定要不要行动。</p>
+        <div class="hero-actions"><a class="primary" href="#decisions">查看本周决定</a><a class="secondary" href="#projects">浏览项目状态</a></div>
+      </div>
+      <div class="signal-panel" aria-label="本周状态摘要">
+        <p class="signal-kicker"><strong>本周状态</strong><small>Weekly Signal · 每周信号</small></p>
+        <div id="overall-signal" class="overall-signal"></div>
+        <dl id="hero-metrics" class="metrics"></dl>
+        <div id="hero-decision" class="hero-decision"></div>
+        <p id="as-of" class="as-of"></p>
+      </div>
+    </section>
+
+    <section id="decisions" class="section-block" aria-labelledby="decisions-title">
+      <div class="section-heading"><div><p class="section-index">01 · 待决定</p><h2 id="decisions-title">本周需要你决定</h2></div><p>驾驶舱只准备证据与边界，决定仍由人作出。</p></div>
+      <div id="decision-list" class="decision-grid"></div>
+      <div class="ask-panel">
+        <label for="preset-query">问驾驶舱</label>
+        <select id="preset-query" aria-describedby="query-help"></select>
+        <button id="run-query" type="button">查看快照回答</button>
+        <p id="query-help">固定问题仅查询当前快照，不调用模型、不访问外部网络。</p>
+        <div id="query-answer" class="query-answer" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section id="discoveries" class="section-block split-section" aria-labelledby="discoveries-title">
+      <div class="section-heading"><div><p class="section-index">02 · 发现信号</p><h2 id="discoveries-title">本周发现信号</h2></div><p>首次快照不声称相对上周新增；发现、准入与监测保持分离。</p></div>
+      <div id="capability-discovery-panel" class="capability-panel" hidden>
+        <div id="capability-summary"></div>
+        <details>
+          <summary>查看外部能力组与来源身份</summary>
+          <div id="capability-groups" class="capability-groups"></div>
+        </details>
+      </div>
+      <div id="discovery-list" class="signal-list"></div>
+    </section>
+
+    <section id="changes" class="section-block" aria-labelledby="changes-title">
+      <div class="section-heading"><div><p class="section-index">03 · 本周变化</p><h2 id="changes-title">发生了什么变化</h2></div><p>没有上一周证据时，明确显示未评估，而不是猜测趋势。</p></div>
+      <div id="change-list" class="timeline"></div>
+    </section>
+
+    <section id="projects" class="section-block" aria-labelledby="projects-title">
+      <div class="section-heading"><div><p class="section-index">04 · 项目</p><h2 id="projects-title">项目状态</h2></div><p>状态是来源快照的解释层，不是项目验收、权限或综合评分。</p></div>
+      <div id="project-grid" class="project-grid"></div>
+    </section>
+
+    <section id="blindspots" class="section-block blindspot-section" aria-labelledby="blindspots-title">
+      <div class="section-heading"><div><p class="section-index">05 · 盲区与边界</p><h2 id="blindspots-title">盲区与边界</h2></div><p>不可见的部分被保留下来，未知不会被涂成绿色。</p></div>
+      <div id="blindspot-list" class="blindspot-grid"></div>
+      <details>
+        <summary>查看技术证据与 Cell 运行状态</summary>
+        <div id="technical-evidence" class="technical-evidence"></div>
+      </details>
+      <footer><strong>DBA 每周驾驶舱 v0.1</strong><span>来源支持 · 只读 · 需要人工决定</span></footer>
+    </section>
+  </main>
+
+  <script type="application/json" id="weekly-snapshot">/*__SNAPSHOT__*/</script>
+  <script>/*__APP__*/</script>
+</body>
+</html>

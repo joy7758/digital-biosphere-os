@@ -1,0 +1,74 @@
+{
+  "schema_version": "0.1",
+  "package_id": "TMAI-DBOS-WHEEL-CANDIDATE-20260722-001",
+  "package_name": "digital-biosphere-os-preview",
+  "display_name": "DBOS Developer Preview v0.1 public-safe wheel",
+  "status": "PUBLISHED",
+  "release_authorized": true,
+  "public_download_url": "https://github.com/joy7758/digital-biosphere-architecture-specification/releases/download/v0.1-developer-preview/digital_biosphere_os_preview-0.1.0.dev0-py3-none-any.whl",
+  "release": {
+    "tag": "v0.1-developer-preview",
+    "decision_reference": "architecture/ADR-022-developer-preview-release.md",
+    "released_by_ref": "zhangbin",
+    "whole_repository_visibility": "PRIVATE"
+  },
+  "source": {
+    "repository": "https://github.com/joy7758/digital-biosphere-os",
+    "repository_visibility": "PRIVATE",
+    "source_revision": "cd3f867c4379ec555c45e7d554088ad12ce08a24",
+    "license": "Apache-2.0"
+  },
+  "artifact": {
+    "filename": "digital_biosphere_os_preview-0.1.0.dev0-py3-none-any.whl",
+    "sha256": "edf92e548860384b1416a612a7e319e0d994bb324f8621847d0d154624ae8f09",
+    "bytes": 45115,
+    "file_count": 39,
+    "schema_file_count": 7,
+    "build_command": "python -m build --wheel"
+  },
+  "public_safe_boundary": {
+    "included_top_level_packages": [
+      "adapters",
+      "dbos",
+      "schemas",
+      "sdk",
+      "validator"
+    ],
+    "excluded_surfaces": [
+      "constitution",
+      "entity_support",
+      "evidence",
+      "evolution",
+      "registry",
+      "reports",
+      "tests",
+      "tools"
+    ],
+    "absolute_user_path_matches": 0,
+    "gitleaks_findings": 0
+  },
+  "verification": {
+    "dbos_source_tests": "334/334 PASS",
+    "dbos_validators": "34/34 PASS",
+    "multi_agent_demo": "PASS_SYNTHETIC_NO_EXTERNAL_SIDE_EFFECT",
+    "mcp_reference_demo": "PASS_SYNTHETIC_REAL_MCP_CONNECTED_FALSE",
+    "clean_wheel_install": "PASS",
+    "installed_validation_result": "PASS",
+    "dbos_validate_cli": "PRESENT",
+    "misleading_repository_test_cli_installed": false
+  },
+  "installation": {
+    "requires_python": ">=3.11",
+    "public_install_command": "python3 -m pip install https://github.com/joy7758/digital-biosphere-architecture-specification/releases/download/v0.1-developer-preview/digital_biosphere_os_preview-0.1.0.dev0-py3-none-any.whl",
+    "sha256_verification_required": true,
+    "warning": "Developer Preview only; installation does not create an Agent, Runtime, Entity, Permission, or authority."
+  },
+  "boundaries": {
+    "package_is_agent": false,
+    "package_is_runtime": false,
+    "package_grants_permission": false,
+    "validation_pass_is_truth": false,
+    "validation_is_authority": false,
+    "dbos_is_saee": false
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "contract_format": "TITMAS-PUBLIC-PRODUCT-CATALOG-1.0",
+  "catalog_id": "TITMAS-PUBLIC-PRODUCT-CATALOG-v1",
+  "observed_at": "2026-08-04",
+  "platform_positioning": "AGENT_ACTION_CONTROL_AND_VERIFIABLE_ACCOUNTABILITY_PLATFORM",
+  "platform_model": "CLOSED_CORE_OPEN_DISCOVERY_AND_BOUNDED_PROOF",
+  "public_product_count": 4,
+  "available_offering_count": 0,
+  "products": [
+    {
+      "product_id": "TITMAS_GATE",
+      "name": "TITMAS Gate",
+      "name_zh": "TITMAS 行动闸门",
+      "role": "PRE_ACTION_CONTROL",
+      "current_status": "SYNTHETIC_REFERENCE_IMPLEMENTED_NOT_DEPLOYED",
+      "human_entry": "/products/gate/",
+      "human_entry_en": "/en/products/gate/"
+    },
+    {
+      "product_id": "TITMAS_RECEIPT",
+      "name": "TITMAS Receipt",
+      "name_zh": "TITMAS 可验证执行回执",
+      "role": "PORTABLE_TECHNICAL_PROOF",
+      "current_status": "PRIVATE_REFERENCE_IMPLEMENTED_NOT_AVAILABLE_OFFERING",
+      "human_entry": "/products/receipt/",
+      "human_entry_en": "/en/products/receipt/"
+    },
+    {
+      "product_id": "TITMAS_AUDIT",
+      "name": "TITMAS Audit",
+      "name_zh": "TITMAS 证据审计",
+      "role": "REVIEW_REPLAY_AND_EXPORT",
+      "current_status": "PRIVATE_REFERENCE_IMPLEMENTED_NOT_DEPLOYED",
+      "human_entry": "/products/audit/",
+      "human_entry_en": "/en/products/audit/"
+    },
+    {
+      "product_id": "TITMAS_HEALTH",
+      "name": "TITMAS Health",
+      "name_zh": "TITMAS 智能体健康快照",
+      "role": "LOW_FRICTION_EVALUATION_ENTRY",
+      "current_status": "EVALUATION_PROFILE_NOT_AVAILABLE_OFFERING",
+      "human_entry": "/products/health/",
+      "human_entry_en": "/en/products/health/"
+    }
+  ],
+  "non_claims": [
+    "NO_AVAILABLE_COMMERCIAL_OFFERING",
+    "NO_PRODUCTION_DEPLOYMENT",
+    "NO_CUSTOMER_ADOPTION",
+    "NO_CERTIFICATION",
+    "PUBLIC_INTERFACE_NE_PRIVATE_IMPLEMENTATION"
+  ]
+}

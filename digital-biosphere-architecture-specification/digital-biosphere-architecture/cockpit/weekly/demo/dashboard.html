@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <link rel="icon" href="data:,">
+  <title>DBA Weekly Cockpit · 周检驾驶舱</title>
+  <style>:root {
+  --paper: #f3f0e9;
+  --surface: #fffdf8;
+  --ink: #11233e;
+  --muted: #637083;
+  --line: #d7d8d2;
+  --blue: #155eef;
+  --blue-deep: #073b9f;
+  --green: #147d64;
+  --amber: #b45f06;
+  --red: #b42318;
+  --unknown: #687386;
+  --shadow: 0 16px 40px rgba(17, 35, 62, .09);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 9% 3%, rgba(21, 94, 239, .12), transparent 29rem),
+    linear-gradient(90deg, rgba(17,35,62,.035) 1px, transparent 1px),
+    var(--paper);
+  background-size: auto, 64px 64px, auto;
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  line-height: 1.55;
+}
+a { color: inherit; }
+.topbar {
+  position: sticky; top: 0; z-index: 10;
+  min-height: 64px; padding: 10px clamp(20px, 4vw, 72px);
+  display: flex; align-items: center; gap: 28px;
+  border-bottom: 1px solid rgba(17,35,62,.12);
+  background: rgba(255,253,248,.9); backdrop-filter: blur(18px);
+}
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; margin-right: auto; }
+.brand-mark { display: grid; place-items: center; width: 42px; height: 42px; background: var(--ink); color: white; font: 800 11px/1 ui-monospace, monospace; letter-spacing: .12em; }
+.brand strong, .brand small { display: block; }
+.brand strong { font: 750 15px/1.2 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .02em; }
+.brand small { color: var(--muted); font-size: 11px; margin-top: 3px; }
+nav { display: flex; gap: 20px; }
+nav a { color: var(--muted); text-decoration: none; font-size: 13px; }
+nav a:hover, nav a:focus-visible { color: var(--blue); }
+.read-only { border: 1px solid var(--line); padding: 7px 10px; color: var(--muted); font: 650 11px ui-monospace, monospace; }
+main { max-width: 1440px; margin: auto; }
+.hero { min-height: 400px; padding: 42px clamp(24px, 7vw, 104px); display: grid; grid-template-columns: 1.12fr .88fr; align-items: center; gap: 44px; }
+.eyebrow, .section-index, .signal-kicker { color: var(--blue); font: 750 11px/1.2 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .14em; }
+.eyebrow strong, .eyebrow small, .signal-kicker strong, .signal-kicker small { display: block; }
+.eyebrow small, .signal-kicker small { margin-top: 6px; color: var(--muted); font-size: 9px; letter-spacing: .08em; }
+h1 { margin: 14px 0 16px; max-width: 720px; font-size: clamp(46px, 5vw, 64px); line-height: 1; letter-spacing: -.055em; font-weight: 820; }
+.weekly-sentence { max-width: 680px; margin: 0 0 9px; color: var(--ink); font-size: clamp(20px, 2.1vw, 28px); font-weight: 760; }
+.lede { max-width: 650px; margin: 0; color: #435168; font-size: 17px; }
+.hero-actions { display: flex; gap: 10px; margin-top: 22px; }
+.hero-actions a, .ask-panel button { padding: 13px 18px; text-decoration: none; font-weight: 700; font-size: 14px; border: 1px solid var(--ink); }
+.primary { background: var(--ink); color: white; }
+.secondary { background: transparent; }
+.signal-panel { position: relative; padding: 25px 28px; background: var(--ink); color: white; box-shadow: 14px 14px 0 rgba(21,94,239,.18); overflow: hidden; }
+.signal-panel::after { content: ""; position: absolute; width: 210px; height: 210px; border: 42px solid rgba(255,255,255,.06); border-radius: 50%; right: -84px; top: -70px; }
+.signal-kicker { color: #89b3ff; }
+.signal-kicker small { color: #9facbf; }
+.overall-signal { margin: 20px 0 17px; font-size: 22px; font-weight: 800; max-width: 410px; }
+.metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(255,255,255,.18); }
+.metrics div { background: var(--ink); padding: 12px 8px 9px 0; }
+.metrics dt { color: #9facbf; font-size: 11px; }
+.metrics dd { margin: 3px 0 0; font: 800 21px ui-monospace, monospace; }
+.hero-decision { margin-top: 14px; padding: 10px 12px; border-left: 3px solid #89b3ff; background: rgba(255,255,255,.07); color: #dbe7ff; font-size: 12px; }
+.hero-decision strong { color: white; }
+.as-of { color: #9facbf; font: 10px ui-monospace, monospace; margin: 12px 0 0; }
+.section-block { padding: 70px clamp(24px, 7vw, 104px); border-top: 1px solid rgba(17,35,62,.13); }
+#decisions { padding-top: 46px; }
+.section-heading { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: end; margin-bottom: 28px; }
+.section-heading h2 { margin: 8px 0 0; font-size: clamp(32px, 3.4vw, 46px); letter-spacing: -.045em; line-height: 1; }
+.section-heading > p { color: var(--muted); max-width: 510px; }
+.decision-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+.decision-card { background: var(--surface); border: 1px solid var(--line); border-top: 5px solid var(--amber); padding: 22px 24px; box-shadow: var(--shadow); }
+.decision-card h3, .project-card h3 { margin: 12px 0 8px; font-size: 22px; }
+.decision-card p, .project-card p { color: var(--muted); }
+.meta-row { display: flex; flex-wrap: wrap; gap: 8px; font: 11px ui-monospace, monospace; color: var(--muted); }
+.ask-panel { margin-top: 18px; padding: 22px; background: #e8eef9; display: grid; grid-template-columns: auto minmax(260px, 1fr) auto; align-items: center; gap: 12px; }
+.ask-panel label { font-weight: 800; }
+.ask-panel select { padding: 12px; border: 1px solid #aeb8c7; background: white; color: var(--ink); }
+.ask-panel button { cursor: pointer; background: var(--blue); border-color: var(--blue); color: white; }
+.ask-panel > p { grid-column: 2 / -1; margin: -5px 0 0; color: var(--muted); font-size: 12px; }
+.query-answer { grid-column: 1 / -1; border-left: 4px solid var(--blue); background: white; padding: 0; max-height: 0; opacity: 0; overflow: hidden; transition: .25s ease; }
+.query-answer.visible { padding: 16px; max-height: 250px; opacity: 1; }
+.signal-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.signal-card { min-height: 185px; padding: 22px; border: 1px solid var(--line); background: rgba(255,253,248,.7); }
+.signal-card h3 { font-size: 17px; margin: 16px 0 8px; }
+.signal-card p { font-size: 13px; color: var(--muted); }
+.status-pill { display: inline-flex; align-items: center; gap: 7px; font: 750 11px ui-monospace, monospace; }
+.status-pill::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: currentColor; }
+.normal { color: var(--green); }.attention { color: var(--amber); }.blocked { color: var(--red); }.unknown { color: var(--unknown); }
+.timeline { border-left: 2px solid var(--blue); margin-left: 8px; }
+.timeline-item { position: relative; display: grid; grid-template-columns: 180px 1fr; gap: 25px; padding: 5px 0 30px 30px; }
+.timeline-item::before { content: ""; position: absolute; width: 12px; height: 12px; left: -7px; top: 10px; background: var(--paper); border: 3px solid var(--blue); border-radius: 50%; }
+.timeline-item time { color: var(--muted); font: 12px ui-monospace, monospace; }
+.timeline-item h3 { margin: 0 0 6px; }
+.timeline-item p { margin: 0; color: var(--muted); }
+.project-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; }
+.project-card { grid-column: span 4; min-height: 250px; padding: 24px; border: 1px solid var(--line); background: var(--surface); position: relative; }
+.source-label { display: inline-block; margin: 0 10px 10px 0; color: var(--blue-deep); font: 750 10px ui-monospace, monospace; letter-spacing: .06em; }
+.project-card:nth-child(1), .project-card:nth-child(2) { grid-column: span 6; }
+.blindspot-section { background: #e7e4dc; }
+.blindspot-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.blindspot { padding: 20px; background: var(--surface); border-left: 5px solid var(--unknown); }
+.blindspot h3 { margin: 0 0 6px; font-size: 16px; }.blindspot p { margin: 0; color: var(--muted); font-size: 13px; }
+details { margin-top: 32px; border-top: 1px solid #bfc0ba; border-bottom: 1px solid #bfc0ba; }
+summary { cursor: pointer; padding: 18px 0; font-weight: 750; }
+.technical-evidence { padding: 0 0 22px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.cell-row { padding: 12px; background: rgba(255,255,255,.55); font: 11px ui-monospace, monospace; }
+footer { display: flex; justify-content: space-between; margin-top: 65px; padding-top: 20px; border-top: 1px solid #bfc0ba; font-size: 12px; color: var(--muted); }
+@media (max-width: 900px) {
+  nav { display: none; }.hero { grid-template-columns: 1fr; min-height: auto; }.section-heading { grid-template-columns: 1fr; }.decision-grid, .signal-list, .blindspot-grid { grid-template-columns: 1fr; }.project-card, .project-card:nth-child(1), .project-card:nth-child(2) { grid-column: 1 / -1; }.ask-panel { grid-template-columns: 1fr; }.ask-panel > p, .query-answer { grid-column: 1; }.timeline-item { grid-template-columns: 1fr; }.technical-evidence { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 560px) {
+  .read-only { display: none; }.hero, .section-block { padding-left: 20px; padding-right: 20px; }.hero-actions { flex-direction: column; }.metrics { grid-template-columns: 1fr; }.technical-evidence { grid-template-columns: 1fr; } footer { flex-direction: column; gap: 8px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .query-answer { transition: none; } }
+</style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#overview" aria-label="返回驾驶舱概览">
+      <span class="brand-mark" aria-hidden="true">DBA</span>
+      <span><strong>DBA 每周驾驶舱</strong><small>Weekly Cockpit · 只读内部视图</small></span>
+    </a>
+    <nav aria-label="驾驶舱章节">
+      <a href="#decisions">待决定</a><a href="#discoveries">发现信号</a><a href="#projects">项目</a><a href="#blindspots">盲区</a>
+    </nav>
+    <span id="pilot-indicator" class="read-only">只读视图</span>
+  </header>
+
+  <main>
+    <section id="overview" class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><strong>发现优先 · 多细胞协作</strong><small>Discovery First · Cell Composed</small></p>
+        <h1 id="hero-title">DBA 每周驾驶舱</h1>
+        <p id="weekly-sentence" class="weekly-sentence"></p>
+        <p class="lede">先看本周变化，再决定要不要行动。</p>
+        <div class="hero-actions"><a class="primary" href="#decisions">查看本周决定</a><a class="secondary" href="#projects">浏览项目状态</a></div>
+      </div>
+      <div class="signal-panel" aria-label="本周状态摘要">
+        <p class="signal-kicker"><strong>本周状态</strong><small>Weekly Signal · 每周信号</small></p>
+        <div id="overall-signal" class="overall-signal"></div>
+        <dl id="hero-metrics" class="metrics"></dl>
+        <div id="hero-decision" class="hero-decision"></div>
+        <p id="as-of" class="as-of"></p>
+      </div>
+    </section>
+
+    <section id="decisions" class="section-block" aria-labelledby="decisions-title">
+      <div class="section-heading"><div><p class="section-index">01 · 待决定</p><h2 id="decisions-title">本周需要你决定</h2></div><p>驾驶舱只准备证据与边界，决定仍由人作出。</p></div>
+      <div id="decision-list" class="decision-grid"></div>
+      <div class="ask-panel">
+        <label for="preset-query">问驾驶舱</label>
+        <select id="preset-query" aria-describedby="query-help"></select>
+        <button id="run-query" type="button">查看快照回答</button>
+        <p id="query-help">固定问题仅查询当前快照，不调用模型、不访问外部网络。</p>
+        <div id="query-answer" class="query-answer" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section id="discoveries" class="section-block split-section" aria-labelledby="discoveries-title">
+      <div class="section-heading"><div><p class="section-index">02 · 发现信号</p><h2 id="discoveries-title">本周发现信号</h2></div><p>首次快照不声称相对上周新增；发现、准入与监测保持分离。</p></div>
+      <div id="discovery-list" class="signal-list"></div>
+    </section>
+
+    <section id="changes" class="section-block" aria-labelledby="changes-title">
+      <div class="section-heading"><div><p class="section-index">03 · 本周变化</p><h2 id="changes-title">发生了什么变化</h2></div><p>没有上一周证据时，明确显示未评估，而不是猜测趋势。</p></div>
+      <div id="change-list" class="timeline"></div>
+    </section>
+
+    <section id="projects" class="section-block" aria-labelledby="projects-title">
+      <div class="section-heading"><div><p class="section-index">04 · 项目</p><h2 id="projects-title">项目状态</h2></div><p>状态是来源快照的解释层，不是项目验收、权限或综合评分。</p></div>
+      <div id="project-grid" class="project-grid"></div>
+    </section>
+
+    <section id="blindspots" class="section-block blindspot-section" aria-labelledby="blindspots-title">
+      <div class="section-heading"><div><p class="section-index">05 · 盲区与边界</p><h2 id="blindspots-title">盲区与边界</h2></div><p>不可见的部分被保留下来，未知不会被涂成绿色。</p></div>
+      <div id="blindspot-list" class="blindspot-grid"></div>
+      <details>
+        <summary>查看技术证据与 Cell 运行状态</summary>
+        <div id="technical-evidence" class="technical-evidence"></div>
+      </details>
+      <footer><strong>DBA 每周驾驶舱 v0.1</strong><span>来源支持 · 只读 · 需要人工决定</span></footer>
+    </section>
+  </main>
+
+  <script type="application/json" id="weekly-snapshot">{"admission_summary": {"admitted_count": 1, "discovered_count": 6, "pending_count": 3, "rejected_count": 2, "rejected_or_pending_count": 5}, "blind_spots": [{"blind_spot_id": "SCOUT_STATUS_STALE", "impact_zh": "当前周检不能确认其最新检查、版本与运行状态。", "project_id": "TITMAC_SCOUT", "source_reference": "cockpit/projections/titmac-scout.json", "status": "NOT_ASSESSED", "title_zh": "TITMAC Scout 的只读状态尚未刷新"}, {"blind_spot_id": "DEPENDENCY_RUNTIME_BINDING_UNKNOWN", "impact_zh": "当前只能确认扫描候选与历史记录冲突，不能确认这些包是否进入实际远端运行路径。", "project_id": "DBA_COCKPIT", "source_reference": "cockpit/weekly/inputs/live-dependency-audit-candidate-2026-08-29.json", "status": "NOT_ASSESSED", "title_zh": "依赖漏洞的远端运行绑定未观察"}], "boundaries": {"auto_deploy": false, "auto_fix": false, "auto_merge": false, "auto_pr": false, "new_control_plane": false, "new_truth_source": false, "pilot_only": false, "prototype_only": true, "read_only": true, "schedule_enabled": false, "source_mutation": false, "view_not_truth": true}, "cell_runs": [{"cell_id": "PROJECT_DISCOVERY_CELL", "duration_ms": 0, "status": "PASS", "summary": "Registered project identities and one adjacent candidate were discovered without admission."}, {"cell_id": "ENVIRONMENT_DISCOVERY_CELL", "duration_ms": 0, "status": "PASS_WITH_CANDIDATES", "summary": "Current environment candidates were recorded without authority escalation."}, {"cell_id": "RELATIONSHIP_DISCOVERY_CELL", "duration_ms": 0, "status": "PASS", "summary": "Declared relationships were recorded as references, not vulnerabilities."}, {"cell_id": "EVIDENCE_ADMISSION_CELL", "duration_ms": 0, "status": "PASS_WITH_REJECTIONS", "summary": "Discovery signals were separated from evidence admission."}, {"cell_id": "SECURITY_CELL", "duration_ms": 0, "status": "PASS_WITH_OBSERVATION", "summary": "Security interpretation consumed admitted observations only."}, {"cell_id": "UPGRADE_CELL", "duration_ms": 0, "status": "NOT_ASSESSED", "summary": "Rejected or stale signals did not become upgrade recommendations."}, {"cell_id": "QUALITY_CELL", "duration_ms": 0, "status": "PASS", "summary": "Bounded quality evidence was interpreted without a composite score."}, {"cell_id": "DRIFT_CELL", "duration_ms": 0, "status": "ATTENTION", "summary": "A canonical-versus-live dependency audit conflict requires review."}, {"cell_id": "MEMORY_CELL", "duration_ms": 0, "status": "NOT_ASSESSED", "summary": "Memory preserved temporal boundaries without inventing week-over-week change."}, {"cell_id": "HANDOFF_CELL", "duration_ms": 0, "status": "PASS", "summary": "Human decision items were generated from bounded findings and blind spots."}, {"cell_id": "HUMAN_VIEW_CELL", "duration_ms": 0, "status": "PASS", "summary": "Standalone HTML and Markdown were rendered from the standardized snapshot only."}, {"cell_id": "WEEKLY_COORDINATOR_CELL", "duration_ms": 0, "status": "PASS"}], "changes": {"improved": [], "observed_this_week": ["依赖安全状态出现待复核冲突", "红岩公文与 DBA 驾驶舱的声明关系", "TITMAS 支撑层与数字细胞演示的声明关系"], "unknown": ["首次快照，尚不能判断这些信号是否相对于上周新增。"], "worsened": []}, "counts": {"admitted_count": 1, "attention": 1, "blind_spot": 1, "blind_spots": 2, "decisions": 2, "discovered_count": 6, "live_source_success": 0, "not_assessed": 1, "projects": 5, "rejected_or_pending_count": 5, "source_not_assessed": 0, "stable": 2}, "decisions": [{"authority": "HUMAN_DECISION_REQUIRED", "decision_id": "DECISION-DEPENDENCY-SECURITY-REVIEW", "evidence_references": ["FINDING-DEPENDENCY-AUDIT-STATE-CONFLICT-2026-W35"], "priority": "HIGH", "project_id": "DBA_COCKPIT", "source_cell_id": "HANDOFF_CELL", "title_zh": "是否启动依赖安全专项复核", "why_zh": "历史记录2个，本周扫描4个，当前存在状态冲突。"}, {"authority": "HUMAN_DECISION_REQUIRED", "decision_id": "DECISION-SCOUT-READ-ONLY-REFRESH", "evidence_references": ["SCOUT_STATUS_STALE"], "priority": "MEDIUM", "project_id": "TITMAC_SCOUT", "source_cell_id": "HANDOFF_CELL", "title_zh": "是否授权刷新 TITMAC Scout 的只读状态", "why_zh": "当前状态来源缺少足够新鲜度；刷新仍需单独、只读、限定范围的人工授权。"}], "decisions_source": "HANDOFF_CELL", "dependency_audit_state": {"auto_reconciliation": false, "canonical_high_count": 2, "exploitability": "NOT_ASSESSED", "live_candidate_high_count": 4, "live_high_packages": ["image-size", "js-yaml", "nanoid", "vinext"], "runtime_binding": "NOT_ESTABLISHED", "status": "CONFLICT_REQUIRES_REVIEW"}, "discoveries": [{"admission_label_zh": "待人工确认候选", "admission_reason": "CANDIDATE_NOT_ADMITTED", "admission_status": "NOT_ADMITTED", "authority": "DISCOVERY_ONLY", "candidate_id": "candidate-openbao-2026-W35", "current_state": "DISCOVERED", "details_zh": "OpenBao（机密与密钥管理组件）仍是待确认候选；应先刷新当前版本与安全事实。", "discovered_at": "2026-08-29T00:30:00+08:00", "display_name": "OpenBao（机密与密钥管理组件）候选", "freshness": "UNKNOWN", "kind": "ADJACENT_PROJECT_CANDIDATE", "lifecycle": "CANDIDATE", "monitoring_status": "NOT_MONITORED", "note": "Discovery does not grant evidence admission, monitoring, or scan authority.", "observed_at": "2026-08-29T00:30:00+08:00", "observed_state": "DISCOVERED", "private_content_scanned": false, "project_id": "openbao-adjacent-signal", "read_only": true, "scan_authorized": false, "signal_id": "DISCOVERY-OPENBAO-CANDIDATE", "source_reference": "project-discovery:public-adjacent-candidate", "subject": "OpenBao", "title_zh": "OpenBao（机密与密钥管理组件）候选"}, {"admission_label_zh": "已通过证据准入", "admission_reason": "CURRENT_SOURCE_BOUND_CANDIDATE", "admission_status": "ADMITTED", "authority": "CANDIDATE_OBSERVATION", "canonical_high_count": 2, "current_state": "DISCOVERED", "details_zh": "本周实时扫描报告4个高危依赖包，历史权威记录仍为2个；候选包为image-size, js-yaml, nanoid, vinext。", "exploitability": "NOT_ASSESSED", "freshness": "CURRENT", "kind": "DEPENDENCY_SECURITY_CONFLICT_CANDIDATE", "live_candidate_high_count": 4, "live_high_packages": ["image-size", "js-yaml", "nanoid", "vinext"], "observed_at": "2026-08-29T01:36:35+08:00", "observed_state": "CONFLICT_CANDIDATE", "runtime_binding": "NOT_ESTABLISHED", "signal_id": "DISCOVERY-DEPENDENCY-AUDIT-CONFLICT", "source_reference": "cockpit/weekly/inputs/live-dependency-audit-candidate-2026-08-29.json", "subject": "DBA dependency audit state", "title_zh": "依赖安全状态出现待复核冲突"}, {"admission_label_zh": "未通过准入或来源过期", "admission_reason": "STALE_OR_UNKNOWN", "admission_status": "REJECTED", "authority": "DISCOVERY_ONLY", "current_state": "DISCOVERED", "details_zh": "现有组件矩阵不能自动获得本周当前状态权威。", "freshness": "STALE", "kind": "COMPONENT_STATUS_SIGNAL", "observed_at": "2026-08-29T00:30:00+08:00", "observed_state": "STALE", "signal_id": "DISCOVERY-TITMAS-MATRIX-STALE", "source_reference": "titmas-component-adoption-matrix-v1.0.json", "subject": "TITMAS component matrix", "title_zh": "TITMAS 组件矩阵状态待刷新"}, {"admission_label_zh": "未通过准入或来源过期", "admission_reason": "STALE_OR_UNKNOWN", "admission_status": "REJECTED", "authority": "DISCOVERY_ONLY", "current_state": "DISCOVERED", "details_zh": "现有投影没有提供足够新鲜度，不能推断当前状态。", "freshness": "UNKNOWN", "kind": "PROJECT_STATUS_SIGNAL", "observed_at": "2026-08-29T00:30:00+08:00", "observed_state": "UNKNOWN", "signal_id": "DISCOVERY-SCOUT-STATUS-STALE", "source_reference": "cockpit/projections/titmac-scout.json", "subject": "TITMAC Scout read-only status", "title_zh": "TITMAC Scout 当前只读状态待刷新"}, {"admission_label_zh": "待人工确认候选", "admission_reason": "OUTSIDE_AUTOMATIC_ADMISSION_SCOPE", "admission_status": "PENDING", "authority": "RELATIONSHIP_REFERENCE_ONLY", "current_state": "DISCOVERED", "details_zh": "这是已声明的项目关系，不是新漏洞，也不授予跨项目控制权。", "freshness": "CURRENT", "kind": "DECLARED_PROJECT_RELATIONSHIP", "observed_at": "2026-08-29T00:30:00+08:00", "observed_state": "DECLARED", "signal_id": "RELATIONSHIP-RED-YAN-DBA", "source_reference": "cockpit/source-registry.json", "subject": "红岩公文与 DBA 驾驶舱", "title_zh": "红岩公文与 DBA 驾驶舱的声明关系"}, {"admission_label_zh": "待人工确认候选", "admission_reason": "OUTSIDE_AUTOMATIC_ADMISSION_SCOPE", "admission_status": "PENDING", "authority": "RELATIONSHIP_REFERENCE_ONLY", "current_state": "DISCOVERED", "details_zh": "这是引用关系，不代表部署、认证、运行绑定或新的安全事实。", "freshness": "CURRENT", "kind": "DECLARED_PROJECT_RELATIONSHIP", "observed_at": "2026-08-29T00:30:00+08:00", "observed_state": "DECLARED", "signal_id": "RELATIONSHIP-TITMAS-DIGITAL-CELL", "source_reference": "cockpit/source-registry.json", "subject": "TITMAS 支撑层与数字细胞演示", "title_zh": "TITMAS 支撑层与数字细胞演示的声明关系"}], "discovery_failure_count": 0, "discovery_state": "AVAILABLE", "findings": [{"authorization": "NONE", "canonical_high_count": 2, "category": "SECURITY_DRIFT", "exploitability": "NOT_ASSESSED", "finding_id": "FINDING-DEPENDENCY-AUDIT-STATE-CONFLICT-2026-W35", "finding_type": "DEPENDENCY_AUDIT_STATE_CONFLICT", "human_explanation": "本周实时扫描报告4个高危依赖包，而驾驶舱历史权威记录仍为2个。两者尚未对齐，需要核对锁文件、扫描范围和是否进入实际运行环境。", "live_candidate_high_count": 4, "live_high_packages": ["image-size", "js-yaml", "nanoid", "vinext"], "observed_at": "2026-08-29T01:36:35+08:00", "project_id": "DBA_COCKPIT", "reconciliation_required": true, "runtime_binding": "NOT_ESTABLISHED", "severity": "ATTENTION", "source_reference": "cockpit/weekly/inputs/live-dependency-audit-candidate-2026-08-29.json", "title": "历史与实时依赖审计状态冲突", "title_zh": "历史与实时依赖审计状态冲突", "version_change_recommended": false}], "handoff_packets": [{"authority": "NONE", "decision_needed": "是否启动依赖安全专项复核", "evidence_references": ["FINDING-DEPENDENCY-AUDIT-STATE-CONFLICT-2026-W35"], "execution_commands": [], "handoff_id": "HANDOFF-DEPENDENCY-SECURITY-REVIEW", "project_id": "DBA_COCKPIT", "recipient_role": "HUMAN_REVIEWER", "suggested_next_review": "核对锁文件、扫描范围、运行绑定与权威状态来源。"}, {"authority": "NONE", "decision_needed": "是否授权刷新 TITMAC Scout 的只读状态", "evidence_references": ["SCOUT_STATUS_STALE"], "execution_commands": [], "handoff_id": "HANDOFF-SCOUT-READ-ONLY-REFRESH", "project_id": "TITMAC_SCOUT", "recipient_role": "HUMAN_REVIEWER", "suggested_next_review": "如批准，仅刷新声明来源的只读状态，不扩大扫描范围。"}], "logical_cells": [{"cell_id": "PROJECT_DISCOVERY_CELL", "duration_ms": 0, "status": "PASS", "summary": "Registered project identities and one adjacent candidate were discovered without admission."}, {"cell_id": "ENVIRONMENT_DISCOVERY_CELL", "duration_ms": 0, "status": "PASS_WITH_CANDIDATES", "summary": "Current environment candidates were recorded without authority escalation."}, {"cell_id": "RELATIONSHIP_DISCOVERY_CELL", "duration_ms": 0, "status": "PASS", "summary": "Declared relationships were recorded as references, not vulnerabilities."}, {"cell_id": "EVIDENCE_ADMISSION_CELL", "duration_ms": 0, "status": "PASS_WITH_REJECTIONS", "summary": "Discovery signals were separated from evidence admission."}, {"cell_id": "SECURITY_CELL", "duration_ms": 0, "status": "PASS_WITH_OBSERVATION", "summary": "Security interpretation consumed admitted observations only."}, {"cell_id": "UPGRADE_CELL", "duration_ms": 0, "status": "NOT_ASSESSED", "summary": "Rejected or stale signals did not become upgrade recommendations."}, {"cell_id": "QUALITY_CELL", "duration_ms": 0, "status": "PASS", "summary": "Bounded quality evidence was interpreted without a composite score."}, {"cell_id": "DRIFT_CELL", "duration_ms": 0, "status": "ATTENTION", "summary": "A canonical-versus-live dependency audit conflict requires review."}, {"cell_id": "MEMORY_CELL", "duration_ms": 0, "status": "NOT_ASSESSED", "summary": "Memory preserved temporal boundaries without inventing week-over-week change."}, {"cell_id": "HANDOFF_CELL", "duration_ms": 0, "status": "PASS", "summary": "Human decision items were generated from bounded findings and blind spots."}, {"cell_id": "HUMAN_VIEW_CELL", "duration_ms": 0, "status": "PASS", "summary": "Standalone HTML and Markdown were rendered from the standardized snapshot only."}, {"cell_id": "WEEKLY_COORDINATOR_CELL", "duration_ms": 0, "status": "PASS"}], "memory": {"ARTIFACT_FROM_CURRENT_RUN_REJECTED": null, "FAILED_OR_EXPIRED_ARTIFACT_REJECTED": null, "MEMORY_COMPARISON_EXECUTED": false, "PREVIOUS_LIVE_ARTIFACT_LOADED": false, "note_zh": "首次快照，尚不能判断这些信号是否相对于上周新增。", "previous_snapshot_reference": null, "status": "NOT_ASSESSED_NO_PREVIOUS_SNAPSHOT", "trend_claim_allowed": false}, "mode": "PROTOTYPE_READ_ONLY_CANDIDATE", "observed_at": "2026-08-29T00:30:00+08:00", "overall_status": "PASS_WITH_NOT_ASSESSED", "preset_queries": {"哪些事项仍是盲区？": "当前登记2项盲区；未评估不等于正常。", "本周收集到多少信号？": "共记录6项发现信号，准入状态分别保留。", "本周需要决定什么？": "当前有2项待人工决定；具体内容来自交接 Cell。"}, "projects": [{"attention_zh": "候选包：image-size, js-yaml, nanoid, vinext；可利用性尚未评估。", "display_name_zh": "DBA 驾驶舱", "lifecycle_mode": "ACTIVE", "owner_conversation": "DBA 专用对话", "project_id": "DBA_COCKPIT", "source_access_mode": "GITHUB_API_CURRENT_REPOSITORY_READ_ONLY", "source_label": "RETAINED_SNAPSHOT", "source_observation_status": "RETAINED_SNAPSHOT", "source_reference": "CURRENT-PROJECT-DIRECTION-2026-08-28.md", "status": "ATTENTION", "status_zh": "依赖审计状态待复核", "technical_evidence": ["cockpit/weekly/inputs/live-dependency-audit-candidate-2026-08-29.json"], "why_zh": "本周实时扫描报告4个高危依赖包，而驾驶舱历史权威记录仍为2个。两者尚未对齐，需要核对锁文件、扫描范围和是否进入实际运行环境。"}, {"attention_zh": "该视图不替代红岩专用对话中的项目判断。", "display_name_zh": "红岩公文", "lifecycle_mode": "ACTIVE", "owner_conversation": "红岩公文专用对话", "project_id": "RED_YAN_OFFICIAL_DOCUMENT", "source_access_mode": "CROSS_REPOSITORY_CREDENTIAL_GATED_READ_ONLY", "source_label": "RETAINED_SNAPSHOT", "source_observation_status": "RETAINED_SNAPSHOT", "source_reference": "RED-YAN-REMOTE-RUNTIME-EVIDENCE-SNAPSHOT-2026-08-28.json", "status": "STABLE", "status_zh": "当前主线稳定", "technical_evidence": ["RED-YAN-REMOTE-RUNTIME-EVIDENCE-SNAPSHOT-2026-08-28.json"], "why_zh": "现有权威快照可读取，本周驾驶舱未修改红岩项目。"}, {"attention_zh": "需要新的只读证据后再评估。", "display_name_zh": "TITMAS 支撑层", "lifecycle_mode": "SUPPORTING", "owner_conversation": "TITMAS 专用对话", "project_id": "TITMAS_SUPPORTING_LAYER", "source_access_mode": "GITHUB_API_PUBLIC_REPOSITORY_READ_ONLY", "source_label": "RETAINED_SNAPSHOT", "source_observation_status": "RETAINED_SNAPSHOT", "source_reference": "PROJECT-STATE-RECONCILIATION-2026-08-28.md", "status": "NOT_ASSESSED", "status_zh": "升级状态未评估", "technical_evidence": ["PROJECT-STATE-RECONCILIATION-2026-08-28.md"], "why_zh": "组件状态来源已过期，不能转化为本周升级建议。"}, {"attention_zh": "该状态不构成生产就绪或认证。", "display_name_zh": "数字细胞演示", "lifecycle_mode": "FROZEN", "owner_conversation": "Digital Cell Demo 专用对话", "project_id": "DIGITAL_CELL_DEMO", "source_access_mode": "GITHUB_API_PUBLIC_REPOSITORY_READ_ONLY", "source_label": "RETAINED_SNAPSHOT", "source_observation_status": "RETAINED_SNAPSHOT", "source_reference": "CURRENT-PROJECT-DIRECTION-2026-08-28.md", "status": "STABLE", "status_zh": "参考演示稳定", "technical_evidence": ["titmas-commercial-product-convergence-status-v1.0.json"], "why_zh": "冻结参考演示及其既有验证记录可读取；本周未授权新增执行。"}, {"attention_zh": "如需刷新，必须获得单独只读授权。", "display_name_zh": "TITMAC 侦察", "lifecycle_mode": "SUPPORTING", "owner_conversation": "TITMAC Scout 专用对话", "project_id": "TITMAC_SCOUT", "source_access_mode": "EXISTING_READ_ONLY_STATUS_ADAPTER", "source_label": "RETAINED_SNAPSHOT", "source_observation_status": "RETAINED_SNAPSHOT", "source_reference": "cockpit/source-registry.json#titmac-scout", "status": "BLIND_SPOT", "status_zh": "检查盲区", "technical_evidence": ["cockpit/source-registry.json#titmac-scout"], "why_zh": "当前只读状态来源缺少足够新鲜度，不能据此判定项目正常或异常。"}], "run_identity": {}, "schema_version": "0.1", "snapshot_id": "DBA-WEEKLY-2026-W35", "source_observation_summary": {"live_source_success_count": 0, "not_assessed_count": 0, "source_mode": "RETAINED_SNAPSHOT"}, "source_references": {"component_matrix": "titmas-component-adoption-matrix-v1.0.json", "convergence": "titmas-commercial-product-convergence-status-v1.0.json", "direction": "CURRENT-PROJECT-DIRECTION-2026-08-28.md", "live_dependency_audit": "cockpit/weekly/inputs/live-dependency-audit-candidate-2026-08-29.json", "read_only_adapter": "cockpit/read_only_status_adapter.py", "reconciliation": "PROJECT-STATE-RECONCILIATION-2026-08-28.md", "redyan": "RED-YAN-REMOTE-RUNTIME-EVIDENCE-SNAPSHOT-2026-08-28.json", "scout_projection": "cockpit/projections/titmac-scout.json", "source_registry": "cockpit/source-registry.json"}, "week": "2026-W35", "weekly_sentence_zh": "本周共纳入5个项目视图：2个稳定，1个需关注，1个盲区，1个尚未评估。共收集6项信号，其中1项已通过证据准入，5项被拒绝或待确认；有2项需要人工决定。"}</script>
+  <script>(() => {
+  "use strict";
+  const snapshot = JSON.parse(document.getElementById("weekly-snapshot").textContent);
+  const el = (id) => document.getElementById(id);
+  const text = (value, fallback = "") => value === undefined || value === null || value === "" ? fallback : String(value);
+  const first = (...values) => values.find((value) => value !== undefined && value !== null && value !== "");
+  const escapeHtml = (value) => text(value).replace(/[&<>"']/g, (char) => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[char]));
+  const severity = (status) => {
+    const value = text(status, "UNKNOWN").toUpperCase();
+    if (["PASS", "STABLE", "NORMAL", "ADMITTED"].includes(value)) return ["good", "稳定"];
+    if (["ATTENTION", "FAIL", "BLOCKED", "CONFLICT_REQUIRES_REVIEW"].includes(value)) return ["warn", "需关注"];
+    if (["BLIND_SPOT", "NOT_ASSESSED", "UNKNOWN", "DISCOVERY_UNAVAILABLE", "PASS_WITH_NOT_ASSESSED"].includes(value)) return ["unknown", "尚未完整评估"];
+    return ["neutral", "已记录"];
+  };
+  const pill = (status, showCode = false) => {
+    const [klass, label] = severity(status);
+    const suffix = showCode ? ` · ${escapeHtml(status)}` : "";
+    return `<span class="status-pill ${klass}">${escapeHtml(label)}${suffix}</span>`;
+  };
+  const localTime = (value) => {
+    if (!value) return "观察时间未知";
+    const date = new Date(value);
+    if (Number.isNaN(date.getTime())) return text(value);
+    const parts = new Intl.DateTimeFormat("zh-CN", {
+      timeZone: "Asia/Shanghai", year: "numeric", month: "long", day: "numeric",
+      hour: "2-digit", minute: "2-digit", hour12: false
+    }).formatToParts(date);
+    const map = Object.fromEntries(parts.map((part) => [part.type, part.value]));
+    return `${map.year}年${map.month}月${map.day}日 ${map.hour}:${map.minute}`;
+  };
+
+  const projects = snapshot.projects || snapshot.project_views || [];
+  const discoveries = snapshot.discoveries || [];
+  const decisions = snapshot.decisions || [];
+  const changeGroups = Array.isArray(snapshot.changes)
+    ? snapshot.changes
+    : Object.entries(snapshot.changes || {}).flatMap(([group, items]) =>
+        (items || []).map((item) => typeof item === "string" ? {group, summary:item} : {group, ...item}));
+  const blindSpots = snapshot.blind_spots || [];
+  const cells = snapshot.cell_runs || [];
+  const counts = snapshot.counts || {};
+  const memory = snapshot.memory || {};
+  const livePilot = snapshot.mode === "LIVE_READ_ONLY_OBSERVATION_PILOT";
+
+  el("pilot-indicator").textContent = livePilot ? "实时只读试点" : "保留快照 Demo";
+
+  const [overallClass] = severity(snapshot.overall_status);
+  el("overall-signal").innerHTML = `<span class="status-pill ${overallClass}">需关注</span><div style="margin-top:16px">部分检查尚未完成</div>`;
+  el("weekly-sentence").textContent = text(snapshot.weekly_sentence_zh);
+  el("hero-metrics").innerHTML = [
+    ["项目", projects.length],
+    ["实时来源", first(counts.live_source_success, 0)],
+    ["未评估来源", first(counts.source_not_assessed, 0)],
+    ["发现状态", first(snapshot.discovery_state, "UNKNOWN")],
+    ["上轮制品", memory.PREVIOUS_LIVE_ARTIFACT_LOADED === true ? "已读取" : "未读取"],
+    ["依赖高危", first(snapshot.dependency_audit_state?.live_candidate_high_count, "未评估")]
+  ].map(([label, value]) => `<div class="metric"><strong>${escapeHtml(value)}</strong><span>${escapeHtml(label)}</span></div>`).join("");
+  const firstDecision = decisions[0] || {};
+  el("hero-decision").innerHTML = `<strong>最先查看：</strong>${escapeHtml(first(firstDecision.title_zh, "当前没有登记的决定"))}`;
+  el("as-of").textContent = `观察时间 ${localTime(first(snapshot.observed_at, snapshot.as_of))}`;
+
+  el("decision-list").innerHTML = decisions.length ? decisions.map((item, index) => `
+    <article class="decision-card">
+      <div class="meta-row"><span>决定 ${String(index + 1).padStart(2, "0")}</span><span>需人工判断</span></div>
+      <h3>${escapeHtml(first(item.title_zh, item.title, item.decision_needed, "待人工决定"))}</h3>
+      <p>${escapeHtml(first(item.why_zh, item.why, item.summary, item.human_explanation, "查看来源证据后决定。"))}</p>
+      <small>来源：${escapeHtml(first(item.source_cell_id, snapshot.decisions_source, "HANDOFF_CELL"))}</small>
+    </article>`).join("") : `<article class="decision-card"><h3>本周没有登记的决定</h3><p>这不表示没有风险；请同时查看盲区。</p></article>`;
+
+  const rawQueries = snapshot.preset_queries || [
+    {question:"本周需要决定什么？", answer:"查看待决定事项。"},
+    {question:"本周收集到什么信号？", answer:"查看本周发现信号与准入标签。"},
+    {question:"哪些事项仍是盲区？", answer:"查看检查盲区。"}
+  ];
+  const querySource = Array.isArray(rawQueries)
+    ? rawQueries
+    : Object.entries(rawQueries).map(([question, answer]) => ({question, answer}));
+  el("preset-query").innerHTML = querySource.map((item, index) => `
+    <option value="${index}">${escapeHtml(item.question)}</option>`).join("");
+  el("query-answer").textContent = querySource[0] ? querySource[0].answer : "当前快照没有预设回答。";
+  el("run-query").addEventListener("click", () => {
+    const selected = querySource[Number(el("preset-query").value)];
+    el("query-answer").textContent = selected ? selected.answer : "当前快照没有对应回答。";
+  });
+
+  el("discovery-list").innerHTML = discoveries.slice(0, 9).map((item) => `
+    <article class="signal-card">
+      <span class="status-pill neutral">${escapeHtml(first(item.admission_label_zh, "待人工确认候选"))}</span>
+      <h3>${escapeHtml(first(item.title_zh, item.display_name_zh, item.display_name, item.subject, item.title, item.project_id, "发现信号"))}</h3>
+      <p>${escapeHtml(first(item.details_zh, item.note, item.human_explanation, "没有附加说明。"))}</p>
+      <small>观察状态：${escapeHtml(first(item.observed_state, item.current_state, item.status, "UNKNOWN"))}</small>
+    </article>`).join("") || `<p>当前没有登记的发现信号。</p>`;
+
+  el("change-list").innerHTML = changeGroups.map((item) => `
+    <article class="timeline-item">
+      <time>${escapeHtml(first(item.observed_at, snapshot.observed_at, snapshot.as_of))}</time>
+      <div><h3>${escapeHtml(item.group === "observed_this_week" ? "本周发生" : "尚不能形成周间趋势")}</h3><p>${escapeHtml(first(item.summary, item.title_zh, "没有可用说明。"))}</p></div>
+    </article>`).join("") || `<article class="timeline-item"><time>${escapeHtml(first(snapshot.observed_at, snapshot.as_of))}</time><div><h3>首次快照，无周间比较</h3><p>首次快照，尚不能判断这些信号是否相对于上周新增。</p></div></article>`;
+
+  el("project-grid").innerHTML = projects.map((project, index) => `
+    <article class="project-card">
+      <span class="project-index">${String(index + 1).padStart(2, "0")}</span>
+      <h3>${escapeHtml(first(project.display_name_zh, project.display_name, project.name, project.project_id))}</h3>
+      <span class="source-label">${escapeHtml(first(project.source_label, "RETAINED_SNAPSHOT"))}</span>
+      ${pill(first(project.status, project.state))}
+      <p><strong>${escapeHtml(first(project.status_zh, "状态待解释"))}</strong><br>${escapeHtml(first(project.why_zh, project.human_summary, project.summary, project.explanation, "没有可用的人类解释。"))}<br><br>${escapeHtml(first(project.attention_zh, project.impact_zh, ""))}</p>
+    </article>`).join("");
+
+  el("blindspot-list").innerHTML = blindSpots.map((item) => `
+    <article class="blindspot"><h3>${escapeHtml(first(item.title_zh, item.title, item.subject, "未评估盲区"))}</h3><p>${escapeHtml(first(item.impact_zh, item.human_explanation, item.summary, item.reason, "缺少足够证据。"))}</p></article>`).join("") || `<article class="blindspot"><h3>盲区清单为空</h3><p>空清单不构成全面覆盖证明。</p></article>`;
+
+  const projectEvidence = projects.map((project) => `<div class="cell-row">项目标识 · ${escapeHtml(first(project.project_id))}<br>证据 · ${escapeHtml((project.technical_evidence || []).join(" · "))}</div>`).join("");
+  const cellEvidence = cells.map((cell) => `<div class="cell-row">细胞标识 · ${escapeHtml(first(cell.cell_id, cell.id))}<br>${pill(first(cell.status), true)}</div>`).join("");
+  el("technical-evidence").innerHTML = `
+    <div class="cell-row">快照编号 · ${escapeHtml(snapshot.snapshot_id)}</div>
+    <div class="cell-row">机器总体状态 · ${escapeHtml(snapshot.overall_status)}</div>
+    <div class="cell-row">原始观察时间 · ${escapeHtml(snapshot.observed_at)}</div>
+    <div class="cell-row">发现可用性 · ${escapeHtml(first(snapshot.discovery_state, "UNKNOWN"))}</div>
+    <div class="cell-row">Memory · ${escapeHtml(first(memory.status, "NOT_ASSESSED"))}</div>
+    ${projectEvidence}${cellEvidence}`;
+})();
+</script>
+</body>
+</html>

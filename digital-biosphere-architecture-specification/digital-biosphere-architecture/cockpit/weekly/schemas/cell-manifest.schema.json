@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:dba:weekly:cell-manifest:0.1",
+  "title": "DBA Weekly Cockpit Cell Manifest",
+  "type": "object",
+  "required": ["cell_id", "version", "name", "niche", "module", "class", "inputs", "outputs", "authority_boundaries", "failure_policy", "replacement"],
+  "properties": {
+    "cell_id": {"type": "string", "minLength": 1},
+    "version": {"const": "0.1"},
+    "name": {"type": "string", "minLength": 1},
+    "niche": {"type": "string", "minLength": 1},
+    "module": {"type": "string", "minLength": 1},
+    "class": {"type": "string", "minLength": 1},
+    "inputs": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "outputs": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "source_dependencies": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "evidence_requirements": {"type": "array", "items": {"type": "string"}},
+    "freshness_policy": {"type": "string"},
+    "authority_boundaries": {
+      "type": "object",
+      "required": ["can_write_source_project", "can_create_pull_request", "can_merge", "can_deploy", "can_authorize", "can_change_project_priority"],
+      "properties": {
+        "can_write_source_project": {"const": false},
+        "can_create_pull_request": {"const": false},
+        "can_merge": {"const": false},
+        "can_deploy": {"const": false},
+        "can_authorize": {"const": false},
+        "can_change_project_priority": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "failure_policy": {
+      "type": "object",
+      "required": ["status", "preserve_other_cells"],
+      "properties": {
+        "status": {"const": "NOT_ASSESSED"},
+        "preserve_other_cells": {"const": true}
+      },
+      "additionalProperties": false
+    },
+    "replacement": {
+      "type": "object",
+      "required": ["replaceable", "interface_version"],
+      "properties": {
+        "replaceable": {"const": true},
+        "interface_version": {"const": "0.1"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,24 @@
+# Huawei Cloud AgentArts
+
+- Source URLs: https://support.huaweicloud.com/productdesc-agentarts/agentarts-productdesc-pdf.pdf
+- Source access time: 2026-08-03
+- Page title: AgentArts Product Description
+- Product status: official Huawei Cloud product documentation.
+- Target customer / buyer / user: enterprise Agent application teams using Huawei Cloud; builders, platform operators and procurement principals.
+- Pricing status: `NOT_VERIFIED` in this pass.
+- Architecture summary: Agent development and management platform; TITMAS-equivalent action-control semantics are not assumed.
+- Control plane / data plane: cloud platform management and runtime boundaries require the product document and deployment option selected by customer.
+- Enforcement point: no portable pre-side-effect Gate verified.
+- Integration: Huawei Cloud model, data and deployment ecosystem.
+- Tenant / workspace / identity: cloud-account/resource-space patterns are likely; exact machine-principal contract is `NOT_ASSESSED`.
+- Policy / approval / decision: no exact-action authorization-binding fact verified.
+- Event / receipt / audit / retention: platform logging may exist; signed portable receipt and independent verification are not verified.
+- Monitor / enforce: `NOT_ASSESSED`.
+- Deployment modes: cloud product; private/on-prem offering requires direct vendor evidence.
+- Console navigation and UI: Chinese enterprise cloud-console pattern; exact screen anatomy not copied or claimed.
+- Commercial funnel: Huawei Cloud documentation, console and enterprise sales channels.
+- Strengths: domestic enterprise procurement familiarity and cloud ecosystem.
+- Weaknesses relative to TITMAS: broad Agent platform scope; portable accountability boundary not verified.
+- Applicable lessons: domestic deployment packaging, resource-space vocabulary and enterprise support expectations.
+- Non-applicable lessons: building an Agent runtime or model-development platform.
+- Uncertainties: pricing, retention, private deployment, tenant model and security responsibilities.

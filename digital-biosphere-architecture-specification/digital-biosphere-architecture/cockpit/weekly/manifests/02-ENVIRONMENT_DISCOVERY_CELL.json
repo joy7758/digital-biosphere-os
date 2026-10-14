@@ -1,0 +1,39 @@
+{
+  "cell_id": "ENVIRONMENT_DISCOVERY_CELL",
+  "version": "0.1",
+  "name": "ENVIRONMENT_DISCOVERY_CELL",
+  "niche": "bounded weekly cockpit observation",
+  "module": "cells.environment_discovery",
+  "class": "Environment_Discovery_CellCell",
+  "inputs": [
+    "admitted-local-snapshots"
+  ],
+  "outputs": [
+    "discovery-signals"
+  ],
+  "source_dependencies": [
+    "reconciliation",
+    "component-matrix"
+  ],
+  "evidence_requirements": [
+    "source-reference",
+    "observed-at"
+  ],
+  "freshness_policy": "SEVEN_DAYS_OR_STALE",
+  "authority_boundaries": {
+    "can_write_source_project": false,
+    "can_create_pull_request": false,
+    "can_merge": false,
+    "can_deploy": false,
+    "can_authorize": false,
+    "can_change_project_priority": false
+  },
+  "failure_policy": {
+    "status": "NOT_ASSESSED",
+    "preserve_other_cells": true
+  },
+  "replacement": {
+    "replaceable": true,
+    "interface_version": "0.1"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "schema_version": "0.1",
+  "status": "PASS_WITH_LIMITATIONS_PREDEPLOYMENT",
+  "observed_at": "2026-08-04T04:55:00+08:00",
+  "api_session_count": 12,
+  "valid_external_agent_sessions": 10,
+  "invalid_external_agent_sessions_retained": 2,
+  "distinct_valid_providers": ["ALIBABA_CLOUD_MODEL_STUDIO", "BAIDU_QIANFAN", "DEEPSEEK", "VOLCENGINE_ARK"],
+  "distinct_valid_model_families": ["QWEN", "ERNIE", "DEEPSEEK", "DOUBAO", "KIMI"],
+  "distinct_valid_entry_surfaces": ["HUMAN_PRODUCT_BRIEF", "MACHINE_STATUS", "TECHNICAL_CONTRACT"],
+  "roles": {
+    "CHINA_ENTERPRISE_SOFTWARE_BUYER": "PASS",
+    "SECURITY_OWNER": "PASS",
+    "AGENT_DEVELOPER": "PASS_AFTER_REMEDIATION",
+    "OPERATIONS_OWNER": "PASS",
+    "RECEIPT_AUDITOR": "PASS",
+    "PROCUREMENT_REVIEWER": "PASS",
+    "LEGAL_ASSISTANT": "PASS",
+    "COMPETITIVE_RECOMMENDER": "PASS_AFTER_REMEDIATION",
+    "ADVERSARIAL_BOUNDARY_TESTER": "PASS",
+    "CROSS_AGENT_REUSER": "PASS_AFTER_RETAINED_TRANSPORT_FAILURE"
+  },
+  "agent_first_checks": {
+    "understands_titmas_non_goals": "PASS",
+    "selects_monitor_only_after_gates": "PASS",
+    "monitor_enforce_separation": "PASS",
+    "schema_valid_synthetic_request": "PASS_AFTER_REMEDIATION",
+    "receipt_limitations": "PASS",
+    "public_proof_ne_adoption": "PASS",
+    "irrelevant_use_case_abandonment": "PASS_AFTER_REMEDIATION",
+    "human_authorization_identification": "PASS",
+    "adversarial_authority_rejection": "PASS",
+    "live_public_network_discovery": "FAIL_404_RETAINED"
+  },
+  "competitive_recommendation": {
+    "trace_debugging": "OTHER_PLATFORM_PRIMARY",
+    "general_authorization": "OTHER_PLATFORM_PRIMARY",
+    "prompt_content_safety": "OTHER_PLATFORM_PRIMARY",
+    "action_control_receipt_audit": "TITMAS_CONDITIONAL_AFTER_GATES",
+    "universal_recommendation": false,
+    "precision": "PASS"
+  },
+  "privacy": {
+    "customer_data_used": false,
+    "personal_data_used": false,
+    "credentials_persisted": false,
+    "chain_of_thought_requested_or_stored": false,
+    "sanitized_source_packets_only": true
+  },
+  "limitations": [
+    "NEW_REDCRAG_COMMERCIAL_ROUTES_NOT_DEPLOYED",
+    "LIVE_PUBLIC_DISCOVERY_RETURNED_404",
+    "SYNTHETIC_AGENT_SESSIONS_NE_CUSTOMER_ADOPTION",
+    "MODEL_OUTPUT_NE_HUMAN_AUTHORITY",
+    "ONE_CRITICAL_SECURITY_FINDING_REMAINS_OPEN",
+    "BUSINESS_LEGAL_PRICING_SUPPORT_GATES_REMAIN_OPEN"
+  ],
+  "multi_agent_thresholds_pass": true,
+  "multi_agent_commercial_validation": "PASS_WITH_LIMITATIONS_PREDEPLOYMENT",
+  "commercial_private_pilot_ready": false,
+  "customer_adoption_proven": false
+}

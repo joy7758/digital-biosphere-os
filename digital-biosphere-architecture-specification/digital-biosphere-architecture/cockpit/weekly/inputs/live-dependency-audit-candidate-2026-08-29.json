@@ -1,0 +1,36 @@
+{
+  "observation_id": "DBA-LIVE-DEPENDENCY-AUDIT-CANDIDATE-2026-08-29",
+  "status": "LIVE_CANDIDATE_NOT_CANONICAL",
+  "observed_at": "2026-08-29T01:36:35+08:00",
+  "source_reference": "site/package-lock.json + npm advisory database",
+  "command": "npm audit --audit-level=high --json",
+  "canonical_retained": {
+    "status": "FAIL_2_HIGH_NANOID_VIA_POSTCSS",
+    "high_count": 2,
+    "source_references": [
+      "agent-index.json#current_machine_precedence.dba_dependency_audit",
+      "PROJECT-STATE-RECONCILIATION-2026-08-28.md"
+    ]
+  },
+  "live_candidate": {
+    "status": "FAIL_4_HIGH",
+    "high_count": 4,
+    "high_packages": [
+      "image-size",
+      "js-yaml",
+      "nanoid",
+      "vinext"
+    ],
+    "critical_count": 0
+  },
+  "runtime_binding": "NOT_ESTABLISHED",
+  "exploitability": "NOT_ASSESSED",
+  "reconciliation_required": true,
+  "auto_reconciliation": false,
+  "authorization": "NONE",
+  "limitations": [
+    "The live audit is a time-bound candidate observation and does not overwrite canonical retained status.",
+    "Package severity does not establish remote exploitability or production runtime binding.",
+    "The npm advisory database can change after this observation."
+  ]
+}

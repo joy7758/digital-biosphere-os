@@ -1,0 +1,54 @@
+{
+  "$schema": "./technical-first-run-receipt.schema.v0.1.json",
+  "document_id": "TITMAS-COMMERCIAL-EVALUATION-TECHNICAL-FIRST-RUN-RECEIPT-0.1",
+  "version": "0.1.0",
+  "status": "PASS_WITH_PRESERVED_FAILED_ATTEMPTS",
+  "observed_at": "2026-07-27T10:23:08Z",
+  "environment": {
+    "python": "3.14.5",
+    "package": "digital-biosphere-os-preview",
+    "package_version": "0.1.0.dev0",
+    "clean_virtual_environment": true
+  },
+  "public_artifacts": {
+    "fixture_url": "https://redcrag.cn/examples/titmas-first-run/entity-object.synthetic.v0.1.json",
+    "fixture_sha256": "d2f4bc806431a028c3323468850988a26584d6f370a5f4c843b31ea8a625a88c",
+    "wheel_url": "https://redcrag.cn/downloads/digital_biosphere_os_preview-0.1.0.dev0-py3-none-any.whl",
+    "wheel_sha256": "edf92e548860384b1416a612a7e319e0d994bb324f8621847d0d154624ae8f09",
+    "pack_sha256": "49dfd495df020fe357ddf9507d7d9d0efeede72c77a42a86cb14206af73ec4d5",
+    "first_run_guide_sha256": "e99f136e3d81afd3d3db8983bfcb5fe0380827e0d9f4817cb7f6e88bad4e4495"
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "status": "FAIL",
+      "failure_class": "LOCAL_HARNESS_WHEEL_FILENAME_ERROR",
+      "detail": "Downloaded wheel was renamed to dbos.whl; pip rejected the invalid wheel filename.",
+      "product_failure": false
+    },
+    {
+      "attempt": 2,
+      "status": "FAIL",
+      "failure_class": "LOCAL_HARNESS_NO_DEPS_DEVIATION",
+      "detail": "Harness used --no-deps, which is not in the public guide; dbos-validate then lacked jsonschema.",
+      "product_failure": false
+    },
+    {
+      "attempt": 3,
+      "status": "PASS",
+      "failure_class": null,
+      "detail": "Exact wheel filename and normal dependency installation; dbos-validate returned PASS with explicit limitations.",
+      "product_failure": false
+    }
+  ],
+  "final_result": {
+    "exit_code": 0,
+    "validator_result": "PASS",
+    "validator_output_sha256": "996c1d01dbe733d6e5e8548b6001fe0bacd827cfd9698b019e10801ca172b10e",
+    "pass_meaning": "LOCAL_STRUCTURE_AND_GOVERNANCE_CONSTRAINTS_PASS_ONLY",
+    "runtime_started": false,
+    "agent_created": false,
+    "entity_created": false,
+    "permission_created": false
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "$schema": "architecture/schemas/commercial-readiness-v1.0.schema.json",
+  "readiness_version": "1.0",
+  "observed_at": "2026-08-12T21:34:52+08:00",
+  "commercial_technical_ready": false,
+  "paid_beta_ready": false,
+  "production_ready": false,
+  "mature_commercial_infrastructure": false,
+  "technical_gates": {
+    "multi_tenant_model": "PASS",
+    "tenant_bound_credentials": "PASS",
+    "usage_metering": "PASS",
+    "billing_ledger": "PASS",
+    "signed_receipts": "FAILED_RETAINED",
+    "agent_native_onboarding": "IN_PROGRESS",
+    "d04_final_disposition": "FAILED_RETAINED",
+    "final_form_adoption_audit": "PASS_WITH_LIMITATIONS",
+    "final_form_implementation": "IN_PROGRESS",
+    "public_safe_sdks_and_adapters": "PASS_WITH_LIMITATIONS",
+    "d29_customer_entry_reference": "PASS_WITH_LIMITATIONS",
+    "d29_read_only_console_reference": "PASS_WITH_LIMITATIONS",
+    "d29_software_delivery_proof": "PASS_WITH_LIMITATIONS",
+    "d29_commercial_delivery_documentation": "PASS_WITH_LIMITATIONS",
+    "d29_pricing": "BLOCKED",
+    "d29_contracts": "WAITING_FOR_HUMAN_DECISION",
+    "d29_support": "BLOCKED",
+    "d29_customer_onboarding": "NOT_STARTED",
+    "d29_sales_materials": "PASS_WITH_LIMITATIONS",
+    "d29_multi_agent_commercial_validation": "PASS_WITH_LIMITATIONS",
+    "d29_live_public_discovery": "FAILED_RETAINED",
+    "d29_durable_credential_lifecycle": "PASS_WITH_LIMITATIONS",
+    "d29_workspace_audit_export": "PASS_WITH_LIMITATIONS",
+    "d29_workspace_data_lifecycle": "PASS_WITH_LIMITATIONS",
+    "d29_security_drill_readiness": "PASS_WITH_LIMITATIONS"
+  },
+  "operational_gates": {
+    "production_candidate_deployment": "PASS_WITH_LIMITATIONS",
+    "backup_restore_drill": "FAILED_RETAINED",
+    "production_ledger_clean_genesis": "NOT_STARTED",
+    "production_signer": "NOT_STARTED",
+    "incident_drill": "PASS_WITH_LIMITATIONS",
+    "formal_rollback_drill": "PASS_WITH_LIMITATIONS",
+    "load_test": "PASS_WITH_LIMITATIONS",
+    "internal_72_hour_soak": "NOT_STARTED",
+    "production_candidate_7_day_soak": "NOT_STARTED",
+    "commercial_30_day_observation": "NOT_STARTED"
+  },
+  "external_evidence": {
+    "external_agent_frameworks": 0,
+    "external_agent_identities": 0,
+    "external_agent_tenants": 0,
+    "valid_external_calls": 0,
+    "adoption_events": 0,
+    "d29_api_sessions": 12,
+    "d29_valid_external_agent_sessions": 10,
+    "d29_distinct_valid_providers": 4,
+    "d29_distinct_valid_model_families": 5,
+    "d29_distinct_valid_entry_surfaces": 3
+  },
+  "commercial_evidence": {
+    "paying_principals": 0,
+    "real_payment_collection_confirmed": false,
+    "successful_protected_calls_30d": 0,
+    "active_external_agent_identities_30d": 0
+  },
+  "security": {
+    "critical_findings_open": 0,
+    "high_findings_without_mitigation": 0,
+    "cross_tenant_leakage_findings": 0
+  },
+  "next_human_decision": "D29_SECOND_PERSON_SUPPORT_SECURITY_BACKUP_INDEPENDENT_EVALUATION_AND_REMAINING_COMMERCIAL_GATES"
+}

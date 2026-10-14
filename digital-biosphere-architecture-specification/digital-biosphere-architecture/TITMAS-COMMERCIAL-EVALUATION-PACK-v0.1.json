@@ -1,0 +1,117 @@
+{
+  "$schema": "./architecture/schemas/titmas-commercial-evaluation-pack.schema.v0.1.json",
+  "document_id": "TITMAS-COMMERCIAL-EVALUATION-PACK-0.1",
+  "version": "0.1.0",
+  "status": "COMMERCIAL_EVALUATION_PACKAGE_PREPARED_NOT_AVAILABLE_OFFERING",
+  "observed_at": "2026-07-27",
+  "positioning": {
+    "en": "Trusted Multi-Agent Infrastructure",
+    "zh": "可信多智能体基础设施",
+    "value_problem": "AGENT_EXECUTION_ACCOUNTABILITY",
+    "primary_customer": "AI_AGENT"
+  },
+  "evaluation_scope": {
+    "can_evaluate": [
+      "DBOS_V0_1_OBJECT_CONTRACTS",
+      "OFFLINE_FAIL_CLOSED_VALIDATION",
+      "BOUNDARY_DISCLOSURE",
+      "PUBLIC_PACKAGE_INSTALLABILITY"
+    ],
+    "cannot_evaluate": [
+      "PRODUCTION_RUNTIME",
+      "HOSTED_SERVICE",
+      "REAL_AGENT_EXECUTION",
+      "TRUTH",
+      "AUTHORITY",
+      "PERMISSION",
+      "CERTIFICATION"
+    ]
+  },
+  "public_artifact": {
+    "distribution": "digital-biosphere-os-preview",
+    "version": "0.1.0.dev0",
+    "python_requires": ">=3.11",
+    "url": "https://github.com/joy7758/digital-biosphere-architecture-specification/releases/download/v0.1-developer-preview/digital_biosphere_os_preview-0.1.0.dev0-py3-none-any.whl",
+    "sha256": "edf92e548860384b1416a612a7e319e0d994bb324f8621847d0d154624ae8f09",
+    "install_command": "python3 -m pip install https://github.com/joy7758/digital-biosphere-architecture-specification/releases/download/v0.1-developer-preview/digital_biosphere_os_preview-0.1.0.dev0-py3-none-any.whl",
+    "cli_entry": "dbos-validate OBJECT_FILE [--schema-id SCHEMA_ID]"
+  },
+  "object_contracts": [
+    "dbio://schema/entity-object/v0.1",
+    "dbio://schema/capability-object/v0.1",
+    "dbio://schema/execution-object/v0.1",
+    "dbio://schema/evidence-reference-object/v0.1",
+    "dbio://schema/verification-object/v0.1"
+  ],
+  "first_run": {
+    "guide": "TITMAS-FIRST-RUN-v0.1.md",
+    "synthetic_fixture": "examples/titmas-first-run/entity-object.synthetic.v0.1.json",
+    "command": "dbos-validate examples/titmas-first-run/entity-object.synthetic.v0.1.json",
+    "expected_result": "PASS",
+    "pass_meaning": "LOCAL_STRUCTURE_AND_GOVERNANCE_CONSTRAINTS_PASS_ONLY"
+  },
+  "validation_basis": {
+    "dbos_tests_passed": 334,
+    "dbos_validators_passed": 34,
+    "clean_wheel_install_passed": true,
+    "installed_cli_help_passed": true,
+    "remote_baseline_commit": "db50ce1743c5cbe20d72558b1d2ee8adad4231a5",
+    "remote_json_documents_parsed": 1023,
+    "remote_first_run_passed": true,
+    "remote_validation_report": "TITMAS-COMMERCIAL-EVALUATION-PACK-v0.1-VALIDATION-REPORT.md",
+    "remote_secret_scan_passed": true
+  },
+  "agent_advisory": {
+    "provider": "ALIBABA_CLOUD_MODEL_STUDIO",
+    "model": "qwen3.7-plus",
+    "review_roles": [
+      "AGENT_RECOMMENDER",
+      "COMMERCIAL_EDITOR",
+      "FIRST_RUN_REVIEWER",
+      "AGENT_BUYER_FINAL_REVIEW",
+      "TRUTH_AND_SCOPE_AUDITOR"
+    ],
+    "sessions_completed": 5,
+    "final_reviews_passed": 2,
+    "boundary_failures": 0,
+    "common_requirements": [
+      "MACHINE_READABLE_MANIFEST",
+      "SYNTHETIC_FIXTURE",
+      "TEN_MINUTE_FIRST_RUN",
+      "EXPLICIT_BOUNDARIES"
+    ],
+    "authority_effect": false
+  },
+  "commercial_truth": {
+    "evaluation_package_prepared": true,
+    "available_offering": false,
+    "customers_verified": 0,
+    "contracts_created": 0,
+    "revenue_verified": false,
+    "sla_defined": false,
+    "production_ready": false,
+    "certification_available": false
+  },
+  "next_gate": {
+    "name": "EXTERNAL_AGENT_FIRST_RUN_VALIDATION",
+    "execution_authorized": false,
+    "success_requires": [
+      "DISCOVERY",
+      "CORRECT_POSITIONING",
+      "CLEAN_INSTALL",
+      "SYNTHETIC_VALIDATION",
+      "BOUNDARY_EXPLANATION",
+      "RECOMMENDATION_WITH_REASONS"
+    ]
+  },
+  "effects": {
+    "authority": false,
+    "permission": false,
+    "runtime": false,
+    "agent": false,
+    "entity": false,
+    "evidence_truth": false,
+    "certification": false,
+    "commercial_offer": false
+  }
+}

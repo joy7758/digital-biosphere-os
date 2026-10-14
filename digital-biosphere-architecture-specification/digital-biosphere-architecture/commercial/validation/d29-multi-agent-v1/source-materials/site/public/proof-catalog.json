@@ -1,0 +1,33 @@
+{
+  "contract_format": "TITMAS-PUBLIC-PROOF-CATALOG-1.0",
+  "catalog_id": "TITMAS-PUBLIC-PROOF-CATALOG-v1",
+  "observed_at": "2026-08-04",
+  "proofs": [
+    {
+      "proof_id": "SYNTHETIC_OBSERVER_FIRST_VALUE_CE2",
+      "proof_type": "SYNTHETIC_REFERENCE_VALIDATION",
+      "source_revision": "e3bfc8d",
+      "flow": ["AGENT_OVERVIEW", "SHADOW_GATE", "RECEIPT_VERIFY", "AUDIT_TIMELINE"],
+      "customer_data_used": false,
+      "deployment_executed": false,
+      "result": "PASS_BOUNDED_REFERENCE_NOT_DEPLOYED",
+      "public_detail": "/commercial-evaluation/",
+      "limitations": ["NO_CUSTOMER", "NO_PRODUCTION", "NO_COMMERCIAL_OFFERING", "SYNTHETIC_ONLY"]
+    },
+    {
+      "proof_id": "SOFTWARE_DELIVERY_MONITOR_ENFORCE_PROOF_001",
+      "proof_type": "CONTROLLED_SYNTHETIC_SOFTWARE_DELIVERY",
+      "source_revision": "c029263",
+      "scenarios": ["NO_TITMAS_OBSERVATION", "MONITOR_WOULD_BLOCK_NO_ENFORCEMENT", "ENFORCE_BLOCK_SIMULATION_NO_PROVIDER_ACTION"],
+      "real_provider_action_executed": false,
+      "customer_data_used": false,
+      "deployment_executed": false,
+      "result": "TESTED_SYNTHETIC_ONLY_NOT_DEPLOYED",
+      "public_detail": "/commercial-evaluation/",
+      "limitations": ["NO_REAL_MERGE", "NO_REAL_RELEASE", "NO_CUSTOMER_AUTHORIZATION", "NO_PRODUCTION_ENFORCEMENT"]
+    }
+  ],
+  "proof_ne_adoption": true,
+  "proof_ne_production_readiness": true,
+  "receipt_ne_truth": true
+}

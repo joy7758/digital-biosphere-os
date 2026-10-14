@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "dbio://schema/evidence-reference-object/v0.1",
+  "title": "DBOS Evidence Reference Object Schema v0.1",
+  "description": "Machine-readable structural contract for an Evidence Reference. A valid reference does not create Evidence, verify integrity, prove truth, promote an evidence level, or grant permission.",
+  "x-dbios-schema-version": "v0.1",
+  "x-dbios-object-contract-version": "v0.1",
+  "allOf": [
+    {"$ref": "dbio://schema/common-object/v0.1"},
+    {
+      "type": "object",
+      "required": [
+        "evidence_id",
+        "execution_reference",
+        "source_reference",
+        "integrity_status"
+      ],
+      "properties": {
+        "object_type": {"const": "EVIDENCE_REFERENCE"},
+        "status": {
+          "enum": ["UNKNOWN", "DECLARED", "SUPERSEDED", "REVOKED"]
+        },
+        "evidence_id": {
+          "$ref": "dbio://schema/common-object/v0.1#/$defs/nonEmptyString"
+        },
+        "execution_reference": {
+          "allOf": [
+            {"$ref": "dbio://schema/common-object/v0.1#/$defs/referenceObject"},
+            {"properties": {"reference_type": {"const": "EXECUTION"}}}
+          ]
+        },
+        "source_reference": {
+          "allOf": [
+            {"$ref": "dbio://schema/common-object/v0.1#/$defs/referenceObject"},
+            {"properties": {"reference_type": {"const": "EVIDENCE"}}}
+          ]
+        },
+        "integrity_status": {
+          "enum": ["UNKNOWN", "PENDING"]
+        }
+      }
+    }
+  ],
+  "unevaluatedProperties": false,
+  "x-dbios-invariants": [
+    {
+      "name": "object_id_equals_evidence_id",
+      "left": "$.object_id",
+      "operator": "EQUALS",
+      "right": "$.evidence_id",
+      "validator_required": true,
+      "error": "CONFLICT"
+    },
+    {
+      "name": "source_matches_source_reference_owner",
+      "validator_required": true,
+      "error": "CONFLICT"
+    }
+  ],
+  "x-dbios-prohibited-fields": [
+    "truth_confirmed",
+    "evidence_level_promoted",
+    "verification_passed",
+    "permission_granted",
+    "delete_history"
+  ],
+  "x-dbios-boundaries": {
+    "evidence_creation_effect": "NONE",
+    "evidence_mutation_effect": "NONE",
+    "evidence_level_effect": "NONE",
+    "truth_effect": "NONE",
+    "authority_effect": "NONE",
+    "permission_effect": "NONE"
+  }
+}

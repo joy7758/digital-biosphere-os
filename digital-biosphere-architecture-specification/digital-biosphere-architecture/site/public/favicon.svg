@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="TITMAS">
+  <rect width="64" height="64" rx="12" fill="#ffffff"/>
+  <path d="M32 5 45 18 32 31 19 18Z" fill="#f5a700"/>
+  <path d="M18 19 31 32 18 45 5 32Z" fill="#4f61ab"/>
+  <path d="M46 19 59 32 46 45 33 32Z" fill="#28b8cf"/>
+  <path d="M32 33 45 46 32 59 19 46Z" fill="#303953"/>
+</svg>

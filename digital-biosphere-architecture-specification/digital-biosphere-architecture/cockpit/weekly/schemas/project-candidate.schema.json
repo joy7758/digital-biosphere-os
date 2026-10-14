@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:dba:weekly:project-candidate:0.1",
+  "title": "Discovered Project Candidate",
+  "type": "object",
+  "required": ["candidate_id", "project_id", "display_name", "source_reference", "discovered_at", "lifecycle", "current_state", "scan_authorized", "private_content_scanned", "read_only"],
+  "properties": {
+    "candidate_id": {"type": "string", "minLength": 1},
+    "project_id": {"type": "string", "minLength": 1},
+    "display_name": {"type": "string", "minLength": 1},
+    "source_reference": {"type": "string", "minLength": 1},
+    "discovered_at": {"type": "string", "minLength": 1},
+    "lifecycle": {"type": "array", "items": {"enum": ["DISCOVERED", "ADMITTED", "MONITORED", "RETIRED"]}, "minItems": 1},
+    "current_state": {"enum": ["DISCOVERED", "ADMITTED", "MONITORED", "RETIRED"]},
+    "scan_authorized": {"type": "boolean"},
+    "private_content_scanned": {"type": "boolean"},
+    "read_only": {"const": true},
+    "note": {"type": "string"}
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,93 @@
+{
+  "document_id": "TITMAS-COMMERCIAL-PRODUCT-CONVERGENCE-STATUS-1.0",
+  "schema_version": "1.0.0",
+  "observed_at": "2026-08-13T20:31:00+08:00",
+  "status": "ENGINEERING_CANDIDATE_PENDING_ELAPSED_SOAK_TIME",
+  "source_truth": {
+    "governance": {
+      "repository": "joy7758/digital-biosphere-architecture-specification",
+      "base_commit": "415a5cccd7a06334d28a8a6eae4c470cf6d1aafa",
+      "projection_commit": "08205aadc30cb81f2284c7437d682ab2b3916169",
+      "pull_request": "https://github.com/joy7758/digital-biosphere-architecture-specification/pull/143",
+      "pull_request_state": "MERGED",
+      "merge_commit": "ba913e64c50e8be2f0a1b99ac03c771a9e5e3c35"
+    },
+    "gateway": {
+      "repository": "joy7758/titmas-sandbox-gateway",
+      "base_commit": "8437b2c1ac860f10953ff60603ddd6814b97393a",
+      "candidate_parent_commit": "1a065f1702e355d5f5ed566bdfd3e895cdca2540",
+      "candidate_commit": "1a35dad236d1d6903127d1960d15a27edccd667f",
+      "draft_pr": "https://github.com/joy7758/titmas-sandbox-gateway/pull/59",
+      "merged_prerequisite": {
+        "pull_request": "https://github.com/joy7758/titmas-sandbox-gateway/pull/50",
+        "merge_commit": "8437b2c1ac860f10953ff60603ddd6814b97393a",
+        "candidate_equivalent_patch_retained": true
+      },
+      "ci": "PASS_3_OF_3"
+    },
+    "integrations": {
+      "repository": "joy7758/titmas-integrations",
+      "base_commit": "6d1f076f886b99241a0f1a75e76166ff66f7279b",
+      "candidate_commit": "06e60b4261be43fc0c5442509937456768437ce7",
+      "pull_request": "https://github.com/joy7758/titmas-integrations/pull/6",
+      "pull_request_state": "MERGED",
+      "merge_commit": "68a05db2a59591bf89f8c31e0d51f94b51e68ed6",
+      "ci": "PASS_9_OF_9"
+    }
+  },
+  "implementation_projection": {
+    "unified_entry_alpha_implemented": true,
+    "web_ui_implemented": true,
+    "agent_machine_entry_implemented": true,
+    "public_product_count": 4,
+    "observer_is_product": false,
+    "dcell_layer_is_product": false,
+    "duplicate_core_created": false,
+    "real_enforcement_executed": false
+  },
+  "validation": {
+    "result": "PASS_WITH_RECORDED_LIMITATIONS",
+    "receipt_generation": "PASS",
+    "receipt_verification": "PASS",
+    "audit_timeline": "PASS",
+    "second_task_reuse": "PASS",
+    "agent_concurrency_max_tested": 10,
+    "cross_contamination_findings": 0,
+    "synthetic_data_only": true,
+    "customer_data_used": false,
+    "independent_agent_tested": false,
+    "independent_human_tested": false
+  },
+  "soak": {
+    "target_hours": 72,
+    "started_at": "2026-08-13T04:39:48+08:00",
+    "started": true,
+    "complete": false,
+    "elapsed_hours_observed": 0.000021,
+    "first_round_requests": 9,
+    "first_round_failures": 0,
+    "first_round_receipt_verification_failures": 0,
+    "first_round_state_leakage_findings": 0,
+    "production_runtime": false
+  },
+  "candidate": {
+    "engineering_package_created": true,
+    "commercial_engineering_candidate": "CONDITIONAL_PENDING_ELAPSED_SOAK_TIME",
+    "private_monitor_pilot_candidate": true,
+    "commercial_private_pilot_ready": false,
+    "production_ready": false,
+    "commercial_offering_available": false
+  },
+  "authority": {
+    "merge_authorized": false,
+    "merge_authority_scope": "REMAINING_GATEWAY_CONVERGENCE_CANDIDATE_ONLY",
+    "integrations_pr_6_merge_executed": true,
+    "cockpit_status_projection_merge_executed": true,
+    "cockpit_status_projection_merge_commit": "ba913e64c50e8be2f0a1b99ac03c771a9e5e3c35",
+    "release_authorized": false,
+    "deployment_authorized": false,
+    "customer_data_authorized": false,
+    "payment_authorized": false
+  },
+  "drift_check_result": "PASS_WITH_RECORDED_LIMITATIONS"
+}

@@ -1,0 +1,24 @@
+# Baidu Intelligent Cloud AI Guardrails
+
+- Source URLs: https://cloud.baidu.com/product/AIGCSEC/platform.html
+- Source access time: 2026-08-03
+- Page title: AI安全护栏
+- Product status: public commercial product with purchase, console and trial links.
+- Target customer / buyer / user: enterprise AI security teams and application operators.
+- Pricing status: purchase path exists; exact public pricing was not normalized in this pass.
+- Architecture summary: input, reasoning, tool-call and output safety layer covering content risk, jailbreak, privacy leakage and Agent anomalies.
+- Control plane / data plane: managed Baidu Cloud product; exact private-data-plane contract requires vendor review.
+- Enforcement point: AI application/model/tool-call guardrail.
+- Integration: lightweight integration with AI applications and Baidu security services.
+- Tenant / workspace / identity: cloud-account and application-resource model; Agent identity details not verified.
+- Policy / approval / decision: tool risk detection, real-time blocking and mandatory approval are vendor-described capabilities.
+- Event / receipt / audit / retention: evaluation and quality records are described; portable signed receipt and offline verifier are not verified.
+- Monitor / enforce: real-time intervention is explicit; shadow Monitor semantics are not verified.
+- Deployment modes: managed cloud; private mode not verified from reviewed page.
+- Console navigation and UI: guardrail type, rule, event, evaluation and trial/purchase entry patterns.
+- Commercial funnel: immediate purchase, console and trial application.
+- Strengths: broad Chinese content/tool safety and strong domestic distribution.
+- Weaknesses relative to TITMAS: content-security/firewall category; proof portability and authority separation are not established.
+- Applicable lessons: Chinese risk vocabulary, explicit blocking/approval states and trial path.
+- Non-applicable lessons: building proprietary content classifiers, jailbreak detection or DLP.
+- Uncertainties: data residency, private deployment, reason-code portability and independent audit semantics.

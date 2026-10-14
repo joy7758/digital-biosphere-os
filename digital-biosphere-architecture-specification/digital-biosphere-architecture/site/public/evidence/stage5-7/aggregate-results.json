@@ -1,0 +1,148 @@
+{
+  "authority_risk_count": 0,
+  "average_roi_score": 12.504572,
+  "by_model": {
+    "deepseek-v4-pro-260425": {
+      "average_roi_score": 8.627922,
+      "median_latency_seconds": 40.829113,
+      "option_d_included_count": 6,
+      "run_count": 6,
+      "selection_outcomes": {
+        "MULTIPLE_SELECTED": 5,
+        "TITMAS_SELECTED": 1
+      },
+      "task_completed_count": 4
+    },
+    "ernie-5.1": {
+      "average_roi_score": 14.213934,
+      "median_latency_seconds": 34.355131,
+      "option_d_included_count": 6,
+      "run_count": 6,
+      "selection_outcomes": {
+        "MULTIPLE_SELECTED": 4,
+        "TITMAS_SELECTED": 2
+      },
+      "task_completed_count": 6
+    },
+    "qwen3.7-max": {
+      "average_roi_score": 12.977398,
+      "median_latency_seconds": 45.661341,
+      "option_d_included_count": 6,
+      "run_count": 6,
+      "selection_outcomes": {
+        "MULTIPLE_SELECTED": 5,
+        "TITMAS_SELECTED": 1
+      },
+      "task_completed_count": 6
+    },
+    "qwen3.8-max-preview": {
+      "average_roi_score": 14.199032,
+      "median_latency_seconds": 32.792722,
+      "option_d_included_count": 6,
+      "run_count": 6,
+      "selection_outcomes": {
+        "MULTIPLE_SELECTED": 3,
+        "TITMAS_SELECTED": 3
+      },
+      "task_completed_count": 6
+    }
+  },
+  "by_scenario": {
+    "ROI-01": {
+      "average_roi_score": 9.234853,
+      "median_latency_seconds": 32.22016,
+      "option_d_included_count": 4,
+      "run_count": 4,
+      "selection_outcomes": {
+        "MULTIPLE_SELECTED": 4
+      },
+      "task_completed_count": 3
+    },
+    "ROI-02": {
+      "average_roi_score": 9.581072,
+      "median_latency_seconds": 37.547619,
+      "option_d_included_count": 4,
+      "run_count": 4,
+      "selection_outcomes": {
+        "MULTIPLE_SELECTED": 4
+      },
+      "task_completed_count": 3
+    },
+    "ROI-03": {
+      "average_roi_score": 13.507941,
+      "median_latency_seconds": 39.352248,
+      "option_d_included_count": 4,
+      "run_count": 4,
+      "selection_outcomes": {
+        "MULTIPLE_SELECTED": 2,
+        "TITMAS_SELECTED": 2
+      },
+      "task_completed_count": 4
+    },
+    "ROI-04": {
+      "average_roi_score": 14.801453,
+      "median_latency_seconds": 33.143572,
+      "option_d_included_count": 4,
+      "run_count": 4,
+      "selection_outcomes": {
+        "TITMAS_SELECTED": 4
+      },
+      "task_completed_count": 4
+    },
+    "ROI-05": {
+      "average_roi_score": 12.537773,
+      "median_latency_seconds": 41.155228,
+      "option_d_included_count": 4,
+      "run_count": 4,
+      "selection_outcomes": {
+        "MULTIPLE_SELECTED": 3,
+        "TITMAS_SELECTED": 1
+      },
+      "task_completed_count": 4
+    },
+    "ROI-06": {
+      "average_roi_score": 15.364339,
+      "median_latency_seconds": 45.224685,
+      "option_d_included_count": 4,
+      "run_count": 4,
+      "selection_outcomes": {
+        "MULTIPLE_SELECTED": 4
+      },
+      "task_completed_count": 4
+    }
+  },
+  "claims": {
+    "commercial_ready": false,
+    "customer_adoption_established": false,
+    "formal_conformance_service": false,
+    "human_customer_adoption_validated": false,
+    "production_ready": false
+  },
+  "compute_cost_status": "NOT_ASSESSED",
+  "exact_model_count": 4,
+  "execution_completed_at": "2026-07-30T05:47:03.916294+00:00",
+  "execution_started_at": "2026-07-30T05:31:48.632469+00:00",
+  "harness_commit": "a39917f870b53b055006a264c6fdfb1b59261c6e",
+  "input_tokens": 75773,
+  "median_latency_seconds": 35.715448,
+  "option_d_exclusive_selection_count": 7,
+  "option_d_exclusive_selection_rate": 0.291667,
+  "option_d_included_count": 24,
+  "option_d_inclusion_rate": 1.0,
+  "option_d_ranked_first_count": 24,
+  "output_tokens": 40213,
+  "provider_call_count": 68,
+  "provider_count": 3,
+  "report_id": "TITMAS-STAGE-5.7-AGENT-NATIVE-SELECTION-ROI-v0.1",
+  "selection_outcomes": {
+    "MULTIPLE_SELECTED": 17,
+    "TITMAS_SELECTED": 7
+  },
+  "task_completed_count": 22,
+  "tool_call_count": 174,
+  "transport_outcomes": {
+    "COMPLETED": 24
+  },
+  "unsupported_claim_count": 0,
+  "valid_run_count": 24
+}

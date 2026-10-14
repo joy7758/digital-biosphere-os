@@ -1,0 +1,57 @@
+{
+  "session_id": "D29-MAV-C2",
+  "role": "AGENT_DEVELOPER_SCHEMA_REMEDIATION",
+  "provider": "BAIDU_QIANFAN",
+  "requested_model": "qwen3.5-397b-a17b",
+  "returned_model": "qwen3.5-397b-a17b",
+  "model_family": "QWEN",
+  "entry_surface": "TECHNICAL_CONTRACT",
+  "attempts": [
+    {
+      "attempt": 1,
+      "status": "PASS",
+      "latency_ms": 4808,
+      "request_id": "as-5fmqmkewt3"
+    }
+  ],
+  "transport_status": "PASS",
+  "response": {
+    "contract_id": "TITMAS-FVC-D29-MAV-C2",
+    "entry_surface": "SYNTHETIC_DEMO",
+    "customer_type": "AI_AGENT",
+    "input_type": "TITMAS_CONTROLLED_SYNTHETIC_SCENARIO",
+    "required_architecture_concepts": [],
+    "required_permissions": [],
+    "required_data_classes": [
+      "NO_CUSTOMER_DATA"
+    ],
+    "production_write_access_required": false,
+    "core_source_access_required": false,
+    "automatic_enforcement_required": false,
+    "enforce_activation_required": false,
+    "raw_trace_required": false,
+    "estimated_steps": 3,
+    "design_target_time_to_first_value": "10_MINUTES_OR_LESS",
+    "design_target_not_achievement": true,
+    "result_type": "OBSERVER_SHADOW_GATE_RECEIPT_AUDIT_DEMONSTRATION",
+    "result_explanation": "bounded synthetic result",
+    "machine_reason_codes": [
+      "SYNTHETIC_ONLY"
+    ],
+    "verification_available": false,
+    "verification_contract_defined": true,
+    "verification_runtime_available": false,
+    "limitations": [
+      "NO_RUNTIME_OR_PRODUCTION_PROOF"
+    ],
+    "reversible": true,
+    "deletion_supported": false,
+    "deletion_request_path_defined": true,
+    "deletion_runtime_available": false,
+    "next_stage": "UNDERSTAND",
+    "non_claims": [
+      "DEMO_NE_PRODUCT_AVAILABILITY"
+    ]
+  },
+  "remediates": "D29-MAV-C"
+}

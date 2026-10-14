@@ -1,0 +1,24 @@
+{
+  "version": "1.0",
+  "access_date": "2026-08-03",
+  "classification": "PRIVATE_RESEARCH_BASELINE",
+  "comparison": [
+    {"name":"Credo AI Agent Governor","category":"governance","control_plane":"vendor governance platform","data_plane":"agent harness lifecycle hooks","enforcement_point":"before and after tool calls","titmas_lesson":"policy-to-runtime navigation and design-partner funnel","do_not_copy":"complete regulatory intelligence platform"},
+    {"name":"Cisco AI Defense","category":"runtime_security","control_plane":"cloud management and policy","data_plane":"Inspection API or gateway","enforcement_point":"inspection disposition or in-path gateway","titmas_lesson":"separate monitor disposition from actual enforcement","do_not_copy":"prompt and content security classifier"},
+    {"name":"Permit.io","category":"authorization","control_plane":"policy and tenant management","data_plane":"authorization and MCP gateway","enforcement_point":"tool authorization","titmas_lesson":"principal, tenant, environment, approval and metering clarity","do_not_copy":"general-purpose authorization platform"},
+    {"name":"Cerbos","category":"authorization","control_plane":"Cerbos Hub","data_plane":"customer-hosted PDP fleet","enforcement_point":"application PEP calling PDP","titmas_lesson":"management, decision and enforcement separation","do_not_copy":"Cerbos policy language"},
+    {"name":"Galileo","category":"observability_evaluation","control_plane":"agent reliability platform","data_plane":"trace and guardrail integrations","enforcement_point":"runtime guardrails before output or action","titmas_lesson":"graph and timeline investigation","do_not_copy":"general trace or judge platform"},
+    {"name":"LangSmith","category":"observability_evaluation","control_plane":"cloud or hybrid control plane","data_plane":"cloud, hybrid or self-hosted","enforcement_point":"instrumented agent application","titmas_lesson":"workspace, retention and usage information architecture","do_not_copy":"agent runtime and LLMOps platform"},
+    {"name":"WitnessAI","category":"runtime_security","control_plane":"unified Observe Control Protect console","data_plane":"network and agent integrations","enforcement_point":"agent tool boundary and runtime scan","titmas_lesson":"unified enterprise packaging","do_not_copy":"shadow-AI discovery, DLP or full traffic inspection"},
+    {"name":"HiddenLayer","category":"runtime_security","control_plane":"AI Security Platform","data_plane":"gateway and framework integrations","enforcement_point":"agentic runtime","titmas_lesson":"investigation and enforcement progression","do_not_copy":"model supply-chain scanner or attack simulation"},
+    {"name":"Alibaba AgentLoop","category":"observability_evaluation","control_plane":"workspace, data, evaluation and experiment console","data_plane":"trace ingestion and registered services","enforcement_point":"none claimed as primary action gate","titmas_lesson":"China console, dataset, experiment and metering patterns","do_not_copy":"Trace2Dataset and full evaluation flywheel"},
+    {"name":"Tencent Agent Gateway","category":"gateway","control_plane":"cloud gateway console","data_plane":"model, MCP and A2A gateway","enforcement_point":"traffic gateway","titmas_lesson":"Chinese enterprise gateway integration vocabulary","do_not_copy":"model routing or universal gateway"},
+    {"name":"Volcengine AgentKit","category":"runtime_platform","control_plane":"enterprise Agent platform","data_plane":"managed runtime, tools, memory and knowledge","enforcement_point":"runtime and identity controls","titmas_lesson":"tenant and runtime boundary presentation","do_not_copy":"Agent builder or runtime"},
+    {"name":"TraceSeal","category":"receipt","control_plane":"transparency log and trust tooling","data_plane":"sandbox observer and verifier","enforcement_point":"sandbox execution","titmas_lesson":"offline verifier and explicit non-claims","do_not_copy":"brand, receipt schema or sandbox implementation"}
+  ],
+  "non_implications": {
+    "vendor_claim": "not independent performance evidence",
+    "official_page": "not customer adoption proof",
+    "mapping": "not integration or standard adoption"
+  }
+}

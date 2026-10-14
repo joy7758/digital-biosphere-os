@@ -1,0 +1,38 @@
+{
+  "cell_id": "HANDOFF_CELL",
+  "version": "0.1",
+  "name": "HANDOFF_CELL",
+  "niche": "bounded weekly cockpit observation",
+  "module": "cells.handoff",
+  "class": "Handoff_CellCell",
+  "inputs": [
+    "findings"
+  ],
+  "outputs": [
+    "handoff-packets"
+  ],
+  "source_dependencies": [
+    "admitted-findings"
+  ],
+  "evidence_requirements": [
+    "owner-conversation",
+    "source-reference"
+  ],
+  "freshness_policy": "INHERIT_FINDING",
+  "authority_boundaries": {
+    "can_write_source_project": false,
+    "can_create_pull_request": false,
+    "can_merge": false,
+    "can_deploy": false,
+    "can_authorize": false,
+    "can_change_project_priority": false
+  },
+  "failure_policy": {
+    "status": "NOT_ASSESSED",
+    "preserve_other_cells": true
+  },
+  "replacement": {
+    "replaceable": true,
+    "interface_version": "0.1"
+  }
+}

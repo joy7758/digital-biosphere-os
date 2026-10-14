@@ -1,0 +1,267 @@
+{
+  "schema_version": "0.1",
+  "catalog_id": "TITMAS-PUBLIC-UPDATES-0.1",
+  "observed_at": "2026-08-01T20:00:00+08:00",
+  "route_template": "/updates/{slug}/",
+  "categories": [
+    "RELEASE_NOTE",
+    "RESEARCH_UPDATE",
+    "DEMO_UPDATE",
+    "GOVERNANCE_NOTICE",
+    "MAINTENANCE_NOTICE"
+  ],
+  "announcement_policy": {
+    "maximum_visible": 1,
+    "selection_rule": "SEVERITY_DESC_THEN_EXPIRES_AT_ASC_THEN_EFFECTIVE_DATE_DESC",
+    "severity_allowed_for": [
+      "GOVERNANCE_NOTICE",
+      "MAINTENANCE_NOTICE"
+    ],
+    "expires_at_allowed_for_all_categories": true,
+    "null_expires_at_behavior": "EVERGREEN_NOT_PREFERRED_OVER_FINITE_ANNOUNCEMENTS",
+    "no_active_item_behavior": "DO_NOT_RENDER_ANNOUNCEMENT_DOM"
+  },
+  "truth_boundaries_schema": {
+    "type": "array",
+    "required": [
+      "scope",
+      "limitation"
+    ]
+  },
+  "filter_activation_gate": {
+    "interactive_filter_enabled": false,
+    "condition": "UPDATE_COUNT_GT_8_OR_CATEGORY_COUNT_GTE_3"
+  },
+  "items": [
+    {
+      "slug": "media-evidence-reference-demo",
+      "category": "DEMO_UPDATE",
+      "status": "PUBLISHED",
+      "audience": [
+        "AI_AGENT",
+        "DEVELOPER",
+        "MEDIA_REVIEWER",
+        "TECHNICAL_EVALUATOR"
+      ],
+      "effective_date": "2026-08-01T20:00:00+08:00",
+      "expires_at": null,
+      "is_announcement": false,
+      "severity": null,
+      "source_commit": "7eac452f66a2b7de525543f80b9a7cf1465ef9a1",
+      "source_url": "/media-evidence-profile.json",
+      "supersedes": null,
+      "title": {
+        "zh": "TITMAS 媒体证据行业页面与本地合成演示接入",
+        "en": "TITMAS Media Evidence application page and local synthetic demo added"
+      },
+      "summary": {
+        "zh": "新增广播电视和网络视听场景配置、三个合成演示场景及机器可读入口；不改变上游协议或核心实现。",
+        "en": "Adds a broadcasting and online-audiovisual profile, three synthetic demo scenarios, and a machine-readable entry without changing upstream protocols or core implementation."
+      },
+      "href": {
+        "zh": "/industry/media-evidence/",
+        "en": "/en/industry/media-evidence/"
+      },
+      "changes": {
+        "zh": [
+          "新增媒体证据行业页面与中英文路由。",
+          "新增正常生命周期、证据冲突和篡改检测三个纯前端场景。",
+          "新增 media-evidence-profile.json 智能体入口。",
+          "首页收敛为轮播与四个导航区块。"
+        ],
+        "en": [
+          "Added bilingual Media Evidence application routes.",
+          "Added frontend-only lifecycle, conflict, and tamper scenarios.",
+          "Added media-evidence-profile.json for agent discovery.",
+          "Reduced the homepage to a carousel and four navigation sections."
+        ]
+      },
+      "truth_boundaries": [
+        {
+          "scope": "DEMO_DATA",
+          "limitation": "SYNTHETIC_DATA_ONLY; no upload, external model, identity system, or persistent user data."
+        },
+        {
+          "scope": "VERIFICATION",
+          "limitation": "Local structure and integrity checks do not prove content truth."
+        },
+        {
+          "scope": "MATURITY",
+          "limitation": "PRODUCTION_READY=false; no customer adoption, external certification, or guaranteed-security claim."
+        }
+      ]
+    },
+    {
+      "slug": "stage5-7-agent-native-selection-roi",
+      "category": "RESEARCH_UPDATE",
+      "status": "PUBLISHED",
+      "audience": [
+        "AI_AGENT",
+        "DEVELOPER",
+        "TECHNICAL_EVALUATOR"
+      ],
+      "effective_date": "2026-07-30T03:00:00+08:00",
+      "expires_at": null,
+      "is_announcement": true,
+      "severity": null,
+      "source_commit": "ab1d875921d0a68c5b91fa054f692f1284a75949",
+      "source_url": "/evidence/stage5-7/evidence-manifest.json",
+      "supersedes": null,
+      "title": {
+        "zh": "Stage 5.7 智能体原生选择与 ROI 基准完成",
+        "en": "Stage 5.7 agent-native selection and ROI benchmark complete"
+      },
+      "summary": {
+        "zh": "3 个供应商、4 个精确模型、24 个隔离会话和独立审计已完成；结果仅证明合成基准中的智能体选择信号。",
+        "en": "Three providers, four exact models, twenty-four isolated sessions, and an independent audit are complete; the result is bounded to agent-selection signals in a synthetic benchmark."
+      },
+      "href": {
+        "zh": "/#agent-start",
+        "en": "/en/#agent-start"
+      },
+      "changes": {
+        "zh": [
+          "匿名 TITMAS 选项在 24/24 会话中排名第一。",
+          "7/24 会话独占选择该选项，17/24 同时保留其他方案。",
+          "公开聚合结果、审计、Manifest、限制和 24 份脱敏会话。",
+          "K3 未出现在已配置供应商库存中，因此未执行 K3 会话。"
+        ],
+        "en": [
+          "The anonymous TITMAS option ranked first in 24/24 sessions.",
+          "It was selected exclusively in 7/24 sessions; 17/24 retained alternatives.",
+          "Aggregate results, audit, manifest, limitations, and 24 sanitized sessions are public.",
+          "K3 was absent from the configured provider inventories, so no K3 session ran."
+        ]
+      },
+      "truth_boundaries": [
+        {
+          "scope": "AGENT_SELECTION",
+          "limitation": "Agent selection in a synthetic benchmark does not establish customer adoption."
+        },
+        {
+          "scope": "ROI",
+          "limitation": "The frozen-formula score is not measured monetary return or production cost."
+        },
+        {
+          "scope": "PRODUCTION",
+          "limitation": "PRODUCTION_READY=false."
+        }
+      ]
+    },
+    {
+      "slug": "information-architecture-v0-1",
+      "category": "RELEASE_NOTE",
+      "status": "PUBLISHED",
+      "audience": [
+        "RESEARCHER",
+        "DEVELOPER",
+        "TECHNICAL_EVALUATOR"
+      ],
+      "effective_date": "2026-07-28T12:20:00+08:00",
+      "expires_at": "2026-08-28T00:00:00+08:00",
+      "is_announcement": true,
+      "severity": null,
+      "source_commit": "6a30da9c3e4ea52885ba911da50320a06191fd6f",
+      "source_url": "/site-catalog.json",
+      "supersedes": null,
+      "title": {
+        "zh": "网站结构已更新：研究、行业应用与 Demo 获得独立入口",
+        "en": "Site structure updated: dedicated Research, Applications, and Demos entries"
+      },
+      "summary": {
+        "zh": "新的公开信息架构已经上线；Products 在 AVAILABLE_PRODUCTS=0 时继续保持隐藏。",
+        "en": "The new public information architecture is live; Products remains hidden while AVAILABLE_PRODUCTS=0."
+      },
+      "href": {
+        "zh": "/updates/information-architecture-v0-1/",
+        "en": "/en/updates/information-architecture-v0-1/"
+      },
+      "changes": {
+        "zh": [
+          "新增 Research Overview 与 Research Index。",
+          "新增 Applications 与 Demos 聚合入口。",
+          "新增 site-catalog.json 扩展接口。",
+          "Products 继续受 AVAILABLE_PRODUCTS_GT_0 门控。"
+        ],
+        "en": [
+          "Added Research Overview and Research Index.",
+          "Added Applications and Demos indexes.",
+          "Added the site-catalog.json extension interface.",
+          "Products remains gated by AVAILABLE_PRODUCTS_GT_0."
+        ]
+      },
+      "truth_boundaries": [
+        {
+          "scope": "PRODUCT_AVAILABILITY",
+          "limitation": "AVAILABLE_PRODUCTS=0; this update does not create or announce a product."
+        },
+        {
+          "scope": "COMMERCIAL_AVAILABILITY",
+          "limitation": "AVAILABLE_COMMERCIAL_OFFERING=false."
+        },
+        {
+          "scope": "PRODUCTION",
+          "limitation": "PRODUCTION_READY=false; information architecture does not change implementation maturity."
+        }
+      ]
+    },
+    {
+      "slug": "constitution",
+      "category": "GOVERNANCE_NOTICE",
+      "status": "PUBLISHED",
+      "audience": [
+        "SITE_EDITOR",
+        "DEVELOPER",
+        "TECHNICAL_EVALUATOR",
+        "AI_AGENT"
+      ],
+      "effective_date": "2026-07-28T13:35:00+08:00",
+      "expires_at": null,
+      "is_announcement": false,
+      "severity": "informational",
+      "source_commit": "07f69964b9b2568944bdbb0f2b2038b49c6dff93",
+      "source_url": "/WEBSITE-UPDATE-CONSTITUTION-v0.1.json",
+      "supersedes": null,
+      "title": {
+        "zh": "网站更新宪法 v0.1 已建立",
+        "en": "Website Update Constitution v0.1 established"
+      },
+      "summary": {
+        "zh": "网站抉择默认先参考 OpenAI 的信息架构模式与 OpenTelemetry 的开放规范生命周期规则。",
+        "en": "Website decisions now check OpenAI information-architecture patterns and OpenTelemetry open-specification lifecycle rules first."
+      },
+      "href": {
+        "zh": "/updates/constitution/",
+        "en": "/en/updates/constitution/"
+      },
+      "changes": {
+        "zh": [
+          "明确 OpenAI 与 OpenTelemetry 的不同参考职责。",
+          "建立网站更新的七步默认决策顺序。",
+          "保留产品、生产、权力、法律与安全事项的人工 gate。",
+          "明确参考不等于采纳、关联或认可。"
+        ],
+        "en": [
+          "Defined separate reference responsibilities for OpenAI and OpenTelemetry.",
+          "Established a seven-step default website decision sequence.",
+          "Preserved human gates for product, production, authority, legal, and security matters.",
+          "Made explicit that reference does not mean adoption, affiliation, or endorsement."
+        ]
+      },
+      "truth_boundaries": [
+        {
+          "scope": "REFERENCE_AUTHORITY",
+          "limitation": "Official public references guide website choices but create no TITMAS authority."
+        },
+        {
+          "scope": "HUMAN_GOVERNANCE",
+          "limitation": "Human gates remain required for product, production, authority, legal, security, and privacy commitments."
+        },
+        {
+          "scope": "AFFILIATION",
+          "limitation": "No affiliation with or endorsement by OpenAI, OpenTelemetry, or CNCF is claimed."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "artifact_id": "TITMAS-D29-CANONICAL-REUSE-AUDIT-v1",
+  "observed_at": "2026-08-03",
+  "status": "PASS_REUSE_REQUIRED_WITH_UNRESOLVED_REPOSITORIES",
+  "decision_reference": "TITMAS-CHINA-COMMERCIAL-PRIVATE-PLATFORM-AND-PAID-PILOT-D29",
+  "private_platform": {
+    "repository": "joy7758/titmas-sandbox-gateway",
+    "observed_main_head": "c02926397563940feeba54b1efbe8d62e406e0e8",
+    "reuse_decision": "REUSE_EXISTING_REPOSITORY",
+    "new_repository_required": false,
+    "current_reference_status": "CE1_THROUGH_CE5_IMPLEMENTED_AND_MERGED_NOT_DEPLOYED",
+    "implementation_projection": "commercial/discovery/d29-reference-implementation.json"
+  },
+  "components": [
+    {"component":"agent-evidence","canonical_role":"UNIQUE_EXECUTION_EVIDENCE_SEMANTIC_SOURCE","reuse":"REFERENCE_OR_ADAPTER_ONLY","duplication_allowed":false},
+    {"component":"titmas-sandbox-gateway","canonical_role":"PRIVATE_ENTRY_AND_CONTRACT_COMPOSITION","reuse":"PRIMARY_PRIVATE_PLATFORM_REPOSITORY","duplication_allowed":false},
+    {"component":"aro-audit","canonical_role":"RECEIPT_AUDIT_REPLAY_CANDIDATE","reuse":"BOUNDARY_REVIEW_REQUIRED","duplication_allowed":false},
+    {"component":"execution_audit_sdk","canonical_role":"RECEIPT_AUDIT_REPLAY_CANDIDATE","reuse":"REPOSITORY_NOT_RESOLVED_BY_EXACT_NAME","duplication_allowed":false},
+    {"component":"PRA-Server","canonical_role":"POSSIBLE_ORCHESTRATION_OR_APPROVAL_CANDIDATE","reuse":"REPOSITORY_NOT_RESOLVED_BY_EXACT_NAME","duplication_allowed":false},
+    {"component":"persona-object-protocol","canonical_role":"IDENTITY_REFERENCE_SOURCE","reuse":"REFERENCE","duplication_allowed":false},
+    {"component":"agent-object-protocol","canonical_role":"OBJECT_REFERENCE_SOURCE","reuse":"REFERENCE","duplication_allowed":false},
+    {"component":"verifiable-agent-demo","canonical_role":"PUBLIC_SYNTHETIC_DEMO","reuse":"PUBLIC_PROOF_CANDIDATE","duplication_allowed":false},
+    {"component":"verifiable-tool-invocation-flow","canonical_role":"ACTION_GATE_REFERENCE_CANDIDATE","reuse":"BOUNDARY_REVIEW_REQUIRED","duplication_allowed":false},
+    {"component":"titmac-scout","canonical_role":"DISCOVERY_AND_BOUNDED_REPAIR_COORDINATION","reuse":"REFERENCE_ONLY_FOR_DISCOVERY","duplication_allowed":false},
+    {"component":"titmas-agent-safety-signal-relay","canonical_role":"FROZEN_AUXILIARY_REFERENCE","reuse":"READ_ONLY_REFERENCE","duplication_allowed":false},
+    {"component":"PACVP","canonical_role":"ACTION_GATE_ARCHITECTURE_CANDIDATE_NOT_IMPLEMENTED","reuse":"DO_NOT_CLAIM_IMPLEMENTED","duplication_allowed":false},
+    {"component":"DBOS","canonical_role":"EXISTENCE_GOVERNANCE","reuse":"CONTRACT_REFERENCE_ONLY","duplication_allowed":false},
+    {"component":"SAEE","canonical_role":"EVOLUTION_EVALUATION","reuse":"READ_ONLY_EVALUATION_BOUNDARY","duplication_allowed":false}
+  ],
+  "prohibited_new_cores": ["identity", "evidence", "policy", "receipt", "audit", "tenant", "key", "verification_authority"],
+  "unresolved": [
+    "execution_audit_sdk exact canonical repository and current head",
+    "PRA-Server exact canonical repository and current head",
+    "ARO/execution-audit relationship",
+    "verifiable-tool-invocation-flow adoption boundary"
+  ]
+}

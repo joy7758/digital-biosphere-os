@@ -1,0 +1,98 @@
+{
+  "artifact_id": "TITMAS-D29-CHINA-DATA-FLOW-MAP-v1",
+  "status": "HUMAN_LEGAL_AND_SECURITY_REVIEW_REQUIRED",
+  "defaults": {
+    "customer_data_locality": "CHINA",
+    "customer_trace_raw_upload": false,
+    "metadata_only_mode": true,
+    "customer_data_to_foreign_model": false,
+    "customer_personal_information_to_foreign_model": false
+  },
+  "flows": [
+    {
+      "flow_id": "CF-01",
+      "source": "customer_agent_or_application",
+      "destination": "customer_data_plane_adapter",
+      "data_classes": ["CUSTOMER_CONFIDENTIAL", "PERSONAL_INFORMATION_POSSIBLE"],
+      "purpose": "form bounded action request and local digest",
+      "raw_content_crosses_boundary": false,
+      "storage_location": "customer_environment",
+      "retention": "customer_defined",
+      "cross_border": false
+    },
+    {
+      "flow_id": "CF-02",
+      "source": "customer_data_plane_adapter",
+      "destination": "titmas_private_platform_gate",
+      "data_classes": ["INTERNAL", "CUSTOMER_CONFIDENTIAL_METADATA"],
+      "purpose": "bounded Monitor or Enforce evaluation",
+      "raw_content_crosses_boundary": false,
+      "storage_location": "CHINA",
+      "retention": "request_memory_only_plus_bounded_metadata",
+      "cross_border": false
+    },
+    {
+      "flow_id": "CF-03",
+      "source": "titmas_private_platform_gate",
+      "destination": "customer_action_system",
+      "data_classes": ["INTERNAL"],
+      "purpose": "return shadow or enforce decision with reason codes and expiry",
+      "raw_content_crosses_boundary": false,
+      "storage_location": "customer_environment_and_china_metadata_store",
+      "retention": "workspace_policy",
+      "cross_border": false
+    },
+    {
+      "flow_id": "CF-04",
+      "source": "gate_and_customer_action_result",
+      "destination": "receipt_and_audit_store",
+      "data_classes": ["INTERNAL", "CUSTOMER_CONFIDENTIAL_METADATA"],
+      "purpose": "technical execution receipt and audit replay",
+      "raw_content_crosses_boundary": false,
+      "storage_location": "CHINA_OR_CUSTOMER_PRIVATE_DEPLOYMENT",
+      "retention": "7_30_90_OR_CUSTOMER_DEFINED_DAYS",
+      "cross_border": false
+    },
+    {
+      "flow_id": "CF-05",
+      "source": "commercial_request_access_form",
+      "destination": "manual_commercial_intake",
+      "data_classes": ["PERSONAL_INFORMATION", "INTERNAL"],
+      "purpose": "respond to requested commercial contact",
+      "raw_content_crosses_boundary": true,
+      "storage_location": "CHINA_PENDING_IMPLEMENTATION_CONFIRMATION",
+      "retention": "TO_BE_HUMAN_APPROVED",
+      "cross_border": false
+    },
+    {
+      "flow_id": "CF-06",
+      "source": "public_or_synthetic_validation_material",
+      "destination": "external_model_provider",
+      "data_classes": ["PUBLIC", "SYNTHETIC"],
+      "purpose": "bounded external Agent validation",
+      "raw_content_crosses_boundary": true,
+      "storage_location": "provider_specific",
+      "retention": "provider_policy_record_required",
+      "cross_border": "PROVIDER_SPECIFIC",
+      "customer_data_allowed": false
+    },
+    {
+      "flow_id": "CF-07",
+      "source": "workspace_usage_metadata",
+      "destination": "manual_billing_and_support",
+      "data_classes": ["INTERNAL", "BILLING_RECORD"],
+      "purpose": "quota visibility, invoice support and service operations",
+      "raw_content_crosses_boundary": false,
+      "storage_location": "CHINA",
+      "retention": "LEGAL_AND_FINANCE_REVIEW_REQUIRED",
+      "cross_border": false
+    }
+  ],
+  "prohibited_flows": [
+    "CUSTOMER_RAW_TRACE_TO_FOREIGN_MODEL_BY_DEFAULT",
+    "CUSTOMER_PERSONAL_INFORMATION_TO_FOREIGN_MODEL_BY_DEFAULT",
+    "PLAINTEXT_CREDENTIAL_TO_ANY_MODEL_PROVIDER",
+    "RECEIPT_SIGNING_PRIVATE_KEY_TO_EXTERNAL_PROVIDER",
+    "PRIVATE_CORE_OR_ATTACK_CORPUS_TO_EXTERNAL_AGENT"
+  ]
+}

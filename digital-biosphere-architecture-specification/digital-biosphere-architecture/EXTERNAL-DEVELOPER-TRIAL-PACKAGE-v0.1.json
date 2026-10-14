@@ -1,0 +1,110 @@
+{
+  "schema_version": "0.1",
+  "trial_package_id": "TMAI-DP-v0.1-TRIAL-20260721-001",
+  "title": "Trusted Multi-Agent Infrastructure Developer Preview v0.1 External Developer Trial Package",
+  "status": "FROZEN_TECHNICAL_SOURCES_PARTICIPANT_SOURCE_PENDING",
+  "frozen_at": "2026-07-21T23:17:11+08:00",
+  "manifest_first_published_at_commit": "bc7ba49a357ebc007e2a4c9dc01178a37e74d2d8",
+  "decision_reference": "architecture/ADR-020-release-preparation-owner-decisions.md",
+  "trial_coordinator_ref": "zhangbin",
+  "participant_source": null,
+  "participant_source_status": "PENDING_REAL_INPUT",
+  "participant_count_target": {
+    "minimum": 3,
+    "maximum": 5
+  },
+  "source_repositories": [
+    {
+      "project_id": "DBA",
+      "repository": "https://github.com/joy7758/digital-biosphere-architecture-specification.git",
+      "visibility": "public",
+      "branch": "main",
+      "commit": "91928e3b1096566aad5568124707e3a6cb3a40ca",
+      "license": "Apache-2.0"
+    },
+    {
+      "project_id": "DBOS",
+      "repository": "https://github.com/joy7758/digital-biosphere-os.git",
+      "visibility": "private_collaborator_trial",
+      "branch": "main",
+      "commit": "0caa2c45e511a82d0dcab778b0ffc3163aac0029",
+      "license": "Apache-2.0"
+    },
+    {
+      "project_id": "SAEE",
+      "repository": "https://github.com/joy7758/SAEE.git",
+      "visibility": "public",
+      "branch": "main",
+      "commit": "2173c258f91aed03fc02c0097d4250a87be703aa",
+      "license": "Apache-2.0",
+      "public_safe_extraction": {
+        "source_candidate": "2da5b00655f5dfef5506f20490a4d03119fb3d8c",
+        "exact_file_count": 19,
+        "exact_blob_match_count": 19,
+        "private_core_included": false
+      }
+    }
+  ],
+  "validation": {
+    "reference": "CLEAN-CLONE-VALIDATION-REPORT.md",
+    "result": "PASS",
+    "cross_project_clean_clone_pass": true,
+    "dbos_test_count": 331,
+    "dbos_validator_count": 34,
+    "saee_adapter_test_count": 8,
+    "external_developer_sessions_completed": 0
+  },
+  "environment": {
+    "python": "3.11+",
+    "dbos_install": "python3 -m pip install -e .",
+    "saee_dependencies": [
+      "jsonschema>=4.18,<5.0",
+      "referencing"
+    ]
+  },
+  "canonical_commands": {
+    "dbos_tests": "python3 tools/run_tests.py",
+    "dbos_multi_agent_demo": "python3 -m examples.multi_agent_trust_demo.run_demo",
+    "dbos_mcp_demo": "PYTHONDONTWRITEBYTECODE=1 python3 examples/mcp_reference_demo/run_demo.py",
+    "saee_adapter_tests": "python3 -m unittest tests/test_dbos_developer_preview_adapter.py",
+    "saee_evaluation": "python3 scripts/saee_evaluate_dbos_preview.py --input /tmp/dbos-multi-agent-trust-demo-v0.1.json"
+  },
+  "participant_materials": [
+    "PUBLIC-PROJECT-OVERVIEW.md",
+    "EXTERNAL-DEVELOPER-TRIAL-PLAN.md",
+    "EXTERNAL-DEVELOPER-TRIAL-GUIDE.md",
+    "DEVELOPER-FEEDBACK-TEMPLATE.md",
+    "CLEAN-CLONE-VALIDATION-REPORT.md"
+  ],
+  "privacy_and_stop_rules": {
+    "references": [
+      "EXTERNAL-DEVELOPER-TRIAL-PLAN.md#12-stop-rules停止规则",
+      "EXTERNAL-DEVELOPER-TRIAL-GUIDE.md#privacy-and-security隐私与安全"
+    ],
+    "synthetic_inputs_only": true,
+    "customer_or_personal_data_allowed": false,
+    "secrets_allowed": false,
+    "production_runtime_allowed": false,
+    "external_side_effects_allowed": false,
+    "failure_records_must_be_retained": true
+  },
+  "authorization_boundary": {
+    "dq_010_conditionally_authorized": true,
+    "clean_clone_condition_satisfied": true,
+    "trial_package_condition_satisfied": true,
+    "participant_source_condition_satisfied": false,
+    "external_contact_authorized": false,
+    "trial_execution_authorized": false,
+    "collaborators_added": 0,
+    "release_authorized": false,
+    "customer_validation_claimed": false
+  },
+  "non_effects": {
+    "agent_created": false,
+    "runtime_created": false,
+    "entity_instance_created": false,
+    "permission_granted": false,
+    "execution_created": false,
+    "canonical_evidence_created": false
+  }
+}

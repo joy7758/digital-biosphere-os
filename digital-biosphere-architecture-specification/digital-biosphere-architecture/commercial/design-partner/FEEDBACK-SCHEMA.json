@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://redcrag.cn/schemas/titmas-design-partner-feedback-v0.1.json",
+  "title": "TITMAS Design Partner Feedback",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["feedback_id", "stage", "category", "observation", "contains_restricted_data"],
+  "properties": {
+    "feedback_id": {"type": "string", "minLength": 1},
+    "stage": {"enum": ["DISCOVERY", "SYNTHETIC_FIRST_VALUE", "MONITOR", "EXIT"]},
+    "category": {"enum": ["COMPREHENSION", "INTEGRATION", "EVIDENCE", "USABILITY", "PRICING", "SUPPORT", "OTHER"]},
+    "observation": {"type": "string", "minLength": 1, "maxLength": 4000},
+    "expected_outcome": {"type": ["string", "null"], "maxLength": 2000},
+    "evidence_reference": {"type": ["string", "null"], "maxLength": 500},
+    "contains_restricted_data": {"const": false},
+    "public_case_consent": {"type": "boolean", "default": false}
+  }
+}

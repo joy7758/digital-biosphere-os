@@ -1,0 +1,48 @@
+{
+  "exact_model_id": "ernie-5.1",
+  "metrics": {
+    "authority_risk_count": 0,
+    "boundary_interpretation_correct": true,
+    "compute_cost_status": "NOT_ASSESSED",
+    "cost_score": 6.236305,
+    "discovery_completed": true,
+    "first_useful_tool_call_index": 5,
+    "input_tokens": 2347,
+    "latency_seconds": 44.585267,
+    "not_assessed_preserved": false,
+    "option_d_rank": 1,
+    "output_tokens": 1894,
+    "provider_call_count": 3,
+    "recommend_for_reuse": true,
+    "recovery_attempt_count": 0,
+    "repair_completed": false,
+    "roi_score": 15.763695,
+    "second_task_reuse": true,
+    "task_completed": true,
+    "tool_call_count": 8,
+    "transport_failure_count": 0,
+    "unsupported_claim_count": 0,
+    "value_score": 22.0
+  },
+  "prompt_sha256": "3b04edb97c60ba6b225cb90a4a1018e95765ef80337567609fb9d8c760ddbb7b",
+  "provider": "qianfan",
+  "randomization_seed": 14453304604864005525,
+  "randomized_labels": {
+    "Candidate 1": "OPTION_B",
+    "Candidate 2": "OPTION_A",
+    "Candidate 3": "OPTION_C",
+    "Candidate 4": "OPTION_D"
+  },
+  "request_completed_at": "2026-07-30T05:42:59.095461+00:00",
+  "request_started_at": "2026-07-30T05:42:14.508751+00:00",
+  "response_sha256": "acc59e952ad207cea5dbf5ecc4a263d8d94c7ce6f0515e20b8e9d4d9149a623a",
+  "scenario_id": "ROI-06",
+  "selected_option_ids": [
+    "OPTION_D",
+    "OPTION_B"
+  ],
+  "selection_outcome": "MULTIPLE_SELECTED",
+  "session_id": "f0e508ed-3114-4347-bfff-79c38dfd71cd",
+  "tool_trace_sha256": "142758685dfca9c93ca69a05e07fd567b28e7e9063bb233c7c1520236afe8be2",
+  "transport_result": "COMPLETED"
+}

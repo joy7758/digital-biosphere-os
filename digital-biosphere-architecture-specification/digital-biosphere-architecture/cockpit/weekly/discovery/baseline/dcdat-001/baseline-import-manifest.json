@@ -1,0 +1,25 @@
+{
+  "schema": "dba.baseline_import_manifest.v0.1",
+  "baseline_id": "DCDAT-001",
+  "imported_at": "2026-08-29T10:02:59Z",
+  "source_path": "/Users/zhangbin/Documents/New project/digital-biosphere-architecture/architecture/discovery-validation/dcell-external-capabilities-test-001",
+  "files": [
+    {
+      "path": "cockpit/weekly/discovery/baseline/dcdat-001/capability-discovery-records.json",
+      "sha256": "13b28b63a771c3f6dee07180b045e5385967df602cf80567a44156f8579816d3",
+      "source_path": "/Users/zhangbin/Documents/New project/digital-biosphere-architecture/architecture/discovery-validation/dcell-external-capabilities-test-001/capability-discovery-records.json"
+    },
+    {
+      "path": "cockpit/weekly/discovery/baseline/dcdat-001/reference-absorption-registry.json",
+      "sha256": "f71ef19e04d41ecb5e38db3d803834f9bac5fd1da96ca6ec5661794898c3f57b",
+      "source_path": "/Users/zhangbin/Documents/New project/digital-biosphere-architecture/architecture/discovery-validation/dcell-external-capabilities-test-001/reference-absorption-registry.json"
+    },
+    {
+      "path": "cockpit/weekly/discovery/baseline/dcdat-001/DISCOVERY-ABSORPTION-TEST-REPORT.md",
+      "sha256": "370f0ff2dda656b0aa5bb5a03894e50e93086f103f952cf0caf8093017d7cf11",
+      "source_path": "/Users/zhangbin/Documents/New project/digital-biosphere-architecture/architecture/discovery-validation/dcell-external-capabilities-test-001/DISCOVERY-ABSORPTION-TEST-REPORT.md"
+    }
+  ],
+  "historical_record_preserved": true,
+  "original_hint_content_digest_not_available": true
+}

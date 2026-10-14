@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://redcrag.cn/commercial-evaluation-agent-first-run/composite-result.schema.v0.1.json",
+  "title": "TITMAS Commercial Evaluation Agent First Run Composite Result v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "document_id",
+    "version",
+    "status",
+    "observed_at",
+    "decision_reference",
+    "technical_result",
+    "agent_result",
+    "provider_sessions",
+    "public_transport_observations",
+    "conclusion"
+  ],
+  "properties": {
+    "$schema": {"const": "./composite-result.schema.v0.1.json"},
+    "document_id": {"const": "TITMAS-COMMERCIAL-EVALUATION-AGENT-FIRST-RUN-COMPOSITE-RESULT-0.1"},
+    "version": {"const": "0.1.0"},
+    "status": {"const": "PASS_EVALUATION_ENTRY_AGENT_RECOMMENDABLE"},
+    "observed_at": {"type": "string", "format": "date"},
+    "decision_reference": {"const": "TITMAS-COMMERCIAL-EVALUATION-CE-G1-DECISION-RECORD.v0.1.json"},
+    "technical_result": {
+      "type": "object",
+      "required": ["final_pass", "failed_attempts_preserved", "public_transport_failures_preserved", "pass_meaning"],
+      "properties": {
+        "final_pass": {"const": true},
+        "failed_attempts_preserved": {"const": 2},
+        "public_transport_failures_preserved": {"const": 3},
+        "pass_meaning": {"const": "LOCAL_STRUCTURE_AND_GOVERNANCE_CONSTRAINTS_PASS_ONLY"}
+      }
+    },
+    "agent_result": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sessions_planned", "sessions_executed", "schema_valid_sessions", "distinct_providers", "evaluation_recommended", "production_not_recommended", "critical_boundary_failures", "retry_fallback_substitution_json_repair"],
+      "properties": {
+        "sessions_planned": {"const": 4},
+        "sessions_executed": {"const": 4},
+        "schema_valid_sessions": {"const": 4},
+        "distinct_providers": {"const": 2},
+        "evaluation_recommended": {"const": 4},
+        "production_not_recommended": {"const": 4},
+        "critical_boundary_failures": {"const": 0},
+        "retry_fallback_substitution_json_repair": {"const": 0}
+      }
+    },
+    "provider_sessions": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {
+        "type": "object",
+        "required": ["session_id", "provider", "requested_model", "returned_model", "request_id", "response_reference"],
+        "properties": {
+          "session_id": {"type": "string", "pattern": "^CE-G1-S0[1-4]$"},
+          "provider": {"enum": ["ALIBABA_CLOUD_MODEL_STUDIO", "BAIDU_QIANFAN"]},
+          "requested_model": {"type": "string"},
+          "returned_model": {"type": "string"},
+          "request_id": {"type": "string"},
+          "response_reference": {"type": "string"}
+        }
+      }
+    },
+    "public_transport_observations": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "required": ["event", "count", "client", "detail"],
+        "properties": {
+          "event": {"type": "string"},
+          "count": {"type": "integer", "minimum": 1},
+          "client": {"type": "string"},
+          "detail": {"type": "string"}
+        }
+      }
+    },
+    "conclusion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["evaluation_entry_recommendable_to_ai_agents", "commercial_offering_available", "production_ready", "customer_adoption_verified", "certification_available", "next_gate"],
+      "properties": {
+        "evaluation_entry_recommendable_to_ai_agents": {"const": true},
+        "commercial_offering_available": {"const": false},
+        "production_ready": {"const": false},
+        "customer_adoption_verified": {"const": false},
+        "certification_available": {"const": false},
+        "next_gate": {"const": "PUBLIC_ENTRY_AVAILABILITY_AND_AGENT_AUTOMATION_HARDENING"}
+      }
+    }
+  }
+}

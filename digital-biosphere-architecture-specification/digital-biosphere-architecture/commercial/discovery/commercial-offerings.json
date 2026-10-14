@@ -1,0 +1,14 @@
+{
+  "contract_format": "TITMAS-COMMERCIAL-OFFERINGS-1.0",
+  "catalog_id": "TITMAS-COMMERCIAL-OFFERINGS-v1",
+  "available_offering_count": 0,
+  "public_self_service_sales": false,
+  "online_payment": false,
+  "offerings": [
+    {"offering_id": "SYNTHETIC_FIRST_VALUE", "status": "IMPLEMENTED_REFERENCE_NOT_DEPLOYED", "payment_required": false, "customer_data_required": false, "currently_available_offering": false, "implementation_evidence_ref": "commercial/discovery/d29-reference-implementation.json"},
+    {"offering_id": "READ_ONLY_MONITOR_PILOT", "status": "SYNTHETIC_REFERENCE_PROOF_IMPLEMENTED_NOT_AVAILABLE_OFFERING", "payment_required": false, "future_payment_decision": "HUMAN_DECISION_REQUIRED", "production_write_permission_required": false, "currently_available_offering": false, "implementation_evidence_ref": "commercial/discovery/d29-reference-implementation.json"},
+    {"offering_id": "CUSTOMER_SPECIFIC_ENFORCE_PILOT", "status": "SYNTHETIC_REFERENCE_PROOF_ONLY_NOT_CUSTOMER_AUTHORIZED", "separate_human_authorization_required": true, "currently_available_offering": false, "real_customer_authorization_count": 0},
+    {"offering_id": "ENTERPRISE_PRIVATE_DEPLOYMENT", "status": "NOT_AUTHORIZED", "contract_and_deployment_decision_required": true}
+  ],
+  "non_claims": ["NO_CUSTOMER_CREATED", "NO_CONTRACT_SIGNED", "NO_PAYMENT_COLLECTED", "NO_PUBLIC_LAUNCH", "REFERENCE_IMPLEMENTATION_NE_AVAILABLE_OFFERING", "SYNTHETIC_PROOF_NE_CUSTOMER_AUTHORIZATION"]
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:dba:weekly:capability-candidate:0.1",
+  "title": "DBA Reference-Only Capability Candidate",
+  "type": "object",
+  "required": ["candidate_id", "candidate_fingerprint_sha256", "canonical_identity", "name", "capability_group", "source_identities", "source_reference", "source_digest", "observed_at", "identity_status"],
+  "properties": {
+    "candidate_id": {"type": "string", "minLength": 1},
+    "candidate_fingerprint_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "canonical_identity": {"type": "string", "minLength": 1},
+    "name": {"type": "string", "minLength": 1},
+    "capability_group": {"type": "string", "minLength": 1},
+    "source_identities": {"type": "array", "minItems": 1, "items": {"type": "object"}},
+    "source_reference": {"type": "string", "minLength": 1},
+    "source_digest": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "observed_at": {"type": "string", "minLength": 1},
+    "identity_status": {"enum": ["RESOLVED_EXACT_IDENTITY", "RESOLVED_BASELINE_IDENTITY", "IDENTITY_REVIEW_REQUIRED"]}
+  },
+  "additionalProperties": true
+}

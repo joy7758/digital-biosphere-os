@@ -1,0 +1,24 @@
+# AgentMint
+
+- Source URLs: https://agentmint.run/
+- Source access time: 2026-08-03
+- Page title: AgentMint — Evidence layer for AI Agents in regulated industries
+- Product status: public website, open-spec link, install command and paid-pilot claim; all performance/customer statements remain vendor claims.
+- Target customer / buyer / user: regulated-industry Agent vendors, enterprise buyers, InfoSec and auditors.
+- Pricing status: website advertises a USD 2,500 pilot and free self-host; not adopted as a TITMAS price benchmark.
+- Architecture summary: in-process instrumentation produces Ed25519 hash-chained receipts stored in the customer's evidence store and verified with a portable script.
+- Control plane / data plane: customer-local signing key and self-hosted evidence; hosted service is not required for basic verification.
+- Enforcement point: receipt generation around tool calls; pre-action enforcement is not clearly verified.
+- Integration: Python today; vendor page says decorator and MCP proxy are future.
+- Tenant / workspace / identity: plan, user, Agent and scope objects appear; enterprise tenancy is not verified.
+- Policy / approval / decision: policy mapping is described; independent authorization authority is not established.
+- Event / receipt / audit / retention: one-file signed and chained receipts, ZIP export and offline verifier.
+- Monitor / enforce: evidence-first; customer action blocking is not verified.
+- Deployment modes: customer machine/process/container and self-host.
+- Console navigation and UI: narrative comparison, code sample, one-file verifier and design-pilot form.
+- Commercial funnel: focused paid pilot with personal review plus free self-host.
+- Strengths: clear customer-controlled key, offline proof and bounded paid-pilot packaging.
+- Weaknesses relative to TITMAS: receipt-centric; Gate, approval, workspace and cross-runtime accountability breadth are not verified.
+- Applicable lessons: simple first paid engagement, verifier-in-a-file and customer-held key.
+- Non-applicable lessons: legal/court implications or certification-adjacent claims without legal review.
+- Uncertainties: spec maintenance, customer evidence, security audit and operational support.

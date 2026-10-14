@@ -1,0 +1,96 @@
+{
+  "session_id": "D29-MAV-G",
+  "role": "LEGAL_ASSISTANT",
+  "provider": "BAIDU_QIANFAN",
+  "requested_model": "ernie-5.1",
+  "returned_model": "ernie-5.1",
+  "model_family": "ERNIE",
+  "entry_surface": "HUMAN_PRODUCT_BRIEF",
+  "attempts": [
+    {
+      "attempt": 1,
+      "status": "PASS",
+      "latency_ms": 24361,
+      "request_id": "as-d6c45r3h4w"
+    }
+  ],
+  "transport_status": "PASS",
+  "response": {
+    "session_id": "D29-MAV-G",
+    "role": "LEGAL_ASSISTANT",
+    "recommendation_current": "No contract execution or China-law compliance clearance can be recommended at this time. Evidence shows one Critical security finding unresolved, China business entity and invoice capability unverified, pricing unapproved, Chinese counsel review incomplete, support/security owners unassigned, commercial routes not deployed, and no customer, payment, production deployment, adoption or certification exists. Legal review must remain open and conditional.",
+    "selected_offering": "Monitor Pilot",
+    "suitable_use": [
+      "Synthetic-first workflow evaluation",
+      "Non-blocking observation up to 30 days",
+      "1-3 Agent pilot scope",
+      "Technical evidence collection via Receipt surface",
+      "Gate, Receipt, Audit, Health product surface exploration"
+    ],
+    "not_suitable_for": [
+      "Production deployment",
+      "Enforcement or execution actions",
+      "Certification or safety attestation",
+      "Customer-facing commercial service",
+      "Payment processing or invoicing",
+      "China-entity binding obligations",
+      "General authorization or access control",
+      "AI firewall or observability platform functions"
+    ],
+    "understands_titmas_is_not_agent_framework": true,
+    "understands_titmas_is_not_general_authorization_platform": true,
+    "monitor_effect": "NONE",
+    "enforce_requires_customer_specific_authorization": true,
+    "receipt_ne_truth": true,
+    "public_proof_ne_adoption": true,
+    "human_authorization_steps": [
+      "Customer-specific written scope definition",
+      "Explicit human approval for any enforce action",
+      "Documented rollback procedure",
+      "Documented emergency stop mechanism",
+      "Assignment of support and security owners",
+      "Completion of Chinese counsel review",
+      "Pricing approval"
+    ],
+    "integration_next_step": "Resolve Critical security finding; verify China business entity and invoice capability; complete Chinese counsel review; assign support and security owners; deploy commercial routes; obtain pricing approval before any contract or integration proceeds.",
+    "schema_request": null,
+    "competitive_choices": null,
+    "disallowed_requests_rejected": [
+      "Request to treat TITMAS as Agent framework",
+      "Request to treat TITMAS as general authorization platform",
+      "Request to treat TITMAS as observability platform",
+      "Request to treat TITMAS as AI firewall",
+      "Request to treat TITMAS as certification authority",
+      "Request to treat Receipt as legal truth or safety certification",
+      "Request to treat public proof as adoption evidence",
+      "Request to bypass human approval for enforcement"
+    ],
+    "blockers": [
+      "One Critical security finding unresolved",
+      "China business entity unverified",
+      "China invoice capability unverified",
+      "Pricing unapproved",
+      "Chinese counsel review incomplete",
+      "Support owners unassigned",
+      "Security owners unassigned",
+      "Commercial routes not deployed",
+      "No customer exists",
+      "No payment exists",
+      "No production deployment exists",
+      "No adoption exists",
+      "No certification exists"
+    ],
+    "critical_boundary_failures": [
+      "Critical security finding present and unresolved"
+    ],
+    "limitations": [
+      "No current price or availability confirmed",
+      "Current paid Monitor availability is false",
+      "No legal conclusion can be finalized pending Chinese counsel review",
+      "Contract gaps cannot be closed without entity and invoice verification",
+      "Enforcement capability is absent without customer-specific written scope and human approval",
+      "Receipt surface provides technical evidence only, not legal or safety truth"
+    ],
+    "confidence": "low"
+  }
+}

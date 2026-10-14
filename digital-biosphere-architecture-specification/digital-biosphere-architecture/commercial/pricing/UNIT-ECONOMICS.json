@@ -1,0 +1,26 @@
+{
+  "schema_version": "0.1",
+  "status": "NOT_ASSESSED_MISSING_MEASURED_INPUTS",
+  "primary_offering_candidate": "TITMAS_MONITOR_PILOT",
+  "billing_model_candidate": "FIXED_FEE_PRIVATE_PILOT",
+  "technical_usage_dimensions": [
+    "active_agents",
+    "monitor_evaluations",
+    "receipts_created",
+    "receipt_verifications",
+    "audit_storage",
+    "retention_days",
+    "api_requests",
+    "exports",
+    "support_hours"
+  ],
+  "commercial_units_approved": [],
+  "measured_cost_per_1000_evaluations_cny": null,
+  "measured_cost_per_pilot_cny": null,
+  "approved_target_gross_margin": null,
+  "approved_price_cny": null,
+  "failed_call_billability": "UNDECIDED",
+  "not_assessed_billability": "UNDECIDED",
+  "usage_ne_invoice": true,
+  "plan_ne_permission": true
+}

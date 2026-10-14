@@ -1,0 +1,96 @@
+{
+  "schema_version": "1.0.0",
+  "decision_reference": "TITMAS-COMMERCIAL-CONSTITUTION-C01-LOW-FRICTION-ENTRY-D29-INTEGRATION",
+  "product_count": 4,
+  "entry_layers": [
+    {
+      "entry_layer_id": "TITMAS_OBSERVER",
+      "name": "TITMAS Observer",
+      "is_product": false,
+      "public_product_count_effect": 0,
+      "contract_ref": "commercial/entry/entry-layer.json"
+    }
+  ],
+  "products": [
+    {
+      "product_id": "TITMAS_GATE",
+      "name": "TITMAS Gate",
+      "name_zh": "TITMAS行动闸门",
+      "private_domain": "ACTION_GATE",
+      "outputs": ["ALLOW", "BLOCK", "NEEDS_APPROVAL", "NOT_ASSESSED"],
+      "current_focus": "PRIMARY",
+      "private_core": true,
+      "internal_algorithm_public": false,
+      "entry_path": ["TITMAS_OBSERVER", "READ_ONLY_MONITOR", "CUSTOMER_SPECIFIC_ENFORCE"],
+      "first_value": "EXPLAINED_SHADOW_GATE_RESULT",
+      "required_permissions": ["NONE_FOR_SYNTHETIC", "READ_ONLY_OR_EVENT_COPY_FOR_MONITOR", "SEPARATE_HUMAN_AUTHORIZATION_FOR_ENFORCE"],
+      "required_data": ["MINIMUM_ACTION_METADATA", "DECLARED_POLICY_EVIDENCE_AND_APPROVAL_REFERENCES"],
+      "monitor_available": {"contract_defined": true, "currently_available_offering": false, "enforcement_effect": "NONE"},
+      "enforce_available": {"contract_defined": true, "currently_authorized": false},
+      "reversibility": "RETURN_TO_MONITOR_AND_DISABLE_CUSTOMER_ENFORCEMENT_ADAPTER",
+      "deletion_path": "REVOKE_KEY_DISCONNECT_ADAPTER_REQUEST_METADATA_DELETION",
+      "not_recommended_when": ["GENERAL_RBAC_ABAC_ONLY", "TRACE_DEBUGGING_ONLY", "NO_SEPARATE_HUMAN_ENFORCE_AUTHORITY"]
+    },
+    {
+      "product_id": "TITMAS_RECEIPT",
+      "name": "TITMAS Receipt",
+      "name_zh": "TITMAS执行回执",
+      "private_domain": "RECEIPT_AND_ISSUANCE",
+      "current_focus": "COMPANION",
+      "private_core": true,
+      "internal_algorithm_public": false,
+      "entry_path": ["TITMAS_OBSERVER", "SYNTHETIC_RECEIPT", "OFFLINE_VERIFY"],
+      "first_value": "PORTABLE_SYNTHETIC_RECEIPT_WITH_LIMITATIONS",
+      "required_permissions": ["NONE_FOR_SYNTHETIC", "ISSUANCE_SCOPE_FOR_LATER_STAGE"],
+      "required_data": ["DIGESTS_AND_BOUNDED_EXECUTION_METADATA"],
+      "monitor_available": {"contract_defined": true, "currently_available_offering": false},
+      "enforce_available": {"not_applicable": true},
+      "reversibility": "STOP_FUTURE_ISSUANCE_AND_REVOKE_KEY",
+      "deletion_path": "DELETE_CUSTOMER_METADATA_SUBJECT_TO_DISCLOSED_IMMUTABLE_AUDIT_EXCEPTIONS",
+      "not_recommended_when": ["LEGAL_TRUTH_OR_CERTIFICATION_REQUIRED", "PRODUCTION_SIGNER_REQUIRED_NOW"]
+    },
+    {
+      "product_id": "TITMAS_AUDIT",
+      "name": "TITMAS Audit",
+      "name_zh": "TITMAS证据审计",
+      "private_domain": "AUDIT_AND_REPLAY",
+      "current_focus": "REPLAY_ONLY",
+      "private_core": true,
+      "internal_algorithm_public": false,
+      "entry_path": ["TITMAS_OBSERVER", "SYNTHETIC_OR_REDACTED_IMPORT", "BOUNDED_AUDIT_REPLAY"],
+      "first_value": "EXPLAINED_EVIDENCE_GAPS_AND_REPLAY_LIMITATIONS",
+      "required_permissions": ["NONE_FOR_SYNTHETIC", "READ_ONLY_AUDIT_SCOPE_FOR_IMPORTED_DATA"],
+      "required_data": ["BOUNDED_EVIDENCE_RECEIPT_POLICY_AND_APPROVAL_REFERENCES"],
+      "monitor_available": {"contract_defined": true, "currently_available_offering": false},
+      "enforce_available": {"not_applicable": true},
+      "reversibility": "EXPORT_RESULT_AND_END_READ_ACCESS",
+      "deletion_path": "REQUEST_IMPORTED_COPY_DELETION_WITH_RETAINED_EXCEPTION_DISCLOSURE",
+      "not_recommended_when": ["AUTOMATIC_LEGAL_JUDGMENT_REQUIRED", "CERTIFICATION_REQUIRED"]
+    },
+    {
+      "product_id": "TITMAS_HEALTH",
+      "name": "TITMAS Health",
+      "name_zh": "TITMAS智能体健康",
+      "private_domain": "HEALTH_AND_EVALUATION",
+      "current_focus": "DISCOVERY_AND_LONGITUDINAL_METRICS_ONLY",
+      "private_core": true,
+      "internal_algorithm_public": false,
+      "entry_path": ["TITMAS_OBSERVER", "HEALTH_SNAPSHOT", "MONITOR_PILOT"],
+      "first_value": "BOUNDED_HEALTH_SNAPSHOT_WITH_MISSING_AND_NOT_ASSESSED",
+      "required_permissions": ["NONE_FOR_SYNTHETIC", "READ_ONLY_FOR_REPOSITORY_OR_METADATA"],
+      "required_data": ["BOUNDED_STATIC_OR_DECLARED_EVIDENCE_SIGNALS"],
+      "monitor_available": {"contract_defined": true, "currently_available_offering": false},
+      "enforce_available": {"not_applicable": true},
+      "reversibility": "DISCONNECT_SOURCE_AND_STOP_ASSESSMENT",
+      "deletion_path": "REQUEST_IMPORTED_METADATA_DELETION",
+      "not_recommended_when": ["RUNTIME_RELIABILITY_PROOF_REQUIRED", "AUTOMATIC_PERMISSION_CHANGE_REQUIRED"]
+    }
+  ],
+  "fifth_product_authorized": false,
+  "pacvp": {
+    "classification": "ACTION_GATE_INTERNAL_PROFILE",
+    "product_id": "TITMAS_GATE",
+    "implemented": false,
+    "public_capability_claim": false
+  }
+}

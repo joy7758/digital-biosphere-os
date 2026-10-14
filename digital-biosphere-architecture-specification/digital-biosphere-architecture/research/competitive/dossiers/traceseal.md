@@ -1,0 +1,24 @@
+# TraceSeal
+
+- Source URLs: https://traceseal.io/
+- Source access time: 2026-08-03
+- Page title: Traceseal — The Agent Accountability Platform
+- Product status: public site, public verifier/spec links and install command; deployment or customer adoption is not independently verified.
+- Target customer / buyer / user: Agent operators, reviewers and auditors needing independently verifiable execution material.
+- Pricing status: `NOT_VERIFIED`.
+- Architecture summary: publisher-signed skill, isolated operator execution, self-contained signed receipt, public transparency log and third-party verifier.
+- Control plane / data plane: receipts can be verified without operator access; exact hosted control-plane boundary is not fully assessed.
+- Enforcement point: sandbox execution and forbidden-action enforcement, not a general customer action Gate.
+- Integration: Python verifier, observation package and LangChain integration are vendor-described public surfaces.
+- Tenant / workspace / identity: publisher and operator keys are first-class; enterprise tenant model is not verified.
+- Policy / approval / decision: publisher authorization and witness cosigning; general Human approval workflow not verified.
+- Event / receipt / audit / retention: self-contained Ed25519 receipts, canonical JSON, hashes, public transparency log and replayable verification.
+- Monitor / enforce: sandbox enforces declared restrictions; shadow Monitor mode is not verified.
+- Deployment modes: local verifier and sandbox tooling; managed enterprise modes not verified.
+- Console navigation and UI: receipt-first technical page, three-role flow and command-line verification.
+- Commercial funnel: verify without account; contact channel.
+- Strengths: public independent verification, open verifier and clear execution attestation story.
+- Weaknesses relative to TITMAS: action-authorization, tenant/workspace commercial control and cross-runtime Gate coverage are not verified.
+- Applicable lessons: one-file verification, clear trust roles, public proof and no-account verifier.
+- Non-applicable lessons: claiming ground truth or regulatory obligation from vendor narrative.
+- Uncertainties: pricing, active customer evidence, enterprise deployment and operational support.

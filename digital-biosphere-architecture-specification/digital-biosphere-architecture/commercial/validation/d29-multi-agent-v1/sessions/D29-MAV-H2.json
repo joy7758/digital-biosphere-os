@@ -1,0 +1,79 @@
+{
+  "session_id": "D29-MAV-H2",
+  "role": "COMPETITIVE_RECOMMENDER_SCHEMA_REMEDIATION",
+  "provider": "BAIDU_QIANFAN",
+  "requested_model": "ernie-5.1",
+  "returned_model": "ernie-5.1",
+  "model_family": "ERNIE",
+  "entry_surface": "MACHINE_STATUS",
+  "attempts": [
+    {
+      "attempt": 1,
+      "status": "PASS",
+      "latency_ms": 24860,
+      "request_id": "as-rr0wkbcc6h"
+    }
+  ],
+  "transport_status": "PASS",
+  "response": {
+    "session_id": "D29-MAV-H2",
+    "role": "COMPETITIVE_RECOMMENDER_SCHEMA_REMEDIATION",
+    "recommendation_current": "Do not adopt TITMAS as a primary solution for agent orchestration, general authorization, observability, AI‑firewall or certification. Use TITMAS only as a conditional enforcement gate after other platforms have satisfied trace‑debugging, general‑authorization and prompt‑content‑safety requirements.",
+    "selected_offering": "NONE",
+    "suitable_use": "Customer‑specific, post‑gate enforcement where TITMAS can act as a conditional checkpoint after other platforms have performed primary functions.",
+    "not_suitable_for": [
+      "Agent framework orchestration",
+      "General authorization platform",
+      "Observability platform",
+      "AI firewall",
+      "Certification authority",
+      "Trace debugging (primary)",
+      "Prompt content safety (primary)",
+      "Action‑control receipt audit (primary)",
+      "Any scenario expecting monitor effect"
+    ],
+    "understands_titmas_is_not_agent_framework": true,
+    "understands_titmas_is_not_general_authorization_platform": true,
+    "monitor_effect": "NONE",
+    "enforce_requires_customer_specific_authorization": true,
+    "receipt_ne_truth": true,
+    "public_proof_ne_adoption": true,
+    "human_authorization_steps": [
+      "Define precise policy scope with the customer",
+      "Obtain explicit customer sign‑off on enforcement boundaries",
+      "Configure TITMAS gates to operate only after upstream platform checks",
+      "Validate enforcement outcomes with a human reviewer"
+    ],
+    "integration_next_step": "Engage the customer to specify the exact authorization envelope and integrate TITMAS as a conditional gate downstream of the chosen primary platforms.",
+    "schema_request": null,
+    "competitive_choices": {
+      "trace_debugging": "OTHER_PLATFORM_PRIMARY",
+      "general_authorization": "OTHER_PLATFORM_PRIMARY",
+      "prompt_content_safety": "OTHER_PLATFORM_PRIMARY",
+      "action_control_receipt_audit": "TITMAS_CONDITIONAL_AFTER_GATES"
+    },
+    "disallowed_requests_rejected": true,
+    "blockers": [
+      "TITMAS lacks general authorization capability",
+      "Paid monitor availability is false",
+      "Requires bespoke customer authorization for any enforcement"
+    ],
+    "critical_boundary_failures": [
+      "Attempting to use TITMAS as an agent framework",
+      "Expecting monitor effect from TITMAS",
+      "Treating TITMAS receipts as immutable truth"
+    ],
+    "limitations": [
+      "Not an agent framework",
+      "Not a general authorization platform",
+      "Not an observability platform",
+      "Not an AI firewall",
+      "Not a certification authority",
+      "Monitor effect is NONE",
+      "Receipts are not truth",
+      "Paid monitor currently unavailable"
+    ],
+    "confidence": 0.87
+  },
+  "remediates": "D29-MAV-H"
+}

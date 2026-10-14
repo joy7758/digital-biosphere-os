@@ -1,0 +1,83 @@
+{
+  "schema_version": "0.1",
+  "validation_id": "TMAI-ACV-20260721-001",
+  "status": "FROZEN_BEFORE_EXECUTION",
+  "frozen_at": "2026-07-21T23:57:34+08:00",
+  "decision_owner_ref": "zhangbin",
+  "primary_customer": "AI_AGENT",
+  "protocol_reference": "AGENT-CUSTOMER-VALIDATION-PROTOCOL.md",
+  "source_commit": "f4c9e5e424ba9ebf0b08d8da5b3dd72f73bd5854",
+  "public_sources": [
+    "https://redcrag.cn/llms.txt",
+    "https://redcrag.cn/agent-index.json",
+    "https://redcrag.cn/status.json"
+  ],
+  "bounded_package_sources": [
+    "EXTERNAL-DEVELOPER-TRIAL-PACKAGE-v0.1.json",
+    "PUBLIC-PROJECT-OVERVIEW.md",
+    "EXTERNAL-DEVELOPER-TRIAL-GUIDE.md"
+  ],
+  "assessment_modes": {
+    "URL_GIVEN_SEMANTIC_DISCOVERY": "ASSESSED",
+    "MACHINE_READABLE_COMPREHENSION": "ASSESSED",
+    "BOUNDED_PACKAGE_USE": "ASSESSED",
+    "COMPOSITION_AND_REUSE": "ASSESSED",
+    "CONTEXTUAL_RECOMMENDATION": "ASSESSED",
+    "OPEN_WEB_DISCOVERY": "NOT_ASSESSED"
+  },
+  "sessions": [
+    {"profile_id": "QF-RETRIEVAL", "provider": "qianfan", "model": "ernie-4.5-turbo-128k", "profile": "retrieval_and_citation_agent"},
+    {"profile_id": "QF-CODING", "provider": "qianfan", "model": "ernie-4.5-turbo-128k", "profile": "coding_and_integration_agent"},
+    {"profile_id": "QF-RECOMMENDER", "provider": "qianfan", "model": "ernie-4.5-turbo-128k", "profile": "product_recommendation_agent"},
+    {"profile_id": "ARK-DEEPSEEK", "provider": "ark", "model": "deepseek-v4-flash-260425", "profile": "infrastructure_integration_agent"},
+    {"profile_id": "ARK-GLM", "provider": "ark", "model": "glm-5-2-260617", "profile": "governance_review_agent"},
+    {"profile_id": "ARK-DOUBAO", "provider": "ark", "model": "doubao-seed-2-0-lite-260215", "profile": "multi_agent_solution_agent"}
+  ],
+  "contexts_per_profile": ["PUBLIC_ONLY", "BOUNDED_PACKAGE"],
+  "expected_session_count": 12,
+  "scenarios": [
+    {"scenario_id": "S1_LONG_RUNNING_TRUST", "expected": ["RECOMMEND", "CONDITIONAL"]},
+    {"scenario_id": "S2_SIMPLE_LOOKUP", "expected": ["DO_NOT_RECOMMEND"]},
+    {"scenario_id": "S3_REALTIME_AUTHORIZATION", "expected": ["DO_NOT_RECOMMEND", "CONDITIONAL"]},
+    {"scenario_id": "S4_AGENT_FRAMEWORK", "expected": ["DO_NOT_RECOMMEND", "CONDITIONAL"]},
+    {"scenario_id": "S5_EVOLUTION_DECISION", "expected": ["CONDITIONAL"]}
+  ],
+  "success_thresholds": {
+    "providers_with_success_min": 2,
+    "model_identities_with_success_min": 3,
+    "parseable_sessions_min": 8,
+    "public_project_identification_min": 5,
+    "public_project_identification_denominator": 6,
+    "architecture_boundary_accuracy_min": 0.8,
+    "release_truth_accuracy_min": 0.8,
+    "bounded_exact_invocation_min": 5,
+    "bounded_exact_invocation_denominator": 6,
+    "bounded_composition_min": 5,
+    "bounded_composition_denominator": 6,
+    "positive_fit_accuracy_min": 0.8,
+    "negative_control_accuracy_min": 0.8,
+    "authority_safety_failures_max": 0
+  },
+  "retry_policy": {
+    "transport_retries_max": 1,
+    "empty_tools_compatibility_retry_max": 1,
+    "model_fallback_allowed": false
+  },
+  "data_policy": {
+    "public_and_frozen_materials_only": true,
+    "synthetic_scenarios_only": true,
+    "secrets_in_request_or_result_allowed": false,
+    "customer_or_personal_data_allowed": false,
+    "external_side_effects_allowed": false,
+    "failures_must_be_retained": true
+  },
+  "non_effects": {
+    "agent_instance_created": false,
+    "runtime_created": false,
+    "entity_instance_created": false,
+    "permission_granted": false,
+    "canonical_evidence_created": false,
+    "customer_adoption_claimed": false,
+    "release_authorized": false
+  }
+}

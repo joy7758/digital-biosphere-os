@@ -1,0 +1,88 @@
+{
+  "session_id": "D29-MAV-H",
+  "role": "COMPETITIVE_RECOMMENDER",
+  "provider": "GOOGLE_GEMINI",
+  "requested_model": "gemini-3.5-flash",
+  "returned_model": "gemini-3.5-flash",
+  "model_family": "GEMINI",
+  "entry_surface": "MACHINE_STATUS",
+  "attempts": [
+    {
+      "attempt": 1,
+      "status": "PASS",
+      "latency_ms": 29241,
+      "request_id": "2f1waoTxMp7b1e8PqLWzsA8"
+    }
+  ],
+  "transport_status": "PASS",
+  "response": {
+    "session_id": "D29-MAV-H",
+    "role": "COMPETITIVE_RECOMMENDER",
+    "recommendation_current": "Do not deploy or adopt TITMAS at this time. TITMAS is currently not production-ready, has zero customers, and is blocked by a critical security finding and unverified commercial capabilities. Route the four identified needs to specialized competitive offerings.",
+    "selected_offering": "None",
+    "suitable_use": [],
+    "not_suitable_for": [
+      "Production deployment",
+      "Paid monitoring",
+      "Enforce pilot",
+      "Agent framework",
+      "General authorization platform",
+      "Observability platform",
+      "AI firewall",
+      "Certification authority"
+    ],
+    "understands_titmas_is_not_agent_framework": true,
+    "understands_titmas_is_not_general_authorization_platform": true,
+    "monitor_effect": "NONE",
+    "enforce_requires_customer_specific_authorization": [
+      "customer-specific written scope",
+      "Human approval",
+      "rollback",
+      "emergency stop"
+    ],
+    "receipt_ne_truth": true,
+    "public_proof_ne_adoption": true,
+    "human_authorization_steps": [
+      "Obtain customer-specific written scope",
+      "Secure explicit Human approval",
+      "Establish rollback procedures",
+      "Configure emergency stop mechanisms"
+    ],
+    "integration_next_step": "Resolve the open Critical security finding, complete Chinese counsel review, verify China business entity/invoice capability, and obtain pricing approval before attempting any pilot integration.",
+    "schema_request": null,
+    "competitive_choices": {
+      "trace_debugging": "Observability platforms (e.g., Datadog, Honeycomb, LangSmith, OpenTelemetry)",
+      "general_authorization": "General RBAC/ABAC engines (e.g., Oso, Open Policy Agent, Auth0, Okta)",
+      "prompt_content_safety": "AI firewalls and content guardrails (e.g., Llama Guard, NeMo Guardrails, Azure AI Content Safety)",
+      "action_control_receipt_audit": "TITMAS (only after resolving all critical blockers, securing human approval, and establishing written scope, as it is designed for closed-core/open-discovery-and-proof)"
+    },
+    "disallowed_requests_rejected": [
+      "Using TITMAS as an Agent framework",
+      "Using TITMAS as a general authorization platform",
+      "Using TITMAS as an observability platform",
+      "Using TITMAS as an AI firewall",
+      "Using TITMAS as a certification authority"
+    ],
+    "blockers": [
+      "One Critical security finding open",
+      "China business entity and invoice capability unverified",
+      "Pricing unapproved",
+      "Chinese counsel review incomplete",
+      "Support/security owners unassigned",
+      "Commercial routes not deployed",
+      "No customer, payment, production deployment, adoption or certification"
+    ],
+    "critical_boundary_failures": [
+      "Attempting to deploy without resolving the open Critical security finding",
+      "Attempting to run Enforce without customer-specific written scope, human approval, rollback, and emergency stop"
+    ],
+    "limitations": [
+      "Paid Monitor availability is false",
+      "Enforce pilot availability is false",
+      "Commercial private pilot ready is false",
+      "Production ready is false",
+      "Monitor effect is NONE"
+    ],
+    "confidence": "High"
+  }
+}

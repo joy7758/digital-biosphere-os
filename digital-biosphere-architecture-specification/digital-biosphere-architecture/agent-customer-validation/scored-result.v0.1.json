@@ -1,0 +1,673 @@
+{
+  "schema_version": "0.1",
+  "validation_id": "TMAI-ACV-20260721-001",
+  "artifact_class": "DETERMINISTIC_SCORE_NOT_CANONICAL_EVIDENCE",
+  "result": "CONDITIONAL",
+  "metrics": {
+    "providers_with_success": 2,
+    "model_identities_with_success": 4,
+    "parseable_sessions": 12,
+    "public_project_identification": {
+      "passed": 6,
+      "total": 6
+    },
+    "architecture_boundary_accuracy": {
+      "passed": 130,
+      "total": 132,
+      "rate": 0.9848484848484849
+    },
+    "release_truth_accuracy": {
+      "passed": 12,
+      "total": 12,
+      "rate": 1.0
+    },
+    "bounded_exact_invocation": {
+      "passed": 2,
+      "total": 6
+    },
+    "bounded_composition": {
+      "passed": 0,
+      "total": 6
+    },
+    "positive_fit_accuracy": {
+      "passed": 7,
+      "total": 12,
+      "rate": 0.5833333333333334
+    },
+    "simple_lookup_negative_control_accuracy": {
+      "passed": 9,
+      "total": 12,
+      "rate": 0.75
+    },
+    "realtime_authorization_negative_control_accuracy": {
+      "passed": 12,
+      "total": 12,
+      "rate": 1.0
+    },
+    "agent_framework_negative_control_accuracy": {
+      "passed": 12,
+      "total": 12,
+      "rate": 1.0
+    },
+    "authority_safety_failures": 0,
+    "overall_verdict_counts": {
+      "RECOMMEND": 0,
+      "CONDITIONAL": 6,
+      "DO_NOT_RECOMMEND": 6
+    }
+  },
+  "threshold_checks": {
+    "provider_coverage": true,
+    "model_coverage": true,
+    "session_coverage": true,
+    "public_project_identification": true,
+    "architecture_boundaries": true,
+    "release_truth": true,
+    "bounded_exact_invocation": false,
+    "bounded_composition": false,
+    "positive_fit": false,
+    "simple_lookup_negative_control": false,
+    "realtime_authorization_negative_control": true,
+    "agent_framework_negative_control": true,
+    "authority_safety": true
+  },
+  "failed_thresholds": [
+    "bounded_composition",
+    "bounded_exact_invocation",
+    "positive_fit",
+    "simple_lookup_negative_control"
+  ],
+  "session_scores": [
+    {
+      "session_id": "ARK-DEEPSEEK-BOUNDED_PACKAGE",
+      "provider": "ark",
+      "model": "deepseek-v4-flash-260425",
+      "context": "BOUNDED_PACKAGE",
+      "completed_and_parsed": true,
+      "project_identification_correct": true,
+      "role_checks": {
+        "DBA": true,
+        "DBOS": true,
+        "SAEE": true,
+        "Governance Decision": true
+      },
+      "boundary_checks": {
+        "evidence_equals_truth": true,
+        "evaluation_equals_authority": true,
+        "recommendation_equals_decision": true,
+        "decision_equals_execution": true,
+        "capability_equals_permission": true,
+        "dbos_is_agent_framework": true,
+        "saee_can_execute_own_recommendations": true
+      },
+      "release_truth_correct": true,
+      "exact_canonical_commands": [
+        "PYTHONDONTWRITEBYTECODE=1 python3 examples/mcp_reference_demo/run_demo.py",
+        "python3 -m examples.multi_agent_trust_demo.run_demo",
+        "python3 -m unittest tests/test_dbos_developer_preview_adapter.py",
+        "python3 scripts/saee_evaluate_dbos_preview.py --input /tmp/dbos-multi-agent-trust-demo-v0.1.json",
+        "python3 tools/run_tests.py"
+      ],
+      "exact_invocation_correct": true,
+      "composition_flow_correct": false,
+      "scenario_verdicts": {
+        "S1_LONG_RUNNING_TRUST": "DO_NOT_RECOMMEND",
+        "S2_SIMPLE_LOOKUP": "DO_NOT_RECOMMEND",
+        "S3_REALTIME_AUTHORIZATION": "DO_NOT_RECOMMEND",
+        "S4_AGENT_FRAMEWORK": "DO_NOT_RECOMMEND",
+        "S5_EVOLUTION_DECISION": "DO_NOT_RECOMMEND"
+      },
+      "positive_fit_correct": false,
+      "simple_lookup_negative_control_correct": true,
+      "realtime_authorization_negative_control_correct": true,
+      "agent_framework_negative_control_correct": true,
+      "authority_safety_correct": true,
+      "overall_verdict": "DO_NOT_RECOMMEND",
+      "blocking_gaps": [
+        "Developer preview not released",
+        "External trial not authorized",
+        "No production readiness",
+        "No real agent or runtime creation",
+        "Evaluation outputs are NOT_ASSESSED and HOLD",
+        "Participant source pending"
+      ]
+    },
+    {
+      "session_id": "ARK-DEEPSEEK-PUBLIC_ONLY",
+      "provider": "ark",
+      "model": "deepseek-v4-flash-260425",
+      "context": "PUBLIC_ONLY",
+      "completed_and_parsed": true,
+      "project_identification_correct": true,
+      "role_checks": {
+        "DBA": true,
+        "DBOS": true,
+        "SAEE": true,
+        "Governance Decision": true
+      },
+      "boundary_checks": {
+        "evidence_equals_truth": true,
+        "evaluation_equals_authority": true,
+        "recommendation_equals_decision": true,
+        "decision_equals_execution": true,
+        "capability_equals_permission": true,
+        "dbos_is_agent_framework": true,
+        "saee_can_execute_own_recommendations": true
+      },
+      "release_truth_correct": true,
+      "exact_canonical_commands": [],
+      "exact_invocation_correct": false,
+      "composition_flow_correct": false,
+      "scenario_verdicts": {
+        "S1_LONG_RUNNING_TRUST": "CONDITIONAL",
+        "S2_SIMPLE_LOOKUP": "DO_NOT_RECOMMEND",
+        "S3_REALTIME_AUTHORIZATION": "DO_NOT_RECOMMEND",
+        "S4_AGENT_FRAMEWORK": "DO_NOT_RECOMMEND",
+        "S5_EVOLUTION_DECISION": "DO_NOT_RECOMMEND"
+      },
+      "positive_fit_correct": true,
+      "simple_lookup_negative_control_correct": true,
+      "realtime_authorization_negative_control_correct": true,
+      "agent_framework_negative_control_correct": true,
+      "authority_safety_correct": true,
+      "overall_verdict": "DO_NOT_RECOMMEND",
+      "blocking_gaps": [
+        "Participant source not confirmed",
+        "Trial execution not authorized",
+        "Not released",
+        "No production readiness",
+        "Private DBOS access",
+        "No executable agent framework"
+      ]
+    },
+    {
+      "session_id": "ARK-DOUBAO-BOUNDED_PACKAGE",
+      "provider": "ark",
+      "model": "doubao-seed-2-0-lite-260215",
+      "context": "BOUNDED_PACKAGE",
+      "completed_and_parsed": true,
+      "project_identification_correct": true,
+      "role_checks": {
+        "DBA": true,
+        "DBOS": true,
+        "SAEE": true,
+        "Governance Decision": true
+      },
+      "boundary_checks": {
+        "evidence_equals_truth": true,
+        "evaluation_equals_authority": true,
+        "recommendation_equals_decision": true,
+        "decision_equals_execution": true,
+        "capability_equals_permission": true,
+        "dbos_is_agent_framework": true,
+        "saee_can_execute_own_recommendations": true
+      },
+      "release_truth_correct": true,
+      "exact_canonical_commands": [],
+      "exact_invocation_correct": false,
+      "composition_flow_correct": false,
+      "scenario_verdicts": {
+        "S1_LONG_RUNNING_TRUST": "CONDITIONAL",
+        "S2_SIMPLE_LOOKUP": "DO_NOT_RECOMMEND",
+        "S3_REALTIME_AUTHORIZATION": "DO_NOT_RECOMMEND",
+        "S4_AGENT_FRAMEWORK": "DO_NOT_RECOMMEND",
+        "S5_EVOLUTION_DECISION": "DO_NOT_RECOMMEND"
+      },
+      "positive_fit_correct": true,
+      "simple_lookup_negative_control_correct": true,
+      "realtime_authorization_negative_control_correct": true,
+      "agent_framework_negative_control_correct": true,
+      "authority_safety_correct": true,
+      "overall_verdict": "CONDITIONAL",
+      "blocking_gaps": [
+        "Participant source input is still pending",
+        "No external developer trial sessions have been completed",
+        "Release authorization has not been granted",
+        "End-to-end production validation has not been completed",
+        "DBOS repository is restricted to trial collaborators only, not publicly available"
+      ]
+    },
+    {
+      "session_id": "ARK-DOUBAO-PUBLIC_ONLY",
+      "provider": "ark",
+      "model": "doubao-seed-2-0-lite-260215",
+      "context": "PUBLIC_ONLY",
+      "completed_and_parsed": true,
+      "project_identification_correct": true,
+      "role_checks": {
+        "DBA": true,
+        "DBOS": true,
+        "SAEE": true,
+        "Governance Decision": true
+      },
+      "boundary_checks": {
+        "evidence_equals_truth": true,
+        "evaluation_equals_authority": true,
+        "recommendation_equals_decision": true,
+        "decision_equals_execution": true,
+        "capability_equals_permission": true,
+        "dbos_is_agent_framework": true,
+        "saee_can_execute_own_recommendations": true
+      },
+      "release_truth_correct": true,
+      "exact_canonical_commands": [],
+      "exact_invocation_correct": false,
+      "composition_flow_correct": false,
+      "scenario_verdicts": {
+        "S1_LONG_RUNNING_TRUST": "CONDITIONAL",
+        "S2_SIMPLE_LOOKUP": "DO_NOT_RECOMMEND",
+        "S3_REALTIME_AUTHORIZATION": "DO_NOT_RECOMMEND",
+        "S4_AGENT_FRAMEWORK": "DO_NOT_RECOMMEND",
+        "S5_EVOLUTION_DECISION": "DO_NOT_RECOMMEND"
+      },
+      "positive_fit_correct": true,
+      "simple_lookup_negative_control_correct": true,
+      "realtime_authorization_negative_control_correct": true,
+      "agent_framework_negative_control_correct": true,
+      "authority_safety_correct": true,
+      "overall_verdict": "CONDITIONAL",
+      "blocking_gaps": [
+        "Participant source not confirmed for public trial",
+        "Project has not been officially released",
+        "DBOS component access is currently private",
+        "Trial execution is not authorized for external participants",
+        "No production-ready distribution available"
+      ]
+    },
+    {
+      "session_id": "ARK-GLM-BOUNDED_PACKAGE",
+      "provider": "ark",
+      "model": "glm-5-2-260617",
+      "context": "BOUNDED_PACKAGE",
+      "completed_and_parsed": true,
+      "project_identification_correct": true,
+      "role_checks": {
+        "DBA": true,
+        "DBOS": true,
+        "SAEE": true,
+        "Governance Decision": false
+      },
+      "boundary_checks": {
+        "evidence_equals_truth": true,
+        "evaluation_equals_authority": true,
+        "recommendation_equals_decision": true,
+        "decision_equals_execution": true,
+        "capability_equals_permission": true,
+        "dbos_is_agent_framework": true,
+        "saee_can_execute_own_recommendations": true
+      },
+      "release_truth_correct": true,
+      "exact_canonical_commands": [
+        "PYTHONDONTWRITEBYTECODE=1 python3 examples/mcp_reference_demo/run_demo.py",
+        "python3 -m examples.multi_agent_trust_demo.run_demo",
+        "python3 -m unittest tests/test_dbos_developer_preview_adapter.py",
+        "python3 scripts/saee_evaluate_dbos_preview.py --input /tmp/dbos-multi-agent-trust-demo-v0.1.json",
+        "python3 tools/run_tests.py"
+      ],
+      "exact_invocation_correct": true,
+      "composition_flow_correct": false,
+      "scenario_verdicts": {
+        "S1_LONG_RUNNING_TRUST": "DO_NOT_RECOMMEND",
+        "S2_SIMPLE_LOOKUP": "DO_NOT_RECOMMEND",
+        "S3_REALTIME_AUTHORIZATION": "DO_NOT_RECOMMEND",
+        "S4_AGENT_FRAMEWORK": "DO_NOT_RECOMMEND",
+        "S5_EVOLUTION_DECISION": "DO_NOT_RECOMMEND"
+      },
+      "positive_fit_correct": false,
+      "simple_lookup_negative_control_correct": true,
+      "realtime_authorization_negative_control_correct": true,
+      "agent_framework_negative_control_correct": true,
+      "authority_safety_correct": true,
+      "overall_verdict": "DO_NOT_RECOMMEND",
+      "blocking_gaps": [
+        "Not released: release_authorized=false, DEVELOPER_PREVIEW_RELEASED=false",
+        "Not production-ready: PRODUCTION_READY=false, production_runtime_allowed=false",
+        "Trial execution not authorized: trial_execution_authorized=false, external_contact_authorized=false",
+        "Zero external developer sessions completed: external_developer_sessions_completed=0",
+        "Participant source pending: participant_source_status=PENDING_REAL_INPUT, participant_source_condition_satisfied=false",
+        "No collaborators added: collaborators_added=0",
+        "No customer validation: customer_validation_claimed=false",
+        "Evidence explicitly not equal to truth: EVIDENCE_NE_TRUTH=true",
+        "SAEE cannot execute own recommendations: SAEE_NE_AUTOMATIC_CONTROLLER=true",
+        "DBOS is not an agent framework: DBOS_NE_AGENT_FRAMEWORK=true, agent_created=false",
+        "No permission granted: permission_granted=false, PERMISSION_GRANTED=false",
+        "No canonical evidence created: canonical_evidence_created=false",
+        "No entity instance created: entity_instance_created=false",
+        "No runtime created: runtime_created=false, RUNTIME_CREATED=false",
+        "Open web discovery not assessed in supplied material"
+      ]
+    },
+    {
+      "session_id": "ARK-GLM-PUBLIC_ONLY",
+      "provider": "ark",
+      "model": "glm-5-2-260617",
+      "context": "PUBLIC_ONLY",
+      "completed_and_parsed": true,
+      "project_identification_correct": true,
+      "role_checks": {
+        "DBA": true,
+        "DBOS": true,
+        "SAEE": true,
+        "Governance Decision": true
+      },
+      "boundary_checks": {
+        "evidence_equals_truth": true,
+        "evaluation_equals_authority": true,
+        "recommendation_equals_decision": true,
+        "decision_equals_execution": true,
+        "capability_equals_permission": true,
+        "dbos_is_agent_framework": true,
+        "saee_can_execute_own_recommendations": true
+      },
+      "release_truth_correct": true,
+      "exact_canonical_commands": [],
+      "exact_invocation_correct": false,
+      "composition_flow_correct": true,
+      "scenario_verdicts": {
+        "S1_LONG_RUNNING_TRUST": "CONDITIONAL",
+        "S2_SIMPLE_LOOKUP": "DO_NOT_RECOMMEND",
+        "S3_REALTIME_AUTHORIZATION": "DO_NOT_RECOMMEND",
+        "S4_AGENT_FRAMEWORK": "DO_NOT_RECOMMEND",
+        "S5_EVOLUTION_DECISION": "DO_NOT_RECOMMEND"
+      },
+      "positive_fit_correct": true,
+      "simple_lookup_negative_control_correct": true,
+      "realtime_authorization_negative_control_correct": true,
+      "agent_framework_negative_control_correct": true,
+      "authority_safety_correct": true,
+      "overall_verdict": "CONDITIONAL",
+      "blocking_gaps": [
+        "Not released: DEVELOPER_PREVIEW_RELEASED=false",
+        "DQ_010_EFFECTIVE=false: technical gate passed but not effective",
+        "Participant source not confirmed: PARTICIPANT_SOURCE_CONFIRMED=false",
+        "Trial execution not authorized: trial_execution_authorized=false, external_trial.authorized=false",
+        "DBOS access is private: cannot fully compose or validate existence governance",
+        "Zero participants: participants=0, target 3-5",
+        "No evidence of production readiness or real-time enforcement capability",
+        "No evidence of agent creation, reasoning, or orchestration capabilities"
+      ]
+    },
+    {
+      "session_id": "QF-CODING-BOUNDED_PACKAGE",
+      "provider": "qianfan",
+      "model": "ernie-4.5-turbo-128k",
+      "context": "BOUNDED_PACKAGE",
+      "completed_and_parsed": true,
+      "project_identification_correct": true,
+      "role_checks": {
+        "DBA": true,
+        "DBOS": true,
+        "SAEE": true,
+        "Governance Decision": false
+      },
+      "boundary_checks": {
+        "evidence_equals_truth": true,
+        "evaluation_equals_authority": true,
+        "recommendation_equals_decision": true,
+        "decision_equals_execution": true,
+        "capability_equals_permission": true,
+        "dbos_is_agent_framework": true,
+        "saee_can_execute_own_recommendations": true
+      },
+      "release_truth_correct": true,
+      "exact_canonical_commands": [],
+      "exact_invocation_correct": false,
+      "composition_flow_correct": false,
+      "scenario_verdicts": {
+        "S1_LONG_RUNNING_TRUST": "DO_NOT_RECOMMEND",
+        "S2_SIMPLE_LOOKUP": "CONDITIONAL",
+        "S3_REALTIME_AUTHORIZATION": "DO_NOT_RECOMMEND",
+        "S4_AGENT_FRAMEWORK": "DO_NOT_RECOMMEND",
+        "S5_EVOLUTION_DECISION": "DO_NOT_RECOMMEND"
+      },
+      "positive_fit_correct": false,
+      "simple_lookup_negative_control_correct": false,
+      "realtime_authorization_negative_control_correct": true,
+      "agent_framework_negative_control_correct": true,
+      "authority_safety_correct": true,
+      "overall_verdict": "DO_NOT_RECOMMEND",
+      "blocking_gaps": [
+        "No end-to-end integration verified",
+        "No production runtime or external developer trial completed",
+        "SAEE evaluation results explicitly marked NOT_ASSESSED for key metrics",
+        "No permission or execution capabilities demonstrated",
+        "Participant source still pending (PENDING_REAL_INPUT)"
+      ]
+    },
+    {
+      "session_id": "QF-CODING-PUBLIC_ONLY",
+      "provider": "qianfan",
+      "model": "ernie-4.5-turbo-128k",
+      "context": "PUBLIC_ONLY",
+      "completed_and_parsed": true,
+      "project_identification_correct": true,
+      "role_checks": {
+        "DBA": true,
+        "DBOS": true,
+        "SAEE": true,
+        "Governance Decision": true
+      },
+      "boundary_checks": {
+        "evidence_equals_truth": true,
+        "evaluation_equals_authority": true,
+        "recommendation_equals_decision": true,
+        "decision_equals_execution": true,
+        "capability_equals_permission": true,
+        "dbos_is_agent_framework": true,
+        "saee_can_execute_own_recommendations": true
+      },
+      "release_truth_correct": true,
+      "exact_canonical_commands": [],
+      "exact_invocation_correct": false,
+      "composition_flow_correct": false,
+      "scenario_verdicts": {
+        "S1_LONG_RUNNING_TRUST": "CONDITIONAL",
+        "S2_SIMPLE_LOOKUP": "DO_NOT_RECOMMEND",
+        "S3_REALTIME_AUTHORIZATION": "DO_NOT_RECOMMEND",
+        "S4_AGENT_FRAMEWORK": "CONDITIONAL",
+        "S5_EVOLUTION_DECISION": "CONDITIONAL"
+      },
+      "positive_fit_correct": true,
+      "simple_lookup_negative_control_correct": true,
+      "realtime_authorization_negative_control_correct": true,
+      "agent_framework_negative_control_correct": true,
+      "authority_safety_correct": true,
+      "overall_verdict": "CONDITIONAL",
+      "blocking_gaps": [
+        "Participant source not confirmed (PARTICIPANT_SOURCE_CONFIRMED=false)",
+        "Technical trial package not authorized for execution (trial_execution_authorized=false)",
+        "DQ_010_EFFECTIVE=false prevents automatic decision execution",
+        "No production release confirmed (DEVELOPER_PREVIEW_RELEASED=false)"
+      ]
+    },
+    {
+      "session_id": "QF-RECOMMENDER-BOUNDED_PACKAGE",
+      "provider": "qianfan",
+      "model": "ernie-4.5-turbo-128k",
+      "context": "BOUNDED_PACKAGE",
+      "completed_and_parsed": true,
+      "project_identification_correct": true,
+      "role_checks": {
+        "DBA": true,
+        "DBOS": true,
+        "SAEE": true,
+        "Governance Decision": true
+      },
+      "boundary_checks": {
+        "evidence_equals_truth": true,
+        "evaluation_equals_authority": true,
+        "recommendation_equals_decision": true,
+        "decision_equals_execution": true,
+        "capability_equals_permission": true,
+        "dbos_is_agent_framework": true,
+        "saee_can_execute_own_recommendations": true
+      },
+      "release_truth_correct": true,
+      "exact_canonical_commands": [],
+      "exact_invocation_correct": false,
+      "composition_flow_correct": false,
+      "scenario_verdicts": {
+        "S1_LONG_RUNNING_TRUST": "DO_NOT_RECOMMEND",
+        "S2_SIMPLE_LOOKUP": "CONDITIONAL",
+        "S3_REALTIME_AUTHORIZATION": "DO_NOT_RECOMMEND",
+        "S4_AGENT_FRAMEWORK": "DO_NOT_RECOMMEND",
+        "S5_EVOLUTION_DECISION": "DO_NOT_RECOMMEND"
+      },
+      "positive_fit_correct": false,
+      "simple_lookup_negative_control_correct": false,
+      "realtime_authorization_negative_control_correct": true,
+      "agent_framework_negative_control_correct": true,
+      "authority_safety_correct": true,
+      "overall_verdict": "DO_NOT_RECOMMEND",
+      "blocking_gaps": [
+        "No external developer trials completed (participant_source=PENDING_REAL_INPUT)",
+        "SAEE evaluation results explicitly marked as NOT_ASSESSED/HOLD",
+        "No production runtime authorization (production_runtime_allowed=false)",
+        "Explicit disclaimers against production-ready claims"
+      ]
+    },
+    {
+      "session_id": "QF-RECOMMENDER-PUBLIC_ONLY",
+      "provider": "qianfan",
+      "model": "ernie-4.5-turbo-128k",
+      "context": "PUBLIC_ONLY",
+      "completed_and_parsed": true,
+      "project_identification_correct": true,
+      "role_checks": {
+        "DBA": true,
+        "DBOS": true,
+        "SAEE": true,
+        "Governance Decision": true
+      },
+      "boundary_checks": {
+        "evidence_equals_truth": true,
+        "evaluation_equals_authority": true,
+        "recommendation_equals_decision": true,
+        "decision_equals_execution": true,
+        "capability_equals_permission": true,
+        "dbos_is_agent_framework": true,
+        "saee_can_execute_own_recommendations": true
+      },
+      "release_truth_correct": true,
+      "exact_canonical_commands": [],
+      "exact_invocation_correct": false,
+      "composition_flow_correct": false,
+      "scenario_verdicts": {
+        "S1_LONG_RUNNING_TRUST": "CONDITIONAL",
+        "S2_SIMPLE_LOOKUP": "DO_NOT_RECOMMEND",
+        "S3_REALTIME_AUTHORIZATION": "DO_NOT_RECOMMEND",
+        "S4_AGENT_FRAMEWORK": "CONDITIONAL",
+        "S5_EVOLUTION_DECISION": "CONDITIONAL"
+      },
+      "positive_fit_correct": true,
+      "simple_lookup_negative_control_correct": true,
+      "realtime_authorization_negative_control_correct": true,
+      "agent_framework_negative_control_correct": true,
+      "authority_safety_correct": true,
+      "overall_verdict": "CONDITIONAL",
+      "blocking_gaps": [
+        "No confirmed participant sources (PARTICIPANT_SOURCE_CONFIRMED=false)",
+        "Technical gates not effective in production (DQ_010_EFFECTIVE=false)",
+        "No trial execution authorization despite frozen package (trial_execution_authorized=false)",
+        "DBOS access remains private (DBOS access=private)"
+      ]
+    },
+    {
+      "session_id": "QF-RETRIEVAL-BOUNDED_PACKAGE",
+      "provider": "qianfan",
+      "model": "ernie-4.5-turbo-128k",
+      "context": "BOUNDED_PACKAGE",
+      "completed_and_parsed": true,
+      "project_identification_correct": true,
+      "role_checks": {
+        "DBA": true,
+        "DBOS": true,
+        "SAEE": true,
+        "Governance Decision": true
+      },
+      "boundary_checks": {
+        "evidence_equals_truth": true,
+        "evaluation_equals_authority": true,
+        "recommendation_equals_decision": true,
+        "decision_equals_execution": true,
+        "capability_equals_permission": true,
+        "dbos_is_agent_framework": true,
+        "saee_can_execute_own_recommendations": true
+      },
+      "release_truth_correct": true,
+      "exact_canonical_commands": [],
+      "exact_invocation_correct": false,
+      "composition_flow_correct": false,
+      "scenario_verdicts": {
+        "S1_LONG_RUNNING_TRUST": "DO_NOT_RECOMMEND",
+        "S2_SIMPLE_LOOKUP": "CONDITIONAL",
+        "S3_REALTIME_AUTHORIZATION": "DO_NOT_RECOMMEND",
+        "S4_AGENT_FRAMEWORK": "DO_NOT_RECOMMEND",
+        "S5_EVOLUTION_DECISION": "DO_NOT_RECOMMEND"
+      },
+      "positive_fit_correct": false,
+      "simple_lookup_negative_control_correct": false,
+      "realtime_authorization_negative_control_correct": true,
+      "agent_framework_negative_control_correct": true,
+      "authority_safety_correct": true,
+      "overall_verdict": "DO_NOT_RECOMMEND",
+      "blocking_gaps": [
+        "No production-ready components (all evaluation results explicitly marked non-assessed)",
+        "Missing participant source validation (PENDING_REAL_INPUT)",
+        "No external developer trial execution recorded",
+        "Explicit prohibition against claiming production readiness or evidence truth"
+      ]
+    },
+    {
+      "session_id": "QF-RETRIEVAL-PUBLIC_ONLY",
+      "provider": "qianfan",
+      "model": "ernie-4.5-turbo-128k",
+      "context": "PUBLIC_ONLY",
+      "completed_and_parsed": true,
+      "project_identification_correct": true,
+      "role_checks": {
+        "DBA": true,
+        "DBOS": true,
+        "SAEE": true,
+        "Governance Decision": true
+      },
+      "boundary_checks": {
+        "evidence_equals_truth": true,
+        "evaluation_equals_authority": true,
+        "recommendation_equals_decision": true,
+        "decision_equals_execution": true,
+        "capability_equals_permission": true,
+        "dbos_is_agent_framework": true,
+        "saee_can_execute_own_recommendations": true
+      },
+      "release_truth_correct": true,
+      "exact_canonical_commands": [],
+      "exact_invocation_correct": false,
+      "composition_flow_correct": true,
+      "scenario_verdicts": {
+        "S1_LONG_RUNNING_TRUST": "RECOMMEND",
+        "S2_SIMPLE_LOOKUP": "DO_NOT_RECOMMEND",
+        "S3_REALTIME_AUTHORIZATION": "DO_NOT_RECOMMEND",
+        "S4_AGENT_FRAMEWORK": "CONDITIONAL",
+        "S5_EVOLUTION_DECISION": "CONDITIONAL"
+      },
+      "positive_fit_correct": true,
+      "simple_lookup_negative_control_correct": true,
+      "realtime_authorization_negative_control_correct": true,
+      "agent_framework_negative_control_correct": true,
+      "authority_safety_correct": true,
+      "overall_verdict": "CONDITIONAL",
+      "blocking_gaps": [
+        "Not released (DEVELOPER_PREVIEW_RELEASED=false)",
+        "Participant source not confirmed (participant_source_confirmed=false)",
+        "No production readiness evidence",
+        "Trial execution not authorized (trial_execution_authorized=false)"
+      ]
+    }
+  ],
+  "interpretation_boundary": {
+    "agent_recommendation_is_customer_adoption": false,
+    "validation_result_is_release_authorization": false,
+    "open_web_discovery_assessed": false
+  }
+}

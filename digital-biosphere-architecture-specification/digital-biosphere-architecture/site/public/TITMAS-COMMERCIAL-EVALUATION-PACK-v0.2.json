@@ -1,0 +1,112 @@
+{
+  "$schema": "./architecture/schemas/titmas-commercial-evaluation-pack.schema.v0.2.json",
+  "document_id": "TITMAS-COMMERCIAL-EVALUATION-PACK-0.2",
+  "version": "0.2.0",
+  "status": "AGENT_FIRST_RUN_VALIDATED_NOT_AVAILABLE_OFFERING",
+  "observed_at": "2026-07-27",
+  "supersedes": "TITMAS-COMMERCIAL-EVALUATION-PACK-v0.1.json",
+  "compatibility": {
+    "core_evaluation_contract_backward_compatible": true,
+    "new_required_surface": "external_agent_first_run_validation",
+    "runtime_or_permission_effect": false
+  },
+  "positioning": {
+    "en": "Trusted Multi-Agent Infrastructure",
+    "zh": "可信多智能体基础设施",
+    "value_problem": "AGENT_EXECUTION_ACCOUNTABILITY",
+    "primary_customer": "AI_AGENT"
+  },
+  "evaluation_scope": {
+    "can_evaluate": [
+      "DBOS_V0_1_OBJECT_CONTRACTS",
+      "OFFLINE_FAIL_CLOSED_VALIDATION",
+      "BOUNDARY_DISCLOSURE",
+      "PUBLIC_PACKAGE_INSTALLABILITY",
+      "AI_AGENT_DISCOVERY_AND_RECOMMENDATION_FIT"
+    ],
+    "cannot_evaluate": [
+      "PRODUCTION_RUNTIME",
+      "HOSTED_SERVICE",
+      "REAL_AGENT_EXECUTION",
+      "TRUTH",
+      "AUTHORITY",
+      "PERMISSION",
+      "CERTIFICATION",
+      "CUSTOMER_ADOPTION",
+      "SLA"
+    ]
+  },
+  "public_artifact": {
+    "distribution": "digital-biosphere-os-preview",
+    "version": "0.1.0.dev0",
+    "python_requires": ">=3.11",
+    "url": "https://redcrag.cn/downloads/digital_biosphere_os_preview-0.1.0.dev0-py3-none-any.whl",
+    "sha256": "edf92e548860384b1416a612a7e319e0d994bb324f8621847d0d154624ae8f09",
+    "install_command": "python3 -m pip install https://redcrag.cn/downloads/digital_biosphere_os_preview-0.1.0.dev0-py3-none-any.whl",
+    "cli_entry": "dbos-validate OBJECT_FILE [--schema-id SCHEMA_ID]"
+  },
+  "object_contracts": [
+    "dbio://schema/entity-object/v0.1",
+    "dbio://schema/capability-object/v0.1",
+    "dbio://schema/execution-object/v0.1",
+    "dbio://schema/evidence-reference-object/v0.1",
+    "dbio://schema/verification-object/v0.1"
+  ],
+  "first_run": {
+    "guide": "TITMAS-FIRST-RUN-v0.1.md",
+    "synthetic_fixture": "examples/titmas-first-run/entity-object.synthetic.v0.1.json",
+    "command": "dbos-validate examples/titmas-first-run/entity-object.synthetic.v0.1.json",
+    "expected_result": "PASS",
+    "pass_meaning": "LOCAL_STRUCTURE_AND_GOVERNANCE_CONSTRAINTS_PASS_ONLY",
+    "exact_wheel_filename_required": true,
+    "dependency_installation_required": true
+  },
+  "external_agent_first_run_validation": {
+    "status": "PASS_EVALUATION_ENTRY_AGENT_RECOMMENDABLE",
+    "protocol": "TITMAS-EXTERNAL-AGENT-FIRST-RUN-VALIDATION-PROTOCOL-v0.1.md",
+    "report": "TITMAS-EXTERNAL-AGENT-FIRST-RUN-VALIDATION-REPORT-v0.1.md",
+    "composite_result": "commercial-evaluation-agent-first-run/composite-result.v0.1.json",
+    "technical_final_run_pass": true,
+    "technical_failed_attempts_preserved": 2,
+    "public_transport_failures_preserved": 3,
+    "sessions_executed": 4,
+    "schema_valid_sessions": 4,
+    "distinct_providers": 2,
+    "evaluation_recommended": 4,
+    "production_not_recommended": 4,
+    "critical_boundary_failures": 0,
+    "retry_fallback_substitution_json_repair": 0
+  },
+  "commercial_truth": {
+    "evaluation_package_prepared": true,
+    "evaluation_entry_agent_recommendable": true,
+    "available_offering": false,
+    "customers_verified": 0,
+    "contracts_created": 0,
+    "revenue_verified": false,
+    "sla_defined": false,
+    "production_ready": false,
+    "certification_available": false
+  },
+  "next_gate": {
+    "name": "PUBLIC_ENTRY_AVAILABILITY_AND_AGENT_AUTOMATION_HARDENING",
+    "execution_authorized": false,
+    "success_requires": [
+      "EXACT_WHEEL_FILENAME_MACHINE_CONTRACT",
+      "DEPENDENCY_INSTALLATION_MACHINE_CONTRACT",
+      "PUBLIC_ENTRY_TIME_WINDOW_AVAILABILITY_OBSERVATIONS",
+      "FAILURE_CLASSIFICATION",
+      "NO_COMMERCIAL_OR_PRODUCTION_ELEVATION"
+    ]
+  },
+  "effects": {
+    "authority": false,
+    "permission": false,
+    "runtime": false,
+    "agent": false,
+    "entity": false,
+    "evidence_truth": false,
+    "certification": false,
+    "commercial_offer": false
+  }
+}

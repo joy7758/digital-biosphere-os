@@ -1,0 +1,128 @@
+{
+  "schema_version": "0.1",
+  "status": "DOCUMENTATION_FOUNDATION_COMPLETE_WITH_BLOCKERS",
+  "observed_at": "2026-08-12T21:34:52+08:00",
+  "source_branch": "codex/d29-commercial-delivery-foundation-v1",
+  "commercial_effect": "NONE",
+  "pre_development_agent_review": {
+    "model": "qwen3.8-max",
+    "role": "ADVISORY_ONLY",
+    "initial_recommendation": "NOT_RECOMMENDED_NOW",
+    "reason": "Offering, pricing, contract, support, onboarding and exit package was incomplete",
+    "remediation_scope": "DOCUMENTATION_AND_MACHINE_STATUS_ONLY",
+    "post_remediation_review": "NOT_RECOMMENDED_BLOCKERS_RETAINED",
+    "post_remediation_review_reference": "reviews/D29-AGENT-CUSTOMER-RECOMMENDATION-REVIEW-v0.1.json"
+  },
+  "post_security_remediation_agent_review": {
+    "model": "gemini-3.5-flash",
+    "recommendation": "RECOMMEND_BOUNDED_TECHNICAL_EVALUATION",
+    "recommended_scope": "NON_PRODUCTION_SANDBOX_TECHNICAL_EVALUATION_ONLY",
+    "paid_pilot_recommended": false,
+    "qwen3_8_max_attempt": "NOT_EXECUTED_INSUFFICIENT_QUOTA",
+    "authority_effect": false
+  },
+  "artifact_groups": {
+    "offerings": {"required": 4, "present": 4, "status": "INTERNAL_DRAFTS"},
+    "pricing": {"required": 6, "present": 6, "status": "INPUTS_REQUIRED_NOT_PRICED"},
+    "contracts": {"required": 17, "present": 17, "status": "HUMAN_AND_CHINESE_COUNSEL_REVIEW_REQUIRED"},
+    "support": {"required": 3, "present": 3, "status": "OWNER_AND_SECURITY_CONTACT_ASSIGNED_SINGLE_PERSON_BACKUP_REQUIRED"},
+    "design_partner": {"required": 6, "present": 6, "status": "OUTREACH_NOT_AUTHORIZED"},
+    "onboarding": {"required": 6, "present": 6, "status": "NO_CUSTOMER_AUTHORIZED"},
+    "china_business_readiness": {"required": 3, "present": 3, "status": "NOT_VERIFIED"}
+    ,"sales": {"required": 12, "present": 12, "status": "INTERNAL_DRAFTS_NOT_AUTHORIZED_TO_SEND"}
+    ,"multi_agent_validation": {"required_valid_sessions": 10, "valid_sessions": 10, "status": "PASS_WITH_LIMITATIONS_PREDEPLOYMENT"}
+    ,"independent_security_evaluation_kit": {"required": 6, "present": 7, "status": "READY_TO_INVITE_NOT_EXECUTED"}
+  },
+  "offering_availability": {
+    "health_snapshot": false,
+    "monitor_pilot": false,
+    "enforce_pilot": false,
+    "enterprise_private_deployment": false
+  },
+  "reference_implementation_evidence": {
+    "repository": "joy7758/titmas-sandbox-gateway",
+    "main_revision": "1a065f1702e355d5f5ed566bdfd3e895cdca2540",
+    "pull_request": 58,
+    "quality_ci": "PASS",
+    "postgres_integration_ci": "PASS",
+    "supply_chain_ci": "PASS",
+    "durable_receipt_read": "IMPLEMENTED_REFERENCE_NOT_DEPLOYED",
+    "durable_audit_chain": "COMPLETE_DECLARED_WORKSPACE_SCOPE_NOT_DEPLOYED",
+    "canonical_tenant_event_content_complete": false,
+    "offline_scope_non_membership_cryptographic_proof": false,
+    "health_snapshot_available": false,
+    "durable_credential_lifecycle": "PASS_SOURCE_AND_EPHEMERAL_POSTGRES_CI_NOT_DEPLOYED",
+    "workspace_deletion_lifecycle": "PASS_SOURCE_AND_EPHEMERAL_POSTGRES_CI_NOT_DEPLOYED",
+    "workspace_retention_lifecycle": "PASS_SOURCE_AND_EPHEMERAL_POSTGRES_CI_NOT_DEPLOYED",
+    "security_drill_readiness": {
+      "status": "EXECUTED_PASS_AUTHORITY_CLOSED",
+      "incident_drill_executed": true,
+      "formal_rollback_drill_executed": true,
+      "security_findings_closed": 2,
+      "blocker_dispositions_retained": 1,
+      "new_application_release_deployed": false
+    },
+    "security_engineering_gate": {
+      "status": "FAIL_CLOSED_RETAINED_CR01_LIMITATION",
+      "controls_total": 20,
+      "pass": 18,
+      "partial": 0,
+      "fail_retained": 1,
+      "not_assessed": 0,
+      "not_applicable": 1,
+      "blocker_findings_open": 0,
+      "blocker_dispositions_retained": 1,
+      "high_findings_open": 0,
+      "agent_recommendation": "RECOMMEND_BOUNDED_TECHNICAL_EVALUATION_ONLY",
+      "paid_pilot_recommended": false
+    }
+  },
+  "commercial_launch_gates": {
+    "business_entity_verified": false,
+    "invoice_capability_verified": false,
+    "contract_drafts_complete": true,
+    "human_legal_review_pass_or_conditional": false,
+    "pricing_human_approved": false,
+    "pilot_sow_human_approved": false,
+    "support_owner_assigned": true,
+    "security_contact_assigned": true,
+    "second_person_backup_assigned": false,
+    "critical_findings_open": 0,
+    "blocker_findings_open": 0,
+    "blocker_dispositions_retained": 1,
+    "critical_findings_legacy_alias_of_blocker": true,
+    "high_findings_open": 0,
+    "multi_agent_commercial_validation": "PASS_WITH_LIMITATIONS_PREDEPLOYMENT_NOT_LAUNCH_PASS"
+  },
+  "fdo_pvs0_reference": {
+    "role": "PUBLIC_EVIDENCE_AUXILIARY_LINE",
+    "formal_standard": false,
+    "product": false,
+    "adoption_proven": false,
+    "status_reference": "../architecture/titmas-fdo-dtr-pvs0-auxiliary-line-status-v0.1.md"
+  },
+  "non_effects": {
+    "customer_contacted": false,
+    "contract_sent_or_signed": false,
+    "price_activated": false,
+    "payment_collected": false,
+    "customer_data_processed": false,
+    "offering_activated": false,
+    "deployment_executed": false,
+    "release_created": false,
+    "certification_claimed": false,
+    "community_or_open_source_commitment_created": false
+  },
+  "commercial_private_pilot_ready": false,
+  "paid_monitor_pilot_available": false,
+  "enforce_pilot_available": false,
+  "next_human_decisions": [
+    "VERIFY_CHINA_BUSINESS_ENTITY_AND_INVOICE_CAPABILITY",
+    "ASSIGN_SECOND_PERSON_SUPPORT_AND_SECURITY_BACKUP",
+    "PROVIDE_MEASURED_COST_INPUTS_AND_APPROVE_PRICING",
+    "CHINESE_COUNSEL_REVIEW_CONTRACT_PACKAGE",
+    "COMPLETE_INDEPENDENT_SECURITY_EVALUATION",
+    "AUTHORIZE_AND_VERIFY_LIVE_COMMERCIAL_ROUTE_DEPLOYMENT",
+    "APPROVE_ONE_CUSTOMER_SPECIFIC_MONITOR_SOW"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "artifact_id": "TITMAS-D29-STYLE-TOKEN-COMPARISON-v1",
+  "status": "DESIGN_RESEARCH_NOT_IMPLEMENTATION",
+  "observed_market_ranges": {
+    "density": ["developer-doc spacious", "enterprise-console dense"],
+    "navigation": ["top product navigation", "left operational navigation", "workspace switcher"],
+    "status": ["color chips", "icons", "text labels"],
+    "type": ["neutral sans-serif", "monospace for identifiers and reason codes"],
+    "spacing": ["4px or 8px rhythm candidates"],
+    "theme": ["light enterprise", "dark optional"]
+  },
+  "titmas_original_tokens": {
+    "design_language": ["ENTERPRISE", "EVIDENCE_FIRST", "CALM", "HIGH_TRUST", "DATA_DENSE", "BILINGUAL", "AGENT_READABLE"],
+    "base": {"canvas":"warm light neutral", "surface":"white", "text":"near-black", "border":"cool neutral"},
+    "state_semantics": {
+      "ALLOW":"green plus check icon plus ALLOW text",
+      "BLOCK":"red plus stop icon plus BLOCK text",
+      "NEEDS_APPROVAL":"orange plus review icon plus NEEDS_APPROVAL text",
+      "NOT_ASSESSED":"gray plus unknown icon plus NOT_ASSESSED text",
+      "MONITOR":"blue plus explicit NO ACTIONS ARE BLOCKED text",
+      "ENFORCE":"purple/high-contrast boundary plus ACTIONS MAY BE BLOCKED text"
+    },
+    "typography": {"human":"system sans-serif", "machine":"system monospace", "minimum_body_px":14},
+    "spacing_unit_px":4,
+    "radius_policy":"modest and consistent",
+    "motion_policy":"functional only; respect reduced motion"
+  },
+  "non_copy": ["no vendor color combination", "no vendor font bundle", "no vendor CSS", "no pixel matching", "no proprietary illustration", "no copied navigation labels beyond generic functional terms"]
+}

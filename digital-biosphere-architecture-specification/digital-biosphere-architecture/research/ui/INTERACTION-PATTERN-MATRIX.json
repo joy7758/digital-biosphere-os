@@ -1,0 +1,18 @@
+{
+  "artifact_id": "TITMAS-D29-INTERACTION-PATTERN-MATRIX-v1",
+  "status": "PRIVATE_RESEARCH_ONLY",
+  "patterns": [
+    {"pattern":"workspace_switch","titmas_use":"persistent context selector","safety_requirement":"warn on unsaved filters and never carry a key across workspaces"},
+    {"pattern":"mode_switch","titmas_use":"Monitor/Enforce display and request flow","safety_requirement":"no silent mode change; Enforce requires explicit Human authorization and confirmation"},
+    {"pattern":"advanced_filter","titmas_use":"Gate, Receipt and Audit lists","safety_requirement":"machine reason codes remain exportable and filters are URL/state reproducible"},
+    {"pattern":"detail_drawer","titmas_use":"low-risk row inspection","safety_requirement":"high-impact authorization and deletion use a full page, not a transient drawer"},
+    {"pattern":"timeline","titmas_use":"action-to-decision-to-receipt sequence","safety_requirement":"timestamp includes timezone and missing steps remain visible"},
+    {"pattern":"approval_queue","titmas_use":"Human review of bounded actions","safety_requirement":"scope, expiry, policy revision and supersession are visible before decision"},
+    {"pattern":"receipt_verify","titmas_use":"upload/reference then local or server verification","safety_requirement":"PASS never renders as truth, legality, safety or certification"},
+    {"pattern":"audit_export","titmas_use":"bounded offline bundle","safety_requirement":"export declares content classes, digest, signature profile and missing evidence"},
+    {"pattern":"key_create","titmas_use":"offline/manual provisioning","safety_requirement":"one-time display, masked later, exact scopes, TTL and revocation"},
+    {"pattern":"data_delete","titmas_use":"workspace deletion request","safety_requirement":"confirmation, retained exception disclosure, execution record and verification status"},
+    {"pattern":"empty_state","titmas_use":"first integration and no-observation states","safety_requirement":"does not claim healthy when no evidence exists"},
+    {"pattern":"error_state","titmas_use":"fail-closed problem details","safety_requirement":"stable reason code, remediation hint and correlation ID without secrets"}
+  ]
+}

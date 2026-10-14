@@ -1,0 +1,21 @@
+{
+  "schema_version": "0.1",
+  "status": "PUBLIC_SAFE_SYNTHETIC_ONLY",
+  "vectors": [
+    {"id": "SEC-D29-01", "category": "TENANT_ISOLATION", "input": "tenant_A_credential_requests_tenant_B_reference", "expected": "FAIL_CLOSED_NO_CROSS_TENANT_DATA"},
+    {"id": "SEC-D29-02", "category": "REVOKED_CREDENTIAL", "input": "revoked_scoped_credential", "expected": "REJECT_NO_USAGE_OR_SIDE_EFFECT"},
+    {"id": "SEC-D29-03", "category": "EXPIRED_CREDENTIAL", "input": "expired_scoped_credential", "expected": "REJECT_NO_USAGE_OR_SIDE_EFFECT"},
+    {"id": "SEC-D29-04", "category": "REPLAY", "input": "duplicate_nonce_and_idempotency_key", "expected": "NO_DUPLICATE_SUCCESS_OR_RECEIPT"},
+    {"id": "SEC-D29-05", "category": "AUTHORIZATION_BINDING", "input": "authorization_revision_mismatch", "expected": "BLOCK_OR_HOLD"},
+    {"id": "SEC-D29-06", "category": "POLICY_BINDING", "input": "policy_revision_mismatch", "expected": "BLOCK_OR_HOLD"},
+    {"id": "SEC-D29-07", "category": "RECEIPT_TAMPER", "input": "mutated_public_receipt_field", "expected": "FAIL_OR_NOT_ASSESSED_NEVER_PASS"},
+    {"id": "SEC-D29-08", "category": "AUDIT_TAMPER", "input": "missing_or_reordered_audit_event", "expected": "FAIL_OR_NOT_ASSESSED_WITH_LIMITATION"},
+    {"id": "SEC-D29-09", "category": "MONITOR_EFFECT", "input": "monitor_would_block", "expected": "NO_CUSTOMER_ACTION_EFFECT"},
+    {"id": "SEC-D29-10", "category": "UNKNOWN", "input": "insufficient_evidence", "expected": "NOT_ASSESSED_NEVER_ALLOW"},
+    {"id": "SEC-D29-11", "category": "DELETION", "input": "workspace_deletion_request", "expected": "SUCCESS_FAILED_OR_NOT_ASSESSED_RECORDED"},
+    {"id": "SEC-D29-12", "category": "RATE_LIMIT", "input": "quota_exceeded_request", "expected": "REJECT_WITHOUT_CROSS_TENANT_EFFECT"}
+  ],
+  "contains_exploit_payloads": false,
+  "contains_customer_data": false,
+  "contains_credentials": false
+}

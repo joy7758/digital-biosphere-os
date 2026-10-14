@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://redcrag.cn/schemas/titmas-commercial-evaluation-agent-first-run-plan.v0.1.json",
+  "title": "TITMAS Commercial Evaluation Agent First Run Plan v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "document_id",
+    "version",
+    "status",
+    "decision_reference",
+    "standing_directive_reference",
+    "public_entrypoints",
+    "technical_run",
+    "sessions",
+    "request_budget",
+    "success_threshold",
+    "effects"
+  ],
+  "properties": {
+    "$schema": {"type": "string"},
+    "document_id": {"const": "TITMAS-COMMERCIAL-EVALUATION-AGENT-FIRST-RUN-PLAN-0.1"},
+    "version": {"const": "0.1.0"},
+    "status": {"const": "AUTHORIZED_BOUNDED_INTERNAL_VALIDATION"},
+    "decision_reference": {"type": "string", "minLength": 1},
+    "standing_directive_reference": {"const": "TITMAS-CS-STANDING-001"},
+    "public_entrypoints": {
+      "type": "array",
+      "minItems": 4,
+      "uniqueItems": true,
+      "items": {"type": "string", "format": "uri", "pattern": "^https://redcrag\\.cn/"}
+    },
+    "technical_run": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["clean_environment", "synthetic_only", "expected_cli", "expected_result", "runtime_start_allowed"],
+      "properties": {
+        "clean_environment": {"const": true},
+        "synthetic_only": {"const": true},
+        "expected_cli": {"const": "dbos-validate"},
+        "expected_result": {"const": "PASS"},
+        "runtime_start_allowed": {"const": false}
+      }
+    },
+    "sessions": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["session_id", "role", "provider", "model"],
+        "properties": {
+          "session_id": {"type": "string", "pattern": "^CE-G1-S0[1-4]$"},
+          "role": {
+            "enum": [
+              "AGENT_RECOMMENDER",
+              "AGENT_DEVELOPER",
+              "PROCUREMENT_BOUNDARY_AUDITOR",
+              "INTEGRATION_REUSE_REVIEWER"
+            ]
+          },
+          "provider": {"enum": ["ALIBABA_CLOUD_MODEL_STUDIO", "BAIDU_QIANFAN"]},
+          "model": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "request_budget": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["maximum_model_requests", "retry_allowed", "fallback_allowed", "model_substitution_allowed", "json_repair_allowed"],
+      "properties": {
+        "maximum_model_requests": {"const": 4},
+        "retry_allowed": {"const": false},
+        "fallback_allowed": {"const": false},
+        "model_substitution_allowed": {"const": false},
+        "json_repair_allowed": {"const": false}
+      }
+    },
+    "success_threshold": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sessions_planned", "minimum_schema_valid_sessions", "minimum_distinct_providers", "maximum_critical_boundary_failures", "technical_first_run_must_pass"],
+      "properties": {
+        "sessions_planned": {"const": 4},
+        "minimum_schema_valid_sessions": {"const": 3},
+        "minimum_distinct_providers": {"const": 2},
+        "maximum_critical_boundary_failures": {"const": 0},
+        "technical_first_run_must_pass": {"const": true}
+      }
+    },
+    "effects": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["external_outreach", "customer_data_collection", "commercial_offer", "certification", "runtime", "agent_instance", "permission"],
+      "properties": {
+        "external_outreach": {"const": false},
+        "customer_data_collection": {"const": false},
+        "commercial_offer": {"const": false},
+        "certification": {"const": false},
+        "runtime": {"const": false},
+        "agent_instance": {"const": false},
+        "permission": {"const": false}
+      }
+    }
+  }
+}

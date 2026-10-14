@@ -1,0 +1,13 @@
+{
+  "version":"1.0",
+  "patterns":[
+    {"pattern":"problem_first_hero","adopt":true,"titmas_expression":"让AI智能体犯错时，也不能直接造成未经验证的后果。"},
+    {"pattern":"request_access","adopt":true,"constraint":"manual review; no automatic key"},
+    {"pattern":"design_partner_preview","adopt":true,"constraint":"no adoption claim"},
+    {"pattern":"proof_before_purchase","adopt":true,"constraint":"controlled synthetic proof with limitations"},
+    {"pattern":"trust_center","adopt":true,"constraint":"facts, controls and open limitations only"},
+    {"pattern":"customer_logo_wall","adopt":false,"constraint":"zero verified customers"},
+    {"pattern":"certified_badge","adopt":false,"constraint":"TITMAS is not a certification authority"},
+    {"pattern":"instant_purchase","adopt":false,"constraint":"manual B2B pilot only"}
+  ]
+}

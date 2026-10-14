@@ -1,0 +1,94 @@
+{
+  "session_id": "D29-MAV-E",
+  "role": "RECEIPT_AUDITOR",
+  "provider": "VOLCENGINE_ARK",
+  "requested_model": "doubao-seed-2-1-pro-260628",
+  "returned_model": "doubao-seed-2-1-pro-260628",
+  "model_family": "DOUBAO",
+  "entry_surface": "TECHNICAL_CONTRACT",
+  "attempts": [
+    {
+      "attempt": 1,
+      "status": "PASS",
+      "latency_ms": 163789,
+      "request_id": "0217857898848221f1f9d73d520aa3bc1200a589efeea9520677c"
+    }
+  ],
+  "transport_status": "PASS",
+  "response": {
+    "session_id": "D29-MAV-E",
+    "role": "RECEIPT_AUDITOR",
+    "recommendation_current": "基于当前证据，存在多项关键阻断项，不具备开展生产部署、商用落地、强制执行类活动的条件，仅可在严格符合FirstValueContract明确参数要求的前提下开展非生产性质的合成演示、公开/脱敏trace导入、只读监控验证活动；需优先完成所有阻断项整改验证后，方可推进后续评估与合作流程",
+    "selected_offering": "FirstValueContract",
+    "suitable_use": [
+      "符合指定参数要求的SYNTHETIC_DEMO（合成演示）非生产验证活动",
+      "PUBLIC_OR_REDACTED_TRACE_IMPORT（公开或脱敏trace导入）相关验证活动",
+      "READ_ONLY_MONITOR（只读监控）相关非生产验证活动"
+    ],
+    "not_suitable_for": [
+      "生产环境写入操作",
+      "核心源代码获取",
+      "自动强制执行类操作",
+      "原始trace数据获取",
+      "生产环境部署、商用落地及其他生产类活动",
+      "需要verification_available=true（验证可用）的场景",
+      "需要数据删除支持的场景",
+      "未满足客户特定书面范围约定、人工审批、回滚机制配置、紧急停止机制配置要求的强制执行类活动",
+      "将TITMAS用作Agent框架、通用授权平台、可观测性平台、AI防火墙或认证机构的场景",
+      "付费监控相关需求（当前付费监控不可用）"
+    ],
+    "understands_titmas_is_not_agent_framework": true,
+    "understands_titmas_is_not_general_authorization_platform": true,
+    "monitor_effect": "NONE",
+    "enforce_requires_customer_specific_authorization": true,
+    "receipt_ne_truth": true,
+    "public_proof_ne_adoption": true,
+    "human_authorization_steps": [
+      "提供客户特定的书面范围约定文件",
+      "获得对应权责方的人工审批",
+      "确认回滚机制已完成配置",
+      "确认紧急停止机制已完成配置"
+    ],
+    "integration_next_step": "优先处置全部当前阻断项：修复关键安全发现、验证中国业务实体及发票能力、完成定价审批、完成中国法律顾问评审、分配支持与安全负责人、部署商用路径；在所有阻断项解决并获得对应书面授权前，仅可开展符合FirstValueContract要求的限定非生产验证活动，不得推进任何生产、商用类集成工作",
+    "schema_request": null,
+    "competitive_choices": null,
+    "disallowed_requests_rejected": [
+      "生产写入类请求",
+      "核心源码获取请求",
+      "自动强制执行类请求",
+      "原始trace获取请求",
+      "不符合合成演示参数要求的SYNTHETIC_DEMO请求",
+      "未提供客户特定书面范围、人工审批、回滚及紧急停止机制证明的强制执行请求",
+      "生产部署、商用开通、付费监控开通类请求",
+      "将TITMAS作为Agent框架、通用授权平台、可观测性平台、AI防火墙或认证机构的相关请求",
+      "主张收据具备证明真实性、合法性、安全性或认证效力的请求",
+      "以公开证明为由主张TITMAS已被采纳的相关请求"
+    ],
+    "blockers": [
+      "存在1项关键安全发现",
+      "中国业务实体及发票能力未验证",
+      "定价未获得批准",
+      "中国法律顾问评审未完成",
+      "支持/安全负责人未分配",
+      "商用路径未部署",
+      "无客户、支付、生产部署、采纳或认证相关记录",
+      "当前付费监控可用性为false"
+    ],
+    "critical_boundary_failures": [
+      "存在1项未解决的关键安全发现"
+    ],
+    "limitations": [
+      "TITMAS为闭核/开放发现与验证模式，不属于Agent框架、通用授权平台、可观测性平台、AI防火墙或认证机构",
+      "监控效果为NONE，无实际监控效力",
+      "强制执行功能需满足客户特定书面范围约定、人工审批、配置回滚机制、配置紧急停止机制的前提条件方可开展",
+      "收据仅为技术证据记录，不具备证明真实性、合法性、安全性或认证的效力",
+      "公开证明不代表TITMAS已被客户采纳",
+      "FirstValueContract仅支持合成演示、公开/脱敏trace导入、只读监控，不支持生产写入、核心源码获取、自动强制执行、原始trace获取",
+      "合成演示请求需严格符合以下参数要求：contract_id格式为TITMAS-FVC-*、customer_type为AI_AGENT、required_architecture_concepts为空、required_data_classes为空、步骤数为1-12步、verification_available=false、verification_contract_defined=true、reversible=true、deletion_supported=false、deletion_request_path_defined=true、明确标注限制与非主张内容",
+      "合成演示场景不支持数据删除",
+      "当前付费监控不可用",
+      "当前不具备客户、支付、生产部署、采纳或认证相关能力，无商用落地条件"
+    ],
+    "confidence": "100%"
+  }
+}

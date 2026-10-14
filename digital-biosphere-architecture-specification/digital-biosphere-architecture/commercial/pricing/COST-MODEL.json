@@ -1,0 +1,42 @@
+{
+  "schema_version": "0.1",
+  "status": "INPUTS_REQUIRED_NOT_PRICED",
+  "currency_candidate": "CNY",
+  "tax_treatment": "HUMAN_FINANCE_REVIEW_REQUIRED",
+  "cost_inputs": {
+    "engineering_labor_cny": null,
+    "cloud_allocation_cny": null,
+    "model_api_cny": null,
+    "storage_and_backup_cny": null,
+    "audit_retention_cny": null,
+    "support_cny": null,
+    "deployment_cny": null,
+    "security_review_cny": null,
+    "travel_cny": null,
+    "tax_and_invoice_cny": null,
+    "risk_reserve_cny": null
+  },
+  "volume_inputs": {
+    "pilot_days": 30,
+    "agent_limit_candidate": 3,
+    "successful_monitor_evaluations": null,
+    "receipt_verifications": null,
+    "audit_storage_gib_days": null,
+    "support_hours": null
+  },
+  "formulas": {
+    "fully_loaded_cost": "sum(cost_inputs)",
+    "price_floor": "fully_loaded_cost + approved_risk_reserve",
+    "reference_price": "price_floor / (1 - approved_target_gross_margin)",
+    "unit_cost_per_1000_successful_evaluations": "fully_loaded_cost / successful_monitor_evaluations * 1000"
+  },
+  "required_human_inputs": [
+    "measured cost values",
+    "tax treatment",
+    "target gross margin",
+    "failed and NOT_ASSESSED billability",
+    "final price"
+  ],
+  "public_price": false,
+  "payment_authorized": false
+}

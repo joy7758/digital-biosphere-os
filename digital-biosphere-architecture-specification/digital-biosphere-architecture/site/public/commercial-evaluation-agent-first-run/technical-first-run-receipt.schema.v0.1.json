@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://redcrag.cn/commercial-evaluation-agent-first-run/technical-first-run-receipt.schema.v0.1.json",
+  "title": "TITMAS Technical First Run Receipt v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "document_id",
+    "version",
+    "status",
+    "observed_at",
+    "environment",
+    "public_artifacts",
+    "attempts",
+    "final_result"
+  ],
+  "properties": {
+    "$schema": {"const": "./technical-first-run-receipt.schema.v0.1.json"},
+    "document_id": {"const": "TITMAS-COMMERCIAL-EVALUATION-TECHNICAL-FIRST-RUN-RECEIPT-0.1"},
+    "version": {"const": "0.1.0"},
+    "status": {"const": "PASS_WITH_PRESERVED_FAILED_ATTEMPTS"},
+    "observed_at": {"type": "string", "format": "date-time"},
+    "environment": {
+      "type": "object",
+      "required": ["python", "package", "package_version", "clean_virtual_environment"],
+      "properties": {
+        "python": {"type": "string"},
+        "package": {"const": "digital-biosphere-os-preview"},
+        "package_version": {"const": "0.1.0.dev0"},
+        "clean_virtual_environment": {"const": true}
+      }
+    },
+    "public_artifacts": {
+      "type": "object",
+      "required": ["fixture_url", "fixture_sha256", "wheel_url", "wheel_sha256", "pack_sha256", "first_run_guide_sha256"],
+      "properties": {
+        "fixture_url": {"type": "string", "format": "uri"},
+        "fixture_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "wheel_url": {"type": "string", "format": "uri"},
+        "wheel_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "pack_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "first_run_guide_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+      }
+    },
+    "attempts": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "required": ["attempt", "status", "failure_class", "detail", "product_failure"],
+        "properties": {
+          "attempt": {"type": "integer", "minimum": 1, "maximum": 3},
+          "status": {"enum": ["PASS", "FAIL"]},
+          "failure_class": {"type": ["string", "null"]},
+          "detail": {"type": "string", "minLength": 1},
+          "product_failure": {"const": false}
+        }
+      }
+    },
+    "final_result": {
+      "type": "object",
+      "required": ["exit_code", "validator_result", "validator_output_sha256", "pass_meaning", "runtime_started", "agent_created", "entity_created", "permission_created"],
+      "properties": {
+        "exit_code": {"const": 0},
+        "validator_result": {"const": "PASS"},
+        "validator_output_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "pass_meaning": {"const": "LOCAL_STRUCTURE_AND_GOVERNANCE_CONSTRAINTS_PASS_ONLY"},
+        "runtime_started": {"const": false},
+        "agent_created": {"const": false},
+        "entity_created": {"const": false},
+        "permission_created": {"const": false}
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "version":"1.0",
+  "access_date":"2026-08-03",
+  "deployment_patterns":[
+    {"vendor":"Cisco AI Defense","cloud":true,"hybrid":true,"customer_vpc":true,"on_prem":"official architecture evidence; exact packaging requires sales validation"},
+    {"vendor":"Permit.io","cloud":true,"hybrid":"NOT_ASSESSED","customer_vpc":true,"on_prem":true},
+    {"vendor":"Cerbos","cloud_control_plane":true,"customer_data_plane":true,"on_prem":true},
+    {"vendor":"LangSmith","cloud":true,"hybrid":true,"self_hosted":true,"data_plane_notes":"hybrid control traffic and trace export boundaries must be assessed"},
+    {"vendor":"Baidu Qianfan","public_cloud":true,"private_software":true,"appliance":true},
+    {"vendor":"TITMAS candidate","local_sandbox":true,"china_managed_private_pilot":true,"customer_vpc":true,"on_prem_reference":true,"air_gapped":"future profile only"}
+  ],
+  "default_boundary":{"customer_raw_data_local":true,"management_plane_metadata_only":true}
+}

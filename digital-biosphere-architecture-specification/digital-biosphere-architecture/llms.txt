@@ -1,0 +1,101 @@
+# TITMAS canonical machine discovery pointer
+
+Canonical agent entry: ./agent-index.json
+Human-compatible entry: ./TITMAS/README.md
+Conformance command: python3 TITMAS/conformance/harness.py
+
+TITMAS is commercial, private-core infrastructure for Agent action control and
+execution evidence. Public Schema, SDK, MCP, examples and validators are bounded
+interoperability surfaces; they do not imply an open-source core, public
+contribution route or developer community. TITMAS is not an Agent Runtime,
+executor, certification authority, truth store or autonomous GitHub authority.
+
+Primary active product: 红岩公文
+Primary engineering direction: 红岩公文
+Current canonical public domain: https://dcell.net
+Current primary product entry: https://dcell.net/pilot
+DCell role: supporting architecture and long-term research layer.
+TITMAS role: supporting trust and evidence infrastructure.
+Digital Cell Demo status: released frozen reference asset.
+Public TITMAS discovery on the current domain: unavailable as of 2026-08-28.
+Public TITMAS API on the current domain: unavailable as of 2026-08-28.
+
+Level 1 current program direction: ./CURRENT-PROJECT-DIRECTION-2026-08-28.md
+Level 1 current project state: ./PROJECT-STATE-RECONCILIATION-2026-08-28.md
+Level 1 authority: current program direction, priority and cross-project handoff.
+
+Current strategy: ./architecture/commercial-private-infrastructure-strategy-constitution.md
+Current commercial machine status: ./COMMERCIAL-READINESS-MACHINE-STATUS.json
+Current commercial machine status role: LEVEL_2_CURRENT_SUPPORTING_INFRASTRUCTURE_STATUS
+Current commercial machine status scope: TITMAS_SUPPORTING_INFRASTRUCTURE_ONLY
+Current commercial machine status overrides program direction: false
+Current commercial discovery: ./commercial/discovery/status.json
+Current commercial discovery role: LEVEL_2_CURRENT_SUPPORTING_INFRASTRUCTURE_STATUS
+Current commercial discovery overrides program direction: false
+Retained conditional convergence snapshot: ./titmas-commercial-product-convergence-status-v1.0.json
+Retained human-readable implementation projection: ./TITMAS-COMMERCIAL-PRODUCT-CONVERGENCE-IMPLEMENTATION-PROJECTION-v1.0.md
+Architecture decision support snapshot: ./titmas-component-adoption-matrix-v1.0.json
+Component adoption facts must be refreshed before implementation: true.
+Commercial program state: ./commercial-program-state.json
+Commercial readiness: ./commercial-readiness.json
+Commercial architecture: ./TITMAS-COMMERCIAL-ARCHITECTURE-v1.0.md
+Agent onboarding: ./TITMAS-AGENT-NATIVE-ONBOARDING-v1.0.md
+Receipt key management: ./TITMAS-RECEIPT-KEY-MANAGEMENT-v1.0.md
+TITMAS supporting infrastructure maturity: Development.
+Retained TITMAS D29 snapshot stage: D29_CUSTOMER_ENTRY_REFERENCE_IMPLEMENTATION.
+D29 status: IN_PROGRESS_BLOCKED.
+D29 role: RETAINED_TITMAS_SUPPORTING_INFRASTRUCTURE_SNAPSHOT.
+D29 active engineering mainline: false.
+D29 execution authorized: false.
+Commercial technical ready: false.
+Paid Beta ready: false.
+Production ready: false.
+Mature commercial infrastructure: false.
+Commercial model complete: false.
+Commercial private pilot ready: false.
+Paid Monitor pilot available: false.
+Current core repository visibility: PRIVATE.
+Public core clone available: false.
+Public protocol released: false.
+External trial requires explicit access: true.
+External participant invitation authorized: false.
+
+Historical community and public-contribution materials remain archived at
+./TITMAS/community/community-status.json. Their current authority effect is
+NONE, and their commands are not authorized as current entry paths.
+
+The canonical data-plane repository revision is
+c319001cc1cf9e44d8b3d0b142a025c6c9af1678. The retained live commercial
+release remains 9bbfce6154d67f4ab50e911b5e49611f5a4a8b57. It is available for
+bounded technical calls, while commercial technical ready, Paid Beta ready,
+production ready and mature commercial infrastructure all remain false.
+
+Legacy historical machine discovery: https://redcrag.cn/.well-known/titmas.json
+Legacy historical public API status: https://redcrag.cn/api/v1/status
+Public integration source: https://github.com/joy7758/titmas-integrations
+Integration source revision: 6ed4dadd4693129d3daca0a9a29964a4f7f864e9
+Legacy historical ledger transition design: https://redcrag.cn/architecture/cr01-ledger-transition-design-v1.0.json
+
+Verified foundation evidence includes a PostgreSQL deployment and tenant-safe
+operational metrics. CR-01 backup integrity and structural restoration passed,
+but 2 of 1,661 restored historical synthetic Receipt signatures could not be
+verified because their random key was never retained. Full restore therefore
+failed, RTO is not established, and CR-01 is
+BLOCKED_LEDGER_INTEGRITY. The records were not deleted, rewritten, re-signed,
+or allowlisted. Agent end-to-end, security-suite, external-agent-beta and
+seven-day soak gates remain false. No payment processor or active pricing is
+connected.
+
+Human Decision CR01-D02 is accepted for design only. Three role-scoped
+qwen3.7-max reviews recommend an immutable signed exception manifest plus a
+Tenant-scoped clean Receipt epoch anchored to the corresponding legacy chain
+tip. The legacy result remains 1,659 valid and 2 unverifiable; the anchor does
+not validate the missing signatures. Gateway implementation, database
+migration, a second deployment retry, CR-01 restart and soak remain
+unauthorized. The next decision is
+CR01-D03_OPTION_C_IMPLEMENTATION_AND_CAP_EXCEPTION.
+
+Stage 5.8 records 24 candidate outcomes: 22 valid and 2 retained unknowns. The
+replacement threshold passed 4 of 6 criteria, so the conclusion remains
+NOT_ASSESSED and the comparison limitation is retained. It is not customer
+adoption or production evidence.

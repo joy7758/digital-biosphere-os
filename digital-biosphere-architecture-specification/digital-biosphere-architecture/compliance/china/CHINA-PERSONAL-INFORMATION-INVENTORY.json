@@ -1,0 +1,16 @@
+{
+  "artifact_id": "TITMAS-D29-CHINA-PI-INVENTORY-v1",
+  "status": "DESIGN_INVENTORY_HUMAN_LEGAL_REVIEW_REQUIRED",
+  "collection_principle": "MINIMUM_NECESSARY",
+  "fields": [
+    {"field":"name","surface":"request_access","classification":"PERSONAL_INFORMATION","purpose":"identify contact","legal_basis_candidate":"CONSENT_OR_CONTRACT_PREPARATION_REVIEW_REQUIRED","location":"CHINA","retention":"TO_BE_APPROVED","roles":["authorized_commercial_operator"],"subprocessor":"NOT_SELECTED","cross_border":false,"deletion":"request_workflow_required","audit":true},
+    {"field":"business_email","surface":"request_access","classification":"PERSONAL_INFORMATION","purpose":"respond to requested contact","legal_basis_candidate":"CONSENT_OR_CONTRACT_PREPARATION_REVIEW_REQUIRED","location":"CHINA","retention":"TO_BE_APPROVED","roles":["authorized_commercial_operator","support_owner"],"subprocessor":"NOT_SELECTED","cross_border":false,"deletion":"request_workflow_required","audit":true},
+    {"field":"organization","surface":"request_access","classification":"INTERNAL_OR_PERSONAL_INFORMATION_DEPENDING_ON_CONTEXT","purpose":"qualification and routing","legal_basis_candidate":"CONSENT_OR_CONTRACT_PREPARATION_REVIEW_REQUIRED","location":"CHINA","retention":"TO_BE_APPROVED","roles":["authorized_commercial_operator"],"subprocessor":"NOT_SELECTED","cross_border":false,"deletion":"request_workflow_required","audit":true},
+    {"field":"preferred_contact","surface":"request_access","classification":"PERSONAL_INFORMATION_POSSIBLE","purpose":"honor requested channel","legal_basis_candidate":"CONSENT_REVIEW_REQUIRED","location":"CHINA","retention":"TO_BE_APPROVED","roles":["authorized_commercial_operator"],"subprocessor":"NOT_SELECTED","cross_border":false,"deletion":"request_workflow_required","audit":true},
+    {"field":"security_contact","surface":"workspace","classification":"PERSONAL_INFORMATION","purpose":"security notification","legal_basis_candidate":"CONTRACT_PERFORMANCE_REVIEW_REQUIRED","location":"CHINA","retention":"CONTRACT_PLUS_APPROVED_PERIOD","roles":["security_contact","support_owner"],"subprocessor":"NONE_BY_DEFAULT","cross_border":false,"deletion":"contract_exit_workflow","audit":true},
+    {"field":"billing_contact","surface":"workspace","classification":"PERSONAL_INFORMATION","purpose":"billing and invoice coordination","legal_basis_candidate":"CONTRACT_AND_LEGAL_OBLIGATION_REVIEW_REQUIRED","location":"CHINA","retention":"FINANCE_RULE_REVIEW_REQUIRED","roles":["finance_contact"],"subprocessor":"NONE_BY_DEFAULT","cross_border":false,"deletion":"legal_exception_possible","audit":true},
+    {"field":"ip_address","surface":"security_log","classification":"PERSONAL_INFORMATION_POSSIBLE","purpose":"security, rate limit and incident response","legal_basis_candidate":"SECURITY_NECESSITY_REVIEW_REQUIRED","location":"CHINA","retention":"SHORT_BOUNDED_PERIOD_TO_BE_APPROVED","roles":["security_contact"],"subprocessor":"HOSTING_PROVIDER","cross_border":false,"deletion":"policy_driven","audit":true}
+  ],
+  "not_collected_by_default": ["national_id", "personal_phone", "home_address", "biometrics", "customer_end_user_content", "customer_raw_trace", "model_chain_of_thought"],
+  "sensitive_personal_information_status": "PROHIBITED_IN_INITIAL_PILOT_UNLESS_SEPARATELY_REVIEWED_AND_AUTHORIZED"
+}

@@ -1,0 +1,76 @@
+{
+  "registry_version": "0.3-cross-repository-credential-routing",
+  "authority": "CHECK_CONFIGURATION_ONLY_NOT_PROJECT_TRUTH",
+  "projects": [
+    {
+      "project_id": "DBA_COCKPIT",
+      "display_name_zh": "DBA 驾驶舱",
+      "canonical_source_ref": "CURRENT-PROJECT-DIRECTION-2026-08-28.md",
+      "repository": "joy7758/digital-biosphere-architecture-specification",
+      "branch": "main",
+      "status_path": "agent-index.json",
+      "lifecycle_mode": "ACTIVE",
+      "owner_conversation": "DBA 专用对话",
+      "scan_authorized": true,
+      "data_classification": "PRIVATE_INTERNAL_METADATA",
+      "enabled_cells": ["PROJECT_DISCOVERY_CELL", "ENVIRONMENT_DISCOVERY_CELL", "QUALITY_CELL", "DRIFT_CELL"],
+      "source_access_mode": "GITHUB_API_CURRENT_REPOSITORY_READ_ONLY"
+    },
+    {
+      "project_id": "RED_YAN_OFFICIAL_DOCUMENT",
+      "display_name_zh": "红岩公文",
+      "canonical_source_ref": "RED-YAN-REMOTE-RUNTIME-EVIDENCE-SNAPSHOT-2026-08-28.json",
+      "repository": "joy7758/hongyan-official-document",
+      "branch": "main",
+      "cross_repo_credential_required": true,
+      "lifecycle_mode": "ACTIVE",
+      "owner_conversation": "红岩公文专用对话",
+      "scan_authorized": true,
+      "data_classification": "DBA_ADMITTED_SUMMARY_ONLY",
+      "enabled_cells": ["PROJECT_DISCOVERY_CELL", "RELATIONSHIP_DISCOVERY_CELL", "DRIFT_CELL", "HANDOFF_CELL"],
+      "source_access_mode": "CROSS_REPOSITORY_CREDENTIAL_GATED_READ_ONLY"
+    },
+    {
+      "project_id": "TITMAS_SUPPORTING_LAYER",
+      "display_name_zh": "TITMAS 支撑层",
+      "canonical_source_ref": "PROJECT-STATE-RECONCILIATION-2026-08-28.md",
+      "repository": "joy7758/titmas",
+      "branch": "main",
+      "cross_repo_credential_required": true,
+      "lifecycle_mode": "SUPPORTING",
+      "owner_conversation": "TITMAS 专用对话",
+      "scan_authorized": true,
+      "data_classification": "PRIVATE_REPOSITORY_METADATA",
+      "enabled_cells": ["PROJECT_DISCOVERY_CELL", "ENVIRONMENT_DISCOVERY_CELL", "UPGRADE_CELL", "QUALITY_CELL"],
+      "source_access_mode": "CROSS_REPOSITORY_CREDENTIAL_GATED_READ_ONLY"
+    },
+    {
+      "project_id": "DIGITAL_CELL_DEMO",
+      "display_name_zh": "数字细胞演示",
+      "canonical_source_ref": "CURRENT-PROJECT-DIRECTION-2026-08-28.md",
+      "repository": "joy7758/titmas-demo",
+      "branch": "main",
+      "status_path": "README.md",
+      "lifecycle_mode": "FROZEN",
+      "owner_conversation": "Digital Cell Demo 专用对话",
+      "scan_authorized": true,
+      "data_classification": "PUBLIC_REFERENCE_METADATA",
+      "enabled_cells": ["PROJECT_DISCOVERY_CELL", "QUALITY_CELL", "DRIFT_CELL"],
+      "source_access_mode": "GITHUB_API_PUBLIC_REPOSITORY_READ_ONLY"
+    },
+    {
+      "project_id": "TITMAC_SCOUT",
+      "display_name_zh": "TITMAC 侦察",
+      "canonical_source_ref": "cockpit/source-registry.json#titmac-scout",
+      "repository": "joy7758/titmac-scout",
+      "branch": "main",
+      "cross_repo_credential_required": true,
+      "lifecycle_mode": "SUPPORTING",
+      "owner_conversation": "TITMAC Scout 专用对话",
+      "scan_authorized": true,
+      "data_classification": "PRIVATE_STATUS_PROJECTION",
+      "enabled_cells": ["PROJECT_DISCOVERY_CELL", "ENVIRONMENT_DISCOVERY_CELL", "QUALITY_CELL"],
+      "source_access_mode": "EXISTING_READ_ONLY_STATUS_ADAPTER"
+    }
+  ]
+}

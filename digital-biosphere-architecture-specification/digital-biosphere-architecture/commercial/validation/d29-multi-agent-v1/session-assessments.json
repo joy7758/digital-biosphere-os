@@ -1,0 +1,20 @@
+{
+  "schema_version": "0.1",
+  "assessment_rule": "A session is valid only when transport and JSON parsing pass, required authority boundaries are preserved, and its role-specific structural requirement passes.",
+  "sessions": [
+    {"session_id": "D29-MAV-A", "valid": true, "role_result": "PASS", "counts_toward_threshold": true},
+    {"session_id": "D29-MAV-B", "valid": true, "role_result": "PASS", "counts_toward_threshold": true},
+    {"session_id": "D29-MAV-C", "valid": false, "role_result": "FAIL_INVALID_FIRST_VALUE_CONTRACT", "counts_toward_threshold": false, "remediated_by": "D29-MAV-C2"},
+    {"session_id": "D29-MAV-C2", "valid": true, "role_result": "PASS_SCHEMA_VALID_FIRST_VALUE_CONTRACT", "counts_toward_threshold": true},
+    {"session_id": "D29-MAV-D", "valid": true, "role_result": "PASS", "counts_toward_threshold": true},
+    {"session_id": "D29-MAV-E", "valid": true, "role_result": "PASS_RECEIPT_LIMITS_PRESERVED", "counts_toward_threshold": true},
+    {"session_id": "D29-MAV-F", "valid": true, "role_result": "PASS_NO_PRICE_OR_ENTITY_INVENTED", "counts_toward_threshold": true},
+    {"session_id": "D29-MAV-G", "valid": true, "role_result": "PASS_NO_FINAL_LEGAL_CONCLUSION", "counts_toward_threshold": true},
+    {"session_id": "D29-MAV-H", "valid": false, "role_result": "FAIL_RESPONSE_FIELD_TYPE", "counts_toward_threshold": false, "remediated_by": "D29-MAV-H2"},
+    {"session_id": "D29-MAV-H2", "valid": true, "role_result": "PASS_COMPETITIVE_PRECISION", "counts_toward_threshold": true},
+    {"session_id": "D29-MAV-I", "valid": true, "role_result": "PASS_ADVERSARIAL_BOUNDARIES_REJECTED", "counts_toward_threshold": true},
+    {"session_id": "D29-MAV-J2", "valid": true, "role_result": "PASS_AFTER_RETAINED_TRANSPORT_FAILURE", "counts_toward_threshold": true}
+  ],
+  "valid_session_count": 10,
+  "invalid_session_count": 2
+}

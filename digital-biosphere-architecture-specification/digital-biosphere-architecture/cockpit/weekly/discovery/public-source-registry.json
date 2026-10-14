@@ -1,0 +1,11 @@
+{
+  "schema": "dba.public_discovery_source_registry.v0.1",
+  "source_universe": "BOUNDED_APPROVED_PUBLIC_SOURCES",
+  "sources": [
+    {"source_id": "ARXIV_ATOM", "endpoint": "https://export.arxiv.org/api/query", "methods": ["GET"], "max_response_bytes": 1048576, "private": false},
+    {"source_id": "GITHUB_PUBLIC_API", "endpoint": "https://api.github.com", "methods": ["GET"], "max_response_bytes": 1048576, "private": false},
+    {"source_id": "DCDAT_001_BASELINE", "endpoint": "baseline/dcdat-001", "methods": ["LOCAL_READ"], "private": false},
+    {"source_id": "REPOSITORY_DISCOVERY_HINT", "endpoint": "discovery/hints", "methods": ["LOCAL_READ"], "private": false, "optional": true}
+  ],
+  "forbidden": ["GENERAL_WEB_CRAWL", "PRIVATE_REPOSITORY", "AUTHENTICATED_PRIVATE_CONTENT", "PDF_DOWNLOAD", "REPOSITORY_CLONE", "EXTERNAL_CODE_EXECUTION"]
+}

@@ -1,0 +1,37 @@
+{
+  "created_at": null,
+  "entity_id": "dbio://repository/redcrag-public-synthetic-example/v0.1",
+  "entity_type": "repository",
+  "lifecycle_state": "PROPOSED",
+  "limitations": [
+    "Synthetic public-safe example only.",
+    "No real entity, identity verification, activation, permission, evidence truth, or authority is created."
+  ],
+  "object_id": "dbio://repository/redcrag-public-synthetic-example/v0.1",
+  "object_type": "ENTITY",
+  "owner_reference": {
+    "namespace": "dbio",
+    "reference_id": "dbio://entity/redcrag-public-synthetic-owner/v0.1",
+    "reference_type": "ENTITY",
+    "source": "redcrag.cn/sdk/v0.1/examples/synthetic-entity.json",
+    "status": "DECLARED",
+    "version": "v0.1"
+  },
+  "source": {
+    "namespace": "dbio",
+    "source_id": "redcrag.cn/sdk/v0.1/examples/synthetic-entity.json",
+    "status": "DECLARED",
+    "version": "v0.1"
+  },
+  "source_reference": {
+    "namespace": "dbio",
+    "reference_id": "dbio://repository/redcrag-public-synthetic-example/v0.1",
+    "reference_type": "ENTITY",
+    "source": "redcrag.cn/sdk/v0.1/examples/synthetic-entity.json",
+    "status": "DECLARED",
+    "version": "v0.1"
+  },
+  "status": "DECLARED",
+  "updated_at": null,
+  "version": "v0.1"
+}

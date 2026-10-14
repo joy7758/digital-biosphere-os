@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://redcrag.cn/schemas/titmas-commercial-evaluation-agent-review-response.v0.1.json",
+  "title": "TITMAS Commercial Evaluation Agent Review Response v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "session_id",
+    "role",
+    "evaluation_use_verdict",
+    "production_use_verdict",
+    "positioning",
+    "first_run_assessment",
+    "pass_meaning",
+    "recommend_for",
+    "do_not_recommend_for",
+    "blocking_reasons",
+    "fixable_gaps",
+    "critical_boundary_failures",
+    "next_action"
+  ],
+  "properties": {
+    "session_id": {"type": "string", "pattern": "^CE-G1-S0[1-4]$"},
+    "role": {
+      "enum": [
+        "AGENT_RECOMMENDER",
+        "AGENT_DEVELOPER",
+        "PROCUREMENT_BOUNDARY_AUDITOR",
+        "INTEGRATION_REUSE_REVIEWER"
+      ]
+    },
+    "evaluation_use_verdict": {
+      "enum": ["RECOMMENDED", "CONDITIONALLY_RECOMMENDED", "NOT_RECOMMENDED"]
+    },
+    "production_use_verdict": {"const": "NOT_RECOMMENDED"},
+    "positioning": {"const": "TRUSTED_MULTI_AGENT_INFRASTRUCTURE_EVALUATION_ENTRY"},
+    "first_run_assessment": {"enum": ["CLEAR", "PARTIAL", "BLOCKED"]},
+    "pass_meaning": {"const": "LOCAL_STRUCTURE_AND_GOVERNANCE_CONSTRAINTS_PASS_ONLY"},
+    "recommend_for": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "do_not_recommend_for": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "blocking_reasons": {"type": "array", "items": {"type": "string"}},
+    "fixable_gaps": {"type": "array", "items": {"type": "string"}},
+    "critical_boundary_failures": {"type": "array", "maxItems": 0},
+    "next_action": {"type": "string", "minLength": 1}
+  }
+}

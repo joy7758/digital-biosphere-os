@@ -1,0 +1,15 @@
+{
+  "document_id": "DBA-TITMAS-CONTRIBUTOR-ENTRY-0.1-COMPATIBILITY-POINTER",
+  "status": "DEPRECATED_COMPATIBILITY_POINTER",
+  "canonical": false,
+  "superseded_by": "agent-index.json",
+  "canonical_agent_entry": "agent-index.json",
+  "canonical_human_entry": "TITMAS/README.md",
+  "community_status": "TITMAS/community/community-status.json",
+  "task_registry": "TITMAS/agent-native/tasks/task-registry.json",
+  "limitations": [
+    "THIS_FILE_IS_NOT_A_SECOND_MACHINE_ENTRY",
+    "POINTER_NE_ADOPTION",
+    "POINTER_NE_PUBLIC_CONTRIBUTION_AUTHORIZATION"
+  ]
+}

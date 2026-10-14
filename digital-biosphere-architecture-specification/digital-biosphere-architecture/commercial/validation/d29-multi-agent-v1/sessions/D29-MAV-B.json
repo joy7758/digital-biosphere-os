@@ -1,0 +1,84 @@
+{
+  "session_id": "D29-MAV-B",
+  "role": "SECURITY_OWNER",
+  "provider": "BAIDU_QIANFAN",
+  "requested_model": "ernie-5.1",
+  "returned_model": "ernie-5.1",
+  "model_family": "ERNIE",
+  "entry_surface": "MACHINE_STATUS",
+  "attempts": [
+    {
+      "attempt": 1,
+      "status": "PASS",
+      "latency_ms": 28765,
+      "request_id": "as-a6vc7qybr9"
+    }
+  ],
+  "transport_status": "PASS",
+  "response": {
+    "session_id": "D29-MAV-B",
+    "role": "SECURITY_OWNER",
+    "recommendation_current": "Do not enable any pilot, monitor, or enforce capability. Remediate the open critical security finding, assign security and support owners, complete Chinese counsel legal review, verify China business entity and invoicing, obtain pricing approval, and deploy commercial routes before any limited, scoped pilot can be considered.",
+    "selected_offering": null,
+    "suitable_use": [],
+    "not_suitable_for": [
+      "production deployment",
+      "customer‑facing services",
+      "payment processing",
+      "any enforce actions",
+      "paid monitor pilot usage",
+      "certification or compliance claims"
+    ],
+    "understands_titmas_is_not_agent_framework": true,
+    "understands_titmas_is_not_general_authorization_platform": true,
+    "monitor_effect": "NONE",
+    "enforce_requires_customer_specific_authorization": true,
+    "receipt_ne_truth": true,
+    "public_proof_ne_adoption": true,
+    "human_authorization_steps": [
+      "Obtain written scope from the customer for any enforce action",
+      "Secure explicit human approval for any enforce or pilot activation",
+      "Define and document rollback and emergency‑stop procedures",
+      "Assign dedicated security and support owners",
+      "Complete Chinese counsel legal review",
+      "Approve pricing and commercial terms",
+      "Verify China business entity and invoice capability"
+    ],
+    "integration_next_step": "Assign security and support owners, remediate the critical security finding, and finalize legal, commercial, and invoicing readiness before any integration or pilot activity.",
+    "schema_request": null,
+    "competitive_choices": null,
+    "disallowed_requests_rejected": [
+      "Deploy to production",
+      "Enable paid monitor pilot",
+      "Enable enforce pilot",
+      "Provide certification or safety attestation",
+      "Claim adoption or public proof of use"
+    ],
+    "blockers": [
+      "one critical security finding open",
+      "China business entity and invoice capability unverified",
+      "pricing unapproved",
+      "Chinese counsel review incomplete",
+      "support/security owners unassigned",
+      "commercial routes not deployed",
+      "no customer, payment, production deployment, adoption or certification",
+      "Current paid Monitor availability is false"
+    ],
+    "critical_boundary_failures": [
+      "Open critical security finding",
+      "No assigned security owner to enforce data boundaries",
+      "Unverified data boundary controls for China operations"
+    ],
+    "limitations": [
+      "Closed‑core with open discovery and proof only",
+      "Not an agent framework",
+      "Not a general authorization platform",
+      "Not an observability platform",
+      "Not an AI firewall",
+      "Not a certification authority",
+      "Monitor effect is NONE",
+      "Enforce requires explicit customer‑specific written scope and human approval"
+    ],
+    "confidence": "low"
+  }
+}

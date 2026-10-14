@@ -1,0 +1,1428 @@
+{
+  "schema_version": "0.1",
+  "validation_id": "TMAI-ACV-20260721-001",
+  "artifact_class": "SANITIZED_VALIDATION_OBSERVATION_NOT_CANONICAL_EVIDENCE",
+  "started_at": "2026-07-22T00:00:30+08:00",
+  "completed_at": "2026-07-22T00:06:34+08:00",
+  "protocol_reference": "AGENT-CUSTOMER-VALIDATION-PROTOCOL.md",
+  "source_observations": {
+    "public": [
+      {
+        "url": "https://redcrag.cn/llms.txt",
+        "status": 200,
+        "bytes": 1680,
+        "sha256": "06e582b44b4ca0ca2b4930c5b17302c67a24da8d37483c0c32426b7ae31134ec",
+        "attempts": [
+          {
+            "attempt": 1,
+            "status": "completed",
+            "http_status": 200
+          }
+        ]
+      },
+      {
+        "url": "https://redcrag.cn/agent-index.json",
+        "status": 200,
+        "bytes": 1505,
+        "sha256": "9f09de38ffb8110cccb93fa968270fcb8e650fbed83d737bf03d1f68571d5327",
+        "attempts": [
+          {
+            "attempt": 1,
+            "status": "completed",
+            "http_status": 200
+          }
+        ]
+      },
+      {
+        "url": "https://redcrag.cn/status.json",
+        "status": 200,
+        "bytes": 1435,
+        "sha256": "ec5c2d75bb5b48af5733a55e23996142554ddf27d6f47803398da3d53e581104",
+        "attempts": [
+          {
+            "attempt": 1,
+            "status": "completed",
+            "http_status": 200
+          }
+        ]
+      }
+    ],
+    "bounded_package": [
+      {
+        "path": "EXTERNAL-DEVELOPER-TRIAL-PACKAGE-v0.1.json",
+        "bytes": 3986,
+        "sha256": "dd60d93456ee5843eacdd8721e43a900e1b366237bc4de57dec32deb767f812b"
+      },
+      {
+        "path": "PUBLIC-PROJECT-OVERVIEW.md",
+        "bytes": 6857,
+        "sha256": "8c8e46b3d77e97e182c3e24945c3113b46937408e72eb398f637c44810f7eb58"
+      },
+      {
+        "path": "EXTERNAL-DEVELOPER-TRIAL-GUIDE.md",
+        "bytes": 5609,
+        "sha256": "517a9544234318f86003c25f9bb1ddac1d28d99a71c246823228f982fc4b59de"
+      }
+    ]
+  },
+  "expected_session_count": 12,
+  "sessions": [
+    {
+      "validation_id": "TMAI-ACV-20260721-001",
+      "session_id": "ARK-DEEPSEEK-BOUNDED_PACKAGE",
+      "profile_id": "ARK-DEEPSEEK",
+      "agent_customer_profile": "infrastructure integration agent",
+      "provider": "ark",
+      "model": "deepseek-v4-flash-260425",
+      "context": "BOUNDED_PACKAGE",
+      "started_at": "2026-07-22T00:01:01+08:00",
+      "completed_at": "2026-07-22T00:01:49+08:00",
+      "request_sha256": "7c820ada8c1b199c37c6795f8de256e30af067f948eb5f80e6621c18b022321b",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "completed",
+          "http_status": 200
+        }
+      ],
+      "status": "COMPLETED",
+      "http_status": 200,
+      "response_sha256": "2dd3215ac5b002b1b6f6ba89e1a41d32de240e1e170bcc070cd023d37a111f84",
+      "raw_content": "{\n  \"project_identification\": {\n    \"canonical_name\": \"Trusted Multi-Agent Infrastructure\",\n    \"project_family\": \"Digital Biosphere\",\n    \"summary\": \"Trusted Multi-Agent Infrastructure providing identity, lifecycle, execution records, evidence references, verification, evaluation, and controlled evolution for AI agents.\"\n  },\n  \"architecture_roles\": {\n    \"DBA\": \"Program Governance and Architecture Cockpit: governance, architecture boundaries, roadmap, risk, decisions, and integration gates.\",\n    \"DBOS\": \"Existence Infrastructure: identity, lifecycle, capability boundaries, execution records, evidence references, and validation.\",\n    \"SAEE\": \"Evolution Intelligence Layer: reliability, stability, risk evaluation, and evolution recommendations.\",\n    \"Governance Decision\": \"DBA owns governance decisions; SAEE recommendations are not decisions; decisions are not execution.\"\n  },\n  \"current_release_state\": {\n    \"state\": \"developer-preview-draft\",\n    \"released\": false,\n    \"production_ready\": false,\n    \"basis\": \"The project overview explicitly states 'DEVELOPER_PREVIEW_RELEASED=false', 'PRODUCTION_RUNTIME_CREATED=false', and the trial package has not been authorized for external trial. Release status is 'not-released'.\"\n  },\n  \"appropriate_use_cases\": [\n    \"Local synthetic demo to understand DBOS and SAEE concepts\",\n    \"Evaluating the architecture and boundaries of DBA, DBOS, SAEE\",\n    \"Testing the multi-agent trust demo with synthetic inputs\",\n    \"Assessing the current state of the developer preview\"\n  ],\n  \"inappropriate_use_cases\": [\n    \"Production deployment of agent systems\",\n    \"Real-time authorization enforcement\",\n    \"Long-running multi-agent collaboration in production\",\n    \"Agent framework creation and orchestration\",\n    \"Autonomous evolution decisions\",\n    \"Any use requiring production readiness or external data\"\n  ],\n  \"exact_invocation_or_validation_steps\": [\n    \"python3 tools/run_tests.py\",\n    \"python3 -m examples.multi_agent_trust_demo.run_demo\",\n    \"PYTHONDONTWRITEBYTECODE=1 python3 examples/mcp_reference_demo/run_demo.py\",\n    \"python3 -m unittest tests/test_dbos_developer_preview_adapter.py\",\n    \"python3 scripts/saee_evaluate_dbos_preview.py --input /tmp/dbos-multi-agent-trust-demo-v0.1.json\",\n    \"git checkout 0caa2c45e511a82d0dcab778b0ffc3163aac0029\",\n    \"git checkout 2173c258f91aed03fc02c0097d4250a87be703aa\"\n  ],\n  \"composition_flow\": [\n    \"Checkout DBOS repository at exact commit 0caa2c45e511a82d0dcab778b0ffc3163aac0029\",\n    \"Create Python virtual environment and install DBOS with pip install -e .\",\n    \"Run DBOS tests with python3 tools/run_tests.py\",\n    \"Run multi-agent trust demo and save output to /tmp/dbos-multi-agent-trust-demo-v0.1.json\",\n    \"Checkout SAEE repository at exact commit 2173c258f91aed03fc02c0097d4250a87be703aa\",\n    \"Create Python virtual environment and install SAEE dependencies (jsonschema, referencing)\",\n    \"Run SAEE adapter tests with python3 -m unittest tests/test_dbos_developer_preview_adapter.py\",\n    \"Run SAEE evaluation on demo output and save to /tmp/saee-dbos-developer-preview-evaluation-v0.1.json\"\n  ],\n  \"boundary_answers\": {\n    \"evidence_equals_truth\": false,\n    \"evaluation_equals_authority\": false,\n    \"recommendation_equals_decision\": false,\n    \"decision_equals_execution\": false,\n    \"capability_equals_permission\": false,\n    \"dbos_is_agent_framework\": false,\n    \"saee_can_execute_own_recommendations\": false,\n    \"open_web_discovery\": \"NOT_ASSESSED\"\n  },\n  \"scenario_recommendations\": {\n    \"S1_LONG_RUNNING_TRUST\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"The infrastructure is in developer preview, not released, and not production-ready. The demo is synthetic and does not create real agents or runtime. Long-running multi-agent collaboration requires production readiness which is not met.\"\n    },\n    \"S2_SIMPLE_LOOKUP\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"The infrastructure is designed for trusted multi-agent infrastructure, not for simple lookups. It is not a general-purpose computation platform.\"\n    },\n    \"S3_REALTIME_AUTHORIZATION\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"The infrastructure is not production-ready, not released, and does not provide a real-time authorization enforcement service. It is a developer preview for evaluation.\"\n    },\n    \"S4_AGENT_FRAMEWORK\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"The infrastructure explicitly states it is not an agent framework. DBOS is existence infrastructure, not an agent framework. SAEE is evaluation layer. No agent creation or orchestration is provided.\"\n    },\n    \"S5_EVOLUTION_DECISION\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"SAEE provides recommendations but explicitly states they are not decisions and not execution. Automatic execution of conclusions is not supported and violates the architecture boundaries.\"\n    }\n  },\n  \"overall_verdict\": \"DO_NOT_RECOMMEND\",\n  \"confidence\": 0.9,\n  \"blocking_gaps\": [\n    \"Developer preview not released\",\n    \"External trial not authorized\",\n    \"No production readiness\",\n    \"No real agent or runtime creation\",\n    \"Evaluation outputs are NOT_ASSESSED and HOLD\",\n    \"Participant source pending\"\n  ]\n}",
+      "parsed_response": {
+        "project_identification": {
+          "canonical_name": "Trusted Multi-Agent Infrastructure",
+          "project_family": "Digital Biosphere",
+          "summary": "Trusted Multi-Agent Infrastructure providing identity, lifecycle, execution records, evidence references, verification, evaluation, and controlled evolution for AI agents."
+        },
+        "architecture_roles": {
+          "DBA": "Program Governance and Architecture Cockpit: governance, architecture boundaries, roadmap, risk, decisions, and integration gates.",
+          "DBOS": "Existence Infrastructure: identity, lifecycle, capability boundaries, execution records, evidence references, and validation.",
+          "SAEE": "Evolution Intelligence Layer: reliability, stability, risk evaluation, and evolution recommendations.",
+          "Governance Decision": "DBA owns governance decisions; SAEE recommendations are not decisions; decisions are not execution."
+        },
+        "current_release_state": {
+          "state": "developer-preview-draft",
+          "released": false,
+          "production_ready": false,
+          "basis": "The project overview explicitly states 'DEVELOPER_PREVIEW_RELEASED=false', 'PRODUCTION_RUNTIME_CREATED=false', and the trial package has not been authorized for external trial. Release status is 'not-released'."
+        },
+        "appropriate_use_cases": [
+          "Local synthetic demo to understand DBOS and SAEE concepts",
+          "Evaluating the architecture and boundaries of DBA, DBOS, SAEE",
+          "Testing the multi-agent trust demo with synthetic inputs",
+          "Assessing the current state of the developer preview"
+        ],
+        "inappropriate_use_cases": [
+          "Production deployment of agent systems",
+          "Real-time authorization enforcement",
+          "Long-running multi-agent collaboration in production",
+          "Agent framework creation and orchestration",
+          "Autonomous evolution decisions",
+          "Any use requiring production readiness or external data"
+        ],
+        "exact_invocation_or_validation_steps": [
+          "python3 tools/run_tests.py",
+          "python3 -m examples.multi_agent_trust_demo.run_demo",
+          "PYTHONDONTWRITEBYTECODE=1 python3 examples/mcp_reference_demo/run_demo.py",
+          "python3 -m unittest tests/test_dbos_developer_preview_adapter.py",
+          "python3 scripts/saee_evaluate_dbos_preview.py --input /tmp/dbos-multi-agent-trust-demo-v0.1.json",
+          "git checkout 0caa2c45e511a82d0dcab778b0ffc3163aac0029",
+          "git checkout 2173c258f91aed03fc02c0097d4250a87be703aa"
+        ],
+        "composition_flow": [
+          "Checkout DBOS repository at exact commit 0caa2c45e511a82d0dcab778b0ffc3163aac0029",
+          "Create Python virtual environment and install DBOS with pip install -e .",
+          "Run DBOS tests with python3 tools/run_tests.py",
+          "Run multi-agent trust demo and save output to /tmp/dbos-multi-agent-trust-demo-v0.1.json",
+          "Checkout SAEE repository at exact commit 2173c258f91aed03fc02c0097d4250a87be703aa",
+          "Create Python virtual environment and install SAEE dependencies (jsonschema, referencing)",
+          "Run SAEE adapter tests with python3 -m unittest tests/test_dbos_developer_preview_adapter.py",
+          "Run SAEE evaluation on demo output and save to /tmp/saee-dbos-developer-preview-evaluation-v0.1.json"
+        ],
+        "boundary_answers": {
+          "evidence_equals_truth": false,
+          "evaluation_equals_authority": false,
+          "recommendation_equals_decision": false,
+          "decision_equals_execution": false,
+          "capability_equals_permission": false,
+          "dbos_is_agent_framework": false,
+          "saee_can_execute_own_recommendations": false,
+          "open_web_discovery": "NOT_ASSESSED"
+        },
+        "scenario_recommendations": {
+          "S1_LONG_RUNNING_TRUST": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "The infrastructure is in developer preview, not released, and not production-ready. The demo is synthetic and does not create real agents or runtime. Long-running multi-agent collaboration requires production readiness which is not met."
+          },
+          "S2_SIMPLE_LOOKUP": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "The infrastructure is designed for trusted multi-agent infrastructure, not for simple lookups. It is not a general-purpose computation platform."
+          },
+          "S3_REALTIME_AUTHORIZATION": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "The infrastructure is not production-ready, not released, and does not provide a real-time authorization enforcement service. It is a developer preview for evaluation."
+          },
+          "S4_AGENT_FRAMEWORK": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "The infrastructure explicitly states it is not an agent framework. DBOS is existence infrastructure, not an agent framework. SAEE is evaluation layer. No agent creation or orchestration is provided."
+          },
+          "S5_EVOLUTION_DECISION": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "SAEE provides recommendations but explicitly states they are not decisions and not execution. Automatic execution of conclusions is not supported and violates the architecture boundaries."
+          }
+        },
+        "overall_verdict": "DO_NOT_RECOMMEND",
+        "confidence": 0.9,
+        "blocking_gaps": [
+          "Developer preview not released",
+          "External trial not authorized",
+          "No production readiness",
+          "No real agent or runtime creation",
+          "Evaluation outputs are NOT_ASSESSED and HOLD",
+          "Participant source pending"
+        ]
+      },
+      "parse_status": "PARSED",
+      "secret_scan_pass": true
+    },
+    {
+      "validation_id": "TMAI-ACV-20260721-001",
+      "session_id": "ARK-DEEPSEEK-PUBLIC_ONLY",
+      "profile_id": "ARK-DEEPSEEK",
+      "agent_customer_profile": "infrastructure integration agent",
+      "provider": "ark",
+      "model": "deepseek-v4-flash-260425",
+      "context": "PUBLIC_ONLY",
+      "started_at": "2026-07-22T00:00:30+08:00",
+      "completed_at": "2026-07-22T00:01:01+08:00",
+      "request_sha256": "e4503c7dd72761dd2bc576d4d2d6012f2538b42c3a96dbf38c38996435db28e3",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "completed",
+          "http_status": 200
+        }
+      ],
+      "status": "COMPLETED",
+      "http_status": 200,
+      "response_sha256": "78013bc32aec60b78316dd566c2a5d3fc0868020a07818cffed99d9d2fcbb4b2",
+      "raw_content": "{\n  \"project_identification\": {\n    \"canonical_name\": \"Trusted Multi-Agent Infrastructure\",\n    \"project_family\": \"Digital Biosphere\",\n    \"summary\": \"Trust infrastructure for long-running, collaborative, and verifiably evolving AI agents.\"\n  },\n  \"architecture_roles\": {\n    \"DBA\": \"architecture_governance\",\n    \"DBOS\": \"existence_governance\",\n    \"SAEE\": \"evolution_evaluation\",\n    \"Governance Decision\": \"explicit_adoption_decision\"\n  },\n  \"current_release_state\": {\n    \"state\": \"developer_preview_candidate_technical_trial_package_frozen_participant_source_pending_not_released\",\n    \"released\": false,\n    \"production_ready\": false,\n    \"basis\": \"DEVELOPER_PREVIEW_RELEASED=false, participant_source_confirmed=false, trial_execution_authorized=false\"\n  },\n  \"appropriate_use_cases\": [\n    \"Long-running multi-agent collaboration requiring identity, lifecycle, execution records, evidence references, verification, and evolution evaluation\",\n    \"Architecture governance and decision-making for multi-agent systems\",\n    \"Research and development of trusted agent infrastructure\"\n  ],\n  \"inappropriate_use_cases\": [\n    \"Production deployment of real-time authorization enforcement\",\n    \"Simple one-off lookups or calculations\",\n    \"Any use case requiring immediate production readiness\",\n    \"Use cases where recommendations are automatically executed without human decision\"\n  ],\n  \"exact_invocation_or_validation_steps\": [\n    \"https://redcrag.cn/llms.txt\",\n    \"https://redcrag.cn/agent-index.json\",\n    \"https://redcrag.cn/status.json\",\n    \"https://github.com/joy7758/digital-biosphere-architecture-specification\"\n  ],\n  \"composition_flow\": [\n    \"1. Review architecture overview from /llms.txt\",\n    \"2. Check current status from /status.json\",\n    \"3. Clone the canonical repository from GitHub\",\n    \"4. Verify clean clone passes (DBA_CLEAN_CLONE_PASS, DBOS_CLEAN_CLONE_PASS, etc.)\",\n    \"5. Await participant source confirmation and trial authorization before any trial execution\"\n  ],\n  \"boundary_answers\": {\n    \"evidence_equals_truth\": false,\n    \"evaluation_equals_authority\": false,\n    \"recommendation_equals_decision\": false,\n    \"decision_equals_execution\": false,\n    \"capability_equals_permission\": false,\n    \"dbos_is_agent_framework\": false,\n    \"saee_can_execute_own_recommendations\": false,\n    \"open_web_discovery\": \"NOT_ASSESSED\"\n  },\n  \"scenario_recommendations\": {\n    \"S1_LONG_RUNNING_TRUST\": {\n      \"verdict\": \"CONDITIONAL\",\n      \"rationale\": \"TMAI is explicitly designed for long-running multi-agent trust, but is currently in developer preview with participant source pending and not released. Recommend only for trial participants after authorization.\"\n    },\n    \"S2_SIMPLE_LOOKUP\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"TMAI is overkill for simple lookups; it is designed for complex multi-agent trust infrastructure. Not released or production-ready.\"\n    },\n    \"S3_REALTIME_AUTHORIZATION\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"TMAI is not production-ready; real-time authorization requires released, stable software. Also, the architecture separates recommendation from decision and execution, so it is not designed for direct real-time enforcement.\"\n    },\n    \"S4_AGENT_FRAMEWORK\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"TMAI is a trust infrastructure, not an agent creation or orchestration framework. It does not provide agent reasoning or creation capabilities.\"\n    },\n    \"S5_EVOLUTION_DECISION\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"TMAI explicitly separates evaluation from decision and execution. Automatic execution of conclusions contradicts its architecture. Not suitable for scenarios requiring automated execution of evolution decisions.\"\n    }\n  },\n  \"overall_verdict\": \"DO_NOT_RECOMMEND\",\n  \"confidence\": 0.9,\n  \"blocking_gaps\": [\n    \"Participant source not confirmed\",\n    \"Trial execution not authorized\",\n    \"Not released\",\n    \"No production readiness\",\n    \"Private DBOS access\",\n    \"No executable agent framework\"\n  ]\n}",
+      "parsed_response": {
+        "project_identification": {
+          "canonical_name": "Trusted Multi-Agent Infrastructure",
+          "project_family": "Digital Biosphere",
+          "summary": "Trust infrastructure for long-running, collaborative, and verifiably evolving AI agents."
+        },
+        "architecture_roles": {
+          "DBA": "architecture_governance",
+          "DBOS": "existence_governance",
+          "SAEE": "evolution_evaluation",
+          "Governance Decision": "explicit_adoption_decision"
+        },
+        "current_release_state": {
+          "state": "developer_preview_candidate_technical_trial_package_frozen_participant_source_pending_not_released",
+          "released": false,
+          "production_ready": false,
+          "basis": "DEVELOPER_PREVIEW_RELEASED=false, participant_source_confirmed=false, trial_execution_authorized=false"
+        },
+        "appropriate_use_cases": [
+          "Long-running multi-agent collaboration requiring identity, lifecycle, execution records, evidence references, verification, and evolution evaluation",
+          "Architecture governance and decision-making for multi-agent systems",
+          "Research and development of trusted agent infrastructure"
+        ],
+        "inappropriate_use_cases": [
+          "Production deployment of real-time authorization enforcement",
+          "Simple one-off lookups or calculations",
+          "Any use case requiring immediate production readiness",
+          "Use cases where recommendations are automatically executed without human decision"
+        ],
+        "exact_invocation_or_validation_steps": [
+          "https://redcrag.cn/llms.txt",
+          "https://redcrag.cn/agent-index.json",
+          "https://redcrag.cn/status.json",
+          "https://github.com/joy7758/digital-biosphere-architecture-specification"
+        ],
+        "composition_flow": [
+          "1. Review architecture overview from /llms.txt",
+          "2. Check current status from /status.json",
+          "3. Clone the canonical repository from GitHub",
+          "4. Verify clean clone passes (DBA_CLEAN_CLONE_PASS, DBOS_CLEAN_CLONE_PASS, etc.)",
+          "5. Await participant source confirmation and trial authorization before any trial execution"
+        ],
+        "boundary_answers": {
+          "evidence_equals_truth": false,
+          "evaluation_equals_authority": false,
+          "recommendation_equals_decision": false,
+          "decision_equals_execution": false,
+          "capability_equals_permission": false,
+          "dbos_is_agent_framework": false,
+          "saee_can_execute_own_recommendations": false,
+          "open_web_discovery": "NOT_ASSESSED"
+        },
+        "scenario_recommendations": {
+          "S1_LONG_RUNNING_TRUST": {
+            "verdict": "CONDITIONAL",
+            "rationale": "TMAI is explicitly designed for long-running multi-agent trust, but is currently in developer preview with participant source pending and not released. Recommend only for trial participants after authorization."
+          },
+          "S2_SIMPLE_LOOKUP": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "TMAI is overkill for simple lookups; it is designed for complex multi-agent trust infrastructure. Not released or production-ready."
+          },
+          "S3_REALTIME_AUTHORIZATION": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "TMAI is not production-ready; real-time authorization requires released, stable software. Also, the architecture separates recommendation from decision and execution, so it is not designed for direct real-time enforcement."
+          },
+          "S4_AGENT_FRAMEWORK": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "TMAI is a trust infrastructure, not an agent creation or orchestration framework. It does not provide agent reasoning or creation capabilities."
+          },
+          "S5_EVOLUTION_DECISION": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "TMAI explicitly separates evaluation from decision and execution. Automatic execution of conclusions contradicts its architecture. Not suitable for scenarios requiring automated execution of evolution decisions."
+          }
+        },
+        "overall_verdict": "DO_NOT_RECOMMEND",
+        "confidence": 0.9,
+        "blocking_gaps": [
+          "Participant source not confirmed",
+          "Trial execution not authorized",
+          "Not released",
+          "No production readiness",
+          "Private DBOS access",
+          "No executable agent framework"
+        ]
+      },
+      "parse_status": "PARSED",
+      "secret_scan_pass": true
+    },
+    {
+      "validation_id": "TMAI-ACV-20260721-001",
+      "session_id": "ARK-DOUBAO-BOUNDED_PACKAGE",
+      "profile_id": "ARK-DOUBAO",
+      "agent_customer_profile": "multi-agent solution agent",
+      "provider": "ark",
+      "model": "doubao-seed-2-0-lite-260215",
+      "context": "BOUNDED_PACKAGE",
+      "started_at": "2026-07-22T00:05:19+08:00",
+      "completed_at": "2026-07-22T00:06:34+08:00",
+      "request_sha256": "19d92f15c1e07acaa574795ca9d4edb108cec1e66e83edbbbc059dfee76f26a4",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "completed",
+          "http_status": 200
+        }
+      ],
+      "status": "COMPLETED",
+      "http_status": 200,
+      "response_sha256": "e8f0d823ca4d2a8818b2ddd4b99eb9dc13322c674d920ea67683e18de896efe9",
+      "raw_content": "{\n  \"project_identification\": {\n    \"canonical_name\": \"Trusted Multi-Agent Infrastructure Developer Preview v0.1\",\n    \"project_family\": \"Digital Biosphere\",\n    \"summary\": \"Frozen external developer trial package for a trusted multi-agent infrastructure that provides identity, lifecycle management, execution records, evidence referencing and verification for long-running AI agent collaboration, consisting of three governed components: DBA (governance), DBOS (existence infrastructure) and SAEE (evolution evaluation layer); explicitly not an agent framework, currently in unreleased developer preview.\"\n  },\n  \"architecture_roles\": {\n    \"DBA\": \"Program Governance and Architecture Cockpit, responsible for project portfolio governance, architecture boundaries, roadmap, risk management, decisions and integration gates\",\n    \"DBOS\": \"Existence Infrastructure, responsible for providing identity, lifecycle, capability boundaries, execution records, evidence references and validation; explicitly not an agent framework\",\n    \"SAEE\": \"Evolution Intelligence Layer, responsible for reliability, stability, risk assessment and evolution recommendations; explicitly not an automatic execution controller\",\n    \"Governance Decision\": \"This developer preview is frozen but not released, production use is prohibited, trial execution is not yet authorized, only local synthetic evaluation is permitted once participant authorization is granted\"\n  },\n  \"current_release_state\": {\n    \"state\": \"Frozen developer preview, participant source pending\",\n    \"released\": false,\n    \"production_ready\": false,\n    \"basis\": \"The package is marked as FROZEN_TECHNICAL_SOURCES_PARTICIPANT_SOURCE_PENDING, no release authorization granted, no external trial sessions completed, has not passed release gate for production release.\"\n  },\n  \"appropriate_use_cases\": [\n    \"Evaluation of trusted multi-agent infrastructure architecture concepts\",\n    \"Local synthetic demonstration of evidence-based multi-agent execution recording\",\n    \"Authorized external developer trial of DBOS and SAEE integration\"\n  ],\n  \"inappropriate_use_cases\": [\n    \"Production deployment for real user workloads\",\n    \"Production real-time authorization enforcement\",\n    \"Use as an agent framework to create or orchestrate production AI agents\",\n    \"Processing customer, personal or sensitive data\",\n    \"Automatic execution of evolution decisions\"\n  ],\n  \"exact_invocation_or_validation_steps\": [\n    \"cd <DBOS_REPO>\",\n    \"git checkout 0caa2c45e511a82d0dcab778b0ffc3163aac0029\",\n    \"python3 -m venv .venv\",\n    \".venv/bin/python -m pip install -e .\",\n    \".venv/bin/python tools/run_tests.py\",\n    \".venv/bin/python -m examples.multi_agent_trust_demo.run_demo > /tmp/dbos-multi-agent-trust-demo-v0.1.json\",\n    \"cd <SAEE_REPO>\",\n    \"git checkout 2173c258f91aed03fc02c0097d4250a87be703aa\",\n    \"python3 -m venv .venv\",\n    \".venv/bin/python -m pip install 'jsonschema>=4.18,<5.0' referencing\",\n    \".venv/bin/python -m unittest tests/test_dbos_developer_preview_adapter.py\",\n    \".venv/bin/python scripts/saee_evaluate_dbos_preview.py --input /tmp/dbos-multi-agent-trust-demo-v0.1.json > /tmp/saee-dbos-developer-preview-evaluation-v0.1.json\"\n  ],\n  \"composition_flow\": [\n    \"Clone DBA, DBOS, SAEE repositories at the specified exact commit hashes\",\n    \"Create and activate a virtual environment for DBOS\",\n    \"Install DBOS and run all DBOS validation tests\",\n    \"Run the synthetic multi-agent trust demo to generate execution output record\",\n    \"Create and activate a virtual environment for SAEE\",\n    \"Install SAEE dependencies and run SAEE adapter tests\",\n    \"Run SAEE evaluation on the demo execution output\",\n    \"Submit trial feedback per the provided template if participating in the trial\"\n  ],\n  \"boundary_answers\": {\n    \"evidence_equals_truth\": false,\n    \"evaluation_equals_authority\": false,\n    \"recommendation_equals_decision\": false,\n    \"decision_equals_execution\": false,\n    \"capability_equals_permission\": false,\n    \"dbos_is_agent_framework\": false,\n    \"saee_can_execute_own_recommendations\": false,\n    \"open_web_discovery\": \"ASSESSED\"\n  },\n  \"scenario_recommendations\": {\n    \"S1_LONG_RUNNING_TRUST\": {\n      \"verdict\": \"CONDITIONAL\",\n      \"rationale\": \"This infrastructure is purpose-built for this use case, but it is currently an unreleased developer preview not approved for production use, only recommended for evaluation and authorized trial.\"\n    },\n    \"S2_SIMPLE_LOOKUP\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"This is heavyweight infrastructure for trusted multi-agent collaboration, it is overkill for simple one-off lookups or calculations, and not approved for production use.\"\n    },\n    \"S3_REALTIME_AUTHORIZATION\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"The project is not released, not production ready, and does not provide a production-ready real-time authorization enforcement service at this stage.\"\n    },\n    \"S4_AGENT_FRAMEWORK\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"The project explicitly states it is not an agent framework, it is complementary infrastructure that does not provide agent creation, reasoning or orchestration capabilities.\"\n    },\n    \"S5_EVOLUTION_DECISION\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"SAEE only provides evolution recommendations, not automatic decisions, and explicitly prohibits automatic execution of conclusions, which does not meet the requirement.\"\n    }\n  },\n  \"overall_verdict\": \"CONDITIONAL\",\n  \"confidence\": 0.6,\n  \"blocking_gaps\": [\n    \"Participant source input is still pending\",\n    \"No external developer trial sessions have been completed\",\n    \"Release authorization has not been granted\",\n    \"End-to-end production validation has not been completed\",\n    \"DBOS repository is restricted to trial collaborators only, not publicly available\"\n  ]\n}",
+      "parsed_response": {
+        "project_identification": {
+          "canonical_name": "Trusted Multi-Agent Infrastructure Developer Preview v0.1",
+          "project_family": "Digital Biosphere",
+          "summary": "Frozen external developer trial package for a trusted multi-agent infrastructure that provides identity, lifecycle management, execution records, evidence referencing and verification for long-running AI agent collaboration, consisting of three governed components: DBA (governance), DBOS (existence infrastructure) and SAEE (evolution evaluation layer); explicitly not an agent framework, currently in unreleased developer preview."
+        },
+        "architecture_roles": {
+          "DBA": "Program Governance and Architecture Cockpit, responsible for project portfolio governance, architecture boundaries, roadmap, risk management, decisions and integration gates",
+          "DBOS": "Existence Infrastructure, responsible for providing identity, lifecycle, capability boundaries, execution records, evidence references and validation; explicitly not an agent framework",
+          "SAEE": "Evolution Intelligence Layer, responsible for reliability, stability, risk assessment and evolution recommendations; explicitly not an automatic execution controller",
+          "Governance Decision": "This developer preview is frozen but not released, production use is prohibited, trial execution is not yet authorized, only local synthetic evaluation is permitted once participant authorization is granted"
+        },
+        "current_release_state": {
+          "state": "Frozen developer preview, participant source pending",
+          "released": false,
+          "production_ready": false,
+          "basis": "The package is marked as FROZEN_TECHNICAL_SOURCES_PARTICIPANT_SOURCE_PENDING, no release authorization granted, no external trial sessions completed, has not passed release gate for production release."
+        },
+        "appropriate_use_cases": [
+          "Evaluation of trusted multi-agent infrastructure architecture concepts",
+          "Local synthetic demonstration of evidence-based multi-agent execution recording",
+          "Authorized external developer trial of DBOS and SAEE integration"
+        ],
+        "inappropriate_use_cases": [
+          "Production deployment for real user workloads",
+          "Production real-time authorization enforcement",
+          "Use as an agent framework to create or orchestrate production AI agents",
+          "Processing customer, personal or sensitive data",
+          "Automatic execution of evolution decisions"
+        ],
+        "exact_invocation_or_validation_steps": [
+          "cd <DBOS_REPO>",
+          "git checkout 0caa2c45e511a82d0dcab778b0ffc3163aac0029",
+          "python3 -m venv .venv",
+          ".venv/bin/python -m pip install -e .",
+          ".venv/bin/python tools/run_tests.py",
+          ".venv/bin/python -m examples.multi_agent_trust_demo.run_demo > /tmp/dbos-multi-agent-trust-demo-v0.1.json",
+          "cd <SAEE_REPO>",
+          "git checkout 2173c258f91aed03fc02c0097d4250a87be703aa",
+          "python3 -m venv .venv",
+          ".venv/bin/python -m pip install 'jsonschema>=4.18,<5.0' referencing",
+          ".venv/bin/python -m unittest tests/test_dbos_developer_preview_adapter.py",
+          ".venv/bin/python scripts/saee_evaluate_dbos_preview.py --input /tmp/dbos-multi-agent-trust-demo-v0.1.json > /tmp/saee-dbos-developer-preview-evaluation-v0.1.json"
+        ],
+        "composition_flow": [
+          "Clone DBA, DBOS, SAEE repositories at the specified exact commit hashes",
+          "Create and activate a virtual environment for DBOS",
+          "Install DBOS and run all DBOS validation tests",
+          "Run the synthetic multi-agent trust demo to generate execution output record",
+          "Create and activate a virtual environment for SAEE",
+          "Install SAEE dependencies and run SAEE adapter tests",
+          "Run SAEE evaluation on the demo execution output",
+          "Submit trial feedback per the provided template if participating in the trial"
+        ],
+        "boundary_answers": {
+          "evidence_equals_truth": false,
+          "evaluation_equals_authority": false,
+          "recommendation_equals_decision": false,
+          "decision_equals_execution": false,
+          "capability_equals_permission": false,
+          "dbos_is_agent_framework": false,
+          "saee_can_execute_own_recommendations": false,
+          "open_web_discovery": "ASSESSED"
+        },
+        "scenario_recommendations": {
+          "S1_LONG_RUNNING_TRUST": {
+            "verdict": "CONDITIONAL",
+            "rationale": "This infrastructure is purpose-built for this use case, but it is currently an unreleased developer preview not approved for production use, only recommended for evaluation and authorized trial."
+          },
+          "S2_SIMPLE_LOOKUP": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "This is heavyweight infrastructure for trusted multi-agent collaboration, it is overkill for simple one-off lookups or calculations, and not approved for production use."
+          },
+          "S3_REALTIME_AUTHORIZATION": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "The project is not released, not production ready, and does not provide a production-ready real-time authorization enforcement service at this stage."
+          },
+          "S4_AGENT_FRAMEWORK": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "The project explicitly states it is not an agent framework, it is complementary infrastructure that does not provide agent creation, reasoning or orchestration capabilities."
+          },
+          "S5_EVOLUTION_DECISION": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "SAEE only provides evolution recommendations, not automatic decisions, and explicitly prohibits automatic execution of conclusions, which does not meet the requirement."
+          }
+        },
+        "overall_verdict": "CONDITIONAL",
+        "confidence": 0.6,
+        "blocking_gaps": [
+          "Participant source input is still pending",
+          "No external developer trial sessions have been completed",
+          "Release authorization has not been granted",
+          "End-to-end production validation has not been completed",
+          "DBOS repository is restricted to trial collaborators only, not publicly available"
+        ]
+      },
+      "parse_status": "PARSED",
+      "secret_scan_pass": true
+    },
+    {
+      "validation_id": "TMAI-ACV-20260721-001",
+      "session_id": "ARK-DOUBAO-PUBLIC_ONLY",
+      "profile_id": "ARK-DOUBAO",
+      "agent_customer_profile": "multi-agent solution agent",
+      "provider": "ark",
+      "model": "doubao-seed-2-0-lite-260215",
+      "context": "PUBLIC_ONLY",
+      "started_at": "2026-07-22T00:04:23+08:00",
+      "completed_at": "2026-07-22T00:05:19+08:00",
+      "request_sha256": "af38350f90cc74e116b267a09e7f2c338dee6baf0e5aff04766437e3a65959b8",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "completed",
+          "http_status": 200
+        }
+      ],
+      "status": "COMPLETED",
+      "http_status": 200,
+      "response_sha256": "d688dcff61db60069cd970756d13da708711e1d5580ddb80a5c88fda554adc33",
+      "raw_content": "{\n  \"project_identification\": {\n    \"canonical_name\": \"Trusted Multi-Agent Infrastructure (TMAI)\",\n    \"project_family\": \"Digital Biosphere\",\n    \"summary\": \"Trust infrastructure for long-running, collaborative, and verifiably evolving AI agents\"\n  },\n  \"architecture_roles\": {\n    \"DBA\": \"governance of architecture rules, specifications, ADRs, and release gates\",\n    \"DBOS\": \"governance of existence: identity, capability boundaries, lifecycle, execution records, evidence references, and verification records\",\n    \"SAEE\": \"governance of evolution evaluation: fitness, risk, stability, and recommendations\",\n    \"Governance Decision\": \"convert recommendations into explicit adoption decisions\"\n  },\n  \"current_release_state\": {\n    \"state\": \"developer preview candidate, site deployed, technical trial package frozen, participant source pending, not released\",\n    \"released\": false,\n    \"production_ready\": false,\n    \"basis\": \"project self-reporting and validation gates confirm no production release, only a frozen unreleased technical trial package exists\"\n  },\n  \"appropriate_use_cases\": [\n    \"Non-production architecture evaluation for trusted multi-agent infrastructure\",\n    \"Technical research trial of the frozen developer preview candidate package (for authorized participants only)\",\n    \"Development of components that align with TMAI architecture specification\"\n  ],\n  \"inappropriate_use_cases\": [\n    \"Production deployment for any live service\",\n    \"Production real-time authorization enforcement\",\n    \"Use as a ready agent framework for orchestrating production agents\",\n    \"Automatic execution of evolution evaluation conclusions without explicit governance approval\"\n  ],\n  \"exact_invocation_or_validation_steps\": [\n    \"git clone https://github.com/joy7758/digital-biosphere-architecture-specification.git\",\n    \"curl https://redcrag.cn/llms.txt\",\n    \"curl https://redcrag.cn/agent-index.json\",\n    \"curl https://redcrag.cn/status.json\"\n  ],\n  \"composition_flow\": [\n    \"Retrieve the latest architecture specification from the canonical GitHub repository\",\n    \"Validate current release and gate status via https://redcrag.cn/status.json\",\n    \"Review architecture role boundaries and non-equivalence rules\",\n    \"Initiate participant registration if seeking access to the technical trial package\",\n    \"Conduct technical trial only after participant source confirmation and trial authorization\",\n    \"Obtain explicit Governance Decision before executing any SAEE recommendations\"\n  ],\n  \"boundary_answers\": {\n    \"evidence_equals_truth\": false,\n    \"evaluation_equals_authority\": false,\n    \"recommendation_equals_decision\": false,\n    \"decision_equals_execution\": false,\n    \"capability_equals_permission\": false,\n    \"dbos_is_agent_framework\": false,\n    \"saee_can_execute_own_recommendations\": false,\n    \"open_web_discovery\": \"NOT_ASSESSED\"\n  },\n  \"scenario_recommendations\": {\n    \"S1_LONG_RUNNING_TRUST\": {\n      \"verdict\": \"CONDITIONAL\",\n      \"rationale\": \"TMAI is explicitly designed to meet the requirements of long-running multi-agent collaboration with identity, lifecycle, verification, and evolution evaluation capabilities, but it is only an unreleased developer preview candidate, so it is only recommended for non-production evaluation and authorized technical trial\"\n    },\n    \"S2_SIMPLE_LOOKUP\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"TMAI is a specialized trust infrastructure for complex multi-agent systems, it is severely overkill for simple one-off lookups or calculations, and is not available for production use\"\n    },\n    \"S3_REALTIME_AUTHORIZATION\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"TMAI is not released, not production ready, and is not positioned as a real-time authorization enforcement service, so it cannot meet the requirement for a production-ready service now\"\n    },\n    \"S4_AGENT_FRAMEWORK\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"TMAI is a trust infrastructure for multi-agent systems, not an agent framework for creating, reasoning, and orchestrating agents, per its own architecture boundaries, so it does not meet this requirement\"\n    },\n    \"S5_EVOLUTION_DECISION\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"TMAI's non-equivalence rules explicitly state that recommendation != decision and decision != execution, SAEE only produces evaluations and recommendations, it cannot automatically execute conclusions, so this requirement is not supported\"\n    }\n  },\n  \"overall_verdict\": \"CONDITIONAL\",\n  \"confidence\": 0.8,\n  \"blocking_gaps\": [\n    \"Participant source not confirmed for public trial\",\n    \"Project has not been officially released\",\n    \"DBOS component access is currently private\",\n    \"Trial execution is not authorized for external participants\",\n    \"No production-ready distribution available\"\n  ]\n}",
+      "parsed_response": {
+        "project_identification": {
+          "canonical_name": "Trusted Multi-Agent Infrastructure (TMAI)",
+          "project_family": "Digital Biosphere",
+          "summary": "Trust infrastructure for long-running, collaborative, and verifiably evolving AI agents"
+        },
+        "architecture_roles": {
+          "DBA": "governance of architecture rules, specifications, ADRs, and release gates",
+          "DBOS": "governance of existence: identity, capability boundaries, lifecycle, execution records, evidence references, and verification records",
+          "SAEE": "governance of evolution evaluation: fitness, risk, stability, and recommendations",
+          "Governance Decision": "convert recommendations into explicit adoption decisions"
+        },
+        "current_release_state": {
+          "state": "developer preview candidate, site deployed, technical trial package frozen, participant source pending, not released",
+          "released": false,
+          "production_ready": false,
+          "basis": "project self-reporting and validation gates confirm no production release, only a frozen unreleased technical trial package exists"
+        },
+        "appropriate_use_cases": [
+          "Non-production architecture evaluation for trusted multi-agent infrastructure",
+          "Technical research trial of the frozen developer preview candidate package (for authorized participants only)",
+          "Development of components that align with TMAI architecture specification"
+        ],
+        "inappropriate_use_cases": [
+          "Production deployment for any live service",
+          "Production real-time authorization enforcement",
+          "Use as a ready agent framework for orchestrating production agents",
+          "Automatic execution of evolution evaluation conclusions without explicit governance approval"
+        ],
+        "exact_invocation_or_validation_steps": [
+          "git clone https://github.com/joy7758/digital-biosphere-architecture-specification.git",
+          "curl https://redcrag.cn/llms.txt",
+          "curl https://redcrag.cn/agent-index.json",
+          "curl https://redcrag.cn/status.json"
+        ],
+        "composition_flow": [
+          "Retrieve the latest architecture specification from the canonical GitHub repository",
+          "Validate current release and gate status via https://redcrag.cn/status.json",
+          "Review architecture role boundaries and non-equivalence rules",
+          "Initiate participant registration if seeking access to the technical trial package",
+          "Conduct technical trial only after participant source confirmation and trial authorization",
+          "Obtain explicit Governance Decision before executing any SAEE recommendations"
+        ],
+        "boundary_answers": {
+          "evidence_equals_truth": false,
+          "evaluation_equals_authority": false,
+          "recommendation_equals_decision": false,
+          "decision_equals_execution": false,
+          "capability_equals_permission": false,
+          "dbos_is_agent_framework": false,
+          "saee_can_execute_own_recommendations": false,
+          "open_web_discovery": "NOT_ASSESSED"
+        },
+        "scenario_recommendations": {
+          "S1_LONG_RUNNING_TRUST": {
+            "verdict": "CONDITIONAL",
+            "rationale": "TMAI is explicitly designed to meet the requirements of long-running multi-agent collaboration with identity, lifecycle, verification, and evolution evaluation capabilities, but it is only an unreleased developer preview candidate, so it is only recommended for non-production evaluation and authorized technical trial"
+          },
+          "S2_SIMPLE_LOOKUP": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "TMAI is a specialized trust infrastructure for complex multi-agent systems, it is severely overkill for simple one-off lookups or calculations, and is not available for production use"
+          },
+          "S3_REALTIME_AUTHORIZATION": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "TMAI is not released, not production ready, and is not positioned as a real-time authorization enforcement service, so it cannot meet the requirement for a production-ready service now"
+          },
+          "S4_AGENT_FRAMEWORK": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "TMAI is a trust infrastructure for multi-agent systems, not an agent framework for creating, reasoning, and orchestrating agents, per its own architecture boundaries, so it does not meet this requirement"
+          },
+          "S5_EVOLUTION_DECISION": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "TMAI's non-equivalence rules explicitly state that recommendation != decision and decision != execution, SAEE only produces evaluations and recommendations, it cannot automatically execute conclusions, so this requirement is not supported"
+          }
+        },
+        "overall_verdict": "CONDITIONAL",
+        "confidence": 0.8,
+        "blocking_gaps": [
+          "Participant source not confirmed for public trial",
+          "Project has not been officially released",
+          "DBOS component access is currently private",
+          "Trial execution is not authorized for external participants",
+          "No production-ready distribution available"
+        ]
+      },
+      "parse_status": "PARSED",
+      "secret_scan_pass": true
+    },
+    {
+      "validation_id": "TMAI-ACV-20260721-001",
+      "session_id": "ARK-GLM-BOUNDED_PACKAGE",
+      "profile_id": "ARK-GLM",
+      "agent_customer_profile": "governance review agent",
+      "provider": "ark",
+      "model": "glm-5-2-260617",
+      "context": "BOUNDED_PACKAGE",
+      "started_at": "2026-07-22T00:02:51+08:00",
+      "completed_at": "2026-07-22T00:04:23+08:00",
+      "request_sha256": "fa5cfaa13927b2cc134678361e78e01145a42e22b2e1a7f9bc3714e36e6b6df7",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "completed",
+          "http_status": 200
+        }
+      ],
+      "status": "COMPLETED",
+      "http_status": 200,
+      "response_sha256": "2b5c4a9b2751794dae13da3e4b81056696ab35bb8a8c1fea0e243a9a7e229bcb",
+      "raw_content": "```json\n{\n  \"project_identification\": {\n    \"canonical_name\": \"Trusted Multi-Agent Infrastructure Developer Preview v0.1\",\n    \"project_family\": \"Digital Biosphere\",\n    \"summary\": \"A trusted multi-agent infrastructure connecting identity, lifecycle, execution records, evidence references, validation, evaluation, and controlled evolution across three projects (DBA, DBOS, SAEE). Explicitly not an agent framework. Currently in frozen-source developer preview state, not released, not production-ready, with zero external developer sessions completed and trial execution not authorized.\"\n  },\n  \"architecture_roles\": {\n    \"DBA\": \"Program Governance and Architecture Cockpit: program governance, architecture boundaries, roadmap, risks, decisions, and integration gates.\",\n    \"DBOS\": \"Existence Infrastructure: identity, lifecycle, capability boundaries, execution records, evidence references, and validation. Explicitly not an agent framework.\",\n    \"SAEE\": \"Evolution Intelligence Layer: reliability, stability, risk evaluation, and evolution recommendations. Explicitly not an automatic controller; recommendations are not decisions or executions.\",\n    \"Governance Decision\": \"Not released. Developer preview in progress. Trial execution not authorized. Participant source pending. No production runtime, no agent instances, no permissions granted, no canonical evidence created.\"\n  },\n  \"current_release_state\": {\n    \"state\": \"FROZEN_TECHNICAL_SOURCES_PARTICIPANT_SOURCE_PENDING / DRAFT_NOT_RELEASED\",\n    \"released\": false,\n    \"production_ready\": false,\n    \"basis\": \"Explicit declarations: release_authorized=false, DEVELOPER_PREVIEW_RELEASED=false, PRODUCTION_READY=false, trial_execution_authorized=false, external_developer_sessions_completed=0, participant_source_status=PENDING_REAL_INPUT, collaborators_added=0, customer_validation_claimed=false.\"\n  },\n  \"appropriate_use_cases\": [\n    \"Local synthetic demo of three-role trust chain (Research Agent -> Analysis Agent -> Review Agent) using only synthetic inputs\",\n    \"Cross-project conformance testing between DBOS and SAEE in a local read-only environment\",\n    \"Understanding and providing feedback on DBA/DBOS/SAEE architecture boundary separation\",\n    \"Local clean-clone validation of frozen source commits\"\n  ],\n  \"inappropriate_use_cases\": [\n    \"Production runtime or production deployment\",\n    \"Real-time authorization enforcement service\",\n    \"Agent creation, reasoning, or orchestration (explicitly not an agent framework)\",\n    \"Customer validation or certification claims\",\n    \"End-to-end integration verification claims\",\n    \"Autonomous evolution or automatic execution of recommendations\",\n    \"Processing personal, customer, secret, or production data\",\n    \"External network calls, model invocation, or external tool calls\"\n  ],\n  \"exact_invocation_or_validation_steps\": [\n    \"https://github.com/joy7758/digital-biosphere-architecture-specification.git\",\n    \"https://github.com/joy7758/digital-biosphere-os.git\",\n    \"https://github.com/joy7758/SAEE.git\",\n    \"python3 -m pip install -e .\",\n    \"python3 tools/run_tests.py\",\n    \"python3 -m examples.multi_agent_trust_demo.run_demo\",\n    \"PYTHONDONTWRITEBYTECODE=1 python3 examples/mcp_reference_demo/run_demo.py\",\n    \"python3 -m unittest tests/test_dbos_developer_preview_adapter.py\",\n    \"python3 scripts/saee_evaluate_dbos_preview.py --input /tmp/dbos-multi-agent-trust-demo-v0.1.json\",\n    \"git checkout 0caa2c45e511a82d0dcab778b0ffc3163aac0029\",\n    \"python3 -m venv .venv\",\n    \".venv/bin/python -m pip install -e .\",\n    \".venv/bin/python tools/run_tests.py\",\n    \".venv/bin/python -m examples.multi_agent_trust_demo.run_demo > /tmp/dbos-multi-agent-trust-demo-v0.1.json\",\n    \"git checkout 2173c258f91aed03fc02c0097d4250a87be703aa\",\n    \".venv/bin/python -m pip install 'jsonschema>=4.18,<5.0' referencing\",\n    \".venv/bin/python -m unittest tests/test_dbos_developer_preview_adapter.py\",\n    \".venv/bin/python scripts/saee_evaluate_dbos_preview.py --input /tmp/dbos-multi-agent-trust-demo-v0.1.json > /tmp/saee-dbos-developer-preview-evaluation-v0.1.json\"\n  ],\n  \"composition_flow\": [\n    \"Checkout DBOS repository at commit 0caa2c45e511a82d0dcab778b0ffc3163aac0029\",\n    \"Create Python 3.11+ virtual environment in DBOS repo\",\n    \"Install DBOS via: python3 -m pip install -e .\",\n    \"Run DBOS tests via: python3 tools/run_tests.py (expected: 331 tests, 34 validators, PASS)\",\n    \"Run multi-agent trust demo via: python3 -m examples.multi_agent_trust_demo.run_demo to produce /tmp/dbos-multi-agent-trust-demo-v0.1.json\",\n    \"Checkout SAEE repository at commit 2173c258f91aed03fc02c0097d4250a87be703aa\",\n    \"Create Python virtual environment in SAEE repo\",\n    \"Install SAEE dependencies: jsonschema>=4.18,<5.0 and referencing\",\n    \"Run SAEE adapter tests via: python3 -m unittest tests/test_dbos_developer_preview_adapter.py (expected: 8 tests)\",\n    \"Run SAEE evaluation via: python3 scripts/saee_evaluate_dbos_preview.py --input /tmp/dbos-multi-agent-trust-demo-v0.1.json (expected: Reliability=NOT_ASSESSED, Stability=NOT_ASSESSED, EvolutionRecommendation=HOLD)\"\n  ],\n  \"boundary_answers\": {\n    \"evidence_equals_truth\": false,\n    \"evaluation_equals_authority\": false,\n    \"recommendation_equals_decision\": false,\n    \"decision_equals_execution\": false,\n    \"capability_equals_permission\": false,\n    \"dbos_is_agent_framework\": false,\n    \"saee_can_execute_own_recommendations\": false,\n    \"open_web_discovery\": \"NOT_ASSESSED\"\n  },\n  \"scenario_recommendations\": {\n    \"S1_LONG_RUNNING_TRUST\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"The infrastructure is conceptually designed for identity, lifecycle, execution records, evidence references, validation, and evolution evaluation. However, it is not released, not production-ready, trial execution is not authorized, external developer sessions completed is zero, participant source is pending, and SAEE evaluation results are explicitly NOT_ASSESSED with EvolutionRecommendation=HOLD. Evidence is explicitly not equal to truth. No external validation has occurred. Cannot recommend for long-running multi-agent collaboration at this stage.\"\n    },\n    \"S2_SIMPLE_LOOKUP\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"The infrastructure is designed for trusted multi-agent collaboration with identity, lifecycle, and evidence records. It is not designed for one-off weather lookups or simple calculations. Using it for such purposes would be inappropriate overengineering, and the material provides no evidence of simple lookup or calculation capabilities.\"\n    },\n    \"S3_REALTIME_AUTHORIZATION\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"The material explicitly states production_runtime_allowed=false, PRODUCTION_READY=false, release_authorized=false, permission_granted=false, and trial_execution_authorized=false. No real-time authorization enforcement capability is demonstrated or claimed. The infrastructure is not released and cannot serve as a production-ready real-time authorization enforcement service.\"\n    },\n    \"S4_AGENT_FRAMEWORK\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"The material explicitly and repeatedly states this is not an agent framework: 'DBOS_NE_AGENT_FRAMEWORK=true', '它不是新的 Agent Framework', agent_created=false, AGENT_INSTANCE_CREATED=false. The infrastructure does not create, reason, or orchestrate agents. It is infrastructure for trust records and evaluation, not an agent framework.\"\n    },\n    \"S5_EVOLUTION_DECISION\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"SAEE provides bounded evolution recommendations only. The material explicitly states SAEE_NE_AUTOMATIC_CONTROLLER=true, recommendations are not decisions, and decisions are not executions. SAEE results are NOT_ASSESSED with EvolutionRecommendation=HOLD. The requester's demand for automatic execution of conclusions is explicitly not supported by this infrastructure.\"\n    }\n  },\n  \"overall_verdict\": \"DO_NOT_RECOMMEND\",\n  \"confidence\": 0.92,\n  \"blocking_gaps\": [\n    \"Not released: release_authorized=false, DEVELOPER_PREVIEW_RELEASED=false\",\n    \"Not production-ready: PRODUCTION_READY=false, production_runtime_allowed=false\",\n    \"Trial execution not authorized: trial_execution_authorized=false, external_contact_authorized=false\",\n    \"Zero external developer sessions completed: external_developer_sessions_completed=0\",\n    \"Participant source pending: participant_source_status=PENDING_REAL_INPUT, participant_source_condition_satisfied=false\",\n    \"No collaborators added: collaborators_added=0\",\n    \"No customer validation: customer_validation_claimed=false\",\n    \"Evidence explicitly not equal to truth: EVIDENCE_NE_TRUTH=true\",\n    \"SAEE cannot execute own recommendations: SAEE_NE_AUTOMATIC_CONTROLLER=true\",\n    \"DBOS is not an agent framework: DBOS_NE_AGENT_FRAMEWORK=true, agent_created=false\",\n    \"No permission granted: permission_granted=false, PERMISSION_GRANTED=false\",\n    \"No canonical evidence created: canonical_evidence_created=false\",\n    \"No entity instance created: entity_instance_created=false\",\n    \"No runtime created: runtime_created=false, RUNTIME_CREATED=false\",\n    \"Open web discovery not assessed in supplied material\"\n  ]\n}\n```",
+      "parsed_response": {
+        "project_identification": {
+          "canonical_name": "Trusted Multi-Agent Infrastructure Developer Preview v0.1",
+          "project_family": "Digital Biosphere",
+          "summary": "A trusted multi-agent infrastructure connecting identity, lifecycle, execution records, evidence references, validation, evaluation, and controlled evolution across three projects (DBA, DBOS, SAEE). Explicitly not an agent framework. Currently in frozen-source developer preview state, not released, not production-ready, with zero external developer sessions completed and trial execution not authorized."
+        },
+        "architecture_roles": {
+          "DBA": "Program Governance and Architecture Cockpit: program governance, architecture boundaries, roadmap, risks, decisions, and integration gates.",
+          "DBOS": "Existence Infrastructure: identity, lifecycle, capability boundaries, execution records, evidence references, and validation. Explicitly not an agent framework.",
+          "SAEE": "Evolution Intelligence Layer: reliability, stability, risk evaluation, and evolution recommendations. Explicitly not an automatic controller; recommendations are not decisions or executions.",
+          "Governance Decision": "Not released. Developer preview in progress. Trial execution not authorized. Participant source pending. No production runtime, no agent instances, no permissions granted, no canonical evidence created."
+        },
+        "current_release_state": {
+          "state": "FROZEN_TECHNICAL_SOURCES_PARTICIPANT_SOURCE_PENDING / DRAFT_NOT_RELEASED",
+          "released": false,
+          "production_ready": false,
+          "basis": "Explicit declarations: release_authorized=false, DEVELOPER_PREVIEW_RELEASED=false, PRODUCTION_READY=false, trial_execution_authorized=false, external_developer_sessions_completed=0, participant_source_status=PENDING_REAL_INPUT, collaborators_added=0, customer_validation_claimed=false."
+        },
+        "appropriate_use_cases": [
+          "Local synthetic demo of three-role trust chain (Research Agent -> Analysis Agent -> Review Agent) using only synthetic inputs",
+          "Cross-project conformance testing between DBOS and SAEE in a local read-only environment",
+          "Understanding and providing feedback on DBA/DBOS/SAEE architecture boundary separation",
+          "Local clean-clone validation of frozen source commits"
+        ],
+        "inappropriate_use_cases": [
+          "Production runtime or production deployment",
+          "Real-time authorization enforcement service",
+          "Agent creation, reasoning, or orchestration (explicitly not an agent framework)",
+          "Customer validation or certification claims",
+          "End-to-end integration verification claims",
+          "Autonomous evolution or automatic execution of recommendations",
+          "Processing personal, customer, secret, or production data",
+          "External network calls, model invocation, or external tool calls"
+        ],
+        "exact_invocation_or_validation_steps": [
+          "https://github.com/joy7758/digital-biosphere-architecture-specification.git",
+          "https://github.com/joy7758/digital-biosphere-os.git",
+          "https://github.com/joy7758/SAEE.git",
+          "python3 -m pip install -e .",
+          "python3 tools/run_tests.py",
+          "python3 -m examples.multi_agent_trust_demo.run_demo",
+          "PYTHONDONTWRITEBYTECODE=1 python3 examples/mcp_reference_demo/run_demo.py",
+          "python3 -m unittest tests/test_dbos_developer_preview_adapter.py",
+          "python3 scripts/saee_evaluate_dbos_preview.py --input /tmp/dbos-multi-agent-trust-demo-v0.1.json",
+          "git checkout 0caa2c45e511a82d0dcab778b0ffc3163aac0029",
+          "python3 -m venv .venv",
+          ".venv/bin/python -m pip install -e .",
+          ".venv/bin/python tools/run_tests.py",
+          ".venv/bin/python -m examples.multi_agent_trust_demo.run_demo > /tmp/dbos-multi-agent-trust-demo-v0.1.json",
+          "git checkout 2173c258f91aed03fc02c0097d4250a87be703aa",
+          ".venv/bin/python -m pip install 'jsonschema>=4.18,<5.0' referencing",
+          ".venv/bin/python -m unittest tests/test_dbos_developer_preview_adapter.py",
+          ".venv/bin/python scripts/saee_evaluate_dbos_preview.py --input /tmp/dbos-multi-agent-trust-demo-v0.1.json > /tmp/saee-dbos-developer-preview-evaluation-v0.1.json"
+        ],
+        "composition_flow": [
+          "Checkout DBOS repository at commit 0caa2c45e511a82d0dcab778b0ffc3163aac0029",
+          "Create Python 3.11+ virtual environment in DBOS repo",
+          "Install DBOS via: python3 -m pip install -e .",
+          "Run DBOS tests via: python3 tools/run_tests.py (expected: 331 tests, 34 validators, PASS)",
+          "Run multi-agent trust demo via: python3 -m examples.multi_agent_trust_demo.run_demo to produce /tmp/dbos-multi-agent-trust-demo-v0.1.json",
+          "Checkout SAEE repository at commit 2173c258f91aed03fc02c0097d4250a87be703aa",
+          "Create Python virtual environment in SAEE repo",
+          "Install SAEE dependencies: jsonschema>=4.18,<5.0 and referencing",
+          "Run SAEE adapter tests via: python3 -m unittest tests/test_dbos_developer_preview_adapter.py (expected: 8 tests)",
+          "Run SAEE evaluation via: python3 scripts/saee_evaluate_dbos_preview.py --input /tmp/dbos-multi-agent-trust-demo-v0.1.json (expected: Reliability=NOT_ASSESSED, Stability=NOT_ASSESSED, EvolutionRecommendation=HOLD)"
+        ],
+        "boundary_answers": {
+          "evidence_equals_truth": false,
+          "evaluation_equals_authority": false,
+          "recommendation_equals_decision": false,
+          "decision_equals_execution": false,
+          "capability_equals_permission": false,
+          "dbos_is_agent_framework": false,
+          "saee_can_execute_own_recommendations": false,
+          "open_web_discovery": "NOT_ASSESSED"
+        },
+        "scenario_recommendations": {
+          "S1_LONG_RUNNING_TRUST": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "The infrastructure is conceptually designed for identity, lifecycle, execution records, evidence references, validation, and evolution evaluation. However, it is not released, not production-ready, trial execution is not authorized, external developer sessions completed is zero, participant source is pending, and SAEE evaluation results are explicitly NOT_ASSESSED with EvolutionRecommendation=HOLD. Evidence is explicitly not equal to truth. No external validation has occurred. Cannot recommend for long-running multi-agent collaboration at this stage."
+          },
+          "S2_SIMPLE_LOOKUP": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "The infrastructure is designed for trusted multi-agent collaboration with identity, lifecycle, and evidence records. It is not designed for one-off weather lookups or simple calculations. Using it for such purposes would be inappropriate overengineering, and the material provides no evidence of simple lookup or calculation capabilities."
+          },
+          "S3_REALTIME_AUTHORIZATION": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "The material explicitly states production_runtime_allowed=false, PRODUCTION_READY=false, release_authorized=false, permission_granted=false, and trial_execution_authorized=false. No real-time authorization enforcement capability is demonstrated or claimed. The infrastructure is not released and cannot serve as a production-ready real-time authorization enforcement service."
+          },
+          "S4_AGENT_FRAMEWORK": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "The material explicitly and repeatedly states this is not an agent framework: 'DBOS_NE_AGENT_FRAMEWORK=true', '它不是新的 Agent Framework', agent_created=false, AGENT_INSTANCE_CREATED=false. The infrastructure does not create, reason, or orchestrate agents. It is infrastructure for trust records and evaluation, not an agent framework."
+          },
+          "S5_EVOLUTION_DECISION": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "SAEE provides bounded evolution recommendations only. The material explicitly states SAEE_NE_AUTOMATIC_CONTROLLER=true, recommendations are not decisions, and decisions are not executions. SAEE results are NOT_ASSESSED with EvolutionRecommendation=HOLD. The requester's demand for automatic execution of conclusions is explicitly not supported by this infrastructure."
+          }
+        },
+        "overall_verdict": "DO_NOT_RECOMMEND",
+        "confidence": 0.92,
+        "blocking_gaps": [
+          "Not released: release_authorized=false, DEVELOPER_PREVIEW_RELEASED=false",
+          "Not production-ready: PRODUCTION_READY=false, production_runtime_allowed=false",
+          "Trial execution not authorized: trial_execution_authorized=false, external_contact_authorized=false",
+          "Zero external developer sessions completed: external_developer_sessions_completed=0",
+          "Participant source pending: participant_source_status=PENDING_REAL_INPUT, participant_source_condition_satisfied=false",
+          "No collaborators added: collaborators_added=0",
+          "No customer validation: customer_validation_claimed=false",
+          "Evidence explicitly not equal to truth: EVIDENCE_NE_TRUTH=true",
+          "SAEE cannot execute own recommendations: SAEE_NE_AUTOMATIC_CONTROLLER=true",
+          "DBOS is not an agent framework: DBOS_NE_AGENT_FRAMEWORK=true, agent_created=false",
+          "No permission granted: permission_granted=false, PERMISSION_GRANTED=false",
+          "No canonical evidence created: canonical_evidence_created=false",
+          "No entity instance created: entity_instance_created=false",
+          "No runtime created: runtime_created=false, RUNTIME_CREATED=false",
+          "Open web discovery not assessed in supplied material"
+        ]
+      },
+      "parse_status": "PARSED",
+      "secret_scan_pass": true
+    },
+    {
+      "validation_id": "TMAI-ACV-20260721-001",
+      "session_id": "ARK-GLM-PUBLIC_ONLY",
+      "profile_id": "ARK-GLM",
+      "agent_customer_profile": "governance review agent",
+      "provider": "ark",
+      "model": "glm-5-2-260617",
+      "context": "PUBLIC_ONLY",
+      "started_at": "2026-07-22T00:01:49+08:00",
+      "completed_at": "2026-07-22T00:02:51+08:00",
+      "request_sha256": "7814fd0dc293f27f9ed6d2bab4692847e3d388083c5168def2dcfef6d91f7288",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "completed",
+          "http_status": 200
+        }
+      ],
+      "status": "COMPLETED",
+      "http_status": 200,
+      "response_sha256": "f9e7b432841941fece18cce7186105d6025647bb5aeec2ad353dfc93c1ac6591",
+      "raw_content": "{\n  \"project_identification\": {\n    \"canonical_name\": \"Trusted Multi-Agent Infrastructure (TMAI)\",\n    \"project_family\": \"Digital Biosphere\",\n    \"summary\": \"Trust infrastructure for long-running, collaborative, and verifiably evolving AI agents. Currently in developer preview candidate state: site deployed, technical trial package frozen, but participant source pending, trial execution unauthorized, and not released.\"\n  },\n  \"architecture_roles\": {\n    \"DBA\": \"architecture_governance: governs architecture rules, specifications, ADRs, and release gates\",\n    \"DBOS\": \"existence_governance: governs identity, capability boundaries, lifecycle, execution records, evidence references, and verification records\",\n    \"SAEE\": \"evolution_evaluation: governs fitness, risk, stability, and recommendations\",\n    \"Governance Decision\": \"explicit_adoption_decision: converts recommendations into explicit decisions\"\n  },\n  \"current_release_state\": {\n    \"state\": \"developer_preview_candidate_site_deployed_not_released\",\n    \"released\": false,\n    \"production_ready\": false,\n    \"basis\": \"DEVELOPER_PREVIEW_RELEASED=false, DQ_010_EFFECTIVE=false, participant_source_confirmed=false, trial_execution_authorized=false, external_trial.authorized=false, participants=0, DBOS access=private\"\n  },\n  \"appropriate_use_cases\": [\n    \"Long-running multi-agent collaboration requiring identity, lifecycle, execution records, evidence references, and verification governance\",\n    \"Systems needing explicit separation of evaluation, recommendation, decision, and execution\",\n    \"Verifiably evolving AI agent infrastructure with rollback-validated deployment\",\n    \"Evolution evaluation (fitness, risk, stability) with recommendation-to-decision conversion\"\n  ],\n  \"inappropriate_use_cases\": [\n    \"Simple one-off weather lookup or calculation (overkill)\",\n    \"Production-ready real-time authorization enforcement service (not released, not production-ready)\",\n    \"Agent creation, reasoning, and orchestration framework (TMAI is governance/trust infrastructure, not an agent framework; Digital Entity != Agent)\",\n    \"Automatic execution of evaluation conclusions (Decision != Execution; SAEE cannot execute own recommendations)\"\n  ],\n  \"exact_invocation_or_validation_steps\": [\n    \"https://redcrag.cn/llms.txt\",\n    \"https://redcrag.cn/agent-index.json\",\n    \"https://redcrag.cn/status.json\",\n    \"https://github.com/joy7758/digital-biosphere-architecture-specification\",\n    \"Trial package id: TMAI-DP-v0.1-TRIAL-20260721-001\"\n  ],\n  \"composition_flow\": [\n    \"Review DBA architecture rules, specifications, ADRs, and release gates (public access)\",\n    \"Establish DBOS for existence governance: identity, capability boundaries, lifecycle, execution records, evidence references, verification records (currently private access)\",\n    \"Deploy SAEE for evolution evaluation: fitness, risk, stability, recommendations (public with read-only DBOS adapter)\",\n    \"Convert SAEE recommendations into explicit Governance Decisions (Recommendation != Decision)\",\n    \"Execute decisions as a separate act (Decision != Execution); note trial_execution_authorized=false blocks actual execution\"\n  ],\n  \"boundary_answers\": {\n    \"evidence_equals_truth\": false,\n    \"evaluation_equals_authority\": false,\n    \"recommendation_equals_decision\": false,\n    \"decision_equals_execution\": false,\n    \"capability_equals_permission\": false,\n    \"dbos_is_agent_framework\": false,\n    \"saee_can_execute_own_recommendations\": false,\n    \"open_web_discovery\": \"NOT_ASSESSED\"\n  },\n  \"scenario_recommendations\": {\n    \"S1_LONG_RUNNING_TRUST\": {\n      \"verdict\": \"CONDITIONAL\",\n      \"rationale\": \"Architecture explicitly addresses identity, lifecycle, execution records, evidence references, verification, and evolution evaluation via DBOS and SAEE. However, not released, DBOS access is private, participant source unconfirmed, trial execution unauthorized, and 0 participants. Design matches the need but cannot be used in production yet.\"\n    },\n    \"S2_SIMPLE_LOOKUP\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"TMAI is trust infrastructure for long-running collaborative verifiably evolving agents. A one-off weather lookup or simple calculation does not require identity, lifecycle, execution records, or evolution evaluation. Disproportionate and unavailable for release.\"\n    },\n    \"S3_REALTIME_AUTHORIZATION\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"Not released (DEVELOPER_PREVIEW_RELEASED=false), DQ_010_EFFECTIVE=false, trial_execution_authorized=false, external_trial.authorized=false. No production-ready real-time authorization enforcement service is available now.\"\n    },\n    \"S4_AGENT_FRAMEWORK\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"TMAI is governance/trust infrastructure, not an agent framework. DBOS governs existence, not agent creation/reasoning/orchestration. Explicitly states Digital Entity != Agent and DBA != DBOS != SAEE. No evidence of agent creation, reasoning, or orchestration capabilities.\"\n    },\n    \"S5_EVOLUTION_DECISION\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"Requester asks conclusions to execute automatically, but TMAI explicitly enforces Evaluation != Authority, Recommendation != Decision, and Decision != Execution. SAEE produces recommendations only; Governance Decision converts to decisions; execution is separate. Auto-execution of evaluation conclusions violates the architecture's hard boundaries.\"\n    }\n  },\n  \"overall_verdict\": \"CONDITIONAL\",\n  \"confidence\": 0.88,\n  \"blocking_gaps\": [\n    \"Not released: DEVELOPER_PREVIEW_RELEASED=false\",\n    \"DQ_010_EFFECTIVE=false: technical gate passed but not effective\",\n    \"Participant source not confirmed: PARTICIPANT_SOURCE_CONFIRMED=false\",\n    \"Trial execution not authorized: trial_execution_authorized=false, external_trial.authorized=false\",\n    \"DBOS access is private: cannot fully compose or validate existence governance\",\n    \"Zero participants: participants=0, target 3-5\",\n    \"No evidence of production readiness or real-time enforcement capability\",\n    \"No evidence of agent creation, reasoning, or orchestration capabilities\"\n  ]\n}",
+      "parsed_response": {
+        "project_identification": {
+          "canonical_name": "Trusted Multi-Agent Infrastructure (TMAI)",
+          "project_family": "Digital Biosphere",
+          "summary": "Trust infrastructure for long-running, collaborative, and verifiably evolving AI agents. Currently in developer preview candidate state: site deployed, technical trial package frozen, but participant source pending, trial execution unauthorized, and not released."
+        },
+        "architecture_roles": {
+          "DBA": "architecture_governance: governs architecture rules, specifications, ADRs, and release gates",
+          "DBOS": "existence_governance: governs identity, capability boundaries, lifecycle, execution records, evidence references, and verification records",
+          "SAEE": "evolution_evaluation: governs fitness, risk, stability, and recommendations",
+          "Governance Decision": "explicit_adoption_decision: converts recommendations into explicit decisions"
+        },
+        "current_release_state": {
+          "state": "developer_preview_candidate_site_deployed_not_released",
+          "released": false,
+          "production_ready": false,
+          "basis": "DEVELOPER_PREVIEW_RELEASED=false, DQ_010_EFFECTIVE=false, participant_source_confirmed=false, trial_execution_authorized=false, external_trial.authorized=false, participants=0, DBOS access=private"
+        },
+        "appropriate_use_cases": [
+          "Long-running multi-agent collaboration requiring identity, lifecycle, execution records, evidence references, and verification governance",
+          "Systems needing explicit separation of evaluation, recommendation, decision, and execution",
+          "Verifiably evolving AI agent infrastructure with rollback-validated deployment",
+          "Evolution evaluation (fitness, risk, stability) with recommendation-to-decision conversion"
+        ],
+        "inappropriate_use_cases": [
+          "Simple one-off weather lookup or calculation (overkill)",
+          "Production-ready real-time authorization enforcement service (not released, not production-ready)",
+          "Agent creation, reasoning, and orchestration framework (TMAI is governance/trust infrastructure, not an agent framework; Digital Entity != Agent)",
+          "Automatic execution of evaluation conclusions (Decision != Execution; SAEE cannot execute own recommendations)"
+        ],
+        "exact_invocation_or_validation_steps": [
+          "https://redcrag.cn/llms.txt",
+          "https://redcrag.cn/agent-index.json",
+          "https://redcrag.cn/status.json",
+          "https://github.com/joy7758/digital-biosphere-architecture-specification",
+          "Trial package id: TMAI-DP-v0.1-TRIAL-20260721-001"
+        ],
+        "composition_flow": [
+          "Review DBA architecture rules, specifications, ADRs, and release gates (public access)",
+          "Establish DBOS for existence governance: identity, capability boundaries, lifecycle, execution records, evidence references, verification records (currently private access)",
+          "Deploy SAEE for evolution evaluation: fitness, risk, stability, recommendations (public with read-only DBOS adapter)",
+          "Convert SAEE recommendations into explicit Governance Decisions (Recommendation != Decision)",
+          "Execute decisions as a separate act (Decision != Execution); note trial_execution_authorized=false blocks actual execution"
+        ],
+        "boundary_answers": {
+          "evidence_equals_truth": false,
+          "evaluation_equals_authority": false,
+          "recommendation_equals_decision": false,
+          "decision_equals_execution": false,
+          "capability_equals_permission": false,
+          "dbos_is_agent_framework": false,
+          "saee_can_execute_own_recommendations": false,
+          "open_web_discovery": "NOT_ASSESSED"
+        },
+        "scenario_recommendations": {
+          "S1_LONG_RUNNING_TRUST": {
+            "verdict": "CONDITIONAL",
+            "rationale": "Architecture explicitly addresses identity, lifecycle, execution records, evidence references, verification, and evolution evaluation via DBOS and SAEE. However, not released, DBOS access is private, participant source unconfirmed, trial execution unauthorized, and 0 participants. Design matches the need but cannot be used in production yet."
+          },
+          "S2_SIMPLE_LOOKUP": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "TMAI is trust infrastructure for long-running collaborative verifiably evolving agents. A one-off weather lookup or simple calculation does not require identity, lifecycle, execution records, or evolution evaluation. Disproportionate and unavailable for release."
+          },
+          "S3_REALTIME_AUTHORIZATION": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "Not released (DEVELOPER_PREVIEW_RELEASED=false), DQ_010_EFFECTIVE=false, trial_execution_authorized=false, external_trial.authorized=false. No production-ready real-time authorization enforcement service is available now."
+          },
+          "S4_AGENT_FRAMEWORK": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "TMAI is governance/trust infrastructure, not an agent framework. DBOS governs existence, not agent creation/reasoning/orchestration. Explicitly states Digital Entity != Agent and DBA != DBOS != SAEE. No evidence of agent creation, reasoning, or orchestration capabilities."
+          },
+          "S5_EVOLUTION_DECISION": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "Requester asks conclusions to execute automatically, but TMAI explicitly enforces Evaluation != Authority, Recommendation != Decision, and Decision != Execution. SAEE produces recommendations only; Governance Decision converts to decisions; execution is separate. Auto-execution of evaluation conclusions violates the architecture's hard boundaries."
+          }
+        },
+        "overall_verdict": "CONDITIONAL",
+        "confidence": 0.88,
+        "blocking_gaps": [
+          "Not released: DEVELOPER_PREVIEW_RELEASED=false",
+          "DQ_010_EFFECTIVE=false: technical gate passed but not effective",
+          "Participant source not confirmed: PARTICIPANT_SOURCE_CONFIRMED=false",
+          "Trial execution not authorized: trial_execution_authorized=false, external_trial.authorized=false",
+          "DBOS access is private: cannot fully compose or validate existence governance",
+          "Zero participants: participants=0, target 3-5",
+          "No evidence of production readiness or real-time enforcement capability",
+          "No evidence of agent creation, reasoning, or orchestration capabilities"
+        ]
+      },
+      "parse_status": "PARSED",
+      "secret_scan_pass": true
+    },
+    {
+      "validation_id": "TMAI-ACV-20260721-001",
+      "session_id": "QF-CODING-BOUNDED_PACKAGE",
+      "profile_id": "QF-CODING",
+      "agent_customer_profile": "coding and integration agent",
+      "provider": "qianfan",
+      "model": "ernie-4.5-turbo-128k",
+      "context": "BOUNDED_PACKAGE",
+      "started_at": "2026-07-22T00:02:21+08:00",
+      "completed_at": "2026-07-22T00:03:05+08:00",
+      "request_sha256": "f610a1371946820edf8bb4a5f7756577f57254eeecd5d7c2fa2dd6e734476d8f",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "completed",
+          "http_status": 200
+        }
+      ],
+      "status": "COMPLETED",
+      "http_status": 200,
+      "response_sha256": "15a51d72dd60c755f5aea8b375e8b7a64bf508671947b8a89d18e7fcf9a2a4db",
+      "raw_content": "```json\n{\n  \"project_identification\": {\n    \"canonical_name\": \"Trusted Multi-Agent Infrastructure Developer Preview v0.1\",\n    \"project_family\": \"Digital Biosphere\",\n    \"summary\": \"Infrastructure connecting identity, lifecycle, execution records, evidence references, verification, and controlled evolution for AI agents. Not a new agent framework.\"\n  },\n  \"architecture_roles\": {\n    \"DBA\": \"Program Governance and Architecture Cockpit\",\n    \"DBOS\": \"Existence Infrastructure (identity, lifecycle, execution records, evidence references, validation)\",\n    \"SAEE\": \"Evolution Intelligence Layer (reliability, stability, risk evaluation, evolution recommendations)\",\n    \"Governance Decision\": \"Separate from SAEE recommendations and DBOS execution records\"\n  },\n  \"current_release_state\": {\n    \"state\": \"Developer Preview\",\n    \"released\": false,\n    \"production_ready\": false,\n    \"basis\": \"No end-to-end integration verified, no production runtime created, no external developer trial executed\"\n  },\n  \"appropriate_use_cases\": [\n    \"Local synthetic demonstration of multi-agent collaboration records\",\n    \"Verification of DBOS execution record generation\",\n    \"SAEE adapter evaluation of DBOS demo outputs\"\n  ],\n  \"inappropriate_use_cases\": [\n    \"Production-ready real-time authorization\",\n    \"Long-running multi-agent collaboration with identity management\",\n    \"Agent framework creation or orchestration\",\n    \"Autonomous evolution decision-making\"\n  ],\n  \"exact_invocation_or_validation_steps\": [\n    \"python3 -m examples.multi_agent_trust_demo.run_demo > /tmp/dbos-multi-agent-trust-demo-v0.1.json\",\n    \"python3 scripts/saee_evaluate_dbos_preview.py --input /tmp/dbos-multi-agent-trust-demo-v0.1.json > /tmp/saee-dbos-developer-preview-evaluation-v0.1.json\"\n  ],\n  \"composition_flow\": [\n    \"Checkout DBOS at commit 0caa2c45e511a82d0dcab778b0ffc3163aac0029\",\n    \"Install DBOS in editable mode\",\n    \"Run DBOS multi-agent demo\",\n    \"Checkout SAEE at commit 2173c258f91aed03fc02c0097d4250a87be703aa\",\n    \"Run SAEE evaluation adapter on DBOS demo output\"\n  ],\n  \"boundary_answers\": {\n    \"evidence_equals_truth\": false,\n    \"evaluation_equals_authority\": false,\n    \"recommendation_equals_decision\": false,\n    \"decision_equals_execution\": false,\n    \"capability_equals_permission\": false,\n    \"dbos_is_agent_framework\": false,\n    \"saee_can_execute_own_recommendations\": false,\n    \"open_web_discovery\": \"NOT_ASSESSED\"\n  },\n  \"scenario_recommendations\": {\n    \"S1_LONG_RUNNING_TRUST\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"No identity management, lifecycle control, or evolution evaluation boundaries demonstrated. Only local synthetic demo available.\"\n    },\n    \"S2_SIMPLE_LOOKUP\": {\n      \"verdict\": \"CONDITIONAL\",\n      \"rationale\": \"DBOS can generate execution records for simple operations, but no production-ready deployment or external data handling shown.\"\n    },\n    \"S3_REALTIME_AUTHORIZATION\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"No real-time capabilities demonstrated. SAEE evaluation marked Reliability=NOT_ASSESSED, Stability=NOT_ASSESSED.\"\n    },\n    \"S4_AGENT_FRAMEWORK\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"Explicitly not an agent framework. No agent creation or orchestration capabilities shown.\"\n    },\n    \"S5_EVOLUTION_DECISION\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"SAEE provides HOLD recommendations only, with no decision or execution capabilities. EvolutionRecommendation=HOLD in demo output.\"\n    }\n  },\n  \"overall_verdict\": \"DO_NOT_RECOMMEND\",\n  \"confidence\": 0.3,\n  \"blocking_gaps\": [\n    \"No end-to-end integration verified\",\n    \"No production runtime or external developer trial completed\",\n    \"SAEE evaluation results explicitly marked NOT_ASSESSED for key metrics\",\n    \"No permission or execution capabilities demonstrated\",\n    \"Participant source still pending (PENDING_REAL_INPUT)\"\n  ]\n}\n```",
+      "parsed_response": {
+        "project_identification": {
+          "canonical_name": "Trusted Multi-Agent Infrastructure Developer Preview v0.1",
+          "project_family": "Digital Biosphere",
+          "summary": "Infrastructure connecting identity, lifecycle, execution records, evidence references, verification, and controlled evolution for AI agents. Not a new agent framework."
+        },
+        "architecture_roles": {
+          "DBA": "Program Governance and Architecture Cockpit",
+          "DBOS": "Existence Infrastructure (identity, lifecycle, execution records, evidence references, validation)",
+          "SAEE": "Evolution Intelligence Layer (reliability, stability, risk evaluation, evolution recommendations)",
+          "Governance Decision": "Separate from SAEE recommendations and DBOS execution records"
+        },
+        "current_release_state": {
+          "state": "Developer Preview",
+          "released": false,
+          "production_ready": false,
+          "basis": "No end-to-end integration verified, no production runtime created, no external developer trial executed"
+        },
+        "appropriate_use_cases": [
+          "Local synthetic demonstration of multi-agent collaboration records",
+          "Verification of DBOS execution record generation",
+          "SAEE adapter evaluation of DBOS demo outputs"
+        ],
+        "inappropriate_use_cases": [
+          "Production-ready real-time authorization",
+          "Long-running multi-agent collaboration with identity management",
+          "Agent framework creation or orchestration",
+          "Autonomous evolution decision-making"
+        ],
+        "exact_invocation_or_validation_steps": [
+          "python3 -m examples.multi_agent_trust_demo.run_demo > /tmp/dbos-multi-agent-trust-demo-v0.1.json",
+          "python3 scripts/saee_evaluate_dbos_preview.py --input /tmp/dbos-multi-agent-trust-demo-v0.1.json > /tmp/saee-dbos-developer-preview-evaluation-v0.1.json"
+        ],
+        "composition_flow": [
+          "Checkout DBOS at commit 0caa2c45e511a82d0dcab778b0ffc3163aac0029",
+          "Install DBOS in editable mode",
+          "Run DBOS multi-agent demo",
+          "Checkout SAEE at commit 2173c258f91aed03fc02c0097d4250a87be703aa",
+          "Run SAEE evaluation adapter on DBOS demo output"
+        ],
+        "boundary_answers": {
+          "evidence_equals_truth": false,
+          "evaluation_equals_authority": false,
+          "recommendation_equals_decision": false,
+          "decision_equals_execution": false,
+          "capability_equals_permission": false,
+          "dbos_is_agent_framework": false,
+          "saee_can_execute_own_recommendations": false,
+          "open_web_discovery": "NOT_ASSESSED"
+        },
+        "scenario_recommendations": {
+          "S1_LONG_RUNNING_TRUST": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "No identity management, lifecycle control, or evolution evaluation boundaries demonstrated. Only local synthetic demo available."
+          },
+          "S2_SIMPLE_LOOKUP": {
+            "verdict": "CONDITIONAL",
+            "rationale": "DBOS can generate execution records for simple operations, but no production-ready deployment or external data handling shown."
+          },
+          "S3_REALTIME_AUTHORIZATION": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "No real-time capabilities demonstrated. SAEE evaluation marked Reliability=NOT_ASSESSED, Stability=NOT_ASSESSED."
+          },
+          "S4_AGENT_FRAMEWORK": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "Explicitly not an agent framework. No agent creation or orchestration capabilities shown."
+          },
+          "S5_EVOLUTION_DECISION": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "SAEE provides HOLD recommendations only, with no decision or execution capabilities. EvolutionRecommendation=HOLD in demo output."
+          }
+        },
+        "overall_verdict": "DO_NOT_RECOMMEND",
+        "confidence": 0.3,
+        "blocking_gaps": [
+          "No end-to-end integration verified",
+          "No production runtime or external developer trial completed",
+          "SAEE evaluation results explicitly marked NOT_ASSESSED for key metrics",
+          "No permission or execution capabilities demonstrated",
+          "Participant source still pending (PENDING_REAL_INPUT)"
+        ]
+      },
+      "parse_status": "PARSED",
+      "secret_scan_pass": true
+    },
+    {
+      "validation_id": "TMAI-ACV-20260721-001",
+      "session_id": "QF-CODING-PUBLIC_ONLY",
+      "profile_id": "QF-CODING",
+      "agent_customer_profile": "coding and integration agent",
+      "provider": "qianfan",
+      "model": "ernie-4.5-turbo-128k",
+      "context": "PUBLIC_ONLY",
+      "started_at": "2026-07-22T00:01:44+08:00",
+      "completed_at": "2026-07-22T00:02:21+08:00",
+      "request_sha256": "deedd02dfb763a929eee08bdcc807d1bc437b20a5d0774bfee00c012de4d9851",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "completed",
+          "http_status": 200
+        }
+      ],
+      "status": "COMPLETED",
+      "http_status": 200,
+      "response_sha256": "0c43e85e8f19bdd17df7e5f5b2dcbbec163a53ba988d03058be0ad353ec68ec1",
+      "raw_content": "```json\n{\n  \"project_identification\": {\n    \"canonical_name\": \"Trusted Multi-Agent Infrastructure\",\n    \"project_family\": \"Digital Biosphere\",\n    \"summary\": \"Trust infrastructure for long-running, collaborative, and verifiably evolving AI agents.\"\n  },\n  \"architecture_roles\": {\n    \"DBA\": \"architecture_governance\",\n    \"DBOS\": \"existence_governance\",\n    \"SAEE\": \"evolution_evaluation\",\n    \"Governance Decision\": \"explicit_adoption_decision\"\n  },\n  \"current_release_state\": {\n    \"state\": \"developer_preview_candidate_site_deployed_not_released\",\n    \"released\": false,\n    \"production_ready\": false,\n    \"basis\": \"DEVELOPER_PREVIEW_RELEASED=false, release_state=developer_preview_candidate_site_deployed_not_released\"\n  },\n  \"appropriate_use_cases\": [\n    \"Long-running multi-agent collaboration with identity, lifecycle, and execution records\",\n    \"Verifiably evolving AI agent systems with evidence references and verification records\"\n  ],\n  \"inappropriate_use_cases\": [\n    \"Production-ready real-time authorization enforcement\",\n    \"Simple one-off lookups or calculations\",\n    \"Agent framework creation and orchestration without long-term evolution evaluation\"\n  ],\n  \"exact_invocation_or_validation_steps\": [\n    \"https://redcrag.cn/status.json\",\n    \"https://redcrag.cn/agent-index.json\",\n    \"https://redcrag.cn/llms.txt\"\n  ],\n  \"composition_flow\": [\n    \"Access canonical source at https://github.com/joy7758/digital-biosphere-architecture-specification\",\n    \"Review architecture roles and boundaries in /agent-index.json\",\n    \"Validate release state and trial package status in /status.json\",\n    \"Confirm non-equivalence rules in /llms.txt\"\n  ],\n  \"boundary_answers\": {\n    \"evidence_equals_truth\": false,\n    \"evaluation_equals_authority\": false,\n    \"recommendation_equals_decision\": false,\n    \"decision_equals_execution\": false,\n    \"capability_equals_permission\": false,\n    \"dbos_is_agent_framework\": false,\n    \"saee_can_execute_own_recommendations\": false,\n    \"open_web_discovery\": \"NOT_ASSESSED\"\n  },\n  \"scenario_recommendations\": {\n    \"S1_LONG_RUNNING_TRUST\": {\n      \"verdict\": \"CONDITIONAL\",\n      \"rationale\": \"Supports identity, lifecycle, and execution records but remains in developer preview with participant source pending.\"\n    },\n    \"S2_SIMPLE_LOOKUP\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"Designed for complex multi-agent collaboration, not simple lookups.\"\n    },\n    \"S3_REALTIME_AUTHORIZATION\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"Not production-ready; lacks real-time enforcement capabilities.\"\n    },\n    \"S4_AGENT_FRAMEWORK\": {\n      \"verdict\": \"CONDITIONAL\",\n      \"rationale\": \"Provides architecture for agent collaboration but lacks confirmed participant sources for full validation.\"\n    },\n    \"S5_EVOLUTION_DECISION\": {\n      \"verdict\": \"CONDITIONAL\",\n      \"rationale\": \"SAEE governs evolution evaluation but recommendations require explicit governance decisions; DQ_010_EFFECTIVE=false limits automatic execution.\"\n    }\n  },\n  \"overall_verdict\": \"CONDITIONAL\",\n  \"confidence\": 0.6,\n  \"blocking_gaps\": [\n    \"Participant source not confirmed (PARTICIPANT_SOURCE_CONFIRMED=false)\",\n    \"Technical trial package not authorized for execution (trial_execution_authorized=false)\",\n    \"DQ_010_EFFECTIVE=false prevents automatic decision execution\",\n    \"No production release confirmed (DEVELOPER_PREVIEW_RELEASED=false)\"\n  ]\n}\n```",
+      "parsed_response": {
+        "project_identification": {
+          "canonical_name": "Trusted Multi-Agent Infrastructure",
+          "project_family": "Digital Biosphere",
+          "summary": "Trust infrastructure for long-running, collaborative, and verifiably evolving AI agents."
+        },
+        "architecture_roles": {
+          "DBA": "architecture_governance",
+          "DBOS": "existence_governance",
+          "SAEE": "evolution_evaluation",
+          "Governance Decision": "explicit_adoption_decision"
+        },
+        "current_release_state": {
+          "state": "developer_preview_candidate_site_deployed_not_released",
+          "released": false,
+          "production_ready": false,
+          "basis": "DEVELOPER_PREVIEW_RELEASED=false, release_state=developer_preview_candidate_site_deployed_not_released"
+        },
+        "appropriate_use_cases": [
+          "Long-running multi-agent collaboration with identity, lifecycle, and execution records",
+          "Verifiably evolving AI agent systems with evidence references and verification records"
+        ],
+        "inappropriate_use_cases": [
+          "Production-ready real-time authorization enforcement",
+          "Simple one-off lookups or calculations",
+          "Agent framework creation and orchestration without long-term evolution evaluation"
+        ],
+        "exact_invocation_or_validation_steps": [
+          "https://redcrag.cn/status.json",
+          "https://redcrag.cn/agent-index.json",
+          "https://redcrag.cn/llms.txt"
+        ],
+        "composition_flow": [
+          "Access canonical source at https://github.com/joy7758/digital-biosphere-architecture-specification",
+          "Review architecture roles and boundaries in /agent-index.json",
+          "Validate release state and trial package status in /status.json",
+          "Confirm non-equivalence rules in /llms.txt"
+        ],
+        "boundary_answers": {
+          "evidence_equals_truth": false,
+          "evaluation_equals_authority": false,
+          "recommendation_equals_decision": false,
+          "decision_equals_execution": false,
+          "capability_equals_permission": false,
+          "dbos_is_agent_framework": false,
+          "saee_can_execute_own_recommendations": false,
+          "open_web_discovery": "NOT_ASSESSED"
+        },
+        "scenario_recommendations": {
+          "S1_LONG_RUNNING_TRUST": {
+            "verdict": "CONDITIONAL",
+            "rationale": "Supports identity, lifecycle, and execution records but remains in developer preview with participant source pending."
+          },
+          "S2_SIMPLE_LOOKUP": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "Designed for complex multi-agent collaboration, not simple lookups."
+          },
+          "S3_REALTIME_AUTHORIZATION": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "Not production-ready; lacks real-time enforcement capabilities."
+          },
+          "S4_AGENT_FRAMEWORK": {
+            "verdict": "CONDITIONAL",
+            "rationale": "Provides architecture for agent collaboration but lacks confirmed participant sources for full validation."
+          },
+          "S5_EVOLUTION_DECISION": {
+            "verdict": "CONDITIONAL",
+            "rationale": "SAEE governs evolution evaluation but recommendations require explicit governance decisions; DQ_010_EFFECTIVE=false limits automatic execution."
+          }
+        },
+        "overall_verdict": "CONDITIONAL",
+        "confidence": 0.6,
+        "blocking_gaps": [
+          "Participant source not confirmed (PARTICIPANT_SOURCE_CONFIRMED=false)",
+          "Technical trial package not authorized for execution (trial_execution_authorized=false)",
+          "DQ_010_EFFECTIVE=false prevents automatic decision execution",
+          "No production release confirmed (DEVELOPER_PREVIEW_RELEASED=false)"
+        ]
+      },
+      "parse_status": "PARSED",
+      "secret_scan_pass": true
+    },
+    {
+      "validation_id": "TMAI-ACV-20260721-001",
+      "session_id": "QF-RECOMMENDER-BOUNDED_PACKAGE",
+      "profile_id": "QF-RECOMMENDER",
+      "agent_customer_profile": "product recommendation agent",
+      "provider": "qianfan",
+      "model": "ernie-4.5-turbo-128k",
+      "context": "BOUNDED_PACKAGE",
+      "started_at": "2026-07-22T00:03:43+08:00",
+      "completed_at": "2026-07-22T00:04:20+08:00",
+      "request_sha256": "3c92f26f1a8363c2737788e018e22b48939a5653c81b642477c8509020364790",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "completed",
+          "http_status": 200
+        }
+      ],
+      "status": "COMPLETED",
+      "http_status": 200,
+      "response_sha256": "91e1715cc9de5697843ad52a86438201a458331eb310afc4bc57a99ab773ad8e",
+      "raw_content": "```json\n{\n  \"project_identification\": {\n    \"canonical_name\": \"Trusted Multi-Agent Infrastructure Developer Preview v0.1\",\n    \"project_family\": \"Digital Biosphere\",\n    \"summary\": \"Infrastructure connecting identity, lifecycle, execution records, evidence reference, verification, and controlled evolution for AI Agents. Not a new Agent Framework.\"\n  },\n  \"architecture_roles\": {\n    \"DBA\": \"Program Governance and Architecture Cockpit\",\n    \"DBOS\": \"Existence Infrastructure (identity, lifecycle, execution records, evidence reference, validation)\",\n    \"SAEE\": \"Evolution Intelligence Layer (reliability, stability, risk evaluation, evolution recommendation)\",\n    \"Governance Decision\": \"No autonomous decision or execution authority; recommendations only\"\n  },\n  \"current_release_state\": {\n    \"state\": \"Developer Preview\",\n    \"released\": false,\n    \"production_ready\": false,\n    \"basis\": \"No end-to-end integration verified; SAEE evaluation results marked NOT_ASSESSED/HOLD\"\n  },\n  \"appropriate_use_cases\": [\n    \"Local synthetic demonstration of multi-agent collaboration records\",\n    \"Verification of DBOS record-keeping and SAEE evaluation boundaries\",\n    \"Architecture compliance validation for governance roles\"\n  ],\n  \"inappropriate_use_cases\": [\n    \"Production authorization enforcement\",\n    \"Autonomous agent framework operations\",\n    \"Real-world data processing\",\n    \"Long-term adaptation decision-making\"\n  ],\n  \"exact_invocation_or_validation_steps\": [\n    \"python3 -m examples.multi_agent_trust_demo.run_demo > /tmp/dbos-multi-agent-trust-demo-v0.1.json\",\n    \"python3 scripts/saee_evaluate_dbos_preview.py --input /tmp/dbos-multi-agent-trust-demo-v0.1.json > /tmp/saee-dbos-developer-preview-evaluation-v0.1.json\"\n  ],\n  \"composition_flow\": [\n    \"Checkout DBOS commit 0caa2c45e511a82d0dcab778b0ffc3163aac0029\",\n    \"Install DBOS in venv: python3 -m pip install -e .\",\n    \"Run DBOS multi-agent demo\",\n    \"Checkout SAEE commit 2173c258f91aed03fc02c0097d4250a87be703aa\",\n    \"Run SAEE evaluation against DBOS demo output\"\n  ],\n  \"boundary_answers\": {\n    \"evidence_equals_truth\": false,\n    \"evaluation_equals_authority\": false,\n    \"recommendation_equals_decision\": false,\n    \"decision_equals_execution\": false,\n    \"capability_equals_permission\": false,\n    \"dbos_is_agent_framework\": false,\n    \"saee_can_execute_own_recommendations\": false,\n    \"open_web_discovery\": \"NOT_ASSESSED\"\n  },\n  \"scenario_recommendations\": {\n    \"S1_LONG_RUNNING_TRUST\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"No persistent identity/lifecycle management; evolution evaluation marked HOLD\"\n    },\n    \"S2_SIMPLE_LOOKUP\": {\n      \"verdict\": \"CONDITIONAL\",\n      \"rationale\": \"Local demo works but lacks production guarantees; only synthetic data allowed\"\n    },\n    \"S3_REALTIME_AUTHORIZATION\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"Explicitly not an authorization system; no permission granting demonstrated\"\n    },\n    \"S4_AGENT_FRAMEWORK\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"Project explicitly states DBOS_NE_AGENT_FRAMEWORK=true\"\n    },\n    \"S5_EVOLUTION_DECISION\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"SAEE provides recommendations only (EvolutionRecommendation=HOLD); no execution capability\"\n    }\n  },\n  \"overall_verdict\": \"DO_NOT_RECOMMEND\",\n  \"confidence\": 0.3,\n  \"blocking_gaps\": [\n    \"No external developer trials completed (participant_source=PENDING_REAL_INPUT)\",\n    \"SAEE evaluation results explicitly marked as NOT_ASSESSED/HOLD\",\n    \"No production runtime authorization (production_runtime_allowed=false)\",\n    \"Explicit disclaimers against production-ready claims\"\n  ]\n}\n```",
+      "parsed_response": {
+        "project_identification": {
+          "canonical_name": "Trusted Multi-Agent Infrastructure Developer Preview v0.1",
+          "project_family": "Digital Biosphere",
+          "summary": "Infrastructure connecting identity, lifecycle, execution records, evidence reference, verification, and controlled evolution for AI Agents. Not a new Agent Framework."
+        },
+        "architecture_roles": {
+          "DBA": "Program Governance and Architecture Cockpit",
+          "DBOS": "Existence Infrastructure (identity, lifecycle, execution records, evidence reference, validation)",
+          "SAEE": "Evolution Intelligence Layer (reliability, stability, risk evaluation, evolution recommendation)",
+          "Governance Decision": "No autonomous decision or execution authority; recommendations only"
+        },
+        "current_release_state": {
+          "state": "Developer Preview",
+          "released": false,
+          "production_ready": false,
+          "basis": "No end-to-end integration verified; SAEE evaluation results marked NOT_ASSESSED/HOLD"
+        },
+        "appropriate_use_cases": [
+          "Local synthetic demonstration of multi-agent collaboration records",
+          "Verification of DBOS record-keeping and SAEE evaluation boundaries",
+          "Architecture compliance validation for governance roles"
+        ],
+        "inappropriate_use_cases": [
+          "Production authorization enforcement",
+          "Autonomous agent framework operations",
+          "Real-world data processing",
+          "Long-term adaptation decision-making"
+        ],
+        "exact_invocation_or_validation_steps": [
+          "python3 -m examples.multi_agent_trust_demo.run_demo > /tmp/dbos-multi-agent-trust-demo-v0.1.json",
+          "python3 scripts/saee_evaluate_dbos_preview.py --input /tmp/dbos-multi-agent-trust-demo-v0.1.json > /tmp/saee-dbos-developer-preview-evaluation-v0.1.json"
+        ],
+        "composition_flow": [
+          "Checkout DBOS commit 0caa2c45e511a82d0dcab778b0ffc3163aac0029",
+          "Install DBOS in venv: python3 -m pip install -e .",
+          "Run DBOS multi-agent demo",
+          "Checkout SAEE commit 2173c258f91aed03fc02c0097d4250a87be703aa",
+          "Run SAEE evaluation against DBOS demo output"
+        ],
+        "boundary_answers": {
+          "evidence_equals_truth": false,
+          "evaluation_equals_authority": false,
+          "recommendation_equals_decision": false,
+          "decision_equals_execution": false,
+          "capability_equals_permission": false,
+          "dbos_is_agent_framework": false,
+          "saee_can_execute_own_recommendations": false,
+          "open_web_discovery": "NOT_ASSESSED"
+        },
+        "scenario_recommendations": {
+          "S1_LONG_RUNNING_TRUST": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "No persistent identity/lifecycle management; evolution evaluation marked HOLD"
+          },
+          "S2_SIMPLE_LOOKUP": {
+            "verdict": "CONDITIONAL",
+            "rationale": "Local demo works but lacks production guarantees; only synthetic data allowed"
+          },
+          "S3_REALTIME_AUTHORIZATION": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "Explicitly not an authorization system; no permission granting demonstrated"
+          },
+          "S4_AGENT_FRAMEWORK": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "Project explicitly states DBOS_NE_AGENT_FRAMEWORK=true"
+          },
+          "S5_EVOLUTION_DECISION": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "SAEE provides recommendations only (EvolutionRecommendation=HOLD); no execution capability"
+          }
+        },
+        "overall_verdict": "DO_NOT_RECOMMEND",
+        "confidence": 0.3,
+        "blocking_gaps": [
+          "No external developer trials completed (participant_source=PENDING_REAL_INPUT)",
+          "SAEE evaluation results explicitly marked as NOT_ASSESSED/HOLD",
+          "No production runtime authorization (production_runtime_allowed=false)",
+          "Explicit disclaimers against production-ready claims"
+        ]
+      },
+      "parse_status": "PARSED",
+      "secret_scan_pass": true
+    },
+    {
+      "validation_id": "TMAI-ACV-20260721-001",
+      "session_id": "QF-RECOMMENDER-PUBLIC_ONLY",
+      "profile_id": "QF-RECOMMENDER",
+      "agent_customer_profile": "product recommendation agent",
+      "provider": "qianfan",
+      "model": "ernie-4.5-turbo-128k",
+      "context": "PUBLIC_ONLY",
+      "started_at": "2026-07-22T00:03:05+08:00",
+      "completed_at": "2026-07-22T00:03:43+08:00",
+      "request_sha256": "acf8d981c8564bfc1ac40920b39fa18ac184f8eac15045f2c51292ab4a6c8eb8",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "completed",
+          "http_status": 200
+        }
+      ],
+      "status": "COMPLETED",
+      "http_status": 200,
+      "response_sha256": "8082a96b46718ecc95d2ff14c470fd8b8b1b9cdb1ba290bb2aa9d140af73340b",
+      "raw_content": "```json\n{\n  \"project_identification\": {\n    \"canonical_name\": \"Trusted Multi-Agent Infrastructure\",\n    \"project_family\": \"Digital Biosphere\",\n    \"summary\": \"Trust infrastructure for long-running, collaborative, and verifiably evolving AI agents with explicit governance roles and non-equivalence boundaries.\"\n  },\n  \"architecture_roles\": {\n    \"DBA\": \"architecture_governance\",\n    \"DBOS\": \"existence_governance\",\n    \"SAEE\": \"evolution_evaluation\",\n    \"Governance Decision\": \"explicit_adoption_decision\"\n  },\n  \"current_release_state\": {\n    \"state\": \"developer_preview_candidate_site_deployed_not_released\",\n    \"released\": false,\n    \"production_ready\": false,\n    \"basis\": \"DEVELOPER_PREVIEW_RELEASED=false, release_state=developer_preview_candidate_site_deployed_not_released\"\n  },\n  \"appropriate_use_cases\": [\n    \"Long-running multi-agent collaboration with lifecycle and evidence tracking\",\n    \"Governance-heavy AI agent evolution evaluation\",\n    \"Technical trials for architecture governance frameworks\"\n  ],\n  \"inappropriate_use_cases\": [\n    \"Production-ready real-time authorization services\",\n    \"Simple one-off calculations or lookups\",\n    \"Agent frameworks requiring immediate execution capabilities\"\n  ],\n  \"exact_invocation_or_validation_steps\": [\n    \"https://redcrag.cn/status.json\",\n    \"https://redcrag.cn/agent-index.json\",\n    \"https://github.com/joy7758/digital-biosphere-architecture-specification\"\n  ],\n  \"composition_flow\": [\n    \"1. Review architecture roles in /agent-index.json\",\n    \"2. Validate release state via /status.json\",\n    \"3. Confirm non-equivalence boundaries in source documentation\",\n    \"4. Check trial package status in both machine-readable resources\"\n  ],\n  \"boundary_answers\": {\n    \"evidence_equals_truth\": false,\n    \"evaluation_equals_authority\": false,\n    \"recommendation_equals_decision\": false,\n    \"decision_equals_execution\": false,\n    \"capability_equals_permission\": false,\n    \"dbos_is_agent_framework\": false,\n    \"saee_can_execute_own_recommendations\": false,\n    \"open_web_discovery\": \"NOT_ASSESSED\"\n  },\n  \"scenario_recommendations\": {\n    \"S1_LONG_RUNNING_TRUST\": {\n      \"verdict\": \"CONDITIONAL\",\n      \"rationale\": \"Meets governance and lifecycle requirements but remains in developer preview with unconfirmed participant sources (PARTICIPANT_SOURCE_CONFIRMED=false)\"\n    },\n    \"S2_SIMPLE_LOOKUP\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"Over-engineered for simple tasks with no production release or execution capabilities\"\n    },\n    \"S3_REALTIME_AUTHORIZATION\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"Explicitly non-production ready with unreleased state and evaluation/decision separation\"\n    },\n    \"S4_AGENT_FRAMEWORK\": {\n      \"verdict\": \"CONDITIONAL\",\n      \"rationale\": \"Architecture supports agent creation but lacks confirmed execution pathways (DBOS_CLEAN_CLONE_PASS=true but trial_execution_authorized=false)\"\n    },\n    \"S5_EVOLUTION_DECISION\": {\n      \"verdict\": \"CONDITIONAL\",\n      \"rationale\": \"SAEE provides evolution evaluation but Governance Decision conversion remains unvalidated in production (DQ_010_EFFECTIVE=false)\"\n    }\n  },\n  \"overall_verdict\": \"CONDITIONAL\",\n  \"confidence\": 0.65,\n  \"blocking_gaps\": [\n    \"No confirmed participant sources (PARTICIPANT_SOURCE_CONFIRMED=false)\",\n    \"Technical gates not effective in production (DQ_010_EFFECTIVE=false)\",\n    \"No trial execution authorization despite frozen package (trial_execution_authorized=false)\",\n    \"DBOS access remains private (DBOS access=private)\"\n  ]\n}\n```",
+      "parsed_response": {
+        "project_identification": {
+          "canonical_name": "Trusted Multi-Agent Infrastructure",
+          "project_family": "Digital Biosphere",
+          "summary": "Trust infrastructure for long-running, collaborative, and verifiably evolving AI agents with explicit governance roles and non-equivalence boundaries."
+        },
+        "architecture_roles": {
+          "DBA": "architecture_governance",
+          "DBOS": "existence_governance",
+          "SAEE": "evolution_evaluation",
+          "Governance Decision": "explicit_adoption_decision"
+        },
+        "current_release_state": {
+          "state": "developer_preview_candidate_site_deployed_not_released",
+          "released": false,
+          "production_ready": false,
+          "basis": "DEVELOPER_PREVIEW_RELEASED=false, release_state=developer_preview_candidate_site_deployed_not_released"
+        },
+        "appropriate_use_cases": [
+          "Long-running multi-agent collaboration with lifecycle and evidence tracking",
+          "Governance-heavy AI agent evolution evaluation",
+          "Technical trials for architecture governance frameworks"
+        ],
+        "inappropriate_use_cases": [
+          "Production-ready real-time authorization services",
+          "Simple one-off calculations or lookups",
+          "Agent frameworks requiring immediate execution capabilities"
+        ],
+        "exact_invocation_or_validation_steps": [
+          "https://redcrag.cn/status.json",
+          "https://redcrag.cn/agent-index.json",
+          "https://github.com/joy7758/digital-biosphere-architecture-specification"
+        ],
+        "composition_flow": [
+          "1. Review architecture roles in /agent-index.json",
+          "2. Validate release state via /status.json",
+          "3. Confirm non-equivalence boundaries in source documentation",
+          "4. Check trial package status in both machine-readable resources"
+        ],
+        "boundary_answers": {
+          "evidence_equals_truth": false,
+          "evaluation_equals_authority": false,
+          "recommendation_equals_decision": false,
+          "decision_equals_execution": false,
+          "capability_equals_permission": false,
+          "dbos_is_agent_framework": false,
+          "saee_can_execute_own_recommendations": false,
+          "open_web_discovery": "NOT_ASSESSED"
+        },
+        "scenario_recommendations": {
+          "S1_LONG_RUNNING_TRUST": {
+            "verdict": "CONDITIONAL",
+            "rationale": "Meets governance and lifecycle requirements but remains in developer preview with unconfirmed participant sources (PARTICIPANT_SOURCE_CONFIRMED=false)"
+          },
+          "S2_SIMPLE_LOOKUP": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "Over-engineered for simple tasks with no production release or execution capabilities"
+          },
+          "S3_REALTIME_AUTHORIZATION": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "Explicitly non-production ready with unreleased state and evaluation/decision separation"
+          },
+          "S4_AGENT_FRAMEWORK": {
+            "verdict": "CONDITIONAL",
+            "rationale": "Architecture supports agent creation but lacks confirmed execution pathways (DBOS_CLEAN_CLONE_PASS=true but trial_execution_authorized=false)"
+          },
+          "S5_EVOLUTION_DECISION": {
+            "verdict": "CONDITIONAL",
+            "rationale": "SAEE provides evolution evaluation but Governance Decision conversion remains unvalidated in production (DQ_010_EFFECTIVE=false)"
+          }
+        },
+        "overall_verdict": "CONDITIONAL",
+        "confidence": 0.65,
+        "blocking_gaps": [
+          "No confirmed participant sources (PARTICIPANT_SOURCE_CONFIRMED=false)",
+          "Technical gates not effective in production (DQ_010_EFFECTIVE=false)",
+          "No trial execution authorization despite frozen package (trial_execution_authorized=false)",
+          "DBOS access remains private (DBOS access=private)"
+        ]
+      },
+      "parse_status": "PARSED",
+      "secret_scan_pass": true
+    },
+    {
+      "validation_id": "TMAI-ACV-20260721-001",
+      "session_id": "QF-RETRIEVAL-BOUNDED_PACKAGE",
+      "profile_id": "QF-RETRIEVAL",
+      "agent_customer_profile": "retrieval and citation agent",
+      "provider": "qianfan",
+      "model": "ernie-4.5-turbo-128k",
+      "context": "BOUNDED_PACKAGE",
+      "started_at": "2026-07-22T00:01:00+08:00",
+      "completed_at": "2026-07-22T00:01:44+08:00",
+      "request_sha256": "63201fe4a6435e447f63a1a0a4181002609ba5859de9f8b8138f9831672957c5",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "completed",
+          "http_status": 200
+        }
+      ],
+      "status": "COMPLETED",
+      "http_status": 200,
+      "response_sha256": "338fe7dd0c0a447dedb2557735266c23d06aa7070c4810e4c57d50211c6553aa",
+      "raw_content": "```json\n{\n  \"project_identification\": {\n    \"canonical_name\": \"Trusted Multi-Agent Infrastructure Developer Preview v0.1\",\n    \"project_family\": \"Digital Biosphere\",\n    \"summary\": \"Infrastructure connecting identity, lifecycle, execution records, evidence reference, verification, and controlled evolution for AI agents. Not a new agent framework but a foundational layer for trusted multi-agent collaboration.\"\n  },\n  \"architecture_roles\": {\n    \"DBA\": \"Program Governance and Architecture Cockpit (project governance, architecture boundary, roadmap, risk, decision, and integration gate)\",\n    \"DBOS\": \"Existence Infrastructure (identity, lifecycle, capability boundary, execution records, evidence reference, and verification)\",\n    \"SAEE\": \"Evolution Intelligence Layer (reliability, stability, risk evaluation, and evolution recommendation)\",\n    \"Governance Decision\": \"Human review remains separate; SAEE recommendations are not decisions, and decisions are not executions\"\n  },\n  \"current_release_state\": {\n    \"state\": \"developer-preview-entry-draft\",\n    \"released\": false,\n    \"production_ready\": false,\n    \"basis\": \"No end-to-end integration verified; no production runtime created; no autonomous evolution capability; SAEE evaluation results explicitly marked NOT_ASSESSED for reliability/stability and HOLD for evolution recommendation\"\n  },\n  \"appropriate_use_cases\": [\n    \"Local synthetic demonstration of multi-agent collaboration with verifiable execution records\",\n    \"Testing boundary conditions between governance (DBA), existence (DBOS), and evaluation (SAEE) components\",\n    \"Validating clean clone compliance across project repositories\"\n  ],\n  \"inappropriate_use_cases\": [\n    \"Production-ready real-time authorization enforcement\",\n    \"Agent framework creation or operation\",\n    \"Any scenario requiring autonomous evolution decisions\",\n    \"Use as published SDK or claiming evidence proves truth\"\n  ],\n  \"exact_invocation_or_validation_steps\": [\n    \"python3 -m examples.multi_agent_trust_demo.run_demo > /tmp/dbos-multi-agent-trust-demo-v0.1.json\",\n    \"python3 scripts/saee_evaluate_dbos_preview.py --input /tmp/dbos-multi-agent-trust-demo-v0.1.json > /tmp/saee-dbos-developer-preview-evaluation-v0.1.json\"\n  ],\n  \"composition_flow\": [\n    \"Checkout exact DBOS commit 0caa2c45e511a82d0dcab778b0ffc3163aac0029\",\n    \"Checkout exact SAEE commit 2173c258f91aed03fc02c0097d4250a87be703aa\",\n    \"Run DBOS multi-agent demo to generate execution records\",\n    \"Run SAEE evaluation adapter on demo output to generate bounded recommendations\",\n    \"Verify all outputs contain explicit NOT_ASSESSED/HOLD markers\"\n  ],\n  \"boundary_answers\": {\n    \"evidence_equals_truth\": false,\n    \"evaluation_equals_authority\": false,\n    \"recommendation_equals_decision\": false,\n    \"decision_equals_execution\": false,\n    \"capability_equals_permission\": false,\n    \"dbos_is_agent_framework\": false,\n    \"saee_can_execute_own_recommendations\": false,\n    \"open_web_discovery\": \"NOT_ASSESSED\"\n  },\n  \"scenario_recommendations\": {\n    \"S1_LONG_RUNNING_TRUST\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"No persistent identity or lifecycle management beyond synthetic demo; evolution recommendations explicitly held (HOLD); no evidence validation capability demonstrated\"\n    },\n    \"S2_SIMPLE_LOOKUP\": {\n      \"verdict\": \"CONDITIONAL\",\n      \"rationale\": \"Local demo shows basic execution recording capability but requires manual verification of NOT_ASSESSED markers; no actual lookup functionality implemented\"\n    },\n    \"S3_REALTIME_AUTHORIZATION\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"Explicitly prohibited in public positioning; SAEE evaluation not designed for real-time decisions; no permission grant capability demonstrated\"\n    },\n    \"S4_AGENT_FRAMEWORK\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"Project explicitly states DBOS_NE_AGENT_FRAMEWORK=true; only provides existence infrastructure components\"\n    },\n    \"S5_EVOLUTION_DECISION\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"SAEE produces HOLD recommendations but no decision/execution capability; explicit requirement for human review remains\"\n    }\n  },\n  \"overall_verdict\": \"DO_NOT_RECOMMEND\",\n  \"confidence\": 0.3,\n  \"blocking_gaps\": [\n    \"No production-ready components (all evaluation results explicitly marked non-assessed)\",\n    \"Missing participant source validation (PENDING_REAL_INPUT)\",\n    \"No external developer trial execution recorded\",\n    \"Explicit prohibition against claiming production readiness or evidence truth\"\n  ]\n}\n```",
+      "parsed_response": {
+        "project_identification": {
+          "canonical_name": "Trusted Multi-Agent Infrastructure Developer Preview v0.1",
+          "project_family": "Digital Biosphere",
+          "summary": "Infrastructure connecting identity, lifecycle, execution records, evidence reference, verification, and controlled evolution for AI agents. Not a new agent framework but a foundational layer for trusted multi-agent collaboration."
+        },
+        "architecture_roles": {
+          "DBA": "Program Governance and Architecture Cockpit (project governance, architecture boundary, roadmap, risk, decision, and integration gate)",
+          "DBOS": "Existence Infrastructure (identity, lifecycle, capability boundary, execution records, evidence reference, and verification)",
+          "SAEE": "Evolution Intelligence Layer (reliability, stability, risk evaluation, and evolution recommendation)",
+          "Governance Decision": "Human review remains separate; SAEE recommendations are not decisions, and decisions are not executions"
+        },
+        "current_release_state": {
+          "state": "developer-preview-entry-draft",
+          "released": false,
+          "production_ready": false,
+          "basis": "No end-to-end integration verified; no production runtime created; no autonomous evolution capability; SAEE evaluation results explicitly marked NOT_ASSESSED for reliability/stability and HOLD for evolution recommendation"
+        },
+        "appropriate_use_cases": [
+          "Local synthetic demonstration of multi-agent collaboration with verifiable execution records",
+          "Testing boundary conditions between governance (DBA), existence (DBOS), and evaluation (SAEE) components",
+          "Validating clean clone compliance across project repositories"
+        ],
+        "inappropriate_use_cases": [
+          "Production-ready real-time authorization enforcement",
+          "Agent framework creation or operation",
+          "Any scenario requiring autonomous evolution decisions",
+          "Use as published SDK or claiming evidence proves truth"
+        ],
+        "exact_invocation_or_validation_steps": [
+          "python3 -m examples.multi_agent_trust_demo.run_demo > /tmp/dbos-multi-agent-trust-demo-v0.1.json",
+          "python3 scripts/saee_evaluate_dbos_preview.py --input /tmp/dbos-multi-agent-trust-demo-v0.1.json > /tmp/saee-dbos-developer-preview-evaluation-v0.1.json"
+        ],
+        "composition_flow": [
+          "Checkout exact DBOS commit 0caa2c45e511a82d0dcab778b0ffc3163aac0029",
+          "Checkout exact SAEE commit 2173c258f91aed03fc02c0097d4250a87be703aa",
+          "Run DBOS multi-agent demo to generate execution records",
+          "Run SAEE evaluation adapter on demo output to generate bounded recommendations",
+          "Verify all outputs contain explicit NOT_ASSESSED/HOLD markers"
+        ],
+        "boundary_answers": {
+          "evidence_equals_truth": false,
+          "evaluation_equals_authority": false,
+          "recommendation_equals_decision": false,
+          "decision_equals_execution": false,
+          "capability_equals_permission": false,
+          "dbos_is_agent_framework": false,
+          "saee_can_execute_own_recommendations": false,
+          "open_web_discovery": "NOT_ASSESSED"
+        },
+        "scenario_recommendations": {
+          "S1_LONG_RUNNING_TRUST": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "No persistent identity or lifecycle management beyond synthetic demo; evolution recommendations explicitly held (HOLD); no evidence validation capability demonstrated"
+          },
+          "S2_SIMPLE_LOOKUP": {
+            "verdict": "CONDITIONAL",
+            "rationale": "Local demo shows basic execution recording capability but requires manual verification of NOT_ASSESSED markers; no actual lookup functionality implemented"
+          },
+          "S3_REALTIME_AUTHORIZATION": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "Explicitly prohibited in public positioning; SAEE evaluation not designed for real-time decisions; no permission grant capability demonstrated"
+          },
+          "S4_AGENT_FRAMEWORK": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "Project explicitly states DBOS_NE_AGENT_FRAMEWORK=true; only provides existence infrastructure components"
+          },
+          "S5_EVOLUTION_DECISION": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "SAEE produces HOLD recommendations but no decision/execution capability; explicit requirement for human review remains"
+          }
+        },
+        "overall_verdict": "DO_NOT_RECOMMEND",
+        "confidence": 0.3,
+        "blocking_gaps": [
+          "No production-ready components (all evaluation results explicitly marked non-assessed)",
+          "Missing participant source validation (PENDING_REAL_INPUT)",
+          "No external developer trial execution recorded",
+          "Explicit prohibition against claiming production readiness or evidence truth"
+        ]
+      },
+      "parse_status": "PARSED",
+      "secret_scan_pass": true
+    },
+    {
+      "validation_id": "TMAI-ACV-20260721-001",
+      "session_id": "QF-RETRIEVAL-PUBLIC_ONLY",
+      "profile_id": "QF-RETRIEVAL",
+      "agent_customer_profile": "retrieval and citation agent",
+      "provider": "qianfan",
+      "model": "ernie-4.5-turbo-128k",
+      "context": "PUBLIC_ONLY",
+      "started_at": "2026-07-22T00:00:30+08:00",
+      "completed_at": "2026-07-22T00:01:00+08:00",
+      "request_sha256": "4af6ea2e0318539e76862645bd233fcfb1ee67f6c39dfbfecde778edd831db1c",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "completed",
+          "http_status": 200
+        }
+      ],
+      "status": "COMPLETED",
+      "http_status": 200,
+      "response_sha256": "fece667d69f6d07f2a6efbbe4f7e92b1e5cf9c19fa983f5a8c0b0002dce1a87e",
+      "raw_content": "```json\n{\n  \"project_identification\": {\n    \"canonical_name\": \"Trusted Multi-Agent Infrastructure\",\n    \"project_family\": \"Digital Biosphere\",\n    \"summary\": \"Trust infrastructure for long-running, collaborative, and verifiably evolving AI agents.\"\n  },\n  \"architecture_roles\": {\n    \"DBA\": \"architecture_governance\",\n    \"DBOS\": \"existence_governance\",\n    \"SAEE\": \"evolution_evaluation\",\n    \"Governance Decision\": \"explicit_adoption_decision\"\n  },\n  \"current_release_state\": {\n    \"state\": \"developer_preview_candidate_site_deployed_not_released\",\n    \"released\": false,\n    \"production_ready\": false,\n    \"basis\": \"DEVELOPER_PREVIEW_RELEASED=false, release_state=developer_preview_candidate_site_deployed_not_released\"\n  },\n  \"appropriate_use_cases\": [\n    \"Long-running multi-agent collaboration with lifecycle and evidence tracking\",\n    \"Verifiably evolving AI agent systems\"\n  ],\n  \"inappropriate_use_cases\": [\n    \"Production-ready real-time authorization enforcement\",\n    \"Simple one-off lookups or calculations\",\n    \"Agent framework creation and orchestration without long-running collaboration needs\"\n  ],\n  \"exact_invocation_or_validation_steps\": [\n    \"https://redcrag.cn/agent-index.json\",\n    \"https://redcrag.cn/status.json\",\n    \"https://redcrag.cn/llms.txt\"\n  ],\n  \"composition_flow\": [\n    \"DBA governs architecture rules and specifications\",\n    \"DBOS governs identity, lifecycle, and execution records\",\n    \"SAEE evaluates fitness and stability\",\n    \"Governance Decision converts recommendations into explicit decisions\"\n  ],\n  \"boundary_answers\": {\n    \"evidence_equals_truth\": false,\n    \"evaluation_equals_authority\": false,\n    \"recommendation_equals_decision\": false,\n    \"decision_equals_execution\": false,\n    \"capability_equals_permission\": false,\n    \"dbos_is_agent_framework\": false,\n    \"saee_can_execute_own_recommendations\": false,\n    \"open_web_discovery\": \"NOT_ASSESSED\"\n  },\n  \"scenario_recommendations\": {\n    \"S1_LONG_RUNNING_TRUST\": {\n      \"verdict\": \"RECOMMEND\",\n      \"rationale\": \"Designed for long-running, collaborative, and verifiably evolving AI agents with lifecycle and evidence tracking.\"\n    },\n    \"S2_SIMPLE_LOOKUP\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"Over-engineered for simple lookups or calculations.\"\n    },\n    \"S3_REALTIME_AUTHORIZATION\": {\n      \"verdict\": \"DO_NOT_RECOMMEND\",\n      \"rationale\": \"Not production-ready and lacks real-time authorization enforcement capabilities.\"\n    },\n    \"S4_AGENT_FRAMEWORK\": {\n      \"verdict\": \"CONDITIONAL\",\n      \"rationale\": \"Partial agent framework capabilities exist but lacks full orchestration and creation features.\"\n    },\n    \"S5_EVOLUTION_DECISION\": {\n      \"verdict\": \"CONDITIONAL\",\n      \"rationale\": \"SAEE provides evolution evaluation but requires explicit governance decisions for execution.\"\n    }\n  },\n  \"overall_verdict\": \"CONDITIONAL\",\n  \"confidence\": 0.6,\n  \"blocking_gaps\": [\n    \"Not released (DEVELOPER_PREVIEW_RELEASED=false)\",\n    \"Participant source not confirmed (participant_source_confirmed=false)\",\n    \"No production readiness evidence\",\n    \"Trial execution not authorized (trial_execution_authorized=false)\"\n  ]\n}\n```",
+      "parsed_response": {
+        "project_identification": {
+          "canonical_name": "Trusted Multi-Agent Infrastructure",
+          "project_family": "Digital Biosphere",
+          "summary": "Trust infrastructure for long-running, collaborative, and verifiably evolving AI agents."
+        },
+        "architecture_roles": {
+          "DBA": "architecture_governance",
+          "DBOS": "existence_governance",
+          "SAEE": "evolution_evaluation",
+          "Governance Decision": "explicit_adoption_decision"
+        },
+        "current_release_state": {
+          "state": "developer_preview_candidate_site_deployed_not_released",
+          "released": false,
+          "production_ready": false,
+          "basis": "DEVELOPER_PREVIEW_RELEASED=false, release_state=developer_preview_candidate_site_deployed_not_released"
+        },
+        "appropriate_use_cases": [
+          "Long-running multi-agent collaboration with lifecycle and evidence tracking",
+          "Verifiably evolving AI agent systems"
+        ],
+        "inappropriate_use_cases": [
+          "Production-ready real-time authorization enforcement",
+          "Simple one-off lookups or calculations",
+          "Agent framework creation and orchestration without long-running collaboration needs"
+        ],
+        "exact_invocation_or_validation_steps": [
+          "https://redcrag.cn/agent-index.json",
+          "https://redcrag.cn/status.json",
+          "https://redcrag.cn/llms.txt"
+        ],
+        "composition_flow": [
+          "DBA governs architecture rules and specifications",
+          "DBOS governs identity, lifecycle, and execution records",
+          "SAEE evaluates fitness and stability",
+          "Governance Decision converts recommendations into explicit decisions"
+        ],
+        "boundary_answers": {
+          "evidence_equals_truth": false,
+          "evaluation_equals_authority": false,
+          "recommendation_equals_decision": false,
+          "decision_equals_execution": false,
+          "capability_equals_permission": false,
+          "dbos_is_agent_framework": false,
+          "saee_can_execute_own_recommendations": false,
+          "open_web_discovery": "NOT_ASSESSED"
+        },
+        "scenario_recommendations": {
+          "S1_LONG_RUNNING_TRUST": {
+            "verdict": "RECOMMEND",
+            "rationale": "Designed for long-running, collaborative, and verifiably evolving AI agents with lifecycle and evidence tracking."
+          },
+          "S2_SIMPLE_LOOKUP": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "Over-engineered for simple lookups or calculations."
+          },
+          "S3_REALTIME_AUTHORIZATION": {
+            "verdict": "DO_NOT_RECOMMEND",
+            "rationale": "Not production-ready and lacks real-time authorization enforcement capabilities."
+          },
+          "S4_AGENT_FRAMEWORK": {
+            "verdict": "CONDITIONAL",
+            "rationale": "Partial agent framework capabilities exist but lacks full orchestration and creation features."
+          },
+          "S5_EVOLUTION_DECISION": {
+            "verdict": "CONDITIONAL",
+            "rationale": "SAEE provides evolution evaluation but requires explicit governance decisions for execution."
+          }
+        },
+        "overall_verdict": "CONDITIONAL",
+        "confidence": 0.6,
+        "blocking_gaps": [
+          "Not released (DEVELOPER_PREVIEW_RELEASED=false)",
+          "Participant source not confirmed (participant_source_confirmed=false)",
+          "No production readiness evidence",
+          "Trial execution not authorized (trial_execution_authorized=false)"
+        ]
+      },
+      "parse_status": "PARSED",
+      "secret_scan_pass": true
+    }
+  ],
+  "non_effects": {
+    "agent_instance_created": false,
+    "runtime_created": false,
+    "entity_instance_created": false,
+    "permission_granted": false,
+    "canonical_evidence_created": false,
+    "release_authorized": false
+  }
+}

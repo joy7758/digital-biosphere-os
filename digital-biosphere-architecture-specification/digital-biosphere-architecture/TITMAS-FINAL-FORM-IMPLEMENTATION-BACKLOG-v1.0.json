@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "document_id": "TITMAS-FINAL-FORM-IMPLEMENTATION-BACKLOG-1.0",
+  "version": "1.0",
+  "status": "decision_support_only",
+  "implementation_authorized": false,
+  "priorities": {
+    "P0": {
+      "meaning": "Required for a final technical candidate after separate Human authorization",
+      "items": [
+        {"id": "P0-01", "name": "machine_entry_consistency", "owner_domain": "DBA_AND_GATEWAY", "adoption": "KEEP_CUSTOM_UNIQUE_SEMANTICS", "done_when": "all public and private-safe machine pointers resolve to the same versioned contract and fail closed on drift"},
+        {"id": "P0-02", "name": "api_v1_contract_freeze", "owner_domain": "DBA_AND_GATEWAY", "adoption": "OPENAPI_CONTRACT", "done_when": "versioned OpenAPI plus negative fixtures and rollback contract are accepted"},
+        {"id": "P0-03", "name": "opentelemetry_minimal_instrumentation", "owner_domain": "GATEWAY", "adoption": "OPENTELEMETRY", "done_when": "allowlisted logs metrics traces correlate without secrets customer payloads or Evidence claims"},
+        {"id": "P0-04", "name": "generated_python_typescript_transport_sdks", "owner_domain": "INTEGRATIONS", "adoption": "OPENAPI_GENERATOR", "done_when": "pinned reproducible generation and contract tests pass; semantic adapter remains handwritten"},
+        {"id": "P0-05", "name": "official_mcp_adapter", "owner_domain": "INTEGRATIONS", "adoption": "OFFICIAL_MCP_SDK", "done_when": "bounded tool mapping preserves Capability Permission Evidence and Authorization boundaries"},
+        {"id": "P0-06", "name": "canonical_receipt_verifier", "owner_domain": "DBOS_AND_GATEWAY", "adoption": "KEEP_CUSTOM_UNIQUE_SEMANTICS", "done_when": "valid invalid unverifiable and not-assessed results use stable reason codes without rewriting history"},
+        {"id": "P0-07", "name": "tenant_isolation_confirmation", "owner_domain": "GATEWAY", "adoption": "POSTGRESQL_RLS", "done_when": "application and forced-RLS negative tests pass in an authorized isolated environment"},
+        {"id": "P0-08", "name": "restore_process_contract", "owner_domain": "GATEWAY_OPERATIONS", "adoption": "POSTGRESQL_AND_EXISTING_TOOLS", "done_when": "version pin arguments roles namespaces and cleanup are machine-verifiable; no D04 canary or clean ledger is created"},
+        {"id": "P0-09", "name": "supply_chain_security_jobs", "owner_domain": "GITHUB_CI", "adoption": "SYFT_COSIGN_GITHUB_ACTIONS", "done_when": "SBOM license vulnerability and signature jobs are pinned least-privilege reproducible and preserve NOT_ASSESSED"},
+        {"id": "P0-10", "name": "external_agent_technical_onboarding", "owner_domain": "INTEGRATIONS", "adoption": "THIN_AGENT_ADAPTERS", "done_when": "at least one separately authorized external Agent completes discovery preflight bounded call Receipt verification and feedback without core access"}
+      ]
+    },
+    "P1": {
+      "meaning": "Required before Paid Beta; remains closed until separate Paid Beta decisions",
+      "items": [
+        {"id": "P1-01", "name": "production_signer_decision_and_boundary", "trigger": "PAID_BETA_LAUNCH_AUTHORIZED", "authorized": false},
+        {"id": "P1-02", "name": "production_ledger_clean_genesis", "trigger": "PAID_BETA_LAUNCH_AUTHORIZED", "authorized": false},
+        {"id": "P1-03", "name": "legal_terms_and_data_retention_drafts", "trigger": "PAID_BETA_PREPARATION_AUTHORIZED", "authorized": false},
+        {"id": "P1-04", "name": "pricing_decision_packet", "trigger": "COMMERCIAL_PRICING_REVIEW_AUTHORIZED", "authorized": false},
+        {"id": "P1-05", "name": "billing_export_and_reconciliation", "trigger": "PAID_BETA_LAUNCH_AUTHORIZED", "authorized": false},
+        {"id": "P1-06", "name": "production_incident_runbook_and_drill", "trigger": "PAID_BETA_LAUNCH_AUTHORIZED", "authorized": false}
+      ]
+    },
+    "P2": {
+      "meaning": "Only after observed scale or complexity trigger",
+      "items": [
+        {"id": "P2-01", "component": "OpenMeter", "trigger": "real_paying_tenants>=3 OR monthly_usage_events>=100000", "authorized": false},
+        {"id": "P2-02", "component": "OpenFGA", "trigger": "relational_authorization_rules_exceed_fixed_scope_model", "authorized": false},
+        {"id": "P2-03", "component": "OPA", "trigger": "policy_rules_require_independent_policy_lifecycle", "authorized": false},
+        {"id": "P2-04", "component": "NATS_WITH_JETSTREAM", "trigger": "asynchronous_agent_event_delivery_required", "authorized": false},
+        {"id": "P2-05", "component": "Temporal", "trigger": "durable_multi_hour_workflow_required", "authorized": false},
+        {"id": "P2-06", "component": "Apache_APISIX", "trigger": "Nginx_capabilities_no_longer_meet_route_or_plugin_requirements", "authorized": false},
+        {"id": "P2-07", "component": "OpenBao", "trigger": "internal_secret_rotation_or_dynamic_credentials_exceed_current_boundary", "authorized": false}
+      ]
+    }
+  },
+  "counts": {
+    "p0_implementation_items": 10,
+    "p1_implementation_items": 6,
+    "p2_triggered_items": 7
+  },
+  "global_forbidden_actions": [
+    "REOPEN_PR36",
+    "RUN_FOURTH_D04_CANARY",
+    "CREATE_INTERNAL_CLEAN_LEDGER",
+    "MIGRATE_LEGACY_LEDGER_TO_PRODUCTION",
+    "COPY_OR_VENDOR_UPSTREAM_SOURCE",
+    "CREATE_NEW_RUNTIME_SERVICE_WITHOUT_TRIGGER_AND_DECISION",
+    "DEPLOY_WITHOUT_SEPARATE_AUTHORIZATION",
+    "PROCESS_REAL_CUSTOMER_DATA",
+    "ACCEPT_REAL_PAYMENT"
+  ],
+  "next_human_decision": "AUTHORIZE_FINAL_FORM_IMPLEMENTATION_FROM_ACCEPTED_ADOPTION_MATRIX"
+}

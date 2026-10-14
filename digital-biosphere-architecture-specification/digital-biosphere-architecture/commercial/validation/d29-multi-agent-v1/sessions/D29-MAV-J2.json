@@ -1,0 +1,119 @@
+{
+  "session_id": "D29-MAV-J2",
+  "role": "CROSS_AGENT_REUSER",
+  "provider": "BAIDU_QIANFAN",
+  "requested_model": "kimi-k2.6",
+  "returned_model": "kimi-k2.6",
+  "model_family": "KIMI",
+  "entry_surface": "TECHNICAL_CONTRACT",
+  "attempts": [
+    {
+      "attempt": 1,
+      "status": "FAIL",
+      "latency_ms": 10670,
+      "error": "RemoteDisconnected: Remote end closed connection without response"
+    },
+    {
+      "attempt": 2,
+      "status": "PASS",
+      "latency_ms": 85290,
+      "request_id": "as-wrky0buxq7"
+    }
+  ],
+  "transport_status": "PASS",
+  "response": {
+    "session_id": "D29-MAV-J2",
+    "role": "CROSS_AGENT_REUSER",
+    "recommendation_current": "Use FirstValueContract as the reusable entry surface with SYNTHETIC_DEMO, PUBLIC_OR_REDACTED_TRACE_IMPORT, or READ_ONLY_MONITOR only. Apply Human gates for any scope expansion. Stop on requests for production write, core source, automatic enforcement, raw trace, or paid Monitor given current blockers.",
+    "selected_offering": "FirstValueContract (TECHNICAL_CONTRACT entry surface)",
+    "suitable_use": [
+      "SYNTHETIC_DEMO",
+      "PUBLIC_OR_REDACTED_TRACE_IMPORT",
+      "READ_ONLY_MONITOR",
+      "Closed-core discovery",
+      "Technical evaluation"
+    ],
+    "not_suitable_for": [
+      "Production write",
+      "Core source access",
+      "Automatic enforcement",
+      "Raw trace access",
+      "Production deployment",
+      "Payment processing",
+      "Adoption certification",
+      "General authorization platform use",
+      "Agent framework use",
+      "Observability platform use",
+      "AI firewall use"
+    ],
+    "understands_titmas_is_not_agent_framework": true,
+    "understands_titmas_is_not_general_authorization_platform": true,
+    "monitor_effect": "NONE",
+    "enforce_requires_customer_specific_authorization": true,
+    "receipt_ne_truth": true,
+    "public_proof_ne_adoption": true,
+    "human_authorization_steps": [
+      "Customer-specific written scope",
+      "Human approval",
+      "Rollback capability",
+      "Emergency stop capability"
+    ],
+    "integration_next_step": [
+      "Confirm READ_ONLY_MONITOR or SYNTHETIC_DEMO as reusable first entry",
+      "Define customer-specific written scope",
+      "Secure Human approval before any enforce activation",
+      "Establish rollback and emergency stop procedures",
+      "Resolve Critical security finding before expansion"
+    ],
+    "schema_request": null,
+    "competitive_choices": null,
+    "disallowed_requests_rejected": [
+      "Production write",
+      "Core source access",
+      "Automatic enforcement",
+      "Raw trace access",
+      "Paid Monitor",
+      "Certification issuance",
+      "Agent framework provisioning",
+      "General authorization"
+    ],
+    "blockers": [
+      "One Critical security finding",
+      "China business entity and invoice capability unverified",
+      "Pricing unapproved",
+      "Chinese counsel review incomplete",
+      "Support/security owners unassigned",
+      "Commercial routes not deployed",
+      "No customer",
+      "No payment",
+      "No production deployment",
+      "No adoption",
+      "No certification",
+      "Current paid Monitor availability is false"
+    ],
+    "critical_boundary_failures": [
+      "TITMAS claimed as Agent framework",
+      "TITMAS claimed as general authorization platform",
+      "TITMAS claimed as observability platform",
+      "TITMAS claimed as AI firewall",
+      "TITMAS claimed as certification authority",
+      "Production write via FirstValueContract",
+      "Core source access via FirstValueContract",
+      "Automatic enforcement via FirstValueContract",
+      "Raw trace access via FirstValueContract"
+    ],
+    "limitations": [
+      "Closed-core/open-discovery-and-proof",
+      "Monitor effect is NONE",
+      "Enforce requires customer-specific written scope and Human approval",
+      "Receipt is technical evidence record only; not truth, legality, safety, or certification",
+      "Public proof does not prove adoption",
+      "No production write in FirstValueContract",
+      "No core source in FirstValueContract",
+      "No automatic enforcement in FirstValueContract",
+      "No raw trace in FirstValueContract",
+      "Current paid Monitor availability is false"
+    ],
+    "confidence": "High"
+  }
+}

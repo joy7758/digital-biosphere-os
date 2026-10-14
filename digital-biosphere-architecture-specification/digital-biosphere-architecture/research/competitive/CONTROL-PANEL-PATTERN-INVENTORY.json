@@ -1,0 +1,15 @@
+{
+  "version":"1.0",
+  "patterns":[
+    {"pattern":"workspace_switcher","adopt":"yes","constraint":"workspace is a trust and data boundary"},
+    {"pattern":"summary_cards","adopt":"yes","constraint":"show exact counts and NOT_ASSESSED; no synthetic trust score"},
+    {"pattern":"event_table_filters","adopt":"yes","constraint":"time, agent, action, result, mode, reason, policy, receipt"},
+    {"pattern":"event_timeline","adopt":"yes","constraint":"evidence-backed lifecycle only"},
+    {"pattern":"trace_graph","adopt":"limited","constraint":"reference graph; do not become a trace platform"},
+    {"pattern":"policy_editor","adopt":"limited","constraint":"references and customer configuration only; no new language"},
+    {"pattern":"approval_queue","adopt":"yes","constraint":"decision does not equal execution"},
+    {"pattern":"usage_billing","adopt":"yes","constraint":"technical event and billable unit remain separate"},
+    {"pattern":"health_score","adopt":"no","constraint":"use COMPLETE PARTIAL MISSING NOT_ASSESSED"},
+    {"pattern":"chain_of_thought_view","adopt":"no","constraint":"prohibited"}
+  ]
+}

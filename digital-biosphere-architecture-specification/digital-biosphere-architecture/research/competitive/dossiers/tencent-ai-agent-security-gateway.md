@@ -1,0 +1,24 @@
+# Tencent Cloud AI Agent Security Gateway
+
+- Source URLs: https://cloud.tencent.com/product/llmsgw
+- Source access time: 2026-08-03
+- Page title: AI Agent安全网关
+- Product status: public product surface with purchase and console links.
+- Target customer / buyer / user: enterprise security teams operating Agent/model/MCP applications.
+- Pricing status: purchase guide exists; exact normalized price was not verified.
+- Architecture summary: gateway security layer covering token quota, prompt/content protection, sensitive-data masking, credential authentication and behavior audit.
+- Control plane / data plane: managed Tencent Cloud product; precise customer-data residence and processing boundaries require service documentation.
+- Enforcement point: Agent/model/MCP/application gateway traffic.
+- Integration: gateway configuration with content/data-security products.
+- Tenant / workspace / identity: cloud-account and credential management are present; portable Agent identity contract is not verified.
+- Policy / approval / decision: unified security policies and interception; exact-action authorization binding is not verified.
+- Event / receipt / audit / retention: behavior audit is claimed; signed portable receipts and offline verifier are not verified.
+- Monitor / enforce: real-time monitoring and interception are vendor claims; explicit shadow-decision mode is not verified.
+- Deployment modes: Tencent Cloud managed; private deployment matrix not verified.
+- Console navigation and UI: security policy, credential, quota, event and audit patterns; detailed screenshots were not publicly sufficient for a complete anatomy audit.
+- Commercial funnel: immediate purchase, trial documentation and console entry.
+- Strengths: broad Chinese content/tool/data safety coverage and cloud distribution.
+- Weaknesses relative to TITMAS: AI firewall scope is broader and category-driven; independent portable proof is not established.
+- Applicable lessons: clear violation categories, reason display, quota and credential pages.
+- Non-applicable lessons: rebuilding prompt injection, DLP or content moderation engines.
+- Uncertainties: policy explainability, independent verification, retention and VPC deployment.

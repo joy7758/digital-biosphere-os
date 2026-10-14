@@ -1,0 +1,88 @@
+{
+  "schema_version": "0.1",
+  "profile_id": "SAEP-0.1",
+  "name": "Space Agent Evidence Profile",
+  "short_name": "SAEP",
+  "version": "0.1",
+  "application_positioning": "TITMAS_VERTICAL_APPLICATION_PROFILE_FOR_AUTONOMOUS_SPACE_SYSTEMS",
+  "relationship": {
+    "strategic_frame": "Digital Biosphere",
+    "trust_infrastructure": "TITMAS",
+    "industry_application_profile": "SAEP",
+    "base_evidence_profile": "EEOAP@0.1",
+    "eeoap_expansion": "Execution Evidence and Operation Accountability Profile"
+  },
+  "human_entrypoints": {
+    "zh": "/industry/space-agent-evidence/",
+    "en": "/en/industry/space-agent-evidence/"
+  },
+  "public_sources": {
+    "repository": "https://github.com/joy7758/agent-evidence",
+    "agent_readable_entry": "https://github.com/joy7758/agent-evidence/tree/main/extensions/space",
+    "research_tag": "saep-v0.1-research",
+    "research_release": "https://github.com/joy7758/agent-evidence/releases/tag/saep-v0.1-research",
+    "zenodo_record": "https://zenodo.org/records/21393369",
+    "version_doi": "10.5281/zenodo.21393369",
+    "doi_url": "https://doi.org/10.5281/zenodo.21393369",
+    "concept_doi": "10.5281/zenodo.19334061",
+    "concept_doi_role": "EVOLVING_PROJECT_CONCEPT_DOI_NOT_SAEP_V0_1_VERSION_DOI"
+  },
+  "public_truth_contract": {
+    "SAEP_VERSION": "v0.1",
+    "SAEP_STATUS": "RESEARCH_PROTOTYPE",
+    "SYNTHETIC_VALIDATION_COMPLETED": true,
+    "DOI_ARCHIVED": true,
+    "NASA_ADOPTION_CLAIM": false,
+    "ESA_ADOPTION_CLAIM": false,
+    "FDO_ADOPTION_CLAIM": false,
+    "FLIGHT_CERTIFICATION_CLAIM": false,
+    "SPACE_QUALIFICATION_CLAIM": false,
+    "INDUSTRIAL_DEPLOYMENT_CLAIM": false,
+    "MISSION_SAFETY_GUARANTEE": false
+  },
+  "status": {
+    "research_prototype": true,
+    "open_research_artifact": true,
+    "synthetic_validation_completed": true,
+    "doi_archived": true,
+    "profile_status": "experimental-local-reference",
+    "github_release_status": "PUBLISHED_RESEARCH_PREVIEW",
+    "evidence_origin": "synthetic",
+    "local_only": true,
+    "latest_product_release": false
+  },
+  "synthetic_validation": {
+    "benchmark_status": "synthetic-local-benchmark",
+    "benchmark_case_count": 1000,
+    "valid_controls_accepted": "100/100",
+    "injected_invalid_cases_rejected": "900/900",
+    "scope": "DETERMINISTIC_MUTATIONS_OF_ONE_SYNTHETIC_FIXTURE",
+    "external_validation": false,
+    "flight_performance_measurement": false
+  },
+  "evidence_surfaces": [
+    "identity_and_role_context",
+    "decision_process_evidence",
+    "execution_records",
+    "verifiable_evidence_objects",
+    "offline_verification"
+  ],
+  "citation": "Zhang, B. (2026). Space Agent Evidence Profile (SAEP) v0.1 (Version saep-v0.1-research). Zenodo. https://doi.org/10.5281/zenodo.21393369",
+  "non_claims": {
+    "independent_space_project": false,
+    "spacecraft_control_system": false,
+    "operational_authorization": false,
+    "mission_safety_guarantee": false,
+    "nasa_adopted": false,
+    "esa_adopted": false,
+    "fdo_adopted": false,
+    "flight_certified": false,
+    "space_qualified": false,
+    "industrial_deployment": false,
+    "mission_safety_guarantee": false,
+    "external_validation": false,
+    "official_standard_status": false,
+    "production_ready": false
+  },
+  "observed_at": "2026-07-29"
+}

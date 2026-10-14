@@ -1,0 +1,13 @@
+{
+  "version":"1.0",
+  "access_date":"2026-08-03",
+  "models":[
+    {"vendor":"Credo AI","free_entry":"research preview","paid_entry":"request access","enterprise_entry":"design-partner conversation","verified_price":null},
+    {"vendor":"Permit.io MCP Gateway","free_entry":"community tier","paid_entry":"Pro from vendor-listed USD 25 per month","enterprise_entry":"custom and on-prem","unit":"human and agentic MAU, tenants, environments, retention"},
+    {"vendor":"LangSmith","free_entry":"Developer, 5k base traces per month","paid_entry":"Plus, vendor-listed USD 39 per seat plus usage","enterprise_entry":"custom, hybrid and self-hosted","unit":"seat, traces, LCU and LSU"},
+    {"vendor":"Alibaba AgentLoop","free_entry":"official free-trial quota described","paid_entry":"pay as you go","enterprise_entry":"cloud account and support","unit":"AI credits, dataset storage, execution count"},
+    {"vendor":"Cisco AI Defense","free_entry":null,"paid_entry":"license and sales path","enterprise_entry":"cloud or hybrid enforcement","unit":"NOT_VERIFIED"},
+    {"vendor":"TITMAS candidate","free_entry":"Health Snapshot may be free or low cost after human approval","paid_entry":"fixed-fee private Monitor Pilot","enterprise_entry":"customer-specific Enforce then private deployment","unit":"pilot scope first; public price disabled"}
+  ],
+  "boundary":{"public_price":false,"request_quote":true,"human_approved_pricing_required":true}
+}

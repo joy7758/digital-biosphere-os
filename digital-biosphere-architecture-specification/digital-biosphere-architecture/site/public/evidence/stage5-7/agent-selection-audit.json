@@ -1,0 +1,17 @@
+{
+  "auditor": "AGENT_SELECTION_AUDITOR",
+  "brand_hint_findings": 0,
+  "exact_model_count": 4,
+  "hash_failures": 0,
+  "hidden_answer_findings": 0,
+  "manifest_count_match": true,
+  "outcome_rewrites": 0,
+  "provider_count": 3,
+  "randomization_failures": 0,
+  "randomization_pass": true,
+  "raw_count_match": true,
+  "recommendation_is_not_authority": true,
+  "selection_is_not_adoption": true,
+  "status": "PASS",
+  "valid_run_count": 24
+}

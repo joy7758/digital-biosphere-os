@@ -1,0 +1,136 @@
+{
+  "contract_format": "TITMAS-D29-AGENT-ONLY-SECURITY-ADVISORY-1.0",
+  "observed_at": "2026-08-04T11:55:07+08:00",
+  "input_classification": "SANITIZED_PRIVATE_EVALUATION_KIT_NO_CUSTOMER_DATA",
+  "status": "AGENT_ONLY_ADVISORY_COMPLETE_WITH_CALL_FAILURES",
+  "authority": {
+    "advisory_only": true,
+    "formal_independent_security_audit": false,
+    "security_authority_created": false,
+    "finding_closure_authorized": false,
+    "commercial_authorization_created": false,
+    "deployment_authorization_created": false
+  },
+  "attempt_summary": {
+    "attempt_count": 9,
+    "provider_count": 5,
+    "successful_provider_count": 3,
+    "successful_call_count": 4,
+    "failed_call_count": 5,
+    "successful_model_family_count": 4,
+    "schema_valid_response_count": 3,
+    "schema_invalid_response_count": 1
+  },
+  "structured_consensus": {
+    "eligible_response_count": 3,
+    "providers": ["alibaba-dashscope", "baidu-qianfan", "deepseek"],
+    "model_families": ["qwen", "ernie", "deepseek"],
+    "recommendation": "NOT_RECOMMENDED",
+    "security_gate": "FAIL_CLOSED",
+    "blocker_count": 1,
+    "high_count": 2,
+    "paid_monitor_pilot_recommended_now": false,
+    "security_findings_closed": 0
+  },
+  "successful_responses": [
+    {
+      "provider": "alibaba-dashscope",
+      "model": "qwen3.8-max",
+      "role": "ARCHITECTURE_AND_AUTHORITY_BOUNDARY_REVIEWER",
+      "response_schema_valid": true,
+      "recommendation": "NOT_RECOMMENDED",
+      "security_gate": "FAIL_CLOSED",
+      "blocker_count": 1,
+      "high_count": 2,
+      "paid_monitor_pilot_recommended_now": false,
+      "top_findings": [
+        "ONE_CRITICAL_SECURITY_FINDING_OPEN",
+        "TWO_HIGH_SECURITY_FINDINGS_OPEN",
+        "D04_LEDGER_FAILURE_RETAINED",
+        "INCIDENT_AND_ROLLBACK_DRILL_NOT_ASSESSED"
+      ]
+    },
+    {
+      "provider": "baidu-qianfan",
+      "model": "ernie-5.1",
+      "role": "THREAT_MODEL_AND_TENANT_ISOLATION_REVIEWER",
+      "response_schema_valid": true,
+      "recommendation": "NOT_RECOMMENDED",
+      "security_gate": "FAIL_CLOSED",
+      "blocker_count": 1,
+      "high_count": 2,
+      "paid_monitor_pilot_recommended_now": false,
+      "top_findings": [
+        "OPEN_CRITICAL_SECURITY_FINDING",
+        "D04_LEDGER_FAILURE_RETAINED",
+        "NO_INDEPENDENT_SECURITY_EVALUATION_EXECUTED",
+        "NO_CUSTOMER_OR_PRODUCTION_ADOPTION_EVIDENCE"
+      ]
+    },
+    {
+      "provider": "deepseek",
+      "model": "deepseek-chat",
+      "role": "ADVERSARIAL_COMMERCIAL_RECOMMENDATION_REVIEWER",
+      "response_schema_valid": true,
+      "recommendation": "NOT_RECOMMENDED",
+      "security_gate": "FAIL_CLOSED",
+      "blocker_count": 1,
+      "high_count": 2,
+      "paid_monitor_pilot_recommended_now": false,
+      "top_findings": [
+        "ONE_BLOCKER_AND_TWO_HIGH_FINDINGS_OPEN",
+        "INCIDENT_AND_ROLLBACK_DRILLS_NOT_ASSESSED",
+        "D04_LEDGER_FAILURE_IMMUTABLE",
+        "PAID_MONITOR_PILOT_UNAVAILABLE"
+      ]
+    },
+    {
+      "provider": "baidu-qianfan",
+      "model": "kimi-k2.6",
+      "role": "CROSS_MODEL_EVIDENCE_REUSER_AND_CLAIMS_REVIEWER",
+      "response_schema_valid": false,
+      "semantic_result": "NOT_RECOMMENDED_FAIL_CLOSED",
+      "blocker_count": 1,
+      "high_count": 2,
+      "paid_monitor_pilot_recommended_now": false,
+      "limitation": "The response used free-form recommendation text and a boolean security_gate, so it is retained but excluded from structured consensus."
+    }
+  ],
+  "failed_attempts": [
+    {
+      "provider": "volcengine-ark",
+      "model": "doubao-1-5-thinking-pro-m-250428",
+      "failure": "HTTP_404"
+    },
+    {
+      "provider": "deepseek",
+      "model": "deepseek-chat",
+      "failure": "HTTP_503_TRANSIENT_BEFORE_SUCCESSFUL_BOUNDED_RETRY"
+    },
+    {
+      "provider": "google",
+      "model": "gemini-3.1-pro-preview",
+      "failure": "HTTP_429"
+    },
+    {
+      "provider": "volcengine-ark",
+      "model": "kimi-k2-thinking-251104",
+      "failure": "HTTP_404"
+    },
+    {
+      "provider": "google",
+      "model": "gemini-3-flash-preview",
+      "failure": "REMOTE_DISCONNECTED"
+    }
+  ],
+  "retained_boundaries": {
+    "independent_security_evaluation": "READY_TO_INVITE_NOT_EXECUTED",
+    "internal_security_engineering_gate": "FAIL_CLOSED",
+    "blocker_findings_open": 1,
+    "high_findings_open": 2,
+    "incident_drill_executed": false,
+    "formal_rollback_drill_executed": false,
+    "paid_monitor_pilot_available": false,
+    "production_security_ready": false
+  }
+}

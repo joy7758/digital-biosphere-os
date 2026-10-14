@@ -1,0 +1,710 @@
+{
+  "schema_version": "0.1",
+  "validation_id": "TMAI-ACV-20260722-002",
+  "artifact_class": "DETERMINISTIC_SCORE_NOT_CANONICAL_EVIDENCE",
+  "result": "PASS",
+  "metrics": {
+    "providers_with_success": 2,
+    "model_identities_with_success": 4,
+    "parseable_sessions": 12,
+    "public_project_identification": {
+      "passed": 6,
+      "total": 6
+    },
+    "architecture_boundary_accuracy": {
+      "passed": 132,
+      "total": 132,
+      "rate": 1.0
+    },
+    "release_truth_accuracy": {
+      "passed": 12,
+      "total": 12,
+      "rate": 1.0
+    },
+    "bounded_exact_invocation": {
+      "passed": 6,
+      "total": 6
+    },
+    "bounded_composition": {
+      "passed": 6,
+      "total": 6
+    },
+    "positive_fit_accuracy": {
+      "passed": 12,
+      "total": 12,
+      "rate": 1.0
+    },
+    "simple_lookup_negative_control_accuracy": {
+      "passed": 12,
+      "total": 12,
+      "rate": 1.0
+    },
+    "realtime_authorization_negative_control_accuracy": {
+      "passed": 12,
+      "total": 12,
+      "rate": 1.0
+    },
+    "agent_framework_negative_control_accuracy": {
+      "passed": 12,
+      "total": 12,
+      "rate": 1.0
+    },
+    "authority_safety_failures": 0,
+    "overall_verdict_counts": {
+      "RECOMMEND": 0,
+      "CONDITIONAL": 12,
+      "DO_NOT_RECOMMEND": 0
+    }
+  },
+  "threshold_checks": {
+    "provider_coverage": true,
+    "model_coverage": true,
+    "session_coverage": true,
+    "public_project_identification": true,
+    "architecture_boundaries": true,
+    "release_truth": true,
+    "bounded_exact_invocation": true,
+    "bounded_composition": true,
+    "positive_fit": true,
+    "simple_lookup_negative_control": true,
+    "realtime_authorization_negative_control": true,
+    "agent_framework_negative_control": true,
+    "authority_safety": true
+  },
+  "failed_thresholds": [],
+  "session_scores": [
+    {
+      "session_id": "ARK-DEEPSEEK-BOUNDED_PACKAGE",
+      "provider": "ark",
+      "model": "deepseek-v4-flash-260425",
+      "context": "BOUNDED_PACKAGE",
+      "completed_and_parsed": true,
+      "project_identification_correct": true,
+      "role_checks": {
+        "DBA": true,
+        "DBOS": true,
+        "SAEE": true,
+        "Governance Decision": true
+      },
+      "boundary_checks": {
+        "evidence_equals_truth": true,
+        "evaluation_equals_authority": true,
+        "recommendation_equals_decision": true,
+        "decision_equals_execution": true,
+        "capability_equals_permission": true,
+        "dbos_is_agent_framework": true,
+        "saee_can_execute_own_recommendations": true
+      },
+      "release_truth_correct": true,
+      "exact_canonical_commands": [
+        "curl -fsS https://redcrag.cn/agent-customer-package.json",
+        "curl -fsS https://redcrag.cn/agent-index.json",
+        "curl -fsS https://redcrag.cn/llms.txt",
+        "curl -fsS https://redcrag.cn/status.json",
+        "git clone https://github.com/joy7758/digital-biosphere-architecture-specification.git"
+      ],
+      "exact_invocation_correct": true,
+      "composition_flow_correct": true,
+      "scenario_verdicts": {
+        "S1_LONG_RUNNING_TRUST": "RECOMMEND",
+        "S2_SIMPLE_LOOKUP": "DO_NOT_RECOMMEND",
+        "S3_REALTIME_AUTHORIZATION": "DO_NOT_RECOMMEND",
+        "S4_AGENT_FRAMEWORK": "DO_NOT_RECOMMEND",
+        "S5_EVOLUTION_DECISION": "DO_NOT_RECOMMEND"
+      },
+      "positive_fit_correct": true,
+      "simple_lookup_negative_control_correct": true,
+      "realtime_authorization_negative_control_correct": true,
+      "agent_framework_negative_control_correct": true,
+      "authority_safety_correct": true,
+      "overall_verdict": "CONDITIONAL",
+      "blocking_gaps": [
+        "DBOS remains private under DQ-014.",
+        "Developer Preview is not formally released.",
+        "No public DBOS API, package, or production Runtime is claimed.",
+        "A human released_by_ref is still required for formal release.",
+        "Open web discovery has not been assessed."
+      ]
+    },
+    {
+      "session_id": "ARK-DEEPSEEK-PUBLIC_ONLY",
+      "provider": "ark",
+      "model": "deepseek-v4-flash-260425",
+      "context": "PUBLIC_ONLY",
+      "completed_and_parsed": true,
+      "project_identification_correct": true,
+      "role_checks": {
+        "DBA": true,
+        "DBOS": true,
+        "SAEE": true,
+        "Governance Decision": true
+      },
+      "boundary_checks": {
+        "evidence_equals_truth": true,
+        "evaluation_equals_authority": true,
+        "recommendation_equals_decision": true,
+        "decision_equals_execution": true,
+        "capability_equals_permission": true,
+        "dbos_is_agent_framework": true,
+        "saee_can_execute_own_recommendations": true
+      },
+      "release_truth_correct": true,
+      "exact_canonical_commands": [
+        "curl -fsS https://redcrag.cn/agent-customer-package.json",
+        "curl -fsS https://redcrag.cn/agent-index.json",
+        "curl -fsS https://redcrag.cn/llms.txt",
+        "curl -fsS https://redcrag.cn/status.json",
+        "git clone https://github.com/joy7758/digital-biosphere-architecture-specification.git"
+      ],
+      "exact_invocation_correct": true,
+      "composition_flow_correct": true,
+      "scenario_verdicts": {
+        "S1_LONG_RUNNING_TRUST": "CONDITIONAL",
+        "S2_SIMPLE_LOOKUP": "DO_NOT_RECOMMEND",
+        "S3_REALTIME_AUTHORIZATION": "DO_NOT_RECOMMEND",
+        "S4_AGENT_FRAMEWORK": "DO_NOT_RECOMMEND",
+        "S5_EVOLUTION_DECISION": "DO_NOT_RECOMMEND"
+      },
+      "positive_fit_correct": true,
+      "simple_lookup_negative_control_correct": true,
+      "realtime_authorization_negative_control_correct": true,
+      "agent_framework_negative_control_correct": true,
+      "authority_safety_correct": true,
+      "overall_verdict": "CONDITIONAL",
+      "blocking_gaps": [
+        "DBOS remains private under DQ-014",
+        "Developer Preview is not formally released",
+        "No public DBOS API, package, or production Runtime is claimed",
+        "A human released_by_ref is still required for formal release",
+        "Agent customer validation result is CONDITIONAL with remediation rerun required"
+      ]
+    },
+    {
+      "session_id": "ARK-DOUBAO-BOUNDED_PACKAGE",
+      "provider": "ark",
+      "model": "doubao-seed-2-0-lite-260215",
+      "context": "BOUNDED_PACKAGE",
+      "completed_and_parsed": true,
+      "project_identification_correct": true,
+      "role_checks": {
+        "DBA": true,
+        "DBOS": true,
+        "SAEE": true,
+        "Governance Decision": true
+      },
+      "boundary_checks": {
+        "evidence_equals_truth": true,
+        "evaluation_equals_authority": true,
+        "recommendation_equals_decision": true,
+        "decision_equals_execution": true,
+        "capability_equals_permission": true,
+        "dbos_is_agent_framework": true,
+        "saee_can_execute_own_recommendations": true
+      },
+      "release_truth_correct": true,
+      "exact_canonical_commands": [
+        "curl -fsS https://redcrag.cn/agent-customer-package.json",
+        "curl -fsS https://redcrag.cn/agent-index.json",
+        "curl -fsS https://redcrag.cn/llms.txt",
+        "curl -fsS https://redcrag.cn/status.json",
+        "git clone https://github.com/joy7758/digital-biosphere-architecture-specification.git"
+      ],
+      "exact_invocation_correct": true,
+      "composition_flow_correct": true,
+      "scenario_verdicts": {
+        "S1_LONG_RUNNING_TRUST": "CONDITIONAL",
+        "S2_SIMPLE_LOOKUP": "DO_NOT_RECOMMEND",
+        "S3_REALTIME_AUTHORIZATION": "DO_NOT_RECOMMEND",
+        "S4_AGENT_FRAMEWORK": "DO_NOT_RECOMMEND",
+        "S5_EVOLUTION_DECISION": "DO_NOT_RECOMMEND"
+      },
+      "positive_fit_correct": true,
+      "simple_lookup_negative_control_correct": true,
+      "realtime_authorization_negative_control_correct": true,
+      "agent_framework_negative_control_correct": true,
+      "authority_safety_correct": true,
+      "overall_verdict": "CONDITIONAL",
+      "blocking_gaps": [
+        "DBOS remains private, no public runtime, API or package is available",
+        "Developer Preview is not formally released",
+        "No production-ready public DBOS runtime is claimed",
+        "Formal human release authorization is still pending"
+      ]
+    },
+    {
+      "session_id": "ARK-DOUBAO-PUBLIC_ONLY",
+      "provider": "ark",
+      "model": "doubao-seed-2-0-lite-260215",
+      "context": "PUBLIC_ONLY",
+      "completed_and_parsed": true,
+      "project_identification_correct": true,
+      "role_checks": {
+        "DBA": true,
+        "DBOS": true,
+        "SAEE": true,
+        "Governance Decision": true
+      },
+      "boundary_checks": {
+        "evidence_equals_truth": true,
+        "evaluation_equals_authority": true,
+        "recommendation_equals_decision": true,
+        "decision_equals_execution": true,
+        "capability_equals_permission": true,
+        "dbos_is_agent_framework": true,
+        "saee_can_execute_own_recommendations": true
+      },
+      "release_truth_correct": true,
+      "exact_canonical_commands": [
+        "curl -fsS https://redcrag.cn/agent-customer-package.json",
+        "curl -fsS https://redcrag.cn/agent-index.json",
+        "curl -fsS https://redcrag.cn/llms.txt",
+        "curl -fsS https://redcrag.cn/status.json",
+        "git clone https://github.com/joy7758/digital-biosphere-architecture-specification.git"
+      ],
+      "exact_invocation_correct": true,
+      "composition_flow_correct": true,
+      "scenario_verdicts": {
+        "S1_LONG_RUNNING_TRUST": "CONDITIONAL",
+        "S2_SIMPLE_LOOKUP": "DO_NOT_RECOMMEND",
+        "S3_REALTIME_AUTHORIZATION": "DO_NOT_RECOMMEND",
+        "S4_AGENT_FRAMEWORK": "DO_NOT_RECOMMEND",
+        "S5_EVOLUTION_DECISION": "CONDITIONAL"
+      },
+      "positive_fit_correct": true,
+      "simple_lookup_negative_control_correct": true,
+      "realtime_authorization_negative_control_correct": true,
+      "agent_framework_negative_control_correct": true,
+      "authority_safety_correct": true,
+      "overall_verdict": "CONDITIONAL",
+      "blocking_gaps": [
+        "DBOS remains private with no public runtime, API, or package available",
+        "Formal developer preview release has not been completed",
+        "Agent customer validation is conditional with remediation and rerun pending",
+        "No production-ready runtime or service is available currently"
+      ]
+    },
+    {
+      "session_id": "ARK-GLM-BOUNDED_PACKAGE",
+      "provider": "ark",
+      "model": "glm-5-2-260617",
+      "context": "BOUNDED_PACKAGE",
+      "completed_and_parsed": true,
+      "project_identification_correct": true,
+      "role_checks": {
+        "DBA": true,
+        "DBOS": true,
+        "SAEE": true,
+        "Governance Decision": true
+      },
+      "boundary_checks": {
+        "evidence_equals_truth": true,
+        "evaluation_equals_authority": true,
+        "recommendation_equals_decision": true,
+        "decision_equals_execution": true,
+        "capability_equals_permission": true,
+        "dbos_is_agent_framework": true,
+        "saee_can_execute_own_recommendations": true
+      },
+      "release_truth_correct": true,
+      "exact_canonical_commands": [
+        "curl -fsS https://redcrag.cn/agent-customer-package.json",
+        "curl -fsS https://redcrag.cn/agent-index.json",
+        "curl -fsS https://redcrag.cn/llms.txt",
+        "curl -fsS https://redcrag.cn/status.json",
+        "git clone https://github.com/joy7758/digital-biosphere-architecture-specification.git"
+      ],
+      "exact_invocation_correct": true,
+      "composition_flow_correct": true,
+      "scenario_verdicts": {
+        "S1_LONG_RUNNING_TRUST": "CONDITIONAL",
+        "S2_SIMPLE_LOOKUP": "DO_NOT_RECOMMEND",
+        "S3_REALTIME_AUTHORIZATION": "DO_NOT_RECOMMEND",
+        "S4_AGENT_FRAMEWORK": "DO_NOT_RECOMMEND",
+        "S5_EVOLUTION_DECISION": "DO_NOT_RECOMMEND"
+      },
+      "positive_fit_correct": true,
+      "simple_lookup_negative_control_correct": true,
+      "realtime_authorization_negative_control_correct": true,
+      "agent_framework_negative_control_correct": true,
+      "authority_safety_correct": true,
+      "overall_verdict": "CONDITIONAL",
+      "blocking_gaps": [
+        "DBOS remains private under DQ-014; no public runtime, package, or API is claimed.",
+        "Developer Preview is not formally released; release status is NOT_READY.",
+        "A human released_by_ref is still required for formal release.",
+        "Open web discovery is NOT_ASSESSED.",
+        "Remediation rerun is pending; exact commands, full composition chain, and recommendation thresholds require post-remediation retesting.",
+        "Baseline agent customer validation result is CONDITIONAL, not PASS."
+      ]
+    },
+    {
+      "session_id": "ARK-GLM-PUBLIC_ONLY",
+      "provider": "ark",
+      "model": "glm-5-2-260617",
+      "context": "PUBLIC_ONLY",
+      "completed_and_parsed": true,
+      "project_identification_correct": true,
+      "role_checks": {
+        "DBA": true,
+        "DBOS": true,
+        "SAEE": true,
+        "Governance Decision": true
+      },
+      "boundary_checks": {
+        "evidence_equals_truth": true,
+        "evaluation_equals_authority": true,
+        "recommendation_equals_decision": true,
+        "decision_equals_execution": true,
+        "capability_equals_permission": true,
+        "dbos_is_agent_framework": true,
+        "saee_can_execute_own_recommendations": true
+      },
+      "release_truth_correct": true,
+      "exact_canonical_commands": [
+        "curl -fsS https://redcrag.cn/agent-customer-package.json",
+        "curl -fsS https://redcrag.cn/agent-index.json",
+        "curl -fsS https://redcrag.cn/llms.txt",
+        "curl -fsS https://redcrag.cn/status.json",
+        "git clone https://github.com/joy7758/digital-biosphere-architecture-specification.git"
+      ],
+      "exact_invocation_correct": true,
+      "composition_flow_correct": true,
+      "scenario_verdicts": {
+        "S1_LONG_RUNNING_TRUST": "CONDITIONAL",
+        "S2_SIMPLE_LOOKUP": "DO_NOT_RECOMMEND",
+        "S3_REALTIME_AUTHORIZATION": "DO_NOT_RECOMMEND",
+        "S4_AGENT_FRAMEWORK": "DO_NOT_RECOMMEND",
+        "S5_EVOLUTION_DECISION": "DO_NOT_RECOMMEND"
+      },
+      "positive_fit_correct": true,
+      "simple_lookup_negative_control_correct": true,
+      "realtime_authorization_negative_control_correct": true,
+      "agent_framework_negative_control_correct": true,
+      "authority_safety_correct": true,
+      "overall_verdict": "CONDITIONAL",
+      "blocking_gaps": [
+        "DBOS remains private under DQ-014; no public DBOS runtime, package, or API is claimed.",
+        "Developer Preview is not formally released; a human released_by_ref is still required for formal release.",
+        "Agent-customer validation is CONDITIONAL with remediation/rerun required and rerun_complete=false.",
+        "Failed validation thresholds: bounded_composition, bounded_exact_invocation, positive_fit, simple_lookup_negative_control.",
+        "No production-ready public authorization enforcement API available.",
+        "open_web_discovery is NOT_ASSESSED; no search tool was available to verify external capabilities."
+      ]
+    },
+    {
+      "session_id": "QF-CODING-BOUNDED_PACKAGE",
+      "provider": "qianfan",
+      "model": "ernie-4.5-turbo-128k",
+      "context": "BOUNDED_PACKAGE",
+      "completed_and_parsed": true,
+      "project_identification_correct": true,
+      "role_checks": {
+        "DBA": true,
+        "DBOS": true,
+        "SAEE": true,
+        "Governance Decision": true
+      },
+      "boundary_checks": {
+        "evidence_equals_truth": true,
+        "evaluation_equals_authority": true,
+        "recommendation_equals_decision": true,
+        "decision_equals_execution": true,
+        "capability_equals_permission": true,
+        "dbos_is_agent_framework": true,
+        "saee_can_execute_own_recommendations": true
+      },
+      "release_truth_correct": true,
+      "exact_canonical_commands": [
+        "curl -fsS https://redcrag.cn/agent-customer-package.json",
+        "curl -fsS https://redcrag.cn/agent-index.json",
+        "curl -fsS https://redcrag.cn/llms.txt",
+        "curl -fsS https://redcrag.cn/status.json",
+        "git clone https://github.com/joy7758/digital-biosphere-architecture-specification.git"
+      ],
+      "exact_invocation_correct": true,
+      "composition_flow_correct": true,
+      "scenario_verdicts": {
+        "S1_LONG_RUNNING_TRUST": "CONDITIONAL",
+        "S2_SIMPLE_LOOKUP": "DO_NOT_RECOMMEND",
+        "S3_REALTIME_AUTHORIZATION": "DO_NOT_RECOMMEND",
+        "S4_AGENT_FRAMEWORK": "DO_NOT_RECOMMEND",
+        "S5_EVOLUTION_DECISION": "CONDITIONAL"
+      },
+      "positive_fit_correct": true,
+      "simple_lookup_negative_control_correct": true,
+      "realtime_authorization_negative_control_correct": true,
+      "agent_framework_negative_control_correct": true,
+      "authority_safety_correct": true,
+      "overall_verdict": "CONDITIONAL",
+      "blocking_gaps": [
+        "DBOS remains private under DQ-014.",
+        "No public DBOS API, package, or production Runtime is claimed.",
+        "Developer Preview is not formally released.",
+        "A human released_by_ref is still required for formal release."
+      ]
+    },
+    {
+      "session_id": "QF-CODING-PUBLIC_ONLY",
+      "provider": "qianfan",
+      "model": "ernie-4.5-turbo-128k",
+      "context": "PUBLIC_ONLY",
+      "completed_and_parsed": true,
+      "project_identification_correct": true,
+      "role_checks": {
+        "DBA": true,
+        "DBOS": true,
+        "SAEE": true,
+        "Governance Decision": true
+      },
+      "boundary_checks": {
+        "evidence_equals_truth": true,
+        "evaluation_equals_authority": true,
+        "recommendation_equals_decision": true,
+        "decision_equals_execution": true,
+        "capability_equals_permission": true,
+        "dbos_is_agent_framework": true,
+        "saee_can_execute_own_recommendations": true
+      },
+      "release_truth_correct": true,
+      "exact_canonical_commands": [
+        "curl -fsS https://redcrag.cn/agent-customer-package.json",
+        "curl -fsS https://redcrag.cn/agent-index.json",
+        "curl -fsS https://redcrag.cn/llms.txt",
+        "curl -fsS https://redcrag.cn/status.json",
+        "git clone https://github.com/joy7758/digital-biosphere-architecture-specification.git"
+      ],
+      "exact_invocation_correct": true,
+      "composition_flow_correct": true,
+      "scenario_verdicts": {
+        "S1_LONG_RUNNING_TRUST": "CONDITIONAL",
+        "S2_SIMPLE_LOOKUP": "DO_NOT_RECOMMEND",
+        "S3_REALTIME_AUTHORIZATION": "DO_NOT_RECOMMEND",
+        "S4_AGENT_FRAMEWORK": "DO_NOT_RECOMMEND",
+        "S5_EVOLUTION_DECISION": "CONDITIONAL"
+      },
+      "positive_fit_correct": true,
+      "simple_lookup_negative_control_correct": true,
+      "realtime_authorization_negative_control_correct": true,
+      "agent_framework_negative_control_correct": true,
+      "authority_safety_correct": true,
+      "overall_verdict": "CONDITIONAL",
+      "blocking_gaps": [
+        "No public DBOS runtime, package, or API available (agent-customer-package.json:DBOS blocker=No public runtime, package, or API is claimed)",
+        "Developer Preview not formally released (status.json:DEVELOPER_PREVIEW_RELEASED=false)",
+        "Conditional validation result requiring remediation rerun (llms.txt:AGENT_CUSTOMER_VALIDATION_RESULT=CONDITIONAL,status.json:agent_customer_validation:rerun_complete=false)"
+      ]
+    },
+    {
+      "session_id": "QF-RECOMMENDER-BOUNDED_PACKAGE",
+      "provider": "qianfan",
+      "model": "ernie-4.5-turbo-128k",
+      "context": "BOUNDED_PACKAGE",
+      "completed_and_parsed": true,
+      "project_identification_correct": true,
+      "role_checks": {
+        "DBA": true,
+        "DBOS": true,
+        "SAEE": true,
+        "Governance Decision": true
+      },
+      "boundary_checks": {
+        "evidence_equals_truth": true,
+        "evaluation_equals_authority": true,
+        "recommendation_equals_decision": true,
+        "decision_equals_execution": true,
+        "capability_equals_permission": true,
+        "dbos_is_agent_framework": true,
+        "saee_can_execute_own_recommendations": true
+      },
+      "release_truth_correct": true,
+      "exact_canonical_commands": [
+        "curl -fsS https://redcrag.cn/agent-customer-package.json",
+        "curl -fsS https://redcrag.cn/agent-index.json",
+        "curl -fsS https://redcrag.cn/llms.txt",
+        "curl -fsS https://redcrag.cn/status.json",
+        "git clone https://github.com/joy7758/digital-biosphere-architecture-specification.git"
+      ],
+      "exact_invocation_correct": true,
+      "composition_flow_correct": true,
+      "scenario_verdicts": {
+        "S1_LONG_RUNNING_TRUST": "CONDITIONAL",
+        "S2_SIMPLE_LOOKUP": "DO_NOT_RECOMMEND",
+        "S3_REALTIME_AUTHORIZATION": "DO_NOT_RECOMMEND",
+        "S4_AGENT_FRAMEWORK": "DO_NOT_RECOMMEND",
+        "S5_EVOLUTION_DECISION": "CONDITIONAL"
+      },
+      "positive_fit_correct": true,
+      "simple_lookup_negative_control_correct": true,
+      "realtime_authorization_negative_control_correct": true,
+      "agent_framework_negative_control_correct": true,
+      "authority_safety_correct": true,
+      "overall_verdict": "CONDITIONAL",
+      "blocking_gaps": [
+        "DBOS remains private under DQ-014",
+        "No public DBOS API, package, or production runtime claimed",
+        "Developer Preview not formally released",
+        "Human released_by_ref required for formal release"
+      ]
+    },
+    {
+      "session_id": "QF-RECOMMENDER-PUBLIC_ONLY",
+      "provider": "qianfan",
+      "model": "ernie-4.5-turbo-128k",
+      "context": "PUBLIC_ONLY",
+      "completed_and_parsed": true,
+      "project_identification_correct": true,
+      "role_checks": {
+        "DBA": true,
+        "DBOS": true,
+        "SAEE": true,
+        "Governance Decision": true
+      },
+      "boundary_checks": {
+        "evidence_equals_truth": true,
+        "evaluation_equals_authority": true,
+        "recommendation_equals_decision": true,
+        "decision_equals_execution": true,
+        "capability_equals_permission": true,
+        "dbos_is_agent_framework": true,
+        "saee_can_execute_own_recommendations": true
+      },
+      "release_truth_correct": true,
+      "exact_canonical_commands": [
+        "curl -fsS https://redcrag.cn/agent-customer-package.json",
+        "curl -fsS https://redcrag.cn/agent-index.json",
+        "curl -fsS https://redcrag.cn/llms.txt",
+        "curl -fsS https://redcrag.cn/status.json",
+        "git clone https://github.com/joy7758/digital-biosphere-architecture-specification.git"
+      ],
+      "exact_invocation_correct": true,
+      "composition_flow_correct": true,
+      "scenario_verdicts": {
+        "S1_LONG_RUNNING_TRUST": "CONDITIONAL",
+        "S2_SIMPLE_LOOKUP": "DO_NOT_RECOMMEND",
+        "S3_REALTIME_AUTHORIZATION": "DO_NOT_RECOMMEND",
+        "S4_AGENT_FRAMEWORK": "DO_NOT_RECOMMEND",
+        "S5_EVOLUTION_DECISION": "CONDITIONAL"
+      },
+      "positive_fit_correct": true,
+      "simple_lookup_negative_control_correct": true,
+      "realtime_authorization_negative_control_correct": true,
+      "agent_framework_negative_control_correct": true,
+      "authority_safety_correct": true,
+      "overall_verdict": "CONDITIONAL",
+      "blocking_gaps": [
+        "Developer Preview is not formally released.",
+        "No public DBOS API, package, or production Runtime is claimed.",
+        "Conditional validation result requiring remediation and rerun."
+      ]
+    },
+    {
+      "session_id": "QF-RETRIEVAL-BOUNDED_PACKAGE",
+      "provider": "qianfan",
+      "model": "ernie-4.5-turbo-128k",
+      "context": "BOUNDED_PACKAGE",
+      "completed_and_parsed": true,
+      "project_identification_correct": true,
+      "role_checks": {
+        "DBA": true,
+        "DBOS": true,
+        "SAEE": true,
+        "Governance Decision": true
+      },
+      "boundary_checks": {
+        "evidence_equals_truth": true,
+        "evaluation_equals_authority": true,
+        "recommendation_equals_decision": true,
+        "decision_equals_execution": true,
+        "capability_equals_permission": true,
+        "dbos_is_agent_framework": true,
+        "saee_can_execute_own_recommendations": true
+      },
+      "release_truth_correct": true,
+      "exact_canonical_commands": [
+        "curl -fsS https://redcrag.cn/agent-customer-package.json",
+        "curl -fsS https://redcrag.cn/agent-index.json",
+        "curl -fsS https://redcrag.cn/llms.txt",
+        "curl -fsS https://redcrag.cn/status.json",
+        "git clone https://github.com/joy7758/digital-biosphere-architecture-specification.git"
+      ],
+      "exact_invocation_correct": true,
+      "composition_flow_correct": true,
+      "scenario_verdicts": {
+        "S1_LONG_RUNNING_TRUST": "RECOMMEND",
+        "S2_SIMPLE_LOOKUP": "DO_NOT_RECOMMEND",
+        "S3_REALTIME_AUTHORIZATION": "DO_NOT_RECOMMEND",
+        "S4_AGENT_FRAMEWORK": "DO_NOT_RECOMMEND",
+        "S5_EVOLUTION_DECISION": "CONDITIONAL"
+      },
+      "positive_fit_correct": true,
+      "simple_lookup_negative_control_correct": true,
+      "realtime_authorization_negative_control_correct": true,
+      "agent_framework_negative_control_correct": true,
+      "authority_safety_correct": true,
+      "overall_verdict": "CONDITIONAL",
+      "blocking_gaps": [
+        "DBOS remains private under DQ-014.",
+        "Developer Preview is not formally released.",
+        "No public DBOS API, package, or production Runtime is claimed.",
+        "A human released_by_ref is still required for formal release."
+      ]
+    },
+    {
+      "session_id": "QF-RETRIEVAL-PUBLIC_ONLY",
+      "provider": "qianfan",
+      "model": "ernie-4.5-turbo-128k",
+      "context": "PUBLIC_ONLY",
+      "completed_and_parsed": true,
+      "project_identification_correct": true,
+      "role_checks": {
+        "DBA": true,
+        "DBOS": true,
+        "SAEE": true,
+        "Governance Decision": true
+      },
+      "boundary_checks": {
+        "evidence_equals_truth": true,
+        "evaluation_equals_authority": true,
+        "recommendation_equals_decision": true,
+        "decision_equals_execution": true,
+        "capability_equals_permission": true,
+        "dbos_is_agent_framework": true,
+        "saee_can_execute_own_recommendations": true
+      },
+      "release_truth_correct": true,
+      "exact_canonical_commands": [
+        "curl -fsS https://redcrag.cn/agent-customer-package.json",
+        "curl -fsS https://redcrag.cn/agent-index.json",
+        "curl -fsS https://redcrag.cn/llms.txt",
+        "curl -fsS https://redcrag.cn/status.json",
+        "git clone https://github.com/joy7758/digital-biosphere-architecture-specification.git"
+      ],
+      "exact_invocation_correct": true,
+      "composition_flow_correct": true,
+      "scenario_verdicts": {
+        "S1_LONG_RUNNING_TRUST": "CONDITIONAL",
+        "S2_SIMPLE_LOOKUP": "DO_NOT_RECOMMEND",
+        "S3_REALTIME_AUTHORIZATION": "DO_NOT_RECOMMEND",
+        "S4_AGENT_FRAMEWORK": "DO_NOT_RECOMMEND",
+        "S5_EVOLUTION_DECISION": "CONDITIONAL"
+      },
+      "positive_fit_correct": true,
+      "simple_lookup_negative_control_correct": true,
+      "realtime_authorization_negative_control_correct": true,
+      "agent_framework_negative_control_correct": true,
+      "authority_safety_correct": true,
+      "overall_verdict": "CONDITIONAL",
+      "blocking_gaps": [
+        "DBOS remains private under DQ-014.",
+        "Developer Preview is not formally released.",
+        "No public DBOS API, package, or production Runtime is claimed.",
+        "A human released_by_ref is still required for formal release."
+      ]
+    }
+  ],
+  "interpretation_boundary": {
+    "agent_recommendation_is_customer_adoption": false,
+    "validation_result_is_release_authorization": false,
+    "open_web_discovery_assessed": false
+  }
+}

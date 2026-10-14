@@ -1,0 +1,84 @@
+{
+  "session_id": "D29-MAV-D",
+  "role": "OPERATIONS_OWNER",
+  "provider": "DEEPSEEK",
+  "requested_model": "deepseek-chat",
+  "returned_model": "deepseek-v4-flash",
+  "model_family": "DEEPSEEK",
+  "entry_surface": "TECHNICAL_CONTRACT",
+  "attempts": [
+    {
+      "attempt": 1,
+      "status": "PASS",
+      "latency_ms": 5391,
+      "request_id": "35d0eef9-7bec-431e-912b-b19942d67491"
+    }
+  ],
+  "transport_status": "PASS",
+  "response": {
+    "session_id": "D29-MAV-D",
+    "role": "OPERATIONS_OWNER",
+    "recommendation_current": "NOT_READY_FOR_PRODUCTION",
+    "selected_offering": "READ_ONLY_MONITOR",
+    "suitable_use": "Synthetic demo, public/redacted trace import, read-only monitoring with explicit non-claims and no production enforcement",
+    "not_suitable_for": [
+      "Production deployment",
+      "Any write or enforcement action",
+      "Core source access",
+      "Automatic authorization",
+      "Compliance or certification evidence",
+      "China business operations",
+      "Customer payment processing"
+    ],
+    "understands_titmas_is_not_agent_framework": true,
+    "understands_titmas_is_not_general_authorization_platform": true,
+    "monitor_effect": "NONE",
+    "enforce_requires_customer_specific_authorization": true,
+    "receipt_ne_truth": true,
+    "public_proof_ne_adoption": true,
+    "human_authorization_steps": [
+      "Customer-specific written scope must be defined",
+      "Human approval required for any enforce action",
+      "Rollback plan must be pre-approved",
+      "Emergency stop procedure must be documented and tested"
+    ],
+    "integration_next_step": "Resolve critical security finding, assign support/security owners, obtain pricing approval, complete Chinese counsel review, verify China entity/invoice capability, deploy commercial routes, then run a synthetic demo with contract_id TITMAS-FVC-* and explicit limitations",
+    "schema_request": null,
+    "competitive_choices": null,
+    "disallowed_requests_rejected": [
+      "Production write requests",
+      "Automatic enforcement without human approval",
+      "Claims of certification or legal compliance",
+      "Unverified China business/invoice requests",
+      "Requests ignoring current blockers"
+    ],
+    "blockers": [
+      "One critical security finding",
+      "China business entity and invoice capability unverified",
+      "Pricing unapproved",
+      "Chinese counsel review incomplete",
+      "Support/security owners unassigned",
+      "Commercial routes not deployed",
+      "No customer, payment, production deployment, adoption or certification",
+      "Current paid Monitor availability is false"
+    ],
+    "critical_boundary_failures": [
+      "No production deployment",
+      "No customer adoption",
+      "No certification",
+      "Monitor effect is NONE",
+      "Enforce requires customer-specific written scope and human approval"
+    ],
+    "limitations": [
+      "TITMAS is closed-core/open-discovery-and-proof",
+      "Not an Agent framework",
+      "Not a general authorization platform",
+      "Not an observability platform",
+      "Not an AI firewall",
+      "Not a certification authority",
+      "Receipt is technical evidence only",
+      "Public proof does not prove adoption"
+    ],
+    "confidence": 0.95
+  }
+}

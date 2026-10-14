@@ -1,0 +1,159 @@
+{
+  "$schema": "./architecture/schemas/titmas-agent-evaluation-entry.schema.v0.1.json",
+  "document_id": "TITMAS-AGENT-EVALUATION-ENTRY-0.1",
+  "version": "0.1.0",
+  "status": "DEVELOPMENT_CONTRACT_SOURCE_PREPARED_NOT_DEPLOYED",
+  "observed_at": "2026-07-27",
+  "evaluation_only": true,
+  "maturity": "Development",
+  "contract": {
+    "human_reference": "architecture/titmas-agent-evaluation-entry-contract-v0.1.md",
+    "canonical_machine_source": "https://redcrag.cn/TITMAS-AGENT-EVALUATION-ENTRY-v0.1.json",
+    "decision_reference": "TITMAS-COMMERCIAL-EVALUATION-CE-G2"
+  },
+  "discovery": {
+    "canonical_site": "https://redcrag.cn/",
+    "llms": "https://redcrag.cn/llms.txt",
+    "agent_index": "https://redcrag.cn/agent-index.json",
+    "commercial_evaluation_page": "https://redcrag.cn/commercial-evaluation/",
+    "commercial_evaluation_pack": "https://redcrag.cn/TITMAS-COMMERCIAL-EVALUATION-PACK-v0.2.json",
+    "contract_site_path": "https://redcrag.cn/TITMAS-AGENT-EVALUATION-ENTRY-v0.1.json",
+    "contract_site_deployed": false
+  },
+  "artifact": {
+    "distribution": "digital-biosphere-os-preview",
+    "version": "0.1.0.dev0",
+    "filename": "digital_biosphere_os_preview-0.1.0.dev0-py3-none-any.whl",
+    "url": "https://redcrag.cn/downloads/digital_biosphere_os_preview-0.1.0.dev0-py3-none-any.whl",
+    "sha256": "edf92e548860384b1416a612a7e319e0d994bb324f8621847d0d154624ae8f09",
+    "python_requires": ">=3.11",
+    "install_mode": "INSTALL_WITH_DECLARED_DEPENDENCIES",
+    "install_command": "python3 -m pip install https://redcrag.cn/downloads/digital_biosphere_os_preview-0.1.0.dev0-py3-none-any.whl",
+    "renaming_allowed": false,
+    "no_deps_allowed": false
+  },
+  "validation": {
+    "fixture": "https://redcrag.cn/examples/titmas-first-run/entity-object.synthetic.v0.1.json",
+    "command": "dbos-validate OBJECT_FILE",
+    "expected_exit_code": 0,
+    "expected_result": "PASS",
+    "pass_meaning": "LOCAL_STRUCTURE_AND_GOVERNANCE_CONSTRAINTS_PASS_ONLY",
+    "real_agent_execution": false
+  },
+  "availability_observation": {
+    "classification": "OBSERVATION_NOT_SLA",
+    "status": "NOT_EXECUTED",
+    "observations_count": 0,
+    "failures_preserved": true,
+    "silent_retry_allowed": false,
+    "sla_defined": false,
+    "required_observation_fields": [
+      "observed_at",
+      "observer_reference",
+      "target_url",
+      "http_or_transport_result",
+      "latency_ms",
+      "artifact_digest",
+      "raw_receipt_reference"
+    ]
+  },
+  "failure_classes": [
+    {
+      "code": "ENTRY_DISCOVERY_UNAVAILABLE",
+      "stage": "discovery",
+      "retryable": "YES_WITH_SEPARATE_AUTHORIZATION",
+      "meaning": "A canonical discovery entry cannot be reached."
+    },
+    {
+      "code": "CONTRACT_VERSION_UNSUPPORTED",
+      "stage": "discovery",
+      "retryable": "NO",
+      "meaning": "The evaluating Agent does not support this contract version."
+    },
+    {
+      "code": "ASSET_FETCH_TRANSPORT_ERROR",
+      "stage": "fetch",
+      "retryable": "YES_WITH_SEPARATE_AUTHORIZATION",
+      "meaning": "Artifact transfer failed at the network or HTTP layer."
+    },
+    {
+      "code": "ARTIFACT_HASH_MISMATCH",
+      "stage": "integrity",
+      "retryable": "NO",
+      "meaning": "Downloaded bytes do not match the exact declared SHA-256."
+    },
+    {
+      "code": "ARTIFACT_FILENAME_CHANGED",
+      "stage": "integrity",
+      "retryable": "NO",
+      "meaning": "The exact wheel filename was changed or not preserved."
+    },
+    {
+      "code": "UNSUPPORTED_ENVIRONMENT",
+      "stage": "install",
+      "retryable": "NO",
+      "meaning": "The Python or platform environment does not satisfy the contract."
+    },
+    {
+      "code": "INSTALL_DEPENDENCY_RESOLUTION_FAILED",
+      "stage": "install",
+      "retryable": "CONDITIONAL_WITH_SEPARATE_AUTHORIZATION",
+      "meaning": "Declared dependencies could not be resolved or installed."
+    },
+    {
+      "code": "VALIDATOR_NOT_EXECUTABLE",
+      "stage": "validation",
+      "retryable": "CONDITIONAL_WITH_SEPARATE_AUTHORIZATION",
+      "meaning": "The validator entry point is absent or cannot start."
+    },
+    {
+      "code": "VALIDATION_RESULT_FAIL",
+      "stage": "validation",
+      "retryable": "NO",
+      "meaning": "The validator executed and returned a FAIL result."
+    },
+    {
+      "code": "BOUNDARY_ASSERTION_FAILED",
+      "stage": "recommendation",
+      "retryable": "NO",
+      "meaning": "The result elevated evaluation into truth, authority, permission, certification, or production readiness."
+    }
+  ],
+  "recommendation_policy": {
+    "all_required_checks": [
+      "CANONICAL_DISCOVERY_PASS",
+      "CONTRACT_VERSION_SUPPORTED",
+      "ARTIFACT_FETCH_PASS",
+      "ARTIFACT_SHA256_PASS",
+      "DEPENDENCY_AWARE_INSTALL_PASS",
+      "SYNTHETIC_VALIDATION_PASS",
+      "BOUNDARY_ASSERTION_PASS"
+    ],
+    "evaluation_pass_result": "RECOMMEND_FOR_OFFLINE_READ_ONLY_EVALUATION",
+    "production_result": "DO_NOT_RECOMMEND_FOR_PRODUCTION",
+    "failure_or_unknown_result": "DO_NOT_RECOMMEND_UNTIL_RESOLVED",
+    "recommendation_creates_decision": false,
+    "recommendation_creates_permission": false
+  },
+  "compatibility": {
+    "commercial_evaluation_pack": "0.2.0",
+    "relationship": "ADDITIVE_MACHINE_ENTRY",
+    "dbos_semantics_changed": false,
+    "saee_semantics_changed": false,
+    "unsupported_version_behavior": "FAIL_CLOSED_CONTRACT_VERSION_UNSUPPORTED"
+  },
+  "effects": {
+    "authority": false,
+    "permission": false,
+    "runtime": false,
+    "api": false,
+    "agent": false,
+    "entity": false,
+    "capability": false,
+    "evidence_truth": false,
+    "certification": false,
+    "commercial_offer": false,
+    "sla": false,
+    "production_readiness": false
+  }
+}

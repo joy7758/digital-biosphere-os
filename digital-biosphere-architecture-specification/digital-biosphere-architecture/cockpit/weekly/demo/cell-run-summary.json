@@ -1,0 +1,77 @@
+{
+  "cell_runs": [
+    {
+      "cell_id": "PROJECT_DISCOVERY_CELL",
+      "duration_ms": 0,
+      "status": "PASS",
+      "summary": "Registered project identities and one adjacent candidate were discovered without admission."
+    },
+    {
+      "cell_id": "ENVIRONMENT_DISCOVERY_CELL",
+      "duration_ms": 0,
+      "status": "PASS_WITH_CANDIDATES",
+      "summary": "Current environment candidates were recorded without authority escalation."
+    },
+    {
+      "cell_id": "RELATIONSHIP_DISCOVERY_CELL",
+      "duration_ms": 0,
+      "status": "PASS",
+      "summary": "Declared relationships were recorded as references, not vulnerabilities."
+    },
+    {
+      "cell_id": "EVIDENCE_ADMISSION_CELL",
+      "duration_ms": 0,
+      "status": "PASS_WITH_REJECTIONS",
+      "summary": "Discovery signals were separated from evidence admission."
+    },
+    {
+      "cell_id": "SECURITY_CELL",
+      "duration_ms": 0,
+      "status": "PASS_WITH_OBSERVATION",
+      "summary": "Security interpretation consumed admitted observations only."
+    },
+    {
+      "cell_id": "UPGRADE_CELL",
+      "duration_ms": 0,
+      "status": "NOT_ASSESSED",
+      "summary": "Rejected or stale signals did not become upgrade recommendations."
+    },
+    {
+      "cell_id": "QUALITY_CELL",
+      "duration_ms": 0,
+      "status": "PASS",
+      "summary": "Bounded quality evidence was interpreted without a composite score."
+    },
+    {
+      "cell_id": "DRIFT_CELL",
+      "duration_ms": 0,
+      "status": "ATTENTION",
+      "summary": "A canonical-versus-live dependency audit conflict requires review."
+    },
+    {
+      "cell_id": "MEMORY_CELL",
+      "duration_ms": 0,
+      "status": "NOT_ASSESSED",
+      "summary": "Memory preserved temporal boundaries without inventing week-over-week change."
+    },
+    {
+      "cell_id": "HANDOFF_CELL",
+      "duration_ms": 0,
+      "status": "PASS",
+      "summary": "Human decision items were generated from bounded findings and blind spots."
+    },
+    {
+      "cell_id": "HUMAN_VIEW_CELL",
+      "duration_ms": 0,
+      "status": "PASS",
+      "summary": "Standalone HTML and Markdown were rendered from the standardized snapshot only."
+    },
+    {
+      "cell_id": "WEEKLY_COORDINATOR_CELL",
+      "duration_ms": 0,
+      "status": "PASS"
+    }
+  ],
+  "observed_at": "2026-08-29T00:30:00+08:00",
+  "snapshot_id": "DBA-WEEKLY-2026-W35"
+}

@@ -1,0 +1,25 @@
+{
+  "version":"1.0",
+  "observed_at":"2026-08-03T04:00:00+08:00",
+  "provider":"aliyun_modelstudio",
+  "model":"qwen3.8-max-preview",
+  "authority_effect":false,
+  "input_data":"public positioning only",
+  "recommendation":"CONDITIONAL",
+  "primary_non_recommendation_reasons":[
+    "closed core requires independently checkable proof surfaces",
+    "Monitor does not establish production enforcement",
+    "receipt legal effect and cross-system recognition are unproven",
+    "private deployment engineering maturity is not yet proven",
+    "TITMAS cannot substitute for authorization, observability or AI firewall products"
+  ],
+  "minimum_proof_gates":[
+    "pre-side-effect interception",
+    "portable offline receipt verification",
+    "tamper-detecting audit export",
+    "Monitor non-blocking evidence",
+    "Enforce written authorization and rollback",
+    "private deployment and customer-data boundary",
+    "coding-agent controlled proof"
+  ]
+}

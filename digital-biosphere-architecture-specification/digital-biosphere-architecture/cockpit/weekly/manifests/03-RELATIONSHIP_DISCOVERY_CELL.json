@@ -1,0 +1,38 @@
+{
+  "cell_id": "RELATIONSHIP_DISCOVERY_CELL",
+  "version": "0.1",
+  "name": "RELATIONSHIP_DISCOVERY_CELL",
+  "niche": "bounded weekly cockpit observation",
+  "module": "cells.relationship_discovery",
+  "class": "Relationship_Discovery_CellCell",
+  "inputs": [
+    "project-candidates",
+    "source-references"
+  ],
+  "outputs": [
+    "relationship-signals"
+  ],
+  "source_dependencies": [
+    "redyan-investigation"
+  ],
+  "evidence_requirements": [
+    "two-bounded-project-identities"
+  ],
+  "freshness_policy": "SEVEN_DAYS_OR_STALE",
+  "authority_boundaries": {
+    "can_write_source_project": false,
+    "can_create_pull_request": false,
+    "can_merge": false,
+    "can_deploy": false,
+    "can_authorize": false,
+    "can_change_project_priority": false
+  },
+  "failure_policy": {
+    "status": "NOT_ASSESSED",
+    "preserve_other_cells": true
+  },
+  "replacement": {
+    "replaceable": true,
+    "interface_version": "0.1"
+  }
+}

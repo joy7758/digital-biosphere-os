@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:dba:weekly:admitted-observation:0.1",
+  "title": "Evidence Admission Decision",
+  "type": "object",
+  "required": ["status", "reason", "observation"],
+  "properties": {
+    "status": {"enum": ["ADMITTED", "REJECTED"]},
+    "reason": {"enum": ["SOURCE_TIME_AND_FRESHNESS_PRESENT", "MISSING_SOURCE_OR_TIME", "STALE_OR_UNKNOWN"]},
+    "observation": {"type": "object"}
+  },
+  "additionalProperties": false
+}

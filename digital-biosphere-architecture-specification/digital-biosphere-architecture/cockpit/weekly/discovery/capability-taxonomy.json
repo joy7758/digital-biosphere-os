@@ -1,0 +1,13 @@
+{
+  "schema": "dba.capability_taxonomy.v0.1",
+  "classification_mode": "DETERMINISTIC_CONTROLLED_KEYWORDS",
+  "fallback_group": "OTHER_OR_UNCLASSIFIED",
+  "groups": [
+    {"group_id": "AGENT_MEMORY_AND_CONTINUITY", "keywords": ["memory", "continuity", "long-horizon", "temporal", "recall", "consolidation"]},
+    {"group_id": "EVIDENCE_AND_PROVENANCE", "keywords": ["evidence", "provenance", "lineage", "audit", "trace"]},
+    {"group_id": "AGENT_GOVERNANCE_AND_SAFETY", "keywords": ["governance", "safety", "policy", "risk", "alignment"]},
+    {"group_id": "EVALUATION_AND_OBSERVABILITY", "keywords": ["evaluation", "benchmark", "observability", "monitoring", "telemetry"]},
+    {"group_id": "INTEROPERABILITY_AND_PROTOCOLS", "keywords": ["interoperability", "protocol", "schema", "mcp", "interface"]},
+    {"group_id": "ISOLATION_AND_SECURE_EXECUTION", "keywords": ["sandbox", "isolation", "secure execution", "container", "capability security"]}
+  ]
+}

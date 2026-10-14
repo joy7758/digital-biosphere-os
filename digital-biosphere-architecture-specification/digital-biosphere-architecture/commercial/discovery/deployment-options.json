@@ -1,0 +1,13 @@
+{
+  "contract_format": "TITMAS-DEPLOYMENT-OPTIONS-1.0",
+  "catalog_id": "TITMAS-DEPLOYMENT-OPTIONS-v1",
+  "options": [
+    {"profile": "LOCAL_DEVELOPER_SANDBOX", "status": "RETAIN_EXISTING_PUBLIC_SAFE_STATELESS_ROUTE", "customer_data_boundary": "SYNTHETIC_ONLY"},
+    {"profile": "CHINA_MANAGED_PRIVATE_PILOT", "status": "ARCHITECTURE_AND_PACKAGING_ONLY", "automatic_deployment": false},
+    {"profile": "CUSTOMER_VPC", "status": "REFERENCE_TARGET_ONLY", "customer_raw_data_local": true},
+    {"profile": "CUSTOMER_ON_PREMISES", "status": "REFERENCE_TARGET_ONLY", "customer_raw_data_local": true},
+    {"profile": "AIR_GAPPED_FUTURE_PROFILE", "status": "ARCHITECTURE_RESERVATION_ONLY", "implemented": false}
+  ],
+  "deployment_authorized": false,
+  "production_ready": false
+}
